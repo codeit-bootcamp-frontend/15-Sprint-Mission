@@ -10,11 +10,28 @@ html {
 body {
   margin: 0 auto;
   width: 100%;
-  
 }
 
 header {
+  width: 1120px;
+  padding: 9px 0;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
+.login_button {
+  width: 128px;
+  height: 48px;
+  padding: 12px 23px;
+  border-radius: 8px;
+  background-color: #3692FF;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  color: #F3F4F6;
+  line-height: 26px;
 }
 
 .top, .bottom {
@@ -26,10 +43,79 @@ header {
   margin: 0 auto;
 }
 
-main {
+main section {
+  padding: 138px;
+}
 
+main .container {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  width: 988px;
+  height: 444px;
+  margin: 0 auto;
+  border-radius: 12px;
+  background-color: #FCFCFC;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.content.right {
+  text-align: right;
+}
+
+.badge {
+  font-size: 18px;
+  font-weight: 700;
+  color: #3692FF;
+  line-height: 26px;
+}
+
+.content-title {
+  margin: 0;
+  font-size: 40px;
+  font-weight: 700;
+  color: #374151;
+  line-height: 56px;
+}
+
+.description {
+  font-size: 24px;
+  font-weight: 500;
+  color: #374151;
+  line-height: 32px;
 }
 
 footer {
-  
+  height: 160px;
+  padding: 32px 0;
+  background-color: #111827;
+}
+
+footer .container{
+  display: flex;
+  justify-content: space-between;
+}
+
+footer .codeit {
+  color: #9CA3AF;
+}
+
+footer .link {
+  display: flex;
+  gap: 30px;
+}
+
+footer .link a {
+  text-decoration: none;
+  color: #E5E7EB;
+}
+
+footer .sns {
+  display: flex;
+  gap: 12px;
 }
