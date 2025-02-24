@@ -13,8 +13,10 @@ body {
 }
 
 header {
-  width: 1120px;
-  padding: 9px 0;
+  max-width: 1520px;
+  min-width: 1120px;
+  width: 100%;
+  padding: 9px 200px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -46,12 +48,12 @@ header {
 .container {
   display: flex;
   justify-content: space-between;
-  width: 1120px;
+  max-width: 1120px;
   margin: 0 auto;
 }
 
 main section {
-  padding: 138px;
+  padding: 138px 0;
 }
 
 main .container {
@@ -121,6 +123,10 @@ footer {
 }
 
 footer .container{
+  max-width: 1520px;
+  min-width: 1120px;
+  width: 100%;
+  padding: 0 200px;
   display: flex;
   justify-content: space-between;
 }
