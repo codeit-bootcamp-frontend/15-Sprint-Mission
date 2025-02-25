@@ -23,7 +23,11 @@ header {
   align-items: center;
 }
 
-.login_button {
+.logo {
+  height: 51px;
+}
+
+.login-button {
   width: 128px;
   height: 48px;
   padding: 12px 23px;
@@ -50,6 +54,10 @@ header {
   justify-content: space-between;
   max-width: 1120px;
   margin: 0 auto;
+}
+
+.top-img {
+  height: 340px;
 }
 
 main section {
@@ -116,6 +124,10 @@ main .container {
   padding-top: 143px;
 }
 
+.bottom-img {
+  height: 397px;
+}
+
 footer {
   height: 160px;
   padding: 32px 0;
@@ -146,6 +158,12 @@ footer .link a {
 }
 
 footer .sns {
+  margin: 0;
   display: flex;
   gap: 12px;
+  list-style: none;
+}
+
+footer .sns img {
+  height: 20px;
 }
