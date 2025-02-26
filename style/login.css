@@ -34,9 +34,9 @@ input {
     margin: 16px auto 24px;
     width: 640px;
     border-radius: 12px;
-    background-color: #F3F4F6;
+    background-color: var(--gray100);
     font-weight: 400;
-    color: #1F2937;
+    color: var(--gray800);
 }
 
 .password {
@@ -55,9 +55,9 @@ input {
     padding: 16px;
     width: 640px;
     border-radius: 40px;
-    background-color: #3692FF;
+    background-color: var(--blue);
     font-weight: 600;
-    color: #F3F4F6;
+    color: var(--gray100);
 }
 
 .logo {
@@ -94,5 +94,5 @@ input {
 
 .sign-up {
     text-decoration: underline;
-    color: #3692FF;
+    color: var(--blue);
 }

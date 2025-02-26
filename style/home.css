@@ -35,10 +35,10 @@ nav {
   height: 48px;
   padding: 12px 23px;
   border-radius: 8px;
-  background-color: #3692FF;
+  background-color: var(--blue);
   font-weight: 600;
   text-align: center;
-  color: #F3F4F6;
+  color: var(--gray100);
   line-height: 26px;
 }
 
@@ -101,7 +101,7 @@ main .container {
   margin: 0;
   font-size: 40px;
   font-weight: 700;
-  color: #374151;
+  color: var(--gray700);
   line-height: 56px;
 }
 
@@ -110,16 +110,16 @@ main .container {
   height: 56px;
   padding: 16px 124px;
   border-radius: 40px;
-  background-color: #3692FF;
+  background-color: var(--blue);
   font-size: 20px;
   font-weight: 600;
-  color: #F9FAFB;
+  color: var(--gray50);
 }
 
 .description {
   font-size: 24px;
   font-weight: 500;
-  color: #374151;
+  color: var(--gray700);
   line-height: 32px;
 }
 
@@ -136,7 +136,7 @@ main .container {
 footer {
   height: 160px;
   padding: 32px 0;
-  background-color: #111827;
+  background-color: var(--gray900);
 }
 
 footer .container{
@@ -149,7 +149,7 @@ footer .container{
 }
 
 footer .codeit {
-  color: #9CA3AF;
+  color: var(--gray400);
 }
 
 footer .link {
@@ -159,7 +159,7 @@ footer .link {
 
 footer .link a {
   text-decoration: none;
-  color: #E5E7EB;
+  color: var(--gray200);
 }
 
 footer .sns {
