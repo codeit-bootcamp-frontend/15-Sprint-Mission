@@ -46,7 +46,8 @@ header {
 }
 
 .top {
-  padding-top: 200px;
+  display: flex;
+  align-items: flex-end;
 }
 
 .container {
@@ -58,6 +59,7 @@ header {
 
 .top-img {
   height: 340px;
+  vertical-align: bottom;
 }
 
 main section {
@@ -121,11 +123,13 @@ main .container {
 }
 
 .bottom {
-  padding-top: 143px;
+  display: flex;
+  align-items: flex-end;
 }
 
 .bottom-img {
   height: 397px;
+  vertical-align: bottom;
 }
 
 footer {
