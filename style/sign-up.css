@@ -11,7 +11,7 @@ body {
 
 form {
     width: 640px;
-    margin: 230px auto;
+    margin: 60px auto;
 }
 
 header {
@@ -39,7 +39,7 @@ input {
     color: #1F2937;
 }
 
-.password {
+.password, .check-password {
     position: relative;
 }
 
@@ -50,7 +50,7 @@ input {
     top: 53px;
 }
 
-.login-button {
+.sign-up-button {
     display: inline-block;
     padding: 16px;
     width: 640px;
@@ -84,7 +84,7 @@ input {
     width: 42px;
 }
 
-.new-member {
+.already-member {
     display: flex;
     justify-content: center;
     gap: 4px;
@@ -92,7 +92,7 @@ input {
     font-size: 14px;
 }
 
-.sign-up {
+.login {
     text-decoration: underline;
     color: #3692FF;
 }
