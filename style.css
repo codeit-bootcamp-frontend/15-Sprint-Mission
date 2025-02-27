@@ -1,0 +1,163 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+  width: 100%;
+  background-color: #FFFFFF;
+}
+
+.banner {
+  display: flex;
+  max-width: 1920px;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 200px;
+}
+
+.banner-main {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-logo img {
+  width: 100px;
+  height: 35px;
+  cursor: pointer;
+}
+
+#login {
+  padding: 10px;
+  width: 90px;
+  height: 35px;
+  font-size: 12px;
+  text-align: center;
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #3692FF;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.top-section,
+.bottom-section {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  background-color: #CFE5FF;
+}
+
+.top-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.top-text,
+.bottom-text {
+  position: absolute;
+  left: 200px;
+  bottom: 70px;
+}
+
+.top-title h2,
+.bottom-title h2 {
+  width: 200px;
+  height: 50px;
+  font-weight: bold;
+  margin-bottom: 32px;
+  color: #374151;
+  font-size: 22px;
+}
+
+#sightsee {
+  width: 250px;
+  height: 40px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  padding: 10px;
+  font-size: 14px;
+  color: #FFFFFF;
+  background-color: #3692FF;
+  border-radius: 20px;
+  text-decoration: none;
+}
+
+.top-content img,
+.bottom-content img {
+  position: absolute;
+  bottom: 0;
+  right: 200px;
+  width: 500px;
+  flex: 1;
+}
+
+.middle-section {
+  height: 1200px;
+}
+
+.gray-section {
+  height: 100px;
+  background-color: #f5f5f5;
+}
+
+.hot-item,
+.search,
+.register {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+}
+
+.hot-item img,
+.search img,
+.register img {
+  width: 600px;
+  height: 300px;
+}
+
+footer {
+  position: relative;
+  height: 100px;
+  color: #9CA3AF;
+  background-color: #111827;
+}
+
+.footer-text {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 200px;
+}
+
+.privacy,
+.faq {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.privacy {
+  margin: 0 10px;
+}
+
+.faq {
+  margin: 0 10px;
+}
