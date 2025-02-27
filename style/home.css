@@ -171,3 +171,13 @@ footer .sns {
 footer .sns img {
   height: 20px;
 }
+
+.login-button:hover,
+.shopping-button:hover {
+  background-color: var(--bluehover);
+}
+
+.login-button:active,
+.shopping-button:active {
+  background-color: var(--blueactive);
+}

@@ -55,7 +55,7 @@ input {
     padding: 16px;
     width: 640px;
     border-radius: 40px;
-    background-color: var(--blue);
+    background-color: var(--gray400);
     font-weight: 600;
     color: var(--gray100);
 }
@@ -95,4 +95,8 @@ input {
 .login {
     text-decoration: underline;
     color: var(--blue);
+}
+
+.sign-up-button:hover {
+    background-color: var(--blue);
 }
