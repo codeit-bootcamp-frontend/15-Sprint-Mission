@@ -1,5 +1,5 @@
 html {
-  font-size: 16px;
+  font-size: 62.5%;
   font-weight: 500;
   font-family: 'Pretendard', sans-serif;
 }
@@ -16,10 +16,10 @@ header {
 }
 
 nav {
-  max-width: 1520px;
-  min-width: 1120px;
+  max-width: 79.16vw;
+  min-width: 58.33vw;
   width: 100%;
-  padding: 9px 200px;
+  padding: 0.4688vw 10.41vw;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -27,23 +27,24 @@ nav {
 }
 
 .logo {
-  height: 51px;
+  height: 2.65vw;
 }
 
 .login-button {
-  width: 128px;
-  height: 48px;
-  padding: 12px 23px;
-  border-radius: 8px;
+  width: 6.66vw;
+  height: 2.50vw;
+  padding: 0.62vw 1.19vw;
+  border-radius: 0.41vw;
   background-color: var(--blue);
+  font-size: 0.83vw;
   font-weight: 600;
   text-align: center;
   color: var(--gray100);
-  line-height: 26px;
+  line-height: 1.35vw;
 }
 
 .top, .bottom {
-  height: 540px;
+  height: 28.12vw;
   background-color: #CFE5FF;
 }
 
@@ -55,27 +56,27 @@ nav {
 .container {
   display: flex;
   justify-content: space-between;
-  max-width: 1120px;
+  max-width: 58.33vw;
   margin: 0 auto;
 }
 
-.top-img {
-  height: 340px;
+.top-img, .bottom-img {
+  width: 38.85vw;
   vertical-align: bottom;
 }
 
 main section {
-  padding: 138px 0;
+  padding: 7.18vw 0;
 }
 
 main .container {
   display: flex;
   justify-content: center;
-  gap: 48px;
-  width: 988px;
-  height: 444px;
+  gap: 2.50vw;
+  width: 51.45vw;
+  height: 23.12vw;
   margin: 0 auto;
-  border-radius: 12px;
+  border-radius: 0.62vw;
   background-color: #FCFCFC;
 }
 
@@ -83,7 +84,7 @@ main .container {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 32px;
+  gap: 1.66vw;
 }
 
 .content.right {
@@ -91,36 +92,36 @@ main .container {
 }
 
 .badge {
-  font-size: 18px;
+  font-size: 0.93vw;
   font-weight: 700;
   color: #3692FF;
-  line-height: 26px;
+  line-height: 1.35vw;
 }
 
 .content-title {
   margin: 0;
-  font-size: 40px;
+  font-size: 2.08vw;
   font-weight: 700;
   color: var(--gray700);
-  line-height: 56px;
+  line-height: 2.91vw;
 }
 
 .shopping-button {
-  width: 360px;
-  height: 56px;
-  padding: 16px 124px;
-  border-radius: 40px;
+  width: 18.75vw;
+  height: 2.91vw;
+  padding: 0.83vw 6.45vw;
+  border-radius: 2.08vw;
   background-color: var(--blue);
-  font-size: 20px;
+  font-size: 1.04vw;
   font-weight: 600;
   color: var(--gray50);
 }
 
 .description {
-  font-size: 24px;
+  font-size: 1.25vw;
   font-weight: 500;
   color: var(--gray700);
-  line-height: 32px;
+  line-height: 1.66vw;
 }
 
 .bottom {
@@ -128,36 +129,33 @@ main .container {
   align-items: flex-end;
 }
 
-.bottom-img {
-  height: 397px;
-  vertical-align: bottom;
-}
-
 footer {
-  height: 160px;
-  padding: 32px 0;
+  height: 8.33vw;
+  padding: 1.66vw 0;
   background-color: var(--gray900);
 }
 
 footer .container{
-  max-width: 1520px;
-  min-width: 1120px;
+  max-width: 79.16vw;
+  min-width: 58.33vw;
   width: 100%;
-  padding: 0 200px;
+  padding: 0 10.41vw;
   display: flex;
   justify-content: space-between;
 }
 
 footer .codeit {
+  font-size: 0.83vw;
   color: var(--gray400);
 }
 
 footer .link {
   display: flex;
-  gap: 30px;
+  gap: 1.56vw;
 }
 
 footer .link a {
+  font-size: 0.83vw;
   text-decoration: none;
   color: var(--gray200);
 }
@@ -165,19 +163,19 @@ footer .link a {
 footer .sns {
   margin: 0;
   display: flex;
-  gap: 12px;
+  gap: 0.62vw;
 }
 
 footer .sns img {
-  height: 20px;
+  width: 1.04vw;
 }
 
 .login-button:hover,
 .shopping-button:hover {
-  background-color: var(--bluehover);
+  background-color: var(--blue-hover);
 }
 
 .login-button:active,
 .shopping-button:active {
-  background-color: var(--blueactive);
+  background-color: var(--blue-active);
 }
