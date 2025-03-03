@@ -11,13 +11,13 @@ body {
 
 form {
     width: 640px;
-    margin: 60px auto;
+    margin: 0 auto;
 }
 
 header {
     display: flex;
     justify-content: center;
-    margin-bottom: 24px;
+    margin:60px auto 24px;
 }
 
 label {
