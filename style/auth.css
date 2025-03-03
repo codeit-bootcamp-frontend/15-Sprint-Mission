@@ -1,0 +1,130 @@
+html {
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'Pretendard', sans-serif;
+  }
+  
+body {
+    margin: 0 auto;
+    width: 100%;
+}
+
+form {
+    width: 640px;
+    margin: 0 auto;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+}
+
+.login-page {
+    margin: 230px auto 24px;
+}
+
+.sign-up-page {
+    margin: 60px auto 24px;
+}
+
+label {
+    display: inline-block;
+    width: 640px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 26px;
+}
+
+input {
+    display: inline-block;
+    padding: 16px 20px;
+    margin: 16px auto 24px;
+    width: 640px;
+    border-radius: 12px;
+    background-color: var(--gray100);
+    font-weight: 400;
+    color: var(--gray800);
+}
+
+.password {
+    position: relative;
+}
+
+.password, .check-password {
+    position: relative;
+}
+
+.show-password {
+    width: 24px;
+    position: absolute;
+    right: 20px;
+    top: 53px;
+}
+
+.login-button {
+    display: inline-block;
+    padding: 16px;
+    width: 640px;
+    border-radius: 40px;
+    background-color: var(--gray400);
+    font-weight: 600;
+    color: var(--gray100);
+}
+
+.logo {
+    width: 396px;
+}
+
+.quick-login {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 23px;
+    margin: 24px auto;
+    border-radius: 8px;
+    background-color: #E6F2FF;
+}
+
+.sns {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.sns img {
+    width: 42px;
+}
+
+.new-member {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.already-member {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.sign-up {
+    text-decoration: underline;
+    color: var(--blue);
+}
+
+.login {
+    text-decoration: underline;
+    color: var(--blue);
+}
+
+.login-button:hover {
+    background-color: var(--blue);
+}
+
+.sign-up-button:hover {
+    background-color: var(--blue);
+}
