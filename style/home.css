@@ -1,12 +1,12 @@
 header {
   position: sticky;
   top: 0;
+  z-index: 1;
   background-color: #FFFFFF;
 }
 
 nav {
   max-width: 1520px;
-  min-width: 1120px;
   width: 100%;
   padding: 9px 200px;
   margin: 0 auto;
@@ -81,6 +81,7 @@ main .container {
 }
 
 .badge {
+  margin: 0;
   font-size: 18px;
   font-weight: 700;
   color: #3692FF;
@@ -107,6 +108,7 @@ main .container {
 }
 
 .description {
+  margin: 0;
   font-size: 24px;
   font-weight: 500;
   color: var(--gray700);
@@ -124,11 +126,11 @@ footer {
   background-color: var(--gray900);
 }
 
-footer .container{
+.footer-wrap {
   max-width: 1520px;
-  min-width: 1120px;
   width: 100%;
   padding: 0 200px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
 }
@@ -151,6 +153,7 @@ footer .link a {
 
 footer .sns {
   margin: 0;
+  padding: 0;
   display: flex;
   gap: 12px;
 }
@@ -167,4 +170,83 @@ footer .sns img {
 .login-button:active,
 .shopping-button:active {
   background-color: var(--blue-active);
+}
+
+@media (max-width: 1199px) {
+  br.PC {
+    display: none;
+  }
+
+  nav {
+    padding: 9px 24px;
+  }
+
+  .top {
+    height: 771px;
+    align-items: normal;
+    padding-top: 84px;
+  }
+
+  .top .content,
+  .bottom .content {
+    align-items: center;
+  }
+
+  .container,
+  main .container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 24px;
+    margin: 0 auto;
+  }
+
+  main section {
+    margin: 52px 0;
+    padding: 0;
+  }
+  
+  main .container {
+    width: 696px;
+    height: 720px;
+  }
+
+  main .container img {
+    width: 100%;
+  }
+
+  .img-right {
+    position: absolute;
+    width: 100%
+  }
+
+  .content.right {
+    padding: 549px 0;
+  }
+
+  .content {
+    gap: 24px;
+  }
+  
+  main .content-title {
+    font-size: 32px;
+    line-height: 42px;
+  }
+
+  .description {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 26px;
+  }
+
+  .bottom {
+    height: 927px;
+    align-items: normal;
+    padding-top: 201px;
+  }
+
+  .footer-wrap {
+    padding: 0 104px;
+  }
 }
