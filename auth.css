@@ -17,7 +17,7 @@
 
 html {
   font-size: 10px;
-  font-family: pretendard, sans-serif;
+  font-family: Pretendard, sans-serif;
   height: 100%;
 }
 body {
@@ -39,6 +39,7 @@ header {
 
 header a {
   display: flex;
+  cursor: pointer;
 }
 
 main {
@@ -68,10 +69,25 @@ input {
   position: relative;
 }
 
-.password-eye {
+.password-repeat-page {
+  position: relative;
+}
+
+.password-eye-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background-color: transparent;
   position: absolute;
   bottom: 1.6rem;
-  right: 1.6rem;
+  right: 2.8rem;
+  width: 2.4rem;
+  height: 2.4rem;
+  cursor: pointer;
+}
+
+.password-eye {
   width: 2.4rem;
   height: 2.4rem;
 }
@@ -87,6 +103,7 @@ input {
   line-height: 3.2rem;
   color: var(--gray100);
   margin: 1.4rem 0;
+  cursor: pointer;
 }
 
 .quick-login {
@@ -120,6 +137,7 @@ ul a {
 .button {
   width: 4.2rem;
   height: 4.2rem;
+  cursor: pointer;
 }
 
 footer {

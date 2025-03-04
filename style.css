@@ -17,7 +17,7 @@
 
 html {
   font-size: 10px;
-  font-family: pretendard, sans-serif;
+  font-family: Pretendard, sans-serif;
 }
 
 body {
@@ -48,17 +48,10 @@ header {
 
 header a {
   display: flex;
+  justify-content: center;
   align-items: center;
   gap: 1rem;
   text-decoration: none;
-}
-
-.header-title {
-  color: var(--blue);
-  font-size: 3rem;
-  font-weight: 700;
-  line-height: 3.46rem;
-  margin: 0;
 }
 
 .header-img {
@@ -415,6 +408,10 @@ main {
 
   header {
     padding: 0 16px;
+  }
+
+  .header-title {
+    width: 13.7em;
   }
 
   .container {
