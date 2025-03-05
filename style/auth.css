@@ -50,6 +50,13 @@ input {
     color: var(--gray800);
 }
 
+input::placeholder {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    color: var(--gray400);
+}
+
 .password {
     position: relative;
 }
