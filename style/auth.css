@@ -11,6 +11,21 @@ header {
     margin: 60px auto 24px;
 }
 
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+}
+
+.logo-img {
+    height: 103px;
+}
+
+.logo-text {
+    height: 62px;
+}
+
 form {
     width: 640px;
     margin: 0 auto;
@@ -26,7 +41,7 @@ label {
 
 input {
     display: inline-block;
-    padding: 16px 20px;
+    padding: 16px 24px;
     margin: 16px auto 24px;
     width: 640px;
     border-radius: 12px;
@@ -50,7 +65,7 @@ input {
 .password button, .check-password button {
     position: absolute;
     right: 20px;
-    top: 53px;
+    top: 54px;
     background-color: var(--gray100);
 }
 
@@ -64,14 +79,11 @@ input {
     color: var(--gray100);
 }
 
-.logo {
-    width: 396px;
-}
-
 .quick-login {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 74px;
     padding: 0 23px;
     margin: 24px auto;
     border-radius: 8px;
@@ -120,4 +132,66 @@ input {
 
 .sign-up-button:hover {
     background-color: var(--blue);
+}
+
+@media (max-width: 1199px) {
+    .login-page {
+        margin: 190px auto 24px;
+    }
+    
+    .sign-up-page {
+        margin: 48px auto 24px;
+    }
+}
+
+@media (max-width: 767px) {
+    .login-page {
+        margin: 80px auto 24px;
+    }
+    
+    .sign-up-page {
+        margin: 24px auto 24px;
+    }
+
+    form {
+        max-width: 400px;
+        width: 100%;
+        padding: 16px;
+    }
+
+    .logo {
+        gap: 12px;
+    }
+
+    .logo-img {
+        height: 52px;
+    }
+        
+    .logo-text {
+        height: 30px;
+    }
+
+    label {
+        max-width: 368px;
+        width: 100%;
+        font-size: 14px;
+        line-height: 24px;
+    }
+    
+    input {
+        max-width: 368px;
+        width: 100%;
+        margin: 4px auto 16px;
+    }
+
+    .password button, .check-password button {
+        right: 12px;
+        top: 40px;
+    }
+
+    .login-button, .sign-up-button {
+        max-width: 368px;
+        width: 100%;
+        border-radius: 40px;
+    }
 }

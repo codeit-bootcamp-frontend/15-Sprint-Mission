@@ -15,7 +15,7 @@ nav {
   align-items: center;
 }
 
-.main-page {
+.logo {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -277,7 +277,7 @@ footer .sns img {
   .logo-img {
     display: none;
   }
-  
+
   nav {
     padding: 9px 16px;
   }
