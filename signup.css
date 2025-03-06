@@ -5,6 +5,7 @@
   --secondary-font-color: #e5e7eb;
   --button-hover-color: #1967d6;
   --button-active-color: #1251aa;
+  --cool-gray-100 : #F3F4F6;
 }
 
 @font-face {
@@ -57,21 +58,24 @@
   gap: 24px;
 }
 
-.email-input-box {
+.input-box-container {
   width: 100%;
   height: 98px;
 }
 
-.password-input-box {
-  width: 100%;
-  height: 98px;
+.input-box-container label {
+  font-size: 18px;
+  font-weight: 700;
 }
+
 .input-box {
   margin-top: 16px;
   width: 100%;
   height: 56px;
   border-radius: 12px;
   padding: 16px 24px;
+  font-weight: 400px;
+  border : 1px soild var(--cool-gray-100);
 }
 
 .button-container {
@@ -86,6 +90,8 @@
   border-radius: 40px;
   background-color: var(--button-color);
   color: #f3f4f6;
+  font-size: 20px;
+  font-weight: 600;
 }
 
 .simple-login-box {
@@ -112,7 +118,7 @@
   align-items: center;
   font-weight: 500;
   color: #1f2937;
-  text-align: center;
+  height: 24px;
 }
 
 .logo-box {
