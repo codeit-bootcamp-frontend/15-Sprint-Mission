@@ -18,57 +18,73 @@
     <link rel="stylesheet" href="auth.css" />
   </head>
   <body>
-    <header>
-      <a href="/index.html">
-        <img
-          class="header-logo"
-          src="icon-img/loginLogo.svg"
-          alt="판다마켓 로고"
-        />
-      </a>
-    </header>
-    <main>
-      <form>
-        <div class="email-page">
-          <label for="email">이메일</label>
-          <input id="email" name="email" type="email" />
-        </div>
-        <div class="password-page">
-          <label for="password">비밀번호</label>
-          <input id="password" name="password" type="password" />
-          <button class="password-eye-button" type="button">
-            <img
-              class="password-eye"
-              src="icon-img/closed-eye.svg"
-              alt="눈에 사선이 쳐진 아이콘"
+    <div class="auth-container">
+      <header>
+        <a href="/index.html">
+          <img
+            class="header-logo"
+            src="icon-img/loginLogo.svg"
+            alt="판다마켓 로고"
+          />
+        </a>
+      </header>
+      <main>
+        <form>
+          <div class="email-page">
+            <label for="email">이메일</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              placeholder="이메일을 입력해주세요"
             />
-          </button>
-        </div>
-
-        <button class="login-button" type="submit">로그인</button>
-      </form>
-      <div class="quick-login">
-        <div class="sns-login-title">간편 로그인하기</div>
-        <ul class="buttons">
-          <li>
-            <a href="https://www.google.com/">
-              <img class="button" src="icon-img/google.svg" alt="구글 아이콘" />
-            </a>
-          </li>
-          <li>
-            <a href="https://www.kakaocorp.com/page/">
+          </div>
+          <div class="password-page">
+            <label for="password">비밀번호</label>
+            <input
+              id="password"
+              name="password"
+              type="password"
+              placeholder="비밀번호를 입력해주세요"
+            />
+            <button class="password-eye-button" type="button">
               <img
-                class="button"
-                src="icon-img/kakao.svg"
-                alt="카카오 아이콘"
+                class="password-eye"
+                src="icon-img/closed-eye.svg"
+                alt="눈에 사선이 쳐진 아이콘"
               />
-            </a>
-          </li>
-        </ul>
-      </div>
-    </main>
-    <footer>
-      <div>판다마켓이 처음이신가요? <a href="signup.html">회원가입</a></div>
-    </footer>
+            </button>
+          </div>
+
+          <button class="auth-button" type="submit">로그인</button>
+        </form>
+        <div class="quick-login">
+          <div class="sns-login-title">간편 로그인하기</div>
+          <ul class="buttons">
+            <li>
+              <a href="https://www.google.com/">
+                <img
+                  class="button"
+                  src="icon-img/google.svg"
+                  alt="구글 아이콘"
+                />
+              </a>
+            </li>
+            <li>
+              <a href="https://www.kakaocorp.com/page/">
+                <img
+                  class="button"
+                  src="icon-img/kakao.svg"
+                  alt="카카오 아이콘"
+                />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </main>
+      <footer>
+        <div>판다마켓이 처음이신가요? <a href="signup.html">회원가입</a></div>
+      </footer>
+    </div>
   </body>
 </html>
