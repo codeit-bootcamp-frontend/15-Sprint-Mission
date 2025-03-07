@@ -1,9 +1,9 @@
-.login-signup-body {
+.auth-body {
   display: flex;
   justify-content: center;
 }
 
-.login-signup-container {
+.auth-container {
   display: flex;
   flex-direction: column;
   width: 64rem;
@@ -12,8 +12,8 @@
   gap: 2.4rem;
 }
 
-/* login-signup header */
-.login-signup-header {
+/* auth header */
+.auth-header {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -21,17 +21,17 @@
   width: 100%;
 }
 
-.login-signup-header .logo {
+.auth-header .logo {
   width: 10rem;
 }
 
-.login-signup-header h1 a {
+.auth-header h1 a {
   font-size: 6rem;
   margin-left: 2rem;
 }
 
-/* login-signup form */
-.login-signup-form {
+/* auth form */
+.auth-form {
   display: flex;
   flex-direction: column;
   gap: 2.4rem;
@@ -56,7 +56,7 @@ input {
   width: 100%;
 }
 
-.login-signup-button {
+.auth-button {
   font-size: 2rem;
   font-weight: 600;
   line-height: 3.2rem;
@@ -128,7 +128,7 @@ input {
 }
 
 @media (max-width: 767px) {
-  .login-signup-container {
+  .auth-container {
     margin: 0 16px;
     max-width: 400px;
     width: 100%;

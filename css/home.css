@@ -100,7 +100,6 @@ header h1 a {
 }
 
 .home-card-content {
-  max-width: 95rem;
   margin: 13rem 0;
   padding: 0 1rem;
   display: flex;
@@ -177,8 +176,8 @@ footer {
 
 /* 
 responsive CSS
-desktop-first(1920이상) 
-breakpoint: 1920px, 1200px, 768px (375px미만은 고려하지 않습니다.)
+desktop-first(1920이상) 큰 모니터 
+breakpoint: 1919px(작은 모니터), 1199px(태블릿), 767px(모바일) (375px미만은 고려하지 않습니다.)
 */
 
 @media (max-width: 1919px) {
