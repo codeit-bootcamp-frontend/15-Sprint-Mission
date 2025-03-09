@@ -1,21 +1,16 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Pretendard Variable", Pretendard;
-}
-button{
-    border: 0;
-    background-color: transparent;
-    cursor:pointer;
-}
 @media(max-width:1920px){
     p{
         white-space: nowrap;
     }
 }
-.pandalogo, button,.p2, .icon{
+.pandalogo, button,.footer-nav span, .icon li{
     cursor: pointer;
+}
+section img{
+    width: 579px;
+}
+.body-top img, .body-bottom img{
+    width: 746px;
 }
 
 header{
@@ -26,6 +21,9 @@ header{
     justify-content: space-between;
     align-items: center;
     padding: 0 400px;
+}
+.pandalogo{
+    width:153px;
 }
 header button{
     flex-shrink: 0;
@@ -80,7 +78,8 @@ header button{
     border-radius: 12px;
     background-color: #FCFCFC;
 }
-.section.h1{
+.section.hot-item{
+    display:block;
     margin-bottom: 12px;
     font-size: 18px;
     font-weight: 700;
@@ -121,18 +120,19 @@ footer .text{
     top: 32px;
 }
 
-.p1{
+.footer-copyright{
     font-size: 16px;
     font-weight: 400;
     color:#9CA3AF;
 }
-.p2{
+.footer-nav{
     display:flex;
     gap: 30px;
+}
+.footer-nav span{
     font-size: 16px;
     font-weight: 400;
     color:#E5E7EB;
-    margin-left:30px;
 }
 .icon{
     flex-shrink: 0;
