@@ -41,6 +41,8 @@ nav {
 
 .logo > img {
   vertical-align: middle;
+  width: 153px;
+  height: 51px;
 }
 
 .btn {
@@ -264,4 +266,9 @@ footer {
 .footer-social {
   display: flex;
   gap: 12px;
+}
+
+.footer-social img {
+  width: 20px;
+  height: 20px;
 }
