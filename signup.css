@@ -5,7 +5,7 @@
   --secondary-font-color: #e5e7eb;
   --button-hover-color: #1967d6;
   --button-active-color: #1251aa;
-  --cool-gray-100 : #F3F4F6;
+  --cool-gray-100: #f3f4f6;
 }
 
 @font-face {
@@ -75,7 +75,7 @@
   border-radius: 12px;
   padding: 16px 24px;
   font-weight: 400px;
-  border : 1px soild var(--cool-gray-100);
+  border: 1px soild var(--cool-gray-100);
 }
 
 .button-container {
@@ -134,7 +134,6 @@
   align-items: center;
   gap: 4px;
 }
-
 
 .register-a {
   font-size: 14px;
