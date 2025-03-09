@@ -48,13 +48,6 @@ nav {
   background-color: #1251aa;
 }
 
-/* aria-disabled="true" 속성을 사용하여 버튼 비활성화 */
-.btn-login[aria-disabled="true"] {
-  background-color: #9ca3af;
-  cursor: not-allowed;
-  pointer-events: none;
-}
-
 /* main 영역 banner */
 .main-banner {
   padding-top: 200px;
@@ -103,7 +96,10 @@ nav {
   background-color: #1251aa;
 }
 
-/* aria-disabled="true" 속성을 사용하여 버튼 비활성화 */
+/* 
+  버튼을 비활성화할 경우, aria-disabled="true" 속성을 추가하여 스타일 적용 가능
+  단, 현재 사용되지 않는 기능이므로 필요할 때만 적용할 것
+*/
 .btn-items[aria-disabled="true"] {
   background-color: #9ca3af;
   cursor: not-allowed;
