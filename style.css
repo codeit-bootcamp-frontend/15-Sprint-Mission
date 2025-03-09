@@ -3,7 +3,7 @@
         white-space: nowrap;
     }
 }
-.pandalogo, button,.footer-nav span, .icon li{
+.pandalogo, button,.footer-nav span, .icon li, .quicklogin img{
     cursor: pointer;
 }
 section img{
@@ -14,6 +14,8 @@ section img{
 }
 
 header{
+    position: sticky;
+    top:0;
     width:100%;
     height: 70px;
     background-color: white;
@@ -44,18 +46,22 @@ header button{
     padding-top:200px;
     background-color: #CFE5FF;
 }
+.body-top text{
+    margin-bottom: 100px;
+}
 .body-top p,.body-bottom p{
     font-size: 40px;
     font-weight: 700;
     color:#374151
 }
 .body-top button{
+    display:block;
+    margin: 24px auto 60px;
     width:357px;
     height:56px;
     font-size: 20px;
     font-weight: 600;
     padding: 16px 124px;
-    margin-bottom:100px;
     border-radius: 40px;
     background-color: #3692FF;
     color:#F9FAFB;
@@ -147,7 +153,6 @@ footer .text{
     }
     footer .text{
         padding:0 200px;
-
     }
 }
 @media(min-width:1920px){
@@ -155,5 +160,102 @@ footer .text{
         width: 1920px;
         margin: 0 auto;
     }
-    
+}
+
+
+/* ------------------------ 스프린트 미션 2 - login, signup -------------------------*/
+:root{
+    --blue:#3692FF;
+    --gray900:#111827;
+    --gray800:#1F2937;
+    --gray700:#374151;
+    --gray600:#4B5563;
+    --gray500:#6B7280;
+    --gray400:#9CA3AF;
+    --gray200:#E5E7EB; 
+    --gray100:#F3F4F6;
+    --gray50:#F9FAFB;
+}
+
+.login-box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.login-pandalogo{
+    width: 396px;
+    display: block;
+    margin:0 auto;
+    margin-bottom:40px;
+}
+.login-box form{
+    display: grid;
+    grid-template-columns: minmax(auto, 640px);
+    gap:24px;
+}
+.login-box label{
+    display: block;
+    margin-bottom: 16px;
+    font-size: 18px;
+    font-weight: 700;
+    color:var(--gray800)
+}
+.login-box input{
+    font-size:16px;;
+    font-weight: 400;
+    color:var(--gray800);
+    width:100%;
+    padding: 16px 24px;
+    border-radius: 12px;
+    background-color: var(--gray100);
+}
+.password input{
+    background-image:url('/image/icon/btn_visibility_off.png');
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    background-size: 24px;
+}
+input#ckeck-password{
+    background-image:url('/image/icon/btn_visibility_on.png');
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    background-size: 24px;
+}
+.login-box button{
+    padding: 16px 125px;
+    border-radius: 40px;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--gray100);
+    background-color: var(--blue);
+}
+.quicklogin{
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    /* 왼쪽(span)은 가득 차고, 오른쪽(img)은 각각 내용 크기대로 */
+    align-items: center;
+    gap:16px;
+    padding:16px 23px;
+    border-radius: 8px;
+    background-color: #E6F2FF;
+}
+.quicklogin span{
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--gray800)
+}
+.quicklogin img{
+    width: 42px;
+}
+.firstlogin{
+    margin:0 auto;
+    font-size: 14px;
+    font-weight: 500;
+    color:var(--gray800);
+}
+.firstlogin span{
+    color:var(--blue);
+    text-decoration: underline;
+    cursor:pointer;
 }
