@@ -127,13 +127,13 @@
     text-align: right;
 }
 
-.section-text-top{
+.section-text-tag{
     font-size: 18px;
     font-weight: 700;
     color: var(--button-color);
     line-height: 26px;
 }
-.section-text-middle{
+.section-text-title{
     color: var(--main-font-color);
     font-size: 40px;
     font-weight: 700;
@@ -141,7 +141,7 @@
     margin-top: 12px;
 }
 
-.section-text-bottom{
+.section-text-subtitle{
     color: var(--main-font-color);
     font-size: 24px;
     font-weight: 500;
