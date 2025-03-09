@@ -4,10 +4,15 @@ body {
 
 /* haeder 영역 */
 header {
+  position: sticky;
   width: 100%;
   max-width: 1920px;
   min-height: 70px;
   padding: 9px 0;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: var(--white);
 }
 
 nav {
