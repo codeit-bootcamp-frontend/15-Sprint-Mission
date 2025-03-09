@@ -25,8 +25,8 @@ nav {
 }
 
 .btn {
-  background-color: #3692ff;
-  color: #f3f4f6;
+  background-color: var(--blue-100);
+  color: var(--gray-100);
 }
 
 .btn-login {
@@ -41,18 +41,18 @@ nav {
 }
 
 .btn-login:hover {
-  background-color: #1967d6;
+  background-color: var(--blue-200);
 }
 
 .btn-login:active {
-  background-color: #1251aa;
+  background-color: var(--blue-300);
 }
 
 /* main 영역 banner */
 .main-banner {
   padding-top: 200px;
   height: 540px;
-  background-color: #cfe5ff;
+  background-color: var(--blue-light);
 }
 
 .banner-wrap {
@@ -70,7 +70,7 @@ nav {
 }
 
 .banner-content h2 {
-  color: #374151;
+  color: var(--gray-700);
   height: 112px;
   font-size: 40px;
   font-weight: 700;
@@ -78,7 +78,7 @@ nav {
 }
 
 .btn-items {
-  background-color: #3692ff;
+  background-color: var(--blue-100);
   width: 357px;
   height: 56px;
   padding: 16px 123px;
@@ -89,11 +89,11 @@ nav {
 }
 
 .btn-items:hover {
-  background-color: #1967d6;
+  background-color: var(--blue-200);
 }
 
 .btn-items:active {
-  background-color: #1251aa;
+  background-color: var(--blue-300);
 }
 
 /* 
@@ -101,7 +101,7 @@ nav {
   단, 현재 사용되지 않는 기능이므로 필요할 때만 적용할 것
 */
 .btn-items[aria-disabled="true"] {
-  background-color: #9ca3af;
+  background-color: var(--gray-400);
   cursor: not-allowed;
   pointer-events: none;
 }
@@ -132,7 +132,7 @@ nav {
 .content-item {
   display: flex;
   align-items: center;
-  background-color: #fcfcfc;
+  background-color: var(--gray);
   border-radius: 12px;
 }
 
@@ -162,21 +162,21 @@ nav {
 }
 
 .content-text .badge {
-  color: #3692ff;
+  color: var(--blue-100);
   font-weight: 700;
   font-size: 18px;
   line-height: 26px;
 }
 
 .content-text h2 {
-  color: #374151;
+  color: var(--gray-700);
   font-weight: 700;
   font-size: 40px;
   line-height: 56px;
 }
 
 .content-text .content-desc {
-  color: #374151;
+  color: var(--gray-700);
   font-weight: 500;
   font-size: 24px;
   line-height: 32px;
@@ -186,7 +186,7 @@ nav {
 .main-bottom {
   padding-top: 143px;
   height: 540px;
-  background-color: #cfe5ff;
+  background-color: var(--blue-light);
 }
 
 .bottom-wrap {
@@ -206,7 +206,7 @@ nav {
 }
 
 .bottom-content h2 {
-  color: #374151;
+  color: var(--gray-700);
   height: 112px;
   font-size: 40px;
   font-weight: 700;
@@ -217,7 +217,7 @@ nav {
 footer {
   max-width: 1920px;
   height: 160px;
-  background-color: #111827;
+  background-color: var(--gray-900);
 }
 
 .footer-container {
@@ -229,7 +229,7 @@ footer {
 }
 
 .footer-copyright {
-  color: #9ca3af;
+  color: var(--gray-400);
 }
 
 .footer-links > ul {
@@ -238,7 +238,7 @@ footer {
 }
 
 .footer-links a {
-  color: #e5e7eb;
+  color: var(--gray-200);
 }
 
 .footer-social {
