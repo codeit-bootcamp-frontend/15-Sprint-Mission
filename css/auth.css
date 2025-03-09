@@ -1,0 +1,122 @@
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 231px auto;
+  width: 640px;
+  height: 618px;
+}
+
+.logo-auth-box {
+ display: flex;
+ justify-content: center; 
+}
+
+.logo-auth-box img{
+  width: 396px;
+  height: 132px;
+}
+
+.cont-area {
+  margin-top: 40px;
+}
+
+.group-inp {
+  height: 98px;
+  margin-bottom: 24px;
+}
+
+.group-inp label {
+  color: var(--gray-800);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 26px;
+  margin-bottom: 16px;
+}
+
+.group-inp input {
+  background-color: var(--gray-100);
+  width: 100%;
+  height: 56px;
+  border: none;
+  border-radius: 12px;
+  margin: 16px 0 24px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+  vertical-align: middle;
+  padding-left: 24px;
+  outline: none;
+}
+
+#inputPwd {
+  font-size: 18px;
+  color: var(--gray-800);
+}
+
+.inputPwd-wrap {
+  position: relative;
+}
+
+.inputPwd-wrap i {
+  position: absolute;
+  top: 34px;
+  right: 16px;
+  cursor: pointer;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 16px 124px;
+  border-radius: 40px;
+  border: none;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.social-login-wrap {
+  width: 100%;
+  height: 74px;
+  border-radius: 8px;
+  background-color: #e6f2ff;
+  padding: 16px 23px;
+  margin-top: 24px;
+  gap: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.social-login-title {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 26px;
+  color: var(--gray-800);
+}
+
+.social-login-wrap ul {
+  display: flex;
+  gap: 16px;
+}
+
+.social-login-wrap img {
+  width: 42px;
+  height: 42px;
+}
+
+.sign-up-link {
+    display: flex;
+    justify-content: center;
+    margin-top: 24px;
+    gap: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 24px;
+}
+
+.sign-up-link a {
+  color: var(--blue-100);
+  text-decoration: underline;
+}
