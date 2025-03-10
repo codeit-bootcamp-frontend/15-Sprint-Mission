@@ -29,13 +29,21 @@
       <label class="input-label" for="password" >
         비밀번호
       </label>
-      <input class="input-field input-password" id="password" name="password" type="password" placeholder="비밀번호를 입력해주세요">
-     
+      <div class="input-password">
+        <input class="input-field" id="password" name="password" type="password" placeholder="비밀번호를 입력해주세요">
+        <button class="password-visibility" type="button">
+          <img class="password-Eye" src="./img/passwordBlind.svg" alt="비밀번호 가리기" />
+        </button>
+      </div>
       <label class="input-label" for="password-repeat" >
         비밀번호 확인
       </label>
+      <div class="input-password">
       <input class="input-field input-password"  id="password-repeat" name="password-repeat" type="password" placeholder="비밀번호를 다시 한 번 입력해주세요">
-
+      <button class="password-visibility" type="button">
+        <img class="password-Eye" src="./img/passwordEye.svg" alt="비밀번호 보이기" />
+      </button>
+    </div>
       <button type="submit" class="sign-button">
         회원가입
       </button>
