@@ -1,3 +1,5 @@
+@import 'reset.css';
+
 :root {
   --button-color: #3692ff;
   --bg-color: #cfe5ff;
@@ -13,14 +15,6 @@
     format('woff');
   font-weight: 400;
   font-style: normal;
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: Pretendard;
-  height: 100%;
 }
 
 .container {
