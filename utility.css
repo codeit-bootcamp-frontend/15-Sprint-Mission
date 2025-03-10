@@ -1,27 +1,24 @@
-.btn-large, .btn-login {
+.btn-large, .btn-small {
   background-color: #3692FF;
   color: #F3F4F6;
 }
 
-.btn-large:hover, .btn-login:hover {
+.btn-large:hover, .btn-small:hover {
   background-color: #1967D6;
 }
 
-.btn-large:active, .btn-login:active {
+.btn-large:active, .btn-small:active {
   background-color: #1251AA;
-}
-
-.btn-login {
-  width: 8rem;
-  height: 3rem;
-  padding: 0.75rem 1.5rem;
-  border-radius: 8px;
-  text-align: center;
 }
 
 .btn-large {
   padding: 1rem 7.75rem;
   border-radius: 40px;
+}
+
+.btn-small {
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
 }
 
 .bold {
