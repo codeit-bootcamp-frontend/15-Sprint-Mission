@@ -1,5 +1,5 @@
 :root {
-	--gray900: #111827;
+    --gray900: #111827;
  	--gray800: #1F2937;
     --gray700: #374151;
     --gray600: #4B5563;
@@ -10,8 +10,23 @@
     --gray50: #F9FAFB;
 
     --blue: #3692FF;
-    --bluehover:#1967D6;
-    --blueactive: #1251AA;
+    --blue-hover: #1967D6;
+    --blue-active: #1251AA;
 
     --red: #F74747;
 }
+
+html {
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'Pretendard', sans-serif;
+  }
+  
+  body {
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  button, a {
+    cursor: pointer;
+  }

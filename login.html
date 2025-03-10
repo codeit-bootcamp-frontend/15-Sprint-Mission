@@ -4,37 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>판다마켓 - 로그인</title>
-    <link rel="icon" href="img/panda_favicon.png">
-    <link rel="stylesheet" href="/style/login.css">
+    <link rel="icon" href="img/favicon.png">
     <link rel="stylesheet" href="/style/reset.css">
     <link rel="stylesheet" href="/style/global.css">
+    <link rel="stylesheet" href="/style/auth.css">
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css"/>
 </head>
 <body>
+    <header class="login-page">
+        <a  class="logo" href="/">
+            <img class="logo-img" src="img/logo_img.png" alt="판다마켓 로고">
+            <img class="logo-text" src="img/logo_text.png" alt="판다마켓 로고">
+        </a>
+    </header>
     <form>
-        <header>
-            <a href="/"><img class="logo" src="/img/logo_big.png" alt="판다마켓 로고"></a>
-        </header>
-
         <div>
             <label for="email">이메일</label>
-            <input id="email" type="email" name="email">
+            <input id="email" type="email" name="email" placeholder="이메일을 입력해주세요">
         </div>
         <div class="password">
             <label for="password">비밀번호</label>
-            <input id="password" type="password" name="password">
-            <img class="show-password" src="/img/visibility_off.png">
+            <input id="password" type="password" name="password" placeholder="비밀번호를 입력해주세요">
+            <button type="button"><img class="show-password" src="/img/visibility_off.png"></button>
         </div>
-        <button class="login-button">로그인</button>
+        <button class="login-button" type="submit">로그인</button>
 
         <div class="quick-login">
             <span>간편 로그인하기</span>
             <ul class="sns">
                 <li>
-                    <a href="https://www.google.com"><img src="/img/google.png" alt="Google"></a>
+                    <a href="https://www.google.com"><img src="/img/ic_google.png" alt="Google"></a>
                 </li>
                 <li>
-                    <a href="https://www.kakaocorp.com/page"><img src="/img/kakaotalk.png" alt="Kakao"></a>
+                    <a href="https://www.kakaocorp.com/page"><img src="/img/ic_kakaotalk.png" alt="Kakao"></a>
                 </li>
             </ul>
         </div>
