@@ -211,7 +211,6 @@ footer .sns img {
 
   .container,
   main .container {
-    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -229,17 +228,13 @@ footer .sns img {
     height: auto;
   }
 
+  main .container.right {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
   main .container img {
     width: 100%;
-  }
-
-  .img-right {
-    position: absolute;
-    width: 100%
-  }
-
-  .content.right {
-    padding: 549px 0 0;
   }
 
   .content {
@@ -311,10 +306,6 @@ footer .sns img {
 
   main .container {
     width: 344px;
-  }
-
-  .content.right {
-    padding: 275px 0 0;
   }
 
   .badge {
