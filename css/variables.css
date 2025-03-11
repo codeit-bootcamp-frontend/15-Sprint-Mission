@@ -1,0 +1,13 @@
+:root {
+  --gray-200: #e5e7eb;
+
+  --blue: #3692ff;
+  --blue-hover: #1967d6;
+  --blue-focus: #1251aa;
+
+  --text-primary: #374151;
+  --text-secondary: #9ca3af;
+  --footer-background: #111827;
+  --border-color: #dfdfdf;
+  --background-light: #f3f4f6;
+}
