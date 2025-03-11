@@ -1,16 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>판다마켓</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
 </head>
 <body>
     <header>
-        <img class="pandalogo" src="/sprint image/Property 1=sm.png" alt="pandamarket logo" onclick="window.location.href='/'">
+        <a href="/index.html">
+            <img class="pandalogo" src="/image/logo.png" alt="판다마켓">
+        </a>
         <button class="login" onclick="window.location.href='/login.html'">로그인</button>         
     </header>
     <body>
@@ -19,13 +22,13 @@
                 <p>일상의 모든 물건을<br>거래해 보세요</p>
                 <button onclick="window.location.href='/items.page'">구경하러 가기</button>
             </div>    
-            <img src="/sprint image/Img_home_top.png" alt="hello panda image">
+            <img src="/image/img_home_top.png" alt="hello panda image">
         </section>
         <section class="section1">
             <div class="box">
-                <img class="section img" src="/sprint image/landing/Img_home_01.png" alt="section1 image">
+                <img class="section img" src="/image/img_home_01.png" alt="section1 image">
                 <div class="text">
-                    <h1 class="section h1">Hot item</h1>
+                    <span class="section hot-item">Hot item</span>
                     <h2 class="section h2">인기 상품을<br>확인해보세요</h2>
                     <p class="section p">가장 핫한 중고거래 물품을<br>판다 마켓에서 확인해 보세요</p>
                 </div>
@@ -34,18 +37,18 @@
         <section class="section2">
             <div class="box">
                 <div class="text">
-                    <h1 class="section h1">Hot item</h1>
+                    <span class="section hot-item">Hot item</span>
                     <h2 class="section h2">인기 상품을<br>확인해보세요</h2>
                     <p class="section p">가장 핫한 중고거래 물품을<br>판다 마켓에서 확인해 보세요</p>
                     </div>
-                <img class="section img" src="/sprint image/landing/Img_home_02.png" alt="section1 image">
+                <img class="section img" src="/image/img_home_02.png" alt="section1 image">
             </div>
         </section>
         <section class="section3">
             <div class="box">
-                <img class="section img" src="/sprint image/landing/Img_home_03.png" alt="section1 image">
+                <img class="section img" src="/image/img_home_03.png" alt="section1 image">
                 <div class="text">
-                <h1 class="section h1">Hot item</h1>
+                <span class="section hot-item">Hot item</span>
                 <h2 class="section h2">인기 상품을<br>확인해보세요</h2>
                 <p class="section p">가장 핫한 중고거래 물품을<br>판다 마켓에서 확인해 보세요</p>
                 </div>
@@ -55,24 +58,44 @@
                 <div class="text">
                 <p>믿을 수 있는<br>판다마켓 중고 거래</p>
                 </div>    
-                <img src="/sprint image/Img_home_bottom.png" alt="hello panda image">
+                <img src="/image/img_home_bottom.png" alt="hello panda image">
         </section>
     </body>
     <footer>
         <div class="text">
-            <p class="p1">
+            <p class="footer-copyright">
                 ©codeit - 2024
             </p>
-            <p class="p2">
-                <span onclick="window.location.href='/privacy.html'">Privacy Policy</span>
-                <span onclick="window.location.href='/faq.html'">FAQ</span>
+            <p class="footer-nav">
+                <a href="/privacy.html">
+                    <span>Privacy Policy</span>
+                </a>
+                <a href="/faq.html">
+                    <span>FAQ</span>
+                </a>
             </p>
-            <div class="icon">
-                <img src="/sprint image/icon/ic_facebook.png" alt="ic_facebook" onclick="window.open('https://www.facebook.com/','_blank')">
-                <img src="/sprint image/icon/ic_twitter.png" alt="ic_twitter" onclick="window.open('https://x.com/','_blank')">
-                <img src="/sprint image/icon/ic_youtube.png" alt="ic_youtube" onclick="window.open('https://youtube.com/','_blank')">
-                <img src="/sprint image/icon/ic_instagram.png" alt="ic_instagram" onclick="window.open('https://instagram.com/','_blank')">
-            </div> 
+            <ul class="icon">
+                <li>
+                    <a href="https://www.facebook.com/" target="_blank">
+                        <img src="/image/icon/facebook.png" alt="ic_facebook">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://x.com/" target="_blank">
+                        <img src="/image/icon/twitter.png" alt="ic_twitter">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://youtube.com/" target="_blank">
+                        <img src="/image/icon/youtube.png" alt="ic_youtube">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://instagram.com/" target="_blank">
+                        <img src="/image/icon/instagram.png" alt="ic_instagram">
+                    </a>
+                </li>
+            </ul> 
         </div>
     </footer>
 </body>
