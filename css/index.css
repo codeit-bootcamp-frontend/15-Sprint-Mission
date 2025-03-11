@@ -396,33 +396,38 @@ footer {
     .header-logo-contain {
         width: 10.3rem;
     }
+
     .banner-container {
-        height: 54rem;
-        flex-direction: column;
-        justify-content: flex-end;
-        align-items: center;
+        width: 100%;
+        align-items: flex-end;
     }
     .banner-content {
-        width: 100%;
-        height: 69.7rem;
-        flex-direction: column;
+        width: 37.5rem;
+        height: 49.2rem;
+        gap: 13.2rem;
+        justify-content: center;
     }
     .banner-text {
-        width: 100%;
-        height: 13.6rem;
-        gap: 2.4rem;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
+        width: 24rem;
+        height: 15.6rem;
+        gap: 1.8rem;
     }
     .banner-message, .banner-message-enter {
         text-align: center;
-        width: 100%;
-        height: 5.6rem;
-        display: inline;
+        width: 24rem;
+        height: 9rem;
+        font-size: 3.2rem;
+    }
+    .surf-button {
+        width: 24rem;
+        height: 4.8rem;
+        font-size: 1.8rem;
+        line-height: 2.6rem;
     }
     .panda-image {
-        width: 74.4rem;
+        height: 20.4rem;
+        overflow: hidden;
+        object-fit: cover;
     }
     .section-main {
         padding: 2.4rem;
@@ -437,8 +442,8 @@ footer {
         align-items: flex-start;
     }
     .section-image {
-        width: 69.6rem;
-        height: 52.4rem;
+        width: 34.4rem;
+        height: 25.9rem;
     }
     .section-text {
         width: 31.9rem;
