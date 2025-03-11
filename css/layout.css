@@ -11,6 +11,19 @@
   border-bottom: 1px solid #dfdfdf;
 }
 
+.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: #ffffff;
+}
+
+body {
+  padding-top: 70px;
+}
+
 .header-container {
   max-width: 1520px;
   padding: 0;
