@@ -1,0 +1,257 @@
+/* 대형 데스크탑 (1920px 이상) */
+@media (min-width: 1920px) {
+  .header,
+  .main-banner,
+  .bottom-banner {
+    width: 100%;
+  }
+
+  .header-container {
+    max-width: 1520px;
+  }
+
+  /* 배너 배경 이미지 조정 */
+  #hero,
+  #bottomBanner {
+    background-size: 45%;
+    background-position: 85% bottom;
+  }
+
+  /* 배너 컨테이너 최대 너비 제한 */
+  .wrapper {
+    max-width: 1520px;
+  }
+}
+
+/* 중형-대형 데스크탑 (1600px 이하) */
+@media (max-width: 1600px) {
+  .logo {
+    margin-left: 100px;
+  }
+
+  .login-btn {
+    margin-right: 100px;
+  }
+
+  .wrapper {
+    padding: 0 50px;
+  }
+}
+
+/* 소형-중형 데스크탑 (1200px 이하) */
+@media (max-width: 1200px) {
+  .wrapper {
+    padding: 0 40px;
+  }
+
+  .feature {
+    padding: 100px 0;
+  }
+
+  .banner {
+    background-size: 50%;
+  }
+}
+
+/* 태블릿 (992px 이하) */
+@media (max-width: 992px) {
+  .logo {
+    margin-left: 30px;
+  }
+
+  .login-btn {
+    margin-right: 30px;
+  }
+
+  .wrapper {
+    padding: 0 30px;
+  }
+
+  #hero,
+  #bottomBanner {
+    background-image: none;
+  }
+
+  .banner {
+    height: auto;
+    padding: 60px 0;
+    background-position: center bottom;
+    text-align: center;
+  }
+
+  #hero,
+  #bottomBanner {
+    background-size: 70%;
+    background-position: center bottom 20px;
+  }
+
+  h1 {
+    font-size: 34px;
+    line-height: 48px;
+  }
+
+  .pill-button,
+  .action-btn {
+    padding: 16px 60px;
+    font-size: 18px;
+  }
+
+  .feature {
+    flex-direction: column;
+    text-align: center;
+    padding: 60px 0;
+    gap: 30px;
+  }
+
+  .feature:nth-child(2) {
+    text-align: center;
+  }
+
+  .feature img {
+    width: 70% !important;
+    margin: 0 auto;
+  }
+
+  .feature-description {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  #features {
+    padding-bottom: 30px;
+  }
+}
+
+/* 대형 모바일 (768px 이하) */
+@media (max-width: 768px) {
+  .header {
+    height: 60px;
+  }
+
+  .logo img {
+    width: 120px;
+  }
+
+  .login-btn {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  .banner {
+    padding: 50px 0;
+  }
+
+  #hero,
+  #bottomBanner {
+    background-size: 90%;
+  }
+
+  .feature {
+    padding: 40px 0;
+  }
+
+  .feature img {
+    width: 85% !important;
+  }
+
+  .pill-button,
+  .action-btn {
+    padding: 14px 40px;
+    font-size: 16px;
+  }
+
+  .feature-tag {
+    font-size: 16px;
+  }
+
+  .feature-description {
+    font-size: 18px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .footer-links {
+    justify-content: center;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+}
+
+/* 소형 모바일 (480px 이하) */
+@media (max-width: 480px) {
+  .header {
+    height: 50px;
+  }
+
+  .logo img {
+    width: 100px;
+  }
+
+  .logo {
+    margin-left: 15px;
+  }
+
+  .login-btn {
+    margin-right: 15px;
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+
+  .wrapper {
+    padding: 0 20px;
+  }
+
+  h1 {
+    font-size: 28px;
+    line-height: 38px;
+  }
+
+  .pill-button,
+  .action-btn {
+    padding: 12px 30px;
+    font-size: 14px;
+    margin-top: 20px;
+  }
+
+  .feature img {
+    width: 100% !important;
+  }
+
+  .feature-tag {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+
+  .hot-item-text h2,
+  .search-text h2,
+  .register-text h2,
+  .bottom-container h2 {
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: 12px;
+  }
+
+  .feature-description {
+    font-size: 16px;
+    line-height: 24px;
+    margin-top: 16px;
+  }
+
+  .footer {
+    padding: 24px 0;
+  }
+
+  .footer-links {
+    gap: 15px;
+  }
+
+  .footer-links a {
+    font-size: 14px;
+  }
+}
