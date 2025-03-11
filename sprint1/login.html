@@ -12,7 +12,45 @@
     />
     <link rel="stylesheet" href="assets/css/styles.css" />
   </head>
-  <body>
-    login
+  <body class="login-body">
+    <!-- 로고 -->
+    <div class="big-logo">
+      <img src="/assets/images/logo.png" alt="판다마켓 로고" />
+      판다마켓
+    </div>
+    <!-- 로그인 영역 -->
+    <div class="login-box">
+      <!-- 로그인 -->
+      <div class="login-wrapper">
+        <div class="input-wrapper">
+          <div>
+            <p><label for="email">이메일</label></p>
+            <input id="email" type="text" placeholder="" />
+          </div>
+          <div>
+            <p><label for="password">비밀번호</label></p>
+            <input id="password" type="password" placeholder="" />
+          </div>
+        </div>
+        <input class="login-button" type="submit" value="로그인" />
+      </div>
+      <!-- 간편 로그인 -->
+      <div class="simple-login">
+        <div>간편 로그인하기</div>
+        <div class="simple-login-btns">
+          <a href="https://www.google.com/">
+            <img src="/assets/images/google_logo.png" alt="구글 로그인" />
+          </a>
+          <a href="https://www.kakaocorp.com/page/">
+            <img src="/assets/images/kakao_logo.png" alt="카카오 로그인" />
+          </a>
+        </div>
+      </div>
+      <!-- 회원가입 -->
+      <div class="signin-wrapper">
+        <p>판다마켓이 처음이신가요?</p>
+        <a href="/signup">회원가입</a>
+      </div>
+    </div>
   </body>
 </html>
