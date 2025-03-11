@@ -161,7 +161,7 @@ input::placeholder {
     }
 
     .login-form, .sign-up-form {
-        max-width: 400px;
+        max-width: 432px;
         width: 100%;
         padding: 16px;
     }
@@ -185,7 +185,6 @@ input::placeholder {
     }
     
     input {
-        max-width: 368px;
         width: 100%;
         margin: 4px auto 16px;
     }
@@ -196,7 +195,6 @@ input::placeholder {
     }
 
     .login-button, .sign-up-button {
-        max-width: 368px;
         width: 100%;
         border-radius: 40px;
     }
