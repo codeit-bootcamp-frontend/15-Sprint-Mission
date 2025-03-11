@@ -1,0 +1,165 @@
+.logo{
+    width: 396px;
+    height: 132px;
+    margin-bottom: 40px;
+}
+.login_box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.logo_box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 231px;
+}
+.logo_box #logo{
+    width: 396px;
+    height: 132px;
+    margin-bottom: 40px;
+}
+#email{
+    width: 640px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+}
+.email{
+    font-weight: 700;
+    font-size: 18px;
+    color: #1F2937;
+    line-height: 26px;
+    margin-bottom: 16px;
+    left: 0px;
+}
+.email_input{
+    width: 100%;
+    background-color: #F3F4F6;
+    border-radius: 12px;
+    height: 56px;
+    margin: 0;
+}
+#nickname{
+    width: 640px;
+    display: flex;
+    flex-direction: column;
+}
+.nickname{
+    font-weight: 700;
+    font-size: 18px;
+    color: #1F2937;
+    line-height: 26px;
+    margin-bottom: 16px;
+    left: 0px;
+}
+.nickname_input{
+    width: 100%;
+    background-color: #F3F4F6;
+    border-radius: 12px;
+    height: 56px;
+    margin: 0;
+}
+#password{
+    width: 640px;
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+}
+.password{
+    font-weight: 700;
+    font-size: 18px;
+    color: #1F2937;
+    line-height: 26px;
+    left: 0px;
+    margin: 24px 0;
+}
+.password_input{
+    width: 100%;
+    background-color: #F3F4F6;
+    border-radius: 12px;
+    height: 56px;
+    margin: 0;
+}
+#password_check{
+    width: 640px;
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+}
+.password_check{
+    font-weight: 700;
+    font-size: 18px;
+    color: #1F2937;
+    line-height: 26px;
+    left: 0px;
+    margin-bottom: 24px;
+}
+.password_check_input{
+    width: 100%;
+    background-color: #F3F4F6;
+    border-radius: 12px;
+    height: 56px;
+    margin: 0;
+}
+.signup_button{
+    width: 100%;
+    height: 56px;
+    border-radius: 40px;
+    background-color: #3692FF;
+    color: #F3F4F6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 24px 0;
+}
+#easy_login {
+    width: 100%;
+    height: 74px;
+    display: flex;
+    background-color: #E6F2FF;
+    border-radius: 8px;
+    margin-bottom: 24px;
+}
+.easy_login{
+    color: #1F2937;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 26px;
+    left: 0px;
+}
+.easy_login_box{
+    margin: 16px 23px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.login_sns{
+    display: flex;
+}
+.login_google{
+    width: 42px;
+    height: 42px;
+    margin-right: 16px;
+    
+}
+.login_kakao{
+    width: 42px;
+    height: 42px;
+}
+.signup{
+    display: flex;
+}
+.signup_ask{
+    font-weight: 500;
+    font-size: 14px;
+    color: #1F2937;
+    margin: 0;
+}
+.signup_link{
+    font-weight: 500;
+    font-size: 14px;
+    color: #3692FF;
+}
