@@ -14,7 +14,7 @@
       crossorigin
       href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
     />
-    <title>로그인 - 판다마켓</title>
+    <title>회원가입 - 판다마켓</title>
   </head>
   <body>
     <div class="auth-container">
@@ -35,6 +35,15 @@
           />
         </div>
         <div class="input-item">
+          <label for="nickname">닉네임</label>
+          <input
+            id="nickname"
+            name="nickname"
+            type="text"
+            placeholder="닉네임을 입력해 주세요"
+          />
+        </div>
+        <div class="input-item">
           <label for="password">비밀번호</label>
           <div class="input-wrapper">
             <input
@@ -51,9 +60,26 @@
             </button>
           </div>
         </div>
+        <div class="input-item">
+          <label for="passwordConfirmation">비밀번호 확인</label>
+          <div class="input-wrapper">
+            <input
+              id="passwordConfirmation"
+              name="passwordConfirmation"
+              type="password"
+              placeholder="비밀번호를 다시 한 번 입력해 주세요"
+            />
+            <button type="button" class="toggle-password">
+              <img
+                src="public/icons/ic_visibility_off_24px.png"
+                alt="비밀번호 숨김"
+              />
+            </button>
+          </div>
+        </div>
 
         <button type="submit" class="button pill-button full-width">
-          로그인
+          회원가입
         </button>
       </form>
 
@@ -74,7 +100,7 @@
       </div>
 
       <div class="auth-switch">
-        판다마켓이 처음이신가요? <a href="signup.html">회원가입</a>
+        이미 회원이신가요? <a href="login.html">로그인</a>
       </div>
     </div>
   </body>
