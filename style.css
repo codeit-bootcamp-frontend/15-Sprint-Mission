@@ -1,0 +1,365 @@
+/* 기본 요구사항 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Pretendard", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+  color: #374151;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.header {
+  padding: 20px 0;
+  width: 100%;
+}
+
+.header-container {
+  max-width: 1520px;
+  padding: 0;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  margin-left: 200px;
+}
+
+.logo img {
+  width: 153px;
+  height: 51px;
+}
+
+.login-btn {
+  width: 128px;
+  height: 48px;
+  background-color: #3692ff;
+  color: white;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  margin-right: 200px;
+  transition: background-color 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.login-btn:hover {
+  background-color: #1967d6;
+}
+
+.main-banner {
+  background-color: #cfe5ff;
+  padding: 50px 0 0 0;
+  overflow: hidden;
+  width: 100%;
+  height: 540px;
+}
+
+.main-banner-container {
+  max-width: 1520px;
+  margin: 0 auto;
+  padding: 0 200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.main-banner-text h1 {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 56px;
+  margin-bottom: 30px;
+}
+
+.action-btn {
+  background-color: #3692ff;
+  border-radius: 40px;
+  padding: 16px 124px;
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.action-btn:hover {
+  background-color: #1967d6;
+}
+
+.main-banner-image {
+  flex: 1;
+  display: flex;
+  margin-top: auto;
+  margin-bottom: 0;
+}
+
+.hot-item-container,
+.search-container,
+.register-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.hot-item {
+  padding: 80px 0;
+}
+
+.hot-item-container {
+  background-color: #fcfcfc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hot-item-image {
+  flex: 1;
+  margin-right: 40px;
+}
+
+.hot-item-text {
+  flex: 1;
+}
+
+.item-tag,
+.search-tag,
+.register-tag {
+  display: inline-block;
+  color: #3692ff;
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+
+.hot-item-text h2,
+.search-text h2,
+.register-text h2 {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 56px;
+  margin-bottom: 16px;
+}
+
+.hot-item-text p {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.search {
+  text-align: right;
+  padding: 80px 0;
+}
+
+.search-container {
+  background-color: #fcfcfc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search-text {
+  flex: 1;
+  margin-right: 40px;
+}
+
+.search-text p {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.search-image {
+  flex: 1;
+}
+
+.register {
+  padding: 80px 0;
+}
+
+.register-container {
+  background-color: #fcfcfc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.register-image {
+  flex: 1;
+  margin-right: 40px;
+}
+
+.register-text {
+  flex: 1;
+}
+
+.register-text p {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.bottom-banner {
+  background-color: #cfe5ff;
+  padding: 60px 0 0 0;
+  text-align: center;
+  width: 100%;
+}
+
+.bottom-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1520px;
+  margin: 0 auto;
+  padding: 0 200px;
+}
+
+.bottom-container h2 {
+  flex: 1;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 56px;
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+.bottom-image {
+  flex: 1;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.footer {
+  background-color: #111827;
+  color: white;
+  padding: 32px 0;
+}
+
+.footer-container {
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-info {
+  font-weight: 400;
+  font-size: 16px;
+  color: #9ca3af;
+}
+
+.footer-links a {
+  margin-right: 30px;
+  font-weight: 400;
+  font-size: 16px;
+  color: #e5e7eb;
+  cursor: pointer;
+}
+
+.social-links {
+  display: flex;
+}
+
+.social-icon {
+  margin-left: 12px;
+}
+
+.social-icon img {
+  width: 20px;
+  height: 20px;
+}
+
+/* 심화 요구사항 */
+@media (min-width: 1920px) {
+  .header,
+  .main-banner,
+  .bottom-banner {
+    width: 100%;
+  }
+
+  .header-container,
+  .main-banner-container,
+  .bottom-container {
+    max-width: 1520px;
+  }
+}
+
+@media (max-width: 1600px) {
+  .logo {
+    margin-left: 100px;
+  }
+
+  .login-btn {
+    margin-right: 100px;
+  }
+}
+
+@media (max-width: 992px) {
+  .main-banner-container,
+  .bottom-container {
+    flex-direction: column;
+    text-align: center;
+    padding: 0 30px;
+  }
+
+  .main-banner-text,
+  .bottom-container h2 {
+    margin-bottom: 30px;
+  }
+
+  .bottom-container h2 {
+    text-align: center;
+  }
+
+  .bottom-image {
+    max-width: 400px;
+  }
+
+  .action-btn {
+    padding: 16px 60px;
+  }
+
+  .main-banner-text h1 {
+    font-size: 34px;
+    line-height: 48px;
+  }
+
+  .hot-item-text h2,
+  .search-text h2,
+  .register-text h2,
+  .bottom-container h2 {
+    font-size: 34px;
+    line-height: 48px;
+  }
+
+  .hot-item-text p,
+  .search-text p,
+  .register-text p {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  .action-btn {
+    font-size: 18px;
+  }
+}
