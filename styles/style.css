@@ -1,11 +1,7 @@
 @import url("./color.css");
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
-* {
-  font-family: "Pretendard Variable", Pretendard, -apple-system,
-    BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI",
-    "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
-}
+@import url("./global.css");
+
 button {
   background-color: var(--blue);
 }
@@ -17,7 +13,7 @@ button:active {
   background-color: var(--btn-active);
 }
 header {
-  padding: 0.8em;
+  padding: 1.28rem;
   margin: auto;
   position: fixed;
   top: 0;
@@ -27,21 +23,21 @@ header {
 }
 nav {
   width: calc(100% - 200px);
-  height: 2.5em;
+  height: 4rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: auto;
 }
 nav img {
-  width: 10em;
+  width: 12.8rem;
 }
 
 nav > button {
-  padding: 0.8em 2em;
+  padding: 1.28rem 3.2rem;
   border-radius: 8px;
   background: var(--blue);
-  font-size: 1em;
+  font-size: 1.6rem;
 }
 nav > button > a {
   color: #ffffff;
@@ -51,38 +47,38 @@ nav > button > a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 4em;
+  margin-top: 6.4rem;
 }
 .banner {
   background-color: #cfe5ff;
   width: 100%;
   display: flex;
   justify-content: center;
-  padding: 10em 0 0;
+  padding: 16rem 0 0;
 }
 
 .banner h1 {
-  letter-spacing: -0.1em;
-  font-size: 2.5em;
+  letter-spacing: -0.16rem;
+  font-size: 4rem;
 }
 .banner img {
   width: 50%;
 }
 #banner-content {
   position: relative;
-  bottom: -4em;
+  bottom: -6.4rem;
 }
 .banner h1 {
-  font-size: 2.5em;
+  font-size: 4rem;
   font-weight: 700;
   line-height: 1.5;
 }
 .banner button {
-  margin-top: 2.75em;
-  padding: 0.8em 6em;
+  margin-top: 4.4rem;
+  padding: 1.28rem 9.6rem;
   border-radius: 999px;
   width: 100%;
-  font-size: 1.25em;
+  font-size: 2rem;
   font-weight: 600;
 }
 .banner > div > button > a {
@@ -93,7 +89,7 @@ nav > button > a {
   display: flex;
   justify-content: center;
   width: 100%;
-  margin: 10em 0 15em;
+  margin: 16rem 0 15em;
 }
 .card {
   width: 80%;
@@ -101,20 +97,20 @@ nav > button > a {
   justify-content: center;
   background-color: #fcfcfc;
   flex-grow: 1;
-  gap: 10rem;
+  gap: 16rem;
 }
 
 .card-title {
-  font-size: 1.1em;
+  font-size: 1.76rem;
   color: var(--blue);
   font-weight: 700;
 }
 
 .card h2 {
-  margin: 0.2em 0;
+  margin: 0.32rem 0;
   line-height: 1.4;
   text-align: left;
-  font-size: 2.5em;
+  font-size: 4rem;
   font-weight: 700;
 }
 .card-box:nth-child(2),
@@ -135,7 +131,7 @@ footer {
   height: 11.875em;
   display: flex;
   justify-content: space-around;
-  padding: 1.5em;
+  padding: 2.4rem;
   box-sizing: border-box;
 }
 
@@ -147,7 +143,7 @@ footer > ul {
   color: var(--gray400);
 }
 .info:nth-child(2n) {
-  margin: 0 0.8em;
+  margin: 0 1.28rem;
 }
 .info a {
   color: var(--gray200);
