@@ -278,7 +278,7 @@ h6 {
     white-space: nowrap
 }
 
-/* 로그인 영역 */
+/* 로그인, 회원가입 영역 */
 .login-box {
     display: flex;
     flex-direction: column;
@@ -287,7 +287,6 @@ h6 {
 }
 
 .login-wrapper {
-    height: 300px;
     display: flex;
     flex-direction: column;
     gap: 24px;
