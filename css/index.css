@@ -425,19 +425,19 @@ footer {
         line-height: 2.6rem;
     }
     .panda-image {
+        /* width: 100%; */
         height: 20.4rem;
         overflow: hidden;
         object-fit: cover;
     }
     .section-main {
-        padding: 2.4rem;
-        height: 70.8rem;
-        gap: 5.2rem;
+        height: 41.7rem;
+        margin: 4rem 0;
     }
     .section-content {
-        width: 69.6rem;
-        height: 70.8rem;
-        gap: 2.4rem;
+        width: 34.4rem;
+        height: 41.7rem;
+        gap: 4rem;
         flex-direction: column;
         align-items: flex-start;
     }
@@ -446,8 +446,8 @@ footer {
         height: 25.9rem;
     }
     .section-text {
-        width: 31.9rem;
-        height: 16rem;
+        width: 100%;
+        height: 13.4rem;
         gap: 1.6rem;
         flex-wrap: nowrap;
     }
@@ -486,6 +486,65 @@ footer {
         line-height: 2.6rem;
     }
     footer {
-        padding: 3.2rem 10.2rem 0;
+        width: 100%;
+        height: 16rem;
+        padding: 3.2rem;
     }
+    .foot-line {
+        width: 100%;
+        height: 9.6rem;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-areas: 
+        "box2 box2 box3"
+        ". . . "
+        "box1 . .";
+        }
+    .footer-container {
+        grid-area: box1;
+        width: 11.2rem;
+        height: 1.9rem;
+        display: flex;
+        justify-self: start;
+        align-self: end;
+    }
+    .footer-text {
+        font-weight: 400;
+        font-size: 1.6rem;
+        line-height: 100%;
+    }
+    .footer-links {
+        width: 100%;
+        grid-area: box2;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .footer-privacy-link {
+        grid-row: 1;
+        grid-column: 1;
+    }
+    .footer-faq-link {
+        grid-row: 1;
+        grid-column: 2;
+        display: flex;
+        justify-self: center;
+
+    }
+    .footer-sns {
+        grid-area: box3;
+        width: 11.6rem;
+        height: 2rem;
+        gap: 1.2rem;
+        display: flex;
+        justify-self: end;
+        margin: 0;
+        padding: 0;
+        flex-wrap: nowrap;
+    }
+    .sns-item {
+        width: 2rem;
+        height: 2rem;
+        list-style-type: none;
+    } 
 }
