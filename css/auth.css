@@ -25,9 +25,12 @@
   width: 10rem;
 }
 
+.auth-header .logo-typo {
+  width: 30rem;
+}
+
 .auth-header h1 a {
   font-size: 6rem;
-  margin-left: 2rem;
 }
 
 /* auth form */
@@ -132,5 +135,13 @@ input {
     margin: 0 16px;
     max-width: 400px;
     width: 100%;
+  }
+
+  .auth-header .logo {
+    width: 9rem;
+  }
+
+  .auth-header .logo-typo {
+    width: 25rem;
   }
 }

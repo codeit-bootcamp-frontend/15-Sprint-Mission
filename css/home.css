@@ -36,7 +36,6 @@ footer {
 
 header h1 a {
   color: var(--primary-100);
-  margin-left: 1rem;
 }
 
 .login-button {
