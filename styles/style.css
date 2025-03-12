@@ -12,7 +12,7 @@ button:hover {
 button:active {
   background-color: var(--btn-active);
 }
-header {
+#header {
   padding: 1.28rem;
   margin: auto;
   position: fixed;
@@ -29,8 +29,12 @@ nav {
   align-items: center;
   margin: auto;
 }
-nav img {
-  width: 12.8rem;
+
+#header .logo_img {
+  background-image: url("../img/logo.png");
+  background-size: cover;
+  height: 5.1rem;
+  width: 15.3rem;
 }
 
 nav > button {
@@ -65,10 +69,11 @@ nav > button > a {
   width: 50%;
 }
 #banner-content {
+  /* width: 26%; */
+  width: 35.7rem;
   position: relative;
-  bottom: -6.4rem;
 }
-.banner h1 {
+.banner h2 {
   font-size: 4rem;
   font-weight: 700;
   line-height: 1.5;
@@ -121,6 +126,7 @@ nav > button > a {
 .card p {
   color: var(--gray700);
   line-height: 1.4;
+  font-size: 2.4rem;
 }
 .card > img {
   width: 25%;
@@ -129,13 +135,15 @@ footer {
   background-color: var(--gray900);
   width: 100%;
   height: 11.875em;
-  display: flex;
-  justify-content: space-around;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
   padding: 2.4rem;
   box-sizing: border-box;
 }
 
-footer > ul {
+footer ul {
   display: flex;
 }
 
@@ -152,4 +160,154 @@ footer > ul {
 .sns {
   padding: 0 0.2em;
   width: 50%;
+}
+
+@media (768px <= width <= 1199px) {
+  body {
+    box-sizing: border-box;
+  }
+  #header nav {
+    align-items: center;
+    width: 90%;
+  }
+  .banner {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #banner-content {
+    width: 100%;
+    text-align: center;
+    position: relative;
+    top: -10rem;
+  }
+  #banner-content h2 {
+    font-weight: 700;
+    font-size: 4rem;
+    margin-bottom: 2.4rem;
+    letter-spacing: -0.4rem;
+    text-align: center;
+  }
+  #banner-content button {
+    margin: 0;
+    width: 35.7rem;
+  }
+  .banner img {
+    width: 100%;
+  }
+  .card-box {
+    margin-top: 2.4rem;
+  }
+
+  .card {
+    flex-direction: column;
+    gap: 2.4rem;
+  }
+  .card img {
+    width: 69.6rem;
+  }
+  .card-title {
+    font-size: 1.8rem;
+    margin-bottom: 1.6rem;
+  }
+  .card h2 {
+    font-size: 3.2rem;
+  }
+  .card p {
+    font-size: 1.8rem;
+    margin-top: 2.4rem;
+  }
+  .card-box:nth-child(2) .card {
+    flex-direction: column-reverse;
+  }
+  #banner-bottom h2 {
+    padding: 20.1rem 0 21.7rem;
+    text-align: center;
+  }
+}
+
+@media (375px <= width <= 767px) {
+  nav {
+    width: calc(100% - 16px);
+  }
+  #header .logo_img {
+    width: 10.3rem;
+    background-image: url("../img/logo_noicon.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  .banner {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #banner-content {
+    width: 100%;
+    text-align: center;
+    position: relative;
+    top: -10rem;
+  }
+  #banner-content h2 {
+    font-weight: 700;
+    font-size: 4rem;
+    margin-bottom: 2.4rem;
+    letter-spacing: -0.4rem;
+    text-align: center;
+  }
+  #banner-content button {
+    margin: 0;
+    width: 35.7rem;
+  }
+  .banner img {
+    width: 100%;
+  }
+  .card-box {
+    box-sizing: border-box;
+    margin-top: 2.4rem;
+    padding: 0 1.5rem;
+  }
+
+  .card {
+    flex-direction: column;
+    gap: 2.4rem;
+  }
+  .card img {
+    width: 100%;
+  }
+  .card-title {
+    font-size: 1.8rem;
+    margin-bottom: 1.6rem;
+  }
+  .card h2 {
+    font-size: 3.2rem;
+  }
+  .card p {
+    font-size: 1.8rem;
+    margin-top: 2.4rem;
+  }
+  .card-box:nth-child(2) .card {
+    flex-direction: column-reverse;
+  }
+  #banner-bottom h2 {
+    padding: 20.1rem 0 21.7rem;
+    text-align: center;
+  }
+
+  footer {
+    padding: 3.2rem;
+    display: grid;
+    grid-template: 1fr 3fr 1fr/ 1fr 1fr 1fr;
+    align-items: center;
+  }
+
+  .info {
+    font-size: 1.6rem;
+    display: flex;
+    justify-content: space-between;
+  }
+  .copyright {
+    grid-row: 3;
+    font-size: 1.6rem;
+  }
 }
