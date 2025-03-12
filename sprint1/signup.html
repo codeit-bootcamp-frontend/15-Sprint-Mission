@@ -18,9 +18,9 @@
       <img src="/assets/images/logo.png" alt="판다마켓 로고" />
       판다마켓
     </div>
-    <!-- 로그인 영역 -->
+    <!-- 회원가입 영역 -->
     <div class="login-box">
-      <!-- 로그인 -->
+      <!-- 회원가입 -->
       <div class="login-wrapper">
         <div class="input-wrapper">
           <div>
@@ -28,11 +28,19 @@
             <input id="email" type="text" placeholder="" />
           </div>
           <div>
+            <p><label for="nickname">닉네임</label></p>
+            <input id="nickname" type="text" placeholder="" />
+          </div>
+          <div>
             <p><label for="password">비밀번호</label></p>
             <input id="password" type="password" placeholder="" />
           </div>
+          <div>
+            <p><label for="passwordcheck">비밀번호 확인</label></p>
+            <input id="passwordcheck" type="password" placeholder="" />
+          </div>
         </div>
-        <input class="login-button" type="submit" value="로그인" />
+        <input class="login-button" type="submit" value="회원가입" />
       </div>
       <!-- 간편 로그인 -->
       <div class="simple-login">
@@ -46,10 +54,10 @@
           </a>
         </div>
       </div>
-      <!-- 회원가입 -->
+      <!-- 로그인 -->
       <div class="signin-wrapper">
-        <p>판다마켓이 처음이신가요?</p>
-        <a href="/signup">회원가입</a>
+        <p>이미 회원이신가요?</p>
+        <a href="/login">로그인</a>
       </div>
     </div>
   </body>
