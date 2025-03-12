@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>판다마켓-로그인</title>
+        <title>판다마켓-회원가입</title>
         <link rel="stylesheet" href="style2.css" />
         <link rel="stylesheet" href="style.css" />
     </head>
@@ -15,7 +15,11 @@
             <form method="post">
                 <div class="form-group">
                     <label for="email">이메일</label>
-                    <div><input type="email" id="email" name="email" placeholder="이메일을 입력해주세요" /></div>
+                    <div><input type="email" id="email" name="email" placeholder="이메일을 입력해 주세요" /></div>
+                </div>
+                <div class="form-group">
+                    <label for="text">닉네임</label>
+                    <div><input type="text" id="nickname" name="nickname" placeholder="닉네임을 입력해 주세요" /></div>
                 </div>
                 <div class="form-group">
                     <label for="password">비밀번호</label>
@@ -24,7 +28,18 @@
                         <button class="password-button" type="button"><img href="images/unvisible_eye.png" /></button>
                     </div>
                 </div>
-                <button class="login-button" type="submit">로그인</button>
+                <div class="form-group">
+                    <label for="password">비밀번호 확인</label>
+                    <div class="password-wrap">
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="비밀번호를 다시 한 번 입력해 주세요" />
+                        <button class="password-button" type="button"><img href="images/unvisible_eye.png" /></button>
+                    </div>
+                    <button class="login-button" type="submit">회원가입</button>
+                </div>
             </form>
             <div class="login-method-container">
                 <h3>간편 로그인하기</h3>
@@ -37,7 +52,7 @@
                     </a>
                 </div>
             </div>
-            <div class="signup-go">판다마켓이 처음이신가요?<a href="signup.html">회원가입</a></div>
+            <div class="signup-go">이미 회원이신가요?<a href="login.html">로그인</a></div>
         </main>
     </body>
 </html>
