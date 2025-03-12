@@ -503,8 +503,6 @@ footer {
         }
     .footer-container {
         grid-area: box1;
-        width: 11.2rem;
-        height: 1.9rem;
         display: flex;
         justify-self: start;
         align-self: end;
