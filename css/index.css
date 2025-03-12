@@ -509,11 +509,6 @@ footer {
         justify-self: start;
         align-self: end;
     }
-    .footer-text {
-        font-weight: 400;
-        font-size: 1.6rem;
-        line-height: 100%;
-    }
     .footer-links {
         width: 100%;
         grid-area: box2;
@@ -529,22 +524,10 @@ footer {
         grid-column: 2;
         display: flex;
         justify-self: center;
-
     }
     .footer-sns {
         grid-area: box3;
-        width: 11.6rem;
-        height: 2rem;
-        gap: 1.2rem;
         display: flex;
-        justify-self: end;
-        margin: 0;
-        padding: 0;
-        flex-wrap: nowrap;
+        justify-self:end;
     }
-    .sns-item {
-        width: 2rem;
-        height: 2rem;
-        list-style-type: none;
-    } 
 }
