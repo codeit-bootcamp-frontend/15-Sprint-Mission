@@ -24,9 +24,10 @@ footer {
   align-items: center;
 }
 
-.logo-container {
+.logo-container a {
   display: flex;
   align-items: center;
+  gap: 1rem;
 }
 
 .logo {

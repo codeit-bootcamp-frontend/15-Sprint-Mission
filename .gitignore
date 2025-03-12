@@ -12,3 +12,6 @@ node_modules/
 
 # vscode 설정 파일
 .vscode/ 
+
+# mission_template_codes 공부용 
+mission_template_codes/
