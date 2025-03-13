@@ -274,7 +274,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0.95rem 20rem;
+    margin: 0.95rem 2.4rem;
   }
 
   .header-button {
@@ -334,13 +334,14 @@
     display: flex;
     flex-direction: column;
     margin-top: 2.4rem;
+    gap: 5.2rem;
   }
 
   .section-content {
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
   }
 
@@ -349,51 +350,53 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 6.4rem;
+    gap: 2.4rem;
+    width: 69.6rem;
     height: 70.8rem;
   }
 
+  .section-card.reverse {
+    flex-direction: column-reverse;
+  }
+
   .section-text {
+    width: 100%;
+    max-width: 100%;
     display: flex;
     flex-direction: column;
-    flex-shrink: 0;
-    gap: 2.4rem;
+    margin: 0 3.4rem;
   }
 
   .section-text.card1 {
-    padding-right: 2.4rem;
+    justify-content: start;
   }
 
   .section-text.card2 {
     text-align: right;
+    justify-content: end;
   }
 
   .section-text-tag {
     font-size: 1.8rem;
     font-weight: 700;
     color: var(--button-color);
-    line-height: 2.6rem;
   }
 
   .section-text-title {
     color: var(--main-font-color);
     font-size: 3.2rem;
     font-weight: 700;
-    line-height: 5.6rem;
-    margin-top: 1.2rem;
   }
 
   .section-text-subtitle {
     color: var(--main-font-color);
     font-size: 1.8rem;
     font-weight: 500;
-    line-height: 3.2rem;
-    margin-top: 2.4rem;
   }
 
   .bottomLanding {
     width: 100%;
-    height: 54rem;
+    height: 92.7rem;
     background-color: var(--bg-color);
     display: flex;
     justify-content: center;
@@ -402,15 +405,17 @@
 
   .bottom-content {
     display: flex;
+    flex-direction: column;
+    justify-items: center;
     align-items: end;
     gap: 6.9rem;
     flex-shrink: 0;
   }
 
   .bottom-content-text {
-    display: flex-col;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
-    margin: 4rem 0;
     flex-shrink: 0;
     gap: 1rem;
     padding-bottom: 6rem;
@@ -424,6 +429,7 @@
   }
 
   .footer {
+    width: 100%;
     height: 16rem;
     background-color: #111827;
   }
@@ -516,4 +522,18 @@
 
 /* 모바일 */
 @media (min-width: 37.5rem) and (max-width: 76.7rem) {
+  .header {
+    width: 100%;
+    height: 7rem;
+    position: fixed;
+    background-color: #ffffff;
+    top: 0;
+  }
+
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.95rem 1.6rem;
+  }
 }
