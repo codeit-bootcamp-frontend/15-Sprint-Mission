@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"/>
+  <title>SignUp</title>
+  <link rel="stylesheet" href="../css/loginSignUp.css">
+  <link rel="icon" href="img/pandaLogoIcon.svg">
+</head>
+<body>
+  <main>
+    <a class="main-logo-contain" href="../index.html">
+      <img class="main-logo" src="../img/pandaLogoIcon.svg" alt="판다마켓 로고">
+      <img class="main-logo-text" src="../img/padamaketText.svg" alt="판다마켓 로고 글자">
+    </a>
+    <form>
+      <label class="input-label" for="username">
+        이메일
+      </label>
+      <input class="input-field" id="username" name="username" type="email" placeholder="이메일을 입력해주세요">
+
+      <label class="input-label" for="username">
+        닉네임
+      </label>
+      <input class="input-field" id="username" name="username" type="text" placeholder="닉네임을 입력해주세요">
+      
+      <label class="input-label" for="password" >
+        비밀번호
+      </label>
+      <div class="input-password">
+        <input class="input-field" id="password" name="password" type="password" placeholder="비밀번호를 입력해주세요">
+        <button class="password-visibility" type="button">
+          <img class="password-Eye" src="../img/passwordBlind.svg" alt="비밀번호 가리기" />
+        </button>
+      </div>
+      <label class="input-label" for="password-repeat" >
+        비밀번호 확인
+      </label>
+      <div class="input-password">
+      <input class="input-field input-password"  id="password-repeat" name="password-repeat" type="password" placeholder="비밀번호를 다시 한 번 입력해주세요">
+      <button class="password-visibility" type="button">
+        <img class="password-Eye" src="../img/passwordEye.svg" alt="비밀번호 보이기" />
+      </button>
+    </div>
+      <button type="submit" class="sign-button">
+        회원가입
+      </button>
+    </form>
+    <div class="easy-login">
+      <div class="easy-text">
+        간편 로그인하기
+      </div>
+        <div class="login-sites">
+          <a class="login-site" href="https://www.google.com/">
+            <img src="../img/googleIcon.svg" alt="구글을 통한 로그인">
+          </a>
+
+          <a class="login-site" href=“https://www.kakaocorp.com”>
+            <img src="../img/kakaoIcon.svg" alt="카카오톡를 통한 로그인">
+          </a>
+        </div>
+    </div>
+    <div class="signup-text">
+      이미 회원이신가요? <a class="signlink-text" href="login.html">로그인</a>
+    </div>
+  </main>
+</body>
+</html>

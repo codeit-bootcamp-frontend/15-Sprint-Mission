@@ -4,19 +4,51 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"/>
   <title>판다마켓</title>
-  <link rel="stylesheet" href="sprint2.css">
-  <link rel="icon" href="img/logopanda.svg">
+  <link rel="stylesheet" href="./css/index.css">
+  <link rel="icon" href="./img/pandaLogoIcon.svg">
+<!--   
+    <meta property="og:title" content="Panda Market" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="./img/webshop.png" />
+    <meta property="og:url" content="https://endearing-fairy-27f4f6.netlify.app/" />
+    <meta property="og:description" content="일상의 모든 물건을 거래해보세요" />
+    <meta property="og:site_name" content="판다 마켓" />  
+  
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Panda Market" />
+    <meta name="twitter:description" content="일상의 모든 물건을 거래해보세요" />
+    <meta name="twitter:image" content="./img/webshop.png" />
+    <meta name="twitter:url" content="https://endearing-fairy-27f4f6.netlify.app/" /> -->
+
+<!-- Facebook Meta Tags -->
+<meta property="og:url" content="https://67d15a7ccce1f07de4e97ae7--transcendent-dragon-e136c7.netlify.app/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="판다 마켓">
+<meta property="og:description" content="일상의 모든 물건을 거래해보세요">
+<meta property="og:image" content="https://opengraph.b-cdn.net/production/images/34772fdc-0142-45bd-84fe-2943632d1fc5.jpg?token=HEFF0d59Tdf_G9HN0zY2MHiDUBnM0HtT8FtkMmG4XsQ&height=630&width=1200&expires=33277773538">
+
+<!-- Twitter Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:domain" content="67d15a7ccce1f07de4e97ae7--transcendent-dragon-e136c7.netlify.app">
+<meta property="twitter:url" content="https://67d15a7ccce1f07de4e97ae7--transcendent-dragon-e136c7.netlify.app/">
+<meta name="twitter:title" content="판다 마켓">
+<meta name="twitter:description" content="일상의 모든 물건을 거래해보세요">
+<meta name="twitter:image" content="https://opengraph.b-cdn.net/production/images/34772fdc-0142-45bd-84fe-2943632d1fc5.jpg?token=HEFF0d59Tdf_G9HN0zY2MHiDUBnM0HtT8FtkMmG4XsQ&height=630&width=1200&expires=33277773538">
+
+<!-- Meta Tags Generated via https://www.opengraph.xyz -->
 </head>
 <body>
 <!-- 맨위에 로고랑 로그인 -->
   <header>
     <div class="header-container">
-        <a href="/">
-        <img class="header-logo" src="img/pandaicon.svg" alt="판다마켓로고">
+        <a class="header-logo-contain" href="/">
+        <img class="header-logo" src="./img/pandaLogoIcon.svg" alt="판다마켓로고">
+        <img class="header-text" src="./img//padamaketText.svg" alt="판다마켓글">
         </a>
 
-        <a class="login-button" href="login.html" type="button">
+        <a class="login-button" href="./html/login.html" type="button">
           로그인
         </a>
     </div>
@@ -28,26 +60,27 @@
       <div class="banner-content">
         <div class="banner-text">
           <div class="banner-message">
-          일상의 모든 물건을<br>
-          거래해 보세요
+          일상의 모든 물건을
+          <span class="banner-message-enter">거래해 보세요</span>
           </div>
          <a href="/items" class="surf-button">구경하러 가기</a>
         </div>
-          <img class="panda-image" src="img/hipanda.svg" alt="시장가방을 들고 있는 판다캐릭터">
+          <img class="panda-image" src="./img/hipanda.svg" alt="시장가방을 들고 있는 판다캐릭터">
       </div>
     </div>
 <!-- 메인 1번째 -->
     <section class="section-main">
       <div class="section-content">
-        <img class="section-image" src="img/like-shirts.svg" alt="웃을 구경하는 판다">
+        <img class="section-image" src="./img/likeShirts.svg" alt="웃을 구경하는 판다">
         <div class="section-text">
           <div class="card-title">
           Hot item
           </div>
           <div class="text-card-info">
             <div class="best-item-title">
-            인기 상품을<br>
-            확인해 보세요
+            인기 상품을
+            <span class="item-text">
+            확인해 보세요</span>
             </div>
             <div class="best-item-description">
             가장 HOT한 중고거래 물품을<br>
@@ -59,15 +92,15 @@
     </section>
 <!-- 메인 2번째 -->
     <section class="section-main">
-      <div class="section-content">
-        <div class="section-text" style="text-align: right;">
+      <div class="section-content section-content-right">
+        <div class="section-text section-right">
           <div class="card-title">
             Search
           </div>
-          <div class="text-card-info">
+          <div class="text-card-info text-card-right">
           <div class="best-item-title">
-            구매를 원하는<br>
-            상품을 검색하세요
+            구매를 원하는
+            <span class="item-text">상품을 검색하세요</span>
           </div>
           <div class="best-item-description">
             구매하고 싶은 물품은 검색해서<br>
@@ -75,21 +108,23 @@
           </div>
           </div>
         </div>
-        <img class="section-image" src="img/serching.svg" alt="돋보기가 그려진 그림">
+        <img class="section-image" src="./img/serching.svg" alt="돋보기가 그려진 그림">
       </div>
     </section>
 <!-- 메인 3번째 -->
     <section class="section-main" style="margin-bottom: 8.625rem;">
       <div class="section-content">
-        <img class="section-image" src="img/files.svg" alt="여러 사진들과 파일들">
+        <img class="section-image" src="./img/files.svg" alt="여러 사진들과 파일들">
         <div class="section-text">
           <div class="card-title">
           Register
           </div>
           <div class="text-card-info">
           <div class="best-item-title">
-          판매를 원하는<br>
+          판매를 원하는
+          <span class="item-text">
           상품을 등록하세요
+          </span>
           </div>
           <div class="best-item-description">
           어떤 물건이든 판매하고 싶은 상품을<br>
@@ -109,7 +144,7 @@
           </div>
         </div>
       
-          <img class="panda-image" src="img/talking.svg" alt="두 판다가 대화하는 모습">
+          <img class="panda-image" src="./img/talking.svg" alt="두 판다가 대화하는 모습">
       </div>
     </div>
   </main>
@@ -130,16 +165,16 @@
 
       <ul class="footer-sns">
         <li class="facebook sns-item">
-          <a href="https://www.facebook.com/" target='_blank'><img src="img/iconFacebook.svg" alt="페이스북 아이콘"></a>
+          <a href="https://www.facebook.com/" target='_blank'><img src="./img/iconFacebook.svg" alt="페이스북 아이콘"></a>
         </li>
         <li class="twiitter sns-item">
-          <a href="https://x.com/?lang=ko" target='_blank'><img src="img/iconX.svg" alt="X 아이콘(전 트위터)"></a>
+          <a href="https://x.com/?lang=ko" target='_blank'><img src="./img/iconX.svg" alt="X 아이콘(전 트위터)"></a>
         </li>
         <li class="youtube sns-item">
-          <a href="https://www.youtube.com/?hl=ko" target='_blank'><img src="img/iconYoutube.svg" alt="유튜브 아이콘"></a>
+          <a href="https://www.youtube.com/?hl=ko" target='_blank'><img src="./img/iconYoutube.svg" alt="유튜브 아이콘"></a>
         </li>
         <li class="instagram sns-item">
-          <a href="https://www.instagram.com/" target='_blank'><img src="img/iconInsta.svg" alt="인스타그램 아이콘"></a>
+          <a href="https://www.instagram.com/" target='_blank'><img src="./img/iconInsta.svg" alt="인스타그램 아이콘"></a>
         </li>
       </ul>
     </div>
