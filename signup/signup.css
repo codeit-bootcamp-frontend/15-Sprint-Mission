@@ -18,9 +18,10 @@
   --error: #f74747;
 }
 * {
-  font-family: 'Pretendard';
   box-sizing: border-box;
+  flex-wrap: wrap;
   font-size: 10px;
+  font-family: 'Pretendard';
 }
 body {
   margin: 3rem auto;
@@ -37,7 +38,7 @@ main {
   align-items: center;
 }
 .main-logo {
-  width: 10.353rem;
+  width: 10.3rem;
   height: 10.388rem;
 }
 .main-logo-text {
