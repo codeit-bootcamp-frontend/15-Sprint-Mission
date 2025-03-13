@@ -168,7 +168,7 @@ footer ul {
   }
   #header nav {
     align-items: center;
-    width: 90%;
+    width: calc(100% - 2.4rem);
   }
   .banner {
     flex-direction: column;
