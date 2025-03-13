@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인 | 판다마켓</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        :root {
+            --primary-blue: #3692FF;
+            --gray100: #F3F4F6;
+            --gray50: #F9FAFB;
+            --font-size-base: 16px;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: white;
+        }
+
+        .login-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .logo {
+            width: 120px;
+            height: auto;
+            margin-bottom: 30px;
+        }
+
+        .input-container {
+            width: 100%;
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .input-container label {
+            display: block;
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .rounded-input, .password-container input {
+            width: 100%;
+            padding: 16px;
+            font-size: 1.2em;
+            border-radius: 30px;
+            background-color: var(--gray100);
+            border: none;
+            box-sizing: border-box;
+        }
+
+        .password-container {
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .toggle-password {
+            position: absolute;
+            right: 15px;
+            cursor: pointer;
+            width: 26px;
+            height: 26px;
+        }
+
+        .login-btn {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 16px;
+            border: none;
+            border-radius: 30px;
+            width: 100%;
+            font-size: 1.3em;
+            cursor: pointer;
+            margin-top: 12px;
+        }
+
+
+        .social-login {
+            width: 100%;
+            max-width: 450px;
+            background-color: #E3F2FD;
+            padding: 15px;
+            border-radius: 10px; 
+            display: flex;
+            align-items: center; 
+            justify-content: center; 
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+        }
+
+        .social-login p {
+            font-size: 1.1em;
+            font-weight: bold;
+            margin: 0;
+            margin-left: 10px; /* Space between icons and text */
+        }
+
+        /* Align social icons on the left */
+        .social-icons {
+            display: flex;
+            gap: 10px;
+            justify-content: flex-start; /* Align icons to the left */
+            align-items: center;
+        }
+
+        /* Social Icon Buttons */
+        .social-icon {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Adjust logo sizes inside icons */
+        .social-icon img {
+            width: 70%;
+            height: auto;
+        }
+
+
+        .signup-link {
+            font-size: 1.1em;
+            margin-top: 15px;
+        }
+
+
+        @media (max-width: 768px) {
+            .login-container {
+                width: 90%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <img src="assets/Property 1=sm.png" alt="판다마켓 로고" class="logo">
+
+        <form class="login-form">
+            <div class="input-container">
+                <label for="email">이메일</label>
+                <input type="email" id="email" placeholder="codeit@email.com" required class="rounded-input">
+            </div>
+
+            <div class="input-container">
+                <label for="password">비밀번호</label>
+                <div class="password-container">
+                    <input type="password" id="password" placeholder="••••••••" required class="rounded-input">
+                    <img src="assets/Property 1=Default.png" alt="비밀번호 보기" class="toggle-password">
+                </div>
+            </div>
+
+            <button type="submit" class="login-btn">로그인</button>
+        </form>
+
+        <div class="social-login">
+            <p>간편 로그인하기</p>
+            <div class="social-icons">
+                <a href="https://accounts.google.com" class="social-icon">
+                    <img src="assets/ic_google.jpg" alt="Google 로그인">
+                </a>
+                <a href="https://www.kakaocorp.com/page" class="social-icon">
+                    <img src="assets/KakaoTalk_logo.svg" alt="Kakao 로그인">
+                </a>
+            </div>
+        </div>
+
+        <p class="signup-link">판다마켓이 처음이신가요? <a href="signup.html">회원가입</a></p>
+    </div>
+
+    <script>
+        document.querySelectorAll(".toggle-password").forEach(item => {
+            item.addEventListener("click", function() {
+                let passwordField = this.previousElementSibling;
+                if (passwordField.type === "password") {
+                    passwordField.type = "text";
+                    this.src = "assets/Property 1=Variant2.png"; // Show eye-open icon
+                } else {
+                    passwordField.type = "password";
+                    this.src = "assets/Property 1=Default.png"; // Show eye-closed icon
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입 | 판다마켓</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        :root {
+            --primary-blue: #3692FF;
+            --gray100: #F3F4F6;
+            --gray50: #F9FAFB;
+            --font-size-base: 16px;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .signup-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .logo {
+            width: 80px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .input-container {
+            width: 90%;
+            max-width: 350px;
+            text-align: left;
+            margin-bottom: 15px;
+        }
+
+        .input-container label {
+            display: block;
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .rounded-input, .password-container input {
+            background-color: var(--gray100);
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            padding: 12px;
+            width: 100%;
+            font-size: var(--font-size-base);
+            box-sizing: border-box;
+        }
+
+        .password-container {
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .toggle-password {
+            position: absolute;
+            right: 10px;
+            cursor: pointer;
+            width: 24px;
+            height: 24px;
+        }
+
+        .signup-btn {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 350px;
+            font-size: 1.2em;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .social-login {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 15px;
+            background-color: #E3F2FD;
+            padding: 10px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 350px;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .social-icon img {
+            width: 70%;
+            height: auto;
+        }
+
+        .login-link {
+            font-size: 0.9em;
+            margin-top: 10px;
+        }
+
+        /* Responsive Design */
+        @media (min-width: 600px) {
+            .logo {
+                width: 100px;
+            }
+            .rounded-input, .password-container input, .signup-btn {
+                font-size: 1.2em;
+                padding: 14px;
+            }
+            .social-login {
+                font-size: 1em;
+                padding: 12px;
+            }
+        }
+
+        @media (min-width: 900px) {
+            .logo {
+                width: 120px;
+            }
+            .rounded-input, .password-container input, .signup-btn {
+                font-size: 1.4em;
+                padding: 16px;
+            }
+            .social-login {
+                font-size: 1.1em;
+                padding: 14px;
+            }
+            .login-link {
+                font-size: 1em;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="signup-container">
+        <img src="assets/Property 1=sm.png" alt="판다마켓 로고" class="logo">
+
+        <form class="signup-form">
+            <div class="input-container">
+                <label for="email">이메일</label>
+                <input type="email" id="email" placeholder="codeit@email.com" required class="rounded-input">
+            </div>
+
+            <div class="input-container">
+                <label for="nickname">닉네임</label>
+                <input type="text" id="nickname" placeholder="판다" required class="rounded-input">
+            </div>
+
+            <div class="input-container">
+                <label for="password">비밀번호</label>
+                <div class="password-container">
+                    <input type="password" id="password" placeholder="••••••••" required class="rounded-input">
+                    <img src="assets/Property 1=Default.png" alt="비밀번호 보기" class="toggle-password">
+                </div>
+            </div>
+
+            <div class="input-container">
+                <label for="confirm-password">비밀번호 확인</label>
+                <div class="password-container">
+                    <input type="password" id="confirm-password" placeholder="••••••••" required class="rounded-input">
+                    <img src="assets/Property 1=Default.png" alt="비밀번호 보기" class="toggle-password">
+                </div>
+            </div>
+
+            <button type="submit" class="signup-btn">회원가입</button>
+        </form>
+
+        <div class="social-login">
+            <p>간편 로그인하기</p>
+            <a href="https://accounts.google.com" class="social-icon">
+                <img src="assets/ic_google.jpg" alt="Google 로그인">
+            </a>
+            <a href="https://www.kakaocorp.com/page" class="social-icon">
+                <img src="assets/KakaoTalk_logo.svg" alt="Kakao 로그인">
+            </a>
+        </div>
+
+        <p class="login-link">이미 회원이신가요? <a href="login.html">로그인</a></p>
+    </div>
+
+    <script>
+        document.querySelectorAll(".toggle-password").forEach(item => {
+            item.addEventListener("click", function() {
+                let passwordField = this.previousElementSibling;
+                if (passwordField.type === "password") {
+                    passwordField.type = "text";
+                    this.src = "assets/Property 1=Variant2.png"; // Show eye-open icon
+                } else {
+                    passwordField.type = "password";
+                    this.src = "assets/Property 1=Default.png"; // Show eye-closed icon
+                }
+            });
+        });
+    </script>
+</body>
+</html>
