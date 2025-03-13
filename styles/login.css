@@ -104,5 +104,15 @@ form label {
   text-decoration: underline;
   color: var(--blue);
 }
-@media (min-width: 744px) {
+@media (768px <= width <= 1199px) {
+  main {
+    width: calc(100% - 5.2rem);
+  }
+}
+
+@media (375px <= width <= 767px) {
+  main {
+    width: calc(100% - 1.6rem);
+    max-width: 40rem;
+  }
 }
