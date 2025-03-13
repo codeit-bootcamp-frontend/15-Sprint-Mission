@@ -1,3 +1,5 @@
+@import 'reset.css';
+
 :root {
   --button-color: #3692ff;
   --bg-color: #cfe5ff;
@@ -15,68 +17,64 @@
   font-style: normal;
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: Pretendard;
-}
-
 .header {
   width: 100%;
-  height: 70px;
+  height: 7rem;
   position: fixed;
   background-color: #ffffff;
+  top: 0;
 }
 
 .header-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 9.5px 200px;
+  margin: 0.95rem 20rem;
 }
 
 .header-button {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 128px;
-  height: 48px;
-  padding: 12px 23px;
-  border-radius: 8px;
+  width: 12.8rem;
+  height: 4.8rem;
+  padding: 1.2rem 2.3rem;
+  border-radius: 0.8rem;
   background-color: var(--button-color);
   color: #ffffff;
-  border: 1px solid var(--button-color);
+  border: 0.1rem solid var(--button-color);
   flex-shrink: 0;
   text-decoration: none;
   cursor: pointer;
+  font-size: 1.6rem;
 }
 
 .topLanding {
   width: 100%;
-  height: 540px;
+  height: 54rem;
   background-color: var(--bg-color);
   display: flex;
   justify-content: center;
+  margin-top: 7rem;
 }
 
 .top-content {
   display: flex;
   align-items: end;
-  gap: 7px;
+  gap: 0.7rem;
 }
 
 .top-content-text {
   display: flex-col;
   justify-content: center;
-  margin: 40px 0;
+  margin: 4rem 0;
   flex-shrink: 0;
 }
 
 .top-content-text h2 {
-  line-height: 56px;
+  line-height: 5.6rem;
   color: var(--main-font-color);
-  font-size: 40px;
+  font-size: 4rem;
   font-weight: 700;
 }
 
@@ -88,7 +86,7 @@
 
 .section-content {
   width: 100%;
-  height: 720px;
+  height: 72rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -98,18 +96,19 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 64px;
-  width: 988px;
-  height: 444px;
+  gap: 6.4rem;
+  width: 98.8rem;
+  height: 44.4rem;
 }
+
 .section-text {
   display: flex-col;
   flex-shrink: 0;
-  gap: 12px;
+  gap: 1.2rem;
 }
 
 .section-text.card1 {
-  padding-right: 24px;
+  padding-right: 2.4rem;
 }
 
 .section-text.card2 {
@@ -117,98 +116,104 @@
 }
 
 .section-text-tag {
-  font-size: 18px;
+  font-size: 1.8rem;
   font-weight: 700;
   color: var(--button-color);
-  line-height: 26px;
+  line-height: 2.6rem;
 }
+
 .section-text-title {
   color: var(--main-font-color);
-  font-size: 40px;
+  font-size: 4rem;
   font-weight: 700;
-  line-height: 56px;
-  margin-top: 12px;
+  line-height: 5.6rem;
+  margin-top: 1.2rem;
 }
 
 .section-text-subtitle {
   color: var(--main-font-color);
-  font-size: 24px;
+  font-size: 2.4rem;
   font-weight: 500;
-  line-height: 32px;
-  margin-top: 24px;
+  line-height: 3.2rem;
+  margin-top: 2.4rem;
 }
 
 .bottomLanding {
   width: 100%;
-  height: 540px;
+  height: 54rem;
   background-color: var(--bg-color);
   display: flex;
   justify-content: center;
-  margin-top: 138px;
+  margin-top: 13.8rem;
 }
 
 .bottom-content {
   display: flex;
   align-items: end;
-  gap: 69px;
+  gap: 6.9rem;
   flex-shrink: 0;
 }
 
 .bottom-content-text {
   display: flex-col;
   justify-content: center;
-  margin: 40px 0;
+  margin: 4rem 0;
   flex-shrink: 0;
-  gap: 10px;
-  padding-bottom: 60px;
-  margin: 112.5px 0;
+  gap: 1rem;
+  padding-bottom: 6rem;
+  margin: 11.25rem 0;
 }
 
 .bottom-content-text h2 {
   font-weight: 700;
-  font-size: 40px;
+  font-size: 4rem;
   color: var(--main-font-color);
 }
 
 .footer {
-  height: 160px;
+  height: 16rem;
   background-color: #111827;
 }
 
 .items-button {
-  margin-top: 32px;
-  margin-bottom: 60px;
+  margin-top: 3.2rem;
+  margin-bottom: 6rem;
   background-color: var(--button-color);
   color: #ffffff;
-  padding: 16px 124px;
+  padding: 1.6rem 12.4rem;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  border: 1px solid var(--button-color);
-  border-radius: 40px;
+  border: 0.1rem solid var(--button-color);
+  border-radius: 4rem;
   cursor: pointer;
+  font-size: 1.6rem;
 }
 
 .footer-content {
+  font-size: 1.6rem;
   display: flex;
-  height: 20px;
-  padding: 32px 400px 108px 400px;
+  height: 2rem;
+  padding: 3.2rem 40rem 10.8rem 40rem;
   justify-content: space-between;
 }
 
 .footer-left-text {
+  font-size: 1.6rem;
   flex-shrink: 0;
   color: #9ca3af;
   font-weight: 400;
 }
 
 .footer-middle-text {
+  font-size: 1.6rem;
   display: flex;
-  gap: 30px;
+  gap: 3rem;
   flex-shrink: 0;
 }
 
 .footer-middle-text a {
+  font-size: 1.6rem;
   color: var(--secondary-font-color);
   font-weight: 400;
   text-decoration: none;
@@ -217,40 +222,298 @@
 .footer-icons {
   display: flex;
   flex-shrink: 0;
-  gap: 12px;
+  gap: 1.2rem;
 }
 
 .footer-icons img {
-  width: 20px;
-  height: 20px;
+  width: 2rem;
+  height: 2rem;
 }
 
 .button:hover {
   background-color: var(--button-hover-color);
-  border: 1px solid var(--button-hover-color);
+  border: 0.1rem solid var(--button-hover-color);
 }
 
 .button:active {
   background-color: var(--button-active-color);
-  border: 1 solid var(--button-active-color);
+  border: 0.1rem solid var(--button-active-color);
 }
 
 .logoImg {
-  width: 153px;
-  height: 51px;
+  width: 15.3rem;
+  height: 5.1rem;
 }
 
 .topLandingImg {
-  width: 746px;
-  height: 340px;
+  width: 74.6rem;
+  height: 34rem;
 }
 
 .section-Img {
-  width: 579px;
-  height: 444px;
+  width: 57.9rem;
+  height: 44.4rem;
 }
 
 .bottomLandingImg {
-  width: 746px;
-  height: 397px;
+  width: 74.6rem;
+  height: 39.7rem;
+}
+
+/* 태블릿 */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .header {
+    width: 100%;
+    height: 7rem;
+    position: fixed;
+    background-color: #ffffff;
+    top: 0;
+  }
+
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.95rem 20rem;
+  }
+
+  .header-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 12.8rem;
+    height: 4.8rem;
+    padding: 1.2rem 2.3rem;
+    border-radius: 0.8rem;
+    background-color: var(--button-color);
+    color: #ffffff;
+    border: 0.1rem solid var(--button-color);
+    flex-shrink: 0;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 1.6rem;
+  }
+
+  .topLanding {
+    width: 100%;
+    height: 77.1rem;
+    background-color: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 7rem;
+  }
+
+  .top-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.7rem;
+  }
+
+  .top-content-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 4rem 0;
+    flex-shrink: 0;
+  }
+
+  .top-content-text h2 {
+    line-height: 5.6rem;
+    color: var(--main-font-color);
+    font-size: 4rem;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  .section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 2.4rem;
+  }
+
+  .section-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .section-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6.4rem;
+    height: 70.8rem;
+  }
+
+  .section-text {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    gap: 2.4rem;
+  }
+
+  .section-text.card1 {
+    padding-right: 2.4rem;
+  }
+
+  .section-text.card2 {
+    text-align: right;
+  }
+
+  .section-text-tag {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--button-color);
+    line-height: 2.6rem;
+  }
+
+  .section-text-title {
+    color: var(--main-font-color);
+    font-size: 3.2rem;
+    font-weight: 700;
+    line-height: 5.6rem;
+    margin-top: 1.2rem;
+  }
+
+  .section-text-subtitle {
+    color: var(--main-font-color);
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 3.2rem;
+    margin-top: 2.4rem;
+  }
+
+  .bottomLanding {
+    width: 100%;
+    height: 54rem;
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: center;
+    margin-top: 13.8rem;
+  }
+
+  .bottom-content {
+    display: flex;
+    align-items: end;
+    gap: 6.9rem;
+    flex-shrink: 0;
+  }
+
+  .bottom-content-text {
+    display: flex-col;
+    justify-content: center;
+    margin: 4rem 0;
+    flex-shrink: 0;
+    gap: 1rem;
+    padding-bottom: 6rem;
+    margin: 11.25rem 0;
+  }
+
+  .bottom-content-text h2 {
+    font-weight: 700;
+    font-size: 4rem;
+    color: var(--main-font-color);
+  }
+
+  .footer {
+    height: 16rem;
+    background-color: #111827;
+  }
+
+  .items-button {
+    margin-top: 3.2rem;
+    margin-bottom: 6rem;
+    background-color: var(--button-color);
+    color: #ffffff;
+    padding: 1.6rem 12.4rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border: 0.1rem solid var(--button-color);
+    border-radius: 4rem;
+    cursor: pointer;
+    font-size: 1.6rem;
+  }
+
+  .footer-content {
+    font-size: 1.6rem;
+    display: flex;
+    height: 2rem;
+    padding: 3.2rem 40rem 10.8rem 40rem;
+    justify-content: space-between;
+  }
+
+  .footer-left-text {
+    font-size: 1.6rem;
+    flex-shrink: 0;
+    color: #9ca3af;
+    font-weight: 400;
+  }
+
+  .footer-middle-text {
+    font-size: 1.6rem;
+    display: flex;
+    gap: 3rem;
+    flex-shrink: 0;
+  }
+
+  .footer-middle-text a {
+    font-size: 1.6rem;
+    color: var(--secondary-font-color);
+    font-weight: 400;
+    text-decoration: none;
+  }
+
+  .footer-icons {
+    display: flex;
+    flex-shrink: 0;
+    gap: 1.2rem;
+  }
+
+  .footer-icons img {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .button:hover {
+    background-color: var(--button-hover-color);
+    border: 0.1rem solid var(--button-hover-color);
+  }
+
+  .button:active {
+    background-color: var(--button-active-color);
+    border: 0.1rem solid var(--button-active-color);
+  }
+
+  .logoImg {
+    width: 15.3rem;
+    height: 5.1rem;
+  }
+
+  .topLandingImg {
+    width: 74.6rem;
+    height: 34rem;
+  }
+
+  .section-Img {
+    width: 69.6rem;
+    height: 52.4rem;
+  }
+
+  .bottomLandingImg {
+    width: 74.6rem;
+    height: 39.7rem;
+  }
+}
+
+/* 모바일 */
+@media (min-width: 37.5rem) and (max-width: 76.7rem) {
 }
