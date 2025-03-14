@@ -47,6 +47,7 @@ input {
 .password {
     position: relative;
     width: 640px;
+    display: flex;
 }
 
 .pwd_icon {
@@ -57,8 +58,6 @@ input {
     width: 24px;
     height: 24px;
 }
-
-
 
 .submit_btn button {
     color: var(--gray100);
@@ -124,3 +123,4 @@ input {
     color: var(--blue);
     text-decoration: underline;
 }
+
