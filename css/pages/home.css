@@ -3,7 +3,36 @@
 /* 페이지 스타일 */
 body {
     margin: 0 auto;
-    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+}
+
+@media (min-width: 1200px) {
+    .logo {
+        margin-left: 200px;
+    }
+
+    .login_btn {
+        margin-right: 200px;
+    }
+}
+
+@media (max-width: 1199px) and (min-width: 768px) {
+    .logo {
+        margin-left: 24px;
+    }
+
+    .login_btn {
+        margin-right: 24px;
+    }
+}
+
+@media (max-width: 767px) and (min-width: 375px){
+    .logo {
+        margin-left: 16px;
+    }
+
+    .login_btn {
+        margin-right: 16px;
+    }
 }
 
 .global_nav {
@@ -30,10 +59,6 @@ a {
 
 
 
-.logo {
-    margin-left: 200px;
-}
-
 .logo img {
     width: 153px;
     height: 51px;
@@ -49,7 +74,7 @@ a {
     line-height: 48px;
     width: 128px;
     height: 48px;
-    margin-right: 200px;
+    
     text-decoration: none;
     text-align: center;
     display: inline-block;
