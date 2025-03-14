@@ -57,26 +57,26 @@ input::placeholder {
     color: var(--gray400);
 }
 
-.password {
+.pwd {
     position: relative;
 }
 
-.password, .check-password {
+.pwd, .check-pwd {
     position: relative;
 }
 
-.show-password {
+.show-pwd {
     width: 24px;
 }
 
-.password button, .check-password button {
+.pwd button, .check-pwd button {
     position: absolute;
     right: 20px;
     top: 54px;
     background-color: var(--gray100);
 }
 
-.login-button, .sign-up-button {
+.login-btn, .sign-up-btn {
     display: inline-block;
     padding: 16px;
     width: 640px;
@@ -194,8 +194,12 @@ input::placeholder {
         top: 40px;
     }
 
-    .login-button, .sign-up-button {
+    .login-btn, .sign-up-btn {
         width: 100%;
         border-radius: 40px;
     }
+}
+
+.error {
+    border-color: var(--red);
 }
