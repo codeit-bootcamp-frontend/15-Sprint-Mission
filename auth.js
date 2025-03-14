@@ -1,6 +1,4 @@
-const visible = document.getElementsByClassName('show-password');
-const password = document.getElementById('password');
-const checkPassword = document.getElementById('check-password');
+const visible = document.getElementsByClassName('visible');
 
 function passwordVisibility (e) {
     if (e.target.getAttribute("src") === "/img/visibility_off.png") {
