@@ -202,6 +202,7 @@ footer {
     .login-btn {
         margin-right: 200px;
     }
+
     h2 {
         font-size: 40px;
         font-weight: 700;
@@ -262,6 +263,30 @@ footer {
     .bg-description.top a {
         margin: 0 77.5px;
     }
+
+    .background.bottom {
+        height: 927px;
+    }
+
+    .bg-description.bottom {
+        width: 295px;
+        height: 112px;
+        margin: 201px 0 0;
+    }
+
+    h2 {
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 140%;
+        letter-spacing: 0%;
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    .bottom-img {
+        width: 746px;
+        height: 397px;
+    }
 }
 
 
@@ -320,5 +345,10 @@ footer {
     .top-img {
         width: 448px;
         height: 204px;
+    }
+
+    .bottom-img {
+        width: 375px;
+        height: 198px;
     }
 }
