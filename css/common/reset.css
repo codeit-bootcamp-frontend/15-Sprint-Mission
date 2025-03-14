@@ -8,8 +8,12 @@
 }
 
 /* 글꼴 설정 (모든 요소에 대해) */
-body, h1, h2, h3, h4, h5, h6, p, a, li, ul, ol {
+body {
     font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, p, a, li, ul, ol {
+    font-family: inherit;
 }
 
 /* a 태그의 기본 스타일 제거 */
