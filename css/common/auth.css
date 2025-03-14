@@ -11,17 +11,17 @@ body {
     align-items: center;
 }
 
-.input_info {
+.input-info {
     margin-top: 40px;
 }
 
-.input_group {
+.input-group {
     font-size: 18px;
     font-weight: 700;
     line-height: 26px;
 }
 
-.input_group, .login_btn {
+.input-group, .login-btn {
     margin-bottom: 24px;
 }
 
@@ -50,7 +50,7 @@ input {
     display: flex;
 }
 
-.pwd_icon {
+.pwd-icon {
     display: inline-flex;
     position: absolute;
     right: 16px;
@@ -59,7 +59,7 @@ input {
     height: 24px;
 }
 
-.submit_btn button {
+.submit-btn button {
     color: var(--gray100);
     background-color: var(--blue);
     width: 640px;
@@ -72,7 +72,7 @@ input {
     margin-bottom: 24px;
 }
 
-.sign_easy {
+.sign-easy {
     display: flex; 
      
     box-sizing: border-box;
@@ -97,7 +97,7 @@ input {
     text-align: center;
 }
 
-.sign_easy div {
+.sign-easy div {
     display: flex;
     gap: 16px;
 }
@@ -108,7 +108,7 @@ input {
 }
 
 
-.move_page {
+.move-page {
     margin-top: 24px;
     display: flex;
     justify-content: center;
@@ -119,7 +119,7 @@ input {
     color: var(--gray800);
 }
 
-.move_page a {
+.move-page a {
     color: var(--blue);
     text-decoration: underline;
 }

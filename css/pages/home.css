@@ -10,8 +10,17 @@ body {
         margin-left: 200px;
     }
 
-    .login_btn {
+    .login-btn {
         margin-right: 200px;
+    }
+    h2 {
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 56px;
+        color: #374151;
+    }
+    .line-break {
+
     }
 }
 
@@ -20,7 +29,7 @@ body {
         margin-left: 24px;
     }
 
-    .login_btn {
+    .login-btn {
         margin-right: 24px;
     }
 }
@@ -30,12 +39,12 @@ body {
         margin-left: 16px;
     }
 
-    .login_btn {
+    .login-btn {
         margin-right: 16px;
     }
 }
 
-.global_nav {
+.global-nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -64,7 +73,7 @@ a {
     height: 51px;
 }
 
-.login_btn {
+.login-btn {
     background-color: #3692FF;
     border: none;
     border-radius: 8px;
@@ -96,30 +105,30 @@ a {
     gap: 69px;
 }
 
-.top_img {
+.top-img {
     width: 746px;
     height: 340px;
 }
 
-.bg_description {
+.bg-description {
     justify-content: center;
     align-items: center;
     padding-bottom: 60px;
 }
 
-.bg_description.top {
+.bg-description.top {
     margin: 40px 0 40px;
 }
 
-.bg_description.bottom {
+.bg-description.bottom {
     margin: 112.5px 0 112.5px;
 }
 
-.bg_description h2 {
+.bg-description h2 {
     margin: 0 0 32px 0;
 }
 
-.items_btn {
+.items-btn {
     display: inline-block;
     background-color: #3692FF;
     color: #F3F4F6;
@@ -132,7 +141,7 @@ a {
     text-decoration: none;
 }
 
-.main_container {
+.main-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -149,7 +158,7 @@ a {
     gap: 64px;
 }
 
-.container_img {
+.container-img {
     width: 579px;
     height: 444px;
 }
@@ -185,7 +194,7 @@ a {
     color: #374151;
 }
 
-.bottom_img {
+.bottom-img {
     width: 746px;
     height: 397px;
 }
@@ -196,7 +205,7 @@ footer {
     height: 160px;
 }
 
-.footer_container {
+.footer-container {
     color: #9CA3AF;
     display: flex;
     justify-content: space-between;
@@ -206,12 +215,12 @@ footer {
     margin: 0 auto;
 }
 
-.privacy_faq {
+.privacy-faq {
     display: flex;
     gap: 30px;
 }
 
-.privacy_faq a {
+.privacy-faq a {
     text-decoration: none;
     color: #E5E7EB;
 }
