@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>판다마켓-로그인</title>
+        <link rel="stylesheet" href="style2.css" />
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <main class="container">
+            <div class="logo-wrap">
+                <a href="/"> <img src="images/logo.png" alt="판다마켓 로고" /></a>
+            </div>
+            <form method="post">
+                <div class="form-group">
+                    <label for="email">이메일</label>
+                    <div><input type="email" id="email" name="email" placeholder="이메일을 입력해주세요" /></div>
+                </div>
+                <div class="form-group">
+                    <label for="password">비밀번호</label>
+                    <div class="password-wrap">
+                        <input type="password" id="password" name="password" placeholder="비밀번호를 입력해 주세요" />
+                        <!--<button class="password-button" type="button"><img href="images/unvisible_eye.png" /></button>-->
+                        <!--눈아이콘을 만들고 싶었는데 작동하지 않아요-->
+                    </div>
+                </div>
+                <button class="login-button" type="submit">로그인</button>
+            </form>
+            <div class="login-method-container">
+                <h3>간편 로그인하기</h3>
+                <div class="login-method-wrap">
+                    <a href="https://www.google.com/">
+                        <img src="images/google_logo.png" alt="구글 로그인" width="42" />
+                    </a>
+                    <a href="https://www.kakaocorp.com/page/">
+                        <img src="images/kakao_logo.png" alt="카카오 로그인" width="42" />
+                    </a>
+                </div>
+            </div>
+            <div class="signup-go">판다마켓이 처음이신가요?<a href="signup.html">회원가입</a></div>
+        </main>
+    </body>
+</html>
