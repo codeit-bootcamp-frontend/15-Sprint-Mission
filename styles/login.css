@@ -1,18 +1,6 @@
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
 @import url("./color.css");
-* {
-  font-family: "Pretendard Variable", Pretendard, -apple-system,
-    BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI",
-    "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
-}
-html {
-  font-size: 10px;
-}
-
-label {
-  display: block;
-}
+@import url("./global.css");
 
 main {
   width: 64rem;
@@ -20,7 +8,7 @@ main {
   display: flex;
   flex-direction: column;
 }
-header {
+main header:first-child {
   display: flex;
   justify-content: center;
 }
@@ -115,4 +103,16 @@ form label {
 .go_joinpage a {
   text-decoration: underline;
   color: var(--blue);
+}
+@media (768px <= width <= 1199px) {
+  main {
+    width: calc(100% - 5.2rem);
+  }
+}
+
+@media (375px <= width <= 767px) {
+  main {
+    width: calc(100% - 1.6rem);
+    max-width: 40rem;
+  }
 }

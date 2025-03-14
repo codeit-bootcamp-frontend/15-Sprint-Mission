@@ -1,11 +1,7 @@
 @import url("./color.css");
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
-* {
-  font-family: "Pretendard Variable", Pretendard, -apple-system,
-    BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI",
-    "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
-}
+@import url("./global.css");
+
 button {
   background-color: var(--blue);
 }
@@ -16,8 +12,8 @@ button:hover {
 button:active {
   background-color: var(--btn-active);
 }
-header {
-  padding: 0.8em;
+#header {
+  padding: 1.28rem;
   margin: auto;
   position: fixed;
   top: 0;
@@ -27,21 +23,25 @@ header {
 }
 nav {
   width: calc(100% - 200px);
-  height: 2.5em;
+  height: 4rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: auto;
 }
-nav img {
-  width: 10em;
+
+#header .logo_img {
+  background-image: url("../img/logo.png");
+  background-size: cover;
+  height: 5.1rem;
+  width: 15.3rem;
 }
 
 nav > button {
-  padding: 0.8em 2em;
+  padding: 1.28rem 3.2rem;
   border-radius: 8px;
   background: var(--blue);
-  font-size: 1em;
+  font-size: 1.6rem;
 }
 nav > button > a {
   color: #ffffff;
@@ -51,38 +51,39 @@ nav > button > a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 4em;
+  margin-top: 6.4rem;
 }
 .banner {
   background-color: #cfe5ff;
   width: 100%;
   display: flex;
   justify-content: center;
-  padding: 10em 0 0;
+  padding: 16rem 0 0;
 }
 
 .banner h1 {
-  letter-spacing: -0.1em;
-  font-size: 2.5em;
+  letter-spacing: -0.16rem;
+  font-size: 4rem;
 }
 .banner img {
   width: 50%;
 }
 #banner-content {
+  /* width: 26%; */
+  width: 35.7rem;
   position: relative;
-  bottom: -4em;
 }
-.banner h1 {
-  font-size: 2.5em;
+.banner h2 {
+  font-size: 4rem;
   font-weight: 700;
   line-height: 1.5;
 }
 .banner button {
-  margin-top: 2.75em;
-  padding: 0.8em 6em;
+  margin-top: 4.4rem;
+  padding: 1.28rem 9.6rem;
   border-radius: 999px;
   width: 100%;
-  font-size: 1.25em;
+  font-size: 2rem;
   font-weight: 600;
 }
 .banner > div > button > a {
@@ -93,7 +94,7 @@ nav > button > a {
   display: flex;
   justify-content: center;
   width: 100%;
-  margin: 10em 0 15em;
+  margin: 16rem 0 15em;
 }
 .card {
   width: 80%;
@@ -101,20 +102,20 @@ nav > button > a {
   justify-content: center;
   background-color: #fcfcfc;
   flex-grow: 1;
-  gap: 10rem;
+  gap: 16rem;
 }
 
 .card-title {
-  font-size: 1.1em;
+  font-size: 1.76rem;
   color: var(--blue);
   font-weight: 700;
 }
 
 .card h2 {
-  margin: 0.2em 0;
+  margin: 0.32rem 0;
   line-height: 1.4;
   text-align: left;
-  font-size: 2.5em;
+  font-size: 4rem;
   font-weight: 700;
 }
 .card-box:nth-child(2),
@@ -125,6 +126,7 @@ nav > button > a {
 .card p {
   color: var(--gray700);
   line-height: 1.4;
+  font-size: 2.4rem;
 }
 .card > img {
   width: 25%;
@@ -133,13 +135,15 @@ footer {
   background-color: var(--gray900);
   width: 100%;
   height: 11.875em;
-  display: flex;
-  justify-content: space-around;
-  padding: 1.5em;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 0.2fr 0.2fr 1fr;
+  justify-items: center;
+  padding: 2.4rem;
   box-sizing: border-box;
 }
 
-footer > ul {
+footer ul {
   display: flex;
 }
 
@@ -147,7 +151,7 @@ footer > ul {
   color: var(--gray400);
 }
 .info:nth-child(2n) {
-  margin: 0 0.8em;
+  margin: 0 1.28rem;
 }
 .info a {
   color: var(--gray200);
@@ -156,4 +160,157 @@ footer > ul {
 .sns {
   padding: 0 0.2em;
   width: 50%;
+}
+
+@media (768px <= width <= 1199px) {
+  body {
+    box-sizing: border-box;
+  }
+  #header nav {
+    align-items: center;
+    width: calc(100% - 2.4rem);
+  }
+  .banner {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #banner-content {
+    width: 100%;
+    text-align: center;
+    position: relative;
+    top: -10rem;
+  }
+  #banner-content h2 {
+    font-weight: 700;
+    font-size: 4rem;
+    margin-bottom: 2.4rem;
+    letter-spacing: -0.4rem;
+    text-align: center;
+  }
+  #banner-content button {
+    margin: 0;
+    width: 35.7rem;
+  }
+  .banner img {
+    width: 100%;
+  }
+  .card-box {
+    margin-top: 2.4rem;
+  }
+
+  .card {
+    flex-direction: column;
+    gap: 2.4rem;
+  }
+  .card img {
+    width: 69.6rem;
+  }
+  .card-title {
+    font-size: 1.8rem;
+    margin-bottom: 1.6rem;
+  }
+  .card h2 {
+    font-size: 3.2rem;
+  }
+  .card p {
+    font-size: 1.8rem;
+    margin-top: 2.4rem;
+  }
+  .card-box:nth-child(2) .card {
+    flex-direction: column-reverse;
+  }
+  #banner-bottom h2 {
+    padding: 20.1rem 0 21.7rem;
+    text-align: center;
+  }
+  footer {
+    grid-template-columns: 1fr 0.5fr 0.5fr 1fr;
+  }
+}
+
+@media (375px <= width <= 767px) {
+  nav {
+    width: calc(100% - 16px);
+  }
+  #header .logo_img {
+    width: 10.3rem;
+    background-image: url("../img/logo_noicon.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  .banner {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #banner-content {
+    width: 100%;
+    text-align: center;
+    position: relative;
+    top: -10rem;
+  }
+  #banner-content h2 {
+    font-weight: 700;
+    font-size: 4rem;
+    margin-bottom: 2.4rem;
+    letter-spacing: -0.4rem;
+    text-align: center;
+  }
+  #banner-content button {
+    margin: 0;
+    width: 35.7rem;
+  }
+  .banner img {
+    width: 100%;
+  }
+  .card-box {
+    box-sizing: border-box;
+    margin-top: 2.4rem;
+    padding: 0 1.5rem;
+  }
+
+  .card {
+    flex-direction: column;
+    gap: 2.4rem;
+  }
+  .card img {
+    width: 100%;
+  }
+  .card-title {
+    font-size: 1.8rem;
+    margin-bottom: 1.6rem;
+  }
+  .card h2 {
+    font-size: 3.2rem;
+  }
+  .card p {
+    font-size: 1.8rem;
+    margin-top: 2.4rem;
+  }
+  .card-box:nth-child(2) .card {
+    flex-direction: column-reverse;
+  }
+  #banner-bottom h2 {
+    padding: 20.1rem 0 21.7rem;
+    text-align: center;
+  }
+
+  footer {
+    padding: 3.2rem;
+    display: grid;
+    grid-template: 1fr 3fr 1fr/ 1fr 1fr 1fr;
+    align-items: center;
+  }
+
+  .info {
+    font-size: 1.6rem;
+    display: flex;
+    justify-content: space-between;
+  }
+  .copyright {
+    grid-row: 3;
+    font-size: 1.6rem;
+  }
 }
