@@ -1,5 +1,5 @@
 html {
-  color: #374151;
+  color: var(--gray700);
 }
 
 body {
@@ -13,7 +13,7 @@ header {
 }
 
 footer {
-  background-color: #111827;
+  background-color: var(--gray900);
   height: 10rem;
 }
 
@@ -142,7 +142,7 @@ footer {
 }
 
 .keyword {
-  color: #3692FF;
+  color: var(--blue);
   margin-bottom: 0.75rem;
 }
 
@@ -152,11 +152,11 @@ footer {
 }
 
 .copyright {
-  color: #9CA3AF;
+  color: var(--gray400);
 }
 
 .faq a {
-  color: #E5E7EB;
+  color: var(--gray200);
 }
 
 @media (max-width:1920px) {
