@@ -21,12 +21,14 @@
         <div>
             <label for="email-id">이메일</label>
             <input id="email-id" type="email" name="email" placeholder="이메일을 입력해주세요">
+            <div class="error-message email"></div>
         </div>
         <div>
             <label for="nickname-id">닉네임</label>
             <input id="nickname-id" type="text" name="nickname" placeholder="닉네임을 입력해주세요">
+            <div class="error-message nickname"></div>
         </div>
-        <div class="pwd">
+        <div>
             <label for="pwd-id">비밀번호</label>
             <div class="show-pwd">
                 <input id="pwd-id" type="password" name="password" placeholder="비밀번호를 입력해주세요">
@@ -34,8 +36,9 @@
                     <img class="visible" src="/img/visibility_off.png">
                 </button>    
             </div>
+            <div class="error-message pwd"></div>
         </div>
-        <div class="check-pwd">
+        <div>
             <label for="check-pwd-id">비밀번호 확인</label>
             <div class="show-pwd">
                 <input id="check-pwd-id" type="password" name="check-password" placeholder="비밀번호를 다시 한 번 입력해주세요">
