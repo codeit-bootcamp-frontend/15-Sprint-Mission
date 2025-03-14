@@ -8,6 +8,10 @@ body {
 }
 
 header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
   background-color: #FFFFFF;
   border-bottom: 1px solid #DDE0E3
 }
@@ -18,10 +22,10 @@ footer {
 }
 
 .gnb {
-  padding: 9px 400px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 9px 400px;
 }
 
 .gnb img {
