@@ -186,11 +186,6 @@ input::placeholder {
         margin: 4px auto 16px;
     }
 
-    .password button, .check-password button {
-        right: 12px;
-        top: 40px;
-    }
-
     .login-btn, .sign-up-btn {
         width: 100%;
         border-radius: 40px;
@@ -198,5 +193,13 @@ input::placeholder {
 }
 
 .error {
-    border-color: var(--red);
+    border: 1px solid var(--red);
+}
+
+.error-message {
+    padding-left: 16px;
+    margin: 10px 0 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--red);
 }
