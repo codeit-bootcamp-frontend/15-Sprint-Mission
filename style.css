@@ -567,7 +567,7 @@
     flex-direction: column;
     justify-content: end;
     align-items: center;
-    margin-top: 10rem;
+    margin-top: 7rem;
   }
 
   .top-content {
@@ -587,9 +587,8 @@
   }
 
   .top-content-text h2 {
-    line-height: 5.6rem;
     color: var(--main-font-color);
-    font-size: 4rem;
+    font-size: 3.2rem;
     font-weight: 700;
     text-align: center;
   }
@@ -598,8 +597,8 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    margin-top: 2.4rem;
-    gap: 5.2rem;
+    margin-top: 5.2rem;
+    gap: 4rem;
   }
 
   .section-content {
@@ -608,6 +607,7 @@
     flex-direction: column;
     justify-content: start;
     align-items: center;
+    height: 41.7rem;
   }
 
   .section-card {
@@ -615,9 +615,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 2.4rem;
-    width: 34.4rem;
-    height: 41.7rem;
+    gap: 1.6rem;
+    width: 37.5rem;
   }
 
   .section-card.reverse {
@@ -625,11 +624,9 @@
   }
 
   .section-text {
-    width: 100%;
-    max-width: 100%;
     display: flex;
     flex-direction: column;
-    padding: 0 1.4rem;
+    padding: 0 2rem;
   }
 
   .section-text.card1 {
@@ -642,20 +639,21 @@
   }
 
   .section-text-tag {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: 700;
     color: var(--button-color);
   }
 
   .section-text-title {
     color: var(--main-font-color);
-    font-size: 3.2rem;
+    font-size: 2.4rem;
     font-weight: 700;
+    line-height: 1.2;
   }
 
   .section-text-subtitle {
     color: var(--main-font-color);
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: 500;
   }
 
@@ -682,10 +680,11 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     flex-shrink: 0;
     gap: 1rem;
     padding-bottom: 6rem;
-    margin: 11.25rem 0;
+    margin: 3.25rem 0;
   }
 
   .bottom-content-text h2 {
@@ -708,7 +707,7 @@
     margin-bottom: 6rem;
     background-color: var(--button-color);
     color: #ffffff;
-    padding: 1.6rem 12.4rem;
+    padding: 1.2rem 7.1rem;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -716,6 +715,7 @@
     border-radius: 4rem;
     cursor: pointer;
     font-size: 1.6rem;
+    width: 240px;
   }
 
   .footer-content {
@@ -776,7 +776,7 @@
 
   .topLandingImg {
     width: 44.8rem;
-    height: 33.6rem;
+    height: 20.4rem;
   }
 
   .section-Img {
