@@ -107,6 +107,10 @@ button {
   border: none;
 }
 
+button, a {
+  cursor: pointer;
+}
+
 a {
   color: var(--gray700);
   text-decoration: none;

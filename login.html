@@ -38,9 +38,9 @@
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/layout.css" />
     <link rel="stylesheet" href="css/common.css" />
-    <link rel="stylesheet" href="css/main.css" />
-    <link rel="stylesheet" href="css/sub.css" />
-    <script defer src="js/script.js"></script>
+    <link rel="stylesheet" href="css/auth.css" />
+    <script defer type="module" src="js/script.js"></script>
+    <script defer type="module" src="js/auth.js"></script>
     <script>
       window.addEventListener('DOMContentLoaded', function () {
         if (window.navigator.userAgent.match(/MSIE|Internet Explorer|Trident/i)) {
@@ -55,27 +55,28 @@
   <body>
     <a href="#container" class="skip-nav">본문 바로가기</a>
     <div id="wrap">
-      <header class="header"></header>
-      <div id="container" class="login-page">
+      <div id="container" class="auth-page">
         <div class="inner03">
-          <a href="" class="login-logo">
+          <a href="/" class="auth-logo">
             <img src="/images/sub/logo_big.svg" alt="판다마켓" />
           </a>
-          <ul class="login-form">
-            <li>
-              <label for="email">이메일</label>
-              <input type="text" id="email" placeholder="이메일을 입력하세요" />
-            </li>
-            <li>
-              <label for="password">비밀번호</label>
-              <input type="password" id="password" placeholder="비밀번호를 입력하세요" />
-              <button type="button" class="toggle-password">
-                <img src="images/common/ic_eye_off.svg" alt="비밀번호 보기" />
-              </button>
-            </li>
-          </ul>
-          <button type="button" class="login-btn">로그인</button>
-          <div class="login-sns">
+          <form action="" onsubmit="login">
+            <ul class="auth-form">
+              <li>
+                <label for="email">이메일</label>
+                <input type="text" id="email" placeholder="이메일을 입력하세요" />
+              </li>
+              <li>
+                <label for="password">비밀번호</label>
+                <input type="password" id="password" placeholder="비밀번호를 입력하세요" />
+                <button type="button" class="toggle-password">
+                  <img src="images/common/ic_eye_off.svg" alt="비밀번호 보기" />
+                </button>
+              </li>
+            </ul>
+            <button type="submit" onclick="login" class="auth-btn">로그인</button>
+          </form>
+          <div class="auth-sns">
             <p>간편 로그인하기</p>
             <ul>
               <li>
@@ -90,10 +91,9 @@
               </li>
             </ul>
           </div>
-          <p class="login-signup">판다마켓이 처음이신가요?<a href="/signup.html">회원가입</a></p>
+          <p class="auth-signup">판다마켓이 처음이신가요?<a href="/signup.html">회원가입</a></p>
         </div>
       </div>
-      <footer class="footer"></footer>
     </div>
   </body>
 </html>

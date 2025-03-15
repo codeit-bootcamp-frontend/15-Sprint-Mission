@@ -52,7 +52,7 @@
   }
 }
 @media all and (max-width: 768px) {
-  .login-page .inner03 {
+  .auth-page .inner03 {
     width: auto;
     max-width: none;
     margin-inline: 3.13vw;

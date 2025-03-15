@@ -9,15 +9,6 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://pandamarket.com" />
     <!-- <meta property="og:image" content=""> -->
-    <link rel="apple-touch-icon" sizes="57x57" href="/images/favicon/apple-icon-57x57.png" />
-    <link rel="apple-touch-icon" sizes="60x60" href="/images/favicon/apple-icon-60x60.png" />
-    <link rel="apple-touch-icon" sizes="72x72" href="/images/favicon/apple-icon-72x72.png" />
-    <link rel="apple-touch-icon" sizes="76x76" href="/images/favicon/apple-icon-76x76.png" />
-    <link rel="apple-touch-icon" sizes="114x114" href="/images/favicon/apple-icon-114x114.png" />
-    <link rel="apple-touch-icon" sizes="120x120" href="/images/favicon/apple-icon-120x120.png" />
-    <link rel="apple-touch-icon" sizes="144x144" href="/images/favicon/apple-icon-144x144.png" />
-    <link rel="apple-touch-icon" sizes="152x152" href="/images/favicon/apple-icon-152x152.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-icon-180x180.png" />
     <link rel="icon" type="image/png" sizes="192x192" href="/images/favicon/android-icon-192x192.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon/favicon-96x96.png" />
@@ -39,8 +30,8 @@
     <link rel="stylesheet" href="css/layout.css" />
     <link rel="stylesheet" href="css/common.css" />
     <link rel="stylesheet" href="css/main.css" />
-    <link rel="stylesheet" href="css/sub.css" />
-    <script defer src="js/script.js"></script>
+    <script defer type="module" src="js/script.js"></script>
+    <script defer type="module" src="js/auth.js"></script>
     <script>
       window.addEventListener('DOMContentLoaded', function () {
         if (window.navigator.userAgent.match(/MSIE|Internet Explorer|Trident/i)) {
@@ -55,7 +46,14 @@
   <body>
     <a href="#container" class="skip-nav">본문 바로가기</a>
     <div id="wrap">
-      <header class="header"></header>
+      <header class="header">
+        <div class="inner02">
+          <h1 class="header-logo">
+            <a href="/"><span class="blind">판다마켓</span><img src="images/common/logo.svg" alt="판다마켓" /></a>
+          </h1>
+          <a href="login.html" class="header-login">로그인</a>
+        </div>
+      </header>
       <div id="container" class="main-page">
         <section class="main-banner main-banner01">
           <div class="inner02">
@@ -71,7 +69,7 @@
         <section class="main-common main-hot">
           <div class="inner">
             <a href="#">
-              <figure><img src="images/main/main_hot.png" alt="인기 상품 이미지" /></figure>
+              <div class="img"><img src="images/main/main_hot.png" alt="인기 상품 이미지" /></div>
               <div>
                 <h2>Hot item</h2>
                 <b>인기 상품을<br class="pc-only" />확인해 보세요</b>
@@ -86,7 +84,7 @@
         <section class="main-common main-search">
           <div class="inner">
             <a href="#">
-              <figure><img src="images/main/main_search.png" alt="상품 검색 이미지" /></figure>
+              <div class="img"><img src="images/main/main_search.png" alt="상품 검색 이미지" /></div>
               <div>
                 <h2>Search</h2>
                 <b>구매를 원하는<br class="pc-only" />상품을 검색하세요</b>
@@ -101,7 +99,7 @@
         <section class="main-common main-register">
           <div class="inner">
             <a href="#">
-              <figure><img src="images/main/main_register.png" alt="인기 상품 이미지" /></figure>
+              <div class="img"><img src="images/main/main_register.png" alt="인기 상품 이미지" /></div>
               <div>
                 <h2>Register</h2>
                 <b>판매를 원하는<br class="pc-only" />상품을 등록하세요</b>
@@ -124,7 +122,29 @@
           </div>
         </section>
       </div>
-      <footer class="footer"></footer>
+      <footer class="footer">
+        <div class="inner02">
+          <p class="copy">&copy;codeit - 2024</p>
+          <nav>
+            <a href="privacy.html">개인정보처리방침</a>
+            <a href="faq.html">FAQ</a>
+          </nav>
+          <ul class="footer-sns">
+            <li>
+              <a href="https://www.facebook.com" target="_blank"><img src="images/common/ic_facebook.svg" alt="페이스북" /></a>
+            </li>
+            <li>
+              <a href="https://www.twitter.com" target="_blank"><img src="images/common/ic_twitter.svg" alt="트위터" /></a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com" target="_blank"><img src="images/common/ic_instagram.svg" alt="인스타그램" /></a>
+            </li>
+            <li>
+              <a href="https://www.youtube.com" target="_blank"><img src="images/common/ic_youtube.svg" alt="유튜브" /></a>
+            </li>
+          </ul>
+        </div>
+      </footer>
     </div>
   </body>
 </html>
