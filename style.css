@@ -616,7 +616,7 @@
     justify-content: center;
     align-items: center;
     gap: 1.6rem;
-    width: 37.5rem;
+    width: 100%;
   }
 
   .section-card.reverse {
@@ -624,6 +624,7 @@
   }
 
   .section-text {
+    width: 100%;
     display: flex;
     flex-direction: column;
     padding: 0 2rem;
