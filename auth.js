@@ -1,19 +1,28 @@
-const email = document.getElementById('email-id');
-const nickname = document.getElementById('nickname-id')
-const pwd = document.getElementById('pwd-id');
+const email = document.getElementById('emailId');
+const nickname = document.getElementById('nicknameId');
+const pwd = document.getElementById('pwdId');
+const checkPwd = document.getElementById('checkPwdId');
 const errorMessage = document.getElementsByClassName('error-message');
 
 function emailError (e) {
+    const exptext = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/;
     if (e.target.value === '') {
-        for (elem in errorMessage) {
-            if (errorMessage[elem].classList.contains('email'))
-            errorMessage[elem].textContent = '이메일을 입력해주세요.';
+        for (elem of errorMessage) {
+            if (elem.classList.contains('email'))
+            elem.textContent = '이메일을 입력해주세요.';
         }
         e.target.classList.add('error');
-    } else {
-        for (elem in errorMessage) {
-            if (errorMessage[elem].classList.contains('email'))
-            errorMessage[elem].textContent = '';
+    } else if (exptext.test(e.target.value) === false) {
+        for (elem of errorMessage) {
+            if (elem.classList.contains('email'))
+                elem.textContent = '잘못된 이메일 형식입니다.';
+        }
+        e.target.classList.add('error');
+    }
+    else {
+        for (elem of errorMessage) {
+            if (elem.classList.contains('email'))
+            elem.textContent = '';
         }
         e.target.classList.remove('error');
     }
@@ -21,35 +30,17 @@ function emailError (e) {
 
 email.addEventListener('focusout', emailError);
 
-function pwdError (e) {
-    if (e.target.value === '') {
-        for (elem in errorMessage) {
-            if (errorMessage[elem].classList.contains('pwd'))
-            errorMessage[elem].textContent = '비밀번호를 입력해주세요.';
-        }
-        e.target.classList.add('error');
-    } else {
-        for (elem in errorMessage) {
-            if (errorMessage[elem].classList.contains('pwd'))
-            errorMessage[elem].textContent = '';
-        }
-        e.target.classList.remove('error');
-    }
-}
-
-pwd.addEventListener('focusout', pwdError);
-
 function nicknameError (e) {
     if (e.target.value === '') {
-        for (elem in errorMessage) {
-            if (errorMessage[elem].classList.contains('nickname'))
-            errorMessage[elem].textContent = '닉네임을 입력해주세요.';
+        for (elem of errorMessage) {
+            if (elem.classList.contains('nickname'))
+            elem.textContent = '닉네임을 입력해주세요.';
         }
         e.target.classList.add('error');
     } else {
-        for (elem in errorMessage) {
-            if (errorMessage[elem].classList.contains('nickname'))
-            errorMessage[elem].textContent = '';
+        for (elem of errorMessage) {
+            if (elem.classList.contains('nickname'))
+            elem.textContent = '';
         }
         e.target.classList.remove('error');
     }
@@ -57,6 +48,50 @@ function nicknameError (e) {
 
 if (nickname !== null) {
     nickname.addEventListener('focusout', nicknameError);
+}
+
+function pwdError (e) {
+    if (e.target.value === '') {
+        for (elem of errorMessage) {
+            if (elem.classList.contains('pwd'))
+            elem.textContent = '비밀번호를 입력해주세요.';
+        }
+        e.target.classList.add('error');
+    } else if (e.target.value.length < 8) {
+        for (elem of errorMessage) {
+            if (elem.classList.contains('pwd'))
+            elem.textContent = '비밀번호를 8자 이상 입력해주세요.';
+        }
+        e.target.classList.add('error');
+    } else {
+        for (elem of errorMessage) {
+            if (elem.classList.contains('pwd'))
+            elem.textContent = '';
+        }
+        e.target.classList.remove('error');
+    }
+}
+
+pwd.addEventListener('focusout', pwdError);
+
+function checkPwdError (e) {
+    if (e.target.value !== pwd.value) {
+        for (elem of errorMessage) {
+            if (elem.classList.contains('check-pwd'))
+            elem.textContent = '비밀번호가 일치하지 않습니다.';
+        }
+        e.target.classList.add('error');
+    } else {
+        for (elem of errorMessage) {
+            if (elem.classList.contains('check-pwd'))
+            elem.textContent = '';
+        }
+        e.target.classList.remove('error');
+    }
+}
+
+if (checkPwd !== null) {
+    checkPwd.addEventListener('focusout', checkPwdError);
 }
 
 const visible = document.getElementsByClassName('visible');

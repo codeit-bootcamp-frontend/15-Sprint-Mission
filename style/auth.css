@@ -130,11 +130,11 @@ input::placeholder {
     color: var(--blue);
 }
 
-.login-button:hover {
+.login-btn:hover {
     background-color: var(--blue);
 }
 
-.sign-up-button:hover {
+.sign-up-btn:hover {
     background-color: var(--blue);
 }
 
