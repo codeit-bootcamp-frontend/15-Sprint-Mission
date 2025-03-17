@@ -2,9 +2,8 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 231px auto;
+  margin: 0 auto;
   width: 640px;
-  height: 618px;
 }
 
 .logo-auth-box {
@@ -14,15 +13,13 @@ main {
 
 .logo-auth-box img{
   width: 396px;
-  height: 132px;
-}
-
-.cont-area {
-  margin-top: 40px;
+  margin-top: 48px;
+  margin-bottom: 40px;
 }
 
 .group-inp {
-  height: 98px;
+  display: flex;
+  flex-direction: column;
   margin-bottom: 24px;
 }
 
@@ -30,7 +27,6 @@ main {
   color: var(--gray-800);
   font-weight: 700;
   font-size: 18px;
-  line-height: 26px;
   margin-bottom: 16px;
 }
 
@@ -40,29 +36,36 @@ main {
   height: 56px;
   border: none;
   border-radius: 12px;
-  margin: 16px 0 24px;
   font-size: 16px;
   font-weight: 400;
   line-height: 26px;
   vertical-align: middle;
-  padding-left: 24px;
+  padding: 16px 24px;
   outline: none;
 }
 
-#inputPwd {
+.inputFont {
   font-size: 18px;
   color: var(--gray-800);
 }
 
 .inputPwd-wrap {
   position: relative;
+  display: flex;
+  align-items: center;
 }
 
-.inputPwd-wrap i {
+.inputPwd-wrap .toggle-password {
+  width: 24px;
   position: absolute;
-  top: 34px;
-  right: 16px;
+  right: 24px;
   cursor: pointer;
+}
+
+.inputPwd-wrap img {
+  width: 100%;
+  border: none;
+  
 }
 
 .login-btn {

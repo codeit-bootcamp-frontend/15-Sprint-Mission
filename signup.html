@@ -4,15 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="/assets/favicon.ico">
-    <link rel="stylesheet" href="css/reset.css" />
-    <link rel="stylesheet" href="css/palette.css" />
     <link
-      rel="stylesheet"
-      as="style"
-      crossorigin
-      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css"
+    rel="stylesheet"
+    as="style"
+    crossorigin
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css"
     />
-    <script src="https://kit.fontawesome.com/5b35a6d114.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/auth.css" />
     <title>판다마켓</title>
@@ -20,36 +18,36 @@
 <body>
   <main>
     <div class="logo-auth-box">
-      <h1>
-        <a href="/">
-          <img src="assets/auth_logo.png" alt="판다마켓"/>
-        </a>
-      </h1>
+      <a href="/">
+        <img src="assets/auth_logo.png" alt="판다마켓"/>
+      </a>
     </div>
     <div class="cont-area">
-      <div class="group-inp">
-        <label for="inputEmail">이메일</label>
-        <input type="email" id="inputEmail" placeholder="codeit@email.com">
-      </div>
-      <div class="group-inp">
-        <label for="inputNickname">닉네임</label>
-        <input type="email" id="inputNickname" placeholder="닉네임을 입력하세요">
-      </div>
-      <div class="group-inp">
-        <label for="inputPwd">비밀번호</label>
-        <div class="inputPwd-wrap">
-          <input type="password" id="inputPwd" placeholder="비밀번호">
-          <i class="fa-regular fa-eye-slash"></i>
+      <form action="" method="post">
+        <div class="group-inp">
+          <label for="inputEmail">이메일</label>
+          <input type="email" class="inputFont" id="inputEmail" placeholder="codeit@email.com">
         </div>
-      </div>
-      <div class="group-inp">
-        <label for="inputPwd2">비밀번호 확인</label>
-        <div class="inputPwd-wrap">
-          <input type="password" id="inputPwd2" placeholder="비밀번호 확인">
-          <i class="fa-regular fa-eye-slash"></i>
+        <div class="group-inp">
+          <label for="inputNickname">닉네임</label>
+          <input type="email" class="inputFont" id="inputNickname" placeholder="닉네임을 입력하세요">
         </div>
-      </div>
-      <button type="submit" class="btn login-btn">회원가입</button>
+        <div class="group-inp">
+          <label for="inputPwd">비밀번호</label>
+          <div class="inputPwd-wrap">
+            <input type="password" class="inputFont" id="inputPwd" placeholder="비밀번호를 입력하세요">
+            <img src="assets/visibility_off.png" alt="비밀번호 숨김" class="toggle-password"/>
+          </div>
+        </div>
+        <div class="group-inp">
+          <label for="inputPwd2">비밀번호 확인</label>
+          <div class="inputPwd-wrap">
+            <input type="password" class="inputFont" id="inputPwd2" placeholder="비밀번호를 입력하세요">
+            <img src="assets/visibility_off.png" alt="비밀번호 숨김" class="toggle-password"/>
+          </div>
+        </div>
+        <button type="submit" class="btn login-btn">회원가입</button>
+      </form>
       <div class="social-login-wrap">
         <div class="social-login-title">간편 로그인하기</div>
         <ul>
