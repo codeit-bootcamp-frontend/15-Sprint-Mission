@@ -1,128 +1,128 @@
 import { ERROR_MESSAGES } from '../constants/auth-validation-messages.js';
 
-// 이메일 형식 검증
-function validateEmail(email) {
-  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  return regex.test(String(email));
-}
-
-// 검증 에러 메시지 표시 (에러 메시지를 어떤 input과 연결할지 명확히 하기 위해 input.closest를 사용)
-function toggleError(targetInput, message, isValid) {
-  const inputContainer = targetInput.closest('.input-container');
-  if (!inputContainer) return;
-
-  const errorContainer = inputContainer.querySelector(
-    '.validation-error-message',
-  );
-
-  if (isValid === false) {
-    targetInput.classList.add('error-input');
-    errorContainer.textContent = message;
-    errorContainer.classList.add('active');
-  } else {
-    targetInput.classList.remove('error-input');
-    errorContainer.textContent = '';
-    errorContainer.classList.remove('active');
-  }
-}
-
-// input 입력 값 검증
-function checkInputs(target, authSubmitButton, authType) {
-  const emailInput = document.getElementById('email');
-  const nicknameInput = document.getElementById('nickname');
-  const passwordInput = document.getElementById('password');
-  const confirmPasswordInput = document.getElementById('password-confirm');
-
-  const emailValue = emailInput.value.trim();
-  let nicknameValue;
-  const passwordValue = passwordInput.value.trim();
-  let confirmPasswordValue;
-  let isValid = true;
-
-  if (authType === 'signup') {
-    nicknameValue = nicknameInput.value.trim();
-    confirmPasswordValue = confirmPasswordInput.value.trim();
-  }
-
-  if (target === emailInput) {
-    if (emailValue === '') {
-      isValid = false;
-      toggleError(emailInput, ERROR_MESSAGES.emailRequired, isValid);
-    } else if (!validateEmail(emailValue)) {
-      isValid = false;
-      toggleError(emailInput, ERROR_MESSAGES.invalidEmail, isValid);
-    } else {
-      isValid = true;
-      toggleError(emailInput, '', isValid);
-    }
-  }
-
-  // -닉네임 검증
-  if (target === nicknameInput) {
-    if (nicknameValue === '') {
-      isValid = false;
-      toggleError(nicknameInput, ERROR_MESSAGES.nicknameRequired, isValid);
-    } else {
-      isValid = true;
-      toggleError(nicknameInput, '', isValid);
-    }
-  }
-
-  // -비밀번호 검증
-  if (target === passwordInput) {
-    if (passwordValue === '') {
-      isValid = false;
-      toggleError(passwordInput, ERROR_MESSAGES.passwordRequired, isValid);
-    } else if (passwordValue.length < 8) {
-      isValid = false;
-      toggleError(passwordInput, ERROR_MESSAGES.passwordLength, isValid);
-    } else {
-      isValid = true;
-      toggleError(passwordInput, '', isValid);
-    }
-  }
-
-  // -비밀번호 확인 검증
-  if (target === confirmPasswordInput) {
-    if (confirmPasswordValue === '') {
-      isValid = false;
-      toggleError(
-        confirmPasswordInput,
-        ERROR_MESSAGES.confirmPasswordRequired,
-        isValid,
-      );
-    } else if (passwordValue !== confirmPasswordValue) {
-      isValid = false;
-      toggleError(
-        confirmPasswordInput,
-        ERROR_MESSAGES.passwordMismatch,
-        isValid,
-      );
-    } else {
-      isValid = true;
-      toggleError(confirmPasswordInput, '', isValid);
-    }
-  }
-
-  authSubmitButton.disabled = !isValid;
-}
-
-function handleAuthForm() {
+document.addEventListener('DOMContentLoaded', function () {
   const form = document.querySelector('.auth-form');
   const authSubmitButton = document.querySelector('.auth-button');
+  const emailInput = document.getElementById('email');
+  const passwordInput = document.getElementById('password');
+  const nicknameInput = document.getElementById('nickname');
+  const confirmPasswordInput = document.getElementById('password-confirm');
   const authType = form.dataset.authType;
 
-  form.addEventListener('focusout', function (event) {
-    const target = event.target;
+  let emailValue;
+  let nicknameValue;
+  let passwordValue;
+  let confirmPasswordValue;
 
-    if (target.matches('input')) {
-      checkInputs(target, authSubmitButton, authType);
+  // 이메일 형식 검증
+  function validateEmail(email) {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(String(email));
+  }
+
+  // 에러 메시지 표시
+  function toggleError(targetInput, message, isInputValid) {
+    const inputContainer = targetInput.closest('.input-container');
+    if (!inputContainer) return;
+    const errorContainer = inputContainer.querySelector(
+      '.validation-error-message',
+    );
+    if (!isInputValid) {
+      targetInput.classList.add('error-input');
+      errorContainer.textContent = message;
+      errorContainer.classList.add('active');
+    } else {
+      targetInput.classList.remove('error-input');
+      errorContainer.textContent = '';
+      errorContainer.classList.remove('active');
+    }
+  }
+
+  // 개별 인풋 검증: 포커스아웃된 input만 검증하고 에러 메시지 표시
+  function validateInput(target) {
+    if (target.id === 'email') {
+      emailValue = emailInput.value.trim();
+
+      if (emailValue === '') {
+        toggleError(target, ERROR_MESSAGES.emailRequired, false);
+      } else if (!validateEmail(emailValue)) {
+        toggleError(target, ERROR_MESSAGES.invalidEmail, false);
+      } else {
+        toggleError(target, '', true);
+      }
+    }
+
+    if (target.id === 'nickname' && authType === 'signup') {
+      nicknameValue = nicknameInput.value.trim();
+      if (nicknameValue === '') {
+        toggleError(target, ERROR_MESSAGES.nicknameRequired, false);
+      } else {
+        toggleError(target, '', true);
+      }
+    }
+
+    if (target.id === 'password') {
+      passwordValue = passwordInput.value.trim();
+      if (passwordValue === '') {
+        toggleError(target, ERROR_MESSAGES.passwordRequired, false);
+      } else if (passwordValue.length < 8) {
+        toggleError(target, ERROR_MESSAGES.passwordLength, false);
+      } else {
+        toggleError(target, '', true);
+      }
+    }
+
+    if (target.id === 'password-confirm' && authType === 'signup') {
+      confirmPasswordValue = confirmPasswordInput.value.trim();
+      if (confirmPasswordValue === '') {
+        toggleError(target, ERROR_MESSAGES.confirmPasswordRequired, false);
+      } else if (passwordValue !== confirmPasswordValue) {
+        toggleError(target, ERROR_MESSAGES.passwordMismatch, false);
+      } else {
+        toggleError(target, '', true);
+      }
+    }
+  }
+
+  // 전체 폼 유효성 검사
+  function validateForm() {
+    let isFormValid = true;
+
+    emailValue = emailInput.value.trim();
+    passwordValue = passwordInput.value.trim();
+    nicknameValue = nicknameInput ? nicknameInput.value.trim() : '';
+    confirmPasswordValue = confirmPasswordInput
+      ? confirmPasswordInput.value.trim()
+      : '';
+
+    if (emailValue === '' || !validateEmail(emailValue)) isFormValid = false;
+    if (passwordValue === '' || passwordValue.length < 8) isFormValid = false;
+    if (authType === 'signup') {
+      if (nicknameValue === '') isFormValid = false;
+      if (confirmPasswordValue === '' || passwordValue !== confirmPasswordValue)
+        isFormValid = false;
+    }
+    return isFormValid;
+  }
+
+  // 제출 버튼 활성화 상태
+  function updateSubmitButtonState() {
+    authSubmitButton.disabled = !validateForm();
+  }
+
+  // 포커스아웃 시 인풋 유효성 검사, 버튼 상태 업데이트
+  form.addEventListener('focusout', function (event) {
+    if (event.target.matches('input')) {
+      validateInput(event.target);
+      updateSubmitButtonState();
     }
   });
 
+  // 폼 제출 시 전체 폼 검증 후 페이지 이동 처리
   form.addEventListener('submit', function (event) {
     event.preventDefault();
-    if (!authSubmitButton.disabled) {
+
+    if (validateForm()) {
       if (authType === 'signup') {
         window.location.href = '/signup';
       } else if (authType === 'login') {
@@ -130,6 +130,4 @@ function handleAuthForm() {
       }
     }
   });
-}
-
-document.addEventListener('DOMContentLoaded', handleAuthForm);
+});
