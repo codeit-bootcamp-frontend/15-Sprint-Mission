@@ -11,21 +11,28 @@
 </head>
 <body>
   <main>
-    <a class="main-logo-contain" href="./">
+    <a class="main-logo-contain" href="../index.html">
       <img class="main-logo" src="../img/pandaLogoIcon.svg" alt="판다마켓 로고">
       <img class="main-logo-text" src="../img/padamaketText.svg" alt="판다마켓 로고 글자">
     </a>
     <form>
-      <label class="input-label" for="username">
+      <label class="input-label" for="email">
         이메일
       </label>
-      <input class="input-field" id="username" name="username" type="email" placeholder="이메일을 입력해주세요">
-      
+      <div class="input-height">
+        <input class="input-field" id="email" name="email" type="email" placeholder="이메일을 입력해주세요">
+        <span id="error-message">
+          이메일을 입력해주세요
+        </span>
+      </div>
       <label class="input-label" for="password" >
         비밀번호
       </label>
-      <div class="input-password">
+      <div class="input-password input-height">
         <input class="input-field" id="password" name="password" type="password" placeholder="비밀번호를 입력해주세요";>
+        <span id="error-message">
+          비밀번호를 입력해주세요
+        </span>
         <button class="password-visibility" type="button">
           <img class="password-Eye" src="../img/passwordBlind.svg" alt="비밀번호 가리기" />
         </button>
@@ -53,4 +60,6 @@
     </div>
   </main>
 </body>
+<script src="./signin.js"></script>
+<script src="../formFunction.js"></script>
 </html>

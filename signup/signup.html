@@ -11,26 +11,32 @@
 </head>
 <body>
   <main>
-    <a class="main-logo-contain" href="./">
+    <a class="main-logo-contain" href="../index.html">
       <img class="main-logo" src="../img/pandaLogoIcon.svg" alt="판다마켓 로고">
       <img class="main-logo-text" src="../img/padamaketText.svg" alt="판다마켓 로고 글자">
     </a>
     <form>
-      <label class="input-label" for="username">
+      <label class="input-label" for="email">
         이메일
       </label>
-      <input class="input-field" id="username" name="username" type="email" placeholder="이메일을 입력해주세요">
-
+      <div class="input-height">
+        <input class="input-field" id="email" name="emial" type="email" placeholder="이메일을 입력해주세요">
+        <span id="error-message">
+          이메일을 입력해주세요
+        </span>
+      </div>
       <label class="input-label" for="username">
         닉네임
       </label>
       <input class="input-field" id="username" name="username" type="text" placeholder="닉네임을 입력해주세요">
-      
       <label class="input-label" for="password" >
         비밀번호
       </label>
-      <div class="input-password">
+      <div class="input-password input-height">
         <input class="input-field" id="password" name="password" type="password" placeholder="비밀번호를 입력해주세요">
+        <span id="error-message">
+          비밀번호를 입력해주세요
+        </span>
         <button class="password-visibility" type="button">
           <img class="password-Eye" src="../img/passwordBlind.svg" alt="비밀번호 가리기" />
         </button>
@@ -38,11 +44,15 @@
       <label class="input-label" for="password-repeat" >
         비밀번호 확인
       </label>
-      <div class="input-password">
-      <input class="input-field input-password"  id="password-repeat" name="password-repeat" type="password" placeholder="비밀번호를 다시 한 번 입력해주세요">
-      <button class="password-visibility" type="button">
-        <img class="password-Eye" src="../img/passwordEye.svg" alt="비밀번호 보이기" />
-      </button>
+      <div class="input-password input-height">
+        <input class="input-field input-password"  id="password-repeat" name="password-repeat" type="password" placeholder="비밀번호를 다시 한 번 입력해주세요">
+        <span id="error-password-message">
+          비밀번호가 일치하지 않습니다
+        </span>
+        <button class="password-visibility" type="button">
+          <img class="password-Eye" src="../img/passwordEye.svg" alt="비밀번호 보이기" />
+        </button>
+      </div>
     </div>
       <button type="submit" class="sign-button">
         회원가입
@@ -67,4 +77,6 @@
     </div>
   </main>
 </body>
+<script src="./signup.js"></script>
+<script src="../formFunction.js"></script>
 </html>
