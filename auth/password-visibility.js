@@ -1,4 +1,4 @@
-function setupPasswordVisibility() {
+const setupPasswordVisibility = () => {
   const passwordToggleBtn = document.getElementById('password-visibility');
   const confirmToggleBtn = document.getElementById(
     'password-confirm-visibility',
@@ -29,6 +29,6 @@ function setupPasswordVisibility() {
       togglePasswordVisibility(confirmInput, confirmToggleBtn);
     });
   }
-}
+};
 
 document.addEventListener('DOMContentLoaded', setupPasswordVisibility);

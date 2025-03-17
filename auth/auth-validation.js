@@ -15,13 +15,13 @@ document.addEventListener('DOMContentLoaded', function () {
   let confirmPasswordValue;
 
   // 이메일 형식 검증
-  function validateEmail(email) {
+  const validateEmail = (email) => {
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return regex.test(String(email));
-  }
+  };
 
   // 에러 메시지 표시
-  function toggleError(targetInput, message, isInputValid) {
+  const toggleError = (targetInput, message, isInputValid) => {
     const inputContainer = targetInput.closest('.input-container');
     if (!inputContainer) return;
     const errorContainer = inputContainer.querySelector(
@@ -36,10 +36,10 @@ document.addEventListener('DOMContentLoaded', function () {
       errorContainer.textContent = '';
       errorContainer.classList.remove('active');
     }
-  }
+  };
 
   // 개별 인풋 검증: 포커스아웃된 input만 검증하고 에러 메시지 표시
-  function validateInput(target) {
+  const validateInput = (target) => {
     if (target.id === 'email') {
       emailValue = emailInput.value.trim();
 
@@ -82,10 +82,10 @@ document.addEventListener('DOMContentLoaded', function () {
         toggleError(target, '', true);
       }
     }
-  }
+  };
 
   // 전체 폼 유효성 검사
-  function validateForm() {
+  const validateForm = () => {
     let isFormValid = true;
 
     emailValue = emailInput.value.trim();
@@ -103,20 +103,38 @@ document.addEventListener('DOMContentLoaded', function () {
         isFormValid = false;
     }
     return isFormValid;
-  }
+  };
 
   // 제출 버튼 활성화 상태
-  function updateSubmitButtonState() {
+  const updateSubmitButtonState = () => {
     authSubmitButton.disabled = !validateForm();
-  }
+  };
 
-  // 포커스아웃 시 인풋 유효성 검사, 버튼 상태 업데이트
+  // 포커스아웃 시 인풋 유효성 검사
   form.addEventListener('focusout', function (event) {
     if (event.target.matches('input')) {
       validateInput(event.target);
-      updateSubmitButtonState();
     }
   });
+
+  // input 이벤트에 적용
+  const debounce = (func, delay) => {
+    let timer;
+    return function (...args) {
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        func.apply(this, args);
+      }, delay);
+    };
+  };
+
+  // 인풋 입력 시 버튼 상태 업데이트(form이 유효성 검사를 통과하면 focus를 옮기지 않아도 자동 버튼 활성화되도록)
+  form.addEventListener(
+    'input',
+    debounce((event) => {
+      updateSubmitButtonState();
+    }, 300),
+  );
 
   // 폼 제출 시 전체 폼 검증 후 페이지 이동 처리
   form.addEventListener('submit', function (event) {
