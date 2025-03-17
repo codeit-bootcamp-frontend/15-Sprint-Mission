@@ -3,7 +3,6 @@ document.getElementById('email').addEventListener('blur', function(){
   const emailInput = document.getElementById('email');
   const errorMassage = document.getElementById('error-email-message');
   const errorMassageFormat = document.getElementById('error-emailform-message')
-
   if (emailInput.value.trim() === '') {
     emailInput.classList.add('error');
     errorMassage.style.display = 'block';
@@ -18,17 +17,16 @@ document.getElementById('email').addEventListener('blur', function(){
     errorMassageFormat.style.display = 'none';
   }
 })
-
+//이메일 양식
 function isValidEmail(email) {
-  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-  return emailRegex.test(email);
+  const emailstyle = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  return emailstyle.test(email);
 }
 //비밀번호
 document.getElementById('password').addEventListener('blur', function(){
   const passwordInput = document.getElementById('password');
   const errorMassage = document.getElementById('error-password-message');
   const errorMassageLength = document.getElementById('error-message-length');
-
   if (passwordInput.value.trim() ==='') {
     passwordInput.classList.add('error');
     errorMassage.style.display = 'block';
@@ -44,19 +42,18 @@ document.getElementById('password').addEventListener('blur', function(){
   }
   validateForm();
 })
-// 이메일 + 비밀번호 유효성
+//비밀번호 8자리 확인
 function isValidPassword(password) {
   return password.length >=8;
 }
-
+// 이메일 + 비밀번호 유효성
 function validateForm() {
   const emailInput = document.getElementById('email');
   const passwordInput = document.getElementById('password');
   const loginButton = document.getElementById('signin-button');
-
+//유효성 변수
   const emailValid = isValidEmail(emailInput.value.trim());
   const passwordValid = isValidPassword(passwordInput.value.trim());
-
   if (emailValid && passwordValid) {
     loginButton.disabled = false;    
   } else {
@@ -81,3 +78,5 @@ document.getElementById('toggle-password').addEventListener('click', function(){
     eyeIcon.src = '../img/passwordBlind.svg';
     }
 })
+
+toggleSigninButton();

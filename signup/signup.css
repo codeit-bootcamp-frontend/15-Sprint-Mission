@@ -118,9 +118,13 @@ input.error {
   line-height: 3.2rem;
   text-align: center;
   border: none;
-  background-color:var(--secondary-400);
+  background-color:var(--primary-100);
   color: var(--secondary-100);
   cursor: pointer;
+}
+.sign-button:disabled, #signup-button.disabled {
+  cursor: not-allowed;
+  background-color: var(--secondary-400);
 }
 .sign-button:hover {
   background-color: var(--primary-200);
@@ -199,7 +203,7 @@ input.error {
     height: 4.5rem;
   }
   .main-logo-contain {
-    width: 19.8rem;
+    width: 20rem;
     height: 6.6rem;
     padding-right: 0.212rem;
     gap: 1.12rem;
