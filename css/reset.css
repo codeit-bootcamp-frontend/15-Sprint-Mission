@@ -26,6 +26,7 @@
 }
 
 body {
+  word-break: keep-all;
   font-family: "Pretendard", sans-serif;
 }
 

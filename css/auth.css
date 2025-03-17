@@ -7,14 +7,19 @@ main {
 }
 
 .logo-auth-box {
- display: flex;
- justify-content: center; 
+  display: flex;
+  justify-content: center;
+}
+
+.logo-auth-box a {
+  margin: 0 auto;
+  display: block;
+  margin-top: 24px;
+  margin-bottom: 24px;
 }
 
 .logo-auth-box img{
   width: 396px;
-  margin-top: 48px;
-  margin-bottom: 40px;
 }
 
 .group-input {
@@ -44,7 +49,7 @@ main {
   outline: none;
 }
 
-.inputFont {
+.input-font {
   font-size: 18px;
   color: var(--gray-800);
 }
@@ -65,7 +70,6 @@ main {
 .inputPwd-wrap img {
   width: 100%;
   border: none;
-  
 }
 
 .login-btn {
@@ -110,16 +114,29 @@ main {
 }
 
 .sign-up-link {
-    display: flex;
-    justify-content: center;
-    margin-top: 24px;
-    gap: 4px;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 24px;
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+  gap: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px;
 }
 
 .sign-up-link a {
   color: var(--blue-100);
   text-decoration: underline;
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  main {
+    max-width: 400px;
+    padding: 0 16px;
+    margin: 0 auto;
+  }
+
+  .logo-auth-box img {
+    width: 198px;
+  }
 }
