@@ -1,3 +1,11 @@
+const navHtml = `
+<nav class="nav-container">
+  <a href="/" class="nav-logo"></a>
+  <a href="/login" class="nav-login-button">로그인</a>
+</nav>
+`;
+
+const footerHtml = `
 <footer class="footer-container">
   <div class="footer-copyright">©codeit - 2024</div>
   <div class="footer-link">
@@ -43,3 +51,9 @@
     </li>
   </ul>
 </footer>
+`;
+
+document.addEventListener("DOMContentLoaded", () => {
+  document.getElementById("nav").innerHTML = navHtml;
+  document.getElementById("footer").innerHTML = footerHtml;
+});

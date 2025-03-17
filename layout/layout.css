@@ -1,0 +1,85 @@
+@import url(/styles/variable.css);
+
+/* nav */
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+}
+
+.nav-logo {
+  display: block;
+  width: 153px;
+  height: 51px;
+  background-image: url("../assets/logos/nav-logo-mobile.webp");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .nav-logo {
+    width: 153px;
+    height: 51px;
+    background-image: url("../assets/logos/nav-logo.webp");
+  }
+}
+
+@media (min-width: 1200px) {
+  .nav-logo {
+    width: 153px;
+    height: 51px;
+    background-image: url("../assets/logos/nav-logo.webp");
+  }
+}
+
+.nav-login-button {
+  background-color: var(--primary-color);
+  color: var(--white);
+  border-radius: 16px;
+  font-size: 16px;
+  font-weight: 600;
+  width: 153px;
+  height: 51px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* footer */
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px;
+  background-color: var(--footer-color);
+}
+
+.footer-copyright {
+  color: var(--secondary-text-color);
+  width: 100%; /* 한 줄 차지 */
+  order: 1; /* 가장 마지막 줄로 이동 */
+  margin-top: 60px;
+}
+
+.footer-link,
+.footer-sns {
+  display: flex;
+  gap: 16px;
+}
+
+.footer-link {
+  color: white;
+}
+
+.footer-sns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-sns-item {
+  width: 18px;
+}
