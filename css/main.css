@@ -101,7 +101,9 @@
   .container {
     padding-top: 9.41vw;
   }
-  
+  .main-page {
+    padding-top: 9.41vw;
+  }
   .main-banner {
     height: 103.63vw;
   }
@@ -145,16 +147,16 @@
     border-radius: 0;
     gap: 3.23vw;
   }
-  .main-common figure {
+  .main-common .img {
     width: 93.55vw;
     height: 70.64vw;
     aspect-ratio: unset;
     border-radius: 1.88vw;
   }
-  .main-common figure img {
+  .main-common .img img {
     transition: none;
   }
-  .main-common a:hover figure img {
+  .main-common a:hover .img img {
     transform: none;
   }
   .main-search a {
@@ -181,6 +183,9 @@
 }
 @media all and (max-width: 425px) {
   .container {
+    padding-top: 18.67vw;
+  }
+  .main-page {
     padding-top: 18.67vw;
   }
   .main-banner {
