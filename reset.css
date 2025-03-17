@@ -12,8 +12,13 @@ a {
   cursor: pointer;
 }
 
-p {
+button {
+  border: none;
+}
+
+body, p {
   margin: 0;
+  padding: 0;
 }
 
 ul {
