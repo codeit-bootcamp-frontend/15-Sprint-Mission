@@ -205,6 +205,10 @@
   font-weight: 400;
 }
 
+.footer-left-text p {
+  font-size: 1.6rem;
+}
+
 .footer-middle-text {
   font-size: 1.6rem;
   display: flex;

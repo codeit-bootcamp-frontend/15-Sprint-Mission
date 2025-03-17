@@ -17,6 +17,10 @@
   font-style: normal;
 }
 
+body p {
+  font-size: 1.6rem;
+}
+
 .container {
   display: flex;
   justify-content: center;
@@ -78,6 +82,7 @@
   font-weight: 400;
   border: 0.1rem solid var(--cool-gray-100);
   background-color: #f3f4f6;
+  font-size: 1.6rem;
 }
 
 .passwordIcon {
@@ -214,6 +219,7 @@
     font-weight: 400;
     border: 0.1rem solid var(--cool-gray-100);
     background-color: var(--cool-gray-100);
+    font-size: 1.6rem;
   }
 
   .button-container {
