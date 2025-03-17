@@ -140,6 +140,7 @@ input {
 
 .validation-error-message.active {
   display: block;
+  padding: 0.8rem 1.6rem;
 }
 
 .error-input {
