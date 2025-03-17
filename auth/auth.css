@@ -130,6 +130,23 @@ input {
   text-underline-offset: 2px;
 }
 
+.validation-error-message {
+  color: var(--error);
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 2.4rem;
+  display: none;
+}
+
+.validation-error-message.active {
+  display: block;
+}
+
+.error-input {
+  border: 1px solid var(--error);
+}
+
+/* responsive */
 @media (max-width: 767px) {
   .auth-container {
     margin: 0 16px;
