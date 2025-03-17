@@ -87,7 +87,7 @@ input.error {
   border: none;
   padding: 1.6rem 2.4rem;
 }
-#error-message, #error-password-message {
+#error-email-message, #error-emailform-message, #error-username-message, #error-password-message, #error-matchpassword-message, #error-message-length {
   display: none;
   color: var(--error);   
   font-size: 1.4rem;
@@ -109,7 +109,7 @@ input.error {
   align-items: center;
   cursor: pointer;
 }
-.login-button ,.sign-button {
+.sign-button {
   height: 5.6rem;
   gap: 1rem;
   border-radius: 4rem;
@@ -122,7 +122,7 @@ input.error {
   color: var(--secondary-100);
   cursor: pointer;
 }
-.login-button:hover ,.sign-button:hover {
+.sign-button:hover {
   background-color: var(--primary-200);
 }
 .easy-login {

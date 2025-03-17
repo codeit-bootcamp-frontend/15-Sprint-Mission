@@ -21,40 +21,51 @@
       </label>
       <div class="input-height">
         <input class="input-field" id="email" name="emial" type="email" placeholder="이메일을 입력해주세요">
-        <span id="error-message">
+        <span id="error-email-message">
           이메일을 입력해주세요
+        </span>
+        <span id="error-emailform-message">
+          잘못된 이메일 형식입니다.
         </span>
       </div>
       <label class="input-label" for="username">
         닉네임
       </label>
-      <input class="input-field" id="username" name="username" type="text" placeholder="닉네임을 입력해주세요">
+      <div class="input-height">
+        <input class="input-field" id="username" name="username" type="text" placeholder="닉네임을 입력해주세요">
+        <span id="error-username-message">
+          닉네임을 입력해주세요.
+        </span>
+      </div>
       <label class="input-label" for="password" >
         비밀번호
       </label>
       <div class="input-password input-height">
         <input class="input-field" id="password" name="password" type="password" placeholder="비밀번호를 입력해주세요">
-        <span id="error-message">
-          비밀번호를 입력해주세요
+        <span id="error-password-message">
+          비밀번호를 입력해주세요.
+        </span>
+        <span id="error-message-length">
+          비밀번호를 8자 이상 입력해주세요.
         </span>
         <button class="password-visibility" type="button">
           <img class="password-Eye" src="../img/passwordBlind.svg" alt="비밀번호 가리기" />
         </button>
       </div>
-      <label class="input-label" for="password-repeat" >
+      <label class="input-label" for="checkpassword" >
         비밀번호 확인
       </label>
       <div class="input-password input-height">
-        <input class="input-field input-password"  id="password-repeat" name="password-repeat" type="password" placeholder="비밀번호를 다시 한 번 입력해주세요">
-        <span id="error-password-message">
-          비밀번호가 일치하지 않습니다
+        <input class="input-field input-password"  id="checkpassword" name="checkpassword" type="password" placeholder="비밀번호를 다시 한 번 입력해주세요">
+        <span id="error-matchpassword-message">
+          비밀번호가 일치하지 않습니다.
         </span>
         <button class="password-visibility" type="button">
           <img class="password-Eye" src="../img/passwordEye.svg" alt="비밀번호 보이기" />
         </button>
       </div>
     </div>
-      <button type="submit" class="sign-button">
+      <button type="submit" id="signbutton" class="sign-button">
         회원가입
       </button>
     </form>

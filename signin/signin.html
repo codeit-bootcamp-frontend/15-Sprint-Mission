@@ -21,8 +21,10 @@
       </label>
       <div class="input-height">
         <input class="input-field" id="email" name="email" type="email" placeholder="이메일을 입력해주세요">
-        <span id="error-message">
-          이메일을 입력해주세요
+        <span id="error-email-message">
+          이메일을 입력해주세요.
+        </span><span id="error-emailform-message">
+          잘못된 이메일 형식입니다.
         </span>
       </div>
       <label class="input-label" for="password" >
@@ -30,14 +32,17 @@
       </label>
       <div class="input-password input-height">
         <input class="input-field" id="password" name="password" type="password" placeholder="비밀번호를 입력해주세요";>
-        <span id="error-message">
-          비밀번호를 입력해주세요
+        <span id="error-password-message">
+          비밀번호를 입력해주세요.
         </span>
-        <button class="password-visibility" type="button">
-          <img class="password-Eye" src="../img/passwordBlind.svg" alt="비밀번호 가리기" />
+        <span id="error-message-length">
+          비밀번호를 8자 이상 입력해주세요.
+        </span>
+        <button id="toggle-password" class="password-visibility" type="button">
+          <img id="eye-icon" class="password-Eye" src="../img/passwordBlind.svg" alt="비밀번호 가리기" />
         </button>
       </div>
-      <button type="submit" class="login-button">
+      <button type="submit" id="signin-button" class="login-button">
         로그인
       </button>
     </form>
