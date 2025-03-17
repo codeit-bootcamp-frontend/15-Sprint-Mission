@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  // input 이벤트에 적용
+  // input 이벤트에 적용(input이 변할때마다 이벤트가 발생하는 것을 막기 위해 넣었지만 원리는 이해 더 필요)
   const debounce = (func, delay) => {
     let timer;
     return function (...args) {
