@@ -725,7 +725,7 @@
     height: 2rem;
     gap: 7rem;
     padding: 3.2rem 1rem 10.8rem 1rem;
-    justify-content: space-between;
+    justify-content: flex-start;
   }
 
   .footer-left-text p {
@@ -733,6 +733,12 @@
     flex-shrink: 1;
     color: #9ca3af;
     font-weight: 400;
+  }
+
+  .footer-middle-text,
+  .footer-icons {
+    justify-content: space-between;
+    width: 100%;
   }
 
   .footer-middle-text {
@@ -771,6 +777,7 @@
   }
 
   .logoImg {
+    content: url('/images/mobileLogo.png');
     width: 15.3rem;
     height: 5.1rem;
   }
