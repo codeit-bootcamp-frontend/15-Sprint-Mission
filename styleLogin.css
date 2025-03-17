@@ -9,7 +9,7 @@ html {
 
 .content {
   width: 640px;
-  margin: 231px auto;
+  margin: 100px auto;
 }
 
 .head-img {
@@ -27,6 +27,9 @@ html {
   height: 56px;
   border-radius: 12px;
   border: none;
+  font-size: 16px;
+  padding: 0 20px;
+  font-weight: 400;
 }
 
 #userPassword {
@@ -35,6 +38,9 @@ html {
   height: 56px;
   border-radius: 12px;
   border: none;
+  font-size: 16px;
+  padding: 0 20px;
+  font-weight: 400;
 }
 
 .content-login {
@@ -99,4 +105,15 @@ html {
   font-size: 14px;
   font-weight: 500;
   color: #3692FF;
+}
+
+#nicname {
+  background-color: #f3f4f6;
+  width: 640px;
+  height: 56px;
+  border-radius: 12px;
+  border: none;
+  font-size: 16px;
+  padding: 0 20px;
+  font-weight: 400;
 }

@@ -2,7 +2,7 @@
 <html lang="ko">
   <head>
     <meta charset="utf-8">
-    <title>로그인</title>
+    <title>회원가입</title>
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css">
     <link rel="stylesheet" href="styleLogin.css">
   </head>
@@ -15,12 +15,16 @@
       </div>
       <div>
         <p>이메일</p> 
-        <input type="email" name="userName" id="userName">
+        <input type="email" name="userEmail" id="userName">
+        <p>닉네임</p> 
+        <input type="text" name="userName" id="nicname">
         <p>비밀번호</p>
+        <input type="password" name="userPassword" id="userPassword">
+        <p>비밀번호 확인</p>
         <input type="password" name="userPassword" id="userPassword">
       </div>
       <div class="content-login">
-        <a class="login-button" href="/login">로그인</a>
+        <a class="login-button" href="/signup">회원가입</a>
       </div>
       <div>
         <div class="blue-section">
@@ -40,8 +44,8 @@
         </div>
       </div>
       <div class="foot-content">
-        <p class="insa">판다마켓은 처음이신가요?</p>
-        <a class="membership" href="signup.html">회원가입</a>
+        <p class="insa">이미 회원이신가요?</p>
+        <a class="membership" href="login.html">로그인</a>
       </div>
     </div>
   </body>
