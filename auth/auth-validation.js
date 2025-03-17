@@ -27,18 +27,22 @@ function toggleError(targetInput, message, isValid) {
 }
 
 // input 입력 값 검증
-function checkInputs(target, authSubmitButton) {
+function checkInputs(target, authSubmitButton, authType) {
   const emailInput = document.getElementById('email');
   const nicknameInput = document.getElementById('nickname');
   const passwordInput = document.getElementById('password');
   const confirmPasswordInput = document.getElementById('password-confirm');
 
   const emailValue = emailInput.value.trim();
-  const nicknameValue = nicknameInput.value.trim();
+  let nicknameValue;
   const passwordValue = passwordInput.value.trim();
-  const confirmPasswordValue = confirmPasswordInput.value.trim();
-
+  let confirmPasswordValue;
   let isValid = true;
+
+  if (authType === 'signup') {
+    nicknameValue = nicknameInput.value.trim();
+    confirmPasswordValue = confirmPasswordInput.value.trim();
+  }
 
   if (target === emailInput) {
     if (emailValue === '') {
@@ -106,19 +110,24 @@ function checkInputs(target, authSubmitButton) {
 function handleAuthForm() {
   const form = document.querySelector('.auth-form');
   const authSubmitButton = document.querySelector('.auth-button');
+  const authType = form.dataset.authType;
 
   form.addEventListener('focusout', function (event) {
     const target = event.target;
 
     if (target.matches('input')) {
-      checkInputs(target, authSubmitButton);
+      checkInputs(target, authSubmitButton, authType);
     }
   });
 
   form.addEventListener('submit', function (event) {
     event.preventDefault();
     if (!authSubmitButton.disabled) {
-      window.location.href = '/signup';
+      if (authType === 'signup') {
+        window.location.href = '/signup';
+      } else if (authType === 'login') {
+        window.location.href = '/items';
+      }
     }
   });
 }

@@ -14,6 +14,8 @@
     <title>판다마켓 로그인</title>
   </head>
   <body class="auth-body">
+    <script type="module" src="../index.js"></script>
+
     <div class="auth-container">
       <header class="auth-header">
         <h1 class="logo-container">
@@ -28,7 +30,7 @@
         </h1>
       </header>
 
-      <form class="auth-form" method="POST">
+      <form class="auth-form" data-auth-type="login" method="POST">
         <div class="input-container">
           <label for="email">이메일</label>
           <input
@@ -37,7 +39,9 @@
             name="email"
             placeholder="이메일을 입력해주세요"
           />
+          <div class="validation-error-message"></div>
         </div>
+
         <div class="input-container">
           <label for="password">비밀번호</label>
           <div class="password-input">
@@ -55,9 +59,10 @@
               />
             </button>
           </div>
+          <div class="validation-error-message"></div>
         </div>
 
-        <button type="submit" class="auth-button">로그인</button>
+        <button type="submit" class="auth-button" disabled>로그인</button>
       </form>
 
       <div class="oauth-container">
