@@ -1,14 +1,14 @@
-.logo {
-    width: 396px;
-    height: 132px;
-    margin: 0 122px;
-}
-
-body {
+html, body {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.logo {
+    width: auto;
+    height: 132px;
+    margin: 0 122px;
 }
 
 .input-info {
@@ -37,6 +37,14 @@ input {
     font-weight: 400;
     color: var(--gray800);
     padding: 16px 24px 14px; 
+}
+
+input::placeholder {
+    color: var(--gray400);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    letter-spacing: 0%;
 }
 
 #pwd {
@@ -124,3 +132,23 @@ input {
     text-decoration: underline;
 }
 
+
+@media (max-width: 1199px) and (min-width: 768px) {
+    body {
+        margin: 190px 52px 325px;
+    }
+    
+}
+
+@media (max-width: 767px) and (min-width: 375px){
+    .logo-a {
+        display: flex;
+        justify-content: center;
+    }
+
+    .logo {
+        width: 198px;
+        height: 66px;
+    }
+    
+}
