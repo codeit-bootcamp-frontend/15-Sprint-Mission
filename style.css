@@ -725,11 +725,20 @@
 
   .footer-content {
     font-size: 1.6rem;
-    display: flex;
+    display: grid;
+    grid-template-areas:
+      'item2 item2 item3'
+      'item1 item1 item1';
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
     height: 2rem;
     gap: 7rem;
     padding: 3.2rem 1rem 10.8rem 1rem;
-    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .footer-left-text {
+    grid-area: item1;
   }
 
   .footer-left-text p {
@@ -750,6 +759,7 @@
     display: flex;
     gap: 3rem;
     flex-shrink: 1;
+    grid-area: item2;
   }
 
   .footer-middle-text a {
@@ -763,6 +773,7 @@
     display: flex;
     flex-shrink: 1;
     gap: 1.2rem;
+    grid-area: item3;
   }
 
   .footer-icons img {
