@@ -31,19 +31,19 @@
   line-height: 1.3;
   margin-top: 24px;
 }
-.main-common figure {
+.main-common .img {
   width: 588px;
   overflow: hidden;
   aspect-ratio: 1.324 / 1;
 }
-.main-common figure img {
+.main-common .img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
   transition: transform 0.8s;
 }
-.main-common a:hover figure img {
+.main-common a:hover .img img {
   transform: scale(1.1);
 }
 
@@ -101,7 +101,9 @@
   .container {
     padding-top: 9.41vw;
   }
-  
+  .main-page {
+    padding-top: 9.41vw;
+  }
   .main-banner {
     height: 103.63vw;
   }
@@ -145,16 +147,16 @@
     border-radius: 0;
     gap: 3.23vw;
   }
-  .main-common figure {
+  .main-common .img {
     width: 93.55vw;
     height: 70.64vw;
     aspect-ratio: unset;
     border-radius: 1.88vw;
   }
-  .main-common figure img {
+  .main-common .img img {
     transition: none;
   }
-  .main-common a:hover figure img {
+  .main-common a:hover .img img {
     transform: none;
   }
   .main-search a {
@@ -181,6 +183,9 @@
 }
 @media all and (max-width: 425px) {
   .container {
+    padding-top: 18.67vw;
+  }
+  .main-page {
     padding-top: 18.67vw;
   }
   .main-banner {

@@ -62,6 +62,12 @@
 }
 .header-logo a {
   display: block;
+  background-image: url(../images/common/logo.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 153px;
+  height: 40px;
 }
 .footer {
   height: 96px;
@@ -116,15 +122,16 @@
     margin-inline: 3.23vw;
     height: 9.41vw;
   }
-  .header-logo a img {
-    max-height: 5.38vw;
-    display: block;
-  }
   .header-login {
     max-width: 17.2vw;
     height: 6.45vw;
     border-radius: 1.08vw;
     font-size: 2.15vw;
+  }
+  .header-logo a {
+    max-height: 5.38vw;
+    max-width: 17.2vw;
+    display: block;
   }
   .footer {
     height: 21.51vw;
@@ -134,13 +141,22 @@
     font-size: 2.42vw;
   }
 }
+@media all and (max-width: 768px) {
+  .header-logo a {
+    max-height: 5.21vw;
+    max-width: 19.92vw;
+    display: block;
+  }
+}
 
 @media all and (max-width: 425px) {
   .header .inner02 {
     height: 18.67vw;
   }
-  .header-logo a img {
-    max-height: 9.33vw;
+  .header-logo a {
+    background-image: url('/images/common/logo_m.svg');
+    max-height: 6.33vw;
+    max-width: 27.47vw;
   }
   .header-login {
     max-width: 34.13vw;
