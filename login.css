@@ -104,8 +104,8 @@ body p {
   height: 5.6rem;
   padding: 1.6rem 12.4rem;
   border-radius: 4rem;
-  background-color: var(--button-color);
-  border: 0 solid var(--button-color);
+  background-color: #9ca3af;
+  border: 0 solid #9ca3af;
   color: #f3f4f6;
   font-size: 2rem;
   font-weight: 600;
@@ -234,8 +234,8 @@ body p {
     height: 5.6rem;
     padding: 1.6rem;
     border-radius: 4rem;
-    background-color: var(--button-color);
-    border: 0 solid var(--button-color);
+    background-color: #9ca3af;
+    border: 0 solid #9ca3af;
     color: #f3f4f6;
     font-size: 2rem;
     font-weight: 600;
