@@ -79,4 +79,3 @@ document.getElementById('toggle-password').addEventListener('click', function(){
     }
 })
 
-toggleSigninButton();
