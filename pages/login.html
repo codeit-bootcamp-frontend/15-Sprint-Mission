@@ -4,31 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>판다마켓-회원가입</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="reset.css">
+    <title>판다마켓-로그인</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/auth.css">
+
 </head>
 <body>
     <div class="login-box">
-        <a href="/index.html">
+        <a href="/pages/index.html">
             <img class="login-pandalogo" src="/image/logo.png" alt="pandalogo">
-        </a>        
-        <form action="/login.html" method="POST">
-            <div class="input-email">
+        </a>
+        <form action="/pages/login.html" method="POST">
+            <div class="email">
                 <label for="email">이메일</label>
                 <input type="text" id="email" name="email" placeholder="email">
-            </div>
-            <div class="input-name">
-                <label for="name">닉네임</label>
-                <input type="text" id="name" name="name" placeholder="nickname">
             </div>
             <div class="password">
                 <label for="password">비밀번호</label>
                 <input type="password" id="password" name="password" placeholder="password">
-            </div>
-            <div class="password-check">
-                <label for="ckeck-password">비밀번호 확인</label>
-                <input type="text" id="ckeck-password" name="ckeck-password" placeholder="password">
             </div>
             <button type="submit" name="login">로그인</button>
             <div class="quicklogin">
@@ -40,8 +34,8 @@
                     <img  src="/image/icon/kakaotalk.png" alt="kakao">
                 </a>
             </div>
-            <p class="firstlogin">이미 회원이신가요? 
-                <a href="/login.html"><span>로그인</span></a>
+            <p class="firstlogin">판다마켓이 처음이신가요? 
+                <a href="/pages/signup.html"><span>회원가입</span></a>
             </p>
         </form>        
     </div>
