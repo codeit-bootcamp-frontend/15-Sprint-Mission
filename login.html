@@ -33,7 +33,7 @@
             </div>
             <div class="error-message pwd"></div>
         </div>
-        <button class="login-btn" type="submit">로그인</button>
+        <button id="loginBtn" class="login-btn disabled" type="submit" disabled>로그인</button>
 
         <div class="quick-login">
             <span>간편 로그인하기</span>
@@ -51,6 +51,7 @@
             <a class="sign-up" href="/sign-up.html">회원가입</a>
         </div>
     </form>
-    <script src="auth.js"></script>
+    <script src="auth-validation.js"></script>
+    <script type="module" src="password-visibility.js"></script>
 </body>
 </html>
