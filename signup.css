@@ -103,7 +103,9 @@
     height: 56px;
     margin: 0;
 }
-.signup_button{
+.
+
+button{
     width: 100%;
     height: 56px;
     border-radius: 40px;
@@ -152,13 +154,25 @@
 .signup{
     display: flex;
 }
-.signup_ask{
+.signup_button{
+    width: 100%;
+    height: 56px;
+    border-radius: 40px;
+    background-color: #3692FF;
+    color: #F3F4F6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 24px 0;
+    font-size: 20px;
+}
+.login_ask{
     font-weight: 500;
     font-size: 14px;
     color: #1F2937;
     margin: 0;
 }
-.signup_link{
+.login_link{
     font-weight: 500;
     font-size: 14px;
     color: #3692FF;
