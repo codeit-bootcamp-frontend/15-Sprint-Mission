@@ -5,16 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>판다마켓</title>
     <link rel="stylesheet" href="index.css" />
-    <link rel="stylesheet" href="/layout/layout.css" />
     <link rel="stylesheet" href="/styles/reset.css" />
+    <link rel="stylesheet" href="/layout/layout.css" />
     <link rel="stylesheet" href="/styles/variable.css" />
+    <link
+      rel="stylesheet"
+      as="style"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css"
+    />
     <script src="layout/render.js" defer></script>
   </head>
   <body>
     <header>
       <nav id="nav"></nav>
+      <section class="hero">
+        <div class="hero-content">
+          <h1>일상의 모든 물건을<br />거래해보세요</h1>
+          <a href="/items" class="hero-explore-button">구경하러 가기</a>
+        </div>
+      </section>
     </header>
-    <main class="main"></main>
+    <main class="main">
+      <section class="main-feature">
+        <img src="/assets/home/main-feature1.webp" alt="인기 상품" />
+        <span class="feature-category"></span>
+        <span class="feature-title"></span>
+        <span class="feature-description"></span>
+      </section>
+      <section class="main-feature">
+        <img src="/assets/home/main-feature2.webp" alt="상품 검색" />
+        <span class="feature-category"></span>
+        <span class="feature-title"></span>
+        <span class="feature-description"></span>
+      </section>
+      <section class="main-feature">
+        <img src="/assets/home/main-feature3.webp" alt="상품 등록" />
+        <span class="feature-category"></span>
+        <span class="feature-title"></span>
+        <span class="feature-description"></span>
+      </section>
+    </main>
     <footer id="footer"></footer>
   </body>
 </html>
