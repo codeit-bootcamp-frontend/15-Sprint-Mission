@@ -130,11 +130,7 @@ input::placeholder {
     color: var(--blue);
 }
 
-.login-btn:hover {
-    background-color: var(--blue);
-}
-
-.sign-up-btn:hover {
+.active-btn:hover {
     background-color: var(--blue);
 }
 
@@ -202,4 +198,9 @@ input::placeholder {
     font-size: 14px;
     font-weight: 600;
     color: var(--red);
+}
+
+.disabled {
+    background-color: var(--gray400);
+    cursor: not-allowed;
 }

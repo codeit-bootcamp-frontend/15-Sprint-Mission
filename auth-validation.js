@@ -94,19 +94,34 @@ if (checkPwd !== null) {
     checkPwd.addEventListener('focusout', checkPwdError);
 }
 
-const visible = document.getElementsByClassName('visible');
+const loginBtn = document.getElementById('loginBtn');
+const signUpBtn = document.getElementById('signUpBtn');
+const label = document.getElementsByTagName('label');
 
-function passwordVisibility (e) {
-    if (e.target.getAttribute("src") === "/img/visibility_off.png") {
-        e.target.setAttribute("src", "/img/visibility_on.png");
-        e.target.parentElement.previousElementSibling.setAttribute("type", "text");
-    } else {
-        e.target.setAttribute("src", "/img/visibility_off.png");
-        e.target.parentElement.previousElementSibling.setAttribute("type", "password");
+console.log(label);
+
+for (elem of label) {
+    if (elem.classList.contains('error')) {
+        console.log('error');
     }
 }
 
-console.log(visible);
-for (let icon of visible) {
-    icon.addEventListener('click', passwordVisibility);
+function allowLogin (e) {
+    for (elem of label) {
+        if (elem.classList.contains('error')) {
+            console.log('error');
+        } else {
+            e.target.classList.remove('disabled');
+            e.target.classList.add('active-btn');
+            e.target.removeAttribute('disabled');
+            e.target.setAttribute("onclick", "window.open('/items.html')");
+        }
+    }
+}
+
+if (loginBtn !== null) {
+    loginBtn.addEventListener('click', allowLogin);
+}
+if (signUpBtn !== null) {
+    signUpBtn.addEventListener('mouseenter', allowSignIn);
 }
