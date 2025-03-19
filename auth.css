@@ -133,14 +133,16 @@ ul a {
   cursor: pointer;
 }
 
-footer {
+.auth-switch {
+  display: flex;
+  justify-content: center;
   font-size: 1.4rem;
   font-weight: 500;
   line-height: 2.4rem;
   margin: 1.3rem 0;
 }
 
-footer a {
+div a {
   color: var(--blue);
 }
 
