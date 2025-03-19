@@ -21,6 +21,11 @@ body {
     margin: 0 auto;
 }
 
+.logo2 {
+    width: 396px;
+    height: 132px;
+}
+
 .logo-wrap {
     display: block;
     text-align: center;
@@ -66,8 +71,13 @@ body {
 .password-button {
     position: absolute;
     right: 24px;
-    width: 24;
-    height: 24;
+    width: 24px;
+    height: 24px;
+    border: none;
+}
+
+.password-button img {
+    width: 100%;
 }
 
 .login-button {
@@ -109,7 +119,7 @@ body {
     text-align: center;
 }
 
-h3 {
+.social-login-button {
     font-weight: 500;
     font-size: 16px;
     line-height: 24px;
