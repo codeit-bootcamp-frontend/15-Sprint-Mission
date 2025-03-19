@@ -10,6 +10,21 @@
     }
   }
 
+header {
+    width : 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 9.5px 400px 9.5px 400px;
+    background-color: #FFFFFF;
+    height: 70px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
 body {
     width: 100%;
     height: 100%;
@@ -26,20 +41,11 @@ a {
 
 /*헤더 판다마켓 로그인영역*/
 
-.header {
-    width : 100%;
-    max-width: 1920px;
-    height: 70px;
-    display: flex;
-    align-items: center;
-    padding: 9.5px 400px 9.5px 400px;
-}
-
 .header_contents {
     width : 100%;
+    max-width : 1120px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
 }
 
 .header_login {
