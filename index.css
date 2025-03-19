@@ -1,0 +1,26 @@
+@import url(/styles/variable.css);
+
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.main {
+  padding: 60px 20px;
+}
+
+.main-feature img {
+  width: 100%;
+  max-width: 580px;
+}
+
+.right {
+  text-align: right;
+}

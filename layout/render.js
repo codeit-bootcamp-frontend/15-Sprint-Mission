@@ -8,16 +8,14 @@ const navHtml = `
 const footerHtml = `
 <footer class="footer-container">
   <div class="footer-copyright">©codeit - 2024</div>
-  <div class="footer-link">
-    <a href="/privacy" class="footer-privacy">Privacy Policy</a>
-    <a href="/faq" class="footer-FAQ">FAQ</a>
-  </div>
+  <a href="/privacy" class="footer-privacy footer-link">Privacy Policy</a>
+  <a href="/faq" class="footer-FAQ footer-link">FAQ</a>
   <ul class="footer-sns">
     <li>
       <a href="https://www.facebook.com" class="footer-sns-link">
         <img
           class="footer-sns-item"
-          src="/assets/icons/footer-fb-icon.png"
+          src="/assets/icons/footer-fb-icon.webp"
           alt="페이스북 로고"
         />
       </a>
@@ -26,7 +24,7 @@ const footerHtml = `
       <a href="https://www.twitter.com" class="footer-sns-link">
         <img
           class="footer-sns-item"
-          src="/assets/icons/footer-twt-icon.png"
+          src="/assets/icons/footer-twt-icon.webp"
           alt="트위터 로고"
         />
       </a>
@@ -35,7 +33,7 @@ const footerHtml = `
       <a href="https://www.youtube.com" class="footer-sns-link">
         <img
           class="footer-sns-item"
-          src="/assets/icons/footer-yt-icon.png"
+          src="/assets/icons/footer-yt-icon.webp"
           alt="유튜브 로고"
         />
       </a>
@@ -44,7 +42,7 @@ const footerHtml = `
       <a href="https://www.instagram.com" class="footer-sns-link">
         <img
           class="footer-sns-item"
-          src="/assets/icons/footer-ig-icon.png"
+          src="/assets/icons/footer-ig-icon.webp"
           alt="인스타그램 로고"
         />
       </a>
