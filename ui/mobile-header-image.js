@@ -1,7 +1,6 @@
 /**
  *  모바일일 때, headerImg의 src를 변경하는 함수
  */
-
 const mobileChangeImg = () => {
   // 헤더 판다마켓 로고 태그
   const headerImg = document.querySelector(".headerImg");

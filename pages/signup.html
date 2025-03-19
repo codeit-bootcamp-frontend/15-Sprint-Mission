@@ -5,12 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="/images/favicon.ico" />
 
-    <!-- common.css 추가 -->
-    <link rel="stylesheet" href="/css/common.css" />
-    <link rel="stylesheet" href="/css/account.css" />
+    <!-- Open Graph  -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="판다마켓" />
+    <meta property="og:description" content="일상의 모든 물건을 거래해보세요" />
+    <meta property="og:url" content="https://hyunbara4.netlify.app/" />
+    <meta property="og:image" content="https://hyunbara4.netlify.app/images/thumbnail.jpg" />
 
-    <!-- 비밀번호 showing clickEvent -->
-    <script src="/js/login_password_showing.js"></script>
+    <!-- Twitter Open Graph -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="판다마켓" />
+    <meta name="twitter:description" content="일상의 모든 물건을 거래해보세요" />
+    <meta name="twitter:image" content="https://hyunbara.netlify.app/images/thumbnail.jpg" />
+
+    <!-- common.css 추가 -->
+    <link rel="stylesheet" href="/common/common.css" />
+    <link rel="stylesheet" href="/auth/account.css" />
+
+    <!-- 비밀번호 표시 로직, 회원가입 로직 추가 -->
+    <script defer src="/auth/toggle-password.js"></script>
+    <script type="module" defer src="/auth/signup-validation.js"></script>
 
     <!-- pretendard cdn -->
     <link
@@ -43,6 +57,9 @@
             <input type="text" name="userEmail" placeholder="codeit@email.com" id="form-email" />
           </label>
 
+          <!-- 로그인 유효성 검사 에러 메세지 -->
+          <p id="email-error" style="color: red; font-size: 14px; font-weight: 600; text-align: left; margin-bottom: 24px; display: none"></p>
+
           <!-- 닉네임 -->
           <label for="submit-name">
             닉네임
@@ -59,6 +76,9 @@
             </div>
           </label>
 
+          <!-- 패스워드 유효성 검사 에러 메세지 -->
+          <p id="password-error" style="color: red; font-size: 14px; font-weight: 600; text-align: left; margin-bottom: 24px; display: none"></p>
+
           <!-- 비밀번호 확인 -->
           <label for="form-password-check"
             >비밀번호확인
@@ -68,25 +88,28 @@
             </div>
           </label>
 
-          <button>회원가입</button>
+          <p id="password-check-error" style="color: red; font-size: 14px; font-weight: 600; text-align: left; margin-bottom: 24px; display: none">
+            비밀번호가 일치하지 않습니다.
+          </p>
 
-          <!-- 간편 로그인 -->
-          <div class="easy-login">
-            <span>간편 로그인 하기</span>
-            <div class="easy-login-icon">
-              <a href="https://www.google.com/"> <img src="/images/login_img/google_img.png" /></a>
-              <a href="https://www.kakaocorp.com/page/service/service/KakaoTalk" class="kakao-img"> <img src="/images/login_img/kakako_img.png" /></a>
-            </div>
-          </div>
-
-          <!-- 최하단 메시지 박스 -->
-          <div class="message-box">
-            <p class="message">
-              이미 회원이신가요?
-              <a href="/html/login.html">로그인</a>
-            </p>
-          </div>
+          <button id="btn-signup" onclick="location.href='/pages/signup.html'" type="button" class="auth-button">회원가입</button>
         </form>
+      </div>
+      <!-- 간편 로그인 -->
+      <div class="easy-login">
+        <span>간편 로그인 하기</span>
+        <div class="easy-login-icon">
+          <a href="https://www.google.com/"> <img src="/images/login_img/google_img.png" /></a>
+          <a href="https://www.kakaocorp.com/page/service/service/KakaoTalk" class="kakao-img"> <img src="/images/login_img/kakako_img.png" /></a>
+        </div>
+      </div>
+
+      <!-- 최하단 메시지 박스 -->
+      <div class="message-box">
+        <p class="message">
+          이미 회원이신가요?
+          <a href="/pages/login.html">로그인</a>
+        </p>
       </div>
     </div>
   </body>

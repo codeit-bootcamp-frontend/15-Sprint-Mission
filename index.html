@@ -4,18 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Open Graph  -->
+    <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content="판다마켓" />
     <meta property="og:description" content="일상의 모든 물건을 거래해보세요" />
     <meta property="og:url" content="https://hyunbara.netlify.app/" />
-    <meta property="og:image" content="https://hyunbara.netlify.app/images/Preview-Image.jpg" />
+    <meta property="og:image" content="https://hyunbara4.netlify.app/images/thumbnail.jpg" />
 
     <!-- Twitter Open Graph -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="판다마켓" />
     <meta name="twitter:description" content="일상의 모든 물건을 거래해보세요" />
-    <meta name="twitter:image" content="https://hyunbara.netlify.app/images/Preview-Image.jpg" />
+    <meta name="twitter:image" content="https://hyunbara4.netlify.app/images/thumbnail.jpg" />
 
     <!-- favicon -->
     <link rel="icon" href="/images/favicon.ico" />
@@ -27,11 +27,11 @@
     />
 
     <!-- common.css 추가 -->
-    <link rel="stylesheet" href="/css/common.css" />
-    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/common/common.css" />
+    <link rel="stylesheet" href="/pages/index.css" />
 
     <!-- 모바일 크기일 때 헤더 이미지 변경 -->
-    <script defer src="/js/mobile_changeImg.js"></script>
+    <script defer src="ui/mobile-header-image.js"></script>
 
     <!-- normalize.css cdn 이용 -->
     <link
@@ -49,7 +49,7 @@
       <a href="/">
         <img src="/images/panda-market-logo.png" alt="판다마켓" class="headerImg" />
       </a>
-      <a href="/html/login.html" class="loginBtn">로그인</a>
+      <a href="/pages/login.html" class="loginBtn">로그인</a>
     </header>
 
     <main>
@@ -62,7 +62,7 @@
               거래해보세요
             </h2>
             <div class="contentBtn-container">
-              <a href="/html/items.html" class="contentBtn">구경하러 가기</a>
+              <a href="/pages/items.html" class="contentBtn">구경하러 가기</a>
             </div>
           </div>
           <img src="/images/section_panda.png" alt="일상의 모든 물건을 거래해보세요" class="contentImg" />
@@ -116,7 +116,7 @@
         <div class="content">
           <div class="contentText">
             <h2 class="contentTitle" style="text-align: center">
-              <span>믿을 수 있는 </span><br />
+              <span>믿을 수 있는</span><br />
               판다마켓 중고거래
             </h2>
           </div>
@@ -130,8 +130,8 @@
       <div class="footerContents">
         <span>©codeit - 2024</span>
         <div class="footerPolicy">
-          <a href="/html/privacy.html">Privacy Policy</a>
-          <a href="/html/faq.html">FAQ</a>
+          <a href="/pages/privacy.html">Privacy Policy</a>
+          <a href="/pages/faq.html">FAQ</a>
         </div>
 
         <!-- 관련된 요소들끼리 묶은 ul태그로 수정 -->

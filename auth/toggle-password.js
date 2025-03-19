@@ -3,6 +3,7 @@
  * @param {input태그 id} inputId
  * @param {i 태그 자신} iconElement
  */
+
 const togglePasswordVisibility = (inputId, iconElement) => {
   const passwordInput = document.getElementById(inputId);
   const isPassword = passwordInput.type === "password";
