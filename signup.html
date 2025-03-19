@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>판다마켓 로그인</title>
+    <title>회원가입 - 판다마켓</title>
     <link rel="icon" href="images/logo/favicon.ico" />
 
     <link
@@ -22,11 +22,17 @@
         <a href="/"><img src="images/logo/logo.png" alt="판다마켓 홈" width="396" /></a>
       </div>
 
-      <form method="post" class="auth-form">
+      <form class="auth-form">
         <div class="input-group">
           <label for="email">이메일</label>
           <input id="email" name="email" type="email" placeholder="이메일을 입력해 주세요" required />
         </div>
+
+        <div class="input-group">
+          <label for="nickname">닉네임</label>
+          <input id="nickname" name="nickname" type="text" placeholder="닉네임을 입력해 주세요" required />
+        </div>
+
         <div class="input-group">
           <label for="password">비밀번호</label>
           <div class="password-wrapper">
@@ -34,7 +40,21 @@
             <img src="images/login_icon/eye-invisible.svg" alt="비밀번호 감추기" class="toggle-password" />
           </div>
         </div>
-        <button type="submit" class="auth-button">로그인</button>
+
+        <div class="input-group">
+          <label for="passwordCheck">비밀번호 확인</label>
+          <div class="password-wrapper">
+            <input
+              id="passwordCheck"
+              name="passwordCheck"
+              type="password"
+              placeholder="비밀번호를 다시 입력해 주세요"
+              required />
+            <img src="images/login_icon/eye-invisible.svg" alt="비밀번호 감추기" class="toggle-password" />
+          </div>
+        </div>
+
+        <button type="submit" class="auth-button">회원가입</button>
       </form>
 
       <div class="social-login">
@@ -50,8 +70,8 @@
       </div>
 
       <div class="auth-footer">
-        판다마켓이 처음이신가요?
-        <a href="signup.html">회원가입</a>
+        이미 계정이 있으신가요?
+        <a href="login.html">로그인</a>
       </div>
     </div>
   </body>
