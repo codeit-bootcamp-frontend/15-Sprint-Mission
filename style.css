@@ -1,5 +1,5 @@
 
-
+@import "reset.css";
 * {
   box-sizing: border-box;
 }
@@ -13,12 +13,12 @@ html {
   background-color: #CFE5FF;
 }
 
-.all {
+.container {
   margin: 0 200px;
 
 }
 
-.title-head {
+.header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -32,7 +32,6 @@ html {
   border-radius: 8px;
   padding: 12px 23px;
   background-color: #3692FF;
-  
   font-size: 16px;
   font-weight: 600;
 }
@@ -47,15 +46,15 @@ html {
   width: 153px;
 }
 
-.Nemo {
-  padding: 200px 200px 0;
+.hero-section {
+  padding: 200px 0 0;
   display: flex;
   justify-content: center;
   max-width: 1110px;
   margin: auto;
-} /*padding 실수한 거 같은데, 빼면 비율이 이상해집니다. 도저히 모르겠어서 수정하지 못했습니다.*/
+} 
 
-.miniNemo {
+.hero-content {
   margin: 0;
 }
 
@@ -84,7 +83,7 @@ html {
   height: 340px;
 }
 
-.nemonemo {
+.feature-section {
   width: 988px;
   height: 444px;
   display: flex;
@@ -93,12 +92,12 @@ html {
   justify-content: space-between;
 }
 
-.main-pic {
+.feature-image {
   width: 579px;
   height: 444px;
 }
 
-.headPoint {
+.section-heading {
   color: #3692FF;
   font-weight: 700;
   font-size: 18px;
@@ -111,24 +110,24 @@ html {
   justify-content: center;
 }
 
-.content {
+.section-text {
   font-weight: 500;
   font-size: 24px;
   line-height: 32px;
   color: #374151;
 }
 
-.greeting-panda-pic {
+.banner-image {
   max-width: 746px;
   width: 100%;
   height: 397px;
 }
 
-footer {
+.foot-background {
   background-color: #111827;
 }
 
-.foot {
+.footer-container {
   padding: 32px 200px 80px;
   gap: 10px;
   display: flex;
@@ -143,7 +142,7 @@ footer {
   text-align: center;
 }
 
-.privacyPolicy-FAQ {
+.footer-links {
   display: flex;
   font-weight: 400;
   font-size: 16px;
@@ -157,12 +156,12 @@ footer {
   text-decoration: none;
 }
 
-.sns-link {
+.social-links {
   display: flex;
   gap: 12px;
 }
 
-.link-logo {
+.social-icon {
   width: 20px;
   height: 20px;
 }
