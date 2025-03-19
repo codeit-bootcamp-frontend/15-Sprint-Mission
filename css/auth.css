@@ -34,6 +34,20 @@
     border-radius: 12px;
     background-color: var(--gray100);
 }
+
+/* error */
+.error{
+    border: solid 1px #F74747;
+}
+.errorMessage{
+    display: block;
+    color: #F74747;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 13px 0 0 16px;
+}
+/* error */
+
 .password input{
     background-image:url('/image/icon/visibility_off.png');
     background-repeat: no-repeat;
