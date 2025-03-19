@@ -10,7 +10,6 @@ function passwordVisibility (e) {
     }
 }
 
-console.log(visible);
 for (let icon of visible) {
     icon.addEventListener('click', passwordVisibility);
 }
