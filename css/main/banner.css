@@ -1,0 +1,143 @@
+.main-banner {
+  display: flex;
+  justify-content: center;
+  background-color: #cfe5ff;
+  width: 100%;
+  line-height: 4rem;
+  height: 40vh;
+  margin-top: 4.5rem;
+}
+
+banner {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100%;
+  max-width: 1920px;
+  height: 100%;
+}
+
+.banner-left {
+  width: 100%;
+  height: 70%;
+  max-width: 357px;
+  h1 {
+    font-size: 2.5rem;
+    color: #374151;
+  }
+}
+
+.banner-right {
+  display: flex;
+  align-items: flex-end;
+  max-width: 746px;
+  max-height: 340px;
+  height: 100%;
+  img {
+    width: 100%;
+  }
+}
+
+.main-banner__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+  height: 100%;
+  font-size: 3rem;
+  font-weight: 700;
+  gap: 32px;
+
+  a {
+    width: 100%;
+  }
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 56px;
+    border-radius: 40px;
+    background-color: #3692ff;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 1.4rem;
+  }
+}
+
+.main-banner-bottom__content {
+  margin-bottom: 0;
+}
+
+@media (max-width: 1920px) {
+  banner {
+    width: calc(100% - 400px);
+  }
+}
+
+@media (max-width: 1200px) {
+  .main-banner {
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .main-banner__content {
+    align-items: center;
+    padding: 5rem 0;
+    h1 {
+      text-align: center;
+      font-size: 100%;
+    }
+    a {
+      display: flex;
+      justify-content: center;
+    }
+    button {
+      width: 30%;
+      max-width: 357px;
+    }
+  }
+  banner {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .banner-left {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .banner-right {
+    width: 100%;
+    max-width: 100%;
+    margin-top: 15rem;
+  }
+  .main-banner-bottom__content {
+    h1 {
+      text-align: center;
+    }
+  }
+}
+
+@media (max-width: 767px) and (min-width: 375px) {
+  .main-banner__content {
+    padding: 3rem 0;
+    h1 {
+      width: 80%;
+      font-size: 80%;
+      line-height: 130%;
+    }
+    #search-btn {
+      width: 70%;
+    }
+  }
+  .banner-right {
+    margin-top: 4rem;
+  }
+
+  .main-article__text {
+    gap: 1.5rem;
+  }
+}

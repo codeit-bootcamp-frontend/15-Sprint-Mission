@@ -2,11 +2,11 @@
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css");
 
 /* pages */
-@import "pages/main/components/nav.css";
-@import "pages/main/components/banner.css";
-@import "pages/main/components/articles.css";
-@import "pages/main/components/footer.css";
-@import "pages/login/login.css";
+@import "components/nav.css";
+@import "main/banner.css";
+@import "main/articles.css";
+@import "components/footer.css";
+@import "login/login.css";
 
 * {
   box-sizing: border-box;
@@ -14,5 +14,5 @@
 
 body {
   font-family: "Pretendard Variable";
-  height: 100vh;
+  min-height: 100vh;
 }
