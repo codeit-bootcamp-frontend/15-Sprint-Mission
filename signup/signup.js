@@ -110,12 +110,12 @@ document.getElementById('signup-button').addEventListener('click', function(){
   const passwordsMatch = passwordInput.value === checkPasswordInput.value;
   
   if (emailValid && usernameValid && passwordValid && passwordsMatch) {
-    window.location.href = "15-Sprint-Mission/signin/signin.html";
+    window.location.href = "../signin/signin.html";
   } else {
     alert("정보를 입력해주세요.");
   }
 });
-//비밀번호 눈모양설정
+//<비밀번호> 눈모양설정
 document.getElementById('toggle-password').addEventListener('click', function(){
   const passwordInput = document.getElementById('password');
   const eyeIcon = document.getElementById('eye-icon')
@@ -128,7 +128,7 @@ document.getElementById('toggle-password').addEventListener('click', function(){
     eyeIcon.src = '../img/passwordBlind.svg';
     }
 })
-//비밀번호 확인 눈모양설정
+//<비밀번호 확인> 눈모양설정
 document.getElementById('toggle-password-re').addEventListener('click', function(){
   const passwordInput = document.getElementById('checkpassword');
   const eyeIcon = document.getElementById('eye-icon-re')
