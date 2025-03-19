@@ -1,40 +1,27 @@
-:root {
-    --gray900 : #111827;
-    --gray800 : #1F2937;
-    --gray700: #374151;
-    --gray600 : #4B5563;
-    --gray500 : #6B7280;
-    --gray400: #9CA3AF;
-    --gray200 : #E5E7EB;
-    --gray100 : #F3F4F6;
-    --gray50: #F9FAFB;
-    --blue: #3692FF;
-}
-
-.logo {
-    width: 396px;
-    height: 132px;
-    margin: 0 122px;
-}
-
-body {
+html, body {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.input_info {
+.logo {
+    width: auto;
+    height: 132px;
+    margin: 0 122px;
+}
+
+.input-info {
     margin-top: 40px;
 }
 
-.input_group {
+.input-group {
     font-size: 18px;
     font-weight: 700;
     line-height: 26px;
 }
 
-.input_group, .login_btn {
+.input-group, .login-btn {
     margin-bottom: 24px;
 }
 
@@ -52,28 +39,39 @@ input {
     padding: 16px 24px 14px; 
 }
 
-#pwd {
-    padding: 16px 24px 16px;
+input::placeholder {
+    color: var(--gray400);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    letter-spacing: 0%;
 }
+
+/* #pwd {
+    padding: 16px 24px 16px;
+} */
 
 
 .password {
+    display: flex;
     position: relative;
-    width: 640px;
+    width:100%;
 }
 
-.pwd_icon {
-    display: inline-flex;
+.pwd-icon-btn {
     position: absolute;
-    right: 16px;
-    top: 32px;
     width: 24px;
     height: 24px;
+    right: 16px;
+    top: 32px;
 }
 
+.pwd-icon {
+    width: 100%;
+    height: 100%;
+}
 
-
-.submit_btn button {
+.submit-btn button {
     color: var(--gray100);
     background-color: var(--blue);
     width: 640px;
@@ -86,18 +84,15 @@ input {
     margin-bottom: 24px;
 }
 
-.sign_easy {
+.sign-easy {
     display: flex; 
-     
     box-sizing: border-box;
     justify-content: space-between;
     align-items: center;
     padding: 16px 23px;
     gap: 10px;
-
     width: 640px;
     height: 74px;
-
     background: #E6F2FF; /* 배경색 */
     border-radius: 8px;
 
@@ -111,7 +106,7 @@ input {
     text-align: center;
 }
 
-.sign_easy div {
+.sign-easy div {
     display: flex;
     gap: 16px;
 }
@@ -122,7 +117,7 @@ input {
 }
 
 
-.move_page {
+.move-page {
     margin-top: 24px;
     display: flex;
     justify-content: center;
@@ -133,7 +128,53 @@ input {
     color: var(--gray800);
 }
 
-.move_page a {
+.move-page a {
     color: var(--blue);
     text-decoration: underline;
+}
+
+
+@media (max-width: 1199px) and (min-width: 768px) {
+    body {
+        margin: 190px 52px 325px;
+    }
+    
+    
+}
+
+@media (max-width: 767px) and (min-width: 375px) {
+
+    .logo-a {
+        display: flex;
+        justify-content: center;
+    }
+
+    .logo {
+        width: 198px;
+        height: 66px;
+    }
+    
+    main {
+        width: 100%;
+        max-width: 400px;
+        min-width: 343px;
+        margin: 0 auto;
+    }
+
+    input {
+        width: 100%;
+    }
+
+    .submit-btn button {
+        width: 100%;
+    }
+
+    .sign-easy {
+        width: 100%;
+    }
+    
+    .pwd-icon-btn {
+        right: 16px;
+    }
+  
 }

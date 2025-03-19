@@ -4,44 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/common/auth.css">
+    <link rel="stylesheet" href="/css/common/variables.css">
     <link rel="stylesheet" href="/css/common/reset.css">
-    <link rel="stylesheet" href="css/pages/login.css">
+    <link rel="stylesheet" href="/css/pages/login.css">
     <title>판다마켓 - 로그인</title>
 </head>
 <body>
     <main>
-        <a href="/">
-            <img class="logo" src="/assets/logo/logo_1.png" alt="판다마켓 로고">
+        <a href="/" class="logo-a">
+            <img class="logo" src="/assets/logo/logo.png" alt="판다마켓 로고">
         </a>
-        <div class="input_info">
+        <div class="input-info">
             <form>
-                <div class="input_group">
-                    이메일<br>
-                    <input type="email" name="email">
+                <div class="input-group">
+                    <label for="email">이메일</label>
+                    <input type="email" name="email" placeholder="이메일을 입력해주세요">
                 </div>
-                <div class="input_group">
-                    비밀번호<br>
+                <div class="input-group">
+                    <label for="password">비밀번호</label>
                     <div class="password">
-                        <input id="pwd" type="password" name="password">
-                        <img class="pwd_icon" src="/assets/icons/hide-password.png" alt="비밀번호가리기">
+                        <input id="pwd" type="password" name="password" placeholder="비밀번호를 입력해주세요">
+                        <button type="button" class="pwd-icon-btn">
+                            <img class="pwd-icon" src="/assets/icons/hide-password.png" alt="비밀번호 가리기">
+                        </button>
                     </div>
                 </div>
-                <div class="submit_btn">
+                <div class="submit-btn">
                     <button type="submit">로그인</button>
                 </div>
             </form>
-            <div class="sign_easy">
+            <div class="sign-easy">
                 간편 로그인하기
                 <div>
                     <a href="https://www.google.com/">
-                        <img class="icon" src="/assets/icons/GoogleBg.png" alt="간편로그인_구글">
+                        <img class="icon" src="/assets/icons/Google.png" alt="간편로그인 구글">
                     </a>
                     <a href="https://www.kakaocorp.com/page/">
-                        <img class="icon" src="/assets/icons/KakaoBg.png" alt="간편로그인_구글">
+                        <img class="icon" src="/assets/icons/Kakao.png" alt="간편로그인 카카오">
                     </a>
                 </div>
             </div>
-            <div class="move_page">
+            <div class="move-page">
                 판다마켓이 처음이신가요?
                 <a href="/signup.html">회원가입</a>
             </div>

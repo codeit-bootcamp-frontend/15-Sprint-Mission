@@ -7,4 +7,10 @@ main {
     height: 618px;
 }
 
+@media (max-width: 767px) and (min-width: 375px){
+    body {
+        margin: 80px 16px 231px;
+    }
 
+    
+}
