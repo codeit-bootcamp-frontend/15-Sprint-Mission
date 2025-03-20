@@ -58,9 +58,14 @@
   margin: 0 auto;
 }
 
+.right {
+  text-align: right;
+}
+
 .main-feature {
   display: flex;
   flex-direction: column;
+  padding: 40px;
 }
 
 .main-feature img {
