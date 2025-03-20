@@ -17,6 +17,7 @@
       src="https://kit.fontawesome.com/0f08ea7d4a.js"
       crossorigin="anonymous"
     ></script>
+    <script src="/js/validation.js" defer></script>
   </head>
   <body>
     <header>
@@ -29,29 +30,38 @@
       </a>
     </header>
     <main class="login-main">
-      <form action="" method="post" class="login-form">
-        <label for="email">이메일</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          placeholder="이메일을 입력해주세요"
-          class="login-input"
-        />
+      <form action="/items/" method="get" class="login-form">
+        <div id="email-container">
+          <label for="email">이메일</label>
+          <input
+            type="text"
+            id="email"
+            name="email"
+            placeholder="이메일을 입력해주세요"
+            class="login-input"
+            maxlength="50"
+            required
+          />
+          <div id="email-error"></div>
+        </div>
         <label for="password">비밀번호</label>
-        <div class="password-container">
+        <div id="password-container">
           <input
             type="password"
             id="password"
             name="password"
             placeholder="비밀번호를 입력해주세요"
             class="login-input"
+            min="8"
+            maxlength="50"
+            required
           />
           <button type="button" class="password-toggle-icon">
             <i class="fa-regular fa-eye"></i>
           </button>
+          <div id="password-error"></div>
         </div>
-        <button class="login-btn">로그인</button>
+        <button id="login-btn" disabled>로그인</button>
       </form>
       <section class="login-social">
         <span>간편 로그인하기</span>
