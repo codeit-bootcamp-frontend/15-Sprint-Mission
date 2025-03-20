@@ -17,6 +17,8 @@
       src="https://kit.fontawesome.com/0f08ea7d4a.js"
       crossorigin="anonymous"
     ></script>
+    <script src="/js/signupValidation.js" defer></script>
+    <script src="/js/toggleVisibleIcon.js" defer></script>
   </head>
   <body>
     <header>
@@ -31,50 +33,68 @@
       </a>
     </header>
     <main class="login-main">
-      <form action="" method="post" class="login-form">
+      <form action="/login/" method="get" class="login-form">
         <label for="email">이메일</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          placeholder="이메일을 입력해주세요"
-          class="login-input"
-        />
+        <div class="email-container">
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="이메일을 입력해주세요"
+            class="login-input"
+          />
+          <div id="email-error"></div>
+        </div>
+
         <label for="nickname">닉네임</label>
-        <input
-          type="text"
-          id="nickname"
-          name="nickname"
-          placeholder="닉네임을을 입력해주세요"
-          class="login-input"
-        />
+        <div class="nickname-container">
+          <input
+            type="text"
+            id="nickname"
+            name="nickname"
+            placeholder="닉네임을 입력해주세요"
+            class="login-input"
+          />
+          <div id="nickname-error"></div>
+        </div>
+
         <label for="password">비밀번호</label>
         <div class="password-container">
-          <input
-            type="password"
-            id="password"
-            name="password"
-            placeholder="비밀번호를 입력해주세요"
-            class="login-input"
-          />
-          <button type="button" class="password-toggle-icon">
-            <i class="fa-regular fa-eye"></i>
-          </button>
+          <div class="password-input-wrapper">
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="비밀번호를 입력해주세요"
+              class="login-input"
+              min="8"
+              maxlength="50"
+            />
+            <button type="button" class="password-toggle-icon">
+              <i class="fa-regular fa-eye"></i>
+            </button>
+          </div>
+          <div id="password-error"></div>
         </div>
         <label for="password-confirm">비밀번호</label>
-        <div class="password-container">
-          <input
-            type="password"
-            id="password"
-            name="password-confirm"
-            placeholder="비밀번호를 다시 한 번 입력해주세요"
-            class="login-input"
-          />
-          <button type="button" class="password-toggle-icon">
-            <i class="fa-regular fa-eye"></i>
-          </button>
+        <div class="password-confirm-container">
+          <div class="password-input-wrapper">
+            <input
+              type="password"
+              id="password-confirm"
+              name="password-confirm"
+              placeholder="비밀번호를 다시 한 번 입력해주세요"
+              class="login-input"
+              min="8"
+              maxlength="50"
+            />
+            <button type="button" class="password-toggle-icon">
+              <i class="fa-regular fa-eye"></i>
+            </button>
+          </div>
+          <div id="password-confirm-error"></div>
         </div>
-        <button class="login-btn">로그인</button>
+        <button id="login-btn">회원가입</button>
       </form>
       <section class="login-social">
         <span>간편 로그인하기</span>
