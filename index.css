@@ -56,6 +56,7 @@
 /* ---- main ---- */
 .main {
   margin: 0 auto;
+  padding: 24px 0;
 }
 
 .right {
@@ -101,8 +102,8 @@
   color: var(--primary-text-color);
 }
 
-/* ---- 모바일 (최대 767px) ---- */
-@media (max-width: 767px) {
+/* ---- 모바일 (375px 이상) ---- */
+@media (min-width: 375px) {
   .line-break {
     display: block;
   }
