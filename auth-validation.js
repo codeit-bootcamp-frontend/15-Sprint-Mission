@@ -92,10 +92,10 @@ function activeBtn () {
 
 function movePage (e) {
     e.preventDefault();
-    if (window.location.href = 'https://p-anda-market.netlify.app/login') {
-        window.location.href = 'https://p-anda-market.netlify.app/items'
-    } else if (window.location.href = 'https://p-anda-market.netlify.app/sign-up') {
-        window.location.href = 'https://p-anda-market.netlify.app/login';
+    if (window.location.href = '/signin.html') {
+        window.location.href = '/items.html'
+    } else if (window.location.href = '/signup.html') {
+        window.location.href = '/signin.html';
     }
 }
 
