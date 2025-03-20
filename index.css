@@ -1,21 +1,4 @@
-@import url("css/reset.css");
-@import url("css/base.css");
-@import url("css/home.css");
-@import url("css/login-signup.css");
-
-/* 
-responsive CSS
-desktop-first
-breakpoint: 1920px, 1024px, 768px
-*/
-@media (max-width: 1919px) {
-  html {
-    font-size: 9px;
-  }
-}
-
-@media (max-width: 1024px) {
-  html {
-    font-size: 8px;
-  }
-}
+@import url('css/reset.css');
+@import url('css/base.css');
+@import url('home/home.css');
+@import url('auth/auth.css');

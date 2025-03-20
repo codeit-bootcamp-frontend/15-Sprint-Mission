@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
@@ -13,16 +13,24 @@
     <link rel="stylesheet" href="../index.css" />
     <title>판다마켓 로그인</title>
   </head>
-  <body class="login-signup-body">
-    <div class="login-signup-container">
-      <header class="login-signup-header">
+  <body class="auth-body">
+    <script type="module" src="../index.js"></script>
+
+    <div class="auth-container">
+      <header class="auth-header">
         <h1 class="logo-container">
-          <img src="../images/panda_face.svg" alt="logo" class="logo" />
-          <a href="/">판다마켓</a>
+          <a href="/">
+            <img src="../images/panda_face.svg" alt="logo" class="logo" />
+            <img
+              src="../images/logo_typo.svg"
+              alt="panda market"
+              class="logo-typo"
+            />
+          </a>
         </h1>
       </header>
 
-      <form class="login-signup-form" method="POST">
+      <form class="auth-form" data-auth-type="login" method="POST">
         <div class="input-container">
           <label for="email">이메일</label>
           <input
@@ -31,7 +39,9 @@
             name="email"
             placeholder="이메일을 입력해주세요"
           />
+          <div class="validation-error-message"></div>
         </div>
+
         <div class="input-container">
           <label for="password">비밀번호</label>
           <div class="password-input">
@@ -41,7 +51,11 @@
               name="password"
               placeholder="비밀번호를 입력해주세요"
             />
-            <button class="password-visibility" type="button">
+            <button
+              class="password-visibility"
+              id="password-visibility"
+              type="button"
+            >
               <img
                 src="../images/close_eye_grey.svg"
                 alt="closed eye icon"
@@ -49,21 +63,26 @@
               />
             </button>
           </div>
+          <div class="validation-error-message"></div>
         </div>
 
-        <button type="submit" class="login-signup-button">로그인</button>
+        <button type="submit" class="auth-button" disabled>로그인</button>
       </form>
 
       <div class="oauth-container">
         <p>간편 로그인하기</p>
-        <div class="oauth-site">
-          <a href="https://www.google.com" class="oauth-button">
-            <img src="../images/google_logo.svg" alt="google login button" />
-          </a>
-          <a href="https://www.kakaocorp.com" class="oauth-button">
-            <img src="../images/kakao_logo.svg" alt="kakao login button" />
-          </a>
-        </div>
+        <ul class="oauth-site">
+          <li>
+            <a href="https://www.google.com" class="oauth-button">
+              <img src="../images/google_logo.svg" alt="google login button" />
+            </a>
+          </li>
+          <li>
+            <a href="https://www.kakaocorp.com" class="oauth-button">
+              <img src="../images/kakao_logo.svg" alt="kakao login button" />
+            </a>
+          </li>
+        </ul>
       </div>
 
       <div class="switch">

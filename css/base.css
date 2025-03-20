@@ -26,7 +26,7 @@ html {
 
 body {
   font-size: 1rem;
-  font-family: "Pretendard", sans-serif;
+  font-family: 'Pretendard', sans-serif;
   color: black;
 }
 
@@ -64,11 +64,6 @@ p {
 ul,
 ol {
   font-size: 1rem;
-  line-height: 1.7;
-}
-
-li {
-  margin-bottom: 0.5rem;
 }
 
 a {
@@ -93,4 +88,21 @@ button:active {
 button:disabled {
   background-color: var(--secondary-400);
   cursor: not-allowed;
+}
+
+/* 
+responsive CSS
+desktop-first(1920이상) 큰 모니터 
+breakpoint: 1919px(작은 모니터), 1199px(태블릿), 767px(모바일) (375px미만은 고려하지 않습니다.)
+*/
+@media (max-width: 1919px) {
+  html {
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 767px) {
+  html {
+    font-size: 8px;
+  }
 }

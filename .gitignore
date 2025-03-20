@@ -9,3 +9,9 @@ node_modules/
 
 # macOS의 경우 생성되는 파일들
 .DS_Store
+
+# vscode 설정 파일
+.vscode/ 
+
+# mission_template_codes 공부용 
+mission_template_codes/
