@@ -89,13 +89,12 @@ function activeBtn () {
         submitBtn.setAttribute('disabled', true);
     }
 }
-
-function movePage (e) {
+function movePage(e) {
     e.preventDefault();
-    if (window.location.href = '/signin.html') {
-        window.location.href = '/items.html'
-    } else if (window.location.href = '/signup.html') {
-        window.location.href = '/signin.html';
+    if (window.location.pathname === '/auth/signin') {
+        location.href = '/items';
+    } else if (window.location.pathname === '/auth/signup') {
+        location.href = '/auth/signin';
     }
 }
 

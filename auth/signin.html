@@ -11,13 +11,16 @@
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css"/>
 </head>
 <body>
-    <header class="login-page">
+    <script src="auth-validation.js" defer></script>
+    <script src="password-visibility.js" defer></script>
+
+    <header class="sign-in-page">
         <a  class="logo" href="/">
             <img class="logo-img" src="../img/logo_img.png" alt="판다마켓 로고">
             <img class="logo-text" src="../img/logo_text.png" alt="판다마켓 로고">
         </a>
     </header>
-    <form class="login-form">
+    <form class="sign-in-form">
         <div>
             <label for="emailId">이메일</label>
             <input id="emailId" type="email" name="email" placeholder="이메일을 입력해주세요">
@@ -27,15 +30,15 @@
             <label for="pwdId">비밀번호</label>
             <div class="show-pwd">
                 <input id="pwdId" type="password" name="password" placeholder="비밀번호를 입력해주세요">
-                <button type="button">
+                <button type="button" tabindex="-1">
                     <img class="visible" src="/img/visibility_off.png">
                 </button>
             </div>
             <div class="error-message pwd"></div>
         </div>
-        <button id="submitBtn" class="login-btn disabled" type="submit" disabled>로그인</button>
+        <button id="submitBtn" class="sign-in-btn disabled" type="submit" disabled>로그인</button>
 
-        <div class="quick-login">
+        <div class="quick-sign-in">
             <span>간편 로그인하기</span>
             <ul class="sns">
                 <li>
@@ -51,7 +54,5 @@
             <a class="sign-up" href="./signup.html">회원가입</a>
         </div>
     </form>
-    <script src="auth-validation.js"></script>
-    <script src="password-visibility.js"></script>
 </body>
 </html>

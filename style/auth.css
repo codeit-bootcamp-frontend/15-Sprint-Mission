@@ -3,7 +3,7 @@ header {
     justify-content: center;
 }
 
-.login-page {
+.sign-in-page {
     margin: 230px auto 24px;
 }
 
@@ -26,7 +26,7 @@ header {
     height: 62px;
 }
 
-.login-form, .sign-up-form {
+.sign-in-form, .sign-up-form {
     width: 640px;
     margin: 0 auto;
 }
@@ -72,7 +72,7 @@ input::placeholder {
     width: 24px;
 }
 
-.login-btn, .sign-up-btn {
+.sign-in-btn, .sign-up-btn {
     display: inline-block;
     padding: 16px;
     margin: 24px auto 0;
@@ -83,7 +83,7 @@ input::placeholder {
     color: var(--gray100);
 }
 
-.quick-login {
+.quick-sign-in {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -125,7 +125,7 @@ input::placeholder {
     color: var(--blue);
 }
 
-.login {
+.sign-in {
     text-decoration: underline;
     color: var(--blue);
 }
@@ -135,7 +135,7 @@ input::placeholder {
 }
 
 @media (max-width: 1199px) {
-    .login-page {
+    .sign-in-page {
         margin: 190px auto 24px;
     }
     
@@ -145,7 +145,7 @@ input::placeholder {
 }
 
 @media (max-width: 767px) {
-    .login-page {
+    .sign-in-page {
         margin: 80px auto 24px;
     }
     
@@ -153,7 +153,7 @@ input::placeholder {
         margin: 24px auto 24px;
     }
 
-    .login-form, .sign-up-form {
+    .sign-in-form, .sign-up-form {
         max-width: 432px;
         width: 100%;
         padding: 16px;
@@ -182,7 +182,7 @@ input::placeholder {
         margin: 4px auto 16px;
     }
 
-    .login-btn, .sign-up-btn {
+    .sign-in-btn, .sign-up-btn {
         width: 100%;
         border-radius: 40px;
     }
