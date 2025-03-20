@@ -451,15 +451,20 @@ main {
   }
 
   .footer-background {
-    font-size: 2rem;
+    font-size: 2.3rem;
   }
 
   .footer-content {
     position: relative;
+    padding: 2.5rem;
+  }
+
+  .footer-buttons {
+    gap: 7rem;
   }
 
   .footer-small {
     position: absolute;
-    top: 40px;
+    top: 90px;
   }
 }
