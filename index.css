@@ -65,21 +65,20 @@
 .main-feature {
   display: flex;
   flex-direction: column;
-  padding: 40px;
+  padding: 28px;
 }
 
 .main-feature img {
   width: 100%;
   max-width: 696px;
-  margin: 0 auto;
+  margin: 38px auto;
 }
 
 .feature-text {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 40px 0;
-  gap: 20px;
+  gap: 18px;
 }
 
 .feature-category {
@@ -92,6 +91,7 @@
   font-size: 24px;
   font-weight: 700;
   color: var(--primary-text-color);
+  line-height: 130%;
 }
 
 .feature-desc {
