@@ -1,5 +1,6 @@
 @import url(/styles/variable.css);
 
+/* heder - hero */
 .hero {
   background-color: var(--secondary-color);
 }
@@ -18,7 +19,7 @@
   justify-content: center;
   align-items: center;
   margin: 150px 0 150px;
-  max-width: 240px;
+  min-width: 240px;
 }
 
 .hero-header {
@@ -48,8 +49,10 @@
   max-width: 746px;
 }
 
+/* main */
 .main {
   padding: 60px 20px;
+  margin: 0 auto;
 }
 
 .main-feature {
@@ -87,9 +90,32 @@
   color: var(--primary-text-color);
 }
 
+/* ---- media query ---- */
+@media (max-width: 767px) {
+  .hero-header .line-break {
+    display: block;
+  }
+}
+
 @media (min-width: 768px) {
   .main {
-    width: 744px;
+    width: 740px;
     margin: 0 auto;
+  }
+
+  .hero-header {
+    font-size: 38px;
+  }
+
+  .hero-header .line-break {
+    display: inline;
+  }
+
+  .hero-dom {
+    width: 512px;
+  }
+
+  .hero-btn {
+    width: 70%;
   }
 }
