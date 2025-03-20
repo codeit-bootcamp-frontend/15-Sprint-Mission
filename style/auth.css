@@ -78,7 +78,7 @@ input::placeholder {
     margin: 24px auto 0;
     width: 640px;
     border-radius: 40px;
-    background-color: var(--gray400);
+    background-color: var(--blue);
     font-weight: 600;
     color: var(--gray100);
 }

@@ -9,12 +9,12 @@ const nicknameErrorMessage = document.querySelector('.error-message.nickname');
 const pwdErrorMessage = document.querySelector('.error-message.pwd');
 const checkPwdErrorMessage = document.querySelector('.error-message.check-pwd');
 
-// error 메세지 추가
+// 에러 메세지 추가
 function setErrorMessage(field, errorPoint, message) {
     errorPoint.textContent = message;
     field.classList.add('error');
 }
-// error 메세지 삭제
+// 에러 메세지 삭제
 function clearErrorMessage(field, errorPoint) {
     errorPoint.textContent = '';
     field.classList.remove('error');
@@ -29,6 +29,7 @@ function emailError (e) {
     } else {
         clearErrorMessage(email, emailErrorMessage);
     }
+    activeBtn ()
 }
 
 email.addEventListener('focusout', emailError);
@@ -39,6 +40,7 @@ function nicknameError (e) {
     } else {
         clearErrorMessage(nickname, nicknameErrorMessage);
     }
+    activeBtn ()
 }
 
 nickname ?. addEventListener('focusout', nicknameError);
@@ -51,6 +53,7 @@ function pwdError (e) {
     } else {
         clearErrorMessage(pwd, pwdErrorMessage);
     }
+    activeBtn ()
 }
 
 pwd.addEventListener('focusout', pwdError);
@@ -61,7 +64,39 @@ function checkPwdError (e) {
     } else {
         clearErrorMessage(checkPwd, checkPwdErrorMessage);
     }
+    activeBtn ()
 }
 
-checkPwd ?.addEventListener('focusout', checkPwdError);
+checkPwd?.addEventListener('focusout', checkPwdError);
 
+const submitBtn = document.getElementById('submitBtn');
+
+// 버튼 활성화
+function activeBtn () {
+    // 공통 필드
+    const emailValid = (email.value.trim() !== '') && (/^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/.test(email.value.trim()));
+    const pwdValid = (pwd.value.trim() !== '') && (pwd.value.trim().length >= 8);
+
+    // 회원가입 전용 필드
+    const nicknameValid = !!nickname ? (nickname.value !== '') : true;
+    const checkPwdValid = !!checkPwd ? (checkPwd.value === pwd.value) : true;
+
+    if (emailValid && pwdValid && nicknameValid && checkPwdValid) {
+        submitBtn.classList.remove('disabled');
+        submitBtn.removeAttribute('disabled');
+    } else {
+        submitBtn.classList.add('disabled');
+        submitBtn.setAttribute('disabled', true);
+    }
+}
+
+function movePage (e) {
+    e.preventDefault();
+    if (window.location.href = 'https://p-anda-market.netlify.app/login') {
+        window.location.href = 'https://p-anda-market.netlify.app/items'
+    } else if (window.location.href = 'https://p-anda-market.netlify.app/sign-up') {
+        window.location.href = 'https://p-anda-market.netlify.app/login';
+    }
+}
+
+submitBtn.addEventListener('click', movePage);
