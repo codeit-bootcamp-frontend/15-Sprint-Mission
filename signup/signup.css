@@ -18,9 +18,10 @@
   --error: #f74747;
 }
 * {
-  font-family: 'Pretendard';
   box-sizing: border-box;
+  flex-wrap: wrap;
   font-size: 10px;
+  font-family: 'Pretendard';
 }
 body {
   margin: 3rem auto;
@@ -37,7 +38,7 @@ main {
   align-items: center;
 }
 .main-logo {
-  width: 10.353rem;
+  width: 10.3rem;
   height: 10.388rem;
 }
 .main-logo-text {
@@ -57,6 +58,14 @@ form {
   display: flex;
   flex-direction: column;
   gap: 2.4rem;
+}
+input.error {
+  border: 1px solid var(--error);
+}
+.input-height {
+  height: 8.2rem;
+  display: flex;
+  align-content: space-between;
 }
 .input-label {
   width: 100%;
@@ -78,6 +87,12 @@ form {
   border: none;
   padding: 1.6rem 2.4rem;
 }
+#error-email-message, #error-emailform-message, #error-username-message, #error-password-message, #error-matchpassword-message, #error-message-length {
+  display: none;
+  color: var(--error);   
+  font-size: 1.4rem;
+  padding-left: 1.6rem;
+}
 .input-password {
   position: relative;
 }
@@ -94,7 +109,7 @@ form {
   align-items: center;
   cursor: pointer;
 }
-.login-button ,.sign-button {
+.sign-button {
   height: 5.6rem;
   gap: 1rem;
   border-radius: 4rem;
@@ -103,11 +118,15 @@ form {
   line-height: 3.2rem;
   text-align: center;
   border: none;
-  background-color:var(--secondary-400);
+  background-color:var(--primary-100);
   color: var(--secondary-100);
   cursor: pointer;
 }
-.login-button:hover ,.sign-button:hover {
+.sign-button:disabled, #signup-button.disabled {
+  cursor: not-allowed;
+  background-color: var(--secondary-400);
+}
+.sign-button:hover {
   background-color: var(--primary-200);
 }
 .easy-login {
@@ -184,7 +203,7 @@ form {
     height: 4.5rem;
   }
   .main-logo-contain {
-    width: 19.8rem;
+    width: 20rem;
     height: 6.6rem;
     padding-right: 0.212rem;
     gap: 1.12rem;

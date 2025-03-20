@@ -5,9 +5,10 @@
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"/>
-  <title>login</title>
-  <link rel="stylesheet" href="../css/loginSignUp.css">
+  <title>판다마켓 - 로그인</title>
+  <link rel="stylesheet" href="signin.css">
   <link rel="icon" href="../img/pandaLogoIcon.svg">
+  <script defer src="./signin.js"></script>
 </head>
 <body>
   <main>
@@ -16,21 +17,33 @@
       <img class="main-logo-text" src="../img/padamaketText.svg" alt="판다마켓 로고 글자">
     </a>
     <form>
-      <label class="input-label" for="username">
+      <label class="input-label" for="email">
         이메일
       </label>
-      <input class="input-field" id="username" name="username" type="email" placeholder="이메일을 입력해주세요">
-      
+      <div class="input-height">
+        <input class="input-field" id="email" name="email" type="email" placeholder="이메일을 입력해주세요">
+        <span id="error-email-message">
+          이메일을 입력해주세요.
+        </span><span id="error-emailform-message">
+          잘못된 이메일 형식입니다.
+        </span>
+      </div>
       <label class="input-label" for="password" >
         비밀번호
       </label>
-      <div class="input-password">
+      <div class="input-password input-height">
         <input class="input-field" id="password" name="password" type="password" placeholder="비밀번호를 입력해주세요";>
-        <button class="password-visibility" type="button">
-          <img class="password-Eye" src="../img/passwordBlind.svg" alt="비밀번호 가리기" />
+        <span id="error-password-message">
+          비밀번호를 입력해주세요.
+        </span>
+        <span id="error-message-length">
+          비밀번호를 8자 이상 입력해주세요.
+        </span>
+        <button id="toggle-password" class="password-visibility" type="button">
+          <img id="eye-icon" class="password-Eye" src="../img/passwordBlind.svg" alt="비밀번호 가리기" />
         </button>
       </div>
-      <button type="submit" class="login-button">
+      <button type="button" id="signin-button" class="login-button">
         로그인
       </button>
     </form>
@@ -49,7 +62,7 @@
         </div>
     </div>
     <div class="signup-text">
-      판다마켓이 처음이신가요? <a class="signlink-text" href="SignUp.html">회원가입</a>
+      판다마켓이 처음이신가요? <a class="signlink-text" href="../signup/signup.html">회원가입</a>
     </div>
   </main>
 </body>
