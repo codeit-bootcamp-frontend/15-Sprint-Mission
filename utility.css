@@ -11,16 +11,19 @@
   --blue: #3692FF;
 }
 
-.btn-large, .btn-small {
+.btn-large,
+.btn-small {
   background-color: var(--blue);
   color: var(--gray100);
 }
 
-.btn-large:hover, .btn-small:hover {
+.btn-large:hover,
+.btn-small:hover {
   background-color: #1967D6;
 }
 
-.btn-large:active, .btn-small:active {
+.btn-large:active,
+.btn-small:active {
   background-color: #1251AA;
 }
 

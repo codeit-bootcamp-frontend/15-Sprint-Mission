@@ -16,7 +16,8 @@ button {
   border: none;
 }
 
-body, p {
+body,
+p {
   margin: 0;
   padding: 0;
 }
