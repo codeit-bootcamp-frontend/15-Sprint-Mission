@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>판다마켓 - 회원가입</title>
+    <title>판다마켓 - 로그인</title>
     <link rel="icon" href="img/favicon.png">
     <link rel="stylesheet" href="/style/reset.css">
     <link rel="stylesheet" href="/style/global.css">
@@ -11,22 +11,17 @@
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css"/>
 </head>
 <body>
-    <header class="sign-up-page">
-        <a class="logo" href="/">
+    <header class="login-page">
+        <a  class="logo" href="/">
             <img class="logo-img" src="img/logo_img.png" alt="판다마켓 로고">
             <img class="logo-text" src="img/logo_text.png" alt="판다마켓 로고">
         </a>
     </header>
-    <form class="sign-up-form">
+    <form class="login-form">
         <div>
             <label for="emailId">이메일</label>
             <input id="emailId" type="email" name="email" placeholder="이메일을 입력해주세요">
             <div class="error-message email"></div>
-        </div>
-        <div>
-            <label for="nicknameId">닉네임</label>
-            <input id="nicknameId" type="text" name="nickname" placeholder="닉네임을 입력해주세요">
-            <div class="error-message nickname"></div>
         </div>
         <div>
             <label for="pwdId">비밀번호</label>
@@ -34,19 +29,11 @@
                 <input id="pwdId" type="password" name="password" placeholder="비밀번호를 입력해주세요">
                 <button type="button">
                     <img class="visible" src="/img/visibility_off.png">
-                </button>    
+                </button>
             </div>
             <div class="error-message pwd"></div>
         </div>
-        <div>
-            <label for="checkPwdId">비밀번호 확인</label>
-            <div class="show-pwd">
-                <input id="checkPwdId" type="password" name="check-password" placeholder="비밀번호를 다시 한 번 입력해주세요">
-                <button type="button"><img class="visible" src="/img/visibility_off.png"></button>
-            </div>
-            <div class="error-message check-pwd"></div>
-        </div>
-        <button id="submitBtn" class="sign-up-btn disabled" type="submit" disabled>회원가입</button>
+        <button id="submitBtn" class="login-btn disabled" type="submit" disabled>로그인</button>
 
         <div class="quick-login">
             <span>간편 로그인하기</span>
@@ -59,12 +46,12 @@
                 </li>
             </ul>
         </div>
-        <div class="already-member">
-            <span>이미 회원이신가요?</span>
-            <a class="login" href="/login.html">로그인</a>
+        <div class="new-member">
+            <span>판다마켓이 처음이신가요?</span>
+            <a class="sign-up" href="/signup.html">회원가입</a>
         </div>
     </form>
     <script src="auth-validation.js"></script>
-    <script type="module" src="password-visibility.js"></script>
+    <script src="password-visibility.js"></script>
 </body>
 </html>
