@@ -18,6 +18,7 @@
       crossorigin="anonymous"
     ></script>
     <script src="/js/validation.js" defer></script>
+    <script src="/js/toggleVisibleIcon.js" defer></script>
   </head>
   <body>
     <header>
@@ -40,7 +41,6 @@
             placeholder="이메일을 입력해주세요"
             class="login-input"
             maxlength="50"
-            required
           />
           <div id="email-error"></div>
         </div>
@@ -55,7 +55,6 @@
               class="login-input"
               min="8"
               maxlength="50"
-              required
             />
             <button type="button" class="password-toggle-icon">
               <i class="fa-regular fa-eye"></i>
