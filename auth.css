@@ -54,12 +54,14 @@ input {
   padding: 0 2.5rem;
 }
 
-.password-page {
+.password-group {
   position: relative;
+  margin: 0;
 }
 
-.password-repeat-page {
+.password-repeat-group {
   position: relative;
+  margin: 0;
 }
 
 .password-eye-button {
@@ -81,8 +83,13 @@ input {
   height: 2.4rem;
 }
 
-.auth-button {
+.auth-button:disabled {
+  cursor: not-allowed;
   background-color: var(--gray400);
+}
+
+.auth-button {
+  background-color: var(--blue);
   border: none;
   border-radius: 40px;
   padding: 1.6rem 12.4rem;
@@ -93,10 +100,6 @@ input {
   color: var(--gray100);
   margin: 1.4rem 0;
   cursor: pointer;
-}
-
-.auth-button:hover {
-  background-color: var(--blue);
 }
 
 .quick-login {

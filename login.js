@@ -1,15 +1,25 @@
 const inputEmail = document.querySelector("#email");
-const inputName = document.querySelector("#name");
 const inputPassword = document.querySelector("#password");
-const inputPasswordRepeat = document.querySelector("#password-repeat");
-const authBtn = document.querySelector("#auth-button");
+const authBtn = document.querySelector(".auth-button");
+const login = document.querySelector("#login-button");
 
 const emailError = document.querySelector(".email-error-message");
-const nameError = document.querySelector(".name-error-message");
 const pwError = document.querySelector(".pw-error-message");
-const pwRepeatError = document.querySelector(".pw-repeat-error-message");
 
 const pattern = /^(?!.*\.\.)[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+const validateButton = () => {
+  const emailValue = inputEmail.value.trim();
+  const pwValue = inputPassword.value.trim();
+
+  if(emailValue !== "" && pattern.test(emailValue) && pwValue !== "" && pwValue.length >= 8) {
+    authBtn.disabled = false;
+    authBtn.style.cursor = "pointer";
+  } else {
+    authBtn.disabled = true;
+    authBtn.style.cursor = "not-allowed";
+  }
+};
 
 inputEmail.addEventListener('focusout', () => {
   const emailValue = inputEmail.value.trim();
@@ -26,24 +36,14 @@ inputEmail.addEventListener('focusout', () => {
     emailError.style.display = 'none';
     inputEmail.classList.remove("input-error");
   }
+
+  validateButton();
 });
 
-inputName.addEventListener('focusout', () => {
-  const nameValue = inputName.value.trim();
-
-  if(nameValue === "") {
-    nameError.textContent = "닉네임을 입력해주세요.";
-    nameError.style.display = 'block';
-    inputName.classList.add("input-error");
-  } else {
-    nameError.style.display = 'none';
-    inputName.classList.remove("input-error")
-  }
-});
+inputEmail.addEventListener('input', validateButton);
 
 inputPassword.addEventListener('focusout', () => {
   const pwValue = inputPassword.value.trim();
-  debugger;
 
   if(pwValue === "") {
     pwError.textContent = "비밀번호를 입력해주세요.";
@@ -57,18 +57,36 @@ inputPassword.addEventListener('focusout', () => {
     pwError.style.display = 'none';
     inputPassword.classList.remove("input-error");
   }
+
+  validateButton();
 });
 
-inputPasswordRepeat.addEventListener('focusout', () => {
-  const pwRepeatValue = inputPasswordRepeat.value.trim();
-  const pwValue = inputPassword.value.trim();
+inputPassword.addEventListener('input', validateButton);
 
-  if(pwRepeatValue !== pwValue) {
-    pwRepeatError.textContent = "비밀번호가 일치하지 않습니다.";
-    pwRepeatError.style.display = 'block';
-    inputPasswordRepeat.classList.add("input-error");
-  } else {
-    pwRepeatError.style.display = 'none';
-    inputPasswordRepeat.classList.remove("input-error");
+login.addEventListener('click', (event) => {
+  event.preventDefault();
+  if(!authBtn.disabled) {
+    window.location.href = '/item.html';
   }
+});
+
+validateButton();
+
+const pwVisibility = document.querySelector(".password-eye-button");
+
+const togglePwVisibility = (eyeButton, pwInput) => {
+  const eyeIcon = eyeButton.querySelector(".password-eye");
+
+  if(pwInput.type === "password") {
+    pwInput.type = "text";
+    eyeIcon.src = "icon-img/eye.svg";
+  
+  } else {
+    pwInput.type = "password";
+    eyeIcon.src = "icon-img/closed-eye.svg";
+  }
+};
+
+pwVisibility.addEventListener("click",() => {
+  togglePwVisibility(pwVisibility, inputPassword);
 });
