@@ -4,15 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>판다마켓</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="utility.css">
+  <link rel="stylesheet" href="index.css">
 </head>
 <body>
   <header>
     <div class="gnb wrap">
       <a href="/" class="logo">
-        <img src="./images/Property 1=sm.png" alt="판다마켓 로고">
+        <img src="./images/logo_sm.png" alt="판다마켓">
       </a>
-      <a href="/login" class="btn-login Text-lg semibold">로그인</a>
+      <a href="/login.html" class="btn-login btn-small Text-lg semibold">로그인</a>
     </div>
   </header>
 
@@ -21,19 +23,19 @@
       <div class="home-top wrap">
         <div class="home-top-content">
           <p class="text-4xl bold">
-            일상의 모든 물건을 <br>
+            일상의 모든 물건을<br>
             거래해 보세요
           </p>
-          <a href="/items" class="btn-large text-xl semibold">구경하러 가기</a>
+          <a href="/items.html" class="btn-large text-xl semibold">구경하러 가기</a>
         </div>
-        <img src="./images/Img_home_top.png" alt="판다 이미지">
+        <img src="./images/img_home_top.png" alt="판다 이미지">
       </div>
     </section>
 
     <section class="home-section">
       <div class="home">
         <div class="home-content">
-          <img src="./images/Img_home_01.png" alt="인기 상품">
+          <img src="./images/img_home_01.png" alt="인기 상품">
           <div class="home-content-1">
             <p class="keyword text-2lg bold">
               Hot item
@@ -64,12 +66,12 @@
               쉽게 찾아보세요
             </p>
           </div>
-          <img src="./images/Img_home_02.png" alt="상품 검색">
+          <img src="./images/img_home_02.png" alt="상품 검색">
         </div>
       </div>
       <div class="home">
         <div class="home-content">
-          <img src="./images/Img_home_03.png" alt="상품 등록">
+          <img src="./images/img_home_03.png" alt="상품 등록">
           <div class="home-content-3">
             <p class="keyword text-2lg bold">
               Register
@@ -91,11 +93,11 @@
       <div class="home-bottom wrap">
         <div class="home-bottom-content">
           <p class="text-4xl bold">
-            믿을 수 있는 <br>
+            믿을 수 있는<br>
             판다마켓 중고 거래
           </p>
         </div>
-        <img src="./images/Img_home_bottom.png" alt="판다 이미지">
+        <img src="./images/img_home_bottom.png" alt="판다 이미지">
       </div>
     </section>
   </main>
@@ -104,23 +106,31 @@
     <div class="footer-content wrap">
       <p class="copyright">@codeit - 2024</p>
       <div class="faq"> 
-        <a href="/privacy">Privacy Policy</a>
-        <a href="/faq">FAQ</a>
+        <a href="/privacy.html">Privacy Policy</a>
+        <a href="/faq.html">FAQ</a>
       </div>
-      <div class="sns">
-        <a href="https://facebook.com" target="_blank">
-          <img src="./images/ic_facebook.png" alt="페이스북">
-        </a>
-        <a href="https://twitter.com" target="_blank">
-          <img src="./images/ic_twitter.png" alt="트위터">
-        </a>
-        <a href="https://youtube.com" target="_blank">
-          <img src="./images/ic_youtube.png" alt="유튜브">
-        </a>
-        <a href="https://instagram.com" target="_blank">
-          <img src="./images/ic_instagram.png" alt="인스타그램">
-        </a>
-      </div>
+      <ul class="sns">
+        <li>
+          <a href="https://facebook.com" target="_blank">
+            <img src="./images/ic_facebook.png" alt="페이스북">
+          </a>
+        </li>
+        <li>
+          <a href="https://twitter.com" target="_blank">
+            <img src="./images/ic_twitter.png" alt="트위터">
+          </a>
+        </li>
+        <li>
+          <a href="https://youtube.com" target="_blank">
+            <img src="./images/ic_youtube.png" alt="유튜브">
+          </a>
+        </li>
+        <li>
+          <a href="https://instagram.com" target="_blank">
+            <img src="./images/ic_instagram.png" alt="인스타그램">
+          </a>
+        </li>
+      <ul/>
     </div>
   </footer>
 </body>

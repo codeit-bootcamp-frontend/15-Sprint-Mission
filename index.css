@@ -1,17 +1,5 @@
-* {
-  box-sizing: border-box;
-  font-family: Pretendard, sans-serif;
-  color: #374151;
-  font-size: 16px;
-}
-
-a {
-  text-decoration: none;
-  cursor: pointer;
-}
-
-p {
-  margin: 0;
+html {
+  color: var(--gray700);
 }
 
 body {
@@ -20,24 +8,34 @@ body {
 }
 
 header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
   background-color: #FFFFFF;
   border-bottom: 1px solid #DDE0E3
 }
 
 footer {
-  background-color: #111827;
+  background-color: var(--gray900);
   height: 10rem;
 }
 
 .gnb {
-  padding: 9px 400px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 9px 400px;
 }
 
 .gnb img {
   max-width: 10rem;
+}
+
+.btn-login {
+  width: 8rem;
+  height: 3rem;
+  text-align: center;
 }
 
 .wrap {
@@ -143,35 +141,12 @@ footer {
   gap: 0.75rem;
 }
 
-.btn-large, .btn-login {
-  background-color: #3692FF;
-}
-
-.btn-large:hover, .btn-login:hover {
-  background-color: #1967D6;
-}
-
-.btn-large:active, .btn-login:active {
-  background-color: #1251AA;
-}
-
-.btn-login {
-  color: #F3F4F6;
-  width: 8rem;
-  height: 3rem;
-  padding: 0.75rem 1.5rem;
-  border-radius: 8px;
-  text-align: center;
-}
-
-.btn-large {
-  color: #F9FAFB;
-  padding: 1rem 7.75rem;
-  border-radius: 40px;
+.sns img{
+  max-width: 1.25rem;
 }
 
 .keyword {
-  color: #3692FF;
+  color: var(--blue);
   margin-bottom: 0.75rem;
 }
 
@@ -181,45 +156,11 @@ footer {
 }
 
 .copyright {
-  color: #9CA3AF;
+  color: var(--gray400);
 }
 
 .faq a {
-  color: #E5E7EB;
-}
-
-.bold {
-  font-weight: 700;
-}
-
-.semibold {
-  font-weight: 600;
-}
-
-.medium {
-  font-weight: 500;
-}
-
-.text-4xl {
-  font-size: 2.5rem;
-  line-height: 3.5rem;
-  letter-spacing: -0.125rem;
-}
-
-.text-2xl {
-  font-size: 1.5rem;
-  line-height: 2rem;
-  letter-spacing: -0.0625rem;
-}
-
-.text-xl {
-  font-size: 1.25rem;
-  line-height: 2rem;
-}
-
-.text-2lg {
-  font-size: 1.125rem;
-  line-height: 1.625rem;
+  color: var(--gray200);
 }
 
 @media (max-width:1920px) {
@@ -229,7 +170,7 @@ footer {
 }
 
 @media (max-width:1280px) {
-  * {
+  html {
     font-size: 12px;
   }
 }
