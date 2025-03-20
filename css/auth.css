@@ -2,67 +2,74 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 231px auto;
+  margin: 0 auto;
   width: 640px;
-  height: 618px;
 }
 
 .logo-auth-box {
- display: flex;
- justify-content: center; 
+  display: flex;
+  justify-content: center;
+}
+
+.logo-auth-box a {
+  margin: 0 auto;
+  display: block;
+  margin-top: 24px;
+  margin-bottom: 24px;
 }
 
 .logo-auth-box img{
   width: 396px;
-  height: 132px;
 }
 
-.cont-area {
-  margin-top: 40px;
-}
-
-.group-inp {
-  height: 98px;
+.group-input {
+  display: flex;
+  flex-direction: column;
   margin-bottom: 24px;
 }
 
-.group-inp label {
+.group-input label {
   color: var(--gray-800);
   font-weight: 700;
   font-size: 18px;
-  line-height: 26px;
   margin-bottom: 16px;
 }
 
-.group-inp input {
+.group-input input {
   background-color: var(--gray-100);
   width: 100%;
   height: 56px;
   border: none;
   border-radius: 12px;
-  margin: 16px 0 24px;
   font-size: 16px;
   font-weight: 400;
   line-height: 26px;
   vertical-align: middle;
-  padding-left: 24px;
+  padding: 16px 24px;
   outline: none;
 }
 
-#inputPwd {
+.input-font {
   font-size: 18px;
   color: var(--gray-800);
 }
 
 .inputPwd-wrap {
   position: relative;
+  display: flex;
+  align-items: center;
 }
 
-.inputPwd-wrap i {
+.inputPwd-wrap .toggle-password {
+  width: 24px;
   position: absolute;
-  top: 34px;
-  right: 16px;
+  right: 24px;
   cursor: pointer;
+}
+
+.inputPwd-wrap img {
+  width: 100%;
+  border: none;
 }
 
 .login-btn {
@@ -107,16 +114,29 @@ main {
 }
 
 .sign-up-link {
-    display: flex;
-    justify-content: center;
-    margin-top: 24px;
-    gap: 4px;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 24px;
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+  gap: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px;
 }
 
 .sign-up-link a {
   color: var(--blue-100);
   text-decoration: underline;
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  main {
+    max-width: 400px;
+    padding: 0 16px;
+    margin: 0 auto;
+  }
+
+  .logo-auth-box img {
+    width: 198px;
+  }
 }

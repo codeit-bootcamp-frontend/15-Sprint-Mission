@@ -3,15 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="/assets/favicon.ico">
-    <link rel="stylesheet" href="css/reset.css" />
-    <link rel="stylesheet" href="css/palette.css" />
-    <link
-      rel="stylesheet"
-      as="style"
-      crossorigin
-      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css"
+    <meta property="og:title" content="판다마켓" />
+    <meta property="og:url" content="https://hizpanda-market.netlify.app/" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:description"
+      content="일상의 모든 물건을 거래해 보세요"
     />
+    <meta property="og:image" content="/assets/auth_logo.png" />
+    <link rel="icon" href="/assets/favicon.ico">
+    <link
+    rel="stylesheet"
+    as="style"
+    crossorigin
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css"
+    />
+    <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/style.css" />
     <title>판다마켓</title>
   </head>
@@ -27,16 +34,15 @@
       </nav>
     </header>
     <main>
-      <section class="main-banner">
+      <section class="main-banner banner" id="topBanner">
         <div class="banner-wrap">
-          <div class="banner-content">
+          <div class="banner-title">
             <h2>
               일상의 모든 물건을<br />
               거래해 보세요
             </h2>
             <a href="items.html" class="btn btn-items">구경하러 가기</a>
           </div>
-          <img src="assets/img_home_top.png" alt="배너 이미지" />
         </div>
       </section>
       <section class="main-content">
@@ -92,15 +98,14 @@
           </div>
         </div>
       </section>
-      <section class="main-bottom">
-        <div class="bottom-wrap">
-          <div class="bottom-content">
+      <section class="main-bottom banner" id="bottomBanner">
+        <div class="banner-wrap">
+          <div class="banner-title">
             <h2>
               믿을 수 있는<br />
               판다마켓 중고 거래
             </h2>
           </div>
-          <img src="assets/img_home_bottom.png" alt="배너 이미지" />
         </div>
       </section>
     </main>

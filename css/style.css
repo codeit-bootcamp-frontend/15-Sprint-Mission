@@ -1,7 +1,3 @@
-body {
-  font-family: "Pretendard", sans-serif;
-}
-
 /* haeder 영역 */
 header {
   position: sticky;
@@ -54,17 +50,40 @@ nav {
 }
 
 /* main 영역 banner */
-.main-banner {
-  padding-top: 200px;
-  height: 540px;
+.banner {
   background-color: var(--blue-light);
+  text-align: left;
+  height: 540px;
+  display: flex;
+  align-items: center;
+  background-position: 65% bottom;
+  background-size: 40%;
+  background-repeat: no-repeat;
+}
+
+#topBanner {
+  background-image: url('/assets/img_home_top.png');
 }
 
 .banner-wrap {
-  display: flex;
-  height: 340px;
-  justify-content: center;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1200px;
+  padding-left: 24px;
 }
+
+.banner-title {
+  padding: 0 24px;
+}
+
+.banner-title h2 {
+  color: var(--gray-700);
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 56px;
+  padding-bottom: 32px;
+}
+
 
 .banner-content {
   display: grid;
@@ -111,15 +130,11 @@ nav {
   pointer-events: none;
 }
 
-.banner-wrap img {
-  width: 746px;
-  height: 340px;
-}
-
 /* main 영역 content */
 .main-content {
   display: flex;
   flex-direction: column;
+  padding: 138px 0;
 }
 
 .content-wrap {
@@ -127,7 +142,7 @@ nav {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 720px;
+  margin-bottom: 138px;
 }
 
 .content-layout {
@@ -159,7 +174,6 @@ nav {
 
 .content-text {
   display: flex;
-  height: 238px;
   padding-left: 64px;
   padding-right: 23.5px;
   flex-direction: column;
@@ -189,33 +203,11 @@ nav {
 
 /* main bottom */
 .main-bottom {
-  padding-top: 143px;
-  height: 540px;
   background-color: var(--blue-light);
 }
 
-.bottom-wrap {
-  display: flex;
-  height: 340px;
-  justify-content: center;
-}
-
-.bottom-wrap img {
-  height: 397px;
-}
-
-.bottom-content {
-  display: flex;
-  align-items: center;
-  margin-right: 69px;
-}
-
-.bottom-content h2 {
-  color: var(--gray-700);
-  height: 112px;
-  font-size: 40px;
-  font-weight: 700;
-  line-height: 56px;
+#bottomBanner {
+  background-image: url('/assets/img_home_bottom.png');
 }
 
 /* footer 영역 */
@@ -231,6 +223,7 @@ footer {
   margin: 0 auto;
   padding: 36px 0 0 0;
   max-width: 1120px;
+  align-items: center;
 }
 
 .footer-copyright {
@@ -254,4 +247,157 @@ footer {
 .footer-social img {
   width: 20px;
   height: 20px;
+}
+
+@media (max-width: 1199px) {
+  header nav {
+    padding: 9px 16px;
+  }
+  
+  .banner {
+    padding: 0;
+    display: block;
+    height: 90vh;
+    background-size: 120%;
+    text-align: center;
+  }
+
+  .banner-wrap {
+    display: block;
+  }
+
+  .banner-title {
+    margin: 0;
+  }
+
+  .banner-title h2 {
+    padding-top: 84px;
+  }
+
+  #topBanner h2 br {
+    display: none;
+  }
+
+  .main-content {
+    display: block;
+    padding: 24px 24px 16px 24px;
+  }
+
+  .content-wrap {
+    display: block;
+    margin-bottom: 52px;
+  }
+
+  .content-item {
+    display: block;
+    background-color: var(--white);
+  }
+
+  .content-wrap img {
+    width: 100%;
+    padding: 0;
+    margin-bottom: 20px;
+    height: 70vh;
+  }
+
+  .badge {
+    margin-bottom: 12px;
+  }
+
+  .content-text {
+    display: block;
+    padding: 0;
+  }
+
+  .content-text h2 {
+    font-size: 32px;
+    line-height: 42px;
+  }
+
+  .content-text h2 br {
+    display: none;
+  }
+
+  .content-text .content-desc {
+    font-size: 18px;
+    line-height: 26px;
+    margin-top: 20px;
+  }
+
+  .footer-container {
+    padding: 0;
+  }
+
+  footer {
+    padding: 32px 104px 108px 104px;
+  }
+
+}
+
+@media (max-width: 767px) {
+
+  .banner {
+    height: 60vh;
+    background-size: 114%;
+  }
+
+  .banner-title h2 {
+    font-size: 32px;
+    line-height: 140%;
+    padding-top: 48px;
+    padding-bottom: 18px;
+  }
+
+  #topBanner h2 br {
+    display: block;
+  }
+
+  .btn-items {
+    width: 240px;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 11px 71px;
+  }
+
+  .main-content {
+    padding: 52px 24px 16px 24px;
+  }
+
+  .content-wrap img {
+    height: 37vh;
+  }
+
+  .badge {
+    font-size: 16px;
+  }
+
+  .content-text h2 {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  /* footer 영역 */
+  .footer-container {
+    background-color: #111827;
+    padding: 32px;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 60px;
+  }
+
+  footer {
+    padding: 0;
+  }
+  
+  .footer-links {
+    margin: 0;
+  }
+
+  .footer-copyright {
+    order: 3;
+    flex-basis: 100%;
+  }
 }
