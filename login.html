@@ -26,21 +26,23 @@
       </h1>
     </div>
     <div class="cont-area">
-      <form action="" method="post">
+      <form action="/items.html" method="GET">
         <div class="group-input">
           <label for="inputEmail">이메일</label>
           <input type="email" class="input-font" id="inputEmail" placeholder="이메일을 입력하세요">
+          <span id="emailValidError" class="info-text"></span>
         </div>
         <div class="group-input">
           <label for="inputPwd">비밀번호</label>
           <div class="inputPwd-wrap">
             <input type="password" class="input-font" id="inputPwd" placeholder="비밀번호를 입력하세요">
-            <button type="button" class="toggle-password" aria-label="비밀번호 보기 토글">
-              <img src="assets/visibility_off.png" alt="비밀번호 숨김"/>
+            <button type="button" class="toggle-password" aria-label="비밀번호 숨기기">
+              <img src="assets/visibility_off.png" alt="비밀번호 숨기기"/>
             </button>
+            <span id="pwdValidError" class="info-text"></span>
           </div>
         </div>
-        <button type="submit" class="btn login-btn">로그인</button>
+        <button type="submit" id="loginBtn" class="btn login-btn btn-items">로그인</button>
       </form>
       <div class="social-login-wrap">
         <div class="social-login-title">간편 로그인하기</div>
@@ -59,5 +61,6 @@
       </div>
     </div>
   </main>
+  <script type="module" src="/js/login.js"></script>
 </body>
 </html>
