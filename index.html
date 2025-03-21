@@ -3,69 +3,78 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet"
+					href="https://cdn.jsdelivr.net/npm/reset-css@4.0.1/reset.min.css"/>
 		<title>판다마켓</title>
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/reset.css">
 	</head>
 	<body>
+
 		<!-- header section / 로고, 로그인 -->
 		<header>
 			<div class="banner">
 				<div class="banner-main">
 					<a class="header-logo" href="index.html">
-						<img src="./images/header-logo.png" alt="로고">
+						<img src="./images/header-logo.png" alt="판다마켓"/>
 					</a>
-					<a id="login" href="login.html">로그인</a>
+					<a class="login" href="login.html">로그인</a>
 				</div>
 			</div>
 		</header>
-		<!-- main section -->
-		<main>
+		
 			<!-- top section -->
 			<section>
 				<div class="top-section">
 					<div class="top-content">
-						<div class="top-text">
 							<div class="top-title">
-								<h2>일상의 모든 물건을<br>
-									거래해 보세요
-							</h2>
-							<a id="sightsee" href="sightsee.html">구경하러 가기</a>
+								<h2>일상의 모든 물건을<br>거래해 보세요</h2>
+							  <a id="sightsee" href="sightsee.html">구경하러 가기</a>
 							</div>
-						</div>
-							<img src="./images/main-section.png" alt="이미지1">
+                <img src="./images/main-section.png" alt="판다사진"/>
 					</div>	
 				</div>
 			</section>
+
 			<!-- middle section -->
 			<div class="middle-section">
 				<div class="hot-item">
-					<img src="./images/hot-item.png" alt="이미지2">
+					<img src="./images/hot-item.png" alt="hot-item"/>
+          <div class="hot-item-text">
+            <div class="hot-item-title">Hot item</div>
+            <div class="hot-item-main">인기 상품을<br>확인해 보세요</div>
+            <div class="hot-item-sub">가장 HOT한 중고거래 물품을<br>판다 마켓에서 확인해 보세요</div>
+          </div>
 				</div>
 				<div class="search">
-					<img src="./images/search.png" alt="이미지3">
+          <div class="search-text">
+            <div class="search-title">Search</div>
+            <div class="search-main">구매를 원하는<br>상품을 검색하세요</div>
+            <div class="search-sub">구매하고 싶은 물품은 검색해서<br>쉽게 찾아보세요</div>
+          </div>
+					<img src="./images/search.png" alt="search"/>
 				</div>
 				<div class="register">
-					<img src="./images/register.png" alt="이미지4">
+					<img src="./images/register.png" alt="register"/>
+          <div class="register-text">
+            <div class="register-title">Register</div>
+            <div class="register-main">판매를 원하는<br>상품을 등록하세요</div>
+            <div class="register-sub">어떤 물건이든 판매하고 싶은 상품을<br>쉽게 등록하세요</div>
 				</div>
 			</div>
-			<!-- gray section -->
-			 <div class="gray-section"></div>
+
 			<!-- bottom section -->
 			<section>
 				<div class="bottom-section">
 					<div class="bottom-content">
-						<div class="bottom-text">
 							<div class="bottom-title">
-								<h2>믿을 수 있는<br>
-									판다마켓 중고 거래
-							</h2>
+								<h2>믿을 수 있는<br>판다마켓 중고 거래</h2>
 							</div>
-						</div>
-							<img src="./images/bottom-section.png" alt="이미지5">
+							<img src="./images/bottom-section.png" alt="판다사진"/>
 					</div>	
 				</div>
 			</section>
-		</main>
+		
 		<!-- footer section -->
 		<footer>
 			<div class="footer-text">
@@ -74,12 +83,14 @@
 					<a class="privacy" href="privacy.html">Privacy Policy</a>
 					<a class="faq" href="faq.html">FAQ</a>
 				</div>
-				<div class="sns">
-					<a href="https://www.facebook.com" target="_blank"><img src="./images/ic_facebook.png" alt="페이스북"></a>
-					<a href="https://www.twitter.com" target="_blank"><img src="./images/ic_twitter.png" alt="트위터"></a>
-					<a href="https://www.youtube.com" target="_blank"><img src="./images/ic_youtube.png" alt="유튜브"></a>
-					<a href="https://www.instagram.com" target="_blank"><img src="./images/ic_instagram.png" alt="인스타그램"></a>
-				</div>
+				<ul class="sns">
+          <li>
+            <a href="https://www.facebook.com" target="_blank"><img src="./images/ic_facebook.png" alt="페이스북"/></a>
+            <a href="https://www.twitter.com" target="_blank"><img src="./images/ic_twitter.png" alt="트위터"/></a>
+            <a href="https://www.youtube.com" target="_blank"><img src="./images/ic_youtube.png" alt="유튜브"/></a>
+            <a href="https://www.instagram.com" target="_blank"><img src="./images/ic_instagram.png" alt="인스타그램"/></a>
+          </li>
+				</ul>
 			</div>
 		</footer>
 

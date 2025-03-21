@@ -3,19 +3,22 @@
   <head>
     <meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>로그인</title>
-    <link rel="stylesheet" href="css/login.css">
+    <title>회원가입</title>
+    <link rel="stylesheet" href="./css/signup.css">
   </head>
   <body>
-    <div class="login-container">
-      <a href="index.html" class="login-logo">
+    <div class="signup-container">
+      <a href="index.html" class="signup-logo">
         <img src="./images/logo.png" alt="판다마켓" class="logo">
         <h1 class="title">판다마켓</h1>
       </a>
 
-      <form class="login-form">
+      <form class="signup-form">
         <label for="email">이메일</label>
         <input type="email" id="email" name="email">
+
+        <label for="username">닉네임</label>
+        <input type="text" id="username" name="username">
 
         <label for="password">비밀번호</label>
         <div class="password-wrapper">
@@ -23,7 +26,13 @@
           <img src="./images/close_eye.png" alt="미리보기" class="toggle-btn">
         </div>
 
-        <button type="submit" class="login-btn">로그인</button>
+        <label for="password">비밀번호 확인</label>
+        <div class="password-wrapper">
+          <input type="password" id="password" name="password">
+          <img src="./images/open_eye.png" alt="미리보기" class="toggle-btn">
+        </div>
+
+        <button type="submit" class="login-btn">회원가입</button>
       </form>
 
       <div class="conv-login">
@@ -34,7 +43,7 @@
         </div>
       </div>
 
-      <p class="signup">판다마켓이 처음이신가요? <a href="signup.html">회원가입</a></p>
+      <p class="signup">이미 회원이신가요? <a href="login.html">로그인</a></p>
     </div>
 
   </body>
