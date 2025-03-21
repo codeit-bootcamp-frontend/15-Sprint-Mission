@@ -297,3 +297,16 @@ body p {
     color: var(--button-color);
   }
 }
+
+.errDiv {
+  color: red;
+}
+
+.input-box.invalid {
+  border-color: red;
+  border: 2px solid red;
+}
+
+.login-button.activate {
+  background-color: #1251aa;
+}

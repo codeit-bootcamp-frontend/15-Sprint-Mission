@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="/login.css" />
   </head>
   <body>
-    
     <div class="container">
       <div class="content-box">
         <div class="header-logo">
@@ -29,6 +28,7 @@
               class="input-box"
               placeholder="이메일을 입력해주세요"
             />
+            <div id="emailErrDiv"></div>
           </div>
 
           <div class="input-box-container">
@@ -41,17 +41,19 @@
                 class="input-box"
                 placeholder="비밀번호를 입력해주세요"
               />
+
               <img
                 class="passwordIcon"
                 src="/images/icons/eyesIcon.png"
                 alt="비밀번호아이콘"
               />
             </div>
+            <div id="passwordErrDiv"></div>
           </div>
         </div>
 
         <div class="button-container">
-          <button class="login-button">로그인</button>
+          <button id="loginButton" class="login-button">로그인</button>
         </div>
 
         <div class="simple-login-box">
@@ -77,5 +79,8 @@
         </div>
       </div>
     </div>
+
+    <script src="/scripts/loginValidate.js"></script>
+    <script src="/scripts/passwordIcon.js"></script>
   </body>
 </html>
