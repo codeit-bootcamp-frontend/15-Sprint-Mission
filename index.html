@@ -3,48 +3,157 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Panda_login</title>
+  <meta property="og:title" content="판다마켓">
+  <meta property="og:description" content="일상의 모든 물건을 거래해 보세요">
+  <meta property="og:image" content="images/logo/logo.svg">
+  <title>판다마켓</title>
+  <!-- favicon 설정 -->
   <link rel="icon" href="images/logo/favicon.ico">
-  <link rel="stylesheet" href="style.css">
+  <!-- pretendard 글꼴 -->
+  <link rel="stylesheet" as="style" crossorigin="" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+  <!-- global.css 연결 -->
+  <link rel="stylesheet" href="styles/global.css" />
+  <!-- home.css 연결 -->
+  <link rel="stylesheet" href="styles/home.css" />
 </head>
 <body>
-  
-  <div class="container">
-    <div class="logo"><a href="/">
-    <img src="images/logo/logo.svg" width="396px" height="132px"></a>
+  <header>
+    <!-- 로고 및 클릭시 / -->
+    <a href="/">
+      <img src="images/logo/logo.svg" alt="판다마켓 홈" width="153">
+    </a>
+    <!-- 로그인 버튼 -->
+    <a href="signin.html" id="signinButton" class="button">로그인</a>
+  </header>
+  <main>
+    <!-- 배경이미지 -->
+    <section id="hero" class="banner">
+    <!-- 일상의 문구 박스 -->
+    <div class="container">
+      <h1>일상의 모든 물건을
+        <br>
+          거래해 보세요</h1>
+          <!-- 구경하기 버튼 -->
+          <a href="item.html" class="button see-button">구경하러 가기</a>
+        </section>
+    <!-- 인기 상품 문구 박스 -->
+    <section id="features" class="container">
+      <!-- 사이즈 맞춤 박스 및 이미지 -->
+      <div class="feature">
+        <img src="images/home/feature1-image.png" alt="인기상품">
+        <div class="feature-text">
+          <h2>Hot item</h2>
+          <h1>
+            인기 상품을
+            <span class="break-on-desktop">
+              <br>
+            </span>
+            확인해 보세요
+          </h1>
+          <p class="feature-description">
+            가장 HOT한 중고거래 물품을
+            <br>
+            판다마켓에서 확인해 보세요
+          </p>
+        </div>
+      </div>
+      <div class="feature">
+        <img src="images/home/feature2-image.png" alt="검색 기능">
+        <div class="feature-text">
+          <h2>Search</h2>
+          <h1>
+            구매를 원하는
+            <span class="break-on-desktop">
+              <br>
+            </span>
+            상품을 검색하세요
+          </h1>
+          <p class="feature-description">
+            구매하고 싶은 물품은 검색해서
+            <br>
+            쉽게 찾아보세요
+          </p>
+        </div>
+      </div>
+      <div class="feature">
+        <img src="images/home/feature3-image.png" alt="판매 상품 등록">
+        <div class="feature-text">
+          <h2>Register</h2>
+          <h1>
+            판매를 원하는
+            <span class="break-on-desktop">
+              <br>
+            </span>
+            상품을 등록하세요
+          </h1>
+          <p class="feature-description">
+            어떤 물건이든 판매하고 싶은 상품을 
+            <br>
+            쉽게 등록하세요
+          </p>
+      </div>
+    </section>
+    <section id="bottomBanner" class="banner">
+      <div class="container">
+        <h1>
+          믿을 수 있는
+          <br>
+          판다마켓 중고거래
+        </h1>
+      </div>
+    </section>
     </div>
- 
-    <div class="login_box">
-    
-      
-    <label for="emial">이메일</label>
-    <input type="email" id="email" placeholder="codeit@email.com">
-    
-    
-    <label for="password">비밀번호</label>
-    <div class="password_wrapper">
-    <input type="password" id="password" placeholder="••••••••"> 
-    <img class="eye" src="images/icons/eye-invisible.svg" width="24px" height="24px">
+  </main>
+  <footer>
+    <div id="copyright">©codeit - 2024</div>
+    <div id="footerMenu">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="faq.html">FAQ</a>
+
     </div>
-
-    <button class="login_btn">로그인</button>
-  </div>
-  <div class="social">
-  <div class="social_login">
-
-     <div class="social_icon">
-      <a href="https://www.google.com/">
-        <img src="images/social/google-logo.png" alt="구글 로그인" width="42"></a></div>
-       
-     <div class="social_icon">
-    <a href="http://www.kakaocorp.com/page/">
-      <img src="images/social/kakao-logo.png" alt="카카오 로그인" width="42"></a></div>
-  </div>
-</div>
-  <div class="signup">
-    판다마켓에 처음이신가요? <a href="signup.html">회원가입</a>
-  </div>
-  </div>
-  
+    <div id="sns">
+      <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><img src="images/social/facebook-logo.svg" alt="페이스북" width="20"></a>
+      <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer"><img src="images/social/twitter-logo.svg" alt="트위터" width="20"></a>
+      <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer"><img src="images/social/youtube-logo.svg" alt="유튜브" width="20"></a>
+      <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><img src="images/social/instagram-logo.svg" alt="인스타그램" width="20"></a>
+    </div>
+  </footer>
+  <script>
+    // <![CDATA[  <-- For SVG support
+    if ('WebSocket' in window) {
+      (function () {
+        function refreshCSS() {
+          var sheets = [].slice.call(document.getElementsByTagName("link"));
+          var head = document.getElementsByTagName("head")[0];
+          for (var i = 0; i < sheets.length; ++i) {
+            var elem = sheets[i];
+            var parent = elem.parentElement || head;
+            parent.removeChild(elem);
+            var rel = elem.rel;
+            if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+              var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+              elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+            }
+            parent.appendChild(elem);
+          }
+        }
+        var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+        var address = protocol + window.location.host + window.location.pathname + '/ws';
+        var socket = new WebSocket(address);
+        socket.onmessage = function (msg) {
+          if (msg.data == 'reload') window.location.reload();
+          else if (msg.data == 'refreshcss') refreshCSS();
+        };
+        if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+          console.log('Live reload enabled.');
+          sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+        }
+      })();
+    }
+    else {
+      console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+    }
+    // ]]>
+  </script>
 </body>
 </html>
