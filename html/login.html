@@ -4,24 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>판다마켓 - 로그인</title>
-  <meta name="description" content="판다와 함께 더 나은 서비스와 향상된 쇼핑생활을 만끽하세요" />
-  <meta property="og:image" content="../resources/images/img_home_bottom.png" />
-  <meta property="og:title" content="" />
-  <meta property="og:description" content="" />
-  <meta property="og:url" content="" />
+  <meta name="description" content="일상의 모든 물건을 거래해보세요" />
+  <meta property="og:image" content="https://dasomsprint2.netlify.app/resources/images/panda_thumbnail.png" />
+  <meta property="og:url" content="https://dasomsprint2.netlify.app" />
+  <meta property="og:title" content="판다마켓" />
+  <meta property="og:description" content="일상의 모든 물건을 거래해보세요" />
+ 
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:image" content="../resources/images/img_home_bottom.png" />
-  <meta name="twitter:title" content=" " />
-  <meta name="twitter:description" content="" />
-  <link rel="shortcut icon" href="../resources/images/common/favicon.ico" type="image/x-icon" />
-  <link rel="icon" href="../resources/images/common/favicon.ico" type="image/x-icon" />
-  <link rel="preload" href="../resources/css/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <meta name="twitter:image" content="https://dasomsprint2.netlify.app/resources/images/panda_thumbnail.png" />
+  <meta name="twitter:title" content="판다마켓" />
+  <meta name="twitter:description" content="일상의 모든 물건을 거래해보세요" />
+  <link rel="shortcut icon" href="./resources/images/common/favicon.ico" type="image/x-icon" />
+  <link rel="icon" href="./resources/images/common/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="stylesheet" href="../resources/css/join.css">
 </head>
 <body>
-  <div class='wrap'>
+  <div class='join_wrap'>
     <div class='login_container'>
-      <h2 class='log_tit' tabindex="0"><img src="../resources/images/common/logo_tit.png" alt="판다마켓"></h2>
+      <h1 class='log_tit'><a href="/"><img src="../resources/images/common/logo_tit.png" alt="판다마켓"></a></h1>
       <div class="form_wrap">
         <form>
           <fieldset>
@@ -35,22 +37,24 @@
               <input type="password" id="password" autocomplete="current-password" placeholder='비밀번호를 입력해 주세요'>
               <button type="button" class="toggle-password hide-password-icon" data-target="password"></button>
             </div>
+            <div class="btn_set">
+              <button type="submit" class="btn_login" title="선택됨">로그인</button>
+            </div>
           </fieldset>
-        </form>
-        <div class="btn_set">
-          <button type="button" class="btn_login" title="선택됨">로그인</button>
-        </div>
+        </form>       
       </div>
+
       <div class="sns_list">
         <p><a href="#" class='link'>간편 로그인하기</a></p>
         <div class="btn_set">
-          <a href="https://www.google.com/" class='sns_link' target='_blank'><img src="../resources/images/common/icon_goggle.png" alt="구글"> </a>
-          <a href="https://www.kakaocorp.com/page/" class='sns_link' target='_blank'><img src="../resources/images/common/icon_kakao.png" alt="카카오"> </a>
+          <a href="https://www.google.com/" class='sns_link' target='_blank'><img src="../resources/images/common/icon_goggle.png" alt="구글"></a>
+          <a href="https://www.kakaocorp.com/page/" class='sns_link' target='_blank'><img src="../resources/images/common/icon_kakao.png" alt="카카오"></a>
         </div>
       </div>
-      <p class='txt_alingC '>판다마켓이 처음이신가요? <a href="./signup.html" class='link_point'>회원가입</a></p>
+      <p class='txt_center'>판다마켓이 처음이신가요? <a href="./signup.html" class='link_point'>회원가입</a></p>
     </div>
   </div>
+
   <script>
     document.querySelectorAll('.toggle-password').forEach(button => {
       button.addEventListener('click', () => {

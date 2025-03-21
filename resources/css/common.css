@@ -12,7 +12,7 @@
 --bg4:var(--primary100);
 --bg4_hover:var(--primary200);
 --bg4_act:var(--primary300);
---CoolGray:#E6F2FF;
+--coolGray:#CFE5FF;
 --bg6:#111827;
 --bg-disable:#d4d4d4;
 /* gray 색상 */
@@ -31,17 +31,18 @@
 --primary300:#1251AA;
 --point4:#97054e;
 /* 폰트사이즈 */
---font_b_38:800 3.8rem/1.2 "Pretendard";
---font_b_18:800 1.8rem/1 "Pretendard";
+--font_b_38:700 3.8rem/1.2 "Pretendard";
+--font_b_18:700 1.8rem/1 "Pretendard";
 --font_r_22:600 2.2rem / 1.4 "Pretendard";
 --font_sb_20:700 2.0rem/1 "Pretendard";
 --font_sb_16:500 1.6rem/1 "Pretendard";
+--font_a_16:400 1.6rem/1 "Abel";
 --font_r_14:400 1.6/1 "Pretendard";
 /* line */
 --line3:#9CA3AF;
 }
 /* -----------------------------------------------
-[COMMON] 공통통
+[COMMON] 공통
 ------------------------------------------------- */
 /* skip nav */
 .skipNav {background:#000; position:fixed; top:0; left:0; width:100%; height:3rem; transform:translateY(-100%); transition:transform 0.3s;z-index:999;color:#fff;line-height:3.0rem;text-align:center;}
@@ -52,8 +53,9 @@ a.link:hover { text-decoration: underline; color: var(--primary100);}
 a.link_point { display: inline-block; text-decoration: underline;color: var(--primary100); padding-left: 0.8rem;}
 a.link_point:hover { text-decoration: underline; color: var(--primary100);}
 .hidden {border:0; clip:rect(0 0 0 0); height:1px; margin:-1px; overflow:hidden; padding:0;position:absolute; width:1px;}
-.none {display:none !important;}
-.txt_alingC { text-align: center; }
+.none {display:none;}
+.txt_center { text-align: center; }
+
 /* -----------------------------------------------
 	[CONTENT] 버튼유형
 ------------------------------------------------- */
