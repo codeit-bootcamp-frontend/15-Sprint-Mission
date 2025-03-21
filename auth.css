@@ -1,14 +1,4 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-:root {
-    view-transition-name: root;
-}
-
 html {
-    display: block;
     font-family: Pretendard;
 }
 
@@ -55,7 +45,7 @@ body {
     font-size: 16px;
 }
 
-.form-group input ::placeholder {
+.form-group input::placeholder {
     font-size: 16px;
     color: #1f2937;
 }
@@ -74,6 +64,8 @@ body {
     width: 24px;
     height: 24px;
     border: none;
+    background-color: transparent;
+    padding: 0;
 }
 
 .password-button img {
@@ -84,7 +76,7 @@ body {
     width: 100%;
     border-radius: 40px;
     border: none;
-    padding: 16px 124px;
+    padding: 16px;
     color: #ffffff;
     font-size: 20px;
     font-weight: 700;
@@ -127,4 +119,25 @@ body {
 
 .signup-go a {
     color: #3182f6;
+}
+
+/* Mobile: 375px~767px */
+@media (max-width: 767px) {
+    .container {
+        max-width: 432px;
+        padding-left: 16px;
+        padding-right: 16px;
+        margin-top: 80px;
+    }
+    .logo2 {
+        width: 198px;
+        height: 66px;
+    }
+    .form-group label {
+        font-size: 14px;
+        margin-bottom: 8px;
+    }
+    .password-button {
+        right: 16px;
+    }
 }
