@@ -1,4 +1,5 @@
 // 처음 공백이고, 에러 활성화전적 없음 -> 에러메세지,에러셋팅
+import { emailInput } from './auth';
 // 이메일이 유효하지 않고, 에러활성화전적 없음-> 에러메세지,에러셋팅
 // 공백이고, 에러 활성화전적 있음 -> 에러메세지 수정
 // 이메일이 유효하지 않고, 에러활성화전적 있음->에러메세지 수정
@@ -9,8 +10,10 @@
 // 막혔던 부분: 이메일,비밀번호 등등에 재사용 가능함 함수로 작성하고 싶은데, wrapper.append(message);부분이 문제였다. wrapper를 파라미터로 받을 생각을 못했다.
 // 부족한 부분: getElemetn, queryselector나 부모,자식에 접근하는 등, 선택자에 대한 이해도가 아직 많이 부족한거 같다. 
 // 어떤 형태로 받고, 어떤 형태로 다루게 되는지 자꾸 에러가 나서 더 혼란스러워졌다.
+const EMAIL_INPUT_ID = "email";
+const PASSWORD_INPUT_ID = "password";
 
-function displayError(event, wrapper, errorMessage){ //displayError, removeError 함수로 분리해서 만들기..
+export function displayError(event, wrapper, errorMessage){ //displayError, removeError 함수로 분리해서 만들기..
     const visited = event.target.classList.contains("error");
     if(visited){
         wrapper.lastChild.textContent=errorMessage;
@@ -22,7 +25,7 @@ function displayError(event, wrapper, errorMessage){ //displayError, removeError
         wrapper.append(message);
     }
 }
-function removeError(event, wrapper){
+export function removeError(event, wrapper){
     const visited = event.target.classList.contains("error");
     if(visited){
         event.target.classList.remove("error");
@@ -30,17 +33,18 @@ function removeError(event, wrapper){
     }
 }
 // ------------------------ 이메일 유효성 검사 ------------------------
-const emailInput = document.getElementById("email");
+export const emailInput = document.getElementById(EMAIL_INPUT_ID);
 const emailWrapper = document.querySelector(".email");
-var exptext = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/;
+const exptext = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/;
 
-function validateEmail(event){
-    let inputValue = emailInput.value;
-    if(inputValue===""){ 
+export function validateEmail(event){
+    const inputValue = emailInput.value;
+    const emailValidation = exptext.test(inputValue);
+    if(!inputValue){ 
         displayError(event, emailWrapper, "이메일을 입력해주세요.");
-    } else if(exptext.test(inputValue)==false){
+    } else if(!emailValidation){
         displayError(event, emailWrapper, "잘못된 이메일 형식입니다.");
-    } else if(exptext.test(inputValue)){
+    } else if(emailValidation){
         removeError(event, emailWrapper);
     } 
 }
@@ -48,69 +52,22 @@ function validateEmail(event){
 emailInput.addEventListener("focusout", validateEmail);
 
 // ------------------------ 비밀번호 유효성 검사 ------------------------
-const passwordInput = document.getElementById("password");
+export const passwordInput = document.getElementById(PASSWORD_INPUT_ID);
 const passwordWrapper = document.querySelector(".password");
-var expPassword = /[A-Za-z\d]{8,}$/;
+const expPassword = /[A-Za-z\d]{8,}$/;
 
-function validatePassword(event){
+export function validatePassword(event){
     let inputValue = passwordInput.value;
     if(inputValue===""){ 
         displayError(event, passwordWrapper, "비밀번호를 입력해주세요.");
-    } else if(expPassword.test(inputValue)==false){
+    } else if(expPassword.test(inputValue)===false){
         displayError(event, passwordWrapper, "비밀번호를 8자 이상 입력해주세요.");
     } else if(expPassword.test(inputValue)){
         removeError(event, passwordWrapper);
     } 
 }
 passwordInput.addEventListener("focusout",validatePassword);
-//------------------------ 닉네임 유효성 검사 ------------------------
-const nameInput = document.getElementById("name");
-const nameWrapper = document.querySelector(".name");
-function validateName(event){
-    let inputValue = nameInput.value;
-    if(inputValue===""){ 
-        displayError(event, nameWrapper, "닉네임을 입력해주세요.");
-    } else{
-        removeError(event, nameWrapper);
-    }
-}
-nameInput.addEventListener("focusout",validateName);
-//------------------------ 비밀번호 일치 검사 ------------------------
-const chkpasswordInput = document.getElementById("ckeck-password");
-const chkpasswordWrapper = document.querySelector(".password-check");
 
-function correctPassword(event){
-    let inputValue = passwordInput.value;
-    let chkinputValue = event.target.value;
-    if(inputValue !== chkinputValue){
-        displayError(event, chkpasswordWrapper, "비밀번호가 일치하지 않습니다..")
-    } else{
-        removeError(event, chkpasswordWrapper);
-    }
-}
-chkpasswordInput.addEventListener("input",correctPassword);
-//------------------------ 버튼 활성화 ------------------------
-const loginSubmit = document.querySelector(".login-btn");
-const signupSubmit = document.querySelector(".signup-btn");
 
-function loginactivate(){
-    const emailvalidity = !emailInput.classList.contains("error") && emailInput.value!=="";
-    const passwordvalidity = !passwordInput.classList.contains("error") && passwordInput.value!=="";
-    const chkpasswordvalidity = !chkpasswordInput.classList.contains("error") && chkpasswordInput.value!=="";
-    const namevalidity = !nameInput.classList.contains("error") && nameInput.value!=="";
-
-    console.log(event.target.value);
-    if(emailvalidity&&passwordvalidity&&chkpasswordvalidity&&namevalidity){
-        signupSubmit.style.backgroundColor = "var(--blue)";
-    }
-    else if(emailvalidity&&passwordvalidity){
-        loginSubmit.style.backgroundColor = "var(--blue)";
-    }
-}
-
-emailInput.addEventListener("input",activate);
-passwordInput.addEventListener("input",activate);
-chkpasswordInput.addEventListener("input",activate);
-nameInput.addEventListener("input",activate);
 
 
