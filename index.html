@@ -33,17 +33,20 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <header>
-      <nav>
+    <header class="header">
+      <nav class="nav">
         <h1>
           <a href="/" class="logo">
-            <img src="/assets/logo.png" alt="판다마켓" />
+            <picture>
+              <source media="(max-width: 767px)" srcset="/assets/logo_mo.png"/>
+              <img class="logo-img" src="/assets/logo.png" alt="판다마켓"/>
+            </picture>
           </a>
         </h1>
         <a href="login.html" class="btn btn-login">로그인</a>
       </nav>
     </header>
-    <main>
+    <main class="main">
       <section class="main-banner banner" id="topBanner">
         <div class="banner-wrap">
           <div class="banner-title">
@@ -119,7 +122,7 @@
         </div>
       </section>
     </main>
-    <footer>
+    <footer class="footer">
       <div class="footer-container">
         <div class="footer-copyright">
           <p>&copy; codeit - 2024</p>

@@ -1,4 +1,4 @@
-main {
+.main {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -110,7 +110,7 @@ main {
 
 .social-login-wrap img {
   width: 42px;
-  height: 42px;
+  height: auto;
 }
 
 .sign-up-link {
@@ -130,7 +130,7 @@ main {
 
 /* Mobile */
 @media (max-width: 767px) {
-  main {
+  .main {
     max-width: 400px;
     padding: 0 16px;
     margin: 0 auto;
