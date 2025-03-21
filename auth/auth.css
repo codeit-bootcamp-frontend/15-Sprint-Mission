@@ -1,5 +1,4 @@
 html {
-  font-size: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -31,7 +30,7 @@ html {
   overflow: auto;
 }
 
-header {
+.banner {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -42,7 +41,7 @@ header {
   margin: 0 12.2rem 4rem 12.2rem;
 }
 
-header a {
+.banner a {
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -62,7 +61,11 @@ label {
   font-weight: 700;
 }
 
-input{ 
+.error {
+  border: 2px solid var(--error);
+}
+
+input { 
   width: 64rem;
   height: 5.6rem;
 
@@ -76,43 +79,25 @@ input{
   padding: 1.6rem 2.4rem;
 }
 
-.button-submit {
-  width: 64rem;
-  height: 5.6rem;
+.email-error, .pw-error, .pwconfirm-error, .nickname-error {
+  display: none;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--error);
 
-  background-color: var(--gray400);
-  color: var(--white);
-
-  font-size: 2rem;
-  font-weight: 60rem;
-
-  border: 2px solid var(--gray400);
-  border-radius: 4rem;
-}
-
-.button-submit:hover {
-  background-color: var(--blue);
-  border: 2px solid var(--blue);
-}
-
-footer{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2.4rem;
-
-  padding-bottom: 10rem;
+  margin-left: 1.6rem;
 }
 
 .input-box {
   position: relative;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   gap: 1.6rem;
 }
 
 .pw-content {
-  position:relative;
+  position: relative;
   display: flex;
   align-items: center;
 }
@@ -121,6 +106,37 @@ footer{
   position: absolute;
   right: 1.6rem;
   border: none;
+
+  cursor: pointer;
+}
+
+.button-submit {
+  width: 64rem;
+  height: 5.6rem;
+
+  background-color: var(--blue);
+  color: var(--white);
+
+  font-size: 2rem;
+  font-weight: 60rem;
+
+  border: none;
+  border-radius: 4rem;
+
+  cursor: pointer;
+}
+
+.button-submit:disabled {
+  background-color: var(--gray400);
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.4rem;
+
+  padding-bottom: 10rem;
 }
 
 .social-login {
@@ -134,7 +150,6 @@ footer{
   width: 64rem;
   height: 7.4rem;
 
-  border: 2px solid var(--skyblue);
   border-radius: 0.8rem;
 }
 
@@ -157,16 +172,12 @@ footer{
   color: var(--blue);
 }
 
-@media (max-width: 76.7rem) {
-  /* body {
-    margin-top: 20rem;
-  } */
-
-  header {
+@media (max-width: 767px) {
+  .banner {
     margin: 0;
   }
 
-  header a {
+  .banner a {
     width: 19.8rem;
     height: 6.6rem;
   }

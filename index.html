@@ -1,38 +1,88 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>판다마켓</title>
-  <!-- Meta Tag -->
-  <meta property="og:url" content="sprint-mission3-pandamarket.netlify.app">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="판다마켓">
-  <meta property="og:description" content="일상의 모든 물건들을 거래해보세요">
-  <meta property="og:image" content="https://cdn.discordapp.com/attachments/1339041265727307928/1347504318554832989/img-preview.png?ex=67ceb3b0&is=67cd6230&hm=297b14382dfe0df1c1b64b777985b8e379e63411f398c6633a02a5a858c84cce&">
-  <meta name="twitter:title" content="판다마켓">
-  <meta name="twitter:description" content="일상의 모든 물건들을 거래해보세요">
-  <meta name="twitter:image" content="/image/img-preview.png">
-  <link rel="icon" type="image/svg" href="/image/logo.svg">
-  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"/> 
-  <link rel="stylesheet" href="/css/common.css">
-  <link rel="stylesheet" href="/css/index.css">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- HTML Meta Tags -->
+    <title>판다마켓</title>
+    <meta name="description" content="일상의 모든 물건들을 거래해보세요" />
+
+    <!-- Facebook Meta Tags -->
+    <meta
+      property="og:url"
+      content="https://sprint-mission4-pandamarket.netlify.app/"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="판다마켓" />
+    <meta
+      property="og:description"
+      content="일상의 모든 물건들을 거래해보세요"
+    />
+    <meta
+      property="og:image"
+      content="https://sprint-mission4-pandamarket.netlify.app/image/meta_image.png"
+    />
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      property="twitter:domain"
+      content="sprint-mission3-pandamarket.netlify.app"
+    />
+    <meta
+      property="twitter:url"
+      content="https://sprint-mission4-pandamarket.netlify.app/"
+    />
+    <meta name="twitter:title" content="판다마켓" />
+    <meta
+      name="twitter:description"
+      content="일상의 모든 물건들을 거래해보세요"
+    />
+    <meta
+      name="twitter:image"
+      content="https://sprint-mission4-pandamarket.netlify.app/image/meta_image.png"
+    />
+
+    <!-- favicon 불러오기 -->
+    <link rel="icon" type="image/svg" href="/image/logo.svg" />
+
+    <!-- Pretendard 폰트 불러오기 -->
+    <link
+      rel="stylesheet"
+      as="style"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
+    />
+
+    <!-- normalize css 불러오기 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    />
+
+    <!-- css 불러오기 -->
+    <link rel="stylesheet" href="/css/reset.css" />
+    <link rel="stylesheet" href="/css/common.css" />
+    <link rel="stylesheet" href="/home/index.css" />
+  </head>
   <body>
-    <header class="banner">      
+    <header class="banner">
       <div class="banner-content">
         <div class="logo-content">
-          <a class="logo" href="/"><img src="/image/logo.svg" alt="판다마켓 로고 이미지"></a>
-          <a class="logo-text" href="/"><img src="/image/logo_title.svg" alt="판다마켓 로고 글씨"></a>
+          <a class="logo" href="/"
+            ><img src="/image/logo.svg" alt="판다마켓 로고 이미지"
+          /></a>
+          <a class="logo-text" href="/"
+            ><img src="/image/logo_title.svg" alt="판다마켓 로고 글씨"
+          /></a>
         </div>
-        <a class="login" href="/html/login.html">로그인</a>
+        <a class="login" href="/auth/login.html">로그인</a>
       </div>
     </header>
 
     <main>
       <!-- Main Header -->
-      <section class="header-container">       
+      <section class="header-container">
         <div class="header-content">
           <div class="header-text">
             <h1 class="header-title">
@@ -40,35 +90,44 @@
               거래해 보세요
             </h1>
             <div class="explore-button-container">
-              <a class="explore-button" href="/html/itmes.html">구경하러 가기</a>
+              <a class="explore-button" href="/html/itmes.html"
+                >구경하러 가기</a
+              >
             </div>
           </div>
-          <img class="header-image" src="/image/header.svg" alt="판다가 장바구니를 들고 한 손으로 인사하는 이미지">
-        </div>  
+          <img
+            class="header-image"
+            src="/image/header.svg"
+            alt="판다가 장바구니를 들고 한 손으로 인사하는 이미지"
+          />
+        </div>
       </section>
-      
+
       <!-- Main Body -->
       <section class="body-container">
         <section class="content-section">
           <div class="content-card">
-            <img src="/image/hot.svg" alt="두 마리의 판다 뒤통수가 티셔츠를 바라보고 있는 이미지">
+            <img
+              src="/image/hot.svg"
+              alt="두 마리의 판다 뒤통수가 티셔츠를 바라보고 있는 이미지"
+            />
             <div class="content-text">
-              <span class="content-label">Hot item</span>           
+              <span class="content-label">Hot item</span>
               <h2 class="content-title">
                 <span>인기 상품을</span>
                 확인해보세요
-              </h2>            
+              </h2>
               <p class="content-description">
-                가장 HOT한 중고거래 물품을<br>
+                가장 HOT한 중고거래 물품을<br />
                 판다 마켓에서 확인해 보세요
               </p>
             </div>
-          </div>      
+          </div>
         </section>
-        
+
         <section class="content-section">
           <div class="content-card">
-            <img src="/image/search.svg" alt="돋보기 그림이 있는 이미지">
+            <img src="/image/search.svg" alt="돋보기 그림이 있는 이미지" />
             <div class="content-text">
               <span class="content-label">Search</span>
               <h2 class="content-title">
@@ -76,24 +135,27 @@
                 상품을 검색하세요
               </h2>
               <p class="content-description">
-                구매하고 싶은 물품은 검색해서<br>
+                구매하고 싶은 물품은 검색해서<br />
                 쉽게 찾아보세요
               </p>
             </div>
           </div>
         </section>
-        
+
         <section class="content-section">
           <div class="content-card">
-            <img src="/image/register.svg" alt="파란색 폴더와 필기구, 책, 하트 모양 안경 아이콘이 포함된 일러스트 이미지">           
+            <img
+              src="/image/register.svg"
+              alt="파란색 폴더와 필기구, 책, 하트 모양 안경 아이콘이 포함된 일러스트 이미지"
+            />
             <div class="content-text">
               <span class="content-label">Register</span>
               <h2 class="content-title">
                 <span>판매를 원하는</span>
                 상품을 등록하세요
-              </h2>             
+              </h2>
               <p class="content-description">
-                어떤 물건이든 판매하고 싶은 상품을<br>
+                어떤 물건이든 판매하고 싶은 상품을<br />
                 쉽게 등록하세요
               </p>
             </div>
@@ -101,38 +163,50 @@
         </section>
       </section>
 
-        <!-- Main Footer -->
-        <section class="content-footer">
-            <div class="content-footer-content">
-              <h3 class="content-footer-text">
-                믿을 수 있는<br>
-                판다마켓 중고 거래
-              </h3>
-              <img class="content-footer-img" src="/image/footer.svg" alt="두 마리의 판다가 장보러 가면서 이야기를 나누는 이미지">
-            </div>  
-        </section>
+      <!-- Main Footer -->
+      <section class="content-footer">
+        <div class="content-footer-content">
+          <h3 class="content-footer-text">
+            믿을 수 있는<br />
+            판다마켓 중고 거래
+          </h3>
+          <img
+            class="content-footer-img"
+            src="/image/footer.svg"
+            alt="두 마리의 판다가 장보러 가면서 이야기를 나누는 이미지"
+          />
+        </div>
+      </section>
     </main>
-    
+
     <!-- Footer -->
     <footer>
       <div class="footer-content">
         <span class="copyright">©codeit - 2024</span>
         <div class="footer-privacy">
           <a class="footer-menu" href="/html/privacy.html">Privacy Policy</a>
-          <a class="footer-menu" href="/html/faq.html">FAQ</a>
+          <a id="FAQ" class="footer-menu" href="/html/faq.html">FAQ</a>
         </div>
         <ul class="sns-link">
           <li>
-            <a href="https://www.facebook.com/" target="_blank"><img src="/image/facebook.png" alt="페이스북" width="20"/></a>
+            <a href="https://www.facebook.com/" target="_blank"
+              ><img src="/image/facebook.png" alt="페이스북" width="20"
+            /></a>
           </li>
           <li>
-            <a href="https://twitter.com/" target="_blank"><img src="/image/twitter.png" alt="트위터" width="20"/></a>
+            <a href="https://twitter.com/" target="_blank"
+              ><img src="/image/twitter.png" alt="트위터" width="20"
+            /></a>
           </li>
           <li>
-            <a href="https://www.youtube.com/" target="_blank"><img src="/image/youtube.png" alt="유튜브" width="20"/></a>
+            <a href="https://www.youtube.com/" target="_blank"
+              ><img src="/image/youtube.png" alt="유튜브" width="20"
+            /></a>
           </li>
           <li>
-            <a href="https://www.instagram.com/" target="_blank"><img src="/image/insta.png" alt="인스타그램" width="20"/></a>
+            <a href="https://www.instagram.com/" target="_blank"
+              ><img src="/image/insta.png" alt="인스타그램" width="20"
+            /></a>
           </li>
         </ul>
       </div>

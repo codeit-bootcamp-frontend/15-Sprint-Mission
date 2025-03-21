@@ -4,26 +4,39 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>로그인</title>
+
+    <!-- favicon 불러오기 -->
     <link rel="icon" type="image/svg" href="/image/logo.svg" />
+
+    <!-- Pretendard 폰트 불러오기 -->
     <link
       rel="stylesheet"
       as="style"
       crossorigin
       href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
     />
+    <!-- normalize css 불러오기 -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
     />
-    <link rel="stylesheet" href="/css/common.css">
-    <link rel="stylesheet" href="/css/auth.css" />
+
+    <!-- css 불러오기 -->
+    <link rel="stylesheet" href="/css/reset.css" />
+    <link rel="stylesheet" href="/css/common.css" />
+    <link rel="stylesheet" href="/auth/auth.css" />
+
+    <!-- script 불러오기 -->
+    <script defer type="module" src="/auth/common.js"></script>
+    <script defer type="module" src="/auth/login.js"></script>
+    <script defer type="module" src="/auth/password-visibility.js"></script>
   </head>
 
   <body class="body-login">
-    <header>
+    <header class="banner">
       <a href="/">
         <img class="logo" src="/image/logo.svg" alt="판다마켓 로고" />
-        <img class="logo-title" src="/image/logo_title.svg" alt="판다마켓 로고 글씨" />
+        <img class="logo-title" src="/image/logo_title.svg" alt="판다마켓" />
       </a>
     </header>
 
@@ -31,13 +44,25 @@
       <form class="auth-form">
         <div class="input-box">
           <label for="email">이메일</label>
-          <input name="email" id="email" type="email" placeholder="이메일을 입력해주세요"/>
+          <input
+            name="email"
+            id="email"
+            type="email"
+            placeholder="이메일을 입력해주세요"
+          />
+          <div class="email-error"></div>
         </div>
 
         <div class="input-box">
           <label for="password">비밀번호</label>
           <div class="pw-content">
-            <input name="password" id="password" type="password" placeholder="비밀번호를 입력해주세요" />
+            <input
+              class="pw-visibility"
+              name="password"
+              id="password"
+              type="password"
+              placeholder="비밀번호를 입력해주세요"
+            />
             <button type="button" class="button-eye">
               <img
                 class="eye_icon"
@@ -46,9 +71,10 @@
               />
             </button>
           </div>
+          <div class="pw-error"></div>
         </div>
 
-        <button type="submit" class="button-submit">로그인</button>
+        <button id="button-login" type="button" class="button-submit" disabled>로그인</button>
       </form>
     </main>
 
@@ -74,7 +100,7 @@
 
       <section class="sign_up">
         <span>판다마켓이 처음이신가요?</span>
-        <a href="/html/signup.html">회원가입</a>
+        <a href="/auth/signup.html">회원가입</a>
       </section>
     </footer>
   </body>

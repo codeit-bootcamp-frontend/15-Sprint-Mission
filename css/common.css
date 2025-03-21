@@ -18,16 +18,13 @@
   --white: #ffffff;
   --background: #CFE5FF;
   --skyblue: #e6f2ff;
+  --error: #F74747;
 }
 
 html {
   font-size: 10px;
 }
 
-ul {
-  list-style-type: none;
-}
-
 button {
-  cursor: pointer;
+  background-color: transparent;
 }
