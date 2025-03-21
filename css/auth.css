@@ -65,6 +65,8 @@
   position: absolute;
   right: 24px;
   cursor: pointer;
+  border: none;
+  background-color: transparent;
 }
 
 .inputPwd-wrap img {
