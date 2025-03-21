@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/login.css" />
   </head>
   <body>
+    
     <div class="container">
       <div class="content-box">
         <div class="header-logo">
@@ -22,12 +23,30 @@
         <div class="input-form-container">
           <div class="input-box-container">
             <label for="email">이메일</label>
-            <input id="email" type="email" class="input-box" />
+            <input
+              id="email"
+              type="email"
+              class="input-box"
+              placeholder="이메일을 입력해주세요"
+            />
           </div>
 
           <div class="input-box-container">
             <label for="password">비밀번호</label>
-            <input id="password" type="password" class="input-box" />
+
+            <div class="wrapper-for-icon">
+              <input
+                id="password"
+                type="password"
+                class="input-box"
+                placeholder="비밀번호를 입력해주세요"
+              />
+              <img
+                class="passwordIcon"
+                src="/images/icons/eyesIcon.png"
+                alt="비밀번호아이콘"
+              />
+            </div>
           </div>
         </div>
 
@@ -54,7 +73,7 @@
 
         <div class="register">
           <p class="register-text">판다마켓이 처음이신가요?</p>
-          <a class="register-a" href="/pages/signup.html">회원가입</a>
+          <a class="register-navigate" href="/pages/signup.html">회원가입</a>
         </div>
       </div>
     </div>
