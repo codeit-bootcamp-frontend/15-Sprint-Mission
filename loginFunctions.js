@@ -32,10 +32,13 @@ const requireContent = (e) => {
         break;
       case "password":
         messageContent = ERRORMESSAGE.passwordIsEmpty;
+        break;
       case "nickname":
         messageContent = ERRORMESSAGE.nicknameIsEmpty;
+        break;
     }
     createNewMessage(messageContent, e.target);
+    document.querySelector(".visible_icon").style = "bottom: 6.9rem;";
   }
 };
 
@@ -58,9 +61,8 @@ const buttonDeactivate = (tag) => {
 
 const buttonActivate = (e) => {
   const nodeList = document.getElementsByClassName("plzInputText");
-  const inputValue = [...document.getElementsByTagName("input")];
-  let inputIsEmpty = inputValue.every((item) => item.value === "");
-  console.log("inputIsEmpty:", inputIsEmpty, inputValue);
+  const inputs = [...document.getElementsByTagName("input")];
+  let inputIsEmpty = inputs.every((input) => input.value && input.value.trim() !== "");
   if (nodeList.length !== 0 && !inputIsEmpty) {
   } else {
     let submit_btn = document.querySelector(".primary_btn");
@@ -74,9 +76,8 @@ const checkPassword = (e) => {
   let passwordCheck = document.getElementById("password_check");
   if (password && passwordCheck) {
     if (password.value !== passwordCheck.value) {
-      console.log("pw is not same");
-      console.log(password.value, passwordCheck.value);
       createNewMessage(ERRORMESSAGE.passwordIsNotSame, e.target);
+      e.target.previousElementSibling.style = "bottom: 6.9rem;";
     } else if (e.target.nextElementSibling?.tagName === "P") {
       e.target.style = "border: none";
       e.target.nextElementSibling.remove();

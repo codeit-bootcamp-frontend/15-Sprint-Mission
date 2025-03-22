@@ -10,8 +10,8 @@ buttonDeactivate(primary_btn);
 
 document.getElementById("email").addEventListener("focusout", requireContent);
 document.getElementById("password").addEventListener("focusout", requireContent);
-document.getElementById("nickname").addEventListener("focusout", requireContent);
-document.getElementById("password_check").addEventListener("focusout", (e) => {
+document.getElementById("nickname")?.addEventListener("focusout", requireContent);
+document.getElementById("password_check")?.addEventListener("focusout", (e) => {
   checkPassword(e);
   buttonActivate(e);
 });
