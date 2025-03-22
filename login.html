@@ -16,16 +16,30 @@
             <form method="post">
                 <div class="form-group">
                     <label for="email">이메일</label>
-                    <div><input type="email" id="email" name="email" placeholder="이메일을 입력해주세요" /></div>
+                    <div>
+                        <input
+                            type="email"
+                            id="email-login"
+                            name="email"
+                            placeholder="이메일을 입력해주세요"
+                            required />
+                        <span class="error-message"></span>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="password">비밀번호</label>
                     <div class="password-wrap">
-                        <input type="password" id="password" name="password" placeholder="비밀번호를 입력해 주세요" />
+                        <input
+                            type="password"
+                            id="password-login"
+                            name="password"
+                            placeholder="비밀번호를 입력해 주세요"
+                            required />
                         <button class="password-button" type="button"><img src="images/unvisible_eye.png" /></button>
                     </div>
+                    <span class="error-message"></span>
                 </div>
-                <button class="login-button" type="submit">로그인</button>
+                <button class="login-button" type="button" id="login-btn" disabled>로그인</button>
             </form>
             <div class="login-method-container">
                 <h3 class="social-login-button">간편 로그인하기</h3>
@@ -40,5 +54,6 @@
             </div>
             <div class="signup-go">판다마켓이 처음이신가요?<a href="signup.html">회원가입</a></div>
         </main>
+        <script src="validation.js"></script>
     </body>
 </html>
