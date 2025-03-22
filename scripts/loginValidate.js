@@ -61,7 +61,7 @@ function LoginCheck() {
 
 function Login() {
   if (isLoginPossible) {
-    location.href = '/pages/items';
+    location.href = '/pages/items.html';
   } else {
     window.alert('올바른 이메일/비밀번호를 입력해주세요.');
   }

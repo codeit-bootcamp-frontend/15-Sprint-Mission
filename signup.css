@@ -310,14 +310,15 @@ body p {
 }
 
 .errDiv {
-  color: red;
+  margin-top: 0.8rem;
+  font-size: 1.4rem;
+  color: #f74747;
+  padding-left: 1.6rem;
 }
-
 .input-box.invalid {
-  border-color: red;
-  border: 2px solid red;
+  border: 1px solid #f74747;
 }
 
-.login-button.activate {
-  background-color: #1251aa;
+.signup-button.activate {
+  background-color: var(--button-color);
 }

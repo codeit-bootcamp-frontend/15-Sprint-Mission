@@ -1,13 +1,15 @@
-const toggleIcon = document.querySelector('.passwordIcon');
+const toggleIcons = document.querySelectorAll('.passwordIcon');
 
-function changeIcon() {
-  if (password.type === 'password') {
-    password.type = 'text';
-    toggleIcon.src = '/images/icons/eyeOpen.png';
-  } else {
-    password.type = 'password';
-    toggleIcon.src = '/images/icons/eyesIcon.png';
-  }
-}
+toggleIcons.forEach((icon) => {
+  icon.addEventListener('click', function () {
+    const passwordInput = this.parentElement.querySelector('input');
 
-toggleIcon.addEventListener('click', changeIcon);
+    if (passwordInput.type === 'password') {
+      passwordInput.type = 'text';
+      this.src = '/images/icons/eyeOpen.png';
+    } else {
+      passwordInput.type = 'password';
+      this.src = '/images/icons/eyesIcon.png';
+    }
+  });
+});
