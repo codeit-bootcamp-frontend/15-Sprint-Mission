@@ -133,11 +133,9 @@ input::placeholder {
     body {
         margin: 190px 52px 325px;
     }
-    
-    
 }
 
-@media (max-width: 767px) and (min-width: 375px) {
+@media (max-width: 767px) {
 
     .logo-a {
         display: flex;
