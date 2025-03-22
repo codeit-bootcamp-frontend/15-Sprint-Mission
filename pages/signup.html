@@ -30,7 +30,7 @@
                     <div class="password">
                         <input id="pwd" class="auth-input" type="password" name="password" placeholder="비밀번호를 입력해주세요" >
                         <button type="button" class="pwd-icon-btn">
-                            <img class="pwd-icon" src="../assets/icons/hide-password.png" alt="비밀번호 가리기">
+                            <img class="pwd-icons" src="../assets/icons/hide-password.png" alt="비밀번호 보이기 버튼">
                         </button>
                     </div>
                     <p class="message message-password"></p>
@@ -39,8 +39,8 @@
                     <label for="password">비밀번호 확인</label>
                     <div class="password">
                         <input id="pwd-confirm" class="auth-input" type="password" name="password" placeholder="비밀번호를 다시 한 번 입력해주세요" >
-                        <button  type="button" class="pwd-icon-btn">
-                            <img class="pwd-icon" src="../assets/icons/show-password.png" alt="비밀번호 보이기">
+                        <button  type="button" class="pwd-icon-btn pwd-confirm-icon-btn">
+                            <img class="pwd-icons pwd-confirm-icon" src="../assets/icons/hide-password.png" alt="비밀번호 보이기 버튼">
                         </button>
                     </div>
                     <p class="message message-password-confirm"></p>
@@ -67,5 +67,6 @@
         </div>
     </main>
     <script src="../scripts/formValidation.js"></script>
+    <script src="../scripts/signupTogglePassword.js"></script>
 </body>
 </html>
