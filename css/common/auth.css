@@ -1,3 +1,5 @@
+@import 'variables.css';
+
 html, body {
     display: flex;
     flex-direction: column;
@@ -68,7 +70,7 @@ html, body {
 
 .submit-btn button {
     color: var(--gray100);
-    background-color: var(--blue);
+    background-color: var(--blue100);
     width: 640px;
     height: 56px;
     text-align: center;
@@ -88,7 +90,7 @@ html, body {
     gap: 10px;
     width: 640px;
     height: 74px;
-    background: #E6F2FF; /* 배경색 */
+    background: var(--background); /* 배경색 */
     border-radius: 8px;
 
     flex: none;
@@ -124,7 +126,7 @@ html, body {
 }
 
 .move-page a {
-    color: var(--blue);
+    color: var(--blue100);
     text-decoration: underline;
 }
 
