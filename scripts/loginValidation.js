@@ -1,7 +1,5 @@
 const email = document.getElementById('email');
 const password = document.querySelector('#pwd');
-const passwordConfirm = document.querySelector('#pwd-confirm');
-const username = document.getElementById('username');
 const submitButton = document.querySelector('.submit-button');
 
 document.documentElement.style.setProperty('--red', '#F74747');
@@ -24,11 +22,8 @@ function disableButton(button) {
 function checkFormValidity() {
     const isEmailValid = validateEmail(email.value) === '';
     const isPasswordValid = validatePassword(password.value) === '';
-    const isPasswordConfirmValid = validatePasswordConfirm(passwordConfirm.value, password.value) === '';
-    const isUsernameValid = validateUsername(username.value) === '';
 
-    // 모든 입력값이 유효하면 버튼 활성화, 아니면 비활성화
-    if (isEmailValid && isPasswordValid && isPasswordConfirmValid && isUsernameValid) {
+    if (isEmailValid && isPasswordValid) {
         enableButton(submitButton);
     } else {
         disableButton(submitButton);
@@ -70,47 +65,17 @@ function validatePassword(check_password) {
     return '';
 }
 
-function validatePasswordConfirm(confirm_password, check_password) {
-    if (confirm_password !== check_password) {
-        return '비밀번호가 일치하지 않습니다.';
-    }
-    return '';
-}
-
-function validateUsername(check_username) {
-    if (!check_username) {
-        return '닉네임을 입력해주세요';
-    }
-    return '';
-}
-
-// focusout 이벤트 처리
 email.addEventListener('focusout', function () {
     const message = document.querySelector('.message-email');
-    validateInput(email, message, validateEmail);
-    checkFormValidity(); // 폼 상태 체크
+    const isValid = validateInput(email, message, validateEmail);
+    checkFormValidity(); // 이메일 검사 후 폼 상태 체크
 });
 
 password.addEventListener('focusout', function () {
     const message = document.querySelector('.message-password');
-    validateInput(password, message, validatePassword);
-    checkFormValidity(); // 폼 상태 체크
+    const isValid = validateInput(password, message, validatePassword);
+    checkFormValidity(); // 비밀번호 검사 후 폼 상태 체크
 });
 
-passwordConfirm.addEventListener('focusout', function () {
-    const message = document.querySelector('.message-password-confirm');
-    validateInput(passwordConfirm, message, (value) => validatePasswordConfirm(value, password.value));
-    checkFormValidity(); // 폼 상태 체크
-});
-
-username.addEventListener('focusout', function () {
-    const message = document.querySelector('.message-username');
-    validateInput(username, message, validateUsername);
-    checkFormValidity(); // 폼 상태 체크
-});
-
-// input 이벤트 처리
-email.addEventListener('input', checkFormValidity);
-password.addEventListener('input', checkFormValidity);
-passwordConfirm.addEventListener('input', checkFormValidity);
-username.addEventListener('input', checkFormValidity);
+email.addEventListener('input', checkFormValidity);  // 이메일 입력 시 체크
+password.addEventListener('input', checkFormValidity); // 비밀번호 입력 시 체크

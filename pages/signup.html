@@ -38,7 +38,7 @@
                 <div class="input-group">
                     <label for="password">비밀번호 확인</label>
                     <div class="password">
-                        <input id="pwd" class="auth-input pwd-confirm" type="password" name="password" placeholder="비밀번호를 다시 한 번 입력해주세요" >
+                        <input id="pwd-confirm" class="auth-input" type="password" name="password" placeholder="비밀번호를 다시 한 번 입력해주세요" >
                         <button  type="button" class="pwd-icon-btn">
                             <img class="pwd-icon" src="../assets/icons/show-password.png" alt="비밀번호 보이기">
                         </button>
@@ -46,7 +46,7 @@
                     <p class="message message-password-confirm"></p>
                 </div>
                 <div class="submit-btn">
-                    <button class="submit-button signup-button" type="submit" disabled>회원가입</button>
+                    <button class="submit-button" type="button" onclick="location.href='login.html'">회원가입</button>
                 </div>
             </form>
             <div class="sign-easy">
@@ -67,6 +67,5 @@
         </div>
     </main>
     <script src="../scripts/formValidation.js"></script>
-    <script src="../scripts/navigation.js"></script>
 </body>
 </html>
