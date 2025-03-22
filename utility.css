@@ -1,21 +1,29 @@
 .btn-large,
+.btn-medium,
 .btn-small {
   background-color: var(--blue);
   color: var(--gray100);
 }
 
 .btn-large:hover,
+.btn-medium:hover,
 .btn-small:hover {
   background-color: #1967D6;
 }
 
 .btn-large:active,
+.btn-medium:active,
 .btn-small:active {
   background-color: #1251AA;
 }
 
 .btn-large {
-  padding: 1rem 7.75rem;
+  padding: 16px 124px;
+  border-radius: 40px;
+}
+
+.btn-medium {
+  padding: 12px 71px;
   border-radius: 40px;
 }
 
@@ -57,12 +65,12 @@
   line-height: 2rem;
 }
 
-.text-lg {
-  font-size: 1rem;
+.text-2lg {
+  font-size: 1.125rem;
   line-height: 1.625rem;
 }
 
-.text-2lg {
-  font-size: 1.125rem;
+.text-lg {
+  font-size: 1rem;
   line-height: 1.625rem;
 }

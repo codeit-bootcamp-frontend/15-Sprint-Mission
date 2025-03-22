@@ -18,7 +18,7 @@ header {
 
 footer {
   background-color: var(--gray900);
-  height: 10rem;
+  height: 160px;
 }
 
 .gnb {
@@ -29,7 +29,8 @@ footer {
 }
 
 .gnb img {
-  max-width: 10rem;
+  display: block;
+  max-width: 160px;
 }
 
 .btn-login {
@@ -50,31 +51,45 @@ footer {
 }
 
 .home-top-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
   background-color: #CFE5FF;
-  height: 34rem;
+  height: 540px;
 }
 
 .home-top {
-  height: 100%;
   display: flex;
   justify-content: center;
   align-items: flex-end;
+  height: 90%;
 }
 
 .home-top-content {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  align-items: flex-start;
+  gap: 32px;
   padding-bottom: 4%;
 }
 
+.home-top-content p {
+  width: 340px;
+}
+
+.home-section {
+  display: flex;
+  flex-direction: column;
+  background-color: #FFFFFF;
+  padding: 24px;
+}
+
 .home-section img {
-  max-width: 36rem;
+  width: 580px;
 }
 
 .home {
-  background-color: #FFFFFF;
-  height: 45rem;
+  height: 720px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -84,9 +99,9 @@ footer {
   background-color: #FCFCFC;
   display: flex;
   justify-content: center;
-  gap: 4rem;
+  gap: 64px;
   border-radius: 12px;
-  width: 65rem;
+  width: 1040px;
 }
 
 .home-content-1,
@@ -95,30 +110,44 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-right: 0.75rem;
+  margin-right: 12px;
+
+  word-break: keep-all;
 }
 
 .home-content-2 {
   text-align: end;
   margin-right: 0;
-  margin-left: 0.75rem;
+  margin-left: 12px;
+}
+
+.home-title {
+  width: 340px;
 }
 
 .home-describe {
   margin-top: 1.5rem;
+  width: 340px;
+}
+
+.home-content-3 .home-describe {
+  width: 380px;
 }
 
 .home-bottom-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
   background-color: #CFE5FF;
-  height: 33.75rem;
+  height: 540px;
 }
 
 .home-bottom {
-  height: 100%;
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  gap: 4rem;
+  height: 80%;
+  gap: 64px;
 }
 
 .home-bottom-content {
@@ -128,8 +157,9 @@ footer {
 .footer-content {
   display: flex;
   justify-content: space-between;
-  max-width: 70rem;
-  padding-top: 1.5%;
+  max-width: 1120px;
+  padding-top: 32px;
+  height: 100%;
 }
 
 .faq,
@@ -138,11 +168,11 @@ footer {
 }
 
 .faq {
-  gap: 2rem;
+  gap: 32px;
 }
 
 .sns {
-  gap: 0.75rem;
+  gap: 12px;
 }
 
 .sns img {
@@ -168,14 +198,120 @@ footer {
   color: var(--gray200);
 }
 
-@media (max-width:1920px) {
+@media (min-width:1200px) and (max-width:1920px) {
   .gnb {
     padding: 9px 200px
   }
 }
 
-@media (max-width:1280px) {
-  html {
-    font-size: 12px;
+/* (min-width:768px) and  */
+@media (max-width:1199px) {
+  .gnb {
+    padding: 9px 24px
+  }
+
+  .home-top-section img,
+  .home-bottom-section img {
+    max-width: 100%;
+  }
+
+  .home-top-section {
+    height: 105vw;
+  }
+
+  .home-top {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .home-top-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .home-top-content p {
+    width: 100%;
+  }
+
+  .home-section {
+    gap: 52px;
+    padding-bottom: 56px;
+  }
+
+  .home-section img {
+    width: 100%;
+  }
+
+  .home {
+    height: auto;
+  }
+
+  .home-content {
+    background-color: #FFFFFF;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+  }
+
+  .home:nth-child(2) .home-content {
+    flex-direction: column-reverse;
+    align-items: flex-end;
+  }
+
+  .home-content-2 {
+    text-align: end;
+    align-items: flex-end;
+    margin-right: 0;
+    margin-left: 12px;
+  }
+
+  .home-title {
+    width: 100%;
+  }
+
+  .home-bottom-section {
+    background-color: #CFE5FF;
+    height: 125vw;
+  }
+
+  .home-bottom {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-content {
+    padding: 32px 10%;
+  }
+}
+
+@media (min-width:375px) and (max-width:767px) {
+  .gnb {
+    padding: 9px 16px
+  }
+
+  .home-top-section {
+    height: 144vw;
+  }
+
+  .home-top-content p {
+    width: 340px;
+    text-align: center;
+  }
+
+  .btn-large {
+    padding: 12px 71px;
+  }
+
+  .footer-content {
+    flex-wrap: wrap;
+    gap: 60px;
+  }
+
+  .copyright {
+    order: 1;
   }
 }
