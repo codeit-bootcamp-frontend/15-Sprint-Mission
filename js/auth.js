@@ -1,4 +1,5 @@
 export{emailInput, passwordInput, displayError, removeError, validateEmail, validatePassword, psVisibility, authValidity};
+
 const EMAIL_INPUT_ID = "email";
 const PASSWORD_INPUT_ID = "password";
 // ------------------------ 에러 메세지 ------------------------
@@ -84,4 +85,6 @@ function psVisibility(event){
         changeState.setAttribute("type","password");
     }
 }
+
+
 

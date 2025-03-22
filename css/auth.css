@@ -34,18 +34,11 @@
     border-radius: 12px;
     background-color: var(--gray100);
 }
-.password-check input{
-    background-image:url('/image/icon/visibility_on.png');
-    background-repeat: no-repeat;
-    background-position: right 16px center;
-    background-size: 24px;
-}
 .ps-input{
     position: relative;
 }
 .ps-visibility{
     position: absolute;
-    background: url('eye-icon.png') no-repeat center / contain;
     width: 24px;
     right: 16px;
     top: 50%;
