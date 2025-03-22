@@ -47,11 +47,6 @@ input::placeholder {
     letter-spacing: 0%;
 }
 
-/* #pwd {
-    padding: 16px 24px 16px;
-} */
-
-
 .password {
     display: flex;
     position: relative;
