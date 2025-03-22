@@ -16,7 +16,7 @@
         <form action="/pages/login.html" method="POST">
             <div class="email">
                 <label for="email">이메일</label>
-                <input type="text" id="email" name="email" placeholder="email">
+                <input type="email" id="email" name="email" placeholder="email">
             </div>
             <div class="name">
                 <label for="name">닉네임</label>
@@ -24,11 +24,17 @@
             </div>
             <div class="password">
                 <label for="password">비밀번호</label>
-                <input type="password" id="password" name="password" placeholder="password">
+                <div class="ps-input">
+                    <input type="password" id="password" name="password" placeholder="password">
+                    <img class="ps-visibility" data-toggle="off" src="/image/icon/visibility_off.png" alt="눈 모양">
+                </div>
             </div>
             <div class="password-check">
                 <label for="ckeck-password">비밀번호 확인</label>
-                <input type="text" id="ckeck-password" name="ckeck-password" placeholder="password">
+                <div class="ps-input">
+                    <input type="text" id="ckeck-password" name="ckeck-password" placeholder="password">
+                    <img class="ps-visibility" data-toggle="on" src="/image/icon/visibility_on.png" alt="눈 모양">
+                </div>
             </div>
             <button class="signup-btn" type="submit" name="login" disabled>회원가입</button>
             <div class="quicklogin">

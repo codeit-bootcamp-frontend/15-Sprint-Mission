@@ -34,31 +34,23 @@
     border-radius: 12px;
     background-color: var(--gray100);
 }
-
-/* error */
-.error{
-    border: solid 1px #F74747;
-}
-.errorMessage{
-    display: block;
-    color: #F74747;
-    font-size: 14px;
-    font-weight: 600;
-    margin: 13px 0 0 16px;
-}
-/* error */
-
-.password input{
-    background-image:url('/image/icon/visibility_off.png');
-    background-repeat: no-repeat;
-    background-position: right 16px center;
-    background-size: 24px;
-}
 .password-check input{
     background-image:url('/image/icon/visibility_on.png');
     background-repeat: no-repeat;
     background-position: right 16px center;
     background-size: 24px;
+}
+.ps-input{
+    position: relative;
+}
+.ps-visibility{
+    position: absolute;
+    background: url('eye-icon.png') no-repeat center / contain;
+    width: 24px;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
 }
 .login-box button{
     padding: 16px 125px;
@@ -97,6 +89,18 @@
     cursor:pointer;
 }
 
+/* error message */
+.error{
+    border: solid 1px #F74747;
+}
+.errorMessage{
+    display: block;
+    color: #F74747;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 13px 0 0 16px;
+}
+
 @media (min-width: 768px) and (max-width: 1200px) {
     .login-box{
         width:640px;
@@ -118,3 +122,4 @@
         margin-bottom: 24px;
     }
 }
+

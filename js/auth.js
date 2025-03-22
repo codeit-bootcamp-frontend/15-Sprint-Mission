@@ -1,19 +1,8 @@
-// 처음 공백이고, 에러 활성화전적 없음 -> 에러메세지,에러셋팅
-// import { emailInput } from './auth';
-// 이메일이 유효하지 않고, 에러활성화전적 없음-> 에러메세지,에러셋팅
-// 공백이고, 에러 활성화전적 있음 -> 에러메세지 수정
-// 이메일이 유효하지 않고, 에러활성화전적 있음->에러메세지 수정
-// 이메일이 유효하고, 에러활성화전적 있음-> 에러셋팅 삭제
-
-// 처음에 작성했던 코드는 이메일이랑 비밀번호랑 서로 영향 끼치고 난리 났는데.. 
-// 지피티 제안으로 여러 함수로 분리해보니까 동작도 훨씬 안전하고, 어디서 어떤 작업이 일어나는지 파악하기도 명확해서 마음이 편안하다.
-// 막혔던 부분: 이메일,비밀번호 등등에 재사용 가능함 함수로 작성하고 싶은데, wrapper.append(message);부분이 문제였다. wrapper를 파라미터로 받을 생각을 못했다.
-// 부족한 부분: getElemetn, queryselector나 부모,자식에 접근하는 등, 선택자에 대한 이해도가 아직 많이 부족한거 같다. 
-// 어떤 형태로 받고, 어떤 형태로 다루게 되는지 자꾸 에러가 나서 더 혼란스러워졌다.
+export{emailInput, passwordInput, displayError, removeError, validateEmail, validatePassword, psVisibility, authValidity};
 const EMAIL_INPUT_ID = "email";
 const PASSWORD_INPUT_ID = "password";
-
-export function displayError(event, wrapper, errorMessage){ 
+// ------------------------ 에러 메세지 ------------------------
+function displayError(event, wrapper, errorMessage){ 
     const visited = event.target.classList.contains("error");
     if(visited){
         wrapper.lastChild.textContent=errorMessage;
@@ -25,7 +14,7 @@ export function displayError(event, wrapper, errorMessage){
         wrapper.append(message);
     }
 }
-export function removeError(event, wrapper){
+function removeError(event, wrapper){
     const visited = event.target.classList.contains("error");
     if(visited){
         event.target.classList.remove("error");
@@ -33,50 +22,66 @@ export function removeError(event, wrapper){
     }
 }
 // ------------------------ 이메일 유효성 검사 ------------------------
-export const emailInput = document.getElementById(EMAIL_INPUT_ID);
+const emailInput = document.getElementById(EMAIL_INPUT_ID);
 const emailWrapper = document.querySelector(".email");
-const expEmail = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/;
 
-export function validateEmail(event){
-    // 복잡한 식은 변수로 만들어서, 조건문은 읽기 간략하게 작성하는게 좋다.
+function validateEmail(event){
     const inputValue = emailInput.value;
-    const emailValidation = expEmail.test(inputValue);
-    // *** if ,else if으로 작성할때, 아예 서로 다른 조건을 체크하면, 서로 동시에 실행될수도 있따(?)
-    // 이 경우에는 if {return}으로 작성하도록 한다.
-    //inputValue==="" 대신 !inputValue으로 간단하게 표현
+    const emailValidation = emailInput.validity.valid;
     if(!inputValue){ 
         displayError(event, emailWrapper, "이메일을 입력해주세요.");
-        return;
+        return false;
     } 
     if(!emailValidation){
         displayError(event, emailWrapper, "잘못된 이메일 형식입니다.");
-        return;
+        return false;
     }
     removeError(event, emailWrapper);
+    return true;
 }
-
-emailInput.addEventListener("focusout", validateEmail);
-
 // ------------------------ 비밀번호 유효성 검사 ------------------------
-export const passwordInput = document.getElementById(PASSWORD_INPUT_ID);
+const passwordInput = document.getElementById(PASSWORD_INPUT_ID);
 const passwordWrapper = document.querySelector(".password");
 const expPassword = /[A-Za-z\d]{8,}$/;
 
-export function validatePassword(event){
+function validatePassword(event){
     const inputValue = passwordInput.value;
     const passwordValidation = expPassword.test(inputValue);
     if(!inputValue){ 
         displayError(event, passwordWrapper, "비밀번호를 입력해주세요.");
-        return;
+        return false;
     } 
     if(!passwordValidation){
         displayError(event, passwordWrapper, "비밀번호를 8자 이상 입력해주세요.");
-        return;
+        return false;
     } 
     removeError(event, passwordWrapper);
+    return true;
 }
-passwordInput.addEventListener("focusout",validatePassword);
+// ------------------------ 버튼활성화 함수에 사용 ------------------------
+function authValidity(){
+    const inputE = emailInput.value;
+    const emailValidation = emailInput.validity.valid;
+    const inputPS = passwordInput.value;
+    const passwordValidation = expPassword.test(inputPS);
+    if(!inputE || !emailValidation || !inputPS || !passwordValidation){ 
+        return false;
+    } 
+    return true;
+}
+// ------------------------ password visibility - 눈 아이콘 ------------------------
+function psVisibility(event){
+    const currentState = event.target.dataset.toggle; 
+    const changeState = event.target.parentElement.querySelector("input");
+    if (currentState === "off"){
+        event.target.setAttribute("data-toggle", "on");
+        event.target.setAttribute("src","/image/icon/visibility_on.png")
+        changeState.setAttribute("type","text");
 
-
-
+    } else if(currentState === "on"){
+        event.target.setAttribute("data-toggle", "off");
+        event.target.setAttribute("src","/image/icon/visibility_off.png")
+        changeState.setAttribute("type","password");
+    }
+}
 
