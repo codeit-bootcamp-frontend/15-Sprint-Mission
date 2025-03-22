@@ -25,6 +25,35 @@
   flex-direction: column;
   gap: 16px;
   position: relative;
+  input {
+    border: 1px solid transparent;
+  }
+  &.is-valid {
+    input {
+      border-color: var(--blue);
+    }
+  }
+  &[class|='error'] {
+    padding-bottom: 26px;
+    .toggle-password {
+      bottom: 54px;
+    }
+    input {
+      border-color: var(--red);
+    }
+  }
+  &.error-empty {
+    .error-message.message-empty {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+  &.error-format {
+    .error-message.message-format {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
 }
 .auth-form li label {
   color: var(--gray800);
@@ -52,6 +81,9 @@
   height: 56px;
   width: 100%;
   margin-top: 24px;
+  &:disabled {
+    background-color: var(--gray400);
+  }
 }
 .auth-sns {
   display: flex;
@@ -74,7 +106,7 @@
   width: 42px;
   display: block;
 }
-.auth-sns ul li a img{
+.auth-sns ul li a img {
   width: 100%;
 }
 .auth-signup {
@@ -106,6 +138,20 @@
   justify-content: center;
 }
 
+.error-message {
+  padding-left: 16px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: var(--red);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  visibility: hidden;
+}
+
 @media all and (max-width: 640px) {
   .auth-page {
     padding-block: 35.94vw;
@@ -135,6 +181,14 @@
     transform: translateY(50%);
     padding: 0;
   }
+  .auth-form li {
+    &[class|='error'] {
+      padding-bottom: 5.47vw;
+      .toggle-password {
+        bottom: 11.67vw;
+      }
+    }
+  }
   .toggle-password img {
     max-width: 4.69vw;
   }
@@ -156,5 +210,9 @@
   }
   .auth-signup {
     font-size: 3.44vw;
+  }
+  .error-message {
+    padding-left: 3.75vw;
+    font-size: 3.5vw;
   }
 }
