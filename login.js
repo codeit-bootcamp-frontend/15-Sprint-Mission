@@ -3,6 +3,7 @@ import {
   requireContent,
   buttonActivate,
   checkPassword,
+  visibleIconToggle,
 } from "./loginFunctions.js";
 const primary_btn = document.querySelector(".primary_btn");
 buttonDeactivate(primary_btn);
@@ -18,4 +19,7 @@ primary_btn.addEventListener("click", (e) => {
   e.preventDefault();
   console.log("Button clicked! Moving to ./login.html");
   window.location.href = "./login.html";
+});
+document.querySelectorAll(".visible_icon").forEach((item) => {
+  item.addEventListener("click", visibleIconToggle);
 });

@@ -123,3 +123,7 @@ form label {
   font-size: 1.5rem;
   color: red;
 }
+
+.passwordIsVisible {
+  background-image: url("../img/btn_visibility_on.svg");
+}

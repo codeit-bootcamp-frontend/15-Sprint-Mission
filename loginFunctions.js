@@ -84,4 +84,19 @@ const checkPassword = (e) => {
   }
 };
 
-export { requireContent, createNewMessage, buttonDeactivate, buttonActivate, checkPassword };
+const visibleIconToggle = (e) => {
+  e.target.classList.toggle("passwordIsVisible");
+  if (e.target.nextElementSibling.type == "password") {
+    e.target.nextElementSibling.type = "text";
+  } else {
+    e.target.nextElementSibling.type = "password";
+  }
+};
+export {
+  requireContent,
+  createNewMessage,
+  buttonDeactivate,
+  buttonActivate,
+  checkPassword,
+  visibleIconToggle,
+};
