@@ -31,7 +31,7 @@ a {
 
 .logo img {
     width: 153px;
-    height: 51px;
+    height: auto;
 }
 
 .login-btn {
