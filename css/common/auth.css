@@ -25,7 +25,7 @@ html, body {
     margin-bottom: 24px;
 }
 
-input {
+.auth-input {
     width: 640px;
     height: 56px;
     margin-top: 16px;
@@ -39,7 +39,7 @@ input {
     padding: 16px 24px 14px; 
 }
 
-input::placeholder {
+.auth-input::placeholder {
     color: var(--gray400);
     font-weight: 400;
     font-size: 16px;
@@ -136,7 +136,6 @@ input::placeholder {
 }
 
 @media (max-width: 767px) {
-
     .logo-a {
         display: flex;
         justify-content: center;
@@ -154,7 +153,7 @@ input::placeholder {
         margin: 0 auto;
     }
 
-    input {
+    .auth-input {
         width: 100%;
     }
 
