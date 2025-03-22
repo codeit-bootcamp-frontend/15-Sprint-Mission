@@ -50,7 +50,7 @@ html, body {
     letter-spacing: 0%;
 }
 
-#message {
+.message {
     font-style: normal;
     font-weight: 600;
     font-size: 14px;
@@ -58,6 +58,7 @@ html, body {
     margin-top: 8px;
     margin-left: 16px;
     color: var(--red);
+    height: 24px;
 }
 
 .password {
