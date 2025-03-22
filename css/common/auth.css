@@ -28,7 +28,7 @@ html, body {
 }
 
 .auth-input {
-    width: 640px;
+    width: 100%;
     height: 56px;
     margin-top: 16px;
     border: none;
