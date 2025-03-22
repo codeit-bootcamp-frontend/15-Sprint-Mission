@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const form = document.querySelector("form.auth-form");
   if (!form) return;
   const button = form.querySelector("button.auth-button");
-  // 페이지 로드 시 버튼 비활성화
   button.disabled = true;
 
   // 전체 폼 유효성 검사
@@ -20,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
     button.disabled = !valid;
   }
 
-  // 이메일 검증
+  // 이메일
   const emailInput = document.getElementById("email");
   if (emailInput) {
     emailInput.addEventListener("blur", validateEmail);
@@ -159,7 +158,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // 비밀번호 토글 (눈 아이콘 클릭 시) - 이미지 변경 없이 단순 토글
+  // 비밀번호 보이게 하기
   const passwordWrappers = document.querySelectorAll(".password-wrapper");
   passwordWrappers.forEach(function (wrapper) {
     const toggleButton = wrapper.querySelector("button");
