@@ -1,5 +1,5 @@
 // 처음 공백이고, 에러 활성화전적 없음 -> 에러메세지,에러셋팅
-import { emailInput } from './auth';
+// import { emailInput } from './auth';
 // 이메일이 유효하지 않고, 에러활성화전적 없음-> 에러메세지,에러셋팅
 // 공백이고, 에러 활성화전적 있음 -> 에러메세지 수정
 // 이메일이 유효하지 않고, 에러활성화전적 있음->에러메세지 수정
@@ -13,7 +13,7 @@ import { emailInput } from './auth';
 const EMAIL_INPUT_ID = "email";
 const PASSWORD_INPUT_ID = "password";
 
-export function displayError(event, wrapper, errorMessage){ //displayError, removeError 함수로 분리해서 만들기..
+export function displayError(event, wrapper, errorMessage){ 
     const visited = event.target.classList.contains("error");
     if(visited){
         wrapper.lastChild.textContent=errorMessage;
@@ -35,18 +35,24 @@ export function removeError(event, wrapper){
 // ------------------------ 이메일 유효성 검사 ------------------------
 export const emailInput = document.getElementById(EMAIL_INPUT_ID);
 const emailWrapper = document.querySelector(".email");
-const exptext = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/;
+const expEmail = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/;
 
 export function validateEmail(event){
+    // 복잡한 식은 변수로 만들어서, 조건문은 읽기 간략하게 작성하는게 좋다.
     const inputValue = emailInput.value;
-    const emailValidation = exptext.test(inputValue);
+    const emailValidation = expEmail.test(inputValue);
+    // *** if ,else if으로 작성할때, 아예 서로 다른 조건을 체크하면, 서로 동시에 실행될수도 있따(?)
+    // 이 경우에는 if {return}으로 작성하도록 한다.
+    //inputValue==="" 대신 !inputValue으로 간단하게 표현
     if(!inputValue){ 
         displayError(event, emailWrapper, "이메일을 입력해주세요.");
-    } else if(!emailValidation){
-        displayError(event, emailWrapper, "잘못된 이메일 형식입니다.");
-    } else if(emailValidation){
-        removeError(event, emailWrapper);
+        return;
     } 
+    if(!emailValidation){
+        displayError(event, emailWrapper, "잘못된 이메일 형식입니다.");
+        return;
+    }
+    removeError(event, emailWrapper);
 }
 
 emailInput.addEventListener("focusout", validateEmail);
@@ -57,14 +63,17 @@ const passwordWrapper = document.querySelector(".password");
 const expPassword = /[A-Za-z\d]{8,}$/;
 
 export function validatePassword(event){
-    let inputValue = passwordInput.value;
-    if(inputValue===""){ 
+    const inputValue = passwordInput.value;
+    const passwordValidation = expPassword.test(inputValue);
+    if(!inputValue){ 
         displayError(event, passwordWrapper, "비밀번호를 입력해주세요.");
-    } else if(expPassword.test(inputValue)===false){
-        displayError(event, passwordWrapper, "비밀번호를 8자 이상 입력해주세요.");
-    } else if(expPassword.test(inputValue)){
-        removeError(event, passwordWrapper);
+        return;
     } 
+    if(!passwordValidation){
+        displayError(event, passwordWrapper, "비밀번호를 8자 이상 입력해주세요.");
+        return;
+    } 
+    removeError(event, passwordWrapper);
 }
 passwordInput.addEventListener("focusout",validatePassword);
 

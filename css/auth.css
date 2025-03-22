@@ -71,7 +71,6 @@
 .quicklogin{
     display: grid;
     grid-template-columns: 1fr auto auto;
-    /* 왼쪽(span)은 가득 차고, 오른쪽(img)은 각각 내용 크기대로 */
     align-items: center;
     gap:16px;
     padding:16px 23px;

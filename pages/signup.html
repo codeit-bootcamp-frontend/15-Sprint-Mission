@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>판다마켓-회원가입</title>
-    <!-- <link rel="stylesheet" href="style.css"> -->
     <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="/css/auth.css">
 </head>
@@ -14,7 +13,7 @@
         <a href="/pages/index.html">
             <img class="login-pandalogo" src="/image/logo.png" alt="pandalogo">
         </a>        
-        <form action="/pages/signup.html" method="POST">
+        <form action="/pages/login.html" method="POST">
             <div class="email">
                 <label for="email">이메일</label>
                 <input type="text" id="email" name="email" placeholder="email">
@@ -31,7 +30,7 @@
                 <label for="ckeck-password">비밀번호 확인</label>
                 <input type="text" id="ckeck-password" name="ckeck-password" placeholder="password">
             </div>
-            <button class="signup-btn" type="submit" name="login">회원가입</button>
+            <button class="signup-btn" type="submit" name="login" disabled>회원가입</button>
             <div class="quicklogin">
                 <span class="">간편 로그인하기</span>
                 <a href="https://www.google.com/">

@@ -6,7 +6,7 @@ const nameInput = document.getElementById("name");
 const nameWrapper = document.querySelector(".name");
 function validateName(event){
     let inputValue = nameInput.value;
-    if(inputValue===""){ 
+    if(!inputValue){ 
         displayError(event, nameWrapper, "닉네임을 입력해주세요.");
     } else{
         removeError(event, nameWrapper);
@@ -18,7 +18,6 @@ const chkpasswordInput = document.getElementById("ckeck-password");
 const chkpasswordWrapper = document.querySelector(".password-check");
 
 function correctPassword(event){ 
-//비밀번호에서 인풋을 수정했을때에도, 바로 비밀번호 불일치 에러가 뜨도록 개선하고 싶다.
     let inputValue = passwordInput.value;
     let chkinputValue = event.target.value;
     if(inputValue!==chkinputValue){
@@ -27,10 +26,9 @@ function correctPassword(event){
         removeError(event, chkpasswordWrapper);
     }
 }
-chkpasswordInput.addEventListener("input",correctPassword);
+chkpasswordInput.addEventListener("focusout",correctPassword);
 //------------------------ 버튼 활성화 ------------------------
 const signupSubmit = document.querySelector(".signup-btn");
-
 function signupactivate(){
     const emailvalidity = !emailInput.classList.contains("error") && emailInput.value!=="";
     const passwordvalidity = !passwordInput.classList.contains("error") && passwordInput.value!=="";
@@ -38,10 +36,14 @@ function signupactivate(){
     const namevalidity = !nameInput.classList.contains("error") && nameInput.value!=="";
     if(emailvalidity&&passwordvalidity&&chkpasswordvalidity&&namevalidity){
         signupSubmit.style.backgroundColor = "var(--blue)";
+        signupSubmit.disabled = false;
+    } else{
+        signupSubmit.style.backgroundColor = "var(--gray400)";
+        signupSubmit.disabled = true;
     }
 }
 
-emailInput.addEventListener("input",signupactivate);
-passwordInput.addEventListener("input",signupactivate);
-chkpasswordInput.addEventListener("input",signupactivate);
-nameInput.addEventListener("input",signupactivate);
+emailInput.addEventListener("focusout",signupactivate);
+passwordInput.addEventListener("focusout",signupactivate);
+chkpasswordInput.addEventListener("focusout",signupactivate);
+nameInput.addEventListener("focusout",signupactivate);
