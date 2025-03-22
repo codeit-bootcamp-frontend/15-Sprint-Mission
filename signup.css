@@ -80,7 +80,7 @@ body p {
   padding: 1.6rem 2.4rem;
   font-weight: 400;
   border: 0.1rem solid var(--cool-gray-100);
-  background-color: #f3f4f6;
+  background-color: var(--cool-gray-100);
   font-size: 1.6rem;
 }
 
@@ -222,7 +222,7 @@ body p {
     padding: 1.6rem 2.4rem;
     font-weight: 400;
     border: 0.1rem solid var(--cool-gray-100);
-    background-color: #f3f4f6;
+    background-color: var(--cool-gray-100);
     font-size: 1.6rem;
   }
 
