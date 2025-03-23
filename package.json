@@ -8,5 +8,6 @@
     "globals": "^16.0.0",
     "prettier": "^3.5.3",
     "typescript-eslint": "^8.26.0"
-  }
+  },
+  "type": "module"
 }
