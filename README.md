@@ -24,6 +24,15 @@
 - desktop-first(1920이상) 큰 모니터
 - breakpoint: 1919px(작은 모니터), 1199px(태블릿), 767px(모바일) (375px미만은 고려하지 않습니다.)
 
+### 코드 작성 순서
+
+하나의 JS 파일에서는 아래 순서를 따라 작성합니다:
+
+1. Import 구문
+2. 변수 선언
+3. 함수 선언
+4. 이벤트 리스너 등록
+
 ### 문자열
 
 - 기본 문자열은 따옴표를 사용합니다.
@@ -65,21 +74,34 @@
 ## 폴더 구조
 
 project-root/
-├── dom/
-│ └── auth.js
-├── auth/
-│ ├── auth-validation.js
-│ ├── password-visibility.js
-│ ├── auth.css
-│ ├── signin.html
-│ └── signup.html
-├── common/
+├── index.html  
+├── index.css
+
+├── common/  
 │ ├── base.css
 │ └── reset.css
-├── constants/
+
+├── constants/  
 │ ├── api-urls.js
-│ └── auth-validation-messages.js
-├── home/
+│ ├── regex.js
+│ └── messages/
+│ └── auth.js
+
+├── utils/  
+│ ├── debounce.js  
+│ ├── form.js  
+│ └── validators.js
+
+├── components/  
+│ └── dom/
+│ └── auth.js
+
+├── auth/  
+│ ├── signin.html
+│ ├── signup.html
+│ ├── auth.css
+│ ├── auth-validation.js
+│ └── password-visibility.js
+
+├── home/  
 │ └── home.css
-├── index.html
-└── index.css
