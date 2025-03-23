@@ -47,6 +47,10 @@ body {
   outline: var(--error) solid 1.5px;
 }
 
+.input-valid {
+  outline: var(--blue) solid 1.5px;
+}
+
 .error-message {
   color: var(--error);
   padding-left: 16px;

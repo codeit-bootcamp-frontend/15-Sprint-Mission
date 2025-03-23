@@ -37,13 +37,13 @@ const checkPassword = () => {
   const password = document.querySelector("#password");
   const passwordCheck = document.querySelector("#passwordCheck");
   if (
-    password.value !== passwordCheck.value &&
-    passwordCheck.value.length >= 8
+    password.value !== passwordCheck?.value &&
+    passwordCheck?.value.length >= 8
   ) {
     passwordCheck.nextElementSibling?.remove();
     passwordCheck.classList.add("input-error");
     setErrorMessage(passwordCheck, "passwordCheck");
-  } else if (password.value === passwordCheck.value) {
+  } else if (password.value === passwordCheck?.value) {
     passwordCheck.nextElementSibling?.remove();
     passwordCheck.classList.remove("input-error");
   }
@@ -82,5 +82,15 @@ const setErrorMessage = (element, type) => {
   }
 };
 
+const setInputValid = (event) => {
+  if (!event.target.classList.contains("input-error")) {
+    event.target.classList.add("input-valid");
+  } else {
+    event.target.classList.remove("input-valid");
+  }
+};
+
 loginForm?.addEventListener("focusout", setInputError);
+loginForm?.addEventListener("focusout", setInputValid);
 signupForm?.addEventListener("focusout", setInputError);
+signupForm?.addEventListener("focusout", setInputValid);
