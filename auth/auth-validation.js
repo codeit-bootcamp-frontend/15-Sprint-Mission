@@ -120,15 +120,17 @@ passwordInput.addEventListener(
   'input',
   debounce(() => {
     validatePasswordInput();
-    if (confirmPasswordInput.value.trim() !== '') {
+    if (confirmPasswordInput && confirmPasswordInput.value.trim() !== '') {
       validateConfirmPasswordInput();
     }
   }, 500),
 );
 
-confirmPasswordInput.addEventListener('input', () => {
-  validateConfirmPasswordInput();
-});
+if (confirmPasswordInput) {
+  confirmPasswordInput.addEventListener('input', () => {
+    validateConfirmPasswordInput();
+  });
+}
 
 // 인풋 입력 시 제출 버튼 상태 업데이트(form이 유효성 검사를 통과하면 focus를 옮기지 않아도 자동 버튼 활성화되도록)
 // 인풋이 바뀔 때마다 유효성 검사 너무 자주 실행되면 성능에 부담이 생기니까 debounce로 제어
