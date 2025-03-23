@@ -82,7 +82,9 @@ project-root/
 │ └── reset.css
 
 ├── constants/  
-│ ├── api-urls.js
+│ ├── urls/
+│ │ ├── page-urls.js
+│ │ └── api-urls.js
 │ ├── regex.js
 │ └── messages/
 │ └── auth.js

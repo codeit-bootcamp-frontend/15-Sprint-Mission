@@ -12,6 +12,7 @@ import {
   confirmPasswordInput,
   authType,
 } from '../components/dom/auth.js';
+import { PAGE_URLS } from '../constants/urls/page-urls.js';
 
 const validateEmailInput = () => {
   const emailValue = emailInput.value.trim();
@@ -145,8 +146,8 @@ form.addEventListener('submit', function (event) {
   if (!validateForm()) return;
 
   if (authType === 'signup') {
-    window.location.href = '/auth/signin.html';
+    window.location.href = PAGE_URLS.SIGNIN;
   } else if (authType === 'signin') {
-    window.location.href = '/items.html';
+    window.location.href = PAGE_URLS.ITEMS;
   }
 });
