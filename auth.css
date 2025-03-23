@@ -43,6 +43,10 @@ body {
   border-radius: 12px;
 }
 
+.input-error {
+  outline: var(--error) solid 1.5px;
+}
+
 .input-group button {
   position: absolute;
   right: 24px;
