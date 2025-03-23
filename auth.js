@@ -10,7 +10,19 @@ const setInputError = (event) => {
   } else if (event.target.id === "useremail") {
     event.target.nextElementSibling?.remove();
     if (event.target.validationMessage) {
+      event.target.classList.add("input-error");
       setErrorMessage(event.target, "email");
+    } else {
+      event.target.classList.remove("input-error");
+    }
+  } else if (
+    event.target.id === "password" ||
+    event.target.id === "checkPassword"
+  ) {
+    event.target.nextElementSibling?.remove();
+    if (event.target.value.length < 8) {
+      event.target.classList.add("input-error");
+      setErrorMessage(event.target, "password");
     } else {
       event.target.classList.remove("input-error");
     }
@@ -21,10 +33,10 @@ const setInputError = (event) => {
 };
 
 const setErrorMessage = (element, type) => {
+  const errorMessage = document.createElement("p");
+  errorMessage.classList.add("error-message", "text-lg", "semibold");
   if (type === "empty") {
     if (!element.nextElementSibling) {
-      const errorMessage = document.createElement("p");
-      errorMessage.classList.add("error-message", "text-lg", "semibold");
       switch (element.id) {
         case "useremail":
           errorMessage.textContent = "이메일을 입력해주세요.";
@@ -42,9 +54,10 @@ const setErrorMessage = (element, type) => {
       element.after(errorMessage);
     }
   } else if (type === "email") {
-    const errorMessage = document.createElement("p");
-    errorMessage.classList.add("error-message", "text-lg", "semibold");
     errorMessage.textContent = "잘못된 이메일 형식입니다.";
+    element.after(errorMessage);
+  } else if (type === "password") {
+    errorMessage.textContent = "비밀번호를 8자 이상 입력해주세요.";
     element.after(errorMessage);
   }
 };
