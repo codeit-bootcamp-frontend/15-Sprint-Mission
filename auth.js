@@ -2,7 +2,7 @@ const loginForm = document.querySelector(".login-form");
 const signupForm = document.querySelector(".signup-form");
 
 const setInputError = (event) => {
-  console.dir(event.target);
+  console.dir(event.currentTarget);
   if (event.target.closest("button")) {
     return;
   }
@@ -96,7 +96,42 @@ const setInputValid = (event) => {
   }
 };
 
+const isValidForm = (event) => {
+  for (let e of event.currentTarget) {
+    if (e.tagName === "INPUT" && !e.classList.contains("input-valid")) {
+      return false;
+    }
+  }
+  return true;
+};
+
+const loginButton = document.querySelector(".login-button");
+const signupButton = document.querySelector(".signup-button");
+
+const setLoginButton = (event) => {
+  if (isValidForm(event)) {
+    loginButton.disabled = false;
+    loginButton.classList.remove("button-disabled");
+  } else {
+    loginButton.disabled = true;
+    loginButton.classList.add("button-disabled");
+  }
+};
+
+const setSignupButton = (event) => {
+  if (isValidForm(event)) {
+    signupButton.disabled = false;
+    signupButton.classList.remove("button-disabled");
+  } else {
+    signupButton.disabled = true;
+    signupButton.classList.add("button-disabled");
+  }
+};
+
 loginForm?.addEventListener("focusout", setInputError);
 loginForm?.addEventListener("focusout", setInputValid);
+loginForm?.addEventListener("focusout", setLoginButton);
+
 signupForm?.addEventListener("focusout", setInputError);
 signupForm?.addEventListener("focusout", setInputValid);
+signupForm?.addEventListener("focusout", setSignupButton);

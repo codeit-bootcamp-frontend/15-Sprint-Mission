@@ -70,6 +70,15 @@ body {
   width: 100%;
 }
 
+.button-disabled {
+  background-color: var(--gray400);
+}
+
+.button-disabled:active,
+.button-disabled:hover {
+  background-color: var(--gray400)
+}
+
 .simple-login {
   display: flex;
   justify-content: space-between;
