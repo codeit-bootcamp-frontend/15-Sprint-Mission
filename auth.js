@@ -25,10 +25,27 @@ const setInputError = (event) => {
       setErrorMessage(event.target, "password");
     } else {
       event.target.classList.remove("input-error");
+      checkPassword();
     }
   } else {
     event.target.classList.remove("input-error");
     event.target.nextElementSibling?.remove();
+  }
+};
+
+const checkPassword = () => {
+  const password = document.querySelector("#password");
+  const passwordCheck = document.querySelector("#passwordCheck");
+  if (
+    password.value !== passwordCheck.value &&
+    passwordCheck.value.length >= 8
+  ) {
+    passwordCheck.nextElementSibling?.remove();
+    passwordCheck.classList.add("input-error");
+    setErrorMessage(passwordCheck, "passwordCheck");
+  } else if (password.value === passwordCheck.value) {
+    passwordCheck.nextElementSibling?.remove();
+    passwordCheck.classList.remove("input-error");
   }
 };
 
@@ -58,6 +75,9 @@ const setErrorMessage = (element, type) => {
     element.after(errorMessage);
   } else if (type === "password") {
     errorMessage.textContent = "비밀번호를 8자 이상 입력해주세요.";
+    element.after(errorMessage);
+  } else if (type === "passwordCheck") {
+    errorMessage.textContent = "비밀번호가 일치하지 않습니다.";
     element.after(errorMessage);
   }
 };
