@@ -1,6 +1,7 @@
 import './password-visibility.js';
 import { validateEmail } from '../utils/validators.js';
-import { ERROR_MESSAGES } from '../constants/auth-validation-messages.js';
+import { toggleError } from '../utils/form.js';
+import { ERROR_MESSAGES } from '../constants/messages/auth.js';
 import {
   form,
   authSubmitButton,
@@ -15,24 +16,6 @@ let emailValue;
 let nicknameValue;
 let passwordValue;
 let confirmPasswordValue;
-
-// 에러 메시지 표시
-const toggleError = (targetInput, message, isInputValid) => {
-  const inputContainer = targetInput.closest('.input-container');
-  if (!inputContainer) return;
-  const errorContainer = inputContainer.querySelector(
-    '.validation-error-message',
-  );
-  if (!isInputValid) {
-    targetInput.classList.add('error-input');
-    errorContainer.textContent = message;
-    errorContainer.classList.add('active');
-  } else {
-    targetInput.classList.remove('error-input');
-    errorContainer.textContent = '';
-    errorContainer.classList.remove('active');
-  }
-};
 
 // 개별 인풋 검증: 포커스아웃된 input만 검증하고 에러 메시지 표시
 const validateInput = (target) => {
