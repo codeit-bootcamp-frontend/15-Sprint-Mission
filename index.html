@@ -9,13 +9,15 @@
     <title>판다마켓</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-
 <body>
     <header>
         <nav class="header_contents">
-            <div>
-                <a href="/index.html"><img src="/image/header_logo.png"></a>
-            </div>
+            <a href="/index.html" alt="판다마켓">
+                <picture>
+                    <source media="(max-width: 768px)" srcset="/image/header_logo_mobile.png">
+                    <img src="/image/header_logo.png" alt="판다마켓 로고">
+                </picture>
+            </a>
             <div class="header_login">
                 <a class="link_color" href="/login_page/index.html">로그인</a>
             </div>
@@ -26,7 +28,7 @@
             <div class="banner_looking">
                 <div class="banner_text">일상의 모든 물건을
                     거래해 보세요</div>
-                <div class="looking"><a class="link_color" href="/items">구경하러 가기</a></div>
+                <div class="looking"><a class="link_color" href="/items/index.html">구경하러 가기</a></div>
             </div>
             <img src="./image/Img_home_top.png">
         </div>
@@ -62,7 +64,10 @@
         </div>
         <div class="main_in">
             <div class="third_item">
-                <img src="./image/Img_home_03.png">
+                <picture>
+                    <source media="(max-width: 768px)" srcset="/image/Img_home_03_mobile.png">
+                    <img src="/image/Img_home_03.png" alt="메인 세번째 아이템">
+                </picture>
                 <div class="items_third">
                     <div class="items_third1">Register</div>
                     <div class="items_third_text">

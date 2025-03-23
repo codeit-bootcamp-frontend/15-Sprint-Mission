@@ -116,11 +116,13 @@ a {
     border-radius: 12px;
     background-color: #FCFCFC;
     margin: 138px 466px;
+    align-items : center;
 }
 
 /* 메인페이지 첫번째 영역 */
 
 .first_item {
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items : center;
@@ -164,9 +166,10 @@ a {
     margin: 0px;
 }
 
-/* 메인페이지 2번째 영역 */
+/* 메인페이지 2번째 아이템템 */
 
 .second_item {
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items : center;
@@ -240,14 +243,14 @@ a {
     color: #3692FF;
     font-size: 18px;
     font-weight: 700;
-    margin: 0px;
+    margin: 0px 0px 8px 0px;
 }
 
 .items_third2 {
     color: #374151;
     font-size: 40px;
     font-weight: 700;
-    margin: 0px;
+    margin: 0px 0px 8px 0px;
 }
 
 .items_third3 {
@@ -616,7 +619,6 @@ footer {
     }
 
     .contents {
-        width: 100%;
         display: flex;
         flex-direction: column;
         margin: 52px 15px;
@@ -635,7 +637,11 @@ footer {
     /* 메인 첫번째 아이템 (모바일) */
     
     .first_item {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
         margin-bottom: 40px;
+        align-items: normal;
     }
 
     .items_first {
@@ -671,8 +677,10 @@ footer {
 
     .second_item {
         display: flex;
+        justify-content: center;
         flex-direction: column-reverse;
         margin-bottom: 40px;
+        align-items: normal;
     }
 
     .items_second {
@@ -712,11 +720,12 @@ footer {
     /* 메인 3번째 아이템 (모바일) */
 
     .third_item {
+        width: 100%;
         display: flex;
         justify-content: center;
         flex-direction: column;
         margin-bottom: 40px;
-        align-items: center;
+        align-items: normal;
     }
 
     .items_third {

@@ -108,3 +108,25 @@ html, body {
     font-weight: 500;
     margin: 0 auto;
 }
+
+@media (min-width: 375px) and (max-width: 767px) {
+
+    .inputbox, .signup_btn, .easy_login {
+        width: calc(100vw - 32px);
+        max-width: 400px;
+    }
+
+    .container {
+        width: 100%;
+        margin: 0px 16px;
+        box-sizing: border-box;
+    }
+
+    .container > * {
+        max-width: 100%;
+    }
+
+    .signup_sector {
+        margin-top: 24px;
+    }
+}
