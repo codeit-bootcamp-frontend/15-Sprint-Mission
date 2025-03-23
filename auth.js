@@ -17,7 +17,7 @@ const setInputError = (event) => {
     }
   } else if (
     event.target.id === "password" ||
-    event.target.id === "checkPassword"
+    event.target.id === "passwordCheck"
   ) {
     event.target.nextElementSibling?.remove();
     if (event.target.value.length < 8) {
@@ -47,7 +47,7 @@ const setErrorMessage = (element, type) => {
         case "nickname":
           errorMessage.textContent = "닉네임을 입력해주세요.";
           break;
-        case "checkPassword":
+        case "passwordCheck":
           errorMessage.textContent = "비밀번호 확인을 입력해주세요.";
           break;
       }
