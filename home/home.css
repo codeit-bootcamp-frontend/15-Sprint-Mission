@@ -154,17 +154,18 @@ footer {
   padding: 0 2rem;
   color: white;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   align-items: start;
   font-size: 1.6rem;
   justify-self: start;
 }
 
-.support {
-  justify-self: center;
+.privacy {
+  justify-self: end;
 }
-.support a {
-  margin-right: 1.5rem;
+
+.faq {
+  justify-self: center;
 }
 
 .social-media {
@@ -174,11 +175,7 @@ footer {
   justify-self: end;
 }
 
-/* 
-responsive CSS
-desktop-first(1920이상) 큰 모니터 
-breakpoint: 1919px(작은 모니터), 1199px(태블릿), 767px(모바일) (375px미만은 고려하지 않습니다.)
-*/
+/*responsive CSS*/
 
 @media (max-width: 1919px) {
   .home-header {
@@ -248,16 +245,21 @@ breakpoint: 1919px(작은 모니터), 1199px(태블릿), 767px(모바일) (375px
   }
 
   .footer-content {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 0.4fr 0.6fr;
     grid-template-areas:
-      'support social'
-      'copyright .';
+      'privacy faq social'
+      'copyright copyright copyright';
   }
 
-  .support {
-    grid-area: support;
+  .privacy {
+    grid-area: privacy;
     justify-self: start;
+  }
+
+  .faq {
+    grid-area: faq;
+    justify-self: center;
   }
 
   .social-media {
