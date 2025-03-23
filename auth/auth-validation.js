@@ -1,4 +1,5 @@
 import './password-visibility.js';
+import { validateEmail } from '../utils/validators.js';
 import { ERROR_MESSAGES } from '../constants/auth-validation-messages.js';
 import {
   form,
@@ -14,12 +15,6 @@ let emailValue;
 let nicknameValue;
 let passwordValue;
 let confirmPasswordValue;
-
-// 이메일 형식 검증
-const validateEmail = (email) => {
-  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  return regex.test(String(email));
-};
 
 // 에러 메시지 표시
 const toggleError = (targetInput, message, isInputValid) => {
