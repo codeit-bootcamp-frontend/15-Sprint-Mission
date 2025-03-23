@@ -1,15 +1,18 @@
-const visible = document.getElementsByClassName('visible');
+const passwordToggleButton = document.getElementsByClassName('visible');
 
 function passwordVisibility (e) {
-    if (e.target.getAttribute("src") === "/img/visibility_off.png") {
-        e.target.setAttribute("src", "/img/visibility_on.png");
-        e.target.parentElement.previousElementSibling.setAttribute("type", "text");
+    const toggleButton = e.target;
+    const input = e.target.parentElement.previousElementSibling;
+    
+    if (toggleButton.getAttribute("src") === "/img/visibility_off.png") {
+        toggleButton.setAttribute("src", "/img/visibility_on.png");
+        input.setAttribute("type", "text");
     } else {
-        e.target.setAttribute("src", "/img/visibility_off.png");
-        e.target.parentElement.previousElementSibling.setAttribute("type", "password");
+        toggleButton.setAttribute("src", "/img/visibility_off.png");
+        input.setAttribute("type", "password");
     }
 }
 
-for (let icon of visible) {
+for (const icon of passwordToggleButton) {
     icon.addEventListener('click', passwordVisibility);
 }
