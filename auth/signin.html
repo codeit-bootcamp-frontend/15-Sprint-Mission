@@ -14,7 +14,7 @@
     <title>판다마켓 로그인</title>
   </head>
   <body class="auth-body">
-    <script type="module" src="../index.js"></script>
+    <script type="module" src="./auth-validation.js"></script>
 
     <div class="auth-container">
       <header class="auth-header">
@@ -30,7 +30,7 @@
         </h1>
       </header>
 
-      <form class="auth-form" data-auth-type="login" method="POST">
+      <form class="auth-form" data-auth-type="signin" method="POST">
         <div class="input-container">
           <label for="email">이메일</label>
           <input
@@ -52,16 +52,11 @@
               placeholder="비밀번호를 입력해주세요"
             />
             <button
-              class="password-visibility"
+              class="password-visibility eye-closed"
               id="password-visibility"
               type="button"
-            >
-              <img
-                src="../images/close_eye_grey.svg"
-                alt="closed eye icon"
-                class="close-eye"
-              />
-            </button>
+              aria-label="비밀번호 보이기"
+            ></button>
           </div>
           <div class="validation-error-message"></div>
         </div>
@@ -74,12 +69,12 @@
         <ul class="oauth-site">
           <li>
             <a href="https://www.google.com" class="oauth-button">
-              <img src="../images/google_logo.svg" alt="google login button" />
+              <img src="../images/google_logo.svg" alt="google signin button" />
             </a>
           </li>
           <li>
             <a href="https://www.kakaocorp.com" class="oauth-button">
-              <img src="../images/kakao_logo.svg" alt="kakao login button" />
+              <img src="../images/kakao_logo.svg" alt="kakao signin button" />
             </a>
           </li>
         </ul>

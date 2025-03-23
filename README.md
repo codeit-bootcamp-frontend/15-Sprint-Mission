@@ -63,3 +63,23 @@
    | **chore** | 기타 일들 (빌드 스크립트, 환경 설정 등) |
 
 ## 폴더 구조
+
+project-root/
+├── dom/
+│ └── auth.js
+├── auth/
+│ ├── auth-validation.js
+│ ├── password-visibility.js
+│ ├── auth.css
+│ ├── signin.html
+│ └── signup.html
+├── common/
+│ ├── base.css
+│ └── reset.css
+├── constants/
+│ ├── api-urls.js
+│ └── auth-validation-messages.js
+├── home/
+│ └── home.css
+├── index.html
+└── index.css

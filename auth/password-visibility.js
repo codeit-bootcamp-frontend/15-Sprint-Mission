@@ -1,21 +1,17 @@
-const setupPasswordVisibility = () => {
-  const passwordToggleBtn = document.getElementById('password-visibility');
-  const confirmToggleBtn = document.getElementById(
-    'password-confirm-visibility',
-  );
-  const passwordInput = document.getElementById('password');
-  const confirmInput = document.getElementById('password-confirm');
+import {
+  passwordInput,
+  confirmPasswordInput,
+  passwordToggleBtn,
+  confirmToggleBtn,
+} from '../components/dom/auth.js';
 
+const setupPasswordVisibility = () => {
   function togglePasswordVisibility(targetInput, toggleBtn) {
-    if (targetInput.type === 'password') {
-      targetInput.type = 'text';
-      toggleBtn.querySelector('img').src = '../images/open_eye_grey.svg';
-      toggleBtn.querySelector('img').alt = 'open eye icon';
-    } else {
-      targetInput.type = 'password';
-      toggleBtn.querySelector('img').src = '../images/close_eye_grey.svg';
-      toggleBtn.querySelector('img').alt = 'closed eye icon';
-    }
+    const isPasswordHidden = targetInput.type === 'password';
+    targetInput.type = isPasswordHidden ? 'text' : 'password';
+
+    toggleBtn.classList.toggle('eye-open', isPasswordHidden);
+    toggleBtn.classList.toggle('eye-closed', !isPasswordHidden);
   }
 
   if (passwordInput && passwordToggleBtn) {
@@ -24,11 +20,11 @@ const setupPasswordVisibility = () => {
     });
   }
 
-  if (confirmInput && confirmToggleBtn) {
+  if (confirmPasswordInput && confirmToggleBtn) {
     confirmToggleBtn.addEventListener('click', () => {
-      togglePasswordVisibility(confirmInput, confirmToggleBtn);
+      togglePasswordVisibility(confirmPasswordInput, confirmToggleBtn);
     });
   }
 };
 
-document.addEventListener('DOMContentLoaded', setupPasswordVisibility);
+setupPasswordVisibility();

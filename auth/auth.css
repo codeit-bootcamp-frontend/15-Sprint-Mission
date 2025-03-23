@@ -81,6 +81,18 @@ input {
   right: 2.4rem;
   transform: translateY(-50%);
   background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border: none;
+}
+
+.password-visibility.eye-closed {
+  background-image: url('../images/close_eye.svg');
+}
+
+.password-visibility.eye-open {
+  background-image: url('../images/open_eye.svg');
 }
 
 .password-visibility:hover {

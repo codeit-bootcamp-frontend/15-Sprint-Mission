@@ -38,7 +38,7 @@ header h1 a {
   color: var(--primary-100);
 }
 
-.login-button {
+.signin-button {
   padding: 1.3rem 4rem;
   font-size: 1.2rem;
   border-radius: 8px;
@@ -46,7 +46,7 @@ header h1 a {
   color: white;
 }
 
-.login-button:hover {
+.signin-button:hover {
   background-color: var(--primary-200);
 }
 
