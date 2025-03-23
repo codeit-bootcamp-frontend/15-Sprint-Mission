@@ -3,6 +3,9 @@ const signupForm = document.querySelector(".signup-form");
 
 const setInputError = (event) => {
   console.dir(event.target);
+  if (event.target.closest("button")) {
+    return;
+  }
   if (event.target.value === "") {
     event.target.nextElementSibling?.remove();
     event.target.classList.add("input-error");
@@ -83,6 +86,9 @@ const setErrorMessage = (element, type) => {
 };
 
 const setInputValid = (event) => {
+  if (event.target.closest("button")) {
+    return;
+  }
   if (!event.target.classList.contains("input-error")) {
     event.target.classList.add("input-valid");
   } else {
