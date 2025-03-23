@@ -4,16 +4,21 @@
 
 ## 미션 목록
 
-| 미션 | 날짜       | PR                                                                           | 주요 내용                                                                                        |
-| ---- | ---------- | ---------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
-| 1    | 2025-02-24 | [#10](https://github.com/codeit-bootcamp-frontend/15-Sprint-Mission/pull/10) | 랜딩 페이지의 HTML 및 CSS 구현                                                                   |
-| 2    | 2025-03-05 | [#44](https://github.com/codeit-bootcamp-frontend/15-Sprint-Mission/pull/44) | 회원가입 및 로그인 페이지의 HTML, CSS 구현                                                       |
-| 3    | 2025-03-07 | [#60](https://github.com/codeit-bootcamp-frontend/15-Sprint-Mission/pull/60) | 반응형 디자인 구현(desktop-first, 1920px 이상 큰 모니터 기준), breakpoint: 1919px, 1199px, 767px |
-| 4    | 2025-03-18 | [#](https://github.com/codeit-bootcamp-frontend/15-Sprint-Mission/pull/)     | JS기능 추가(DOM 요소 조작 및 이벤트 리스너), 회원가입, 로그인 폼 유효성 검사                     |
+| 미션 | 날짜       | PR                                                                             | 주요 내용                                                                                        |
+| ---- | ---------- | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
+| 1    | 2025-02-24 | [#10](https://github.com/codeit-bootcamp-frontend/15-Sprint-Mission/pull/10)   | 랜딩 페이지의 HTML 및 CSS 구현                                                                   |
+| 2    | 2025-03-05 | [#44](https://github.com/codeit-bootcamp-frontend/15-Sprint-Mission/pull/44)   | 회원가입 및 로그인 페이지의 HTML, CSS 구현                                                       |
+| 3    | 2025-03-07 | [#60](https://github.com/codeit-bootcamp-frontend/15-Sprint-Mission/pull/60)   | 반응형 디자인 구현(desktop-first, 1920px 이상 큰 모니터 기준), breakpoint: 1919px, 1199px, 767px |
+| 4    | 2025-03-18 | [#101](https://github.com/codeit-bootcamp-frontend/15-Sprint-Mission/pull/101) | JS기능 추가(DOM 요소 조작 및 이벤트 리스너), 회원가입, 로그인 폼 유효성 검사                     |
 
 ---
 
 ## 컨벤션
+
+### 문자열
+
+- 기본 문자열은 따옴표를 사용합니다.
+- 변수가 포함될 때 등 필요에 따라 탬플릿 리터럴을 사용합니다.
 
 ### 명명 규칙
 
@@ -30,7 +35,7 @@
 
 ### 함수 규칙
 
-**화살표 함수**를 사용하되, this바인딩 고려 시 필요한 경우(이벤트 리스너의 콜백함수, 메소드 정의 등) 일반 함수도 사용 가능 합니다.
+- **화살표 함수**를 기본으로 사용하되, this바인딩 고려 시 필요한 경우 일반 함수도 사용 가능 합니다.
 
 ### 커밋 규칙
 
@@ -38,7 +43,7 @@
 2. 커밋 메시지 본문 작성은 선택사항입니다.
 3. 타입: 내용
    | **타입** | **내용** |
-   |------ ---|-----------|
+   |----------|-----------|
    | **feat** | 새로운 기능 추가 |
    | **fix** | 버그 수정 |
    | **docs** | 문서 변경 (README, Wiki 등) |
