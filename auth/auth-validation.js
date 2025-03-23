@@ -2,6 +2,7 @@ import './password-visibility.js';
 import { validateEmail } from '../utils/validators.js';
 import { toggleError } from '../utils/form.js';
 import { ERROR_MESSAGES } from '../constants/messages/auth.js';
+import { debounce } from '../utils/debounce.js';
 import {
   form,
   authSubmitButton,
@@ -16,31 +17,38 @@ const validateEmailInput = () => {
   const emailValue = emailInput.value.trim();
   if (emailValue === '') {
     toggleError(emailInput, ERROR_MESSAGES.emailRequired, false);
-  } else if (!validateEmail(emailValue)) {
-    toggleError(emailInput, ERROR_MESSAGES.invalidEmail, false);
-  } else {
-    toggleError(emailInput, '', true);
+    return;
   }
+
+  if (!validateEmail(emailValue)) {
+    toggleError(emailInput, ERROR_MESSAGES.invalidEmail, false);
+    return;
+  }
+
+  toggleError(emailInput, '', true);
 };
 
 const validateNicknameInput = () => {
   const nicknameValue = nicknameInput.value.trim();
   if (nicknameValue === '') {
     toggleError(nicknameInput, ERROR_MESSAGES.nicknameRequired, false);
-  } else {
-    toggleError(nicknameInput, '', true);
+    return;
   }
+  toggleError(nicknameInput, '', true);
 };
 
 const validatePasswordInput = () => {
   const passwordValue = passwordInput.value.trim();
   if (passwordValue === '') {
     toggleError(passwordInput, ERROR_MESSAGES.passwordRequired, false);
-  } else if (passwordValue.length < 8) {
-    toggleError(passwordInput, ERROR_MESSAGES.passwordLength, false);
-  } else {
-    toggleError(passwordInput, '', true);
+    return;
   }
+
+  if (passwordValue.length < 8) {
+    toggleError(passwordInput, ERROR_MESSAGES.passwordLength, false);
+    return;
+  }
+  toggleError(passwordInput, '', true);
 };
 
 const validateConfirmPasswordInput = () => {
@@ -52,11 +60,14 @@ const validateConfirmPasswordInput = () => {
       ERROR_MESSAGES.confirmPasswordRequired,
       false,
     );
-  } else if (confirmPasswordValue && confirmPasswordValue !== passwordValue) {
-    toggleError(confirmPasswordInput, ERROR_MESSAGES.passwordMismatch, false);
-  } else {
-    toggleError(confirmPasswordInput, '', true);
+    return;
   }
+
+  if (confirmPasswordValue && confirmPasswordValue !== passwordValue) {
+    toggleError(confirmPasswordInput, ERROR_MESSAGES.passwordMismatch, false);
+    return;
+  }
+  toggleError(confirmPasswordInput, '', true);
 };
 
 // 인풋 유효성 검사
@@ -103,20 +114,29 @@ form.addEventListener('focusout', function (event) {
   }
 });
 
-// 비번 입력 시 확인 입력 값도 같이 검사
-passwordInput.addEventListener('input', () => {
-  validatePasswordInput();
-  if (confirmPasswordInput.value.trim() !== '') {
-    validateConfirmPasswordInput();
-  }
-});
+// '비번' 입력 시 '비번확인' 입력 값도 같이 검사,debounce로 입력이 멈추면 검사
+passwordInput.addEventListener(
+  'input',
+  debounce(() => {
+    validatePasswordInput();
+    if (confirmPasswordInput.value.trim() !== '') {
+      validateConfirmPasswordInput();
+    }
+  }, 500),
+);
 
 confirmPasswordInput.addEventListener('input', () => {
   validateConfirmPasswordInput();
 });
 
 // 인풋 입력 시 제출 버튼 상태 업데이트(form이 유효성 검사를 통과하면 focus를 옮기지 않아도 자동 버튼 활성화되도록)
-form.addEventListener('input', updateSubmitButtonState);
+// 인풋이 바뀔 때마다 유효성 검사 너무 자주 실행되면 성능에 부담이 생기니까 debounce로 제어
+form.addEventListener(
+  'input',
+  debounce(() => {
+    updateSubmitButtonState();
+  }, 100),
+);
 
 // 폼 제출 시 전체 폼 검증 후 페이지 이동 처리
 form.addEventListener('submit', function (event) {
