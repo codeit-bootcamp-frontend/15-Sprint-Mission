@@ -1,4 +1,4 @@
-/* Tablet: 768px 이상 ~ 1199px 이하 */
+/* Tablet: 1199px 까지 적용 */
 @media screen and (max-width: 1199px) {
   html {
     font-size: 8px;
@@ -85,7 +85,7 @@
   }
 }
 
-/* Mobile: 375px 이상 ~ 767px 이하 */
+/* Mobile: 767px 이하까지 적용 */
 @media screen and (max-width: 767px) {
   html {
     font-size: 6px;

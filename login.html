@@ -3,20 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta property="og:title" content="판다 마켓" />
-    <meta property="og:description" content="일상의 모든 물건을 거래해보세요" />
-    <meta property="og:url" content="https://jinwoo-sprint3.netlify.app.com" />
-    <meta
-      property="og:image"
-      content="https://jinwoo-sprint3.netlify.app/img/logo.png"
-    />
-    <meta property="og:type" content="website" />
     <link
       rel="stylesheet"
       as="style"
       crossorigin
       href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
     />
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="/style/reset.css" />
     <link rel="stylesheet" href="/style/base.css" />
     <link rel="stylesheet" href="/style/auth.css" />
@@ -25,21 +18,23 @@
 
   <body class="login-page">
     <header class="page-header">
-      <a href="/"
-        ><img src="img/logo.png" alt="판다마켓 로고" class="logo"
-      /></a>
+      <a href="/">
+        <img src="img/logo.png" alt="판다마켓 로고" class="logo" />
+      </a>
     </header>
     <main class="page-main">
       <section>
         <form class="form-container">
           <div class="email-container">
             <label for="input-email">이메일</label>
-            <input
-              id="input-email"
-              name="email"
-              type="email"
-              placeholder="이메일을 입력해주세요"
-            />
+            <div class="email-input">
+              <input
+                id="input-email"
+                name="email"
+                type="email"
+                placeholder="이메일을 입력해주세요"
+              />
+            </div>
           </div>
 
           <div class="password-container">
@@ -60,18 +55,19 @@
       </section>
       <section class="social-login">
         <p>간편 로그인하기</p>
-        <ul>
+        <ul class="social-list">
           <li>
-            <a href="https://www.google.com/"
-              ><img src="img/login/google_logo.png" alt="구글 계정으로 로그인"
-            /></a>
+            <a href="https://www.google.com/">
+              <img src="img/login/google_logo.png" alt="구글 계정으로 로그인" />
+            </a>
           </li>
           <li>
-            <a href="https://www.kakaocorp.com/page/"
-              ><img
+            <a href="https://www.kakaocorp.com/page/">
+              <img
                 src="img/login/kakao_logo.png"
                 alt="카카오톡 계정으로 로그인"
-            /></a>
+              />
+            </a>
           </li>
         </ul>
       </section>
@@ -79,6 +75,8 @@
         <p>판다마켓이 처음이신가요?</p>
         <a href="/signup.html">회원가입</a>
       </section>
+
+      <script type="module" src="js/login.js"></script>
     </main>
   </body>
 </html>

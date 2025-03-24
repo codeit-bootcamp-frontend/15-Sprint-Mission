@@ -21,7 +21,7 @@ nav {
   font-size: 1.6rem;
   font-weight: 600;
   color: #ffffff;
-  background-color: var(--blue);
+  background-color: var(--blue100);
   border-radius: 8px;
   padding: 12px 23px;
 }
@@ -80,7 +80,7 @@ nav {
   font-size: 2rem;
   font-weight: 600;
   color: #ffffff;
-  background-color: var(--blue);
+  background-color: var(--blue100);
   padding: 16px 124px;
   border-radius: 40px;
   margin-top: 3.2rem;
@@ -123,7 +123,7 @@ nav {
   font-size: 1.8rem;
   font-weight: 700;
   line-height: 5.6rem;
-  color: var(--blue);
+  color: var(--blue100);
 }
 
 .big-text {
