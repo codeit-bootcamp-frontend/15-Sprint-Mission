@@ -17,6 +17,8 @@
       src="https://kit.fontawesome.com/0f08ea7d4a.js"
       crossorigin="anonymous"
     ></script>
+    <script src="/js/loginValidation.js" defer></script>
+    <script src="/js/toggleVisibleIcon.js" defer></script>
   </head>
   <body>
     <header>
@@ -29,29 +31,38 @@
       </a>
     </header>
     <main class="login-main">
-      <form action="" method="post" class="login-form">
+      <form action="/items/" method="get" class="login-form">
         <label for="email">이메일</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          placeholder="이메일을 입력해주세요"
-          class="login-input"
-        />
-        <label for="password">비밀번호</label>
-        <div class="password-container">
+        <div id="email-container">
           <input
-            type="password"
-            id="password"
-            name="password"
-            placeholder="비밀번호를 입력해주세요"
+            type="text"
+            id="email"
+            name="email"
+            placeholder="이메일을 입력해주세요"
             class="login-input"
+            maxlength="50"
           />
-          <button type="button" class="password-toggle-icon">
-            <i class="fa-regular fa-eye"></i>
-          </button>
+          <div id="email-error"></div>
         </div>
-        <button class="login-btn">로그인</button>
+        <label for="password">비밀번호</label>
+        <div id="password-container">
+          <div class="password-input-wrapper">
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="비밀번호를 입력해주세요"
+              class="login-input"
+              min="8"
+              maxlength="50"
+            />
+            <button type="button" class="password-toggle-icon">
+              <i class="fa-regular fa-eye"></i>
+            </button>
+          </div>
+          <div id="password-error"></div>
+        </div>
+        <button id="login-btn" disabled>로그인</button>
       </form>
       <section class="login-social">
         <span>간편 로그인하기</span>

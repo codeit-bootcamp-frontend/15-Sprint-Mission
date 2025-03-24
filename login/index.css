@@ -49,14 +49,21 @@ label {
   width: 100%;
 }
 
-.password-container {
+#password-container {
   display: flex;
-  position: relative;
+  flex-direction: column; /* 오류 메시지가 아래로 배치되도록 설정 */
+  gap: 4px; /* input과 오류 메시지 간격 조정 */
+}
+
+.password-input-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative; /* 내부 아이콘 위치를 조정하기 위한 기준점 */
 }
 
 .password-toggle-icon {
   position: absolute;
-  right: 10px;
+  right: 14px;
   top: 50%;
   transform: translateY(-50%);
   background: transparent;
@@ -66,7 +73,14 @@ label {
   color: #4b5563;
 }
 
-.login-btn {
+#password-error {
+  min-height: 18px; /* 오류 메시지가 없을 때도 공간을 차지하도록 설정 */
+  color: red;
+  font-size: 14px;
+  padding-left: 8px;
+}
+
+#login-btn {
   padding: 18px;
   border: none;
   border-radius: 12px;
@@ -75,7 +89,6 @@ label {
   margin-top: 12px;
   width: 100%;
   font-size: 20px;
-  cursor: pointer;
 }
 
 .login-social {
@@ -108,6 +121,22 @@ label {
 .sign-up-link {
   color: var(--primary-color);
   text-decoration: underline;
+}
+
+.error-input {
+  border: 1px solid red;
+}
+
+.email-error-box,
+.password-error-box {
+  color: red;
+  font-size: 14px;
+  padding: 8px 0 0 8px;
+}
+
+#login-btn.abled {
+  background-color: var(--primary-color);
+  cursor: pointer;
 }
 
 @media (min-width: 375px) {
