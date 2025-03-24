@@ -1,3 +1,4 @@
+
 body {
   display: flex;
   justify-content: center;
@@ -82,9 +83,10 @@ body {
 }
 
 .login-form button {
+  cursor: pointer;
   width: 472px;
   height: 40px;
-  background-color: #3692FF;
+  background-color: #9CA3AF;
   color: #ffffff;
   border-radius: 20px;
   border-width: 0;
@@ -131,4 +133,16 @@ body {
 
 .signup a {
   color: #3692FF;
+}
+
+@media (max-width: 767px) {
+  .login-container{
+    width: calc(100% - 32px);
+    max-width: 400px;
+    padding: 0 16px;
+  }
+
+  .login-form button {
+    width: 100%;
+  }
 }

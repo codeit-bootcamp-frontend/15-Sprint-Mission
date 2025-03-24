@@ -4,8 +4,12 @@
   box-sizing: border-box;
 }
 
-body {
+html, body {
   font-family: "Pretendard";
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 header {
@@ -76,7 +80,6 @@ header {
 .bottom-title {
   display: flex;
   flex-direction: column;
-  gap: 10px;
   margin-top: 100px;
 }
 
@@ -113,7 +116,11 @@ header {
 }
 
 .middle-section {
-  height: 1200px;
+  flex-grow: 1;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .hot-item,
@@ -122,7 +129,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 400px;
+  padding: 10px 0;
 }
 
 .hot-item img,
@@ -184,6 +191,7 @@ footer {
   height: 100px;
   color: #9CA3AF;
   background-color: #111827;
+  margin-top: auto;
 }
 
 .footer-text {
@@ -198,4 +206,155 @@ footer {
   color: #FFFFFF;
   text-decoration: none;
   margin: 0 10px;
+}
+
+.sns {
+  display: flex;
+  gap: 10px;
+}
+
+
+/* Media Query */
+
+/* Tablet: 768px 이상 ~ 1199px 이하 */
+@media (max-width: 1199px) {
+  .banner {
+    padding: 0 24px;
+  }
+
+  .top-section,
+  .bottom-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 480px;
+  }
+
+  .top-content,
+  .bottom-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    text-align: center;
+  }
+
+  .top-title h2,
+  .bottom-title h2 {
+    font-size: 27px;
+    margin: 0 auto;
+    width: 100%;
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+
+  /* 적용이 안되는 이유를 못찾음 */
+  .top-title h2.no-wrap {
+    white-space: nowrap;
+  }
+
+  .top-title a {
+    margin: 0 auto;
+  }
+
+  .top-content img,
+  .bottom-content img {
+    align-items: center;
+    align-self: center;
+    margin-top: 70px;
+    width: 520px;
+  }
+
+  .middle-section {
+    flex-grow: 1;
+  }
+
+  .hot-item,
+  .search,
+  .register {
+    flex-direction: column;
+  }
+
+  .hot-item img,
+  .search img,
+  .register img {
+    width: 600px;
+    height: 400px;
+    order: -1;
+  }
+
+  .hot-item-text,
+  .register-text {
+    background-color: #FFFFFF;
+    text-align: left;
+    margin-right: 420px;
+  }
+
+  .search-text {
+    background-color: #FFFFFF;
+    text-align: right;
+    margin-left: 420px;
+  }
+
+  /* 적용이 안되는 이유를 못찾음 */
+  .hot-item-main,
+  .search-main,
+  .register-main {
+    display: inline-block;
+    white-space: nowrap !important;
+  }
+}
+
+/* Mobile: 375px 이상 ~ 767px 이하 */
+@media (max-width: 767px) {
+  .banner {
+    padding: 0 16px;
+  }
+
+  footer {
+    height: 150px;
+  }
+
+  .footer-text {
+    display: flex;
+    justify-content: center;
+    padding: 16px;
+  }
+
+  .footer-main,
+  .sns {
+    display: flex;
+    width: 50%;
+    margin-top: 10px;
+  }
+
+  .footer-main a {
+    margin-right: 80px;
+  }
+
+  .sns a {
+    margin-right: 5px;
+  }
+
+  .footer-text {
+    flex-wrap: wrap;
+    justify-content: left;
+  }
+
+  .footer-main {
+    order: 1;
+    width: 50%;
+  }
+
+  .sns {
+    order: 2;
+    width: 50%;
+  }
+
+  .footer-text > div:first-child {
+    order: 3;
+    width: 100%;
+    text-align: left;
+    margin-top: 30px;
+  }
 }

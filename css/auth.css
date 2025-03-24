@@ -1,3 +1,9 @@
+
+/* 아직 분리 후 완료하지않음 */
+
+/* login.css 와 signup.css 공통 사용 코드 */
+
+/* 전체 페이지 스타일 */
 body {
   display: flex;
   justify-content: center;
@@ -7,8 +13,8 @@ body {
   margin: 0;
 }
 
-/* 회원가입 컨테이너 */
-.signup-container {
+/* 컨테이너 공통 스타일 */
+.auth-container {
   text-align: center;
   background-color: #ffffff;
   padding: 50px;
@@ -16,7 +22,7 @@ body {
 }
 
 /* 로고 스타일 */
-.signup-logo {
+.auth-logo {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -35,22 +41,22 @@ body {
   font-family: "ROKAF Sans";
 }
 
-/* 폼 작성 스타일 */
-.signup-form {
+/* 폼 스타일 */
+.auth-form {
   display: flex;
   flex-direction: column;
   width: 100%;
   gap: 10px;
 }
 
-.signup-form label {
+.auth-form label {
   font-size: 14px;
   font-weight: bold;
   color: #1F2937;
   text-align: left;
 }
 
-.signup-form input {
+.auth-form input {
   width: 100%;
   padding: 10px;
   border: 1px solid #F3F4F6;
@@ -59,6 +65,7 @@ body {
   background-color: #F3F4F6;
 }
 
+/* 비밀번호 입력 영역 */
 .password-wrapper {
   position: relative;
   display: flex;
@@ -76,11 +83,12 @@ body {
 }
 
 .toggle-btn {
-  width: 14px;
-  height: 14px;
+  width: 20px;
+  height: 20px;
 }
 
-.signup-form button {
+/* 버튼 스타일 */
+.auth-form button {
   cursor: pointer;
   width: 472px;
   height: 40px;
@@ -91,6 +99,7 @@ body {
   margin: 10px 0 20px;
 }
 
+/* 간편 로그인 스타일 */
 .conv-login {
   position: relative;
   display: flex;
@@ -125,6 +134,7 @@ body {
   height: 30px;
 }
 
+/* 회원가입 링크 */
 .signup {
   font-size: 12px;
 }
@@ -133,14 +143,15 @@ body {
   color: #3692FF;
 }
 
+/* 반응형 스타일 */
 @media (max-width: 767px) {
-  .signup-container{
+  .auth-container {
     width: calc(100% - 32px);
     max-width: 400px;
     padding: 0 16px;
   }
 
-  .signup-form button {
+  .auth-form button {
     width: 100%;
   }
 }
