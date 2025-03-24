@@ -1,0 +1,17 @@
+:root {
+  --primary-color: #3692ff;
+  --secondary-color: #cfe5ff;
+  --footer-color: #111827;
+  --primary-text-color: #374151;
+  --secondary-text-color: #9ca3af;
+  --white: #ffffff;
+  --input-color: #f3f4f6;
+  --label-color: #1f2937;
+  --disable-color: #9ca3af;
+
+  --mobile-min: 375px;
+  --mobile-max: 767px;
+  --tablet-min: 768px;
+  --tablet-max: 1199px;
+  --pc-min: 1200px;
+}
