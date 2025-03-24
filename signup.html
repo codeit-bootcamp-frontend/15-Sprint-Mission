@@ -4,13 +4,14 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>판다마켓-회원가입</title>
-        <link rel="stylesheet" href="style2.css" />
+        <link rel="stylesheet" href="reset.css" />
+        <link rel="stylesheet" href="auth.css" />
         <link rel="stylesheet" href="style.css" />
     </head>
     <body>
         <main class="container">
             <div class="logo-wrap">
-                <a href="/"> <img src="images/logo.png" alt="판다마켓 로고" /></a>
+                <a href="/"> <img src="images/logo.png" alt="판다마켓 로고" class="logo2" /></a>
             </div>
             <form method="post">
                 <div class="form-group">
@@ -25,8 +26,7 @@
                     <label for="password">비밀번호</label>
                     <div class="password-wrap">
                         <input type="password" id="password" name="password" placeholder="비밀번호를 입력해 주세요" />
-                        <!--<button class="password-button" type="button"><img href="images/unvisible_eye.png" /></button>-->
-                        <!--눈아이콘을 만들고 싶었는데 작동하지 않아요-->
+                        <button class="password-button" type="button"><img src="images/unvisible_eye.png" /></button>
                     </div>
                 </div>
                 <div class="form-group">
@@ -37,13 +37,13 @@
                             id="password"
                             name="password"
                             placeholder="비밀번호를 다시 한 번 입력해 주세요" />
-                        <!-- <button class="password-button" type="button"><img href="images/unvisible_eye.png" /></button>-->
+                        <button class="password-button" type="button"><img src="images/unvisible_eye.png" /></button>
                     </div>
                     <button class="login-button" type="submit">회원가입</button>
                 </div>
             </form>
             <div class="login-method-container">
-                <h3>간편 로그인하기</h3>
+                <h3 class="social-login-button">간편 로그인하기</h3>
                 <div class="login-method-wrap">
                     <a href="https://www.google.com/">
                         <img src="images/google_logo.png" alt="구글 로그인" width="42" />
