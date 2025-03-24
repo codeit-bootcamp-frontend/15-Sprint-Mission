@@ -16,6 +16,7 @@
     />
     <link rel="stylesheet" href="common.css" />
     <link rel="stylesheet" href="auth.css" />
+    <script defer type="module" src="signup.js"></script>
   </head>
   <body>
     <div class="auth-container">
@@ -31,56 +32,76 @@
       <main>
         <form>
           <div class="email-page">
-            <label for="signup-email">이메일</label>
+            <label for="email">이메일</label>
             <input
-              id="signup-email"
+              id="email"
               name="email"
               type="email"
               placeholder="이메일을 입력해주세요"
             />
+            <div class="email-error-message"></div>
           </div>
           <div class="name-page">
-            <label for="signup-name">닉네임</label>
+            <label for="name">닉네임</label>
             <input
-              id="signup-name"
+              id="name"
               name="name"
               type="text"
               placeholder="닉네임을 입력해주세요"
             />
+            <div class="name-error-message"></div>
           </div>
           <div class="password-page">
-            <label for="signup-password">비밀번호</label>
-            <input
-              id="signup-password"
-              name="password"
-              type="password"
-              placeholder="비밀번호를 입력해주세요"
-            />
-            <button class="password-eye-button" type="button">
-              <img
-                class="password-eye"
-                src="icon-img/closed-eye.svg"
-                alt="눈에 사선이 쳐진 아이콘"
+            <label for="password">비밀번호</label>
+            <div class="password-group">
+              <input
+                id="password"
+                name="password"
+                type="password"
+                placeholder="비밀번호를 입력해주세요"
               />
-            </button>
+              <button
+                id="pw-visibility"
+                class="password-eye-button"
+                type="button"
+              >
+                <img
+                  id="pw-eye"
+                  class="password-eye"
+                  src="icon-img/closed-eye.svg"
+                  alt="눈에 사선이 쳐진 아이콘"
+                />
+              </button>
+            </div>
+            <div class="pw-error-message"></div>
           </div>
           <div class="password-repeat-page">
-            <label for="signup-password-repeat">비밀번호 확인</label>
-            <input
-              id="signup-password-repeat"
-              name="password-repeat"
-              type="password"
-              placeholder="비밀번호를 다시 한 번 입력해주세요"
-            />
-            <button class="password-eye-button" type="button">
-              <img
-                class="password-eye"
-                src="icon-img/closed-eye.svg"
-                alt="눈에 사선이 쳐진 아이콘"
+            <label for="password-repeat">비밀번호 확인</label>
+            <div class="password-repeat-group">
+              <input
+                id="password-repeat"
+                name="password-repeat"
+                type="password"
+                placeholder="비밀번호를 다시 한 번 입력해주세요"
               />
-            </button>
+              <button
+                id="pw-repeat-visibility"
+                class="password-eye-button"
+                type="button"
+              >
+                <img
+                  id="pw-repeat-eye"
+                  class="password-eye"
+                  src="icon-img/closed-eye.svg"
+                  alt="눈에 사선이 쳐진 아이콘"
+                />
+              </button>
+            </div>
+            <div class="pw-repeat-error-message"></div>
           </div>
-          <button class="auth-button" type="submit">회원가입</button>
+          <button id="signup-button" class="auth-button" type="submit">
+            회원가입
+          </button>
         </form>
         <div class="quick-login">
           <div class="sns-login-title">간편 로그인하기</div>
@@ -105,10 +126,10 @@
             </li>
           </ul>
         </div>
+        <div class="auth-switch">
+          이미 회원이신가요?&nbsp;<a href="login.html">로그인</a>
+        </div>
       </main>
-      <footer>
-        <div>이미 회원이신가요? <a href="login.html">로그인</a></div>
-      </footer>
     </div>
   </body>
 </html>

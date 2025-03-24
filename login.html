@@ -16,6 +16,7 @@
     />
     <link rel="stylesheet" href="common.css" />
     <link rel="stylesheet" href="auth.css" />
+    <script defer type="module" src="login.js"></script>
   </head>
   <body>
     <div class="auth-container">
@@ -38,25 +39,30 @@
               type="email"
               placeholder="이메일을 입력해주세요"
             />
+            <div class="email-error-message"></div>
           </div>
           <div class="password-page">
             <label for="password">비밀번호</label>
-            <input
-              id="password"
-              name="password"
-              type="password"
-              placeholder="비밀번호를 입력해주세요"
-            />
-            <button class="password-eye-button" type="button">
-              <img
-                class="password-eye"
-                src="icon-img/closed-eye.svg"
-                alt="눈에 사선이 쳐진 아이콘"
+            <div class="password-group">
+              <input
+                id="password"
+                name="password"
+                type="password"
+                placeholder="비밀번호를 입력해주세요"
               />
-            </button>
+              <button class="password-eye-button" type="button">
+                <img
+                  class="password-eye"
+                  src="icon-img/closed-eye.svg"
+                  alt="눈에 사선이 쳐진 아이콘"
+                />
+              </button>
+            </div>
+            <div class="pw-error-message"></div>
           </div>
-
-          <button class="auth-button" type="submit">로그인</button>
+          <button id="login-button" class="auth-button" type="submit">
+            로그인
+          </button>
         </form>
         <div class="quick-login">
           <div class="sns-login-title">간편 로그인하기</div>
@@ -81,10 +87,10 @@
             </li>
           </ul>
         </div>
+        <div class="auth-switch">
+          판다마켓이 처음이신가요?&nbsp; <a href="signup.html">회원가입</a>
+        </div>
       </main>
-      <footer>
-        <div>판다마켓이 처음이신가요? <a href="signup.html">회원가입</a></div>
-      </footer>
     </div>
   </body>
 </html>
