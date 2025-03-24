@@ -38,3 +38,12 @@ footer {
   display: flex;
   gap: 12px;
 }
+
+@media (max-width: 767px) and (min-width: 375px) {
+  header {
+    padding: 0 16px;
+  }
+  footer {
+    padding: 32px 16px 108px 16px;
+  }
+}
