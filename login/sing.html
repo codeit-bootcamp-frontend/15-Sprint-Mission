@@ -1,11 +1,168 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>회원가입 - 판다마켓</title>
+    <link rel="stylesheet" href="/login/sing.css">
 </head>
 <body>
-    
+    <div class="sing-container">
+        <div class="logo">
+            <a href="/index.html">
+                <img src="/images/loginLogo.png" alt="판다마켓 로고">
+            </a>
+        </div>
+        <form class="sing-form">
+            <div class="input-group">
+                <label for="email">이메일</label>
+                <input type="email" id="email" name="email" placeholder="이메일을 입력하세요." required>
+                <p class="error-message" id="email-error"></p>
+            </div>
+
+            <div class="input-group">
+                <label for="nickname">닉네임</label>
+                <input type="text" id="nickname" name="nickname" placeholder="닉네임을 입력하세요." required>
+                <p class="error-message" id="nickname-error"></p>
+            </div>
+
+            <div class="input-group">
+                <label for="password">비밀번호</label>
+                <div class="password-wrapper">
+                    <input type="password" id="password" name="password" placeholder="비밀번호를 입력하세요." required>
+                    <span class="toggle-password">👁️</span>
+                </div>
+                <p class="error-message" id="password-error"></p>
+            </div>
+
+            <div class="input-group">
+                <label for="confirm-password">비밀번호 확인</label>
+                <div class="password-wrapper">
+                    <input type="password" id="confirm-password" name="confirm-password" placeholder="비밀번호를 다시 입력하세요." required>
+                    <span class="toggle-password">👁️</span>
+                </div>
+                <p class="error-message" id="confirm-password-error"></p>
+            </div>
+
+            <button type="submit" class="sing-btn" id="sing-btn" disabled>회원가입</button>
+        </form>
+
+        <div class="social-sing">
+            <p>간편 로그인하기</p>
+            <div class="social-icons">
+                <img src="/images/Component 2.png" alt="Google 로그인">
+                <img src="/images/Component 3.png" alt="Kakao 로그인">
+            </div>
+        </div>
+
+        <p class="signup-text">이미 회원이신가요? <a href="/login/login.html">로그인</a></p>
+    </div>
+
+    <script>
+        const emailInput = document.getElementById("email");
+        const nicknameInput = document.getElementById("nickname");
+        const passwordInput = document.getElementById("password");
+        const confirmPasswordInput = document.getElementById("confirm-password");
+        const singBtn = document.getElementById("sing-btn");
+
+        const emailError = document.getElementById("email-error");
+        const nicknameError = document.getElementById("nickname-error");
+        const passwordError = document.getElementById("password-error");
+        const confirmPasswordError = document.getElementById("confirm-password-error");
+
+        // 이메일 검증 함수
+        function validateEmail() {
+            const emailValue = emailInput.value.trim();
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (emailValue === "") {
+                emailError.textContent = "이메일을 입력해주세요.";
+                emailInput.classList.add("error");
+            } else if (!emailRegex.test(emailValue)) {
+                emailError.textContent = "잘못된 이메일 형식입니다.";
+                emailInput.classList.add("error");
+            } else {
+                emailError.textContent = "";
+                emailInput.classList.remove("error");
+            }
+            checkFormValidity();
+        }
+
+        // 닉네임 검증 함수
+        function validateNickname() {
+            const nicknameValue = nicknameInput.value.trim();
+            if (nicknameValue === "") {
+                nicknameError.textContent = "닉네임을 입력해주세요.";
+                nicknameInput.classList.add("error");
+            } else {
+                nicknameError.textContent = "";
+                nicknameInput.classList.remove("error");
+            }
+            checkFormValidity();
+        }
+
+        // 비밀번호 검증 함수
+        function validatePassword() {
+            const passwordValue = passwordInput.value.trim();
+            if (passwordValue === "") {
+                passwordError.textContent = "비밀번호를 입력해주세요.";
+                passwordInput.classList.add("error");
+            } else if (passwordValue.length < 8) {
+                passwordError.textContent = "비밀번호를 8자 이상 입력해주세요.";
+                passwordInput.classList.add("error");
+            } else {
+                passwordError.textContent = "";
+                passwordInput.classList.remove("error");
+            }
+            validateConfirmPassword();
+            checkFormValidity();
+        }
+
+        // 비밀번호 확인 검증 함수
+        function validateConfirmPassword() {
+            const passwordValue = passwordInput.value.trim();
+            const confirmPasswordValue = confirmPasswordInput.value.trim();
+            if (confirmPasswordValue !== passwordValue) {
+                confirmPasswordError.textContent = "비밀번호가 일치하지 않습니다.";
+                confirmPasswordInput.classList.add("error");
+            } else {
+                confirmPasswordError.textContent = "";
+                confirmPasswordInput.classList.remove("error");
+            }
+            checkFormValidity();
+        }
+
+        // 폼 유효성 검사 → 회원가입 버튼 활성화 여부 결정
+        function checkFormValidity() {
+            if (
+                emailError.textContent === "" &&
+                nicknameError.textContent === "" &&
+                passwordError.textContent === "" &&
+                confirmPasswordError.textContent === "" &&
+                emailInput.value.trim() !== "" &&
+                nicknameInput.value.trim() !== "" &&
+                passwordInput.value.trim() !== "" &&
+                confirmPasswordInput.value.trim() !== ""
+            ) {
+                singBtn.disabled = false;
+            } else {
+                singBtn.disabled = true;
+            }
+        }
+
+        // 이벤트 리스너 추가
+        emailInput.addEventListener("focusout", validateEmail);
+        nicknameInput.addEventListener("focusout", validateNickname);
+        passwordInput.addEventListener("focusout", validatePassword);
+        confirmPasswordInput.addEventListener("focusout", validateConfirmPassword);
+
+        // 회원가입 버튼 클릭 시 로그인 페이지로 이동
+        document.querySelector(".sing-form").addEventListener("submit", function(event) {
+            event.preventDefault(); // 기본 폼 제출 방지
+            if (!singBtn.disabled) {
+                window.location.href = "/login/login.html";
+            }
+        });
+    </script>
 </body>
 </html>
