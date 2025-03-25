@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>판다마켓 - 회원가입</title>
+    <title>판다마켓 - 로그인</title>
     <link rel="icon" href="images/logo/favicon.ico" />
     <link
       rel="stylesheet"
@@ -11,7 +11,7 @@
       crossorigin
       href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
     />
-    <link rel="stylesheet" href="Style/login.css" />
+    <link rel="stylesheet" href="Style/registration.css" />
   </head>
 
   <body>
@@ -20,7 +20,6 @@
         <a href="index.html">
           <img id="login" src="images/logo/panda-market-logo.png" alt="pandalogin">
         </a>
-        
       </h1>
       <div class="container">
         <label class="emailpass">이메일</label>
@@ -31,11 +30,27 @@
         />  
       </div>
       <div class="container">
+        <label class="emailpass">닉네임</label>
+        <input
+          name="username"
+          type="username"
+          placeholder="닉네임"
+        />  
+      </div>
+      <div class="container">
         <label class="emailpass">비밀번호</label>
         <input
           name="password"
           type="password"
           placeholder="비밀번호"
+        />  
+      </div>
+      <div class="container">
+        <label class="emailpass">비밀번호 확인</label>
+        <input
+          name="password"
+          type="password"
+          placeholder="비밀번호 확인"
         />  
       </div>
       <div class="container">
@@ -56,10 +71,9 @@
         </div>
       </div>
       <div id="memberq">
-        판다마켓이 처음이신가요?
-        <a id="join" href="registration.html">회원가입</a>
+        이미 회원이신가요?
+        <a id="join" href="login.html">로그인</a>
       </div>
     </form>
-    <script src="src/main.js"></script>
   </body>
 </html>
