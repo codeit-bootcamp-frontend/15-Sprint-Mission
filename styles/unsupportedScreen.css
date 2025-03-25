@@ -1,5 +1,9 @@
-@media screen and (max-width: 374px) and (min-width: 0px) {
-  body .unsupported-screen {
+.unsupported-screen {
+  display: none;
+}
+
+@media screen and (max-width: 374px) {
+  .unsupported-screen {
     width: 100vw;
     height: 100vh;
 

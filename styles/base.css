@@ -28,7 +28,3 @@ body {
 button {
   cursor: pointer;
 }
-
-.unsupported-screen {
-  display: none;
-}

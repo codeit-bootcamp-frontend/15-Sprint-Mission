@@ -22,14 +22,16 @@
         </a>
       </header>
 
-      <form class="form-account">
+      <form class="form-account" action="items.html">
         <label class="label-account">
           이메일
           <input
             type="email"
             placeholder="이메일을 입력해주세요"
             class="input-account"
+            id="email"
           />
+          <p class="msg-error"></p>
         </label>
         <label class="label-account">
           비밀번호
@@ -37,10 +39,14 @@
             type="password"
             placeholder="비밀번호를 입력해주세요"
             class="input-account password"
+            id="password"
           />
-          <button class="btn-visibility-on"></button>
+          <button class="btn-visibility-on" type="button"></button>
+          <p class="msg-error"></p>
         </label>
-        <button class="btn-submit" type="submit">로그인</button>
+        <button class="btn-submit" type="submit" id="login" disabled>
+          로그인
+        </button>
       </form>
 
       <div class="social-login-container">
@@ -70,5 +76,8 @@
         브라우저의 크기를 넓혀주세요.
       </p>
     </div>
+
+    <script type="module" src="./scripts/accountValidation.js"></script>
+    <script type="module" src="./scripts/passwordVisibility.js"></script>
   </body>
 </html>

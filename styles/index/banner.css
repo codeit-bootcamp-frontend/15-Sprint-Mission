@@ -3,15 +3,10 @@
   width: 100%;
   padding-top: 12.5rem;
 
-  /* display: flex;
-  justify-content: center;
-  align-items: flex-end; */
-
   background-color: var(--blue100);
 }
 
 .home-top-banner > div {
-  max-width: 1920px;
   width: 100%;
 
   display: flex;

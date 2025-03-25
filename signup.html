@@ -22,42 +22,56 @@
         </a>
       </header>
 
-      <form class="form-account">
+      <form class="form-account" action="login.html">
         <label class="label-account">
           이메일
           <input
             type="email"
             placeholder="이메일을 입력해주세요"
             class="input-account"
+            id="email"
           />
+          <p class="msg-error"></p>
         </label>
+
         <label class="label-account">
           닉네임
           <input
             type="text"
             placeholder="닉네임을 입력해주세요"
             class="input-account"
+            id="nickname"
           />
+          <p class="msg-error"></p>
         </label>
+
         <label class="label-account">
           비밀번호
           <input
             type="password"
             placeholder="비밀번호를 입력해주세요"
             class="input-account password"
+            id="password"
           />
-          <button class="btn-visibility-on"></button>
+          <button class="btn-visibility-on" type="button"></button>
+          <p class="msg-error"></p>
         </label>
+
         <label class="label-account">
           비밀번호 확인
           <input
             type="password"
             placeholder="비밀번호를 다시 입력해주세요"
             class="input-account password"
+            id="password-confirm"
           />
-          <button class="btn-visibility-on"></button>
+          <button class="btn-visibility-on" type="button"></button>
+          <p class="msg-error"></p>
         </label>
-        <button class="btn-submit" type="submit">회원가입</button>
+
+        <button class="btn-submit" type="submit" id="signup" disabled>
+          회원가입
+        </button>
       </form>
 
       <div class="social-login-container">
@@ -85,5 +99,8 @@
         브라우저의 크기를 넓혀주세요.
       </p>
     </div>
+
+    <script type="module" src="./scripts/accountValidation.js"></script>
+    <script type="module" src="./scripts/passwordVisibility.js"></script>
   </body>
 </html>
