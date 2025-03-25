@@ -1,22 +1,3 @@
-/*banner__text의 br 역할을 수행 해준다.*/
-.text-wrap{
-    display: block;
-    font-size: 100%;
-}
-
-/*접근성을 고려해 sr-only 기법 사용 */
-.sr-only{
-    position: absolute;
-	width: 1px;
-	height: 1px;
-	padding: 0;
-	margin: -1px;
-	overflow: hidden;
-	clip-path: inset(50%);
-	border: 0;
-	clip: rect(0 0 0 0);
-}
-
 /*herader section*/
 header {
     position: sticky;
@@ -39,7 +20,7 @@ header {
     gap: 10px;
 }
 
-.header__logo{
+.header__logo {
     width: 153px;
     height: 51px;
 }
@@ -48,11 +29,9 @@ header {
     border-radius: 8px;
     width: 128px;
     height: 48px;
-    padding: 16px 23px;
     font-size: 1.6rem;
     color: var(--gray100);
 }
-
 
 /*banner section*/
 .banner-section {
@@ -81,10 +60,9 @@ header {
     line-height: 56px;
 }
 
-
 .banner__button {
+	display: inline-block;
     border-radius: 40px;
-    padding: 16px 124px;
     width: 357px;
     height: 56px;
     color: var(--gray50); 
@@ -101,18 +79,6 @@ header {
     width: 100%;
     height: auto;
 }
-
-.button {
-    display: inline-block;
-    background-color: var(--blue);
-    font-weight: 600;
-    text-align: center;
-}
-
-.button:hover {
-    background-color: var(--dark-blue);
-}
-
 
 /*card section*/
 .card-section {
@@ -179,7 +145,7 @@ header {
 }
 
 /*footer section*/
-.footer{
+.footer {
     display: flex;
     justify-content: space-around;
     background-color: var(--gray900);
@@ -188,22 +154,22 @@ header {
     font-weight: 400;
 }
 
-.footer__name{
+.footer__name {
     font-size: 1.6rem;
     color: var(--gray400); 
 }
 
-.footer-links{
+.footer-links {
     display: flex;
     gap: 30px;
 }
 
-.footer__link{
+.footer__link {
     font-size: 1.6rem;
     color: var(--gray200);
 }
 
-.footer-icons{
+.footer-icons {
     display: flex;
     gap: 12px; 
 }

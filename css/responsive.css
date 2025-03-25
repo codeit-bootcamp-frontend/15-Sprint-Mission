@@ -73,7 +73,7 @@
 }
 
 /*index responsive-mobile*/
-@media (min-width: 375px) and (max-width: 767px){
+@media (max-width: 767px){
     /*header section*/
     .header__logo{
         width: 103px;
@@ -136,11 +136,14 @@
         font-size: 1.6rem;
     }
 
-    .card__title {
+    .card__title{
         font-size: 2.4rem;
         line-height: 26px;
     }
-    
+    .card__title > span {
+        display: inline;
+    }
+
     .card__description {
         font-size: 1.6rem;
     }
@@ -179,26 +182,15 @@
         grid-row: 2 / 2;
     }
 
-    /*
-    title 관련 부분
-    기존 text-wrap에서 text-wrap--card가 추가되어
-    예상치 못한 동작 방지를 위해 아래에 배치.
-    */    
     .text-wrap{
         display: block;
     }
-
-    .text-wrap--card {
-        display: inline;
-    }
-
 }
 
 /*auth responsive-moblie*/
-@media (min-width: 375px) and (max-width: 767px){
+@media (max-width: 767px){
     .auth-section {
         max-width: 400px;
-       /* 좌우 여백을 뷰포트 기준으로 계산 */
         width: calc(100vw - 1.6rem); 
         margin: 30% auto;
     }

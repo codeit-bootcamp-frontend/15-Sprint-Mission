@@ -4,10 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <link rel="icon" href="images/icon/ic_favicon.png">
+    <meta property="og:url" content="https://sprint-mission-04-insung.netlify.app/login" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="판다마켓 : 로그인" />
+    <meta property="og:description" content="판다마켓 : 로그인" />
+    <meta property="og:image" content="https://sprint-mission-04-insung.netlify.app/images/logo/logo.png" />
     <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="/css/variables.css">
+    <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="/css/auth.css">
     <link rel="stylesheet" href="/css/responsive.css">
+    <script src="/js/authConstants.js" type="module"></script>
+    <script src="/js/authEventManager.js" type="module"></script>
+    <script src="/js/login.js" type="module"></script>
     <title>판다마켓 : 로그인</title>
 </head>
 <body>
@@ -16,15 +26,21 @@
             <a class="auth__main-link" href="/">
                 <img class="auth__logo" src="images/logo/logo.png" alt="판다마켓 메인으로 이동">
             </a>
-            <form class="auth__form">
-                <label class="auth__label" for="email">이메일</label>
-                <input class="auth__input" id="email" type="email" name="email" placeholder="이메일을 입력해주세요.">
-                <label class="auth__label" for="password">비밀번호</label> 
-                <div class="auth__password-input">
-                    <input class="auth__input" id="password" type="password" name="password" placeholder="비밀번호를 입력해주세요.">
-                    <button class="auth__password-toggle" type="button" aria-label="비밀번호 숨기기"></button>
+            <form action='items.html' method='get' class="auth__form">
+                <div class="auth-container">
+                    <label class="auth__label" for="email">이메일</label>
+                    <input class="auth__input" id="email" type="email" name="email" placeholder="이메일을 입력해주세요.">
+                    <div class="email-error error"></div>
                 </div>
-                <button class="login-button auth__submit-button" type="submit">로그인</button>
+                <div class="auth-container">
+                    <label class="auth__label" for="password">비밀번호</label> 
+                    <div class="auth-container__password">
+                        <input class="auth__input" id="password" type="password" name="password" placeholder="비밀번호를 입력해주세요.">
+                        <button class="auth__password-toggle" type="button" aria-label="비밀번호 숨기기"></button>
+                    </div>
+                    <div class="pasword-error error"></div>
+                </div>
+                <button class="login-button deactivate-button auth__button-layout" type="submit" disabled>로그인</button>
             </form>
             <div class="auth__sns">
                 <p class="auth__sns-title">간편 로그인 하기</p>

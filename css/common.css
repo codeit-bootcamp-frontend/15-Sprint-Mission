@@ -1,0 +1,51 @@
+body {
+    min-width: 375px;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;	
+    height: 1px;	
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    border: 0;
+    clip: rect(0 0 0 0);
+}
+
+.text-wrap {
+    display: block;
+    font-size: 100%;
+}
+
+.deactivate-button {
+    background-color: var(--gray400);
+    color: var(--white);
+    cursor: default;
+}
+
+.button {
+    padding-block: 16px;
+    background-color: var(--blue);
+    font-weight: 600;
+    color: var(--white);
+    text-align: center;
+    cursor: pointer;
+}
+
+
+.button:hover {
+    background-color: var(--dark-blue);
+}
+
+.error {
+    padding-left: 16px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--red);
+}
+
+.error-input {
+    border: 1px solid var(--red);
+}
