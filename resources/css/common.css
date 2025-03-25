@@ -32,6 +32,8 @@
 --point4:#97054e;
 /* 폰트사이즈 */
 --font_b_38:700 3.8rem/1.2 "Pretendard";
+--font_b_32:700 3.2rem/1.2 "Pretendard";
+--font_b_24:700 2.4rem/1.2 "Pretendard";
 --font_b_18:700 1.8rem/1 "Pretendard";
 --font_r_22:600 2.2rem / 1.4 "Pretendard";
 --font_sb_20:700 2.0rem/1 "Pretendard";
@@ -60,13 +62,16 @@ a.link_point:hover { text-decoration: underline; color: var(--primary100);}
 	[CONTENT] 버튼유형
 ------------------------------------------------- */
 a[class*="btn"] { display: inline-block; color: var(--gray50); background-color: var(--bg4); font: var(--font_sb_16) }
- [class*="btn_"]:disabled { background-color: var(--bg-disable); color: #fff; }
+ [class*="btn_"]:disabled { background-color: var(--gray400); color: #fff; }
 .inner { display: flex; justify-content: space-between; width: 100%; max-width: 112rem; min-width: 32rem; margin: 0 auto; }
 a[class*="btn"]:hover{ background-color: var(--primary200); }
 a[class*="btn"]:active { background-color: var(--primary300); }
 button[class*="btn_"]:hover{ background-color: var(--primary200); }
 button[class*="btn_"]:active { background-color: var(--primary300); }
-button[type=button]:hover { background-color: transparent;}
+button[type=button]:hover { opacity: 1; transform: scale(1.2) translate(0%, -40%); transition: all .4s;}
+button[type=submit]:disabled:hover { background-color: var(--gray500);}
+button[type=submit]:disabled:active { background-color: var(--gray400);}
+button[type=submit]:disabled { background-color: var(--gray400); cursor: not-allowed; }
 /* -----------------------------------------------
 	[CONTENT] 폼객체
 ------------------------------------------------- */
@@ -101,3 +106,4 @@ input[type=password]:focus-within + .toggle-password { opacity: 1; transition:al
 .inp_txt > .link_t1 {margin:0 -0.5rem}
 .inp_txt > .inp_ty {flex:1;text-align:right;font:var(--font_roboto_15);}
 .inp_txt:focus-within {outline:0;border-color:var(--line4);}
+.container-wrapper {display: flex; align-items: center; justify-content: center; height: 100vh; background-color: #9fe7fd; color: #fff; }

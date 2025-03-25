@@ -5,27 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>판다마켓 - 로그인</title>
   <meta name="description" content="일상의 모든 물건을 거래해보세요" />
-  <meta property="og:image" content="https://dasomsprint2.netlify.app/resources/images/panda_thumbnail.png" />
+  <meta property="og:image" content="../resources/images/panda_thumbnail.png" />
   <meta property="og:url" content="https://dasomsprint2.netlify.app" />
   <meta property="og:title" content="판다마켓" />
   <meta property="og:description" content="일상의 모든 물건을 거래해보세요" />
- 
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:image" content="https://dasomsprint2.netlify.app/resources/images/panda_thumbnail.png" />
+  <meta name="twitter:image" content="../resources/images/panda_thumbnail.png" />
   <meta name="twitter:title" content="판다마켓" />
   <meta name="twitter:description" content="일상의 모든 물건을 거래해보세요" />
-  <link rel="shortcut icon" href="./resources/images/common/favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="../resources/images/common/favicon.ico" type="image/x-icon" />
+  <link rel="icon" href="../resources/images/common/favicon.ico" type="image/x-icon" />
   <link rel="icon" href="./resources/images/common/favicon.ico" type="image/x-icon" />
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
-  <link rel="stylesheet" href="../resources/css/join.css">
+  <link rel="stylesheet" href="../resources/css/auth.css">
 </head>
 <body>
   <div class='join_wrap'>
     <div class='login_container'>
       <h1 class='log_tit'><a href="/"><img src="../resources/images/common/logo_tit.png" alt="판다마켓"></a></h1>
       <div class="form_wrap">
-        <form>
+        <form id="myFormSignUp" action="/submit" method="post">
           <fieldset>
             <legend>이메일/비밀번호 입력</legend>
             <div class="input-container">
@@ -45,10 +45,9 @@
               <label for="confirmPassword">비밀번호 확인</label>
               <input type="password" id="confirmPassword" autocomplete="current-password" placeholder='비밀번호를 입력해 주세요'>
               <button type="button" class="toggle-password hide-password-icon" data-target="confirmPassword"></button>
-              <div id="error-message" class="error-message">비밀번호가 일치하지 않습니다</div>
             </div>
             <div class="btn_set">
-              <button type="submit" class="btn_login" title="선택됨">로그인</button>
+              <button type="submit" class="singup" title="선택안됨" disabled>회원가입</button>
             </div>
           </fieldset>
         </form>        
@@ -64,16 +63,7 @@
       <p class='txt_center'>판다마켓이 처음이신가요? <a href="./login.html" class='link_point'>로그인</a></p>
     </div>
   </div>
-  <script>
-    document.querySelectorAll('.toggle-password').forEach(button => {
-      button.addEventListener('click', () => {
-        const input = document.getElementById(button.getAttribute('data-target'));
-        const type = input.getAttribute('type') === 'password' ? 'text' : 'password';
-        input.setAttribute('type', type);
-        button.classList.toggle('show-password-icon');
-        button.classList.toggle('hide-password-icon');
-      });
-    }); 
-  </script>
+  
 </body>
+<script type="module" src="../resources/js/validation.js"></script>
 </html>

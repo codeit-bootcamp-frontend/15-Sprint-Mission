@@ -1,0 +1,107 @@
+@charset "UTF-8";
+@import url("common.css");
+ /* -----------------------------------------------
+	[login] 
+  ------------------------------------------------- */
+    .join_wrap {
+      position: relative;
+      padding: 6rem 0;
+    }
+    .login_container {
+      max-width: 64rem;
+      margin: 4rem auto;
+    }
+    .login_container .log_tit {
+      text-align: center;
+      max-width: 39rem;
+      margin: 0 auto 6rem;
+      img {
+        width: 100%;
+      }
+    }
+    .form_wrap form {
+      margin-bottom: 2.4rem;
+    }
+    .input-container {
+      position: relative;
+      margin-bottom: 2.4rem;
+      label {
+        display: block;
+        font: var(--font_b_18);
+        margin-bottom: 1.6rem;
+      }
+      .toggle-password {
+        position: absolute;
+        right: 2rem;
+        top: 6.2rem;
+        transform: translateY(-50%);
+        cursor: pointer;
+        background: none;
+        border: none;
+        padding: 0;
+        width: 2.4rem;
+        height: 2.4rem;
+      }
+      .show-password-icon {
+        background-image: url('../images/common/icon_visibility_on.svg');
+        background-size: cover;
+        opacity: .6;
+      }
+      .hide-password-icon {
+        background-image: url('../images/common/icon_visibility_off.svg');
+        background-size: cover;
+        display: block;
+        opacity: .4;
+      }
+      .error-message {
+        color: red;
+        display: none;
+        margin-top: 0.5rem;
+      }
+    }
+    .input-container button[type=password]+.hide-password-icon:hover {
+      background-color: transparent;
+    }
+    .btn_set {
+      display: flex;
+      flex-wrap: wrap;
+      button {
+        flex-grow: 1;
+        padding: 1.6rem 0;
+        background-color: var(--bg4);
+        border-radius: 4rem;
+        font: var(--font_a_16);
+        color: var(--gray50);
+      }
+      button:hover {
+        background-color: var(--bg4_hover);
+      }
+      button:active {
+        background-color: var(--bg4_act);
+      }
+    }
+    .sns_list {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 2.4rem 0;
+      border-radius: 0.8rem;
+      padding: 1.6rem 2.3rem;
+      background-color: var(--coolGray);
+      .sns_link {
+        display: inline-block;
+        width: 4.2rem;
+        margin-left: 1.6rem;
+        img {
+          width: 100%;
+        }
+      }
+    }
+ /* -----------------------------------------------
+	[@media] 반응형
+  ------------------------------------------------- */
+  @media screen and (max-width: 767px) {
+  .join_wrap { padding: 6rem 1.6rem;}
+  .login_container { max-width: 40rem; transition:all .6s ease-in-out;}
+  .login_container .log_tit { max-width: 58%; }
+}
