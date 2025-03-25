@@ -3,14 +3,14 @@
   align-items: flex-end;
   justify-content: center;
   background-color: #cfe5ff;
-  height: 540px;
+  height: 54rem;
 }
 
 .banner__container {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 7px;
+  gap: 0.7rem;
 }
 
 .banner__content {
@@ -18,20 +18,29 @@
   flex-direction: column;
   justify-content: center;
   color: var(--secondary-700);
-  gap: 32px;
-  padding-bottom: 60px;
+  gap: 3.2rem;
+  padding-bottom: 6rem;
+}
+
+.banner__title {
+  font-size: 4rem;
+  line-height: 5.6rem;
+  font-weight: 700;
 }
 
 .banner__button {
-  width: 357px;
-  height: 56px;
-  padding: 12px 124px;
+  width: 35.7rem;
+  height: 5.6rem;
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 3.2rem;
+  padding: 1.2rem 12.4rem;
   background-color: var(--primary-100);
   color: var(--secondary-50);
-  border-radius: 40px;
+  border-radius: 4rem;
   text-decoration: none;
 }
 
 .banner__image {
-  width: 746px;
+  width: 74.6rem;
 }

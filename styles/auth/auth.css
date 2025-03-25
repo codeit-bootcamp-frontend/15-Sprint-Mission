@@ -1,0 +1,139 @@
+.auth__container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 64rem;
+  margin: 8rem auto;
+  padding: 0px 1.6rem;
+  text-align: center;
+}
+
+.auth__logo {
+  margin-bottom: 4rem;
+}
+
+.auth__logo img {
+  width: 39.6rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.auth__input {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: 1.6rem;
+}
+
+.auth__input label {
+  font-weight: 700;
+  color: var(--secondary-800);
+  font-size: 1.8rem;
+  line-height: 2.6rem;
+}
+
+.auth__wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.auth__input input {
+  width: 100%;
+  height: 5.6rem;
+  padding: 1.6rem 2.4rem;
+  border: none;
+  border-radius: 1.2rem;
+  font-size: 1.4rem;
+  background-color: var(--secondary-100);
+}
+
+.auth__input input:focus {
+  outline-color: var(--primary-100);
+}
+
+.input__wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.toggle-show-password {
+  position: absolute;
+  right: 2.4rem;
+  border: none;
+  display: flex;
+  align-items: center;
+  background-color: var(--secondary-100);
+}
+
+.auth__button {
+  width: 100%;
+  height: 5.6rem;
+  padding: 1.6rem 12.4rem;
+  background-color: var(--primary-100);
+  color: var(--secondary-100);
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 3.2rem;
+  border-radius: 4rem;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth__button:hover {
+  background-color: var(--primary-200);
+}
+
+.auth__social {
+  margin: 2.4rem 0;
+  background-color: #e6f2ff;
+  border-radius: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.6rem 2.3rem;
+}
+
+.social__title {
+  font-size: 1.6rem;
+  line-height: 2.6rem;
+  font-weight: 500;
+  color: var(--secondary-800);
+}
+
+.social__buttons {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  gap: 1.6rem;
+}
+
+.social__buttons li {
+  list-style: none;
+  width: 4.2rem;
+  height: 4.2rem;
+}
+
+.auth__switch p {
+  display: inline;
+  font-size: 1.4rem;
+  line-height: 2.4rem;
+  font-weight: 500;
+  color: var(--secondary-800);
+  text-align: center;
+}
+
+.auth__switch a {
+  color: var(--primary-100);
+  font-size: 1.4rem;
+  line-height: 1;
+  font-weight: 500;
+  text-decoration: underline;
+}

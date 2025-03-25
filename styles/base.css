@@ -1,0 +1,50 @@
+@import url(./reset.css);
+@import url(./unsupported.css);
+
+:root {
+  /* Primary color */
+  --primary-100: #3692ff;
+  --primary-200: #1967d6;
+  --primary-300: #1251aa;
+
+  /* Secondary color */
+  --secondary-50: #f9fafb;
+  --secondary-100: #f3f4f6;
+  --secondary-200: #e5e7eb;
+  --secondary-400: #9ca3af;
+  --secondary-500: #6b7280;
+  --secondary-600: #4b5563;
+  --secondary-700: #374151;
+  --secondary-800: #1f2937;
+  --secondary-900: #111827;
+
+  /* Error color */
+  --error-500: #f74747;
+
+  /* Disable color */
+  --disable-400: var(--secondary-400);
+
+  /* Font style */
+  --font-primary: 'Pretendard Variable', sans-serif;
+  --font-size-base: 1.6rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-base);
+  line-height: 1.5;
+}
+
+button {
+  cursor: pointer;
+}

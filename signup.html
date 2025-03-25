@@ -12,34 +12,36 @@
       crossorigin
       href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
 
-    <link rel="stylesheet" href="./styles/index.css" />
+    <link rel="stylesheet" href="./styles/auth_index.css" />
   </head>
   <body>
-    <div class="register">
-      <a href="/" class="register__logo">
+    <div class="auth__container">
+      <a href="/" class="auth__logo">
         <img src="./assets/logos/logo_lg.png" alt="판다마켓 로고" />
       </a>
 
       <form>
-        <div class="register__input">
+        <div class="auth__input">
           <label for="email">이메일</label>
           <input id="email" name="email" type="email" placeholder="이메일을 입력해 주세요" />
         </div>
 
-        <div class="register__input">
+        <div class="auth__input">
           <label for="nickname">닉네임</label>
           <input id="nickname" name="nickname" type="text" placeholder="닉네임을 입력해 주세요" />
         </div>
 
-        <div class="register__input">
+        <div class="auth__input">
           <label for="password">비밀번호</label>
           <div class="input__wrapper">
             <input id="password" name="password" type="password" placeholder="비밀번호를 입력해 주세요" />
-            <img src="./assets/icons/icon_invisible_eye.svg" alt="비밀번호 숨김" class="toggle-password" />
+            <button type="button" class="toggle-show-password">
+              <img src="./assets/icons/icon_invisible_eye.svg" alt="비밀번호 숨김" class="show-password-icon" />
+            </button>
           </div>
         </div>
 
-        <div class="register__input">
+        <div class="auth__input">
           <label for="password-confirm">비밀번호 확인</label>
           <div class="input__wrapper">
             <input
@@ -47,14 +49,16 @@
               name="password-confirm"
               type="password"
               placeholder="비밀번호를 한 번 더 입력해주세요" />
-            <img src="./assets/icons/icon_invisible_eye.svg" alt="비밀번호 숨김" class="toggle-password" />
+            <button type="button" class="toggle-show-password">
+              <img src="./assets/icons/icon_invisible_eye.svg" alt="비밀번호 숨김" class="show-password-icon" />
+            </button>
           </div>
         </div>
 
-        <button class="register-button" type="submit">회원가입</button>
+        <button class="auth__button" type="submit">회원가입</button>
       </form>
 
-      <div class="register__social">
+      <div class="auth__social">
         <p class="social__title">간편 로그인하기</p>
 
         <ul class="social__buttons">
@@ -71,9 +75,16 @@
         </ul>
       </div>
 
-      <div class="already-registered">
+      <div class="auth__switch">
         <p>이미 회원이신가요?</p>
         <a href="/login.html">로그인</a>
+      </div>
+    </div>
+
+    <div class="unsupported-screen">
+      <div class="unsupported-message">
+        현재 기기에서는 지원하지 않습니다.<br />
+        375px 이상의 화면에서 이용해 주세요.
       </div>
     </div>
   </body>

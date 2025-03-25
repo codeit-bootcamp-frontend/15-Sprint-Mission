@@ -1,0 +1,23 @@
+@media (max-width: 767px) {
+  .auth__container {
+    padding: 0 1.6rem;
+    max-width: 40rem;
+  }
+
+  .auth__input label {
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+  }
+
+  .auth__logo {
+    margin-bottom: 2.4rem;
+  }
+
+  .auth__logo img {
+    width: 50%;
+  }
+
+  .auth__input {
+    gap: 0.8rem;
+  }
+}

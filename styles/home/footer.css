@@ -1,9 +1,9 @@
 .footer {
-  height: 160px;
+  height: 16rem;
   background-color: var(--secondary-900);
   color: var(--secondary-400);
-  padding: 32px 400px;
-  line-height: 19.09px;
+  padding: 3.2rem 20rem;
+  line-height: 1.9rem;
 }
 
 .footer__container {
@@ -14,7 +14,7 @@
 
 .footer__nav {
   display: flex;
-  gap: 30px;
+  gap: 3rem;
 }
 
 .footer__link {
@@ -28,10 +28,10 @@
 
 .footer__sns {
   display: flex;
-  gap: 12px;
+  gap: 1.2rem;
 }
 
 .footer__icon img {
-  width: 20px;
-  height: 20px;
+  width: 2rem;
+  height: 2rem;
 }

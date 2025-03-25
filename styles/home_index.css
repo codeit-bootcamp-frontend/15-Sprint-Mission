@@ -1,0 +1,8 @@
+@import url(./base.css);
+@import url(./home/header.css);
+@import url(./home/banner.css);
+@import url(./home/info.css);
+@import url(./home/footer.css);
+
+@import url(./home/home_tablet.css);
+@import url(./home/home_mobile.css);

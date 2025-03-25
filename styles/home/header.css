@@ -1,32 +1,35 @@
 .header {
-  height: 70px;
+  height: 7rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid #dfdfdf;
-  padding: 9.5px 200px;
+  padding: 1rem 20rem;
   background-color: #ffffff;
   margin: 0 auto;
   position: sticky;
   top: 0;
 }
 
-picture {
+.header__logo {
   display: flex;
   align-items: center;
 }
 
 .header__logo img {
-  width: 153px;
+  width: 15.3rem;
 }
 
 .header__login {
-  width: 128px;
-  height: 48px;
-  padding: 12px 23px;
+  width: 12.8rem;
+  height: 4.8rem;
+  font-weight: 600;
+  font-size: 1.6rem;
+  line-height: 2.6rem;
+  padding: 1.2rem 2.3rem;
   color: white;
   background-color: var(--primary-100);
-  border-radius: 8px;
+  border-radius: 0.8rem;
   text-decoration: none;
   text-align: center;
   cursor: pointer;

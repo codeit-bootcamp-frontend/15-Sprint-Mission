@@ -12,32 +12,34 @@
       crossorigin
       href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
 
-    <link rel="stylesheet" href="./styles/index.css" />
+    <link rel="stylesheet" href="./styles/auth_index.css" />
   </head>
   <body>
-    <div class="login">
-      <a href="/" class="login__logo">
+    <div class="auth__container">
+      <a href="/" class="auth__logo">
         <img src="./assets/logos/logo_lg.png" alt="판다마켓 로고" />
       </a>
 
       <form>
-        <div class="login__input">
+        <div class="auth__input">
           <label for="email">이메일</label>
           <input id="email" name="email" type="email" placeholder="이메일을 입력해 주세요" />
         </div>
 
-        <div class="login__input">
+        <div class="auth__input">
           <label for="password">비밀번호</label>
           <div class="input__wrapper">
             <input id="password" name="password" type="password" placeholder="비밀번호를 입력해 주세요" />
-            <img src="./assets/icons/icon_invisible_eye.svg" alt="비밀번호 숨김" class="toggle-password" />
+            <button type="button" class="toggle-show-password">
+              <img src="./assets/icons/icon_invisible_eye.svg" alt="비밀번호 숨김" class="show-password-icon" />
+            </button>
           </div>
         </div>
 
-        <button type="submit" class="login__button">로그인</button>
+        <button type="submit" class="auth__button">로그인</button>
       </form>
 
-      <div class="login__social">
+      <div class="auth__social">
         <p class="social__title">간편 로그인하기</p>
 
         <ul class="social__buttons">
@@ -54,9 +56,16 @@
         </ul>
       </div>
 
-      <div class="login__signup">
+      <div class="auth__switch">
         <p>판다마켓이 처음이신가요?</p>
         <a href="/signup.html">회원가입</a>
+      </div>
+    </div>
+
+    <div class="unsupported-screen">
+      <div class="unsupported-message">
+        현재 기기에서는 지원하지 않습니다.<br />
+        375px 이상의 화면에서 이용해 주세요.
       </div>
     </div>
   </body>

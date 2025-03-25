@@ -1,0 +1,138 @@
+@media (max-width: 767px) {
+  /* header */
+  .header {
+    padding: 0 1.6rem;
+  }
+
+  /* banner */
+  .banner {
+    height: 54rem;
+    overflow: hidden;
+  }
+
+  .banner__container {
+    gap: 13.2rem;
+  }
+
+  .banner__content {
+    gap: 1.8rem;
+  }
+
+  .banner__title {
+    font-size: 3.2rem;
+    line-height: 4.48rem;
+    text-align: center;
+  }
+
+  .banner__title br {
+    display: inline;
+  }
+
+  .banner__button {
+    width: 24rem;
+    height: 4.8rem;
+    padding: 1.2rem 7.1rem;
+    font-size: 1.8rem;
+    line-height: 2.6rem;
+  }
+
+  .banner__image {
+    width: 44.8rem;
+    height: 20.4rem;
+  }
+
+  /* bottom_banner */
+  .bottom_banner {
+    height: 54rem;
+  }
+
+  .bottom_banner .banner__title {
+    font-size: 3.2rem;
+    line-height: 140%;
+  }
+
+  .bottom_banner .banner__container {
+    gap: 13.1rem;
+  }
+
+  .bottom_banner .banner__image {
+    width: 37.5rem;
+    height: 19.8rem;
+  }
+
+  /* info */
+  .info {
+    margin: 5.2rem 1.5rem;
+    gap: 4rem;
+  }
+
+  .info__container {
+    height: 44rem;
+    gap: 4rem;
+  }
+
+  .info__wrapper {
+    width: 34.4rem;
+    height: 44rem;
+    gap: 4rem;
+  }
+
+  .info__content {
+    gap: 0.8rem;
+    padding-left: 1rem;
+  }
+
+  .info__image {
+    width: 34.4rem;
+    height: 25.9rem;
+  }
+
+  .info__wrapper--reverse .info__content {
+    padding-right: 1rem;
+  }
+
+  .info .info__category {
+    font-size: 1.6rem;
+  }
+
+  .info .info__title {
+    font-size: 2.4rem;
+    line-height: 3.2rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .info .info__description {
+    font-size: 1.6rem;
+    line-height: 2.6rem;
+  }
+
+  /* footer */
+  .footer {
+    padding: 3.2rem 1.6rem;
+  }
+
+  .footer__container {
+    display: grid;
+    align-items: center;
+    text-align: center;
+    gap: 2.4rem;
+    grid-template-columns: 1fr / 1fr;
+    grid-template-rows: auto auto;
+  }
+
+  .footer__nav {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .footer__sns {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .footer__copyright {
+    grid-column: 1;
+    grid-row: 2;
+    text-align: left;
+  }
+}

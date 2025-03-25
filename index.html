@@ -3,18 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>판다마켓</title>
 
-    <meta name="description" content="판다마켓 - Sprint-Mission 1" />
+    <!-- HTML Meta Tags -->
+    <meta name="title" content="판다 마켓" />
+    <meta name="description" content="일상의 모든 물건을 거래해보세요" />
     <meta name="keywords" content="판다마켓" />
     <meta name="author" content="Codeit Sprint FrontEnd" />
 
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="https://harryseop-pandamarket.netlify.app/" />
+    <meta property="og:type" content="website" />
     <meta property="og:title" content="판다마켓" />
-    <meta property="og:description" content="판다마켓 - Sprint-Mission 1" />
-    <!-- <meta property="og:image" content="배포 후 추가 예정" /> -->
-    <!-- <meta property="og:url" content="배포 후 추가 예정"/> -->
+    <meta property="og:description" content="일상의 모든 물건을 거래해보세요" />
+    <meta property="og:image" content="https://harryseop-pandamarket.netlify.app/assets/images/img_preview.png" />
 
-    <link rel="icon" href="./assets/favicon.ico" type="image/x-icon" />
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="twitter:domain" content="harryseop-pandamarket.netlify.app" />
+    <meta property="twitter:url" content="https://harryseop-pandamarket.netlify.app/" />
+    <meta name="twitter:title" content="판다마켓" />
+    <meta name="twitter:description" content="일상의 모든 물건을 거래해보세요" />
+    <meta name="twitter:image" content="https://harryseop-pandamarket.netlify.app/assets/images/img_preview.png" />
 
     <link
       rel="stylesheet"
@@ -22,28 +31,28 @@
       crossorigin
       href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
 
-    <link rel="stylesheet" href="./styles/index.css" />
+    <link rel="icon" href="./assets/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./styles/home_index.css" />
+
+    <title>판다마켓</title>
   </head>
   <body>
     <header class="header">
       <a href="/" class="header__logo">
-        <picture>
-          <source media="(max-width: 480px)" srcset="./assets/logos/logo_typo.png" />
-          <img src="./assets/logos/logo_sm.png" alt="판다마켓 로고" />
-        </picture>
+        <img src="./assets/logos/logo_sm.png" alt="판다마켓 로고" />
       </a>
-      <a href="/login.html" class="header__login font-semibold text-lg">로그인</a>
+      <a href="/login.html" class="header__login">로그인</a>
     </header>
 
     <main>
       <section class="banner">
         <div class="banner__container">
           <div class="banner__content">
-            <p class="banner__title font-bold text-4xl">
+            <p class="banner__title">
               일상의 모든 물건을<br />
               거래해보세요
             </p>
-            <a href="/items.html" class="banner__button font-semibold text-xl">구경하러 가기</a>
+            <a href="/items.html" class="banner__button">구경하러 가기</a>
           </div>
           <img src="./assets/images/img_home_top.png" alt="판다마켓 배너 이미지" class="banner__image" />
         </div>
@@ -54,12 +63,12 @@
           <div class="info__wrapper">
             <img src="./assets/images/img_home_01.png" alt="인기 상품" class="info__image" />
             <div class="info__content">
-              <p class="info__category text-lg font-bold">Hot item</p>
-              <p class="info__title text-4xl font-bold">
+              <p class="info__category">Hot item</p>
+              <p class="info__title">
                 인기 상품을<br />
                 확인해 보세요
               </p>
-              <p class="info__description text-2xl font-medium">
+              <p class="info__description">
                 가장 HOT한 중고거래 물품을<br />
                 판다 마켓에서 확인해 보세요
               </p>
@@ -71,12 +80,12 @@
           <div class="info__wrapper info__wrapper--reverse">
             <img src="./assets/images/img_home_02.png" alt="상품 검색" class="info__image" />
             <div class="info__content">
-              <p class="info__category text-lg font-bold">Search</p>
-              <p class="info__title text-4xl font-bold">
+              <p class="info__category">Search</p>
+              <p class="info__title">
                 구매를 원하는<br />
                 상품을 검색하세요
               </p>
-              <p class="info__description text-2xl font-medium">
+              <p class="info__description">
                 구매하고 싶은 물품은 검색해서<br />
                 쉽게 찾아보세요
               </p>
@@ -88,12 +97,12 @@
           <div class="info__wrapper">
             <img src="./assets/images/img_home_03.png" alt="상품 등록" class="info__image" />
             <div class="info__content">
-              <p class="info__category text-lg font-bold">Register</p>
-              <p class="info__title text-4xl font-bold">
+              <p class="info__category">Register</p>
+              <p class="info__title">
                 판매를 원하는<br />
                 상품을 등록하세요
               </p>
-              <p class="info__description text-2xl font-medium">
+              <p class="info__description">
                 어떤 물건이든 판매하고 싶은 상품을<br />
                 쉽게 등록하세요
               </p>
@@ -105,7 +114,7 @@
       <section class="bottom_banner banner">
         <div class="banner__container">
           <div class="banner__content">
-            <p class="banner__title font-bold text-4xl">
+            <p class="banner__title">
               믿을 수 있는<br />
               판다마켓 중고 거래
             </p>
@@ -124,21 +133,36 @@
           <a href="/faq.html" class="footer__link">FAQ</a>
         </nav>
 
-        <div class="footer__sns">
-          <a href="https://facebook.com" target="_blank" class="footer__icon">
-            <img src="./assets/icons/icon_facebook.svg" alt="Facebook" />
-          </a>
-          <a href="https://x.com" target="_blank" class="footer__icon">
-            <img src="./assets/icons/icon_x.svg" alt="X" />
-          </a>
-          <a href="https://youtube.com" target="_blank" class="footer__icon">
-            <img src="./assets/icons/icon_youtube.svg" alt="YouTube" />
-          </a>
-          <a href="https://instagram.com" target="_blank" class="footer__icon">
-            <img src="./assets/icons/icon_instagram.svg" alt="Instagram" />
-          </a>
-        </div>
+        <ul class="footer__sns">
+          <li>
+            <a href="https://facebook.com" target="_blank" class="footer__icon">
+              <img src="./assets/icons/icon_facebook.svg" alt="Facebook" />
+            </a>
+          </li>
+          <li>
+            <a href="https://x.com" target="_blank" class="footer__icon">
+              <img src="./assets/icons/icon_x.svg" alt="X" />
+            </a>
+          </li>
+          <li>
+            <a href="https://youtube.com" target="_blank" class="footer__icon">
+              <img src="./assets/icons/icon_youtube.svg" alt="YouTube" />
+            </a>
+          </li>
+          <li>
+            <a href="https://instagram.com" target="_blank" class="footer__icon">
+              <img src="./assets/icons/icon_instagram.svg" alt="Instagram" />
+            </a>
+          </li>
+        </ul>
       </div>
     </footer>
+
+    <div class="unsupported-screen">
+      <div class="unsupported-message">
+        현재 기기에서는 지원하지 않습니다.<br />
+        375px 이상의 화면에서 이용해 주세요.
+      </div>
+    </div>
   </body>
 </html>
