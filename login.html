@@ -3,12 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>판다마켓</title>
-    <meta property="og:title" content="판다마켓" />
-    <meta property="og:description" content="일상의 모든 물건을 거래해보세요" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://dduminipandamarket.netlify.app/" />
-    <meta property="og:image" content="/images/common/meta_thumb.png">
+    	<!-- HTML Meta Tags -->
+      <title>판다마켓</title>
+      <meta name="description" content="일상의 모든 물건을 거래해보세요">
+
+      <!-- Facebook Meta Tags -->
+      <meta property="og:url" content="https://dduminipandamarket.netlify.app/">
+      <meta property="og:type" content="website">
+      <meta property="og:title" content="판다마켓">
+      <meta property="og:description" content="일상의 모든 물건을 거래해보세요">
+      <meta property="og:image" content="https://dduminipandamarket.netlify.app/images/common/meta_preview.png">
+
+      <!-- Twitter Meta Tags -->
+      <meta name="twitter:card" content="summary_large_image">
+      <meta property="twitter:domain" content="dduminipandamarket.netlify.app">
+      <meta property="twitter:url" content="https://dduminipandamarket.netlify.app/">
+      <meta name="twitter:title" content="판다마켓">
+      <meta name="twitter:description" content="일상의 모든 물건을 거래해보세요">
+      <meta name="twitter:image" content="https://dduminipandamarket.netlify.app/images/common/meta_preview.png">
+
+      <!-- Meta Tags Generated via https://www.opengraph.xyz -->
+
     <link rel="icon" type="image/png" sizes="192x192" href="/images/favicon/android-icon-192x192.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon/favicon-96x96.png" />
@@ -46,16 +61,18 @@
   <body>
     <a href="#container" class="skip-nav">본문 바로가기</a>
     <div id="wrap">
-      <div id="container" class="auth-page">
+      <div id="container" class="auth-page login">
         <div class="inner03">
           <a href="/" class="auth-logo">
             <img src="/images/sub/logo_big.svg" alt="판다마켓" />
           </a>
-          <form action="" onsubmit="login">
+          <form id="authForm" class="auth-form">
             <ul class="auth-form">
               <li>
                 <label for="email">이메일</label>
                 <input type="text" id="email" placeholder="이메일을 입력하세요" />
+                <p id="email-error" class="error-message message-empty">이메일을 입력해주세요.</p>
+                <p id="email-error" class="error-message message-format">잘못된 이메일입니다.</p>
               </li>
               <li>
                 <label for="password">비밀번호</label>
@@ -63,9 +80,11 @@
                 <button type="button" class="toggle-password">
                   <img src="images/common/ic_eye_off.svg" alt="비밀번호 보기" />
                 </button>
+                <p id="email-error" class="error-message message-empty">비밀번호를 입력해주세요.</p>
+                <p id="email-error" class="error-message message-format">비밀번호를 8자 이상 입력해주세요.</p>
               </li>
             </ul>
-            <button type="submit" onclick="login" class="auth-btn">로그인</button>
+            <button type="submit" class="auth-btn" disabled>로그인</button>
           </form>
           <div class="auth-sns">
             <p>간편 로그인하기</p>
