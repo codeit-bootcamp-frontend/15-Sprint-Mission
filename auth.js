@@ -109,13 +109,25 @@ const isValidForm = (event) => {
 const loginButton = document.querySelector(".login-button");
 const signupButton = document.querySelector(".signup-button");
 
+const toItems = (e) => {
+  e.preventDefault();
+  location.href = "./items.html";
+};
+
+const toSignin = (e) => {
+  e.preventDefault();
+  location.href = "./signin.html";
+};
+
 const setLoginButton = (event) => {
   if (isValidForm(event)) {
     loginButton.disabled = false;
     loginButton.classList.remove("button-disabled");
+    loginButton.addEventListener("click", toItems);
   } else {
     loginButton.disabled = true;
     loginButton.classList.add("button-disabled");
+    loginButton.removeEventListener("click", toItems);
   }
 };
 
@@ -123,9 +135,11 @@ const setSignupButton = (event) => {
   if (isValidForm(event)) {
     signupButton.disabled = false;
     signupButton.classList.remove("button-disabled");
+    signupButton.addEventListener("click", toSignin);
   } else {
     signupButton.disabled = true;
     signupButton.classList.add("button-disabled");
+    signupButton.removeEventListener("click", toSignin);
   }
 };
 
