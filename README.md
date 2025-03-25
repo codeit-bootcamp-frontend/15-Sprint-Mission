@@ -73,15 +73,16 @@
 
 ## 폴더 구조
 
+```
 project-root/
-├── index.html  
+├── index.html
 ├── index.css
 
-├── common/  
+├── common/
 │ ├── base.css
 │ └── reset.css
 
-├── constants/  
+├── constants/
 │ ├── urls/
 │ │ ├── page-urls.js
 │ │ └── api-urls.js
@@ -89,21 +90,22 @@ project-root/
 │ └── messages/
 │ └── auth.js
 
-├── utils/  
-│ ├── debounce.js  
-│ ├── form.js  
+├── utils/
+│ ├── debounce.js
+│ ├── form.js
 │ └── validators.js
 
-├── components/  
+├── components/
 │ └── dom/
 │ └── auth.js
 
-├── auth/  
+├── auth/
 │ ├── signin.html
 │ ├── signup.html
 │ ├── auth.css
 │ ├── auth-validation.js
 │ └── password-visibility.js
 
-├── home/  
+├── home/
 │ └── home.css
+```
