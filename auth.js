@@ -2,7 +2,6 @@ const loginForm = document.querySelector(".login-form");
 const signupForm = document.querySelector(".signup-form");
 
 const setInputError = (event) => {
-  console.dir(event.currentTarget);
   if (event.target.closest("button")) {
     return;
   }
@@ -45,10 +44,12 @@ const checkPassword = () => {
   ) {
     passwordCheck.nextElementSibling?.remove();
     passwordCheck.classList.add("input-error");
+    passwordCheck.classList.remove("input-valid");
     setErrorMessage(passwordCheck, "passwordCheck");
   } else if (password.value === passwordCheck?.value) {
     passwordCheck.nextElementSibling?.remove();
     passwordCheck.classList.remove("input-error");
+    passwordCheck.classList.add("input-valid");
   }
 };
 
