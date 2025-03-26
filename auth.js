@@ -114,9 +114,9 @@ const toItems = (e) => {
   location.href = "./items.html";
 };
 
-const toSignin = (e) => {
+const toLogin = (e) => {
   e.preventDefault();
-  location.href = "./signin.html";
+  location.href = "./login.html";
 };
 
 const setLoginButton = (event) => {
@@ -135,11 +135,11 @@ const setSignupButton = (event) => {
   if (isValidForm(event)) {
     signupButton.disabled = false;
     signupButton.classList.remove("button-disabled");
-    signupButton.addEventListener("click", toSignin);
+    signupButton.addEventListener("click", toLogin);
   } else {
     signupButton.disabled = true;
     signupButton.classList.add("button-disabled");
-    signupButton.removeEventListener("click", toSignin);
+    signupButton.removeEventListener("click", toLogin);
   }
 };
 
