@@ -10,25 +10,40 @@
     <div class="total-container">
       <main class="loginContainer">
         <a href="../index.html" class="login-logo"
-          ><img src="../img/logo.png" / ></a
+          ><img src="../img/logo.png" ></a
         >
         <div class="login-form-container">
           <form class="login-form">
-            <label for="login-email"> 이메일 </label>
-            <input
-              id="login-email"
-              type="email"
-              placeholder="이메일을 입력해주세요"
-              required
-            />
-            <label for="login-password"> 비밀번호 </label>
-            <input
-              id="login-password"
-              type="password"
-              placeholder="비밀번호를 입력해주세요"
-            />
-            <img src="../img/no-eye.png" id="no-eye" />
-            <input type="submit" value="로그인" id="login-submit" />
+            <div id="login-email-contianer">
+              <label for="login-email"> 이메일 </label>
+              <input
+                id="login-email"
+                type="email"
+                placeholder="이메일을 입력해주세요"
+              />
+            </div>
+            <span
+              id="login-email-alert"
+              style="color: var(--alert-color)"
+              class="hidden"
+            ></span>
+            <div id="login-password-container">
+              <label for="login-password"> 비밀번호 </label>
+              <input
+                id="login-password"
+                type="password"
+                placeholder="비밀번호를 입력해주세요"
+              />
+              <button  id="toggle-password" type="button">
+                <img src="../img/no-eye.png" id="eye-icon" />
+              </button>
+            </div>
+            <span
+            id="login-password-alert"
+            style="color: var(--alert-color)"
+            class="hidden"
+          ></span>
+              <button id="login-submit">로그인</button>
           </form>
           <div class="social-login">
             <span>간편 로그인하기</span>
@@ -43,10 +58,11 @@
           </div>
           <div class="join">
             <span>판다마켓이 처음이신가요?</span>
-            <a href="../pages/join.html">회원가입</a>
+            <a href="../pages/join.html">회원가입</a></div>
           </div>
         </div>
       </main>
     </div>
+    <script src="../js/login.js"></script>
   </body>
 </html>

@@ -84,7 +84,7 @@
   }
 }
 
-@media (max-width: 767px) and (min-width: 375px) {
+@media (max-width: 767px) {
   .main-article {
     margin: 1rem 0;
   }

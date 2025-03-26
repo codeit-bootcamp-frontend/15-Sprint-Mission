@@ -3,6 +3,8 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
+  overflow-y: auto;
+  min-height: 541px;
 }
 
 .loginContainer {
@@ -31,28 +33,43 @@
 .login-form {
   display: flex;
   flex-direction: column;
-  position: relative;
   width: 100%;
   gap: 1rem;
   font-weight: 700;
   margin-bottom: 1rem;
+  div {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    position: relative;
+  }
   input {
     background-color: #f3f4f6;
     border: none;
     height: 3.5rem;
     padding: 0 1rem;
+    border-radius: 12px;
   }
+
   #login-submit {
     background-color: #3692ff;
     color: white;
     border-radius: 40px;
     height: 3.5rem;
+    cursor: pointer;
   }
-  #no-eye {
+  #login-submit:disabled {
+    background-color: #9ca3af; /* 연한 회색 */
+    color: #f3f4f6; /* 어두운 회색 */
+    cursor: not-allowed; /* 금지 표시 */
+  }
+  #toggle-password,
+  #toggle-password-confirm {
     position: absolute;
-    width: 2.5%;
-    right: 2%;
-    bottom: 30%;
+    background-color: transparent;
+    right: 1%;
+    bottom: 5%;
+    cursor: pointer;
   }
 }
 
@@ -89,7 +106,7 @@
   }
 }
 
-@media (max-width: 765px) and (min-width: 365px) {
+@media (max-width: 767px) {
   .loginContainer {
     width: calc(100% - 32px);
     max-width: 400px;

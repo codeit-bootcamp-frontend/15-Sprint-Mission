@@ -11,39 +11,70 @@
     <div class="total-container">
       <main class="loginContainer">
         <a href="../index.html" class="login-logo">
-          <img src="../img/logo.png" / >
+          <img src="../img/logo.png" />
         </a>
         <div class="login-form-container">
           <form class="login-form">
-            <label for="login-email">이메일</label>
-            <input
-              id="login-email"
-              type="email"
-              placeholder="이메일을 입력해주세요"
-              required
-            />
-            <label for="login-nickname">닉네임</label>
-            <input
-              id="login-nickname"
-              type="text"
-              placeholder="닉네임을 입력해주세요"
-              required
-            />
-            <label for="login-password">비밀번호</label>
-            <input
-              id="login-password"
-              type="password"
-              placeholder="비밀번호를 입력해주세요"
-              required
-            />
-            <label for="login-password2">비밀번호 확인</label>
-            <input
-              id="login-password2"
-              type="password"
-              placeholder="비밀번호를 다시 입력해주세요"
-              required
-            />
-            <button type="submit" id="login-submit">회원가입입</button>
+            <div>
+              <label for="login-email">이메일</label>
+              <input
+                id="login-email"
+                type="email"
+                placeholder="이메일을 입력해주세요"
+                required
+              />
+              <span
+                id="login-email-alert"
+                style="color: var(--alert-color)"
+                class="hidden"
+              ></span>
+            </div>
+            <div>
+              <label for="join-nickname">닉네임</label>
+              <input
+                id="join-nickname"
+                type="text"
+                placeholder="닉네임을 입력해주세요"
+              />
+              <span
+                id="join-nickname-alert"
+                style="color: var(--alert-color)"
+                class="hidden"
+              ></span>
+            </div>
+            <div>
+              <label for="login-password">비밀번호</label>
+              <input
+                id="login-password"
+                type="password"
+                placeholder="비밀번호를 입력해주세요"
+              />
+              <button id="toggle-password" type="button">
+                <img src="../img/no-eye.png" id="eye-icon" />
+              </button>
+            </div>
+            <span
+              id="login-password-alert"
+              style="color: var(--alert-color)"
+              class="hidden"
+            ></span>
+            <div>
+              <label for="join-password2">비밀번호 확인</label>
+              <input
+                id="join-password2"
+                type="password"
+                placeholder="비밀번호를 다시 입력해주세요"
+              />
+              <button id="toggle-password-confirm" type="button">
+                <img src="../img/no-eye.png" id="eye-icon2" />
+              </button>
+            </div>
+            <span
+              id="join-password-confirm-alert"
+              style="color: var(--alert-color)"
+              class="hidden"
+            ></span>
+            <button type="submit" id="login-submit">회원가입</button>
           </form>
           <div class="social-login">
             <span>간편 로그인하기</span>
@@ -63,5 +94,6 @@
         </div>
       </main>
     </div>
+    <script src="../js/join.js"></script>
   </body>
 </html>

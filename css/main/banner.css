@@ -34,7 +34,7 @@ banner {
   max-height: 340px;
   height: 100%;
   img {
-    width: 100%;
+    height: 100%;
   }
 }
 
@@ -113,6 +113,9 @@ banner {
     width: 100%;
     max-width: 100%;
     margin-top: 15rem;
+    img {
+      width: 100%;
+    }
   }
   .main-banner-bottom__content {
     h1 {
@@ -121,7 +124,7 @@ banner {
   }
 }
 
-@media (max-width: 767px) and (min-width: 375px) {
+@media (max-width: 767px) {
   .main-banner__content {
     padding: 3rem 0;
     h1 {
@@ -135,6 +138,9 @@ banner {
   }
   .banner-right {
     margin-top: 4rem;
+    img {
+      width: 100%;
+    }
   }
 
   .main-article__text {
