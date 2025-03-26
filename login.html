@@ -4,6 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>판다마켓</title>
+		<link rel="stylesheet" href="reset.css" />
 		<link rel="stylesheet" href="common.css" />
 		<link rel="stylesheet" href="auth.css" />
 		<link
@@ -19,15 +20,23 @@
 			</a>
 			<form action="#" class="user_form">
 				<label for="email">이메일</label>
-				<input type="email" id="email" name="email" placeholder="이메일을 입력해주세요" />
-				<label for="password">비밀번호</label>
-				<div class="input_box">
-					<input type="password" id="password" name="password" placeholder="비밀번호를 입력해주세요" />
-					<button class="visible_button">
-						<img src="./image/btn_visibility_on.png" alt="비밀번호 보기" class="visible_on" />
-					</button>
+				<div class="input_container">
+					<input type="email" id="email" name="email" placeholder="이메일을 입력해주세요" />
+					<p class="email_alert"></p>
 				</div>
-				<button class="login_button" type="submit">로그인</button>
+				<label for="password">비밀번호</label>
+				<div class="input_container">
+					<div class="input_wrap">
+						<input type="password" id="password" name="password" placeholder="비밀번호를 입력해주세요" />
+						<button type="button" class="visible_button">
+							<img src="./image/btn_visibility_on.png" alt="비밀번호 보기" class="visible_password" />
+						</button>
+					</div>
+					<p class="password_alert"></p>
+				</div>
+				<button class="login_button btn_disable auth_button" type="submit">
+					<a href="/items.html">로그인</a>
+				</button>
 			</form>
 			<div class="simple_login">
 				<span>간편 로그인하기</span>
@@ -46,5 +55,6 @@
 			</div>
 			<p>판다마켓이 처음이신가요? <a href="/signup.html" class="signup_link">회원가입</a></p>
 		</main>
+		<script src="/login.js"></script>
 	</body>
 </html>

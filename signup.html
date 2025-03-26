@@ -4,6 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>판다마켓</title>
+		<link rel="stylesheet" href="reset.css" />
 		<link rel="stylesheet" href="common.css" />
 		<link rel="stylesheet" href="auth.css" />
 		<link
@@ -19,28 +20,42 @@
 			</a>
 			<form action="#" class="user_form">
 				<label for="email">이메일</label>
-				<input type="email" id="email" name="email" placeholder="이메일을 입력해주세요" />
+				<div class="input_container">
+					<input type="email" id="email" name="email" placeholder="이메일을 입력해주세요" />
+					<p class="email_alert"></p>
+				</div>
 				<label for="nickname">닉네임</label>
-				<input type="nickname" id="nickname" name="nickname" placeholder="닉네임을 입력해주세요" />
+				<div class="input_container">
+					<input type="text" id="nickname" name="nickname" placeholder="닉네임을 입력해주세요" />
+					<p class="nickname_alert"></p>
+				</div>
 				<label for="password">비밀번호</label>
-				<div class="input_box">
-					<input type="password" id="password" name="password" placeholder="비밀번호를 입력해주세요" />
-					<button class="visible_button">
-						<img src="./image/btn_visibility_on.png" alt="비밀번호 보기" class="visible_on" />
-					</button>
+				<div class="input_container">
+					<div class="input_wrap">
+						<input type="password" id="password" name="password" placeholder="비밀번호를 입력해주세요" />
+						<button type="button" class="visible_button">
+							<img src="./image/btn_visibility_on.png" alt="비밀번호 보기" class="visible_password" />
+						</button>
+					</div>
+					<p class="password_alert"></p>
 				</div>
 				<label for="password_check">비밀번호 확인</label>
-				<div class="input_box">
-					<input
-						type="password"
-						id="password_check"
-						name="password_check"
-						placeholder="비밀번호를 다시 한 번 입력해주세요" />
-					<button class="visible_button">
-						<img src="./image/btn_visibility_off.png" alt="비밀번호 안보기" class="visible_off" />
-					</button>
+				<div class="input_container">
+					<div class="input_wrap">
+						<input
+							type="password"
+							id="password_check"
+							name="password_check"
+							placeholder="비밀번호를 다시 한 번 입력해주세요" />
+						<button type="button" class="visible_button">
+							<img src="./image/btn_visibility_on.png" alt="비밀번호 보기" class="visible_password" />
+						</button>
+					</div>
+					<p class="pw_check_alert"></p>
 				</div>
-				<button class="signup_button" type="submit">회원가입</button>
+				<button class="signup_button auth_button btn_disable" type="submit">
+					<a href="/login.html">회원가입</a>
+				</button>
 			</form>
 			<div class="simple_login">
 				<span>간편 로그인하기</span>
@@ -59,5 +74,6 @@
 			</div>
 			<p>이미 회원이신가요? <a href="/login.html" class="login_link">로그인</a></p>
 		</main>
+		<script src="/signup.js"></script>
 	</body>
 </html>

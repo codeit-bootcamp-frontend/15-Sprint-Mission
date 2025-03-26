@@ -18,7 +18,12 @@
 	width: 100%;
 }
 
-.input_box {
+.input_container {
+	position: relative;
+	margin: 16px 0 24px;
+}
+
+.input_wrap {
 	position: relative;
 }
 
@@ -36,8 +41,27 @@
 	border: none;
 	background-color: var(--gray100);
 	padding: 16px 24px;
-	margin: 16px 0 24px;
 	border-radius: 12px;
+}
+
+.user_form .inputAlert {
+	border: 1px solid #f74747;
+}
+
+.email_alert,
+.password_alert,
+.nickname_alert,
+.pw_check_alert {
+	display: none;
+}
+
+.visible_alert {
+	display: block;
+	color: #f74747;
+	font-size: 14px;
+	font-weight: 600;
+	margin-top: 8px;
+	padding-left: 16px;
 }
 
 .visible_button {
@@ -47,37 +71,45 @@
 	z-index: 1;
 	top: 50%;
 	right: 24px;
-	margin-top: -16px;
+	transform: translateY(-50%);
 	padding: 0;
 	border: none;
 	cursor: pointer;
 }
 
-.visible_on,
-.visible_off {
+.visible_password {
 	width: 100%;
-	height: 100%;
 }
 
 .login_button,
 .signup_button {
-	font-size: 20px;
-	color: var(--gray100);
-	line-height: 32px;
-	font-weight: 600;
-	font-family: Pretendard;
-	background-color: var(--gray400);
 	width: 100%;
 	height: 56px;
 	border-radius: 9999px;
 	border: none;
 	margin-bottom: 24px;
 	cursor: pointer;
+	background-color: var(--gray400);
 	transition: all 300ms ease;
 }
 
-.login_button:hover,
-.signup_button:hover {
+.auth_button a {
+	font-size: 20px;
+	color: var(--gray100);
+	line-height: 32px;
+	font-weight: 600;
+	font-family: Pretendard;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+}
+.btn_disable {
+	background-color: var(--gray400);
+}
+
+.btn_active {
 	background-color: var(--blue);
 }
 
@@ -116,7 +148,7 @@
 	color: var(--blue);
 }
 
-@media (min-width: 375px) and (max-width: 767px) {
+@media (max-width: 767px) {
 	.user_form_logo {
 		width: unset;
 		height: 95px;
