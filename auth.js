@@ -143,6 +143,28 @@ const setSignupButton = (event) => {
   }
 };
 
+const visibilityBtn = document.querySelectorAll(".visibility-btn");
+let isVisible = false;
+const toggleVisibility = (event) => {
+  if (isVisible) {
+    event.target.alt = "눈감음";
+    event.target.src = "images/ic_visibility_off.png";
+    event.target.parentElement.nextElementSibling.nextElementSibling.type =
+      "password";
+  } else {
+    event.target.alt = "눈 뜸";
+    event.target.src = "images/ic_visibility_on.png";
+    event.target.parentElement.nextElementSibling.nextElementSibling.type =
+      "text";
+  }
+  isVisible = !isVisible;
+};
+console.log(visibilityBtn);
+for (let ele of visibilityBtn) {
+  console.log(ele);
+  ele.addEventListener("click", toggleVisibility);
+}
+
 loginForm?.addEventListener("focusout", setInputError);
 loginForm?.addEventListener("focusout", setInputValid);
 loginForm?.addEventListener("focusout", setLoginButton);
