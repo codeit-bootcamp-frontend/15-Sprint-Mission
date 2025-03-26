@@ -47,7 +47,7 @@ form label {
   width: 100%;
   text-align: center;
   display: block;
-  background-color: var(--blue);
+  background-color: var(--gray400);
   color: #ffffff;
   padding: 1.2rem 0;
   font-size: 2rem;
@@ -74,6 +74,7 @@ form label {
   width: 2.4rem;
   height: 2.4rem;
   position: absolute;
+  z-index: 9999;
   right: 2.4rem;
   bottom: 1.4rem;
 }
@@ -115,4 +116,14 @@ form label {
     width: calc(100% - 1.6rem);
     max-width: 40rem;
   }
+}
+
+.plzInputText {
+  padding: 2rem;
+  font-size: 1.5rem;
+  color: red;
+}
+
+.passwordIsVisible {
+  background-image: url("../img/btn_visibility_on.svg");
 }
