@@ -1,4 +1,4 @@
-main {
+.main {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -24,8 +24,9 @@ main {
 
 .group-input {
   display: flex;
+  position: relative;
   flex-direction: column;
-  margin-bottom: 24px;
+  margin-bottom: 40px;
 }
 
 .group-input label {
@@ -39,7 +40,7 @@ main {
   background-color: var(--gray-100);
   width: 100%;
   height: 56px;
-  border: none;
+  border: 1px solid var(--gray-100);
   border-radius: 12px;
   font-size: 16px;
   font-weight: 400;
@@ -65,6 +66,8 @@ main {
   position: absolute;
   right: 24px;
   cursor: pointer;
+  border: none;
+  background-color: transparent;
 }
 
 .inputPwd-wrap img {
@@ -110,7 +113,7 @@ main {
 
 .social-login-wrap img {
   width: 42px;
-  height: 42px;
+  height: auto;
 }
 
 .sign-up-link {
@@ -128,9 +131,25 @@ main {
   text-decoration: underline;
 }
 
+.input-font.error {
+  border: 1px solid var(--red);
+}
+
+.input-font.success {
+  border: 1px solid var(--blue-100);
+}
+
+.info-text {
+  position: absolute;
+  bottom: -20px;
+  left: 16px;
+  color: var(--red);
+  font-size: 14px;
+}
+
 /* Mobile */
 @media (max-width: 767px) {
-  main {
+  .main {
     max-width: 400px;
     padding: 0 16px;
     margin: 0 auto;

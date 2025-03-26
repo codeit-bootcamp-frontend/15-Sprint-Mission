@@ -1,5 +1,5 @@
 /* haeder 영역 */
-header {
+.header {
   position: sticky;
   width: 100%;
   max-width: 1920px;
@@ -11,7 +11,7 @@ header {
   background-color: var(--white);
 }
 
-nav {
+.nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -19,10 +19,10 @@ nav {
   margin: 0 auto;
 }
 
-.logo > img {
+.logo .logo-img {
   vertical-align: middle;
   width: 153px;
-  height: 51px;
+  height: auto;
 }
 
 .btn {
@@ -109,7 +109,6 @@ nav {
   border-radius: 40px;
   font-size: 20px;
   font-weight: 600;
-  line-height: 32px;
 }
 
 .btn-items:hover {
@@ -158,7 +157,7 @@ nav {
 
 .content-item img {
   width: 579px;
-  height: 444px;
+  height: auto;
   padding-left: 20px;
 }
 
@@ -211,7 +210,7 @@ nav {
 }
 
 /* footer 영역 */
-footer {
+.footer {
   max-width: 1920px;
   height: 160px;
   background-color: var(--gray-900);
@@ -219,7 +218,7 @@ footer {
 
 .footer-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   margin: 0 auto;
   padding: 36px 0 0 0;
   max-width: 1120px;
@@ -246,14 +245,14 @@ footer {
 
 .footer-social img {
   width: 20px;
-  height: 20px;
+  height: auto;
 }
 
 @media (max-width: 1199px) {
-  header nav {
+  .header .nav {
     padding: 9px 16px;
   }
-  
+
   .banner {
     padding: 0;
     display: block;
@@ -297,7 +296,7 @@ footer {
     width: 100%;
     padding: 0;
     margin-bottom: 20px;
-    height: 70vh;
+    height: auto;
   }
 
   .badge {
@@ -326,15 +325,20 @@ footer {
 
   .footer-container {
     padding: 0;
+    gap: 63px;
   }
 
-  footer {
+  .footer {
     padding: 32px 104px 108px 104px;
   }
 
 }
 
 @media (max-width: 767px) {
+  .logo .logo-img {
+    width: 103px;
+    height: auto;
+  }
 
   .banner {
     height: 60vh;
@@ -363,10 +367,6 @@ footer {
     padding: 52px 24px 16px 24px;
   }
 
-  .content-wrap img {
-    height: 37vh;
-  }
-
   .badge {
     font-size: 16px;
   }
@@ -388,7 +388,7 @@ footer {
     gap: 60px;
   }
 
-  footer {
+  .footer {
     padding: 0;
   }
   
