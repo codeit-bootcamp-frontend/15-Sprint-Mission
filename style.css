@@ -1,33 +1,28 @@
 body {
-  margin: 0;
+  margin: 0 auto;
+  min-width: 375px; 
 }
 
 /* PC ver*/
 @media (min-width: 1200px) {
   .container {
     width:50%;
-
   }
+}
+
 /*  Tablet ver */
-@media (max-width: 1199px) and (min-width: 768px) {
-  body {
-    width: 70%;
-  }
-  .header {
-    padding: 0 24px;
-  }
-}
-/*  Mobile ver */
-@media (max-width: 767px) and (max-width: 375px) {
-  body {
-    width:90%;
-  }
-  .header {
-    padding: 0 16px;
-  }
-}
+ .header {padding: 0 24px;}
+ @media (max-width: 1199px) and (min-width: 768px) {
+  body {width: 70%;}
+ }
 
-}
+
+/*  Mobile ver */
+  .header {padding: 0 16px;}
+  @media (max-width: 767px) and (max-width: 375px) {
+    body {width:100%;}
+  }
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -40,7 +35,7 @@ body {
   top: 0;
   left: 0;
   z-index: 10;
-  padding: 9px 250px 0 9px;
+  box-sizing: border-box;
 }
 
 .header_img{
@@ -51,14 +46,24 @@ body {
   cursor: pointer;
 }
 
-.login {
-  padding: 0 100px;
+.login_btn{
+  width: 128px;
+  height: 45px;
+  background-color: #3692ff;
+  border-radius: 8px;
+  display: inline;
+  color: #f9fafb;
+  font-size: 16px;
+  line-height: 26px;
+  text-align: center;
+  margin: 10px 10px;
+  gap: 10px;
+  
 }
 
-.login-btn{
-  width: 128px;
-  height: 48px;
-  padding: 0 0 200px;
+.login {
+  padding: 12px 23px;
+  gap: 10px;
 }
 
 .top_banner{
@@ -76,7 +81,6 @@ body {
   height: auto;
   align-items: end;
   object-fit: contain;
-
 }
 
 .banner_1 {
@@ -266,7 +270,6 @@ margin: 0;
   height: 20px;
   display: flex;
   justify-content: space-between;
-
 }
 
 .codeit-2024{
@@ -338,5 +341,4 @@ margin: 0;
 
 .policy {
   color: #9ca3af;
-
 }
