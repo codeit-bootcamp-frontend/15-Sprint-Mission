@@ -63,8 +63,8 @@ function activeBtn () {
     const pwdValid = (pwdInput.value.trim() !== '') && (pwdInput.value.trim().length >= 8);
 
     // 회원가입 전용 필드
-    const nicknameValid = !!nicknameInput ? (nicknameInput.value !== '') : true;
-    const checkPwdValid = !!checkPwdInput ? (checkPwdInput.value === pwdInput.value) : true;
+    const nicknameValid = nicknameInput?.value !== '';
+    const checkPwdValid = checkPwdInput?.value === pwdInput?.value;
 
     if (emailValid && pwdValid && nicknameValid && checkPwdValid) {
         submitBtn.classList.remove('disabled');
