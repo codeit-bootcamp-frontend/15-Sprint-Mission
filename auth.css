@@ -48,23 +48,22 @@
 
 
 .content-login {
-  border: none;
-  height: 56px;
-  width: 640px;
-  border-radius: 40px;
-  margin: 20px 0;
+  display: flex;
+  justify-content: center;
   padding: 12px 0;
-  background-color: #3692FF;
-  font-size: 20px;
-  font-weight: 600;
-  line-height: 32px;
-  text-align: center
-  
 }
 
 .login-button {
   text-decoration: none;
   color: #F3F4F6;
+  border: none;
+  border-radius: 40px;
+  background-color: #3692FF;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 32px;
+  width: 100%;
+  cursor: pointer;
 }
 
 .blue-section {

@@ -14,19 +14,21 @@
           <img class="pandaMarketImg" src="img/logo.png">
         </a>
       </div>
-      <div>
-        <label for="userName">이메일</label> 
-        <input type="email" name="userEmail" id="userName" class="userName">
-        <label for="nicname">닉네임</label>
-        <input type="text" name="userName" id="nicname" class="nicname">
-        <label for="userPassword">비밀번호</label>
-        <input type="password" name="userPassword" id="userPassword" class="userPassword">
-        <label for="checkPassword">비밀번호 확인</label>
-        <input type="password" name="userPassword" id="checkPassword" class="checkPassword">
-      </div>
-      <div class="content-login">
-        <a class="login-button" href="/signup">회원가입</a>
-      </div>
+      <form action="/signup" method="post">
+        <div>
+          <label for="userName">이메일</label> 
+          <input type="email" name="userEmail" id="userName" class="userName">
+          <label for="nicname">닉네임</label>
+          <input type="text" name="userName" id="nicname" class="nicname">
+          <label for="userPassword">비밀번호</label>
+          <input type="password" name="userPassword" id="userPassword" class="userPassword">
+          <label for="checkPassword">비밀번호 확인</label>
+          <input type="password" name="userPassword" id="checkPassword" class="checkPassword">
+        </div>
+        <div class="content-login">
+          <button type="submit" class="login-button">회원가입</button>
+        </div>
+      </form>
       <div>
         <div class="blue-section">
           <p class="simpleLogin">간편 로그인하기</p>
