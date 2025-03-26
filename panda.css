@@ -3,21 +3,37 @@
     height: 51px;
     background-color: #FFFFFF;
     position: fixed;
-    top: 0
-}
-.nav .nav_content{
-    width: 1120px;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
+    top: 0;
     align-items: center;
-    
+}
+.nav_content{
+    display: flex;
+    align-items: center;
 }
 #nav1{
     cursor: pointer;
 }
 #nav2{
     cursor: pointer;
+}
+@media(min-width: 1200px) {
+    .nav_content{
+        width: 1120px;
+        justify-content: space-between;
+    }
+}
+@media(max-width: 1200px) {
+    .nav_content{
+        justify-content: space-between;
+        margin: 0 24px;
+        width: 100%;
+    }
+}
+@media(max-width: 767px) {
+    .nav_content{
+        justify-content: space-between;
+        margin: 0 16px;
+    }
 }
 h1 {
     font-size: 40px;
