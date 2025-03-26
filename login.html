@@ -1,55 +1,68 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>판다마켓 로그인</title>
-  <link rel="stylesheet" href="reset.css">
-  <link rel="stylesheet" href="utility.css">
-  <link rel="stylesheet" href="login.css">
-</head>
-<body>
-  <header>
-    <div class="logo wrap">
-      <a href="/">
-        <img src="images/logo_lg.png" alt="판다마켓">
-      </a>
-    </div>
-  </header>
-  <main>
-    <div class="wrap">
-      <form class="login-form">
-        <div class="input-group">
-          <label for="useremail" class="bold">이메일</label>
-          <input type="email" id="useremail" class="text-lg regular">
-        </div>
-        <div class="input-group">
-          <label for="password" class="bold">비밀번호</label>
-          <input type="password" id="password" class="text-lg regular">
-          <img src="images/btn_visibility_off.png" alt="눈감음">
-        </div>
-        <button class="btn-large text-xl semibold">로그인</button>
-      </form>
-      <div class="simple-login">
-        <span class="text-lg medium">간편 로그인하기</span>
-        <ul>
-          <li>
-            <a href="https://www.google.com/">
-              <img src="images/ic_google.png" alt="구글">
-            </a>
-          </li>
-          <li>
-            <a href="https://www.kakaocorp.com/page/">
-              <img src="images/ic_kakao.png" alt="카카오톡">
-            </a>
-          </li>
-        </ul>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>판다마켓 로그인</title>
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="common.css" />
+    <link rel="stylesheet" href="utility.css" />
+    <link rel="stylesheet" href="auth.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo wrap">
+        <a href="/">
+          <img src="images/logo_lg.png" alt="판다마켓" />
+        </a>
       </div>
-      <div class="to-signup">
-        <span>판다마켓이 처음이신가요?</span>
-        <a href="/signup.html">회원가입</a>
+    </header>
+    <main>
+      <div class="wrap">
+        <form class="login-form">
+          <div class="input-group">
+            <label for="useremail" class="bold">이메일</label>
+            <input
+              type="email"
+              id="useremail"
+              class="text-lg regular"
+              placeholder="이메일을 입력해주세요"
+            />
+          </div>
+          <div class="input-group">
+            <label for="password" class="bold">비밀번호</label>
+            <input
+              type="password"
+              id="password"
+              class="text-lg regular"
+              placeholder="비밀번호를 입력해주세요"
+            />
+            <button type="button">
+              <img src="images/ic_visibility_off.png" alt="눈감음" />
+            </button>
+          </div>
+          <button class="btn-large text-xl semibold">로그인</button>
+        </form>
+        <div class="simple-login">
+          <span class="text-lg medium">간편 로그인하기</span>
+          <ul>
+            <li>
+              <a href="https://www.google.com/">
+                <img src="images/ic_google.png" alt="구글" />
+              </a>
+            </li>
+            <li>
+              <a href="https://www.kakaocorp.com/page/">
+                <img src="images/ic_kakao.png" alt="카카오톡" />
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="to-signup">
+          <span>판다마켓이 처음이신가요?</span>
+          <a href="/signup.html">회원가입</a>
+        </div>
       </div>
-    </div>
-  </main>
-</body>
+    </main>
+  </body>
 </html>

@@ -2,54 +2,62 @@ html {
   color: var(--gray800);
 }
 
+body {
+  padding: 10vh 0;
+}
+
 .wrap {
   max-width: 640px;
   width: 100%;
   margin: 0 auto;
 }
 
-.logo {
-  margin-top: 240px;
-}
-
-.logo a{
+.logo a {
   display: flex;
   justify-content: center;
 }
 
-.logo img  {
+.logo img {
   width: 60%;
 }
 
-.login-form{
+.login-form,
+.signup-form {
   display: flex;
   flex-direction: column;
   gap: 24px;
-  margin-top: 40px;
+  margin-top: 55px;
 }
 
-.input-group{
+.input-group {
   display: flex;
   flex-direction: column;
   gap: 16px;
   position: relative;
 }
 
-.input-group input{
+.input-group input {
   padding: 16px 24px;
   background-color: var(--gray100);
   border-width: 0;
   border-radius: 12px;
 }
 
-.input-group img {
+.input-group button {
   position: absolute;
   right: 24px;
   bottom: 16px;
   width: 24px;
+  height: 24px;
+  padding: 0px;
+  background-color: transparent;
 }
 
-.simple-login{
+.input-group img {
+  width: 100%;
+}
+
+.simple-login {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -59,22 +67,35 @@ html {
   background-color: #E6F2FF;
 }
 
-.simple-login ul{
+.simple-login ul {
   display: flex;
   gap: 16px;
 }
 
-.simple-login ul li img{
+.simple-login ul li img {
   width: 42px;
 }
 
-.to-signup{
+.to-signup,
+.to-login {
   display: flex;
   justify-content: center;
   gap: 4px;
   margin-top: 24px;
 }
 
-.to-signup a {
+.to-signup a,
+.to-login a {
   text-decoration: underline;
+}
+
+/* Mobile */
+@media (min-width:375px) and (max-width:767px) {
+  body {
+    padding: 10vh 16px;
+  }
+
+  .wrap {
+    max-width: 400px;
+  }
 }

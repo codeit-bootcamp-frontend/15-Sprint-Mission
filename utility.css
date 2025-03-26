@@ -1,31 +1,29 @@
-:root {
-  --gray900: #111827;
-  --gray800: #1F2937;
-  --gray700: #374151;
-  --gray600: #4B5563;
-  --gray500: #6B7280;
-  --gray400: #9CA3AF;
-  --gray200: #E5E7EB;
-  --gray100: #F3F4F6;
-  --gray50: #F9FAFB;
-  --blue: #3692FF;
-}
-
-.btn-large, .btn-small {
+.btn-large,
+.btn-medium,
+.btn-small {
   background-color: var(--blue);
   color: var(--gray100);
 }
 
-.btn-large:hover, .btn-small:hover {
+.btn-large:hover,
+.btn-medium:hover,
+.btn-small:hover {
   background-color: #1967D6;
 }
 
-.btn-large:active, .btn-small:active {
+.btn-large:active,
+.btn-medium:active,
+.btn-small:active {
   background-color: #1251AA;
 }
 
 .btn-large {
-  padding: 1rem 7.75rem;
+  padding: 16px 124px;
+  border-radius: 40px;
+}
+
+.btn-medium {
+  padding: 12px 71px;
   border-radius: 40px;
 }
 
@@ -67,12 +65,12 @@
   line-height: 2rem;
 }
 
-.text-lg {
-  font-size: 1rem;
+.text-2lg {
+  font-size: 1.125rem;
   line-height: 1.625rem;
 }
 
-.text-2lg {
-  font-size: 1.125rem;
+.text-lg {
+  font-size: 1rem;
   line-height: 1.625rem;
 }
