@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# mission_template_codes 공부용 
+mission_template_codes/

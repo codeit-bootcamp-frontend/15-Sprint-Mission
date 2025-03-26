@@ -1,4 +1,4 @@
 export const PAGE_URLS = {
-  SIGNIN: '/auth/signin.html',
+  SIGNIN: '../pages/auth/signin',
   ITEMS: '/items.html',
 };

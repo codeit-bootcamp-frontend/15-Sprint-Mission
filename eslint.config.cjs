@@ -36,6 +36,7 @@ module.exports = [
         { allowConstantExport: true },
       ],
       'prettier/prettier': 'error',
+      'react/react-in-jsx-scope': 'off',
     },
     settings: {
       react: { version: 'detect' },
