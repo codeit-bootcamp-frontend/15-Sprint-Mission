@@ -1,13 +1,5 @@
 
 @import "reset.css";
-* {
-  box-sizing: border-box;
-}
-
-html {
-  font-family: Pretendard, sans-serif;
-  word-break: keep-all;
-}
 
 .blue-section {
   background-color: #CFE5FF;
