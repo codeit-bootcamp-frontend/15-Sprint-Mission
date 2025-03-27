@@ -7,6 +7,7 @@
   --secondary-font-color: #e5e7eb;
   --button-hover-color: #1967d6;
   --button-active-color: #1251aa;
+  --cool-gray-100: #f3f4f6;
 }
 
 @font-face {
@@ -81,7 +82,7 @@ body p {
   padding: 1.6rem 2.4rem;
   font-weight: 400;
   border: 0.1rem solid var(--cool-gray-100);
-  background-color: #f3f4f6;
+  background-color: var(--cool-gray-100);
   font-size: 1.6rem;
 }
 
@@ -296,4 +297,19 @@ body p {
     font-weight: 500;
     color: var(--button-color);
   }
+}
+
+.errDiv {
+  margin-top: 0.8rem;
+  font-size: 1.4rem;
+  color: #f74747;
+  padding-left: 1.6rem;
+}
+
+.input-box.invalid {
+  border: 1px solid #f74747;
+}
+
+.login-button.activate {
+  background-color: var(--button-color);
 }
