@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/common/auth.css">
+    <link rel="stylesheet" href="../css/common/reset.css">
+    <link rel="stylesheet" href="../css/pages/login.css">
+    <title>판다마켓 - 로그인</title>
+</head>
+<body>
+    <main>
+        <a href="/" class="logo-a">
+            <img class="logo" src="../assets/logo/logo.png" alt="판다마켓 로고">
+        </a>
+        <div class="input-info">
+            <form id="form">
+                <div class="input-group">
+                    <label for="email">이메일</label>
+                    <input id="email" class="auth-input" type="email"  name="email" placeholder="이메일을 입력해주세요" >
+                    <p class="message message-email"></p>
+                </div>
+                <div class="input-group">
+                    <label for="password">비밀번호</label>
+                    <div class="password">
+                        <input id="pwd" class="auth-input"  type="password" name="password" placeholder="비밀번호를 입력해주세요" >
+                        <button type="button" class="pwd-icon-btn">
+                            <img class="pwd-icons" src="../assets/icons/hide-password.png" alt="비밀번호 보이기 버튼">
+                        </button>
+                    </div>
+                    <p class="message message-password"></p>
+                </div>
+                <div class="submit-btn">
+                    <button class="submit-button login-button" type="button" onclick="location.href='items.html'">로그인</button>
+                </div>
+            </form>
+            <div class="sign-easy">
+                간편 로그인하기
+                <div>
+                    <a href="https://www.google.com/">
+                        <img class="icon" src="../assets/icons/Google.png" alt="간편로그인 구글">
+                    </a>
+                    <a href="https://www.kakaocorp.com/page/">
+                        <img class="icon" src="../assets/icons/Kakao.png" alt="간편로그인 카카오">
+                    </a>
+                </div>
+            </div>
+            <div class="move-page">
+                판다마켓이 처음이신가요?
+                <a href="signup.html">회원가입</a>
+            </div>
+        </div>
+    </main>
+    <script src="../scripts/loginValidation.js"></script>
+    <script src="../scripts/loginTogglePassword.js"></script>
+</body>
+</html>

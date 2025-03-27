@@ -1,3 +1,5 @@
+@import 'variables.css';
+
 html, body {
     display: flex;
     flex-direction: column;
@@ -6,8 +8,8 @@ html, body {
 }
 
 .logo {
-    width: auto;
-    height: 132px;
+    width: 396px;
+    height: auto;
     margin: 0 122px;
 }
 
@@ -25,8 +27,8 @@ html, body {
     margin-bottom: 24px;
 }
 
-input {
-    width: 640px;
+.auth-input {
+    width: 100%;
     height: 56px;
     margin-top: 16px;
     border: none;
@@ -39,7 +41,8 @@ input {
     padding: 16px 24px 14px; 
 }
 
-input::placeholder {
+
+.auth-input::placeholder {
     color: var(--gray400);
     font-weight: 400;
     font-size: 16px;
@@ -47,10 +50,16 @@ input::placeholder {
     letter-spacing: 0%;
 }
 
-/* #pwd {
-    padding: 16px 24px 16px;
-} */
-
+.message {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 24px;
+    margin-top: 8px;
+    margin-left: 16px;
+    color: var(--red);
+    height: 24px;
+}
 
 .password {
     display: flex;
@@ -66,14 +75,14 @@ input::placeholder {
     top: 32px;
 }
 
-.pwd-icon {
+.pwd-icons {
     width: 100%;
     height: 100%;
 }
 
 .submit-btn button {
     color: var(--gray100);
-    background-color: var(--blue);
+    background-color: var(--blue100);
     width: 640px;
     height: 56px;
     text-align: center;
@@ -93,7 +102,7 @@ input::placeholder {
     gap: 10px;
     width: 640px;
     height: 74px;
-    background: #E6F2FF; /* 배경색 */
+    background: var(--background); /* 배경색 */
     border-radius: 8px;
 
     flex: none;
@@ -129,7 +138,7 @@ input::placeholder {
 }
 
 .move-page a {
-    color: var(--blue);
+    color: var(--blue100);
     text-decoration: underline;
 }
 
@@ -138,12 +147,9 @@ input::placeholder {
     body {
         margin: 190px 52px 325px;
     }
-    
-    
 }
 
-@media (max-width: 767px) and (min-width: 375px) {
-
+@media (max-width: 767px) {
     .logo-a {
         display: flex;
         justify-content: center;
@@ -161,7 +167,7 @@ input::placeholder {
         margin: 0 auto;
     }
 
-    input {
+    .auth-input {
         width: 100%;
     }
 
