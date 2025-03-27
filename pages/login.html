@@ -5,24 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>판다마켓-로그인</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/auth.css">
+
 </head>
 <body>
     <div class="login-box">
-        <a href="/index.html">
+        <a href="/pages/index.html">
             <img class="login-pandalogo" src="/image/logo.png" alt="pandalogo">
         </a>
-        <form action="/login.html" method="POST">
+        <form action="/pages/items.html" method="POST">
             <div class="email">
                 <label for="email">이메일</label>
-                <input type="text" id="email" name="email" placeholder="email">
+                <input type="email" id="email" name="email" placeholder="email">
             </div>
             <div class="password">
                 <label for="password">비밀번호</label>
-                <input type="password" id="password" name="password" placeholder="password">
+                <div class="ps-input">
+                    <input type="password" id="password" name="password" placeholder="password">
+                    <img class="ps-visibility" data-toggle="off" src="/image/icon/visibility_off.png" alt="눈 모양">
+                </div>
             </div>
-            <button type="submit" name="login">로그인</button>
+            <button class="login-btn" type="submit" name="login" disabled>로그인</button>
             <div class="quicklogin">
                 <span class="">간편 로그인하기</span>
                 <a href="https://www.google.com/">
@@ -33,9 +37,10 @@
                 </a>
             </div>
             <p class="firstlogin">판다마켓이 처음이신가요? 
-                <a href="/signup.html"><span>회원가입</span></a>
+                <a href="/pages/signup.html"><span>회원가입</span></a>
             </p>
         </form>        
     </div>
+    <script type ="module"src="/js/login.js"></script>
 </body>
 </html>

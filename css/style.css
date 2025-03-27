@@ -1,11 +1,11 @@
-@import "common.css";
+@import "/css/common.css";
 
-@media(max-width:1920px){
+@media (max-width: 1920px) {
     p{
         white-space: nowrap;
     }
 }
-@media(max-width:1920px){
+@media (max-width: 1920px) {
     header{
         padding: 0 200px;
     }
@@ -13,7 +13,7 @@
         padding:0 200px;
     }
 }
-@media(min-width:1920px){
+@media (min-width: 1920px) {
     header{
         width: 1920px;
         margin: 0 auto;
@@ -175,93 +175,8 @@ footer .text{
     gap: 12px;
 }
 
-/* ------------------------ 스프린트 미션 2 - login, signup -------------------------*/
-.login-box{
-    display: grid;
-    justify-content: center;
-    align-content: center;
-    height: 100vh;
-}
-.login-pandalogo{
-    width: 396px;
-    display: block;
-    margin:0 auto;
-    margin-bottom:40px;
-}
-.login-box form{
-    display: grid;
-    grid-template-columns: minmax(auto, 640px);
-    gap:24px;
-}
-.login-box label{
-    display: block;
-    margin-bottom: 16px;
-    font-size: 18px;
-    font-weight: 700;
-    color:var(--gray800)
-}
-.login-box input{
-    font-size:16px;
-    font-weight: 400;
-    color:var(--gray800);
-    width:100%;
-    padding: 16px 24px;
-    border-radius: 12px;
-    background-color: var(--gray100);
-}
-.password input{
-    background-image:url('/image/icon/visibility_off.png');
-    background-repeat: no-repeat;
-    background-position: right 16px center;
-    background-size: 24px;
-}
-.password-check input{
-    background-image:url('/image/icon/visibility_on.png');
-    background-repeat: no-repeat;
-    background-position: right 16px center;
-    background-size: 24px;
-}
-.login-box button{
-    padding: 16px 125px;
-    border-radius: 40px;
-    font-size: 20px;
-    font-weight: 600;
-    color: var(--gray100);
-    background-color: var(--blue);
-}
-.quicklogin{
-    display: grid;
-    grid-template-columns: 1fr auto auto;
-    /* 왼쪽(span)은 가득 차고, 오른쪽(img)은 각각 내용 크기대로 */
-    align-items: center;
-    gap:16px;
-    padding:16px 23px;
-    border-radius: 8px;
-    background-color: #E6F2FF;
-}
-.quicklogin span{
-    font-size: 16px;
-    font-weight: 500;
-    color: var(--gray800)
-}
-.quicklogin img{
-    width: 42px;
-}
-.firstlogin{
-    margin:0 auto;
-    font-size: 14px;
-    font-weight: 500;
-    color:var(--gray800);
-}
-.firstlogin span{
-    color:var(--blue);
-    text-decoration: underline;
-    cursor:pointer;
-}
-
-/* ------------------------ 스프린트 미션 3 - responsive web -------------------------*/
 /* tablet */
-@media(min-width:768px) and (max-width:1200px){
+@media (min-width: 768px) and (max-width: 1200px) {
     header{
         padding: 0 24px;
     }
@@ -321,15 +236,12 @@ footer .text{
     footer .text{
         padding:0 104px;
     }
-
-    /* ****** login,signup ****** */
-    .login-box{
-        width:640px;
-        margin:0 auto;
-    }
 }
 /* mobile */
-@media(min-width:375px) and (max-width:768px){
+@media  (max-width: 768px) {
+    body{
+        min-width: 375px;
+    }
     header{
         padding: 0 16px;
     }
@@ -409,19 +321,7 @@ footer .text{
         gap:60px;
         padding:0;
     }
-    footer .p1{
+    .footer-copyright{
         order:1;
-    }
-
-    /* ****** login,signup ****** */
-    .login-box{
-        width:100%;
-        max-width: 400px;
-        padding: 0 16px;
-        margin: 0 auto;
-    }
-    .login-pandalogo{
-        width: 60%;
-        margin-bottom: 24px;
     }
 }
