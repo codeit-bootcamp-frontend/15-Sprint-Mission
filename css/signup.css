@@ -70,6 +70,18 @@ body {
   margin-right: -23px;
 }
 
+.input-error {
+  border: 1px solid #F74747 !important;
+}
+
+.error-message {
+  color: #F74747;
+  display: none;
+  text-align: left;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
 .password-wrapper .toggle-btn {
   position: absolute;
   right: 0px;

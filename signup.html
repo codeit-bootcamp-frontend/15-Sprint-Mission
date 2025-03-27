@@ -16,21 +16,25 @@
       <form class="signup-form">
         <label for="email">이메일</label>
         <input type="email" id="email" name="email" placeholder="이메일을 입력해주세요">
+        <p class="error-message" id="email-error"></p>
 
         <label for="username">닉네임</label>
         <input type="text" id="username" name="username" placeholder="닉네임을 입력해주세요">
+        <p class="error-message" id="username-error"></p>
 
         <label for="password">비밀번호</label>
         <div class="password-wrapper">
           <input type="password" id="password" name="password" placeholder="비밀번호를 입력해주세요">
-          <img src="./images/close_eye.png" alt="미리보기" class="toggle-btn">
+          <img src="./images/close_eye.png" alt="미리보기" class="toggle-btn" id="password-toggle">
         </div>
+        <p class="error-message" id="password-error"></p>
 
         <label for="password">비밀번호 확인</label>
         <div class="password-wrapper">
-          <input type="password" id="password" name="password" placeholder="비밀번호를 다시 한 번 입력해주세요">
-          <img src="./images/open_eye.png" alt="미리보기" class="toggle-btn">
+          <input type="password" id="confirm-password" name="confirm-password" placeholder="비밀번호를 다시 한 번 입력해주세요">
+          <img src="./images/close_eye.png" alt="미리보기" class="toggle-btn" id="confirm-password-toggle">
         </div>
+        <p class="error-message" id="confirm-password-error"></p>
 
         <button type="submit" class="login-btn">회원가입</button>
       </form>
@@ -46,5 +50,6 @@
       <p class="signup">이미 회원이신가요? <a href="login.html">로그인</a></p>
     </div>
 
+    <script src="./javaScript/signup.js"></script>
   </body>
 </html>
