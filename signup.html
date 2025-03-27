@@ -16,31 +16,55 @@
             <form method="post">
                 <div class="form-group">
                     <label for="email">이메일</label>
-                    <div><input type="email" id="email" name="email" placeholder="이메일을 입력해 주세요" /></div>
+                    <div>
+                        <input
+                            type="email"
+                            id="email-signup"
+                            name="email"
+                            placeholder="이메일을 입력해 주세요"
+                            required />
+                        <span class="error-message"></span>
+                    </div>
                 </div>
                 <div class="form-group">
-                    <label for="text">닉네임</label>
-                    <div><input type="text" id="nickname" name="nickname" placeholder="닉네임을 입력해 주세요" /></div>
+                    <label for="nickname">닉네임</label>
+                    <div>
+                        <input
+                            type="text"
+                            id="nickname"
+                            name="nickname"
+                            placeholder="닉네임을 입력해 주세요"
+                            required />
+                        <span class="error-message"></span>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="password">비밀번호</label>
                     <div class="password-wrap">
-                        <input type="password" id="password" name="password" placeholder="비밀번호를 입력해 주세요" />
+                        <input
+                            type="password"
+                            id="password-signup"
+                            name="password"
+                            placeholder="비밀번호를 입력해 주세요"
+                            required />
                         <button class="password-button" type="button"><img src="images/unvisible_eye.png" /></button>
                     </div>
+                    <span class="error-message"></span>
                 </div>
                 <div class="form-group">
-                    <label for="password">비밀번호 확인</label>
+                    <label for="password-confirmation">비밀번호 확인</label>
                     <div class="password-wrap">
                         <input
                             type="password"
-                            id="password"
-                            name="password"
-                            placeholder="비밀번호를 다시 한 번 입력해 주세요" />
+                            id="password-confirmation"
+                            name="password-confirmation"
+                            placeholder="비밀번호를 다시 한 번 입력해 주세요"
+                            required />
                         <button class="password-button" type="button"><img src="images/unvisible_eye.png" /></button>
                     </div>
-                    <button class="login-button" type="submit">회원가입</button>
+                    <span class="error-message"></span>
                 </div>
+                <button class="login-button" type="button" id="signup-btn" disabled>회원가입</button>
             </form>
             <div class="login-method-container">
                 <h3 class="social-login-button">간편 로그인하기</h3>
@@ -55,5 +79,6 @@
             </div>
             <div class="signup-go">이미 회원이신가요?<a href="login.html">로그인</a></div>
         </main>
+        <script src="validation.js"></script>
     </body>
 </html>

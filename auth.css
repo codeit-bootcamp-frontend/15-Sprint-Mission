@@ -25,7 +25,6 @@ body {
 
 .form-group {
     margin-bottom: 20px;
-    gap: 24px;
 }
 
 .form-group label {
@@ -40,7 +39,7 @@ body {
     height: 48px;
     padding: 16px 24px;
     background-color: #f3f4f6;
-    border: none;
+    border: 1px solid #ccc;
     border-radius: 12px;
     font-size: 16px;
 }
@@ -55,12 +54,12 @@ body {
     justify-content: space-between;
     align-items: center;
     position: relative;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .password-button {
     position: absolute;
-    right: 24px;
+    right: 16px;
     width: 24px;
     height: 24px;
     border: none;
@@ -70,6 +69,19 @@ body {
 
 .password-button img {
     width: 100%;
+    height: auto;
+}
+
+input.error {
+    border-color: red;
+}
+
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 8px;
+    display: block;
+    margin-left: 16px;
 }
 
 .login-button {
@@ -93,6 +105,11 @@ body {
     border-radius: 8px;
     padding: 16px 23px;
     margin: 24px 0;
+}
+
+.login-button:disabled {
+    background-color: #9ca3af;
+    cursor: not-allowed;
 }
 
 .login-method h3 {
