@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { debounce } from '@/utils/debounce';
+import { debounce } from '@/utils/debounce.js';
 import '@/pages/auth/auth.css';
-import { validateEmail } from '@/utils/validators';
-import { ERROR_MESSAGES } from '@/constants/messages/auth';
-import { PAGE_URLS } from '@/constants/urls/page-urls';
+import { validateEmail } from '@/utils/validators.js';
+import { ERROR_MESSAGES } from '@/constants/messages/auth.js';
+import { PAGE_URLS } from '@/constants/urls/page-urls.js';
 
 export default function Signup() {
   const navigate = useNavigate();
@@ -63,6 +63,7 @@ export default function Signup() {
         break;
       case 'password':
         setPassword(value);
+        handleValidation('confirmPassword', confirmPassword);
         break;
       case 'confirmPassword':
         setConfirmPassword(value);
@@ -82,127 +83,136 @@ export default function Signup() {
   };
 
   return (
-    <div className="auth-container">
-      <header className="auth-header">
-        <h1 className="logo-container">
-          <a href="/">
-            <img src="/images/panda_face.svg" alt="logo" className="logo" />
-            <img
-              src="/images/logo_typo.svg"
-              alt="panda market"
-              className="logo-typo"
+    <div className="auth-body">
+      <div className="auth-container">
+        <header className="auth-header">
+          <h1 className="logo-container">
+            <a href="/">
+              <img src="/images/panda_face.svg" alt="logo" className="logo" />
+              <img
+                src="/images/logo_typo.svg"
+                alt="panda market"
+                className="logo-typo"
+              />
+            </a>
+          </h1>
+        </header>
+
+        <form
+          className="auth-form"
+          data-auth-type="signup"
+          onSubmit={handleSubmit}
+        >
+          <div className="input-container">
+            <label htmlFor="email">이메일</label>
+            <input
+              type="email"
+              id="email"
+              className={errors.email ? 'error-input' : ''}
+              value={email}
+              onChange={(e) => handleChange('email', e.target.value)}
+              placeholder="이메일을 입력해주세요"
             />
+            <div className="validation-error-message">{errors.email}</div>
+          </div>
+
+          <div className="input-container">
+            <label htmlFor="nickname">닉네임</label>
+            <input
+              id="nickname"
+              type="text"
+              className={errors.nickname ? 'error-input' : ''}
+              value={nickname}
+              onChange={(e) => handleChange('nickname', e.target.value)}
+              placeholder="닉네임을 입력해주세요"
+            />
+            <div className="validation-error-message">{errors.nickname}</div>
+          </div>
+
+          <div className="input-container">
+            <label htmlFor="password">비밀번호</label>
+            <div className="password-input">
+              <input
+                id="password"
+                type={showPassword ? 'text' : 'password'}
+                className={errors.password ? 'error-input' : ''}
+                value={password}
+                onChange={(e) => handleChange('password', e.target.value)}
+                placeholder="비밀번호를 입력해주세요"
+              />
+              <button
+                type="button"
+                className={`password-visibility ${showPassword ? 'eye-open' : 'eye-closed'}`}
+                onClick={() => setShowPassword(!showPassword)}
+                aria-label={showPassword ? '비밀번호 숨기기' : '비밀번호 보기'}
+              />
+            </div>
+            <div
+              className={`validation-error-message ${errors.password ? 'active' : ''}`}
+            >
+              {errors.password}
+            </div>
+          </div>
+
+          <div className="input-container">
+            <label htmlFor="confirmPassword">비밀번호 확인</label>
+            <div className="password-input">
+              <input
+                id="confirmPassword"
+                type={showConfirmPassword ? 'text' : 'password'}
+                className={errors.confirmPassword ? 'error-input' : ''}
+                value={confirmPassword}
+                onChange={(e) =>
+                  handleChange('confirmPassword', e.target.value)
+                }
+                placeholder="비밀번호를 다시 입력해주세요"
+              />
+              <button
+                type="button"
+                className={`password-visibility ${showConfirmPassword ? 'eye-open' : 'eye-closed'}`}
+                onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                aria-label={
+                  showConfirmPassword ? '비밀번호 숨기기' : '비밀번호 보기'
+                }
+              />
+            </div>
+            <div
+              className={`validation-error-message ${errors.confirmPassword ? 'active' : ''}`}
+            >
+              {errors.confirmPassword}
+            </div>
+          </div>
+
+          <button type="submit" className="auth-button" disabled={!isFormValid}>
+            회원가입
+          </button>
+        </form>
+
+        <div className="oauth-container">
+          <p>간편 로그인하기</p>
+          <ul className="oauth-site">
+            <li>
+              <a href="https://www.google.com" className="oauth-button">
+                <img
+                  src="../images/google_logo.svg"
+                  alt="google signin button"
+                />
+              </a>
+            </li>
+            <li>
+              <a href="https://www.kakaocorp.com" className="oauth-button">
+                <img src="../images/kakao_logo.svg" alt="kakao signin button" />
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div className="switch">
+          이미 회원이신가요?&nbsp;
+          <a href="/signin" className="switch-button">
+            로그인
           </a>
-        </h1>
-      </header>
-
-      <form
-        className="auth-form"
-        data-auth-type="signup"
-        onSubmit={handleSubmit}
-      >
-        <div className="input-container">
-          <label htmlFor="email">이메일</label>
-          <input
-            type="email"
-            id="email"
-            className={errors.email ? 'error-input' : ''}
-            value={email}
-            onChange={(e) => handleChange('email', e.target.value)}
-            placeholder="이메일을 입력해주세요"
-          />
-          <div className="validation-error-message">{errors.email}</div>
         </div>
-
-        <div className="input-container">
-          <label htmlFor="nickname">닉네임</label>
-          <input
-            id="nickname"
-            type="text"
-            className={errors.email ? 'error-input' : ''}
-            value={nickname}
-            onChange={(e) => handleChange('nickname', e.target.value)}
-            placeholder="닉네임을 입력해주세요"
-          />
-          <div className="validation-error-message">{errors.nickname}</div>
-        </div>
-
-        <div className="input-container">
-          <label htmlFor="password">비밀번호</label>
-          <div className="password-input">
-            <input
-              id="password"
-              type={showPassword ? 'text' : 'password'}
-              className={errors.email ? 'error-input' : ''}
-              value={password}
-              onChange={(e) => handleChange('password', e.target.value)}
-              placeholder="비밀번호를 입력해주세요"
-            />
-            <button
-              type="button"
-              className={`password-visibility ${showPassword ? 'eye-open' : 'eye-closed'}`}
-              onClick={() => setShowPassword(!showPassword)}
-              aria-label={showPassword ? '비밀번호 숨기기' : '비밀번호 보기'}
-            />
-          </div>
-          <div
-            className={`validation-error-message ${errors.email ? 'active' : ''}`}
-          >
-            {errors.password}
-          </div>
-        </div>
-
-        <div className="input-container">
-          <label htmlFor="confirmPassword">비밀번호 확인</label>
-          <div className="password-input">
-            <input
-              id="confirmPassword"
-              type={showConfirmPassword ? 'text' : 'password'}
-              className={errors.email ? 'error-input' : ''}
-              value={confirmPassword}
-              onChange={(e) => handleChange('confirmPassword', e.target.value)}
-              placeholder="비밀번호를 다시 입력해주세요"
-            />
-            <button
-              type="button"
-              className={`password-visibility ${showConfirmPassword ? 'eye-open' : 'eye-closed'}`}
-              onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-              aria-label={
-                showConfirmPassword ? '비밀번호 숨기기' : '비밀번호 보기'
-              }
-            />
-          </div>
-          <div className="validation-error-message">
-            {errors.confirmPassword}
-          </div>
-        </div>
-
-        <button type="submit" className="auth-button" disabled={!isFormValid}>
-          회원가입
-        </button>
-      </form>
-
-      <div className="oauth-container">
-        <p>간편 로그인하기</p>
-        <ul className="oauth-site">
-          <li>
-            <a href="https://www.google.com" className="oauth-button">
-              <img src="../images/google_logo.svg" alt="google signin button" />
-            </a>
-          </li>
-          <li>
-            <a href="https://www.kakaocorp.com" className="oauth-button">
-              <img src="../images/kakao_logo.svg" alt="kakao signin button" />
-            </a>
-          </li>
-        </ul>
-      </div>
-
-      <div className="switch">
-        이미 회원이신가요?&nbsp;
-        <a href="/signin" className="switch-button">
-          로그인
-        </a>
       </div>
     </div>
   );

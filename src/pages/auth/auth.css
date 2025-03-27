@@ -49,7 +49,7 @@ label {
   margin-bottom: 1.6rem;
 }
 
-input {
+.auth-form input {
   background-color: var(--secondary-100);
   border-radius: 12px;
   height: 6rem;
@@ -88,11 +88,11 @@ input {
 }
 
 .password-visibility.eye-closed {
-  background-image: url('../images/close_eye.svg');
+  background-image: url('/images/close_eye.svg');
 }
 
 .password-visibility.eye-open {
-  background-image: url('../images/open_eye.svg');
+  background-image: url('/images/open_eye.svg');
 }
 
 .password-visibility:hover {
@@ -104,7 +104,7 @@ input {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2.4rem 2.3rem;
+  padding: 1.5rem 2.3rem;
   background-color: var(--primary-0);
   border-radius: 8px;
 }

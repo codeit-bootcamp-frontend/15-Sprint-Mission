@@ -5,7 +5,7 @@ function App() {
   return (
     <>
       {/* 공통 헤더 */}
-      <header>{/* 예: <Header /> */}</header>
+      {/* <header>예: <Header /></header> */}
 
       {/* 페이지 컴포넌트 들어갈 자리 */}
       <main>
@@ -13,7 +13,7 @@ function App() {
       </main>
 
       {/* 공통 푸터 */}
-      <footer>{/* 예: <Footer /> */}</footer>
+      {/* <footer>예: <Footer /></footer> */}
     </>
   );
 }
