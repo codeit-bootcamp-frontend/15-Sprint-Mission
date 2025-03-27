@@ -4,25 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
-    <link rel="stylesheet" href="login.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="login-Signup.css">
+    <title>판다마켓 - 로그인</title>
 </head>
 <body>
     <container>
         <div id="logo">
             <a href="index.html">
-                <img src="./image/판다얼굴.png">
-                <img src="./image/판다마켓.png">
+                <img src="./image/logo.png" alt="판다마켓 로고">
+                <img src="./image/typography.png" alt="판다마켓 로고 텍스트">
             </a>    
         </div>
         <form>
-            <lable>이메일</lable>
-            <input type="email" name="user-email" placeholder="이메일을 입력해주세요">
-            <lable>비밀번호</lable>
-            <input type="password" name="user-password" placeholder="비밀번호를 입력해주세요">
-            <div class="login-button">
+            <label for="email">이메일</label>
+            <input type="email" id="email" name="user-email" placeholder="이메일을 입력해주세요">
+            <label for="password">비밀번호</label>
+            <input type="password" id="password" name="user-password" placeholder="비밀번호를 입력해주세요">
+            <button type="submit" class="login-button buttons">
                 로그인
-            </div>
+            </button>
         </form>
         <div class="sns-login">
             <p>간편 로그인하기</p>
