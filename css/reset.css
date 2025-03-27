@@ -4,6 +4,9 @@
   padding: 0;
   border: 0;
   box-sizing: border-box;
+  font-family: "Pretendard Variable", sans-serif;
+  font-size: 10px; /* Base font size */
+  transition: all 0.5s;
 }
 
 /* 기본 스타일 초기화 */

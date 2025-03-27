@@ -1,0 +1,33 @@
+/* 모바일 사이즈 이하 지원 X */
+.unsupported-screen {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(10px);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    color: white;
+    font-size: 1.8rem;
+    font-weight: 600;
+  }
+  
+  .unsupported-message {
+    color: white;
+    font-size: 1.6rem;
+    font-weight: 600;
+    padding: 2rem 2rem;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: 1rem;
+    background-color: rgba(0, 0, 0, 0.4);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  }
+  
+  @media (max-width: 374px) {
+    .unsupported-screen {
+      display: flex;
+    }
+  }

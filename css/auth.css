@@ -1,0 +1,185 @@
+.main-btn,
+button {
+  cursor: pointer;
+}
+
+.main-btn:hover,
+button:hover {
+  background: var(--blue200);
+}
+
+.main-btn:active,
+button:active {
+  background: var(--blue300);
+}
+
+.main-btn:disabled,
+button:disabled {
+  background: var(--inactive);
+}
+
+main {
+  height: 61.8rem;
+  margin: 15rem auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo-box {
+  width: 39.6rem;
+  height: 13.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.logo {
+  width: 10rem;
+  height: 10rem;
+}
+
+.pandamarket {
+  width: 26.6rem;
+  height: 12rem;
+  color: var(--blue100);
+}
+
+form {
+  margin-top: 4rem;
+  width: 64rem;
+  height: 44.6em;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.login-input {
+  margin-bottom: 2.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.password-container {
+  position: relative;
+}
+
+.password-container input {
+  width: 100%; /* input이 가득 차도록 */
+  padding-right: 4rem; /* 아이콘과 텍스트 간 간격 확보 */
+  box-sizing: border-box; /* 패딩이 width에 포함되도록 설정 */
+}
+
+.eye-icon {
+  position: absolute;
+  right: 1.5rem;
+  top: 42%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+}
+
+label {
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+input {
+  font-size: 1.6rem;
+  height: 5.6rem;
+  padding: 2rem;
+  border-radius: 1.2rem;
+  background-color: var(--gray100);
+}
+
+input::placeholder {
+  color: var(--inactive);
+}
+
+.btn {
+  height: 5.6rem;
+  color: var(--gray100);
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 1.6rem 12.4rem;
+  border-radius: 4rem;
+  background-color: var(--inactive);
+}
+
+.easy-login {
+  width: 64rem;
+  margin: 2.4rem 0;
+  background-color: #e6f2ff;
+  border-radius: 0.8rem;
+}
+
+.easy-login-box {
+  height: 5rem;
+  margin: 1.6rem 2.3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.easy-login-box p {
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.easy-login-icons {
+  display: flex;
+  gap: 1.6rem;
+}
+
+.question {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.question a {
+  text-decoration: underline;
+  color: var(--blue100);
+}
+
+.signup,
+.login {
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+/* Mobile: 767px 이하  */
+@media (max-width: 767px) {
+  main {
+    width: 100%;
+    max-width: 40rem; /* 최대 너비 400px */
+    padding: 0 1.6rem; /* 좌우 여백 16px */
+  }
+  .logo-box {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  form {
+    margin-top: 0;
+    width: 100%; /* 부모(main)의 너비를 따름 */
+  }
+  .logo {
+    width: 5.2rem; /* 로고 크기 줄이기 */
+    height: auto;
+  }
+  .pandamarket {
+    width: 13.3rem; /* 텍스트 로고 크기 조절 */
+    height: auto;
+  }
+}
