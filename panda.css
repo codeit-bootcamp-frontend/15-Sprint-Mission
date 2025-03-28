@@ -93,6 +93,7 @@ h1 {
         flex-direction: column;
         align-items: center;
         justify-content: flex-end;
+        margin-top: 56px;
     }.look{
         width: 357px;
     }.first_img{
@@ -156,10 +157,21 @@ h1 {
         grid-row: 1;
     }.two{
         display: grid;
+    }.three{
+        margin-bottom: 56px;
     }
 }
 @media(max-width: 767px) {
-    
+    .second{
+        width: 344px;
+        margin: 52px 0 40px;
+    }.img_content{
+        width: 240px;
+    }.img{
+        width: 344px;
+    }.three{
+        margin-bottom: 83px;
+    }
 }
 .last{
     background-color: #CFE5FF;
