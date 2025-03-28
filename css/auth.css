@@ -20,7 +20,7 @@ button:disabled {
 
 main {
   height: 61.8rem;
-  margin: 15rem auto;
+  margin: 22rem auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -57,8 +57,12 @@ form {
   gap: 1rem;
 }
 
+.signup-form {
+  margin-bottom: 20rem;
+}
+
 .login-input {
-  margin-bottom: 2.4rem;
+  margin-bottom: 2rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -102,7 +106,23 @@ input::placeholder {
   color: var(--inactive);
 }
 
-.btn {
+.error-input {
+  border: 2px solid var(--red);
+}
+
+.correct-input {
+  border: 2px solid var(--blue100);
+}
+
+.errMsg {
+  display: block;
+  margin-left: 2rem;
+  color: var(--red);
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+#btn {
   height: 5.6rem;
   color: var(--gray100);
   font-size: 2rem;
@@ -114,7 +134,7 @@ input::placeholder {
 
 .easy-login {
   width: 64rem;
-  margin: 2.4rem 0;
+  margin: 4rem 0;
   background-color: #e6f2ff;
   border-radius: 0.8rem;
 }
@@ -159,6 +179,7 @@ input::placeholder {
 /* Mobile: 767px 이하  */
 @media (max-width: 767px) {
   main {
+    margin: 15rem auto;
     width: 100%;
     max-width: 40rem; /* 최대 너비 400px */
     padding: 0 1.6rem; /* 좌우 여백 16px */
@@ -175,11 +196,21 @@ input::placeholder {
     width: 100%; /* 부모(main)의 너비를 따름 */
   }
   .logo {
-    width: 5.2rem; /* 로고 크기 줄이기 */
+    width: 5.2rem; 
     height: auto;
   }
   .pandamarket {
     width: 13.3rem; /* 텍스트 로고 크기 조절 */
     height: auto;
+  }
+  label {
+    font-size: 1.4rem;
+  }
+  .easy-login {
+    width: 100%;
+    margin: 1.6rem 0;
+  }
+  .question {
+    width: 100%;
   }
 }

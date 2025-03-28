@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="css/base.css" />
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/auth.css" />
+    <script src="auth.js" defer></script>
+    <script src="login.js" defer></script>
     <title>로그인</title>
   </head>
   <body>
@@ -24,25 +26,26 @@
         <img class="logo" src="images/logo.png" />
         <img class="pandamarket" src="images/pandamarket.png" />
       </a>
-      <form>
+      <form class="login-form">
         <div class="login-input">
           <label for="email">이메일</label>
           <input type="email" id="email" placeholder="이메일을 입력해주세요" />
+          <p id="emailErr" class="errMsg"></p>
         </div>
         <div class="login-input">
           <label for="password">비밀번호</label>
           <div class="password-container">
             <input type="password" id="password" placeholder="비밀번호를 입력해주세요" />
-            <button type="button">
+            <button type="button" id="passwordVisibility">
               <img
               src="images/invisible-eye-icon.png"
               class="eye-icon"
-              onclick="togglePasswordVisibility()"
               />
             </button>
+            <p id="passwordErr" class="errMsg"></p>
           </div>
         </div>
-        <button class="btn" type="submit">로그인</button> 
+        <button id="btn" class="login" type="submit" disabled>로그인</button> 
       </form>
       <div class="easy-login">
         <div class="easy-login-box">
