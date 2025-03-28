@@ -69,40 +69,6 @@
   height: 24px;
 }
 
-/* 버튼 스타일 */
-.button {
-  background-color: var(--primary-100);
-  color: #ffffff;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.button:hover {
-  background-color: var(--primary-200);
-}
-
-.button:focus {
-  background-color: var(--primary-300);
-}
-
-.button:disabled {
-  background-color: var(--gray-400);
-  cursor: default;
-  pointer-events: none;
-}
-
-.pill-button {
-  font-size: 20px;
-  font-weight: 700;
-  border-radius: 999px;
-  padding: 16px 126px;
-}
-
-.full-width {
-  width: 100%;
-}
-
 /* 소셜 로그인 */
 .social-login-container {
   background-color: #e6f2ff;

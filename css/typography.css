@@ -12,6 +12,14 @@ h2 {
   letter-spacing: 0.02em;
 }
 
+.feature-tag {
+  color: var(--primary-100);
+  font-size: 18px;
+  line-height: 25px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
 .feature-description {
   font-size: 24px;
   font-weight: 500;

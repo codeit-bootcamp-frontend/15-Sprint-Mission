@@ -1,3 +1,35 @@
+/* 공통 버튼 스타일 */
+.button {
+  background-color: var(--primary-100);
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button:hover {
+  background-color: var(--primary-200);
+}
+
+.button:focus {
+  background-color: var(--primary-300);
+}
+
+.button:disabled {
+  background-color: var(--gray-400);
+  cursor: default;
+  pointer-events: none;
+}
+
+/* 둥근 버튼 스타일 */
+.pill-button {
+  font-size: 20px;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 16px 124px;
+}
+
+/* 로그인 버튼 스타일 */
 .login-btn {
   background-color: var(--primary-100);
   color: #ffffff;
@@ -16,29 +48,12 @@
   background-color: var(--primary-200);
 }
 
-.button {
-  background-color: var(--primary-100);
-  color: #ffffff;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.button:hover {
-  background-color: var(--primary-200);
-}
-
-.button:focus {
-  background-color: var(--primary-300);
-}
-
-.pill-button {
-  font-size: 20px;
-  font-weight: 700;
-  border-radius: 999px;
-  padding: 16px 124px;
-}
-
+/* 배너 내 버튼 스타일 */
 .banner .pill-button {
   margin-top: 32px;
+}
+
+/* 전체 너비 버튼 스타일 */
+.full-width {
+  width: 100%;
 }
