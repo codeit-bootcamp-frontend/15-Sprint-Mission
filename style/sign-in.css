@@ -58,7 +58,7 @@
   .group {
       width: 100%;
       height: 6.125rem;
-      margin-bottom: 1rem;
+      margin-bottom: 3em;
   }
   
   .group label {
@@ -95,7 +95,12 @@
   .password-input input {
       margin-right: 1.875rem;
   }
-  
+  .errMsg {
+    display: block;
+    color: red;
+    font-size: 1rem;
+    font-weight: 600;
+  }
   .password-icon {
       position: absolute;
       top: 50%;
