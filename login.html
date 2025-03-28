@@ -30,6 +30,9 @@
             />
           </div>
           <div class="input-group">
+            <button type="button" class="visibility-btn">
+              <img src="images/ic_visibility_off.png" alt="눈감음" />
+            </button>
             <label for="password" class="bold">비밀번호</label>
             <input
               type="password"
@@ -37,11 +40,14 @@
               class="text-lg regular"
               placeholder="비밀번호를 입력해주세요"
             />
-            <button type="button">
-              <img src="images/ic_visibility_off.png" alt="눈감음" />
-            </button>
           </div>
-          <button class="btn-large text-xl semibold">로그인</button>
+          <button
+            type="submit"
+            class="login-button btn-large text-xl semibold button-disabled"
+            disabled="true"
+          >
+            로그인
+          </button>
         </form>
         <div class="simple-login">
           <span class="text-lg medium">간편 로그인하기</span>
@@ -64,5 +70,6 @@
         </div>
       </div>
     </main>
+    <script src="./auth.js"></script>
   </body>
 </html>

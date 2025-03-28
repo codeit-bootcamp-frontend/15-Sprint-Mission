@@ -43,10 +43,23 @@ body {
   border-radius: 12px;
 }
 
+.input-error {
+  outline: var(--error) solid 1.5px;
+}
+
+.input-valid {
+  outline: var(--blue) solid 1.5px;
+}
+
+.error-message {
+  color: var(--error);
+  padding-left: 16px;
+}
+
 .input-group button {
   position: absolute;
   right: 24px;
-  bottom: 16px;
+  top: 54px;
   width: 24px;
   height: 24px;
   padding: 0px;
@@ -55,6 +68,15 @@ body {
 
 .input-group img {
   width: 100%;
+}
+
+.button-disabled {
+  background-color: var(--gray400);
+}
+
+.button-disabled:active,
+.button-disabled:hover {
+  background-color: var(--gray400)
 }
 
 .simple-login {
