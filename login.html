@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>판다마켓 로그인 페이지</title>
+    
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard-dynamic-subset.css" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="colors.css">
+</head>
+
+<body>
+  <div class="wrap-userinfo wrap-login">
+    <div class="box-userinfo">
+      <div class="wrap-logo">
+        <a href="./index.html"><img src="./img/logo.png" alt="판다마켓" /></a>
+      </div>
+      <div class="wrap-userform">
+        <form action="" method="POST" autocomplete="on">
+          <fieldset>
+            <legend>판다마켓 로그인</legend>
+            <div class="main-login">
+              <div class="wrap-input wrap-email">
+                <label for="email">이메일</label>
+                <input type="text" class="email" name="email" id="email" placeholder="codeit@email.com" required />
+              </div>
+              <div class="wrap-input wrap-pw">
+                <label for="pw">비밀번호</label>
+                <input type="password" class="pw" name="pw" id="pw" required />
+              </div>
+              <button type="submit" class="login-button">로그인</button>
+            </div>
+          </fieldset>
+        </form>
+        <div class="easy-login">
+          <p class="gray800">간편 로그인하기</p>
+          <div class="ic-sns">
+            <a href="https://www.google.com/" target="_blank"><img src="./img/ic_google.png" alt="구글 간편 로그인" /></a>
+            <a href="https://www.kakaocorp.com/page/" target="_blank"><img src="./img/ic_kakaotalk.png" alt="카카오톡 간편 로그인" /></a>
+          </div>
+        </div>
+        <div class="link-signup gray800">
+          <p>판다마켓이 처음이신가요?</p>
+          <a href="./signup.html">회원가입</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+

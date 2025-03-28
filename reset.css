@@ -1,6 +1,4 @@
 /* reset.css */
-
-/* 모든 요소의 margin과 padding을 0으로 초기화 */
 *,
 *::before,
 *::after {
@@ -9,44 +7,37 @@
     box-sizing: border-box; 
 }
 
-/* 기본적인 폰트 설정 (웹사이트의 기본 폰트) */
 body {
     font-family: 'Pretendard', sans-serif;
     word-break: keep-all;
 }
 
-/* 텍스트 링크 스타일 초기화 */
 a {
     text-decoration: none;
     color: inherit;
 }
 
-/* 기본적으로 목록 스타일 초기화 */
 ul, ol {
     list-style: none;
 }
 
-/* 테이블의 기본 스타일 초기화 */
 table {
     border-collapse: collapse;
     width: 100%;
 }
 
-/* 이미지 기본 스타일 초기화 */
 img {
     max-width: 100%;
     height: auto;
 }
 
-/* 버튼 기본 스타일 초기화 */
 button {
-    font-family: 'Pretendard', sans-serif;
+    font-family: inherit;
     background: none;
     border: none;
     cursor: pointer;
 }
 
-/* 폼 입력 요소 초기화 */
 input,
 textarea,
 select {
@@ -56,13 +47,7 @@ select {
     font-size: inherit;
 }
 
-/* 기본적으로 모든 div와 span의 스타일 초기화 */
 div,
 span {
     display: block;
-}
-
-/* 기본적으로 모든 요소에 대해 불필요한 여백 제거 */
-body, h1, h2, h3, h4, h5, h6, p {
-    margin-bottom: 0;
 }

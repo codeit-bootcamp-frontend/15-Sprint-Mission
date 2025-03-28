@@ -1,3 +1,14 @@
+body {
+  margin-top: 70px;
+}
+
+#header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #fff;
+}
+
 #header .wrap-header {
     display: flex;
     justify-content: space-between;
@@ -145,14 +156,12 @@ main {
 }
 
 #description .wrap-description {
-    gap: 69px;
     padding-bottom: 0;
     margin-bottom: 60px;
 }
 
 #footer {
-    margin-top: -62px;
-    background-color: #111827;
+  background-color: #111827;
 }
 
 #footer .wrap-footer {
@@ -182,4 +191,142 @@ main {
 .wrap-footer .sns-footer img {
     width: 20px;
     height: 20px;
+}
+
+/* 판다마켓 로그인, 회원가입 공통 */
+body:has(.wrap-userinfo) {
+  margin-top: 0;
+}
+
+.wrap-userinfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.box-userinfo .wrap-logo {
+  width: 396px;
+  margin: 0 auto 40px;
+  padding: 12.98px 0 15.14px;
+}
+
+.main-signup,
+.main-login {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.wrap-userform {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.wrap-userform fieldset {
+  border: 0;
+}
+
+.wrap-userform legend {
+  display: none;
+}
+
+.wrap-userform .wrap-input {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.wrap-userform label {
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: bold;
+}
+
+.wrap-userform input {
+  width: 100%;
+  padding: 16px 24px;
+  font-size: 16px;
+  line-height: 26px;
+  border-radius: 12px;
+  background-color: #F3F4F6;
+}
+
+.wrap-userform .login-button,
+.wrap-userform .signup-button {
+  width: 100%;
+  padding: 12px 0;
+  font-size: 20px;
+  line-height: 32px;
+  color: #fff;
+  border-radius: 40px;
+  background-color: #3692FF;
+}
+
+.easy-login {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 23px;
+  border-radius: 8px;
+  background-color: #E6F2FF;
+}
+
+.easy-login p {
+  font-size: 16px;
+  line-height: 26px;
+  color: #1f2937;
+  font-weight: 500;
+}
+
+.easy-login .ic-sns {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+
+.easy-login .ic-sns a {
+  display: inline-block;
+  width: 42px;
+  height: 42px;
+}
+
+.easy-login .ic-sns img {
+  width: 100%;
+}
+
+.link-signup {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 4px;
+}
+
+.link-signup p {
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.link-signup a {
+  font-size: 14px;
+  line-height: 24px;
+  color: #3692FF;
+  text-decoration: underline;
+}
+
+/* 비밀번호 input 눈 모양 */
+.wrap-pw input,
+.wrap-pwcheck input {
+  background-image: url('./img/ic_eye_blind.png');
+  background-repeat: no-repeat;
+  background-size: 24px;
+  background-position: right 24px center;
+}
+
+.wrap-pwcheck input {
+  background-image: url('./img/ic_eye_open.png');
 }
