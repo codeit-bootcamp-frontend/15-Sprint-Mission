@@ -1,51 +1,63 @@
-
 .content {
-  width: 640px;
+  max-width: 640px;
   margin: 100px auto;
 }
 
 .head-img {
   text-align: center;
+  padding: 20px;
 }
 
 .pandaMarketImg {
-  width: 396px;
-  height: 132px;
+  max-width: 396px;
+  width: 100%;
+  height: auto;
+}
+
+.input-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.userName-label {
+  font-size: 16px;
+  font-weight: 700;
 }
 
 .userName {
   background-color: #f3f4f6;
-  width: 640px;
+  max-width: 640px;
   height: 56px;
   border-radius: 12px;
   border: none;
+}
+
+.userPassword-label {
   font-size: 16px;
-  padding: 0 20px;
-  font-weight: 400;
+  font-weight: 700;
 }
 
 .userPassword {
   background-color: #f3f4f6;
-  width: 640px;
+  max-width: 640px;
   height: 56px;
   border-radius: 12px;
   border: none;
+}
+
+.checkPassword-label {
   font-size: 16px;
-  padding: 0 20px;
-  font-weight: 400;
+  font-weight: 700;
 }
 
 .checkPassword {
   background-color: #f3f4f6;
-  width: 640px;
+  max-width: 640px;
   height: 56px;
   border-radius: 12px;
   border: none;
-  font-size: 16px;
-  padding: 0 20px;
-  font-weight: 400;
 }
-
 
 .content-login {
   display: flex;
@@ -55,14 +67,15 @@
 
 .login-button {
   text-decoration: none;
-  color: #F3F4F6;
+  color: #f3f4f6;
   border: none;
   border-radius: 40px;
-  background-color: #3692FF;
+  background-color: #3692ff;
   font-size: 20px;
   font-weight: 600;
   line-height: 32px;
   width: 100%;
+  height: 56px;
   cursor: pointer;
 }
 
@@ -84,7 +97,7 @@
 
 .social-links {
   display: flex;
-  gap: 12px; 
+  gap: 12px;
   list-style: none;
 }
 
@@ -107,16 +120,32 @@
 .membership {
   font-size: 14px;
   font-weight: 500;
-  color: #3692FF;
+  color: #3692ff;
+}
+
+.nicname-label {
+  font-size: 16px;
+  font-weight: 700;
 }
 
 .nicname {
   background-color: #f3f4f6;
-  width: 640px;
+  max-width: 640px;
   height: 56px;
   border-radius: 12px;
   border: none;
-  font-size: 16px;
-  padding: 0 20px;
-  font-weight: 400;
+}
+
+@media (max-width: 767px) and (min-width: 375px) {
+  .content {
+    max-width: 400px;
+    width: 100%;
+    padding: 0 16px;
+    margin: 0 auto;
+  }
+  .pandaMarketImg {
+    max-width: 197px;
+    height: auto;
+    width: 100%;
+  }
 }

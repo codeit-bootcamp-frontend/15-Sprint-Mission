@@ -1,25 +1,35 @@
 <!DOCTYPE html>
 <html lang="ko">
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>판다마켓-로그인</title>
-    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css">
-    <link rel="stylesheet" href="auth.css">
-    <link rel="stylesheet" href="global.css">
+    <link
+      rel="stylesheet"
+      as="style"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css"
+    />
+    <link rel="stylesheet" href="auth.css" />
+    <link rel="stylesheet" href="global.css" />
   </head>
   <body>
     <div class="content">
       <div class="head-img">
         <a class="login-link" href="/">
-          <img class="pandaMarketImg" src="img/logo.png">
+          <img class="pandaMarketImg" src="img/logo.png" />
         </a>
       </div>
       <form action="/login" method="post">
-        <div>
-          <label for="userName">이메일</label> 
-          <input type="email" name="userName" id="userName" class="userName">
-          <label for="userPassword">비밀번호</label>
-          <input type="password" name="userPassword" id="userPassword" class="userPassword">
+        <div class="input-content">
+          <label for="userName" class="userName-label">이메일</label>
+          <input type="email" name="userName" id="userName" class="userName" />
+          <label for="userPassword" class="userPassword-label">비밀번호</label>
+          <input
+            type="password"
+            name="userPassword"
+            id="userPassword"
+            class="userPassword"
+          />
         </div>
         <div class="content-login">
           <button type="submit" class="login-button">로그인</button>
@@ -31,12 +41,12 @@
           <ul class="social-links">
             <li>
               <a href="https://www.google.com/" target="_blank">
-                <img class="social-icon" src="img/google.png" alt="google">
+                <img class="social-icon" src="img/google.png" alt="google" />
               </a>
             </li>
             <li>
               <a href="https://www.kakaocorp.com/page/" target="_blank">
-                <img class="social-icon" src="img/kakao.png" alt="kakao">
+                <img class="social-icon" src="img/kakao.png" alt="kakao" />
               </a>
             </li>
           </ul>
@@ -48,3 +58,4 @@
       </div>
     </div>
   </body>
+</html>
