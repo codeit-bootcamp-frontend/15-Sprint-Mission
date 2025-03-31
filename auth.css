@@ -1,0 +1,163 @@
+.content {
+  max-width: 640px;
+  margin: 100px auto;
+}
+
+.head-img {
+  text-align: center;
+  padding: 20px;
+}
+
+.pandaMarketImg {
+  max-width: 396px;
+  width: 100%;
+  height: auto;
+}
+
+.input-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.userName-label {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.userName {
+  background-color: #f3f4f6;
+  max-width: 640px;
+  height: 56px;
+  border-radius: 12px;
+  border: none;
+  font-size: 16px;
+  font-weight: 400;
+  padding-left: 20px;
+}
+
+.userPassword-label {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.userPassword {
+  background-color: #f3f4f6;
+  max-width: 640px;
+  height: 56px;
+  border-radius: 12px;
+  border: none;
+  font-size: 16px;
+  font-weight: 400;
+  padding-left: 20px;
+}
+
+.checkPassword-label {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.checkPassword {
+  background-color: #f3f4f6;
+  max-width: 640px;
+  height: 56px;
+  border-radius: 12px;
+  border: none;
+  font-size: 16px;
+  font-weight: 400;
+  padding-left: 20px;
+}
+
+.content-login {
+  display: flex;
+  justify-content: center;
+  padding: 12px 0;
+}
+
+.login-button {
+  text-decoration: none;
+  color: #f3f4f6;
+  border: none;
+  border-radius: 40px;
+  background-color: #3692ff;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 32px;
+  width: 100%;
+  height: 56px;
+  cursor: pointer;
+}
+
+.blue-section {
+  height: 74px;
+  background-color: #e6f2ff;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 8px;
+  padding: 0 20px;
+}
+
+.simpleLogin {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 26px;
+  padding-top: 10px;
+}
+
+.social-links {
+  display: flex;
+  gap: 12px;
+  list-style: none;
+}
+
+.social-icon {
+  width: 42px;
+  height: 42px;
+}
+
+.foot-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.advice {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.membership {
+  font-size: 14px;
+  font-weight: 500;
+  color: #3692ff;
+}
+
+.nicname-label {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.nicname {
+  background-color: #f3f4f6;
+  max-width: 640px;
+  height: 56px;
+  border-radius: 12px;
+  border: none;
+  font-size: 16px;
+  font-weight: 400;
+  padding-left: 20px;
+}
+
+@media (max-width: 767px) and (min-width: 375px) {
+  .content {
+    max-width: 400px;
+    width: 100%;
+    padding: 0 16px;
+    margin: 100px auto;
+  }
+  .pandaMarketImg {
+    max-width: 197px;
+    height: auto;
+    width: 100%;
+  }
+}
