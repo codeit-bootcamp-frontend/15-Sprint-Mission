@@ -2,7 +2,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 1;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
 }
 
 nav {
@@ -42,9 +42,10 @@ nav {
   line-height: 26px;
 }
 
-.top, .bottom {
+.top,
+.bottom {
   height: 540px;
-  background-color: #CFE5FF;
+  background-color: #cfe5ff;
 }
 
 .top {
@@ -59,7 +60,8 @@ nav {
   margin: 0 auto;
 }
 
-.top-img, .bottom-img {
+.top-img,
+.bottom-img {
   width: 746px;
   vertical-align: bottom;
 }
@@ -87,7 +89,7 @@ main .container {
   height: 444px;
   margin: 0 auto;
   border-radius: 12px;
-  background-color: #FCFCFC;
+  background-color: #fcfcfc;
 }
 
 .content {
@@ -105,7 +107,7 @@ main .container {
   margin: 0;
   font-size: 18px;
   font-weight: 700;
-  color: #3692FF;
+  color: #3692ff;
   line-height: 26px;
 }
 
@@ -222,7 +224,7 @@ footer .sns img {
     margin: 52px 0;
     padding: 0;
   }
-  
+
   main .container {
     width: 696px;
     height: auto;
@@ -240,7 +242,7 @@ footer .sns img {
   .content {
     gap: 24px;
   }
-  
+
   main .content-title {
     font-size: 32px;
     line-height: 42px;
@@ -282,7 +284,7 @@ footer .sns img {
     padding-top: 48px;
   }
 
-  .top .content-title, 
+  .top .content-title,
   .bottom .content-title {
     font-size: 32px;
     line-height: 44px;
@@ -334,7 +336,7 @@ footer .sns img {
     padding: 0 32px;
     display: grid;
     grid-template: repeat(2, 1fr) / repeat(180px, 1fr, 120px);
-    grid-template-areas: 
+    grid-template-areas:
       "link . sns"
       "codeit . .";
   }
