@@ -108,6 +108,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  max-width: 560px;
+  width: 100%;
 }
 
 .section-text {
@@ -177,6 +179,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  max-width: 560px;
+  width: 100%;
 }
 
 @media (max-width: 1199px) {
