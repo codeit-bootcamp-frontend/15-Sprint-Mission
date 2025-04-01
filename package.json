@@ -10,6 +10,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.23.0",
+    "@vitejs/plugin-react": "^4.3.4",
     "eslint": "^9.23.0",
     "eslint-config-prettier": "^10.1.1",
     "eslint-plugin-prettier": "^5.2.5",
@@ -17,5 +18,10 @@
     "globals": "^16.0.0",
     "prettier": "^3.5.3",
     "vite": "^6.2.0"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
   }
 }

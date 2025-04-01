@@ -1,0 +1,32 @@
+.header-container {
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 192rem;
+  height: 7rem;
+  padding: 0 20rem;
+  background-color: #ffffff;
+  border-bottom: 1px solid var(--secondary-350);
+}
+
+.logo-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  gap: 0.859rem;
+}
+
+.logo,
+.logoText {
+  height: 100%;
+  object-fit: contain;
+}
+
+.nav-list {
+  display: flex;
+  gap: 30px;
+  font-size: 1.8rem;
+}
