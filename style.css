@@ -26,14 +26,27 @@
   font-weight: 600;
 }
 
-.login-link {
+.login-link-see {
   color: #f3f4f6;
   text-decoration: none;
 }
 
+.login-link {
+  color: #f3f4f6;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
 .title-logo {
-  height: 51px;
-  width: 153px;
+  height: 40px;
+  width: 40.14px;
+}
+.title-logo-name {
+  height: 35px;
+  width: 103px;
+  padding: 3px;
 }
 
 .hero-section {
@@ -250,5 +263,8 @@
   }
   .footer-container {
     padding: 32px 50px 80px;
+  }
+  .title-logo {
+    display: none;
   }
 }
