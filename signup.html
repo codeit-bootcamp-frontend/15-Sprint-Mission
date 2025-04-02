@@ -11,20 +11,36 @@
     <container>
         <div id="logo">
             <a href="index.html">
-                <img src="./image/logo.png" alt="판다마켓 로고">
-                <img src="./image/typography.png" alt="판다마켓 로고 텍스트">
-            </a>
+                <div class="logo-image">
+                    <img src="./image/logo.png" alt="판다마켓 로고">
+                </div>  
+                <div class="logo-text">    
+                    <img src="./image/typography.png" alt="판다마켓 로고 텍스트">
+                </div>
+                </a>
         </div>
         <form>
-            <label for="email">이메일</label>
-            <input type="email" id="email" name="user-email" placeholder="이메일을 입력해주세요">
-            <label for="nickname">닉네임</label>
-            <input type="text" id="nickname" name="user-nickname" placeholder="닉네임을 입력해주세요">
-            <label for="password">비밀번호</label>
-            <input type="password" id="password" name="user-password" placeholder="비밀번호를 입력해주세요">
-            <label for="passwordCheck">비밀번호 확인</label>
-            <input type="password" id="passwordCheck" name="user-password-check" placeholder="비밀번호를 학인주세요">
-            <button type="submit" class="sign-up-button buttons">
+            <div class="email-field">
+                <label for="email">이메일</label>
+                <input type="email" id="email" name="user-email" placeholder="이메일을 입력해주세요">
+                <div class="error-message"></div>
+            </div>
+            <div class="nickname-field">
+                <label for="nickname">닉네임</label>
+                <input type="text" id="nickname" name="user-nickname" placeholder="닉네임을 입력해주세요">
+                <div class="error-message"></div>
+            </div>    
+            <div class="password-field">
+                <label for="password">비밀번호</label>
+                <input type="password" id="password" name="user-password" placeholder="비밀번호를 입력해주세요">
+                <div class="error-message"></div>
+            </div>    
+            <div class="passwordCheck-field">
+                <label for="passwordCheck">비밀번호 확인</label>
+                <input type="password" id="passwordCheck" name="user-password-check" placeholder="비밀번호를 학인주세요">
+                <div class="error-message"></div>
+            </div> 
+            <button type="button" class="sign-up-button buttons" onclick="location.href='./login.html'" disabled>
                 회원가입
             </button>
         </form>
@@ -44,5 +60,6 @@
             <a href="./login.html">로그인</a>
         </div>
     </container>
+    <script src="signup.js"></script>
 </body>
 </html>

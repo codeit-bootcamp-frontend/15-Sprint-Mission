@@ -1,5 +1,18 @@
 @import "./reset.css";
 
+:root {
+    --gray50: #F9FAFB;
+    --gray100: #F3F4F6;
+    --gray200: #E5E7EB;
+    --gray400: #9CA3AF;
+    --gray500: #6B7280;
+    --gray600: #4B5563;
+    --gray700: #374151;
+    --gray800: #1F2937;
+    --gray900: #111827;
+    --blue: #3692FF;
+}
+
 * {
     box-sizing: border-box;
 }
@@ -15,8 +28,8 @@
     /* 버튼 관련 */
     
     .button {
-        background-color: #3692FF;
-        color: #F3F4F6;
+        background-color: var(--blue);
+        color: var(--gray100);
         font-weight: 600;
         cursor: pointer;
         display: flex;
@@ -91,7 +104,7 @@
     section.top-banner {
         width: 100%;
         height: 771px;
-        background-color: #CFE5FF;
+        background-color: var(--gray50);
         display: flex;
         justify-content: center;
     }
@@ -108,7 +121,7 @@
         display: flex;
         flex-direction: column;
         gap: 32px;
-        color: #374151;
+        color: var(--gray700);
         font-size: 40px;
         font-weight: 700;
         line-height: 56px;
@@ -146,19 +159,19 @@
         justify-content: center;
         align-items: left;
         gap: 24px;
-        background-color: #FCFCFC;
+        background-color: var(--gray50);
         border-radius: 12px;
         overflow: hidden;
     }
 
     .hot-item-text > p {
-        color: #3692FF;
+        color: var(--blue);
         font-size: 16px;
         font-weight: 700;
         padding-left: 8px;
     }
     .hot-item-text > h2 {
-        color: #374151;
+        color: var(--gray700);
         font-size: 24px;
         font-weight: 700;
         line-height: 32px;
@@ -166,7 +179,7 @@
         padding-left: 8px;
     }
     .hot-item-text > h3 {
-        color: #374151;
+        color: var(--gray700);
         font-size: 16px;
         font-weight: 500;
         line-height: 26px;
@@ -192,19 +205,19 @@
         justify-content: center;
         align-items: end;
         gap: 24px;
-        background-color: #FCFCFC;
+        background-color: var(--gray50);
         border-radius: 12px;
         overflow: hidden;
     }
     .search-text > p {
-        color: #3692FF;
+        color: var(--blue);
         font-size: 16px;
         font-weight: 700;
         text-align: right;
         padding-right: 8px;
     }
     .search-text > h2 {
-        color: #374151;
+        color: var(--gray700);
         font-size: 24px;
         font-weight: 700;
         line-height: 32px;
@@ -213,7 +226,7 @@
         padding-right: 8px;
     }
     .search-text > h3 {
-        color: #374151;
+        color: var(--gray700);
         font-size: 16px;
         font-weight: 500;
         line-height: 26px;
@@ -240,18 +253,18 @@
         justify-content: center;
         align-items: left;
         gap: 24px;
-        background-color: #FCFCFC;
+        background-color: var(--gray50);
         border-radius: 12px;
         overflow: hidden;
     }
     .register-text > p {
-        color: #3692FF;
+        color: var(--blue);
         font-size: 16px;
         font-weight: 700;
         padding-left: 8px;
     }
     .register-text > h2 {
-        color: #374151;
+        color: var(--gray700);
         font-size: 24px;
         font-weight: 700;
         line-height: 32px;
@@ -259,7 +272,7 @@
         padding-left: 8px;
     }
     .register-text > h3 {
-        color: #374151;
+        color: var(--gray700);
         font-size: 16px;
         font-weight: 500;
         line-height: 26px;
@@ -277,7 +290,7 @@
     section.bottom-banner {
         width: 100%;
         height: 540px;
-        background-color: #CFE5FF;
+        background-color: var(--gray50);
         display: flex;
         justify-content: center;
     }
@@ -293,7 +306,7 @@
     .bottom-banner-text {
         width: 296px;
         height: 172px;
-        color: #374151;
+        color: var(--gray700);
         font-size: 40px;
         font-weight: 700;
         line-height: 56px;
@@ -309,7 +322,7 @@
     /* footer */
     
     .footer-wrapper {
-        background-color: #111827;
+        background-color: var(--gray900);
         width: 100%;
         height: 160px;
         font-size: 16px;
@@ -339,18 +352,18 @@
         display: flex;
         flex-direction: row;
         gap: 30px;
-        color: #E5E7EB;
+        color: var(--gray200);
         text-decoration: none;
         cursor: pointer;
         a:visited {
-            color: #E5E7EB;
+            color: var(--gray200);
         }
 
     }
     
     .footer-mid > a {
         text-decoration: none;
-        color: blue;
+        color: var(--blue);
     }
     
     .footer-right-sns {
@@ -385,8 +398,8 @@
     /* 버튼 관련 */
     
     .button {
-        background-color: #3692FF;
-        color: #F3F4F6;
+        background-color: var(--blue);
+        color: var(--gray50);
         font-weight: 600;
         cursor: pointer;
         display: flex;
@@ -461,7 +474,7 @@
     section.top-banner {
         width: 100%;
         height: 771px;
-        background-color: #CFE5FF;
+        background-color: var(--gray50);
         display: flex;
         justify-content: center;
     }
@@ -478,7 +491,7 @@
         display: flex;
         flex-direction: column;
         gap: 32px;
-        color: #374151;
+        color: var(--gray700);
         font-size: 40px;
         font-weight: 700;
         line-height: 56px;
@@ -515,25 +528,25 @@
         justify-content: center;
         align-items: left;
         gap: 24px;
-        background-color: #FCFCFC;
+        background-color: var(--gray50);
         border-radius: 12px;
         overflow: hidden;
     }
 
     .hot-item-text > p {
-        color: #3692FF;
+        color: var(--blue);
         font-size: 18px;
         font-weight: 700;
     }
     .hot-item-text > h2 {
-        color: #374151;
+        color: var(--gray700);
         font-size: 32px;
         font-weight: 700;
         line-height: 42px;
         margin: 16px auto 24px;
     }
     .hot-item-text > h3 {
-        color: #374151;
+        color: var(--gray700);
         font-size: 18px;
         font-weight: 500;
         line-height: 26px;
@@ -558,18 +571,18 @@
         justify-content: center;
         align-items: end;
         gap: 24px;
-        background-color: #FCFCFC;
+        background-color: var(--gray50);
         border-radius: 12px;
         overflow: hidden;
     }
     .search-text > p {
-        color: #3692FF;
+        color: var(--blue);
         font-size: 18px;
         font-weight: 700;
         text-align: right;
     }
     .search-text > h2 {
-        color: #374151;
+        color: var(--gray700);
         font-size: 32px;
         font-weight: 700;
         line-height: 42px;
@@ -577,7 +590,7 @@
         margin: 16px auto 24px;
     }
     .search-text > h3 {
-        color: #374151;
+        color: var(--gray700);
         font-size: 18px;
         font-weight: 500;
         line-height: 26px;
@@ -603,24 +616,24 @@
         justify-content: center;
         align-items: left;
         gap: 24px;
-        background-color: #FCFCFC;
+        background-color: var(--gray50);
         border-radius: 12px;
         overflow: hidden;
     }
     .register-text > p {
-        color: #3692FF;
+        color: var(--blue);
         font-size: 18px;
         font-weight: 700;
     }
     .register-text > h2 {
-        color: #374151;
+        color: var(--gray700);
         font-size: 32px;
         font-weight: 700;
         line-height: 42px;
         margin: 16px auto 24px;
     }
     .register-text > h3 {
-        color: #374151;
+        color: var(--gray700);
         font-size: 18px;
         font-weight: 500;
         line-height: 26px;
@@ -637,7 +650,7 @@
     section.bottom-banner {
         width: 100%;
         height: 927px;
-        background-color: #CFE5FF;
+        background-color: var(--gray50);
         display: flex;
         justify-content: center;
     }
@@ -653,7 +666,7 @@
     .bottom-banner-text {
         width: 296px;
         height: 172px;
-        color: #374151;
+        color: var(--gray700);
         font-size: 40px;
         font-weight: 700;
         line-height: 56px;
@@ -669,7 +682,7 @@
     /* footer */
     
     .footer-wrapper {
-        background-color: #111827;
+        background-color: var(--gray900);
         width: 100%;
         height: 160px;
         font-size: 16px;
@@ -690,8 +703,9 @@
     }
     
     .footer-left {
-        color: #9CA3AF;
+        color: var(--gray400);
         width: 112px;
+        order: 0;
     }
     
     .footer-mid {
@@ -699,17 +713,17 @@
         flex-direction: row;
         width: 181px;
         gap: 30px;
-        color: #E5E7EB;
+        color: var(--gray200);
         text-decoration: none;
         cursor: pointer;
         a:visited {
-            color: #E5E7EB;
+            color: var(--gray200);
         }
     }
     
     .footer-mid > a {
         text-decoration: none;
-        color: blue;
+        color: var(--blue);
     }
     
     .footer-right-sns {
@@ -744,8 +758,8 @@
     /* 버튼 관련 */
     
     .button {
-        background-color: #3692FF;
-        color: #F3F4F6;
+        background-color: var(--blue);
+        color: var(--gray100);
         font-weight: 600;
         cursor: pointer;
         display: flex;
@@ -818,7 +832,7 @@
     section.top-banner {
         width: 100%;
         height: 540px;
-        background-color: #CFE5FF;
+        background-color: var(--gray50);
         display: flex;
         justify-content: center;
     }
@@ -833,7 +847,7 @@
         display: flex;
         flex-direction: column;
         gap: 32px;
-        color: #374151;
+        color: var(--gray700);
         font-size: 40px;
         font-weight: 700;
         line-height: 56px;
@@ -866,23 +880,23 @@
         justify-content: center;
         align-items: center;
         gap: 64px;
-        background-color: #FCFCFC;
+        background-color: var(--gray50);
         border-radius: 12px;
         overflow: hidden;
     }
     .hot-item-text > p {
-        color: #3692FF;
+        color: var(--blue);
         font-size: 18px;
         font-weight: 700;
     }
     .hot-item-text > h2 {
-        color: #374151;
+        color: var(--gray700);
         font-size: 40px;
         font-weight: 700;
         line-height: 56px;
     }
     .hot-item-text > h3 {
-        color: #374151;
+        color: var(--gray700);
         font-size: 24px;
         font-weight: 500;
         line-height: 32px;
@@ -910,23 +924,23 @@
         justify-content: center;
         align-items: center;
         gap: 64px;
-        background-color:#FCFCFC;
+        background-color: var(--gray50);
         border-radius: 12px;
         overflow: hidden;
     }
     .search-text > p {
-        color: #3692FF;
+        color: var(--blue);
         font-size: 18px;
         font-weight: 700;
     }
     .search-text > h2 {
-        color: #374151;
+        color: var(--gray700);
         font-size: 40px;
         font-weight: 700;
         line-height: 56px;
     }
     .search-text > h3 {
-        color: #374151;
+        color: var(--gray700);
         font-size: 24px;
         font-weight: 500;
         line-height: 32px;
@@ -950,23 +964,23 @@
         justify-content: center;
         align-items: center;
         gap: 64px;
-        background-color:#FCFCFC;
+        background-color:var(--gray50);
         border-radius: 12px;
         overflow: hidden;
     }
     .register-text > p {
-        color: #3692FF;
+        color: var(--blue);
         font-size: 18px;
         font-weight: 700;
     }
     .register-text > h2 {
-        color: #374151;
+        color: var(--gray700);
         font-size: 40px;
         font-weight: 700;
         line-height: 56px;
     }
     .register-text > h3 {
-        color: #374151;
+        color: var(--gray700);
         font-size: 24px;
         font-weight: 500;
         line-height: 32px;
@@ -987,7 +1001,7 @@
     section.bottom-banner {
         width: 100%;
         height: 540px;
-        background-color: #CFE5FF;
+        background-color: var(--gray50);
         display: flex;
         justify-content: center;
     }
@@ -1002,7 +1016,7 @@
     .bottom-banner-text {
         width: 296px;
         height: 172px;
-        color: #374151;
+        color: var(--gray700);
         font-size: 40px;
         font-weight: 700;
         line-height: 56px;
@@ -1018,7 +1032,7 @@
     /* footer */
     
     .footer-wrapper {
-        background-color: #111827;
+        background-color: var(--gray900);
         width: 100%;
         height: 160px;
         font-size: 16px;
@@ -1039,24 +1053,25 @@
     }
     
     .footer-left {
-        color: #9CA3AF;
+        color: var(--gray400);
+        order: 0;
     }
     
     .footer-mid {
         display: flex;
         flex-direction: row;
         gap: 30px;
-        color: #E5E7EB;
+        color: var(--gray200);
         text-decoration: none;
         cursor: pointer;
         a:visited {
-            color: #E5E7EB;
+            color: var(--gray200);
         }
     }
     
     .footer-mid > a {
         text-decoration: none;
-        color: blue;
+        color: var(--blue);
     }
     
     .footer-right-sns {
