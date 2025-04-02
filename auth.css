@@ -5,11 +5,26 @@
 
 .head-img {
   text-align: center;
-  padding: 20px;
+  padding-bottom: 50px;
+}
+
+.login-link {
+  color: #f3f4f6;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
 }
 
 .pandaMarketImg {
-  max-width: 396px;
+  max-width: 103.53px;
+  width: 100%;
+  height: auto;
+}
+
+.pandaMarketImg-name {
+  max-width: 266px;
   width: 100%;
   height: auto;
 }

@@ -1,5 +1,11 @@
 @import "reset.css";
 
+header {
+  background-color: #fff;
+  position: sticky;
+  top: 0;
+}
+
 .blue-section {
   background-color: #cfe5ff;
 }
