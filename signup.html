@@ -25,19 +25,21 @@
           <label for="userName" class="userName-label">이메일</label>
           <input
             type="email"
-            name="userEmail"
+            name="userName"
             id="userName"
             class="userName"
             placeholder="이메일을 입력해주세요"
           />
+          <div id="error-message"></div>
           <label for="nicname" class="nicname-label">닉네임</label>
           <input
             type="text"
-            name="userName"
+            name="nicName"
             id="nicname"
             class="nicname"
             placeholder="닉네임을 입력해주세요"
           />
+          <div id="error-nicname"></div>
           <label for="userPassword" class="userPassword-label">비밀번호</label>
           <input
             type="password"
@@ -46,6 +48,7 @@
             class="userPassword"
             placeholder="비밀번호를 입력해주세요"
           />
+          <div id="error-password"></div>
           <label for="checkPassword" class="checkPassword-label">
             비밀번호 확인
           </label>
@@ -56,9 +59,12 @@
             class="checkPassword"
             placeholder="비밀번호를 다시 한 번 입력해주세요"
           />
+          <div id="error-checkPassword"></div>
         </div>
         <div class="content-login">
-          <button type="submit" class="login-button">회원가입</button>
+          <button type="submit" class="login-button" id="signupBtn" disabled>
+            회원가입
+          </button>
         </div>
       </form>
       <div>
@@ -83,5 +89,6 @@
         <a class="membership" href="login.html">로그인</a>
       </div>
     </div>
+    <script src="script.js"></script>
   </body>
 </html>

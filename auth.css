@@ -90,17 +90,16 @@
 }
 
 .login-button {
-  text-decoration: none;
   color: #f3f4f6;
   border: none;
   border-radius: 40px;
   background-color: #3692ff;
-  font-size: 20px;
-  font-weight: 600;
   line-height: 32px;
   width: 100%;
   height: 56px;
   cursor: pointer;
+  font-size: 20px;
+  font-weight: 600;
 }
 
 .blue-section {
@@ -164,6 +163,50 @@
   padding-left: 20px;
 }
 
+.error {
+  border: 1px solid red;
+}
+
+#error-message {
+  color: red;
+  font-size: 14px;
+  font-weight: 600;
+  display: none;
+  margin-left: 15px;
+}
+
+#error-password {
+  color: red;
+  font-size: 14px;
+  font-weight: 600;
+  display: none;
+  margin-left: 15px;
+}
+
+#error-nicname {
+  color: red;
+  font-size: 14px;
+  font-weight: 600;
+  display: none;
+  margin-left: 15px;
+}
+
+#error-checkPassword {
+  color: red;
+  font-size: 14px;
+  font-weight: 600;
+  display: none;
+  margin-left: 15px;
+}
+
+#signupBtn:disabled {
+  background-color: #9ca3af;
+}
+
+#loginBtn:disabled {
+  background-color: #9ca3af;
+}
+
 @media (max-width: 767px) {
   .content {
     max-width: 400px;
@@ -172,8 +215,16 @@
     margin: 100px auto;
   }
   .pandaMarketImg {
-    max-width: 197px;
+    max-width: 51px;
     height: auto;
     width: 100%;
+  }
+  .pandaMarketImg-name {
+    max-width: 133px;
+    height: auto;
+    width: 100%;
+  }
+  .login-link {
+    gap: 10px;
   }
 }

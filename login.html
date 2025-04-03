@@ -30,6 +30,7 @@
             class="userName"
             placeholder="이메일을 입력해주세요"
           />
+          <div id="error-message"></div>
           <label for="userPassword" class="userPassword-label">비밀번호</label>
           <input
             type="password"
@@ -38,9 +39,12 @@
             class="userPassword"
             placeholder="비밀번호를 입력해주세요"
           />
+          <div id="error-password"></div>
         </div>
         <div class="content-login">
-          <button type="submit" class="login-button">로그인</button>
+          <button type="submit" class="login-button" id="loginBtn" disabled>
+            로그인
+          </button>
         </div>
       </form>
       <div>
@@ -65,5 +69,6 @@
         <a class="membership" href="signup.html">회원가입</a>
       </div>
     </div>
+    <script src="login.js"></script>
   </body>
 </html>
