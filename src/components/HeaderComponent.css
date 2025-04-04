@@ -4,29 +4,45 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 192rem;
+  width: 100%;
   height: 7rem;
-  padding: 0 20rem;
+  padding: 1rem 20rem 0.9rem;
   background-color: #ffffff;
   border-bottom: 1px solid var(--secondary-350);
 }
-
+.nav {
+  display: flex;
+  gap: 3.2rem;
+}
 .logo-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
   gap: 0.859rem;
+  width: 15.3rem;
 }
 
 .logo,
 .logoText {
-  height: 100%;
   object-fit: contain;
 }
 
 .nav-list {
   display: flex;
-  gap: 30px;
+  align-items: center;
+  gap: 3rem;
+}
+
+.nav-text-freebord,
+.nav-text-market {
+  cursor: pointer;
   font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 2.6rem;
+  color: var(--secondary-600);
+}
+
+.loginState {
+  cursor: pointer;
 }

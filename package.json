@@ -20,8 +20,10 @@
     "vite": "^6.2.0"
   },
   "dependencies": {
+    "axios": "^1.8.4",
     "normalize.css": "^8.0.1",
     "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react-dom": "^19.1.0",
+    "react-router-dom": "^7.4.1"
   }
 }
