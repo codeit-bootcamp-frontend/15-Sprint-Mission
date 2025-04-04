@@ -1,29 +1,36 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 import "./HeaderComponent.css";
+import { Link } from "react-router-dom";
 
 const HeaderComponent = () => {
+  const location = useLocation();
+  const isItemsPage = location.pathname === "/items";
+
   return (
     <header className="header-container">
       <nav className="nav">
-        <a className="logo-container">
+        <Link to="/" className="logo-container">
           <img src="/img/favicon.svg" alt="pandamarket logo" className="logo" />
           <img
             src="/img/logoText.svg"
             alt="pandamarket logotext"
             className="logoText"
           />
-        </a>
+        </Link>
         <ul className="nav-list">
           <li>
-            <a className="nav-text-freebord" href="/freeborad">
+            <Link className="nav-text-freebord" to="/freeborad">
               자유게시판
-            </a>
+            </Link>
           </li>
           <li>
-            <a className="nav-text-market" href="/items">
-              {" "}
+            <Link
+              className={`nav-text-market ${isItemsPage ? "active" : ""}`}
+              to="/items"
+            >
               중고마켓
-            </a>
+            </Link>
           </li>
         </ul>
       </nav>

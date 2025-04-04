@@ -10,10 +10,12 @@
   background-color: #ffffff;
   border-bottom: 1px solid var(--secondary-350);
 }
+
 .nav {
   display: flex;
   gap: 3.2rem;
 }
+
 .logo-container {
   display: flex;
   justify-content: space-between;
@@ -41,6 +43,10 @@
   font-weight: 700;
   line-height: 2.6rem;
   color: var(--secondary-600);
+}
+
+.nav-text-market.active {
+  color: #3692ff; /* "/items"일 때 색상 */
 }
 
 .loginState {

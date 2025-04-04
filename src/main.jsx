@@ -1,9 +1,34 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Apps from "./index"; // import { app } from "./index"; // app 컴포넌트 가져오기
-import "./index.css"; // CSS 스타일 (선택 사항)
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import HeaderComponent from "./components/HeaderComponents";
+import BestItems from "./components/BestItems";
+import AllItems from "./components/AllItems";
+import "./index.css";
 
-const root = ReactDOM.createRoot(document.getElementById(`app`));
+const Apps = () => {
+  return (
+    <BrowserRouter>
+      <HeaderComponent />
+      <BestItems />
+      <AllItems />
+      <Routes>
+        <Route path="/items" element={<div>중고마켓 페이지</div>} />{" "}
+        {/* BestItems 제거 */}
+        <Route path="/all-items" element={<AllItems />} />
+        <Route
+          path="/additem"
+          element={<div>상품 등록 페이지 (빈 페이지)</div>}
+        />
+        <Route path="/best-items" element={<BestItems />} />{" "}
+        {/* BestItems 별도 경로로 이동 */}
+        <Route path="/" element={<div>홈 페이지</div>} />
+      </Routes>
+    </BrowserRouter>
+  );
+};
+
+const root = ReactDOM.createRoot(document.getElementById("app")); // "app" 맞는지 확인
 root.render(
   <React.StrictMode>
     <Apps />

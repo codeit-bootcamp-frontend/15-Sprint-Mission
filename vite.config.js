@@ -6,4 +6,9 @@ export default defineConfig({
   resolve: {
     extensions: [".js", ".jsx", ".ts", ".tsx"], // 이 라인 추가
   },
+  build: {
+    rollupOptions: {
+      input: "/src/main.jsx", // 기본 진입점 확인
+    },
+  },
 });
