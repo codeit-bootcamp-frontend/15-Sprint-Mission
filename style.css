@@ -1,5 +1,11 @@
 @import "reset.css";
 
+header {
+  background-color: #fff;
+  position: sticky;
+  top: 0;
+}
+
 .blue-section {
   background-color: #cfe5ff;
 }
@@ -26,14 +32,27 @@
   font-weight: 600;
 }
 
-.login-link {
+.login-link-see {
   color: #f3f4f6;
   text-decoration: none;
 }
 
+.login-link {
+  color: #f3f4f6;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
 .title-logo {
-  height: 51px;
-  width: 153px;
+  height: 40px;
+  width: 40.14px;
+}
+.title-logo-name {
+  height: 35px;
+  width: 103px;
+  padding: 3px;
 }
 
 .hero-section {
@@ -108,6 +127,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  max-width: 560px;
+  width: 100%;
 }
 
 .section-text {
@@ -177,6 +198,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  max-width: 560px;
+  width: 100%;
 }
 
 @media (max-width: 1199px) {
@@ -219,7 +242,7 @@
   }
 }
 
-@media (max-width: 767px) and (min-width: 375px) {
+@media (max-width: 767px) {
   .container {
     margin: auto 16px;
   }
@@ -246,5 +269,8 @@
   }
   .footer-container {
     padding: 32px 50px 80px;
+  }
+  .title-logo {
+    display: none;
   }
 }
