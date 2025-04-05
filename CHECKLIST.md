@@ -27,16 +27,16 @@ React로 마이그레이션하는 전 과정을 단계별로 정리한 체크리
 ## 3️⃣ 라우팅 설정
 
 - [x] `react-router-dom` 설치
-- [ ] `BrowserRouter`로 라우팅 구성
-- [ ] `Routes` 및 `Route` 정의
-- [ ] 각 페이지를 JSX 컴포넌트로 생성 (Home, Login 등)
+- [x] `BrowserRouter`로 라우팅 구성
+- [x] `Routes` 및 `Route` 정의
+- [x] 각 페이지를 JSX 컴포넌트로 생성 (Home, Login 등)
 
 ---
 
 ## 4️⃣ 공통 레이아웃 구성
 
 - [ ] `Header`, `Footer`, `Navigation` 컴포넌트 생성
-- [ ] 레이아웃 컴포넌트에서 `<Outlet />` 사용
+- [x] 레이아웃 컴포넌트에서 `<Outlet />` 사용
 - [ ] 공통 레이아웃으로 전체 구성 확인
 
 ---
