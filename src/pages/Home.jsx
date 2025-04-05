@@ -1,5 +1,5 @@
-import HomePageHeader from "../components/HomepageHeader";
-import HomePageFooter from "../components/HomepageFooter";
+import HomePageHeader from "../components/HomeHeader";
+import HomePageFooter from "../components/HomeFooter";
 
 function HomePage() {
   return (
