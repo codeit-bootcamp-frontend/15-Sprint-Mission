@@ -8,6 +8,8 @@ import Signup from "./pages/Signup";
 import Items from "./pages/Items";
 import FAQ from "./pages/FAQ";
 import Privacy from "./pages/Privacy";
+import "./styles/reset.css";
+import "./styles/variable.css";
 
 function Main() {
   return (
