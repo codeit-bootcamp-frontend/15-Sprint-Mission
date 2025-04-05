@@ -19,8 +19,8 @@ React로 마이그레이션하는 전 과정을 단계별로 정리한 체크리
 - [x] `pages/` 폴더 생성
 - [x] `styles/` 폴더 생성
 - [x] `utils/`, `constants/` 폴더 생성 (필요 시)
-- [ ] `App.jsx` 생성 및 루트에서 관리
-- [ ] `main.jsx`에서 `App.jsx` 렌더링 설정
+- [x] `App.jsx` 생성 및 루트에서 관리
+- [x] `main.jsx`에서 `App.jsx` 렌더링 설정
 
 ---
 
