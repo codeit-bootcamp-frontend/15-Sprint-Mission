@@ -1,0 +1,78 @@
+/* 기본 (PC 화면 기준) */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 70px;
+  position: sticky;
+  top: 0;
+  background-color: var(--white);
+}
+
+a {
+  cursor: pointer;
+}
+
+.logo {
+  display: block;
+  margin-left: 200px;
+}
+
+.desktopLogo {
+  display: block;
+  width: 153px;
+  height: auto;
+}
+
+.mobileLogo {
+  display: none;
+  width: 103px;
+  height: auto;
+}
+
+.loginBtn {
+  background-color: var(--blue100);
+  border: none;
+  border-radius: 8px;
+  color: var(--gray100);
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 48px;
+  width: 128px;
+  height: 48px;
+  margin-right: 200px;
+  text-decoration: none;
+  text-align: center;
+}
+
+/* Tablet 사이즈 */
+@media (max-width: 1199px) and (min-width: 768px) {
+  .logo {
+    margin-left: 24px;
+  }
+
+  .loginBtn {
+    margin-right: 24px;
+  }
+}
+
+/* Mobile 사이즈 */
+@media (max-width: 767px) {
+  .logo {
+    margin-left: 16px;
+  }
+
+  .mobileLogo {
+    display: block;
+  }
+
+  .desktopLogo {
+    display: none;
+  }
+
+  .loginBtn {
+    margin-right: 16px;
+  }
+}
