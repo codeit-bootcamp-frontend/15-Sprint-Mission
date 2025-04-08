@@ -1,7 +1,7 @@
 import { Link } from "react-router";
-import styles from "../styles/components/HomeHeader.module.css";
-import logo from "../assets/logo/logo.png";
-import logoMobile from "../assets/logo/logo_mobile.png";
+import styles from "../../styles/components/HomeHeader.module.css";
+import logo from "../../assets/logo/logo.png";
+import logoMobile from "../../assets/logo/logo_mobile.png";
 
 function HomeHeader() {
   return (

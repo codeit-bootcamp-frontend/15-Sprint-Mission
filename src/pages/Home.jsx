@@ -1,6 +1,6 @@
-import HomeHeader from "../components/HomeHeader";
-import HomeFooter from "../components/HomeFooter";
-import HomeMain from "../components/HomeMain";
+import HomeHeader from "../components/home/HomeHeader";
+import HomeFooter from "../components/home/HomeFooter";
+import HomeMain from "../components/home/HomeMain";
 
 function Home() {
   return (
