@@ -8,6 +8,7 @@ import FAQ from "./pages/FAQ";
 import Privacy from "./pages/Privacy";
 import "./styles/reset.css";
 import "./styles/variable.css";
+import "./styles/global.css";
 
 function App() {
   return (

@@ -1,13 +1,14 @@
-import HomePageHeader from "../components/HomeHeader";
-import HomePageFooter from "../components/HomeFooter";
+import HomeHeader from "../components/HomeHeader";
+import HomeFooter from "../components/HomeFooter";
 
-function HomePage() {
+function Home() {
   return (
     <>
-      <HomePageHeader />
+      <HomeHeader />
       <h1>Homepage 페이지 입니다</h1>
+      <HomeFooter />
     </>
   );
 }
 
-export default HomePage;
+export default Home;

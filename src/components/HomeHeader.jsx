@@ -3,10 +3,10 @@ import styles from "../styles/components/HomeHeader.module.css";
 import logo from "../assets/logo/logo.png";
 import logoMobile from "../assets/logo/logo_mobile.png";
 
-function HomePageHeader() {
+function HomeHeader() {
   return (
     <header className={styles.nav}>
-      <div className={styles.logo}>
+      <div className={styles.logoWrapper}>
         <img src={logo} alt="판다마켓 로고" className={styles.desktopLogo} />
         <img
           src={logoMobile}
@@ -21,4 +21,4 @@ function HomePageHeader() {
   );
 }
 
-export default HomePageHeader;
+export default HomeHeader;
