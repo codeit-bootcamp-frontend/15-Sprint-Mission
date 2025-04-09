@@ -13,14 +13,14 @@ const Apps = () => {
       <BestItems />
       <AllItems />
       <Routes>
-        <Route path="/items" element={<div>중고마켓 페이지</div>} />{" "}
+        <Route path="/items" element={<div>중고마켓 페이지</div>} />
         {/* BestItems 제거 */}
         <Route path="/all-items" element={<AllItems />} />
         <Route
           path="/additem"
           element={<div>상품 등록 페이지 (빈 페이지)</div>}
         />
-        <Route path="/best-items" element={<BestItems />} />{" "}
+        <Route path="/best-items" element={<BestItems />} />
         {/* BestItems 별도 경로로 이동 */}
         <Route path="/" element={<div>홈 페이지</div>} />
       </Routes>
