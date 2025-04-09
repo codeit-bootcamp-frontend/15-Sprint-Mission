@@ -1,14 +1,14 @@
-import { useState } from 'react'
 import './App.css'
 import './styles/reset.css'
-import './styles/layout.css'
-import { useReducer, useRef, createContext } from 'react';
+import './styles/layout.css';
+import './styles/common.css';
+import { useState, useReducer, useRef, createContext } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Home from './pages/Home';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Item from './pages/Item';
 import Notfound from './pages/Notfound';
+import Home from './pages/Home';
 
 const AuthStateContext = createContext();
 const AuthDispatchContext = createContext();
