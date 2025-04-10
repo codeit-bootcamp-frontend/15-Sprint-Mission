@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HeaderComponent from "./components/HeaderComponents";
 import BestItems from "./components/BestItems";
 import AllItems from "./components/AllItems";
-import "./index.css";
+import "./App.css";
 
 const Apps = () => {
   return (
