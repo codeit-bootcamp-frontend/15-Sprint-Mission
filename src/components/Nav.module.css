@@ -1,0 +1,55 @@
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  height: 70px;
+  padding: 0 200px;
+  border-bottom: 1px solid #dfdfdf;
+  position: sticky;
+  top: 0;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 51px;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.pandaLogo {
+  width: 40px;
+  height: 40px;
+}
+
+.pandaMarket {
+  width: 103px;
+  height: 35px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.menu {
+  display: flex;
+  font-size: 18px;
+  font-weight: 700;
+  color: #4b5563;
+  gap: 20px;
+}
+
+.menuItem {
+  list-style: none;
+  cursor: pointer;
+}
+
+.menuLink {
+  text-decoration: none;
+  color: inherit;
+}
