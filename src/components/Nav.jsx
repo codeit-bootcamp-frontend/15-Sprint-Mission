@@ -1,5 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import styles from "./Nav.module.css";
+
+const getLinkStyle = ({ isActive }) => {
+  return {
+    color: isActive ? "#3692ff" : "inherit",
+  };
+};
 
 const Nav = () => {
   return (
@@ -20,9 +26,13 @@ const Nav = () => {
         <ul className={styles.menu}>
           <li className={styles.menuItem}>자유게시판</li>
           <li className={styles.menuItem}>
-            <Link to="/items" className={styles.menuLink}>
+            <NavLink
+              to="/items"
+              className={styles.menuLink}
+              style={getLinkStyle}
+            >
               중고마켓
-            </Link>
+            </NavLink>
           </li>
         </ul>
         <img src="/profile.svg" alt="프로필 이미지" />
