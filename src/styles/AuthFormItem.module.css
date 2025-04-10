@@ -1,0 +1,105 @@
+.authFormItem {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+  input {
+    border: 1px solid transparent;
+  }
+  &.isValid {
+    input {
+      border-color: var(--blue);
+    }
+  }
+  &.emptyIssue,
+  &.formatIssue {
+    padding-bottom: 26px;
+    .togglePassword {
+      bottom: 54px;
+    }
+    input {
+      border-color: var(--red);
+    }
+    .errorMessage {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+.authFormItem label {
+  color: var(--gray800);
+  font-size: 18px;
+  font-weight: 700;
+}
+.authFormItem input[type='text'],
+.authFormItem input[type='email'],
+.authFormItem input[type='password'] {
+  height: 56px;
+  background-color: #f3f4f6;
+  border-radius: 12px;
+  padding-inline: 24px;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.togglePassword {
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  right: 24px;
+  bottom: 28px;
+  transform: translateY(50%);
+  width: 20px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.errorMessage {
+  padding-left: 16px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: var(--red);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  visibility: hidden;
+}
+
+@media all and (max-width: 640px) {
+  .authFormItem {
+    gap: 3.75vw;
+  }
+  .authFormItem label {
+    font-size: 4.06vw;
+  }
+  .authFormItem input[type='text'],
+  .authFormItem input[type='email'],
+  .authFormItem input[type='password'] {
+    height: 12.5vw;
+    padding-inline: 3.44vw;
+    font-size: 3.75vw;
+  }
+  .togglePassword {
+    right: 3.44vw;
+    bottom: 6.2vw;
+    transform: translateY(50%);
+    padding: 0;
+  }
+  .authFormItem {
+    &[class|='error'] {
+      padding-bottom: 5.47vw;
+      .togglePassword {
+        bottom: 11.67vw;
+      }
+    }
+  }
+  .togglePassword img {
+    max-width: 4.69vw;
+  }
+}

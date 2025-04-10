@@ -11,12 +11,6 @@
   align-items: flex-end;
   padding-bottom: 100px;
 }
-.mainBanner01 :global(.inner02) {
-  background-image: url('../../../public/images/main/Img_home_top.png');
-}
-.mainBanner02 :global(.inner02) {
-  background-image: url('../../../public/images/main/Img_home_bottom.png');
-}
 .mainBanner02 {
   border-top: 138px solid var(--gray100);
 }

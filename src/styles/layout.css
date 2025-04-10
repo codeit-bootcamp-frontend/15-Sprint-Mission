@@ -26,6 +26,11 @@
   position: relative;
   margin-inline: auto;
 }
+.inner04 {
+  width: 1200px;
+  position: relative;
+  margin-inline: auto;
+}
 
 @media all and (max-width: 1510px) {
   .inner02 {

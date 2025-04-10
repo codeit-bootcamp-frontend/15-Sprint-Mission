@@ -1,11 +1,11 @@
-import './Header.css';
+import '/src/styles/Header.css'
 import { useNavigate } from 'react-router-dom';
 
 
 const Header = () => {
   const navigate = useNavigate();
   return (
-    <header className='header'>
+    <header className={`header ${window.location.pathname === '/items' ? 'header02' : ''}`}>
       <div className='inner02'>
         <h1 className='header-logo'>
           <button onClick={() => navigate('/')}>

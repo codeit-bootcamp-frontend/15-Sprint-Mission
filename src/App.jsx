@@ -1,12 +1,12 @@
-import './App.css'
-import './styles/reset.css'
+import './App.css';
+import './styles/reset.css';
 import './styles/layout.css';
 import './styles/common.css';
 import { useState, useReducer, useRef, createContext } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
-import Item from './pages/Item';
+import Items from './pages/Items';
 import Notfound from './pages/Notfound';
 import Home from './pages/Home';
 
@@ -15,22 +15,19 @@ const AuthDispatchContext = createContext();
 export { AuthStateContext, AuthDispatchContext };
 
 function App() {
-
   return (
     <>
-      {/* <AuthStateContext.Provider value={}>
-        <AuthDispatchContext.Provider value={{}}> */}
-          <Routes>
-            <Route path='/' element={<Home />} />
-            <Route path='/login' element={<Login />} />
-            <Route path='/signup' element={<Signup />} />
-            <Route path='/item' element={<Item />} />
-            <Route path='*' element={<Notfound />} />
-          </Routes>
-        {/* </AuthDispatchContext.Provider>
-      </AuthStateContext.Provider> */}
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/signup' element={<Signup />} />
+        <Route path='/items' element={<Items />} />
+        <Route path='/board' element={<Board />} />
+        <Route path='/usedmarket' element={<UsedMarket />} />
+        <Route path='*' element={<Notfound />} />
+      </Routes>
     </>
   );
 }
 
-export default App
+export default App;

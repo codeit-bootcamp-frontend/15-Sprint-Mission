@@ -4,9 +4,8 @@ import AuthSns from '../../components/AuthSns';
 import '../../styles/auth.css';
 import { useNavigate } from 'react-router-dom';
 
-const Login = () => {
+const Signup = () => {
   const navigate = useNavigate();
-
 
   return (
     <div id='container' className='auth-page login'>
@@ -14,11 +13,20 @@ const Login = () => {
         <button onClick={() => navigate('/')} className='auth-logo'>
           <img src='/images/sub/logo_big.svg' alt='판다마켓' />
         </button>
-        <AuthForm formFields={[FORM_FIELDS.email, FORM_FIELDS.password]} onSubmit={() => navigate('/items')} submitButtonText='로그인' />
+        <AuthForm
+          formFields={[
+            FORM_FIELDS.email,
+            FORM_FIELDS.nickname,
+            FORM_FIELDS.password,
+            FORM_FIELDS.passwordCheck,
+          ]}
+          onSubmit={() => navigate('/items')}
+          submitButtonText='회원가입'
+        />
         <AuthSns />
       </div>
     </div>
   );
 };
 
-export default Login;
+export default Signup;
