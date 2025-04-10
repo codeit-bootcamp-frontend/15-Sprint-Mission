@@ -1,8 +1,3 @@
-const signupInputs = document.querySelectorAll(
-  ".email_input, .nickname_input, .password_input, .password_check_input"
-);
-const signupButton = document.querySelector(".signup_button");
-
 function errorMessage(target, message) {
   const parent = target.parentElement;
   const exists = parent.querySelector(".errorMessage");
@@ -15,15 +10,53 @@ function errorMessage(target, message) {
   }
 }
 
-function inputcheck(input) {
+function clearError(input) {
   const parent = input.parentElement;
-  const errorExist = parent.querySelector(".errorMessage");
-  const classList = input.classList;
+  const error = parent.querySelector(".errorMessage");
+  if (error) error.remove();
+  input.classList.remove("wrongCssBorder");
+}
+const loginInputs = document.querySelectorAll(".email_password_input");
+const loginButton = document.querySelector(".login_button");
 
-  if (errorExist) {
-    errorExist.remove();
-    input.classList.remove("wrongCssBorder");
+function loginCheck(input) {
+  clearError(input);
+
+  if (!input.value) {
+    if (input.placeholder.includes("이메일")) {
+      errorMessage(input, "이메일을 입력해주세요");
+    } else {
+      errorMessage(input, "비밀번호를 입력해주세요");
+    }
   }
+}
+
+loginInputs.forEach((input) => {
+  input.addEventListener("focusout", (e) => {
+    loginCheck(e.target);
+  });
+});
+
+if (loginButton) {
+  loginButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    let valid = true;
+
+    loginInputs.forEach((input) => {
+      loginCheck(input);
+      if (!input.value) valid = false;
+    });
+  });
+}
+
+const signupInputs = document.querySelectorAll(
+  ".email_input, .nickname_input, .password_input, .password_check_input"
+);
+const signupButton = document.querySelector(".signup_button");
+
+function inputcheck(input) {
+  clearError(input);
+  const classList = input.classList;
 
   if (classList.contains("email_input")) {
     if (!input.value) {
@@ -65,10 +98,12 @@ function checkSignupValid() {
     }
   });
 
-  signupButton.disabled = !isAllValid;
-  signupButton.onclick = isAllValid
-    ? () => (window.location.href = "/login")
-    : null;
+  if (signupButton) {
+    signupButton.disabled = !isAllValid;
+    signupButton.onclick = isAllValid
+      ? () => (window.location.href = "/login.html")
+      : null;
+  }
 }
 
 signupInputs.forEach((input) => {
