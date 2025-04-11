@@ -1,0 +1,194 @@
+@use "../../utils/mixin" as *;
+
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  margin: 138px 0;
+  width: 988px;
+  background-color: #fcfcfc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 64px;
+}
+
+.containerImg {
+  width: 579px;
+  height: 444px;
+}
+
+.description {
+  &.first {
+    width: 298px;
+  }
+
+  &.second {
+    text-align: right;
+  }
+
+  &.third {
+    width: 359px;
+  }
+
+  h4 {
+    color: var(--blue100);
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 26px;
+    margin: 0 0 12px;
+  }
+
+  h2 {
+    margin: 0 0 24px;
+  }
+
+  h3 {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 32px;
+    color: var(--gray700);
+  }
+}
+
+// Tablet
+@include tablet {
+  .mainContainer {
+    padding: 24px;
+    gap: 52px;
+  }
+
+  .container {
+    margin: 24px 0 52px;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+    height: 708px;
+    gap: 24px;
+  }
+
+  .containerImg {
+    width: 696px;
+    height: 524px;
+  }
+
+  .description {
+    &.first,
+    &.third {
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      width: auto;
+      height: 160px;
+    }
+
+    &.first {
+      margin-right: 377px;
+    }
+
+    &.second {
+      margin-left: 286px;
+    }
+
+    &.third {
+      margin-right: 286px;
+    }
+
+    h2 {
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 42px;
+      letter-spacing: 0%;
+      vertical-align: middle;
+    }
+
+    h3 {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 26px;
+      letter-spacing: 0%;
+      vertical-align: middle;
+    }
+  }
+
+  .container.scd {
+    flex-direction: column-reverse;
+  }
+}
+
+// Mobile
+@include mobile {
+  .mainContainer {
+    padding: 52px 15px;
+    gap: 40px;
+  }
+
+  .container {
+    margin: 24px 0 52px;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+    height: 417px;
+    gap: 24px;
+  }
+
+  .containerImg {
+    width: 344px;
+    height: 259px;
+  }
+
+  .description {
+    &.first,
+    &.third {
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      width: auto;
+      height: 160px;
+    }
+
+    &.first {
+      margin-right: 104px;
+    }
+
+    &.second {
+      margin-left: 28px;
+    }
+
+    &.third {
+      margin-right: 29px;
+    }
+
+    h2 {
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 32px;
+      letter-spacing: 0%;
+      vertical-align: middle;
+    }
+
+    h3 {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 26px;
+      letter-spacing: 0%;
+      vertical-align: middle;
+    }
+
+    h4 {
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 26px;
+      letter-spacing: 0%;
+      vertical-align: middle;
+    }
+  }
+
+  .container.scd {
+    flex-direction: column-reverse;
+  }
+}

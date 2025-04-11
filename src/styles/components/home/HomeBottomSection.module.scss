@@ -1,0 +1,29 @@
+@use "../../utils/mixin" as *;
+
+.bottomSection {
+  gap: 69px;
+
+  @include tablet {
+    height: 927px;
+  }
+}
+
+.bottom {
+  margin: 112.5px 0 112.5px;
+
+  @include tablet {
+    width: 295px;
+    height: 112px;
+    margin: 201px 0 0;
+  }
+}
+
+.bottomImg {
+  width: 746px;
+  height: 397px;
+
+  @include mobile {
+    width: 375px;
+    height: 198px;
+  }
+}

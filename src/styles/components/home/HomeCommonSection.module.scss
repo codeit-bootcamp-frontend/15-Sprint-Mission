@@ -1,0 +1,58 @@
+@use "../../utils/mixin" as *;
+
+.background {
+  background-color: var(--skyblue);
+  @include flex-center;
+  align-items: end;
+  height: 540px;
+
+  @include tablet {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 771px;
+  }
+
+  @include mobile {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+  }
+}
+
+.bgDescription {
+  @include flex-center;
+  padding-bottom: 60px;
+
+  h2 {
+    margin: 0 0 32px 0;
+  }
+}
+
+h2 {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 56px;
+  color: var(--gray700);
+
+  @include tablet {
+    font-size: 40px;
+    line-height: 140%;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  @include mobile {
+    font-size: 32px;
+    line-height: 140%;
+    text-align: center;
+    vertical-align: middle;
+  }
+}
+
+@include desktop {
+  .lineBreak {
+    display: block;
+  }
+}

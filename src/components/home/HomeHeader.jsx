@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import styles from "../../styles/components/HomeHeader.module.css";
+import styles from "../../styles/components/home/HomeHeader.module.scss";
 import logo from "../../assets/logo/logo.png";
 import logoMobile from "../../assets/logo/logo_mobile.png";
 

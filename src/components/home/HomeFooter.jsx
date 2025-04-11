@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import styles from "../../styles/components/HomeFooter.module.css";
+import styles from "../../styles/components/home/HomeFooter.module.scss";
 import faceBook from "../../assets/icons/ic_facebook.png";
 import twitter from "../../assets/icons/ic_twitter.png";
 import youtube from "../../assets/icons/ic_youtube.png";
