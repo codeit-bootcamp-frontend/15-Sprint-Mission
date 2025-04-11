@@ -7,6 +7,7 @@ import { Routes, Route } from 'react-router-dom';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Items from './pages/Items';
+import Board from './pages/Board';
 import Notfound from './pages/Notfound';
 import Home from './pages/Home';
 
@@ -23,7 +24,6 @@ function App() {
         <Route path='/signup' element={<Signup />} />
         <Route path='/items' element={<Items />} />
         <Route path='/board' element={<Board />} />
-        <Route path='/usedmarket' element={<UsedMarket />} />
         <Route path='*' element={<Notfound />} />
       </Routes>
     </>

@@ -27,6 +27,24 @@
     background-position: center;
     background-color: transparent;
   }
+  .header-nav {
+    display: flex;
+    margin-left: 32px;
+    a {
+      padding-inline: 15px;
+      color: var(--gray600);
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 1.44;
+      transition: color 0.3s;
+      &.active {
+        color: var(--blue);
+      }
+    }
+  }
+}
+.header-nav {
+  display: none;
 }
 .header-login {
   display: flex;
