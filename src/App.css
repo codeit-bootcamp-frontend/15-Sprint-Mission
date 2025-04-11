@@ -40,4 +40,6 @@
   --text-2xl--line-height: 2rem;
   --text-3xl: 2rem;
   --text-3xl--line-height: 2.625rem;
+  --breakpoint-tablet: 48rem;
+  --breakpoint-pc: 75rem;
 }
