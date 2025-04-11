@@ -1,0 +1,34 @@
+/* reset.css */
+
+/* margin, padding 초기화 + box-sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* a 태그 초기화 */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 리스트 스타일 제거 */
+ul,
+ol {
+  list-style: none;
+}
+
+/* 버튼 초기화 */
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* 이미지 초기화 */
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
