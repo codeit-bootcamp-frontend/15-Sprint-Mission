@@ -9,12 +9,12 @@ const Logo = () => {
         <img
           src={LogoTypo}
           alt="판다마켓 모바일 로고"
-          className="tablet:hidden h-full w-full"
+          className="tablet:hidden h-full w-20"
         />
         <img
           src={LogoSm}
           alt="판다마켓 로고"
-          className="tablet:block hidden h-full w-full"
+          className="tablet:block hidden h-full w-40"
         />
       </Link>
     </div>
