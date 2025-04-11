@@ -7,7 +7,12 @@ const Navbar = () => {
         <NavLink to="/">자유게시판</NavLink>
       </li>
       <li>
-        <NavLink to="/items">중고마켓</NavLink>
+        <NavLink
+          to="/items"
+          className={({ isActive }) => (isActive ? "text-primary-100" : "")}
+        >
+          중고마켓
+        </NavLink>
       </li>
     </ul>
   );
