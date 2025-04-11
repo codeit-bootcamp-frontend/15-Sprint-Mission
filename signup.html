@@ -1,34 +1,39 @@
 <!DOCTYPE html>
-<html lang="kp">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="signup.css" />
+    <link rel="stylesheet" href="styles/signup.css" />
+    <script src="scripts/auth.js" defer></script>
+        <link rel="stylesheet" href="styles/auth.css" />
     <title>panda-signup</title>
   </head>
   <body>
     <div class="logo_box">
-      <a href="/"
+        <a href="/"
         ><img class="logo" src="images/login/logo.png" alt="판다마켓"
-      /></a>
-      <div class="login_box">
-        <div id="imformation">
-          <span class="imformation">이메일</span>
-          <h2 class="email_input"></h2>
-        </div>
-        <div id="imformation">
-          <span class="imformation">닉네임</span>
-          <h2 class="nickname_input"></h2>
-        </div>
-        <div id="imformation">
-          <span class="imformation">비밀번호</span>
-          <h2 class="password_input"></h2>
-        </div>
-        <div id="imformation">
-          <span class="imformation">비밀번호 확인</span>
-          <h2 class="password_check_input"></h2>
-        </div>
-        <button type="submit" class="signup_button">회원가입</button>
+        /></a>
+        <form>
+            <div class="login_box">
+            <div id="imformation">
+                <span class="imformation">이메일</span>
+                <input class="email_input"></h2>
+            </div>
+            <div id="imformation">
+                <span class="imformation">닉네임</span>
+                <input class="nickname_input"></h2>
+            </div>
+            <div id="imformation">
+                <span class="imformation">비밀번호</span>
+                <input class="password_input"></h2>
+            </div>
+            <div id="imformation">
+                <span class="imformation">비밀번호 확인</span>
+                <input class="password_check_input"></h2>
+            </div>
+                <button type="submit" class="signup_button">회원가입</button>
+            </div>
+        </form>
         <div id="easy_login">
           <div class="easy_login_box">
             <h3 class="easy_login">간편 로그인하기</h3>
@@ -43,7 +48,7 @@
           </div>
         </div>
         <div class="signup">
-          <p class="login_ask">이미 회원이신가요></p>
+          <p class="login_ask">이미 회원이신가요?</p>
           <a class="login_link" href="login.html">로그인</a>
         </div>
       </div>

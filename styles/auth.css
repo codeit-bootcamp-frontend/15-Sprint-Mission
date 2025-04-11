@@ -1,0 +1,7 @@
+.wrongCssBorder {
+  border: 1px solid #f74747;
+}
+.errorMessage {
+  color: #f74747;
+  font-size: 14px;
+}
