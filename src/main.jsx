@@ -1,36 +1,30 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import HeaderComponent from "./components/HeaderComponents";
-import BestItems from "./components/BestItems";
-import AllItems from "./components/AllItems";
+import HeaderComponent from "./components/HeaderComponent";
+
+import HomePage from "./pages/HomePage";
+import ItemsPage from "./pages/ItemsPage";
+import FreeBoardPage from "./pages/FreeBoardPage";
+
 import "./App.css";
 
-const Apps = () => {
+const App = () => {
   return (
     <BrowserRouter>
       <HeaderComponent />
-      <BestItems />
-      <AllItems />
       <Routes>
-        <Route path="/items" element={<div>중고마켓 페이지</div>} />
-        {/* BestItems 제거 */}
-        <Route path="/all-items" element={<AllItems />} />
-        <Route
-          path="/additem"
-          element={<div>상품 등록 페이지 (빈 페이지)</div>}
-        />
-        <Route path="/best-items" element={<BestItems />} />
-        {/* BestItems 별도 경로로 이동 */}
-        <Route path="/" element={<div>홈 페이지</div>} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/freeboard" element={<FreeBoardPage />} />
+        <Route path="/items" element={<ItemsPage />} />
       </Routes>
     </BrowserRouter>
   );
 };
 
-const root = ReactDOM.createRoot(document.getElementById("app")); // "app" 맞는지 확인
+const root = ReactDOM.createRoot(document.getElementById("app"));
 root.render(
   <React.StrictMode>
-    <Apps />
+    <App />
   </React.StrictMode>
 );

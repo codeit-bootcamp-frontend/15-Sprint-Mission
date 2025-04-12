@@ -1,36 +1,30 @@
 @import "tailwindcss";
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+body {
   font-family: "Pretendard", sans-serif;
-  font-size: 10px;
-}
-
-:root {
   background-color: var(--secondary-300);
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
 
+:root {
   --primary-0: #e6f2ff;
-  --primary-50: #cfe5ff; /* background */
-  --primary-100: #3692ff; /* default */
-  --primary-200: #1967d6; /* hover */
-  --primary-300: #1251aa; /* active, focus */
+  --primary-50: #cfe5ff;
+  --primary-100: #3692ff;
+  --primary-200: #1967d6;
+  --primary-300: #1251aa;
   --secondary-50: #f9fafb;
-  --secondary-100: #f3f4f6; /*input bg*/
+  --secondary-100: #f3f4f6;
   --secondary-200: #e5e7eb;
-  --secondary-300: #fcfcfc; /* card bg, bottom banner bg */
+  --secondary-300: #fcfcfc;
   --secondary-350: #dfdfdf;
-  --secondary-400: #9ca3af; /* inactive */
+  --secondary-400: #9ca3af;
   --secondary-500: #6b7280;
   --secondary-600: #4b5563;
   --secondary-700: #374151;
   --secondary-800: #1f2937;
-  --secondary-900: #111827; /* footer bg*/
+  --secondary-900: #111827;
   --error: #f74747;
 }
