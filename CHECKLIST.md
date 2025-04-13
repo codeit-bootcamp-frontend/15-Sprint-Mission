@@ -43,7 +43,7 @@ React로 마이그레이션하는 전 과정을 단계별로 정리한 체크리
 
 ## 5️⃣ 페이지 마이그레이션
 
-- [ ] `index.html` → `Home.jsx`
+- [x] `index.html` → `Home.jsx`
 - [ ] `login.html` → `Login.jsx`
 - [ ] `signup.html` → `Signup.jsx`
 - [ ] 기타 페이지들도 마이그레이션
