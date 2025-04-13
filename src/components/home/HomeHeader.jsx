@@ -1,4 +1,5 @@
 import { Link } from "react-router";
+import { Logo } from "../common/Logo";
 import styles from "../../styles/components/home/HomeHeader.module.scss";
 import logo from "../../assets/logo/logo.png";
 import logoMobile from "../../assets/logo/logo_mobile.png";
@@ -7,12 +8,8 @@ function HomeHeader() {
   return (
     <header className={styles.nav}>
       <div className={styles.logoWrapper}>
-        <img src={logo} alt="판다마켓 로고" className={styles.desktopLogo} />
-        <img
-          src={logoMobile}
-          alt="판다마켓 모바일 로고"
-          className={styles.mobileLogo}
-        />
+        <Logo srcLogo={logo} imgClass={styles.desktopLogo} />
+        <Logo srcLogo={logoMobile} imgClass={styles.mobileLogo} />
       </div>
       <Link to="/login" className={styles.loginBtn}>
         로그인

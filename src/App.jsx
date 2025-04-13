@@ -1,14 +1,14 @@
 import { BrowserRouter, Routes, Route } from "react-router";
 import Home from "./pages/Home";
-import AuthLayout from "./components/AuthLayout";
+import AuthLayout from "./components/common/AuthLayout";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Items from "./pages/Items";
 import FAQ from "./pages/FAQ";
 import Privacy from "./pages/Privacy";
 import "./styles/reset.css";
-import "./styles/utils/variable.css";
 import "./styles/global.css";
+import "./styles/utils/variable.css";
 
 function App() {
   return (

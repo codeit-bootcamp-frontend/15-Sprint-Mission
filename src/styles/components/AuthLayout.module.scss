@@ -1,0 +1,29 @@
+.logoImg {
+  width: 396px;
+  height: auto;
+  margin: 0 122px;
+}
+
+.loginMain {
+  width: 640px;
+  height: 618px;
+}
+
+@media (max-width: 767px) {
+  .logoLink {
+    display: flex;
+    justify-content: center;
+  }
+
+  .logoImg {
+    width: 198px;
+    height: 66px;
+  }
+
+  main {
+    width: 100%;
+    max-width: 400px;
+    min-width: 343px;
+    margin: 0 auto;
+  }
+}
