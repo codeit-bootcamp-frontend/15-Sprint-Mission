@@ -2,12 +2,12 @@ import styles from '/src/styles/Paging.module.css';
 export default function Paging({ totalPage, currentPage, setCurrentPage }) {
   const pageArr = new Array(totalPage).fill(0).map((_, i) => i + 1);
 
-  let currentIdx = Math.floor(currentPage / 5);
+  let currentIdx = Math.floor((currentPage - 1) / 5);
   let currentPages = pageArr.slice(currentIdx * 5, currentIdx * 5 + 5);
 
   return (
     <div className={`${styles.Paging} ${totalPage <= 5 ? styles.hideArrow : ''}`}>
-      <button className={styles.arrow}>
+      <button className={styles.arrow} onClick={() => currentPage > 1 && setCurrentPage(currentPage - 1)}>
         <PagingIconArrow reverse />
       </button>
       {currentPages.map((page) => (
@@ -15,7 +15,7 @@ export default function Paging({ totalPage, currentPage, setCurrentPage }) {
           {page}
         </button>
       ))}
-      <button className={styles.arrow}>
+      <button className={styles.arrow} onClick={() => currentPage < totalPage && setCurrentPage(currentPage + 1)}>
         <PagingIconArrow />
       </button>
     </div>
