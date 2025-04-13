@@ -1,9 +1,9 @@
 import ContentHeader from './ContentHeader';
 import ProductListItem from './ProductListItem';
-import Pagenation from './Pagenation';
+import Paging from './Paging';
 import styles from '/src/styles/ProductList.module.css';
 
-const ProductList = ({listType, title, hasSearch, placeholder, products, itemsPerPage}) => {
+const ProductList = ({listType, title, hasSearch, placeholder, products, setSortProducts}) => {
   const buttonType = {
     isSearchProduct:  {
       buttonText: '상품 등록하기',
@@ -11,13 +11,6 @@ const ProductList = ({listType, title, hasSearch, placeholder, products, itemsPe
       buttonStyle: 'primary'
     }
   }
-
-  const displayProducts = listType === 'best' 
-    ? [...products]
-        .sort((a, b) => b.favoriteCount - a.favoriteCount)
-        .slice(0, 4)
-    : products;
-  console.log(displayProducts);
   return (
     <div className={styles.productSection}>
       <ContentHeader
@@ -25,9 +18,10 @@ const ProductList = ({listType, title, hasSearch, placeholder, products, itemsPe
         hasSearch={hasSearch}
         placeholder={placeholder}
         buttonType={buttonType.isSearchProduct}
+        setSortProducts={setSortProducts}
       />
       <ul className={`${styles[listType]} ${styles.productList}`}>
-        {displayProducts.map((item) => (
+        {products.map((item) => (
           <ProductListItem
             key={item.id}
             id={item.id}
@@ -38,7 +32,6 @@ const ProductList = ({listType, title, hasSearch, placeholder, products, itemsPe
           />
         ))}
       </ul>
-      {displayProducts.length > itemsPerPage && <Pagenation />}
     </div>
   );
 };

@@ -2,7 +2,7 @@ import styles from '/src/styles/SearchInput.module.css';
 import CommonButton from './CommonButton';
 import { useState } from 'react';
 
-const SearchInput = ({placeholder, buttonType = false}) => {
+const SearchInput = ({placeholder, buttonType = false, setSortProducts}) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedSort, setSelectedSort] = useState('최신순');
 
@@ -10,9 +10,12 @@ const SearchInput = ({placeholder, buttonType = false}) => {
     setIsOpen(!isOpen);
   };
 
-  const handleOptionClick = (option) => {
+  const handleOptionClick = (option, apiValue) => {
     setSelectedSort(option);
     setIsOpen(false);
+    if (setSortProducts) {
+      setSortProducts(apiValue);
+    }
   };
 
   return (
@@ -23,8 +26,8 @@ const SearchInput = ({placeholder, buttonType = false}) => {
         <button onClick={handleSortClick}>{selectedSort}</button>
         {isOpen && (
           <ul>
-            <li><button onClick={() => handleOptionClick('최신순')}>최신순</button></li>
-            <li><button onClick={() => handleOptionClick('좋아요순')}>좋아요순</button></li>
+            <li><button onClick={() => handleOptionClick('최신순', 'recent')}>최신순</button></li>
+            <li><button onClick={() => handleOptionClick('좋아요순', 'favorite')}>좋아요순</button></li>
           </ul>
         )}
       </div>

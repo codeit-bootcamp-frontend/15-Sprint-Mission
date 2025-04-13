@@ -4,15 +4,23 @@ import { baseAPI } from './axios';
 
 export const productAPI = {
   // 상품 목록 조회
-  getProducts: async (page = 1, limit = 10) => {
+  getProducts: async (page = 1, orderBy = 'recent') => {
     try {
-      const response = await baseAPI.get(`/products?page=${page}&limit=${limit}`);
+      const response = await baseAPI.get(`/products?page=${page}&orderBy=${orderBy}`);
       return response.data;
     } catch (error) {
       throw new Error('상품 목록을 불러오는데 실패했습니다.');
     }
   },
-
+  // 상품 목록 조회
+  getProductsByFavorite: async () => {
+    try {
+      const response = await baseAPI.get(`/products?pageSize=4&orderBy=favorite`);
+      return response.data;
+    } catch (error) {
+      throw new Error('상품 목록을 불러오는데 실패했습니다.');
+    }
+  },
   // 상품 상세 조회
   getProductById: async (productId) => {
     try {

@@ -3,29 +3,29 @@
 import { useState, useEffect, useCallback } from 'react';
 import { productAPI } from '../api/productAPI';
 
-export const useProducts = (page = 1, limit = 10) => {
+export const useProducts = () => {
   const [products, setProducts] = useState([]);
+  const [totalCount, setTotalCount] = useState(0);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [totalPages, setTotalPages] = useState(0);
 
   const fetchProducts = useCallback(async () => {
     try {
       setLoading(true);
-      const data = await productAPI.getProducts(page, limit);
+      const data = await productAPI.getProducts();
       setProducts(data.list);
-      setTotalPages(data.totalPages);
+      setTotalCount(data.totalCount);
       setError(null);
     } catch (error) {
       setError(error.message);
     } finally {
       setLoading(false);
     }
-  }, [page, limit]);
+  }, []);
 
   useEffect(() => {
     fetchProducts();
   }, [fetchProducts]);
 
-  return { products, loading, error, totalPages, refetch: fetchProducts };
+  return { products, loading, error, totalCount, refetch: fetchProducts };
 };
