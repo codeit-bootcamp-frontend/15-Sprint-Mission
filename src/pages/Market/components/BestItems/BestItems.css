@@ -1,0 +1,37 @@
+.BestItems {
+  max-width: 1200px;
+  width: 100%;
+  margin: 24px auto 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.BestItems .title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--gray900);
+}
+
+.BestItems .item-list {
+  display: flex;
+  gap: 24px;
+}
+
+@media (max-width: 1199px) {
+  .BestItems {
+    margin: 24px 0 40px;
+    padding: 0 24px;
+  }
+
+  .BestItems .item-list {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 767px) {
+  .BestItems {
+    margin: 17px 0 24px;
+    padding: 16px;
+  }
+}

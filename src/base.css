@@ -1,0 +1,57 @@
+:root {
+  --gray50: #f9fafb;
+  --gray100: #f3f4f6;
+  --gray200: #e5e7eb;
+  --gray400: #9ca3af;
+  --gray500: #6b7280;
+  --gray600: #4b5563;
+  --gray700: #374151;
+  --gray800: #1f2937;
+  --gray900: #111827;
+  --blue100: #3692ff;
+  --blue200: #1967d6;
+  --blue300: #1251aa;
+  --red: #f74747;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+div,
+span,
+p,
+a,
+ol,
+ul,
+li,
+header,
+footer,
+section {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+html {
+  font-family: "Pretendard", sans-serif;
+  font-size: 62.5%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+body {
+  overflow-x: hidden;
+}

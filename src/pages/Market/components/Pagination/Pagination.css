@@ -1,0 +1,26 @@
+.Pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  margin: 40px 0 50px;
+}
+
+.Pagination button {
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+  border: 1px solid var(--gray200);
+  background-color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gray500);
+}
+
+.Pagination .active {
+  background-color: #2f80ed;
+  color: var(--gray100);
+}
