@@ -12,7 +12,9 @@
   align-items: center;
   height: 70px;
 }
-.header02 .inner02 {
+.header02 {
+  border-bottom: 1px solid #dfdfdf;
+  .inner02 {
   max-width: 1520px;
   justify-content: flex-start;
   .header-login {
@@ -42,6 +44,7 @@
       }
     }
   }
+}
 }
 .header-nav {
   display: none;

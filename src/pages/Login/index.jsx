@@ -1,7 +1,7 @@
-import { FORM_FIELDS } from '../../constants/formFields';
-import AuthForm from '../../components/authForm';
-import AuthSns from '../../components/AuthSns';
-import '../../styles/auth.css';
+import { FORM_FIELDS } from '@/constants/formFields';
+import AuthForm from '@/components/Auth/AuthForm';
+import AuthSns from '@/components/Auth/AuthSns';
+import '@/styles/auth.css';
 import { useNavigate } from 'react-router-dom';
 
 const Login = () => {

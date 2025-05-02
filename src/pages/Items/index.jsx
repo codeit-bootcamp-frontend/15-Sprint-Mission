@@ -1,10 +1,10 @@
-import Footer from '../../components/Footer';
-import Header from '../../components/Header';
-import ProductList from '../../components/ProductList';
-import SearchInput from '../../components/SearchInput';
+import Footer from '@/components/Footer/Footer';
+import Header from '@/components/Header/Header';
+import ProductList from '@/components/Product/ProductList';
+import SearchInput from '@/components/Product/SearchInput';
 import styles from './styles/index.module.css';
-import { useProducts } from '../../hooks/useProducts';
-import Paging from '../../components/Paging';
+import { useProducts } from '@/hooks/useProducts';
+import Paging from '@/components/Product/Paging';
 
 export default function Items() {
   const { bestProducts, totalProducts, totalCount, currentPage, pageSize, setCurrentPage, setOrderBy, setSearchKeyword } = useProducts();

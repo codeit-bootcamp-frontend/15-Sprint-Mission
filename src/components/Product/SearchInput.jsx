@@ -1,5 +1,5 @@
 import styles from './styles/SearchInput.module.css';
-import CommonButton from './CommonButton';
+import CommonButton from '@/components/Common/CommonButton';
 import { useReducer, useState } from 'react';
 
 const SearchInput = ({placeholder, setOrderBy, setSearchKeyword}) => {
