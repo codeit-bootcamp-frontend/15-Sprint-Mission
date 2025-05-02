@@ -1,11 +1,15 @@
-// 공통 UI, 레이아웃(헤더, 푸터)
 import { Outlet } from 'react-router-dom';
+import { Header, Footer } from './components/common';
 
 function App() {
   return (
-    <main>
-      <Outlet />
-    </main>
+    <>
+      <Header />
+      {/* <main>
+        <Outlet />
+      </main> */}
+      <Footer />
+    </>
   );
 }
 

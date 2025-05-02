@@ -1,4 +1,4 @@
-import './password-visibility.js';
+import '../../pages/Auth/password-visibility.js';
 import { validateEmail } from '../utils/validators.js';
 import { toggleError } from '../utils/form.js';
 import { ERROR_MESSAGES } from '../constants/messages/auth.js';

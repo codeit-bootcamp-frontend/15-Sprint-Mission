@@ -1,0 +1,39 @@
+.footer {
+  background-color: var(--secondary-900);
+  display: flex;
+  justify-content: center;
+  padding-top: 3rem;
+  min-height: 16rem;
+  height: auto;
+}
+
+.footerContent {
+  max-width: 90rem;
+  width: 100%;
+  padding: 0 2rem;
+  color: var(--white);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: start;
+  font-size: 1.6rem;
+  justify-self: start;
+}
+
+.privacy {
+  justify-self: end;
+}
+
+.faq {
+  justify-self: center;
+}
+
+.social-media {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-self: end;
+}
+
+.copyright {
+  grid-area: copyright;
+}

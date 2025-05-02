@@ -1,11 +1,9 @@
-import '@/assets/styles/reset.css';
-import '@/assets/styles/base.css';
+import '@/styles/common/index.scss';
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import App from './App';
-import Home from '@/pages/home/Home';
-import SignUp from '@/pages/auth/SignUp';
+import { Landing } from '@/pages/Landing';
 
 const root = document.getElementById('root');
 
@@ -14,8 +12,8 @@ createRoot(root).render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />}>
-          <Route index element={<Home />} />
-          <Route path="signup" element={<SignUp />} />
+          {/* <Route index element={<Landing />} />
+          <Route path="signup" element={<SignUp />} /> */}
         </Route>
       </Routes>
     </BrowserRouter>

@@ -2,10 +2,10 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { debounce } from '@/utils/debounce.js';
 import '@/pages/auth/auth.css';
-import { validateEmail } from '@/utils/validators.js';
+import { validateEmail } from '@/utils/validators/auth-validation.js';
 import { ERROR_MESSAGES } from '@/constants/messages/auth.js';
 import { PAGE_URLS } from '@/constants/urls/routes.js';
-import PasswordToggleIcon from '@/components/PasswordToggleIcon';
+import PasswordToggleIcon from '@/components/auth/PasswordToggleIcon';
 
 export default function Signup() {
   const navigate = useNavigate();
