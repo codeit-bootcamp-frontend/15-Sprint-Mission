@@ -1,4 +1,6 @@
-export const PAGE_URLS = {
+const ROUTES = {
   SIGNIN: '/signin',
   ITEMS: '/items.html',
 };
+
+export default ROUTES;

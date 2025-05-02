@@ -4,7 +4,8 @@ import { debounce } from '@/utils/debounce.js';
 import '@/pages/auth/auth.css';
 import { validateEmail } from '@/utils/validators.js';
 import { ERROR_MESSAGES } from '@/constants/messages/auth.js';
-import { PAGE_URLS } from '@/constants/urls/page-urls.js';
+import { PAGE_URLS } from '@/constants/urls/routes.js';
+import PasswordToggleIcon from '@/components/PasswordToggleIcon';
 
 export default function Signup() {
   const navigate = useNavigate();
@@ -97,7 +98,6 @@ export default function Signup() {
             </a>
           </h1>
         </header>
-
         <form
           className="auth-form"
           data-auth-type="signup"
@@ -140,6 +140,7 @@ export default function Signup() {
                 onChange={(e) => handleChange('password', e.target.value)}
                 placeholder="비밀번호를 입력해주세요"
               />
+
               <button
                 type="button"
                 className={`password-visibility ${showPassword ? 'eye-open' : 'eye-closed'}`}
@@ -167,13 +168,9 @@ export default function Signup() {
                 }
                 placeholder="비밀번호를 다시 입력해주세요"
               />
-              <button
-                type="button"
-                className={`password-visibility ${showConfirmPassword ? 'eye-open' : 'eye-closed'}`}
-                onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-                aria-label={
-                  showConfirmPassword ? '비밀번호 숨기기' : '비밀번호 보기'
-                }
+              <PasswordToggleIcon
+                isVisible={showConfirmPassword}
+                onToggle={() => setShowConfirmPassword((prev) => !prev)}
               />
             </div>
             <div
