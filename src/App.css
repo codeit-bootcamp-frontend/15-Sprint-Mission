@@ -28,15 +28,15 @@
   --font-weight-medium: 500;
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
-  --text-3xl: 2rem; //32px
+  --text-3xl: 2rem; /*32px*/
   --text-3xl--line-height: 2.625rem;
-  --text-2xl: 1.5rem; //24px
+  --text-2xl: 1.5rem; /*24px*/
   --text-2xl--line-height: 2rem;
-  --text-xl: 1.25rem; //20px
+  --text-xl: 1.25rem; /*20px*/
   --text-xl--line-height: 2rem;
-  --text-2lg: 1.125rem; //18px
+  --text-2lg: 1.125rem; /*18px*/
   --text-2lg--line-height: 1.625rem;
-  --text-lg: 1rem; //16px
+  --text-lg: 1rem; /*16px*/
   --text-lg--line-height: 1.625rem;
   --text-md: 0.875rem;
   --text-md--line-height: 1.5rem;

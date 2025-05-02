@@ -1,15 +1,19 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { getProductList } from "../api/products";
 import Header from "../components/Header";
+import ProductList from "../components/ProductList";
 
 function ItemsPage() {
+  const [products, setProducts] = useState([]);
+
   useEffect(() => {
     const getProducts = async () => {
-      const products = await getProductList({ limit: 8, offset: 0 });
-      console.log(products.data);
+      const items = await getProductList({ limit: 8, offset: 0 });
+      setProducts(items.data.list);
     };
     getProducts();
   }, []);
+  console.log(products);
 
   return (
     <div>
@@ -20,7 +24,9 @@ function ItemsPage() {
         <button>상품 등록하기</button>
         <div>최신순</div>
       </div>
-      <div></div>
+      <div>
+        <ProductList products={products} />
+      </div>
     </div>
   );
 }
