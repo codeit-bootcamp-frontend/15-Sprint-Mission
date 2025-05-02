@@ -1,10 +1,10 @@
 import styles from '../styles/MainBanner.module.css';
 import { useNavigate } from 'react-router-dom';
 
-const MainBanner = ({ text, bgImg, hasButton = false}) => {
+const MainBanner = ({ text, bgImg, hasButton = false, index}) => {
   const navigate = useNavigate();
   return (    
-    <section className={styles.mainBanner}>
+    <section className={`${styles.mainBanner} ${index === 0 ? styles.mainBanner01 : styles.mainBanner02}`}>
       <div className='inner02' style={{ backgroundImage: `url(${bgImg})` }}>
         <div className={styles.mainBannerCont}>
           <strong>

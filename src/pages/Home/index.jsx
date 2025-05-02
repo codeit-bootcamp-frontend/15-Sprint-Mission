@@ -22,6 +22,7 @@ export default function Home() {
           }
           bgImg={MainBannerTopBG}
           hasButton
+          index={0}
         />
         {CATEGORY_LIST.map((cate) => (
           <MainCardSection key={cate.id} cate={cate.id} title={cate.title} contents={cate.contents} />
@@ -35,6 +36,7 @@ export default function Home() {
             </>
           }
           bgImg={MainBannerBottomBG}
+          index={1}
         />
       </div>
       <Footer />

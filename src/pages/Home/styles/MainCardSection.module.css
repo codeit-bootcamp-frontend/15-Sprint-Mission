@@ -79,6 +79,7 @@
   }
   .mainCardSection:nth-of-type(even) button {
     align-items: flex-end;
+    flex-direction: column;
   }
   .mainCardSection h2 {
     font-size: 2.42vw;
