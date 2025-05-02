@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { getProductList } from "../api/products";
 import Header from "../components/Header";
 import ProductList from "../components/ProductList";
@@ -10,12 +10,13 @@ function ItemsPage() {
   const navigate = useNavigate();
   const [products, setProducts] = useState([]);
   const [sort, setSort] = useState("recent");
+  const [isMobile, setIsMobile] = useState();
 
   const handleRecentClick = () => {
     setSort("recent");
   };
   const handleFavoriteClick = () => {
-    setSort("Favorite");
+    setSort("favorite");
   };
 
   const options = [
@@ -29,12 +30,21 @@ function ItemsPage() {
 
   useEffect(() => {
     const getProducts = async () => {
-      const items = await getProductList({ limit: 10, offset: 0 });
+      const items = await getProductList({ limit: 10, offset: 0, sort });
       setProducts(items.data.list);
     };
     getProducts();
-  }, []);
+  }, [sort]);
   console.log(products);
+
+  const handleResize = useCallback(() => {
+    window.innerWidth > 768 ? setIsMobile(false) : setIsMobile(true);
+  }, []);
+
+  useEffect(() => {
+    handleResize();
+    window.addEventListener("resize", handleResize);
+  }, [handleResize]);
 
   return (
     <div>
@@ -46,7 +56,7 @@ function ItemsPage() {
           className="bg-gray100 rounded-xl"
           placeholder="검색할 상품을 입력해주세요"
         />
-        <Dropdown options={options} />
+        <Dropdown options={options} isMobile={isMobile} />
       </div>
       <div className="max-w-1200 m-auto px-16 tablet:px-24">
         <ProductList products={products} />
