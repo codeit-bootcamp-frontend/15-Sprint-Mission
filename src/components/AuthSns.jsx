@@ -1,4 +1,4 @@
-import styles from '/src/styles/AuthSns.module.css';
+import styles from './styles/AuthSns.module.css';
 import { useNavigate, useLocation } from 'react-router-dom';
 
 const AuthSns = () => {

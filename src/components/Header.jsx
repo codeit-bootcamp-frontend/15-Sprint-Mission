@@ -1,4 +1,4 @@
-import '/src/styles/Header.css'
+import './styles/Header.css'
 import { useNavigate, NavLink, useLocation } from 'react-router-dom';
 
 

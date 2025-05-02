@@ -1,3 +1,18 @@
 .itemsPage {
   padding-block: 94px;
+  section {
+    &:not(:last-child) {
+      margin-bottom: 40px;
+    }
+  }
+}
+.contentHeader {
+  display: flex;
+  align-items: center;
+  h3 {
+    margin-right: auto;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.6;
+  }
 }

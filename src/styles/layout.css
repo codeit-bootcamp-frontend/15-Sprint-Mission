@@ -33,7 +33,7 @@
 }
 
 @media all and (max-width: 1510px) {
-  .inner02 {
+  .inner02, .inner04 {
     width: auto;
     max-width: none;
     margin-inline: 24px;

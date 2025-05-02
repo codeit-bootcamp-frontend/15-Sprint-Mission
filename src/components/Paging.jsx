@@ -1,4 +1,4 @@
-import styles from '/src/styles/Paging.module.css';
+import styles from './styles/Paging.module.css';
 export default function Paging({ totalPage, currentPage, setCurrentPage }) {
   const pageArr = new Array(totalPage).fill(0).map((_, i) => i + 1);
 

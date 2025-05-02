@@ -1,5 +1,5 @@
 import AuthFormItem from './AuthFormItem';
-import styles from '/src/styles/AuthForm.module.css';
+import styles from './styles/AuthForm.module.css';
 import { useState, useEffect } from 'react';
 
 const AuthForm = ({ formFields, onSubmit, submitButtonText }) => {

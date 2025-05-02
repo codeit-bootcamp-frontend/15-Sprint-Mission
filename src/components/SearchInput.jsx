@@ -1,29 +1,44 @@
-import styles from '/src/styles/SearchInput.module.css';
+import styles from './styles/SearchInput.module.css';
 import CommonButton from './CommonButton';
-import { useState } from 'react';
+import { useReducer, useState } from 'react';
 
-const SearchInput = ({placeholder, buttonType = false, setSortProducts}) => {
-  const [isOpen, setIsOpen] = useState(false);
+const SearchInput = ({placeholder, setOrderBy, setSearchKeyword}) => {
+  const [isOpen, toggleOpen] = useReducer((state) => !state, false);
   const [selectedSort, setSelectedSort] = useState('최신순');
+  const [search, setSearch] = useState('');
 
-  const handleSortClick = () => {
-    setIsOpen(!isOpen);
-  };
+ 
 
   const handleOptionClick = (option, apiValue) => {
     setSelectedSort(option);
-    setIsOpen(false);
-    if (setSortProducts) {
-      setSortProducts(apiValue);
+    setOrderBy(apiValue);
+    toggleOpen();
+  };
+
+  const handleSearch = (e) => {
+    const searchValue = e.target.value;
+    setSearch(searchValue);
+  };
+
+  const handleSearchSubmit = (e) => {
+    if (e.key === 'Enter') {
+      setSearchKeyword(search);
     }
   };
 
   return (
     <div className={styles.searchInput}>
-      <input type='text' placeholder={placeholder} className={styles.searchInput} />
-      {buttonType && <CommonButton buttonType={buttonType} />}
+      <input 
+        type='text' 
+        placeholder={placeholder} 
+        className={styles.searchInput}
+        value={search}
+        onChange={handleSearch}
+        onKeyUp={handleSearchSubmit}
+      />
+      <CommonButton buttonType={{buttonType: 'button', buttonStyle: 'primary', buttonText: '상품 등록하기'}} />
       <div className={styles.searchSort}>
-        <button onClick={handleSortClick}>{selectedSort}</button>
+        <button onClick={toggleOpen}>{selectedSort}</button>
         {isOpen && (
           <ul>
             <li><button onClick={() => handleOptionClick('최신순', 'recent')}>최신순</button></li>

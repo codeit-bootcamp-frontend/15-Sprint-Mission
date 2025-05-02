@@ -1,4 +1,4 @@
-import styles from '/src/styles/ProductListItem.module.css';
+import styles from './styles/ProductListItem.module.css';
 import { Link } from 'react-router-dom';
 import defaultImage from '/images/common/img_default.png';
 

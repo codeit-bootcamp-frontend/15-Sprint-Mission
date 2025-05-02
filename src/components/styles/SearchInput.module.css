@@ -44,7 +44,7 @@
     border-radius: 8px;
     border: 1px solid var(--gray200);
     width: 100%;
-
+    z-index: 100;
     li {
       width: 100%;
       &:not(:last-child) {

@@ -1,4 +1,4 @@
-import styles from '/src/styles/AuthFormItem.module.css';
+import styles from './styles/AuthFormItem.module.css';
 import { useState } from 'react';
 import eyeOff from '/images/common/ic_eye_off.svg';
 import eyeOn from '/images/common/ic_eye_on.svg';
