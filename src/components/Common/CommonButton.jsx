@@ -1,7 +1,7 @@
 import styles from './styles/CommonButton.module.css';
 import { useNavigate, useLocation } from 'react-router-dom';
 
-const CommonButton = ({buttonType}) => {
+const CommonButton = ({buttonType, path=""}) => {
   const navigate = useNavigate();
   const location = useLocation();
   const currentPath = location.pathname;
@@ -10,7 +10,9 @@ const CommonButton = ({buttonType}) => {
   return (
     <button
       type={buttonType.buttonType}
-      className={`${styles.commonButton} ${styles[buttonType.buttonStyle]} ${isItems}`}>
+      className={`${styles.commonButton} ${styles[buttonType.buttonStyle]} ${isItems}`}
+      onClick={() => path && navigate(path)}
+    >
       {buttonType.buttonText}
     </button>
   );

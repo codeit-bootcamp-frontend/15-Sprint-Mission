@@ -9,6 +9,7 @@ import Signup from './pages/Signup';
 import Items from './pages/Items';
 import Board from './pages/Board';
 import Notfound from './pages/Notfound';
+import AddItem from './pages/AddItem';
 import Home from './pages/Home';
 
 const AuthStateContext = createContext();
@@ -23,6 +24,7 @@ function App() {
         <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<Signup />} />
         <Route path='/items' element={<Items />} />
+        <Route path='/additem' element={<AddItem />} />
         <Route path='/board' element={<Board />} />
         <Route path='*' element={<Notfound />} />
       </Routes>

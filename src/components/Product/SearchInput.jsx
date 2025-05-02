@@ -1,7 +1,7 @@
 import styles from './styles/SearchInput.module.css';
 import CommonButton from '@/components/Common/CommonButton';
 import { useReducer, useState } from 'react';
-
+import { useLocation } from 'react-router-dom';
 const SearchInput = ({placeholder, setOrderBy, setSearchKeyword}) => {
   const [isOpen, toggleOpen] = useReducer((state) => !state, false);
   const [selectedSort, setSelectedSort] = useState('최신순');
@@ -26,6 +26,7 @@ const SearchInput = ({placeholder, setOrderBy, setSearchKeyword}) => {
     }
   };
 
+  const path = useLocation();
   return (
     <div className={styles.searchInput}>
       <input 
@@ -36,7 +37,7 @@ const SearchInput = ({placeholder, setOrderBy, setSearchKeyword}) => {
         onChange={handleSearch}
         onKeyUp={handleSearchSubmit}
       />
-      <CommonButton buttonType={{buttonType: 'button', buttonStyle: 'primary', buttonText: '상품 등록하기'}} />
+      <CommonButton buttonType={{buttonType: 'button', buttonStyle: 'primary', buttonText: '상품 등록하기'}} path={"/additem"} />
       <div className={styles.searchSort}>
         <button onClick={toggleOpen}>{selectedSort}</button>
         {isOpen && (
