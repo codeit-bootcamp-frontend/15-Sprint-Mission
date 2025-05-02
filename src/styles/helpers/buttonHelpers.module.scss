@@ -1,0 +1,11 @@
+.viewButton {
+  padding: 1.1rem 10rem;
+  border-radius: 40px;
+  font-size: 1.4rem;
+}
+
+@media (max-width: 767px) {
+  .viewButton {
+    padding: 1.1rem 8rem;
+  }
+}

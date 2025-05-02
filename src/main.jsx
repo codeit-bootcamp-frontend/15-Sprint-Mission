@@ -1,4 +1,4 @@
-import '@/styles/common/index.scss';
+import '@/styles/common/index.css';
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
@@ -12,8 +12,8 @@ createRoot(root).render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />}>
-          {/* <Route index element={<Landing />} />
-          <Route path="signup" element={<SignUp />} /> */}
+          <Route index element={<Landing />} />
+          {/* <Route path="signup" element={<SignUp />} /> */}
         </Route>
       </Routes>
     </BrowserRouter>
