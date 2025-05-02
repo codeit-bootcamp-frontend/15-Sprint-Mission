@@ -11,7 +11,11 @@ const ProductListItem = ({ id, title, image, price, favorite }) => {
     <li>
       <Link to={`/product/${id}`} className={styles.productListItem}>
         <div className={styles.productListItemImage}>
-          <img src={image || defaultImage} alt={title} onError={(e) => (e.target.src = defaultImage)} />
+          <img 
+            src={image?.startsWith('http') ? image : defaultImage} 
+            alt={title} 
+            onError={(e) => (e.target.src = defaultImage)} 
+          />
         </div>
         <div className={styles.productListItemContent}>
           <div className={styles.productListItemTitle}>{title}</div>
