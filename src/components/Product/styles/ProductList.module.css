@@ -10,18 +10,21 @@
   }
 }
 
-@media (max-width: 744px) {
+@media (max-width: 768px) {
   .productList {
+    margin-top: 3.23vw;
     &.best {
       grid-template-columns: repeat(2, 1fr);
+      grid-gap: 0 1.34vw;
     }
     &.all {
       grid-template-columns: repeat(3, 1fr);
+      grid-gap: 5.38vw 2.15vw;
     }
   }
 }
 
-@media (max-width: 376px) {
+@media (max-width: 425px) {
   .productList {
     &.best {
       grid-template-columns: repeat(1, 1fr);

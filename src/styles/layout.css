@@ -40,7 +40,7 @@
   }
 }
 @media all and (max-width: 1024px) {
-  .inner {
+  .inner, .inner02, .inner04 {
     width: auto;
     max-width: none;
     margin-inline: 3.23vw;
@@ -56,7 +56,8 @@
 
 @media all and (max-width: 425px) {
   .inner,
-  .inner02 {
+  .inner02,
+  .inner04 {
     width: auto;
     max-width: none;
     margin-inline: 4.27vw;

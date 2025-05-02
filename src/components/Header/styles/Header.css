@@ -15,10 +15,12 @@
 .header02 {
   border-bottom: 1px solid #dfdfdf;
   .inner02 {
-  max-width: 1520px;
-  justify-content: flex-start;
+    max-width: 1520px;
+    justify-content: flex-start;
+  }
   .header-login {
     margin-left: auto;
+    flex: none;
     width: 40px;
     height: 40px;
     color: transparent;
@@ -44,7 +46,6 @@
       }
     }
   }
-}
 }
 .header-nav {
   display: none;
@@ -96,17 +97,30 @@
     border-radius: 1.08vw;
     font-size: 2.15vw;
   }
-  .header-logo a {
+  .header-logo button {
     max-height: 5.38vw;
     max-width: 17.2vw;
     display: block;
   }
 }
 @media all and (max-width: 768px) {
-  .header-logo a {
+  .header-logo button {
     max-height: 5.21vw;
     max-width: 19.92vw;
     display: block;
+  }
+  .header02 {
+    .header-login {
+      width: 5.38vw;
+      height: 5.38vw;
+    }
+    .header-nav {
+      margin-left: 2.69vw;
+      a {
+        padding-inline: 2.02vw;
+        font-size: 2.42vw;
+      }
+    }
   }
 }
 
@@ -114,15 +128,30 @@
   .header .inner02 {
     height: 18.67vw;
   }
-  .header-logo a {
+  .header-logo button {
     background-image: url('/images/common/logo_m.svg');
-    max-height: 6.33vw;
-    max-width: 27.47vw;
+    background-size: contain;
+    max-height: 7.2vw;
+    max-width: 21.6vw;
   }
   .header-login {
     max-width: 34.13vw;
     height: 12.8vw;
     border-radius: 2.13vw;
     font-size: 4.27vw;
+  }
+  .header02 {
+    .header-login {
+      width: 10.67vw;
+      height: 10.67vw;
+    }
+    .header-nav {
+      margin-left: 2.13vw;
+      gap: 2.13vw;
+      a {
+        padding-inline: 0;
+        font-size: 4.27vw;
+      }
+    }
   }
 }
