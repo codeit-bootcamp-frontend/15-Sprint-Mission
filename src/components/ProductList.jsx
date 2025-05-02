@@ -2,7 +2,7 @@ import ProductCard from "./ProductCard";
 
 function ProductList({ products }) {
   return (
-    <ul>
+    <ul className="grid grid-cols-2 tablet:grid-cols-3 pc:grid-cols-4 gap-8 tablet:gap-16 pc:gap-24">
       {products.map((product) => {
         const { id, name, images, price, favoriteCount } = product;
 
