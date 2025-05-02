@@ -1,9 +1,14 @@
 import likes from "../assets/icons/likes.svg";
+import basic from "../assets/images/basic.svg";
 
 function ProductCard({ name, images, price, favoriteCount }) {
   return (
     <div className="flex flex-col gap-16 pb-32 tablet:pb-40 cursor-pointer">
-      <img className="size-168 tablet:size-221 rounded-xl" src={images} />
+      <img
+        className="size-168 tablet:size-221 rounded-xl"
+        src={images}
+        onError={(e) => (e.target.src = basic)}
+      />
       <div className="flex flex-col gap-6">
         <div className="text-md font-medium text-gray800">{name}</div>
         <div className="text-lg font-bold text-gray800">{price}</div>
