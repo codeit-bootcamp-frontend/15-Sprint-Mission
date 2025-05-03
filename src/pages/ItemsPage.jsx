@@ -78,21 +78,24 @@ function ItemsPage() {
   return (
     <div>
       <Header />
-      <div className="max-w-1200 m-auto px-16 tablet:px-24">
-        <div className="text-xl font-bold text-gray900">베스트 상품</div>
-        <BestProductList products={bestProducts} itemsPerPage={itemsPerPage} />
+      <div className="pt-24 pb-52">
+        <div className="flex flex-col gap-16 max-w-344 tablet:max-w-695 pc:max-w-1200 m-auto">
+          <div className="text-xl font-bold text-gray900">베스트 상품</div>
+          <BestProductList
+            products={bestProducts}
+            itemsPerPage={itemsPerPage}
+          />
+        </div>
+        <div className="flex flex-col gap-16 tablet:gap-24 m-auto max-w-344 tablet:max-w-695 pc:max-w-1200 m-auto">
+          <ItemControl isMobile={isMobile} options={options} />
+          <ProductList products={products} itemsPerPage={itemsPerPage} />
+        </div>
+        <Pagenation
+          totalPages={totalPages}
+          currentPage={currentPage}
+          onPageChange={setCurrentPage}
+        />
       </div>
-      <div className="flex flex-col gap-8 m-auto px-16 tablet:px-24 max-w-1200">
-        <ItemControl isMobile={isMobile} options={options} />
-      </div>
-      <div className="max-w-1200 m-auto px-16 tablet:px-24">
-        <ProductList products={products} itemsPerPage={itemsPerPage} />
-      </div>
-      <Pagenation
-        totalPages={totalPages}
-        currentPage={currentPage}
-        onPageChange={setCurrentPage}
-      />
     </div>
   );
 }
