@@ -1,0 +1,21 @@
+.bestProducts {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
+  margin: 24px auto 40px;
+  gap: 16px;
+}
+
+.sectionTitle {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 32px;
+  color: #111827;
+}
+
+.productList {
+  display: flex;
+  gap: 24px;
+}
