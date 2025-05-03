@@ -5,7 +5,6 @@ const CommonButton = ({buttonType, path="", disabled=false}) => {
   const navigate = useNavigate();
   const location = useLocation();
   const currentPath = location.pathname;
-  console.log(currentPath);
   const isItems = currentPath === "/items" ? styles.isItems : "";
   return (
     <button

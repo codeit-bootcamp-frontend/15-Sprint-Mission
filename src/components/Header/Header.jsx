@@ -6,7 +6,8 @@ const Header = () => {
   const navigate = useNavigate();
   const location = useLocation();
   return (
-    <header className={`header ${location.pathname === '/items' || location.pathname === '/additem' ? 'header02' : ''}`}>
+    <header
+      className={`header ${location.pathname === '/items' || location.pathname === '/additem' ? 'header02' : ''}`}>
       <div className='inner02'>
         <h1 className='header-logo'>
           <button onClick={() => navigate('/')}>
@@ -15,7 +16,13 @@ const Header = () => {
         </h1>
         <nav className='header-nav'>
           <NavLink to='/board'>자유게시판</NavLink>
-          <NavLink to='/items'>중고마켓</NavLink>
+          <NavLink
+            to='/items'
+            className={({ isActive }) =>
+              location.pathname === '/items' || location.pathname === '/additem' ? 'active' : ''
+            }>
+            중고마켓
+          </NavLink>
         </nav>
         <button onClick={() => navigate('/login')} className='header-login'>
           로그인
