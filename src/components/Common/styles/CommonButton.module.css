@@ -11,6 +11,10 @@
     background-color: var(--blue);
     color: #fff;
   }
+  &:disabled {
+    background-color: var(--gray400);
+    cursor: not-allowed;
+  }
 }
 
 @media (max-width: 768px) {

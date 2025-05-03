@@ -1,0 +1,31 @@
+.addItemListItem {
+  > label,
+  > p {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.44;
+    margin-bottom: 16px;
+    display: block;
+  }
+  input[type='text'],
+  textarea {
+    background-color: var(--gray100);
+    padding-inline: 24px;
+    width: 100%;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.62;
+    &::placeholder {
+      color: var(--gray400);
+    }
+  }
+  input[type='text'] {
+    height: 56px;
+  }
+  textarea {
+    resize: none;
+    height: 282px;
+    padding-block: 16px;
+  }
+}

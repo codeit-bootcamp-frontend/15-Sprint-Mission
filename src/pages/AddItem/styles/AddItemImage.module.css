@@ -1,0 +1,27 @@
+.addItemImage {
+  input[type='file'] {
+    width: 0;
+    height: 0;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    overflow: hidden;
+  }
+  label {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    background-color: var(--gray100);
+    border-radius: 12px;
+    width: 282px;
+    aspect-ratio: 1/1;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.62;
+    color: var(--gray400);
+  }
+}

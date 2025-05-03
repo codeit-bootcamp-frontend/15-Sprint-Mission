@@ -3,7 +3,7 @@ import Header from '@/components/Header/Header';
 import styles from './styles/index.module.css';
 import CommonButton from '@/components/Common/CommonButton';
 import '@/styles/items.css';
-
+import AddItemsLists from './components/AddItemsLists';
 
 export default function AddItem() {
 
@@ -12,14 +12,13 @@ export default function AddItem() {
       <Header />
       <div id='container' className={`${styles.addItemPage} itemsPage`}>
         <div className='inner04'>
-          <section>
-            <div className='contentHeader'>
-              <h3>상품 등록하기</h3>
-              <CommonButton
-                buttonType={{ buttonType: 'button', buttonStyle: 'primary', buttonText: '등록' }}
-              />
-            </div>
-          </section>
+          <div className='contentHeader'>
+            <h3>상품 등록하기</h3>
+            <CommonButton buttonType={{ buttonType: 'submit', buttonStyle: 'primary', buttonText: '등록' }} disabled />
+          </div>
+          <ul className={styles.addItemList}>
+            <AddItemsLists />
+          </ul>
         </div>
       </div>
       <Footer />
