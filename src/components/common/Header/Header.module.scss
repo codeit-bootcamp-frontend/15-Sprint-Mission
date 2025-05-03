@@ -18,16 +18,6 @@
   align-items: center;
 }
 
-.logoLink {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.logoImage {
-  width: 4rem;
-}
-
 .signinButton {
   padding: 1.3rem 4rem;
   font-size: 1.2rem;
@@ -59,9 +49,5 @@
 @media (max-width: 767px) {
   .header {
     padding: 0 16px;
-  }
-
-  .logoImage {
-    display: none;
   }
 }

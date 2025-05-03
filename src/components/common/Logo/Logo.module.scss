@@ -1,0 +1,41 @@
+.logoContainer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo {
+  display: block;
+}
+
+.logoTypo {
+  display: block;
+}
+
+/* 기본 사이즈: 작은 로고 (헤더) */
+.default .logo {
+  width: 4rem;
+}
+
+/* 큰 사이즈: Auth용 */
+.large .logo {
+  width: 10rem;
+}
+
+.large .logoTypo {
+  width: 30rem;
+}
+
+@media (max-width: 767px) {
+  .default .logo {
+    display: none;
+  }
+
+  .large .logo {
+    width: 9rem;
+  }
+
+  .large .logoTypo {
+    width: 25rem;
+  }
+}

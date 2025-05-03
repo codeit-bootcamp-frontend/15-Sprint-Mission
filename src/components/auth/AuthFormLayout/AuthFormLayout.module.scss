@@ -1,0 +1,43 @@
+.authBody {
+  display: flex;
+  justify-content: center;
+}
+
+.authContainer {
+  display: flex;
+  flex-direction: column;
+  width: 64rem;
+  height: auto;
+  padding: 3rem 0; /*화면 height이 작을때 margin은 스크롤 영역에 포함되지 않기 때문에 여유가 없어보여서 padding 적용*/
+  gap: 2.4rem;
+}
+
+.authHeader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 4rem;
+  width: 100%;
+}
+
+.switch {
+  color: var(--secondary-800);
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 2.4rem;
+  text-align: center;
+}
+
+.switchButton {
+  color: var(--primary-100);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+@media (max-width: 767px) {
+  .authContainer {
+    margin: 0 16px;
+    max-width: 400px;
+    width: 100%;
+  }
+}
