@@ -36,7 +36,7 @@ function Dropdown({ options, isMobile }) {
       </div>
 
       {isOpen && (
-        <ul className="w-130 text-center border border-gray200 absolute right-16 tablet:right-24 top-144 tablet:top-156 rounded-xl cursor-pointer">
+        <ul className="w-130 text-center border border-gray200 absolute right-16 tablet:right-24 top-204 tablet:top-156 rounded-xl cursor-pointer">
           {options.map((option) => (
             <li
               key={option.value}
