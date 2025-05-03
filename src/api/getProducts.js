@@ -27,3 +27,5 @@ const getProducts = async ({
     throw error;
   }
 };
+
+export default getProducts;
