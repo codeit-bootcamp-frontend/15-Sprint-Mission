@@ -22,6 +22,7 @@
 
 .pandaLogo {
   width: 40px;
+  height: auto;
 }
 
 .pandaMarket {
@@ -42,7 +43,7 @@
   font-size: 18px;
   font-weight: 700;
   color: #4b5563;
-  gap: 20px;
+  gap: 30px;
 }
 
 .menuItem {
@@ -53,4 +54,18 @@
 .menuLink {
   text-decoration: none;
   color: inherit;
+}
+
+@media (min-width: 1921px) {
+  .header {
+    justify-content: center;
+  }
+
+  .logo {
+    margin-right: 47px;
+  }
+
+  .container {
+    max-width: 1560px;
+  }
 }
