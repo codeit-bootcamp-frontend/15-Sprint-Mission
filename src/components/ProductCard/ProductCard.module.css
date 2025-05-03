@@ -1,0 +1,65 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: scale(1.03) translateZ(0);
+}
+
+.bestImg {
+  width: 282px;
+  height: 282px;
+  border-radius: 16px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.allImg {
+  width: 221px;
+  height: 221px;
+  border-radius: 16px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.title {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px;
+  color: #1f2937;
+}
+
+.price {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 26px;
+  color: #1f2937;
+}
+
+.likes {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #4b5563;
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+}
+
+.count {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+}
