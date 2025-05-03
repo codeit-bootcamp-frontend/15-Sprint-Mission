@@ -10,19 +10,19 @@ const getLinkStyle = ({ isActive }) => {
 const Header = () => {
   return (
     <div className={styles.header}>
-      <Link to="/" className={styles.logo}>
-        <img
-          src="/panda-logo.svg"
-          alt="판다얼굴 로고"
-          className={styles.pandaLogo}
-        />
-        <img
-          src="/panda-market.svg"
-          alt="판다마켓"
-          className={styles.pandaMarket}
-        />
-      </Link>
       <div className={styles.container}>
+        <Link to="/" className={styles.logo}>
+          <img
+            src="/panda-logo.svg"
+            alt="판다얼굴 로고"
+            className={styles.pandaLogo}
+          />
+          <img
+            src="/panda-market.svg"
+            alt="판다마켓"
+            className={styles.pandaMarket}
+          />
+        </Link>
         <ul className={styles.menu}>
           <li className={styles.menuItem}>자유게시판</li>
           <li className={styles.menuItem}>
@@ -35,8 +35,8 @@ const Header = () => {
             </NavLink>
           </li>
         </ul>
-        <img src="/profile.svg" alt="프로필 이미지" />
       </div>
+      <img src="/profile.svg" alt="프로필 이미지" />
     </div>
   );
 };

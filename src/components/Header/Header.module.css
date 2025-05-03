@@ -32,10 +32,8 @@
 
 .container {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  width: 100%;
-  max-width: 1280px;
+  gap: 32px;
 }
 
 .menu {
@@ -43,10 +41,10 @@
   font-size: 18px;
   font-weight: 700;
   color: #4b5563;
-  gap: 30px;
 }
 
 .menuItem {
+  padding: 21px 15px;
   list-style: none;
   cursor: pointer;
 }
@@ -54,18 +52,4 @@
 .menuLink {
   text-decoration: none;
   color: inherit;
-}
-
-@media (min-width: 1921px) {
-  .header {
-    justify-content: center;
-  }
-
-  .logo {
-    margin-right: 47px;
-  }
-
-  .container {
-    max-width: 1560px;
-  }
 }
