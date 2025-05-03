@@ -1,12 +1,12 @@
 import { Routes, Route, Navigate } from "react-router-dom";
-import Nav from "./components/Nav.jsx";
+import Header from "./components/Header/Header.jsx";
 import Items from "./pages/Items.jsx";
 import "./assets/styles/base.css";
 
 function App() {
   return (
     <>
-      <Nav />
+      <Header />
       <Routes>
         <Route path="/" element={<Navigate to="/items" replace />} />
         <Route path="/items" element={<Items />} />
