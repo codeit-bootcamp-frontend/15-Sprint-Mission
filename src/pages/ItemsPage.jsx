@@ -19,9 +19,11 @@ function ItemsPage() {
 
   const handleRecentClick = () => {
     setSort("recent");
+    setCurrentPage(1);
   };
   const handleFavoriteClick = () => {
     setSort("favorite");
+    setCurrentPage(1);
   };
 
   const options = [
