@@ -1,8 +1,9 @@
+import ItemsPage from "../pages/ItemsPage";
 import ProductCard from "./ProductCard";
 
 function ProductList({ products, itemsPerPage }) {
   return (
-    <ul className="grid grid-cols-2 tablet:grid-cols-3 pc:grid-cols-5 gap-8 tablet:gap-16 pc:gap-24">
+    <ul className="grid grid-cols-1 tablet:grid-cols-2 pc:grid-cols-4 gap-8 tablet:gap-16 pc:gap-24">
       {products.slice(0, itemsPerPage).map((product) => {
         const { id, name, images, price, favoriteCount } = product;
 
