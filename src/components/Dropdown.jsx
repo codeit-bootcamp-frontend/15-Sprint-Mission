@@ -22,9 +22,9 @@ function Dropdown({ options, isMobile }) {
   };
 
   return (
-    <div tabIndex={-1} onBlur={handleBlur}>
+    <div tabIndex={-1} onBlur={handleBlur} className="relative">
       <div
-        className={`${isMobile ? "" : "w-130"} border border-gray200 rounded-xl p-9 cursor-pointer relative`}
+        className={`${isMobile ? "" : "w-130"} border border-gray200 rounded-xl p-9 cursor-pointer`}
         onClick={handleDropdown}
         ref={dropdownRef}
       >
@@ -36,7 +36,7 @@ function Dropdown({ options, isMobile }) {
       </div>
 
       {isOpen && (
-        <ul className="w-130 text-center border border-gray200 absolute right-16 tablet:right-24 top-204 tablet:top-156 rounded-xl cursor-pointer">
+        <ul className="w-130 text-center border border-gray200 rounded-xl absolute right-0 tablet:left-0 top-48 cursor-pointer">
           {options.map((option) => (
             <li
               key={option.value}

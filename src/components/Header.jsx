@@ -15,8 +15,12 @@ function Header() {
           <Link to="/">
             <span className="cursor-pointer">자유게시판</span>
           </Link>
-          <Link to="/">
-            <span className="cursor-pointer">중고마켓</span>
+          <Link to="/items">
+            <span
+              className={`${location.pathname === "/items" ? "text-blue100" : ""} cursor-pointer`}
+            >
+              중고마켓
+            </span>
           </Link>
         </div>
         <div>
