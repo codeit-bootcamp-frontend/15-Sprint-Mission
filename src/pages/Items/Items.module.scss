@@ -1,0 +1,136 @@
+.page {
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.addItemButton {
+  // 기본 스타일
+}
+
+.sortDropdown {
+  margin-bottom: 20px;
+}
+
+.productsGrid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+  @media (max-width: 1919px) {
+    grid-template-columns: repeat(4, 1fr); // Desktop
+  }
+
+  @media (max-width: 1199px) {
+    grid-template-columns: repeat(2, 1fr); // Tablet
+  }
+
+  @media (max-width: 767px) {
+    grid-template-columns: repeat(1, 1fr); // Mobile
+  }
+}
+
+.productCard {
+  background-color: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.productCard img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.productCard h2 {
+  font-size: 1.6rem;
+  margin: 10px 0;
+}
+
+.productCard p {
+  font-size: 1.4rem;
+  color: #555;
+}
+
+/* Responsive design for all products */
+.allProductsGrid {
+  display: grid;
+  gap: 20px;
+}
+
+@media (min-width: 1024px) {
+  .allProductsGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .allProductsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .allProductsGrid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+// Add styles for the best products section
+.bestProductsSection {
+  margin-bottom: 40px;
+}
+
+.bestProductsSection h2 {
+  font-size: 2.4rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.searchAndSort {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.searchAndSort input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.searchAndSort select {
+  padding: 10px;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  background-color: #fff;
+  border: 1px solid #e5e5e5;
+  padding: 10px 15px;
+  margin: 0 5px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.pagination button:hover {
+  background-color: #f0f0f0;
+}

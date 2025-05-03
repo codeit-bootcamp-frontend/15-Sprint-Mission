@@ -16,6 +16,34 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  .leftGroup {
+    display: flex;
+    align-items: center;
+  }
+
+  .navLinks {
+    display: flex;
+    gap: 2rem;
+    margin-left: 3rem;
+  }
+
+  .navLink {
+    font-size: 1.8rem;
+    color: var(--secondary-600);
+    font-weight: 700;
+    &:active,
+    &:hover,
+    &.active {
+      color: var(--primary-100);
+    }
+  }
+
+  .defaultProfileIcon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
 }
 
 .signinButton {
