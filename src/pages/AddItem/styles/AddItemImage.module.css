@@ -47,3 +47,11 @@
     }
   }
 }
+.addItemImageAlert {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.62;
+  color: var(--red);
+  margin-top: 16px;
+  display: block;
+}
