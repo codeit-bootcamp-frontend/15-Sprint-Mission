@@ -1,0 +1,41 @@
+.itemsPage {
+  padding-block: 94px;
+}
+.contentHeader {
+  display: flex;
+  align-items: center;
+  h3 {
+    margin-right: auto;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.6;
+  }
+}
+
+@media (max-width: 768px) {
+  .itemsPage {
+    padding-block: 12.63vw;
+  }
+  .contentHeader {
+    h3 {
+      font-size: 2.69vw;
+    }
+  }
+}
+
+@media (max-width: 425px) {
+  .itemsPage {
+    padding-block: 23.2vw;
+  }
+  .contentHeader {
+    flex-wrap: wrap;
+    gap: 2.13vw 0;
+    h3 {
+      font-size: 5.33vw;
+      line-height: 11.2vw;
+      width: 100%;
+      flex: none;
+    }
+  }
+ 
+}

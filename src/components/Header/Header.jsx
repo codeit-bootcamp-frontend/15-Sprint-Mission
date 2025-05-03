@@ -6,7 +6,7 @@ const Header = () => {
   const navigate = useNavigate();
   const location = useLocation();
   return (
-    <header className={`header ${location.pathname === '/items' || location.pathname === '/board' ? 'header02' : ''}`}>
+    <header className={`header ${location.pathname === '/items' || location.pathname === '/additem' ? 'header02' : ''}`}>
       <div className='inner02'>
         <h1 className='header-logo'>
           <button onClick={() => navigate('/')}>

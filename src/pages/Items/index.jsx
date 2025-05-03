@@ -5,6 +5,7 @@ import SearchInput from '@/components/Product/SearchInput';
 import styles from './styles/index.module.css';
 import { useProducts } from '@/hooks/useProducts';
 import Paging from '@/components/Product/Paging';
+import '@/styles/items.css';
 
 export default function Items() {
   const { bestProducts, totalProducts, totalCount, currentPage, pageSize, setCurrentPage, setOrderBy, setSearchKeyword } = useProducts();
@@ -12,17 +13,17 @@ export default function Items() {
   return (
     <>
       <Header />
-      <div id='container' className={styles.itemsPage}>
+      <div id='container' className={`${styles.itemsPage} itemsPage`}>
         <div className='inner04'>
           <section>
-            <div className={styles.contentHeader}>
+            <div className="contentHeader">
               <h3>베스트 상품</h3>
             </div>
             <ProductList listType='best' products={bestProducts} />
           </section>
 
           <section>
-            <div className={styles.contentHeader}>
+            <div className="contentHeader">
               <h3>전체 상품</h3>
               <SearchInput
                 placeholder='검색할 상품을 입력해주세요'
