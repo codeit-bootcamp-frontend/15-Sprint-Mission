@@ -8,7 +8,7 @@ function App() {
     <>
       <Header />
       <Routes>
-        <Route path="/" element={<Navigate to="/items" replace />} />
+        <Route path="/" element={<Navigate to="/" replace />} />
         <Route path="/items" element={<Items />} />
       </Routes>
     </>
