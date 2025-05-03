@@ -1,105 +1,79 @@
-.page {
-  padding: 20px;
+.itemsPage {
+  margin: 0 auto;
+  padding: 2.4rem 55rem;
+  background-color: var(--secondary-300);
 }
 
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
+/* ----------------------------------------
+  베스트 상품 섹션 (4개 grid)
+---------------------------------------- */
+.bestProductsSection {
+  margin-bottom: 40px;
+
+  h2 {
+    font-size: 2.4rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
 }
 
-.addItemButton {
-  // 기본 스타일
-}
-
-.sortDropdown {
-  margin-bottom: 20px;
-}
-
-.productsGrid {
+.bestProductsGrid {
   display: grid;
-  gap: 16px;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
 
-  @media (max-width: 1919px) {
-    grid-template-columns: repeat(4, 1fr); // Desktop
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(4, 1fr);
   }
 
-  @media (max-width: 1199px) {
-    grid-template-columns: repeat(2, 1fr); // Tablet
+  @media (max-width: 1199px) and (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   @media (max-width: 767px) {
-    grid-template-columns: repeat(1, 1fr); // Mobile
-  }
-}
-
-.productCard {
-  background-color: #fff;
-  border: 1px solid #e5e5e5;
-  border-radius: 8px;
-  overflow: hidden;
-  text-align: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.productCard img {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-}
-
-.productCard h2 {
-  font-size: 1.6rem;
-  margin: 10px 0;
-}
-
-.productCard p {
-  font-size: 1.4rem;
-  color: #555;
-}
-
-/* Responsive design for all products */
-.allProductsGrid {
-  display: grid;
-  gap: 20px;
-}
-
-@media (min-width: 1024px) {
-  .allProductsGrid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1023px) {
-  .allProductsGrid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 767px) {
-  .allProductsGrid {
     grid-template-columns: repeat(1, 1fr);
   }
 }
 
-// Add styles for the best products section
-.bestProductsSection {
+/* ----------------------------------------
+  전체 상품 섹션 (5개 grid)
+---------------------------------------- */
+.allProductsSection {
   margin-bottom: 40px;
+
+  h2 {
+    font-size: 2.4rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
 }
 
-.bestProductsSection h2 {
-  font-size: 2.4rem;
-  font-weight: bold;
-  margin-bottom: 20px;
+.allProductsGrid {
+  display: grid;
+  gap: 20px;
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  @media (max-width: 1199px) and (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 767px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
+/* ----------------------------------------
+  검색 + 정렬 영역
+---------------------------------------- */
 .searchAndSort {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
 .searchAndSort input {
@@ -107,7 +81,7 @@
   padding: 10px;
   border: 1px solid #e5e5e5;
   border-radius: 4px;
-  margin-right: 10px;
+  min-width: 200px;
 }
 
 .searchAndSort select {
@@ -116,6 +90,9 @@
   border-radius: 4px;
 }
 
+/* ----------------------------------------
+  페이지네이션
+---------------------------------------- */
 .pagination {
   display: flex;
   justify-content: center;

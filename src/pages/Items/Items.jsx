@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
-import { baseUrl } from '@/constants/urls';
+import { baseUrl, ROUTES } from '@/constants/urls';
 import { Link } from 'react-router-dom';
+import ProductCard from '@/components/Product/ProductCard';
 import styles from './Items.module.scss';
 
 const Items = () => {
@@ -16,7 +17,11 @@ const Items = () => {
         const data = await response.json();
         const { list } = data;
         setProducts(list);
-        setBestProducts(list.slice(0, 5)); // 베스트 상품 상위 5개
+
+        const sortedByLikes = [...list].sort(
+          (a, b) => b.favoriteCount - a.favoriteCount,
+        );
+        setBestProducts(sortedByLikes.slice(0, 4));
       } catch (error) {
         console.error('상품 데이터를 가져오는 중 오류가 발생했습니다:', error);
       }
@@ -39,21 +44,11 @@ const Items = () => {
 
   return (
     <div className={styles.itemsPage}>
-      <header className={styles.itemsHeader}>
-        <h1>중고마켓</h1>
-        <Link to="/additem" className={styles.addItemButton}>
-          상품 등록하기
-        </Link>
-      </header>
       <section className={styles.bestProductsSection}>
         <h2>베스트 상품</h2>
-        <div className={styles.productsGrid}>
+        <div className={styles.bestProductsGrid}>
           {bestProducts.map((product) => (
-            <div key={product.id} className={styles.productCard}>
-              <img src={product.image} alt={product.name} />
-              <h2>{product.name}</h2>
-              <p>{product.price.toLocaleString()}원</p>
-            </div>
+            <ProductCard key={product.id} product={product} />
           ))}
         </div>
       </section>
@@ -62,31 +57,22 @@ const Items = () => {
         <div className={styles.searchAndSort}>
           <input
             type="text"
-            placeholder="검색할 상품명을 입력하세요"
+            placeholder="검색할 상품을 입력해주세요"
             value={searchQuery}
             onChange={handleSearchChange}
           />
+          <Link to={ROUTES.ADD_ITEM}>상품 등록하기</Link>
           <select value={sortOption} onChange={handleSortChange}>
             <option value="latest">최신순</option>
             <option value="likes">좋아요순</option>
           </select>
         </div>
-        <div className={styles.productsGrid}>
+        <div className={styles.allProductsGrid}>
           {filteredProducts.map((product) => (
-            <div key={product.id} className={styles.productCard}>
-              <img src={product.image} alt={product.name} />
-              <h2>{product.name}</h2>
-              <p>{product.price.toLocaleString()}원</p>
-            </div>
+            <ProductCard key={product.id} product={product} />
           ))}
         </div>
       </section>
-      <footer className={styles.pagination}>
-        <button>1</button>
-        <button>2</button>
-        <button>3</button>
-        {/* 페이지네이션 버튼 추가 */}
-      </footer>
     </div>
   );
 };
