@@ -10,14 +10,25 @@ const AuthFormLayout = ({ children, type }) => {
         <header className={styles.authHeader}>
           <Logo size="large" />
         </header>
-        <form className={styles.authForm} data-auth-type={type}>
-          {children}
-        </form>
+
+        {children}
+
         <div className={styles.switch}>
-          이미 회원이신가요?&nbsp;
-          <Link to={ROUTES.SIGNIN} className={styles.switchButton}>
-            로그인
-          </Link>
+          {type === 'signup' ? (
+            <>
+              이미 회원이신가요?&nbsp;
+              <Link to={ROUTES.SIGNIN} className={styles.switchButton}>
+                로그인
+              </Link>
+            </>
+          ) : (
+            <>
+              판다마켓이 처음이신가요?&nbsp;
+              <Link to={ROUTES.SIGNUP} className={styles.switchButton}>
+                회원가입
+              </Link>
+            </>
+          )}
         </div>
       </div>
     </div>

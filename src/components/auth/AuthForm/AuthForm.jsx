@@ -2,36 +2,47 @@ import { AuthInput, OAuthButtons } from '@/components/auth';
 import styles from './AuthForm.module.scss';
 
 const AuthForm = ({
-  type, // 'signup' or 'signin'
-  formData, // { email, password, nickname, confirmPassword }
-  setFormData, // setState 함수
-  errors, // 각 필드에 대한 에러 메시지
+  type,
+  formData,
+  setFormData,
+  errors,
   setErrors,
   onSubmit,
-  validationRules, // 유효성 검사 함수 모음
+  validationRules,
   showPasswordStates,
   togglePasswordVisibility,
   isFormValid,
 }) => {
   const handleChange = (field, value) => {
-    setFormData((prev) => ({ ...prev, [field]: value }));
+    const updatedFormData = { ...formData, [field]: value };
+    setFormData(updatedFormData);
 
-    if (validationRules[field]) {
-      setErrors((prev) => ({
-        ...prev,
-        [field]: validationRules[field](value, formData),
-      }));
+    const fieldError = validationRules[field](value, updatedFormData);
+
+    const newErrors = {
+      ...errors,
+      [field]: fieldError,
+    };
+
+    if (
+      field === 'password' &&
+      updatedFormData.confirmPassword &&
+      validationRules.confirmPassword
+    ) {
+      newErrors.confirmPassword = validationRules.confirmPassword(
+        updatedFormData.confirmPassword,
+        updatedFormData,
+      );
     }
 
-    if (field === 'password' && validationRules.confirmPassword) {
-      setErrors((prev) => ({
-        ...prev,
-        confirmPassword: validationRules.confirmPassword(
-          formData.confirmPassword,
-          { ...formData, password: value },
-        ),
-      }));
+    if (field === 'confirmPassword') {
+      newErrors.confirmPassword = validationRules.confirmPassword(
+        value,
+        updatedFormData,
+      );
     }
+
+    setErrors(newErrors);
   };
 
   return (
