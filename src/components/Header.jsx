@@ -6,7 +6,7 @@ import profile from "../assets/icons/profile.svg";
 function Header() {
   return (
     <div className="w-full bg-white sticky top-0 border border-[#dfdfdf]">
-      <div className="max-w-1120 p-9 flex items-center justify-between m-auto gap-16 tablet:px-24 tablet:gap-24">
+      <div className="max-w-1520 p-9 flex items-center justify-between m-auto gap-16 tablet:px-24 tablet:gap-24">
         <Link to="/">
           <img className="w-153 hidden tablet:block" src={logo} />
           <img className="w-81 block tablet:hidden" src={logoText} />
