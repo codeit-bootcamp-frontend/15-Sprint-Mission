@@ -24,8 +24,8 @@
 
   .navLinks {
     display: flex;
-    gap: 2rem;
-    margin-left: 3rem;
+    gap: 30px;
+    margin-left: 35px;
   }
 
   .navLink {
@@ -77,5 +77,10 @@
 @media (max-width: 767px) {
   .header {
     padding: 0 16px;
+  }
+
+  .headerContent .navLinks {
+    gap: 8px;
+    margin-left: 8px;
   }
 }

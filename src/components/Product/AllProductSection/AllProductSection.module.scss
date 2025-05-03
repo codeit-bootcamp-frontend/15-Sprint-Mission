@@ -1,0 +1,71 @@
+.allProductsSection {
+  margin-bottom: 40px;
+
+  h2 {
+    font-size: 2.4rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+}
+
+.allProductsGrid {
+  display: grid;
+  gap: 2.4rem;
+  grid-template-columns: repeat(5, 1fr);
+
+  @media (max-width: 1199px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 767px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+/* ----------------------------------------
+  검색 + 정렬 영역
+---------------------------------------- */
+.searchAndSort {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.searchAndSort input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  min-width: 200px;
+}
+
+.searchAndSort select {
+  padding: 10px;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+}
+
+/* ----------------------------------------
+  페이지네이션
+---------------------------------------- */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  background-color: #fff;
+  border: 1px solid #e5e5e5;
+  padding: 10px 15px;
+  margin: 0 5px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.pagination button:hover {
+  background-color: #f0f0f0;
+}
