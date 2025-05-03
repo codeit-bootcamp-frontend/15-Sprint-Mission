@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import MainSection from "../components/mainSection";
+import MainSection from "../components/MainSection";
 import logo from "../assets/images/logo.svg";
 import logoText from "../assets/images/logo_text.svg";
 import topImg from "../assets/images/home_top.svg";
