@@ -10,7 +10,7 @@ const getLinkStyle = ({ isActive }) => {
 const Header = () => {
   return (
     <div className={styles.header}>
-      <Link to="/items" className={styles.logo}>
+      <Link to="/" className={styles.logo}>
         <img
           src="/panda-logo.svg"
           alt="판다얼굴 로고"
