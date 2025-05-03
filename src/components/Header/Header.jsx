@@ -7,9 +7,9 @@ const getLinkStyle = ({ isActive }) => {
   };
 };
 
-const Nav = () => {
+const Header = () => {
   return (
-    <div className={styles.nav}>
+    <div className={styles.header}>
       <Link to="/items" className={styles.logo}>
         <img
           src="/panda-logo.svg"
