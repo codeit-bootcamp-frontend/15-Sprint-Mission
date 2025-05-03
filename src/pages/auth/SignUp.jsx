@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { AuthFormLayout, AuthForm } from '@/components/auth';
+import { AuthFormLayout } from '@/components/auth';
 import {
   validateEmail,
   validateNickname,
@@ -43,20 +43,20 @@ const SignUp = () => {
   };
 
   return (
-    <AuthFormLayout>
-      <AuthForm
-        type="signup"
-        formData={formData}
-        setFormData={setFormData}
-        errors={errors}
-        setErrors={setErrors}
-        onSubmit={handleSubmit}
-        validationRules={validationRules}
-        showPasswordStates={showPassword}
-        togglePasswordVisibility={setShowPassword}
-        isFormValid={isFormValid}
-      />
-    </AuthFormLayout>
+    <AuthFormLayout
+      type="signup"
+      formProps={{
+        formData,
+        setFormData,
+        errors,
+        setErrors,
+        onSubmit: handleSubmit,
+        validationRules,
+        showPasswordStates: showPassword,
+        togglePasswordVisibility: setShowPassword,
+        isFormValid,
+      }}
+    />
   );
 };
 

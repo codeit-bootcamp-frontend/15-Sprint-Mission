@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom';
 import { ROUTES } from '@/constants/urls';
 import { Logo } from '@/components/common';
+import { AuthForm } from '@/components/auth';
 import styles from './AuthFormLayout.module.scss';
 
-const AuthFormLayout = ({ children, type }) => {
+const AuthFormLayout = ({ type, formProps }) => {
   return (
     <div className={styles.authBody}>
       <div className={styles.authContainer}>
@@ -11,7 +12,7 @@ const AuthFormLayout = ({ children, type }) => {
           <Logo size="large" />
         </header>
 
-        {children}
+        <AuthForm type={type} {...formProps} />
 
         <div className={styles.switch}>
           {type === 'signup' ? (

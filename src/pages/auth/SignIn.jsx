@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { AuthFormLayout, AuthForm } from '@/components/auth';
+import { AuthFormLayout } from '@/components/auth';
 import validateEmail from '@/utils/validators/validateEmail';
 import validatePassword from '@/utils/validators/validatePassword';
 import { ROUTES } from '@/constants/urls';
@@ -34,20 +34,20 @@ const SignIn = () => {
   };
 
   return (
-    <AuthFormLayout type="signin">
-      <AuthForm
-        type="signin"
-        formData={formData}
-        setFormData={setFormData}
-        errors={errors}
-        setErrors={setErrors}
-        onSubmit={handleSubmit}
-        validationRules={validationRules}
-        showPasswordStates={showPassword}
-        togglePasswordVisibility={setShowPassword}
-        isFormValid={isFormValid}
-      />
-    </AuthFormLayout>
+    <AuthFormLayout
+      type="signin"
+      formProps={{
+        formData,
+        setFormData,
+        errors,
+        setErrors,
+        onSubmit: handleSubmit,
+        validationRules,
+        showPasswordStates: showPassword,
+        togglePasswordVisibility: setShowPassword,
+        isFormValid,
+      }}
+    />
   );
 };
 
