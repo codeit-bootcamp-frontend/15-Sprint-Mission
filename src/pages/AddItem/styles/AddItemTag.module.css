@@ -1,0 +1,19 @@
+.addItemTagList {
+  display: flex;
+  margin-top: 14px;
+  gap: 12px;
+  flex-wrap: wrap;
+  li {
+    display: flex;
+    align-items: center;
+    padding-inline: 16px 12px;
+    border-radius: 2em;
+    gap: 8px;
+    background-color: var(--gray100);
+    height: 36px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.62;
+    color: var(--gray800);
+  }
+}

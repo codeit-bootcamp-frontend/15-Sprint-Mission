@@ -1,5 +1,6 @@
-import styles from '../styles/AddItemsLists.module.css';
+import styles from '../styles/AddItemLists.module.css';
 import AddItemImage from './AddItemImage';
+import AddItemTag from './AddItemTag';
 
 export default function AddItemsLists() {
   return (
@@ -21,22 +22,7 @@ export default function AddItemsLists() {
         <input type='text' name='' id='' placeholder='판매 가격을 입력해주세요' />
       </li>
       <li className={styles.addItemListItem}>
-        <label htmlFor=''>태그</label>
-        <input type='text' name='' id='' placeholder='태그를 입력해주세요' />
-        <ul>
-          <li>
-            <span>&#35;티셔츠</span>
-            <button type='button'>
-              <img src='/public/images/common/ic_tag_x.svg' alt='삭제' />
-            </button>
-          </li>
-          <li>
-            <span>&#35;티셔츠</span>
-            <button type='button'>
-              <img src='/public/images/common/ic_tag_x.svg' alt='삭제' />
-            </button>
-          </li>
-        </ul>
+        <AddItemTag />
       </li>
     </>
   );
