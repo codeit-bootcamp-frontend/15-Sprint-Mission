@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import arrowDownIcon from "../../assets/icon/arrow-down-icon.svg";
+import sortIcon from "../../assets/icon/sort-icon.svg";
 import styles from "./SortSelector.module.css";
 
 const SortSelector = ({ onChange }) => {
@@ -24,14 +25,16 @@ const SortSelector = ({ onChange }) => {
   }, []);
 
   return (
-    <div ref={dropdownRef}>
+    <div ref={dropdownRef} className={styles.sortWrapper}>
       <button
         onClick={() => setIsOpen((prev) => !prev)}
         className={styles.dropdownButton}
       >
-        {selected}
+        <span className={styles.selectedText}>{selected}</span>
         <img src={arrowDownIcon} alt="다운 버튼" className={styles.downIcon} />
+        <img src={sortIcon} alt="모바일 정렬" className={styles.sortIcon} />
       </button>
+
       {isOpen && (
         <ul className={styles.dropdownList}>
           <li onClick={() => handleSelect("최신순")} className={styles.recent}>

@@ -1,8 +1,11 @@
+.sortWrapper {
+  position: relative;
+}
+
 .dropdownButton {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative;
   width: 130px;
   height: 42px;
   padding: 12px 20px;
@@ -29,6 +32,10 @@
   z-index: 1;
 }
 
+.sortIcon {
+  display: none;
+}
+
 .recent,
 .favorite {
   display: flex;
@@ -40,4 +47,26 @@
 
 .favorite {
   border-top: 1px solid #e5e7eb;
+}
+
+@media (max-width: 767px) {
+  .dropdownButton {
+    max-width: 42px;
+    justify-content: center;
+  }
+
+  .dropdownList {
+    right: 0;
+  }
+
+  .selectedText {
+    display: none;
+  }
+  .downIcon {
+    display: none;
+  }
+  .sortIcon {
+    display: flex;
+    min-width: 24px;
+  }
 }
