@@ -1,0 +1,23 @@
+.allProducts {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
+  margin: 0 auto 43px;
+  gap: 24px;
+}
+
+.sectionTitle {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 32px;
+  color: #111827;
+}
+
+.productList {
+  display: grid;
+  grid-template-columns: repeat(5, 221px);
+  row-gap: 40px;
+  column-gap: 24px;
+}
