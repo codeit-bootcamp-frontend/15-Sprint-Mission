@@ -1,0 +1,27 @@
+.searchBar {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 325px;
+  height: auto;
+  padding: 9px 20px 9px 16px;
+  border-radius: 12px;
+  background-color: #f3f4f6;
+  gap: 4px;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+}
+
+.input {
+  height: 24px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+}
+
+.input::placeholder {
+  color: #9ca3af;
+}
