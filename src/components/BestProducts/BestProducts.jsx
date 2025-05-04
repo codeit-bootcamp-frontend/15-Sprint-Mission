@@ -19,7 +19,7 @@ const BestProducts = () => {
         {products.map((item) => (
           <ProductCard
             key={item.id}
-            imageUrl={item.images?.[0] || ""}
+            imageUrl={item.images?.[0]}
             title={item.name}
             price={item.price}
             likes={item.favoriteCount}
