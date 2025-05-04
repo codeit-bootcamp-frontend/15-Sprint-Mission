@@ -53,3 +53,40 @@
   text-decoration: none;
   color: inherit;
 }
+
+@media (max-width: 1600px) {
+  .header {
+    padding: 0 24px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .header {
+    padding: 0 24px;
+  }
+}
+
+@media (max-width: 767px) {
+  .logo {
+    max-width: 81px;
+  }
+
+  .container {
+    gap: 8px;
+    line-height: 1;
+  }
+
+  .menu {
+    height: 70px;
+    gap: 8px;
+  }
+
+  .menuItem {
+    padding: 25px 0;
+    font-size: 16px;
+  }
+
+  .pandaLogo {
+    display: none;
+  }
+}
