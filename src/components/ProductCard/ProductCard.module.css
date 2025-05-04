@@ -6,21 +6,15 @@
   cursor: pointer;
 }
 
-.card:hover {
-  transform: scale(1.03) translateZ(0);
-}
-
 .bestImg {
-  width: 282px;
-  height: 282px;
+  width: 100%;
   border-radius: 16px;
   aspect-ratio: 1 / 1;
   object-fit: cover;
 }
 
 .allImg {
-  width: 221px;
-  height: 221px;
+  width: 100%;
   border-radius: 16px;
   aspect-ratio: 1 / 1;
   object-fit: cover;
@@ -62,4 +56,10 @@
   font-size: 12px;
   font-weight: 500;
   line-height: 18px;
+}
+
+@media (min-width: 1024px) {
+  .card:hover {
+    transform: scale(1.03) translateZ(0);
+  }
 }
