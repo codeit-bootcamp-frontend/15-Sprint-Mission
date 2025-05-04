@@ -1,6 +1,6 @@
-import Logo from "../Logo";
-import Navbar from "../Navbar";
-import UserMenu from "../UserMenu";
+import Logo from "./Logo";
+import Navbar from "./Navbar";
+import UserMenu from "./UserMenu";
 
 const Header = () => {
   return (

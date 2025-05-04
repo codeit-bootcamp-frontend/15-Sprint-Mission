@@ -1,6 +1,6 @@
 import { Link } from "react-router";
-import LogoSm from "../assets/logo-icon-sm.png";
-import LogoTypo from "../assets/logo-icon-typo.png";
+import LogoSm from "../../assets/images/logo-sm.png";
+import LogoTypo from "../../assets/images/logo-typo.png";
 
 const Logo = () => {
   return (
