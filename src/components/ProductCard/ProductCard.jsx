@@ -8,6 +8,9 @@ const ProductCard = ({ imageUrl, title, price, likes, variant }) => {
         src={imageUrl}
         alt={title}
         className={variant === "best" ? styles.bestImg : styles.allImg}
+        onError={(e) => {
+          e.currentTarget.src = "/no-img.svg";
+        }}
       />
       <div className={styles.info}>
         <p className={styles.title}>{title}</p>
