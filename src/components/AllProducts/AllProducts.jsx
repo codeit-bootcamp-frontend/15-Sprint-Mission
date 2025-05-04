@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import getProducts from "../../api/getProducts";
 import ProductCard from "../ProductCard/ProductCard";
 import SearchBar from "../SearchBar/SearchBar";
@@ -26,6 +27,9 @@ const AllProducts = () => {
     <section className={styles.allProducts}>
       <h2 className={styles.sectionTitle}>전체 상품</h2>
       <SearchBar searchTerm={searchTerm} onSearch={onSearch} />
+      <Link to={"/additem"} className={styles.buttonLink}>
+        <button className={styles.addItemButton}>상품 등록하기</button>
+      </Link>
       <div className={styles.productList}>
         {filteredData.map((item) => (
           <ProductCard
