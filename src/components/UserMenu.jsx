@@ -5,7 +5,7 @@ const UserMenu = () => {
     <img
       src={DefaultProfile}
       alt="기본 프로필 이미지"
-      className="h-10 w-10 object-contain"
+      className="size-40 object-contain"
     />
   );
 };
