@@ -25,3 +25,15 @@
 .input::placeholder {
   color: #9ca3af;
 }
+
+@media (max-width: 1023px) {
+  .searchBar {
+    max-width: 242px;
+  }
+}
+
+@media (max-width: 767px) {
+  .searchBar {
+    max-width: 288px;
+  }
+}
