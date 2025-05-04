@@ -1,0 +1,57 @@
+.wrapper {
+  position: relative;
+  font-size: 16px;
+}
+
+.select {
+  all: unset;
+  cursor: pointer;
+  padding: 12px 20px;
+  border: 1px solid var(--secondary-200);
+  border-radius: 12px;
+  background-color: var(--white);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: var(--white);
+    color: inherit;
+  }
+
+  .arrow {
+    width: 16px;
+    height: 16px;
+    background: url('@/assets/icons/arrow_down.svg') no-repeat center / contain;
+  }
+}
+
+.optionList {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  width: 100%;
+  font-size: 16px;
+  background: var(--white);
+  border: 1px solid var(--secondary-200);
+  border-radius: 12px;
+  z-index: 10;
+  overflow: hidden;
+}
+
+.option {
+  cursor: pointer;
+  padding: 10px 0px;
+  text-align: center;
+  border-bottom: 1px solid var(--secondary-200);
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &:hover {
+    background-color: var(--secondary-100);
+  }
+}

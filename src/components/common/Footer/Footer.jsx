@@ -7,22 +7,22 @@ const Footer = () => {
     {
       name: 'facebook',
       href: 'https://www.facebook.com',
-      icon: 'src/assets/images/facebook.svg',
+      icon: 'src/assets/icons/facebook.svg',
     },
     {
       name: 'twitter',
       href: 'https://www.twitter.com',
-      icon: 'src/assets/images/twitter.svg',
+      icon: 'src/assets/icons/twitter.svg',
     },
     {
       name: 'youtube',
       href: 'https://www.youtube.com',
-      icon: 'src/assets/images/youtube.svg',
+      icon: 'src/assets/icons/youtube.svg',
     },
     {
       name: 'instagram',
       href: 'https://www.instagram.com',
-      icon: 'src/assets/images/instagram.svg',
+      icon: 'src/assets/icons/instagram.svg',
     },
   ];
 

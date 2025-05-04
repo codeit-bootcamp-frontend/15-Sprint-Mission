@@ -1,5 +1,5 @@
-import googleLogo from '@/assets/images/google_logo.svg';
-import kakaoLogo from '@/assets/images/kakao_logo.svg';
+import googleLogo from '@/assets/icons/google_logo.svg';
+import kakaoLogo from '@/assets/icons/kakao_logo.svg';
 import styles from './OAuthButtons.module.scss';
 
 const OAuthButtons = () => {

@@ -3,7 +3,6 @@
 
   h2 {
     font-size: 2.4rem;
-    font-weight: bold;
     margin-bottom: 20px;
   }
 }
@@ -25,47 +24,36 @@
 /* ----------------------------------------
   검색 + 정렬 영역
 ---------------------------------------- */
-.searchAndSort {
+
+.allProductsHeader {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
-  gap: 10px;
-  flex-wrap: wrap;
-}
+  gap: 12px;
 
-.searchAndSort input {
-  flex: 1;
-  padding: 10px;
-  border: 1px solid #e5e5e5;
-  border-radius: 4px;
-  min-width: 200px;
-}
+  .searchAndSort {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    gap: 10px;
+    flex-wrap: wrap;
+    font-size: 16px;
 
-.searchAndSort select {
-  padding: 10px;
-  border: 1px solid #e5e5e5;
-  border-radius: 4px;
-}
+    input {
+      min-width: 325px;
+      padding: 12px 20px 12px 36px;
+      background-color: var(--secondary-100);
+      border-radius: 12px;
+      background-image: url('@/assets/icons/search.svg');
+      background-repeat: no-repeat;
+      background-position: 16px center;
+      background-size: 15px 15px;
+    }
 
-/* ----------------------------------------
-  페이지네이션
----------------------------------------- */
-.pagination {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-.pagination button {
-  background-color: #fff;
-  border: 1px solid #e5e5e5;
-  padding: 10px 15px;
-  margin: 0 5px;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.pagination button:hover {
-  background-color: #f0f0f0;
+    .linkButton {
+      padding: 12px 23px;
+      border-radius: 8px;
+    }
+  }
 }
