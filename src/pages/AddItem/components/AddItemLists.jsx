@@ -2,10 +2,11 @@ import styles from '../styles/AddItemLists.module.css';
 import AddItemImage from './AddItemImage';
 import AddItemTag from './AddItemTag';
 import { useState, useRef } from 'react';
+import { useAddItemForm } from '@/contexts/AddItemFormContext';
 
 export default function AddItemsLists() {
-  const [price, setPrice] = useState('');
   const inputRef = useRef(null);
+  const { name, setName, description, setDescription, price, setPrice } = useAddItemForm();
 
   const handlePriceChange = (e) => {
     const el = inputRef.current;
@@ -58,11 +59,11 @@ export default function AddItemsLists() {
       </li>
       <li className={styles.addItemListItem}>
         <label htmlFor='name'>상품명</label>
-        <input type='text' name='name' id='name' placeholder='상품명을 입력해주세요' />
+        <input type='text' name='name' id='name' placeholder='상품명을 입력해주세요' value={name} onChange={(e) => setName(e.target.value)} />
       </li>
       <li className={styles.addItemListItem}>
         <label htmlFor='description'>상품 소개</label>
-        <textarea name='description' id='description' placeholder='상품 소개를 입력해주세요' />
+        <textarea name='description' id='description' placeholder='상품 소개를 입력해주세요' value={description} onChange={(e) => setDescription(e.target.value)} />
       </li>
       <li className={styles.addItemListItem}>
         <label htmlFor='price'>판매가격</label>

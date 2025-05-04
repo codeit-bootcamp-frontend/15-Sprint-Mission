@@ -1,9 +1,10 @@
 import styles from '../styles/AddItemTag.module.css';
 import { useState } from 'react';
+import { useAddItemForm } from '@/contexts/AddItemFormContext';
 
 export default function AddItemTag() {
+  const { tags, setTags } = useAddItemForm();
   const [tag, setTag] = useState('');
-  const [tags, setTags] = useState([]);
   const handleTagChange = (e) => {
     setTag(e.target.value);
   }
@@ -40,7 +41,7 @@ export default function AddItemTag() {
       />
       <ul className={styles.addItemTagList}>
         {tags.map((tag, index) => (
-          <li key={tag}>
+          <li key={`${tag}-${index}`}>
             <span>&#35;{tag}</span>
             <button type='button' onClick={() => handleTagDelete(tag)}>
               <img src='/public/images/common/ic_tag_x.svg' alt='삭제' />
