@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
 import getProducts from "../../api/getProducts";
 import ProductCard from "../ProductCard/ProductCard";
+import SearchBar from "../SearchBar/SearchBar";
 import styles from "./AllProducts.module.css";
 
 const AllProducts = () => {
   const [products, setProducts] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     getProducts({ orderBy: "recent", pageSize: 10 })
@@ -12,11 +14,20 @@ const AllProducts = () => {
       .catch((error) => console.error(error));
   }, []);
 
+  const filteredData = products.filter((item) =>
+    item.name?.toLowerCase().includes(searchTerm.toLocaleLowerCase())
+  );
+
+  const onSearch = (term) => {
+    setSearchTerm(term);
+  };
+
   return (
     <section className={styles.allProducts}>
       <h2 className={styles.sectionTitle}>전체 상품</h2>
+      <SearchBar searchTerm={searchTerm} onSearch={onSearch} />
       <div className={styles.productList}>
-        {products.map((item) => (
+        {filteredData.map((item) => (
           <ProductCard
             key={item.id}
             imageUrl={item.images?.[0]}
