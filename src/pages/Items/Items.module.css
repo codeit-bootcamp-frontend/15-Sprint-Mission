@@ -1,0 +1,16 @@
+.items {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1199px) {
+  .items {
+    padding: 0 24px;
+  }
+}
+
+@media (max-width: 767px) {
+  .items {
+    padding: 0 16px;
+  }
+}
