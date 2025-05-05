@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useResponsivePageSize } from '@/hooks';
 import { SortSelect, Pagination } from '@/components/common';
 import { ProductCard } from '@/components/Product';
 import { baseUrl, ROUTES } from '@/constants/urls';
-import { useResponsivePageSize } from '@/hooks';
 import styles from './AllProductSection.module.scss';
 
 const AllProductSection = () => {

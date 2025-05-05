@@ -1,8 +1,8 @@
 import { useNavigate } from 'react-router-dom';
-import { AuthFormLayout } from '@/components/auth';
-import { ROUTES } from '@/constants/urls';
 import { useForm } from '@/hooks';
+import { AuthFormLayout } from '@/components/auth';
 import { signUpValidationRules } from '@/utils/validators';
+import { ROUTES } from '@/constants/urls';
 
 const initialFormData = {
   email: '',

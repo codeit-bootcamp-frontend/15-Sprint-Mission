@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
+import { ROUTES } from '@/constants/urls';
 import logoTypo from '@/assets/images/logo_typo.svg';
 import pandaFace from '@/assets/images/panda_face.svg';
-import { ROUTES } from '@/constants/urls';
 import styles from './Logo.module.scss';
 
 const Logo = ({ size = 'default', className = '' }) => {

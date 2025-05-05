@@ -1,7 +1,7 @@
 import { Link, NavLink } from 'react-router-dom';
-import defaultProfileIcon from '@/assets/images/default_profile.svg';
 import Logo from '@/components/common/Logo';
 import { ROUTES } from '@/constants/urls';
+import defaultProfileIcon from '@/assets/images/default_profile.svg';
 import styles from './Header.module.scss';
 
 const Header = () => {

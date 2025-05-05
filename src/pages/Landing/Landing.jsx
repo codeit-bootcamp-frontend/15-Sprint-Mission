@@ -1,7 +1,7 @@
 import { Banner, Card } from '@/components/Landing';
 import { ROUTES } from '@/constants/urls';
-import textStyles from '@/styles/helpers/textHelpers.module.scss';
 import styles from './Landing.module.scss';
+import textStyles from '@/styles/helpers/textHelpers.module.scss';
 
 export default function Landing() {
   const cardList = [

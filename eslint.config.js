@@ -61,12 +61,32 @@ export default [
           ],
           pathGroups: [
             {
-              pattern: '@/**',
+              pattern: '@/hooks/**',
               group: 'internal',
               position: 'after',
             },
             {
-              pattern: '**/*.module.scss',
+              pattern: '@/components/**',
+              group: 'internal',
+              position: 'after',
+            },
+            {
+              pattern: '@/utils/**',
+              group: 'internal',
+              position: 'after',
+            },
+            {
+              pattern: '@/constants/**',
+              group: 'internal',
+              position: 'after',
+            },
+            {
+              pattern: '@/assets/**',
+              group: 'internal',
+              position: 'after',
+            },
+            {
+              pattern: '**/*.css',
               group: 'index',
               position: 'after',
             },
@@ -76,7 +96,7 @@ export default [
               position: 'after',
             },
             {
-              pattern: '**/*.css',
+              pattern: '**/*.module.scss',
               group: 'index',
               position: 'after',
             },
@@ -84,7 +104,7 @@ export default [
           pathGroupsExcludedImportTypes: ['builtin'],
           'newlines-between': 'never',
           alphabetize: {
-            order: 'asc',
+            order: 'ignore',
             caseInsensitive: true,
           },
         },
