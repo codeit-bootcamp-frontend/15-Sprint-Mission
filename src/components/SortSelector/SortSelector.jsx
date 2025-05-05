@@ -8,10 +8,15 @@ const SortSelector = ({ onChange }) => {
   const [selected, setSelected] = useState("최신순");
   const dropdownRef = useRef(null);
 
-  const handleSelect = (value) => {
-    setSelected(value);
+  const sortMap = {
+    최신순: "recent",
+    좋아요순: "favorite",
+  };
+
+  const handleSelect = (label) => {
+    setSelected(label);
     setIsOpen(false);
-    onChange(value);
+    onChange(sortMap[label]);
   };
 
   useEffect(() => {
