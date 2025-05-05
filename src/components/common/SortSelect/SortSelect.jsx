@@ -1,11 +1,22 @@
 import { useState, useRef, useEffect } from 'react';
+import sortIcon from '@/assets/icons/sort.svg';
 import styles from './SortSelect.module.scss';
 
 const SortSelect = ({ value, onChange, options = [] }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const ref = useRef();
 
   const selectedOption = options.find((opt) => opt.value === value);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 767);
+    };
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   useEffect(() => {
     const handleClickOutside = (e) => {
@@ -19,14 +30,26 @@ const SortSelect = ({ value, onChange, options = [] }) => {
 
   return (
     <div className={styles.wrapper} ref={ref}>
-      <button
-        className={styles.select}
-        onClick={() => setIsOpen((prev) => !prev)}
-        type="button"
-      >
-        {selectedOption?.label}
-        <span className={styles.arrow} />
-      </button>
+      {isMobile ? (
+        <button
+          type="button"
+          className={styles.sortIcon}
+          onClick={() => setIsOpen((prev) => !prev)}
+          aria-label="open sort options"
+        >
+          <img src={sortIcon} alt="select button" />
+        </button>
+      ) : (
+        <button
+          type="button"
+          className={styles.selectButton}
+          onClick={() => setIsOpen((prev) => !prev)}
+          aria-label="open sort options"
+        >
+          {selectedOption?.label}
+          <span className={styles.arrow} />
+        </button>
+      )}
       {isOpen && (
         <ul className={styles.optionList}>
           {options.map((opt) => (

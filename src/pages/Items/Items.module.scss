@@ -1,18 +1,23 @@
 .itemsPage {
   margin: 0 auto;
-  max-width: 80rem;
+  max-width: 120rem; // header content 110일땐 80rem이었는데 120으로 수정
   padding: 24px 0;
-
-  @media (max-width: 1919px) {
+}
+@media (max-width: 1919px) {
+  .itemsPage {
     max-width: 100%;
-    padding: 24px 350px;
+    padding: 24px 250px;
   }
+}
 
-  @media (max-width: 1199px) {
+@media (max-width: 1199px) {
+  .itemsPage {
     padding: 24px 24px;
   }
+}
 
-  @media (max-width: 767px) {
+@media (max-width: 767px) {
+  .itemsPage {
     padding: 24px 16px;
   }
 }

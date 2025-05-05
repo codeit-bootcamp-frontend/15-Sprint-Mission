@@ -8,10 +8,11 @@
   border-bottom: 1px solid var(--secondary-350);
   position: sticky;
   top: 0;
+  z-index: 1000;
 }
 
 .headerContent {
-  max-width: 110rem;
+  max-width: 150rem; //기존에 110이었는데 너무 좁은거 같아서 수정
   width: 100%;
   display: flex;
   justify-content: space-between;
