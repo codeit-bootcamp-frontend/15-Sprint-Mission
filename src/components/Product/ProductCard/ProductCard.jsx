@@ -1,5 +1,5 @@
-import defaultProductImg from '@/assets/images/default_product.svg';
 import heartIcon from '@/assets/icons/heart_empty.svg';
+import defaultProductImg from '@/assets/images/default_product.svg';
 import styles from './ProductCard.module.scss';
 
 const ProductCard = ({ product }) => {

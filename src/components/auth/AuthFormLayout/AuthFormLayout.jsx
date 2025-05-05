@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
-import { ROUTES } from '@/constants/urls';
-import { Logo } from '@/components/common';
 import { AuthForm } from '@/components/auth';
+import { Logo } from '@/components/common';
+import { ROUTES } from '@/constants/urls';
 import styles from './AuthFormLayout.module.scss';
 
 const AuthFormLayout = ({ type, formProps }) => {

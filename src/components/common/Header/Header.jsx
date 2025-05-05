@@ -1,8 +1,8 @@
 import { Link, NavLink } from 'react-router-dom';
+import defaultProfileIcon from '@/assets/images/default_profile.svg';
+import Logo from '@/components/common/Logo';
 import { ROUTES } from '@/constants/urls';
 import styles from './Header.module.scss';
-import Logo from '@/components/common/Logo';
-import defaultProfileIcon from '@/assets/images/default_profile.svg';
 
 const Header = () => {
   const isItemsPage = window.location.pathname === ROUTES.ITEMS;

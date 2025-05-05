@@ -29,14 +29,25 @@
 하나의 JS 파일에서는 아래 순서를 따라 작성합니다:
 
 1. Import 구문
+
+```
+1. 외부 라이브러리 (css는 마지막)
+import React from 'react';
+import axios from 'axios';
+
+2. 내부 커스텀 훅
+import { useForm } from '@/hooks/useForm';
+
+2. 절대 경로 기반 내부 모듈
+컴포넌트 > 유틸함수 > 상수 > assets(이미지,gif)
+
+
+3. 상대 경로 기반 내부 모듈 (스타일 파일 마지막)
+import styles from './LandingSection.module.scss';
+```
+
 2. 변수 선언
 3. 함수 선언
-4. 이벤트 리스너 등록
-
-### 문자열
-
-- 기본 문자열은 작은 따옴표를 사용합니다.
-- 변수가 포함될 때 등 필요에 따라 탬플릿 리터럴을 사용합니다.
 
 ### 경로
 
@@ -47,14 +58,14 @@
 
 1. **파일명, 폴더명**
 
-- 소문자 kebab-case
+- camelCase
 - 컴포넌트 파일(JSX)는 파스칼케이스
 - 이미지 파일 이름은 소문자로 작성하고, **언더스코어(\_)**를 사용하여 단어를 구분합니다.
 
 2. **변수명, 함수명, 프로퍼티 키**:
 
 - camelCase
-- 컴포넌트 함수는 파스칼케이스
+- 컴포넌트는 파스칼케이스
 
 ### 함수 규칙
 
@@ -62,7 +73,8 @@
 
 ### 컴포넌트 규칙
 
-- 이미지 컴포넌트는 이름 앞에 Img를 붙입니다.
+- 이미지 컴포넌트는 이름 뒤에 Img를 붙입니다.
+- 아이콘 컴포넌트는 이름 뒤에 Icon을 붙입니다.
 
 ### 커밋 규칙
 
@@ -82,39 +94,8 @@
 
 ## 폴더 구조
 
+- Barrel 패턴 적용
+
 ```
-project-root/
-├── index.html
-├── index.css
-
-├── common/
-│ ├── base.css
-│ └── reset.css
-
-├── constants/
-│ ├── urls/
-│ │ ├── page-urls.js
-│ │ └── api-urls.js
-│ ├── regex.js
-│ └── messages/
-│ └── auth.js
-
-├── utils/
-│ ├── debounce.js
-│ ├── form.js
-│ └── validators.js
-
-├── components/
-│ └── dom/
-│ └── auth.js
-
-├── auth/
-│ ├── signin.html
-│ ├── signup.html
-│ ├── auth.css
-│ ├── auth-validation.js
-│ └── password-visibility.js
-
-├── home/
-│ └── home.css
+마지막에 추가 할 예정
 ```

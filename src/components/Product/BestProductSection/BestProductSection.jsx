@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import { baseUrl } from '@/constants/urls';
 import { ProductCard } from '@/components/Product';
+import { baseUrl } from '@/constants/urls';
 import styles from './BestProductSection.module.scss';
 
 const BestProductSection = () => {

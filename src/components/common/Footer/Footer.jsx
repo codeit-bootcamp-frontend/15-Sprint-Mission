@@ -1,5 +1,5 @@
-import { ROUTES } from '@/constants/urls';
 import { Link } from 'react-router-dom';
+import { ROUTES } from '@/constants/urls';
 import styles from './Footer.module.scss';
 
 const Footer = () => {
