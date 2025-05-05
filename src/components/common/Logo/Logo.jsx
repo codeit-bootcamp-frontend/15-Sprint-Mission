@@ -10,9 +10,9 @@ const Logo = ({ size = 'default', className = '' }) => {
       to={ROUTES.ROOT}
       className={`${styles.logoContainer} ${styles[size]} ${className}`}
     >
-      <img src={pandaFace} alt="logo" className={styles.logo} />
+      <img src={pandaFace} alt="Logo" className={styles.logo} />
       <h1>
-        <img src={logoTypo} alt="panda market" className={styles.logoTypo} />
+        <img src={logoTypo} alt="Panda market" className={styles.logoTypo} />
       </h1>
     </Link>
   );

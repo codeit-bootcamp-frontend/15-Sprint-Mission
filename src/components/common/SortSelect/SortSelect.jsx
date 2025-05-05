@@ -35,16 +35,16 @@ const SortSelect = ({ value, onChange, options = [] }) => {
           type="button"
           className={styles.sortIcon}
           onClick={() => setIsOpen((prev) => !prev)}
-          aria-label="open sort options"
+          aria-label="Open sort options"
         >
-          <img src={sortIcon} alt="select button" />
+          <img src={sortIcon} alt="Select button" />
         </button>
       ) : (
         <button
           type="button"
           className={styles.selectButton}
           onClick={() => setIsOpen((prev) => !prev)}
-          aria-label="open sort options"
+          aria-label="Open sort options"
         >
           {selectedOption?.label}
           <span className={styles.arrow} />

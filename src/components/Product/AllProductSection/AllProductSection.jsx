@@ -43,6 +43,7 @@ const AllProductSection = () => {
           placeholder="검색할 상품을 입력해주세요"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
+          aria-label="Search products"
         />
         <Link to={ROUTES.ADD_ITEM} className={`button ${styles.linkButton}`}>
           상품 등록하기

@@ -9,12 +9,12 @@ const OAuthButtons = () => {
       <ul className={styles.oauthSite}>
         <li>
           <a href="https://www.google.com" className={styles.oauthButton}>
-            <img src={googleLogo} alt="google signin button" />
+            <img src={googleLogo} alt="Sign in with Google" />
           </a>
         </li>
         <li>
           <a href="https://www.kakaocorp.com" className={styles.oauthButton}>
-            <img src={kakaoLogo} alt="kakao signin button" />
+            <img src={kakaoLogo} alt="Sign in with Kakao" />
           </a>
         </li>
       </ul>

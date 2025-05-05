@@ -14,7 +14,7 @@ const Header = () => {
           <Logo />
           <nav className={styles.navLinks}>
             <NavLink
-              to={ROUTES.ROOT} //일단 Root로 설정
+              to={ROUTES.BOARD}
               className={({ isActive }) =>
                 `${styles.navLink} ${isActive ? styles.active : ''}`
               }
@@ -35,7 +35,7 @@ const Header = () => {
         {isItemsPage ? (
           <img
             src={defaultProfileIcon}
-            alt="프로필"
+            alt="Profile Picture"
             className={styles.defaultProfileIcon}
           />
         ) : (

@@ -15,10 +15,10 @@ const ProductCard = ({ product }) => {
         }}
       />
       <div className={styles.productInfo}>
-        <h5>{product.name}</h5>
+        <h3>{product.name}</h3>
         <p>{product.price.toLocaleString()}원</p>
         <div className={styles.favoriteCount}>
-          <img src={heartIcon} alt="좋아요" className={styles.heartIcon} />
+          <img src={heartIcon} alt="Favorite" className={styles.heartIcon} />
           <span className={styles.count}>{product.favoriteCount}</span>
         </div>
       </div>

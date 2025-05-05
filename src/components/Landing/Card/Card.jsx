@@ -6,7 +6,7 @@ const Card = ({ imgSrc, alt, badge, title, description, reverse = false }) => {
       <img src={imgSrc} alt={alt} className={styles.cardImg} />
       <div className={styles.cardInfo}>
         <div className={styles.badge}>{badge}</div>
-        <h2 className={styles.title}>{title}</h2>
+        <h3 className={styles.title}>{title}</h3>
         <p className={styles.description}>{description}</p>
       </div>
     </div>

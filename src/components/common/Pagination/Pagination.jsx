@@ -1,3 +1,4 @@
+import { INFO_MESSAGES } from '@/constants/messages';
 import styles from './Pagination.module.scss';
 
 const Pagination = ({ currentPage, totalCount, pageSize, onPageChange }) => {
@@ -8,7 +9,7 @@ const Pagination = ({ currentPage, totalCount, pageSize, onPageChange }) => {
   const endPage = Math.min(startPage + groupSize - 1, totalPages);
 
   if (totalPages === 0) {
-    return <p>등록된 상품이 없습니다.</p>;
+    return <p>{INFO_MESSAGES.emptyList}</p>; // 나중에 UI 디자인 추가
   }
 
   const pageNumbers = Array.from(
@@ -22,6 +23,7 @@ const Pagination = ({ currentPage, totalCount, pageSize, onPageChange }) => {
         onClick={() => onPageChange(currentPage - 1)}
         disabled={currentPage === 1}
         className={`${styles.arrow} ${styles.prev}`}
+        aria-label="Previous page"
       />
 
       {pageNumbers.map((page) => (
@@ -31,6 +33,8 @@ const Pagination = ({ currentPage, totalCount, pageSize, onPageChange }) => {
           className={`${styles.page} ${
             currentPage === page ? styles.active : ''
           }`}
+          aria-label={`Go to page ${page}`}
+          aria-current={currentPage === page ? 'page' : undefined}
         >
           {page}
         </button>
@@ -40,6 +44,7 @@ const Pagination = ({ currentPage, totalCount, pageSize, onPageChange }) => {
         onClick={() => onPageChange(currentPage + 1)}
         disabled={currentPage === totalPages}
         className={`${styles.arrow} ${styles.next}`}
+        aria-label="Next page"
       />
     </div>
   );

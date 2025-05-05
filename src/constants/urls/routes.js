@@ -6,6 +6,7 @@ const ROUTES = {
   PRIVACY: '/privacy',
   FAQ: '/faq',
   ADD_ITEM: '/additem',
+  BOARD: '/board',
 };
 
 export default ROUTES;

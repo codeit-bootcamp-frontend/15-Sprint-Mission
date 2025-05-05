@@ -9,29 +9,6 @@ body {
   color: var(--black);
 }
 
-h1 {
-  font-size: 3.5rem;
-  font-weight: 900;
-}
-
-h2 {
-  font-size: 3.2rem;
-  font-weight: 600;
-}
-
-h3 {
-  font-size: 2rem;
-}
-h4 {
-  font-size: 1.6rem;
-}
-h5 {
-  font-size: 1.4rem;
-}
-h6 {
-  font-size: 1.2rem;
-}
-
 p {
   font-size: 1rem;
   line-height: 1.7;

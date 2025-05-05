@@ -23,7 +23,7 @@ const AuthInput = ({
           type={isPassword && isVisible ? 'text' : type}
           value={value}
           onChange={onChange}
-          placeholder={placeholder || `${label}를 입력해주세요`}
+          placeholder={placeholder || `${label}을/를 입력해주세요`}
           className={`${styles.input} ${error ? styles.errorInput : ''}`}
         />
         {isPassword && (
