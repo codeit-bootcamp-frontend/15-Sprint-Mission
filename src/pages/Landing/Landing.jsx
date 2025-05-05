@@ -1,5 +1,10 @@
 import { Banner, Card } from '@/components/Landing';
 import { ROUTES } from '@/constants/urls';
+import home01 from '@/assets/images/home_01.svg';
+import home02 from '@/assets/images/home_02.svg';
+import home03 from '@/assets/images/home_03.svg';
+import homeTop from '@/assets/images/home_top.svg';
+import homeBottom from '@/assets/images/home_bottom.svg';
 import styles from './Landing.module.scss';
 import textStyles from '@/styles/helpers/textHelpers.module.scss';
 
@@ -7,7 +12,7 @@ export default function Landing() {
   const cardList = [
     {
       id: 1,
-      imgSrc: 'src/assets/images/home_01.svg',
+      imgSrc: home01,
       alt: 'Two pandas looking at a green shirt',
       badge: 'Hot item',
       title: (
@@ -25,7 +30,7 @@ export default function Landing() {
     },
     {
       id: 2,
-      imgSrc: 'src/assets/images/home_02.svg',
+      imgSrc: home02,
       alt: 'Searching a product to buy',
       badge: 'Search',
       title: (
@@ -44,7 +49,7 @@ export default function Landing() {
     },
     {
       id: 3,
-      imgSrc: 'src/assets/images/home_03.svg',
+      imgSrc: home03,
       alt: 'Upload a product to sell',
       badge: 'Register',
       title: (
@@ -75,7 +80,7 @@ export default function Landing() {
             </span>
           </>
         }
-        imgSrc="src/assets/images/home_top.svg"
+        imgSrc={homeTop}
         alt="A panda mascot waving its hand"
         buttonText="구경하러 가기"
         buttonLink={ROUTES.ITEMS}
@@ -94,7 +99,7 @@ export default function Landing() {
             <br /> 판다마켓 중고 거래
           </>
         }
-        imgSrc="src/assets/images/home_bottom.svg"
+        imgSrc={homeBottom}
         alt="Two pandas trading products"
         isBottom={true}
       />

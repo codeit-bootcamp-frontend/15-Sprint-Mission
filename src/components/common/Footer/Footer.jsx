@@ -1,5 +1,9 @@
 import { Link } from 'react-router-dom';
 import { ROUTES } from '@/constants/urls';
+import facebookIcon from '@/assets/icons/facebook.svg';
+import twitterIcon from '@/assets/icons/twitter.svg';
+import youtubeIcon from '@/assets/icons/youtube.svg';
+import instagramIcon from '@/assets/icons/instagram.svg';
 import styles from './Footer.module.scss';
 
 const Footer = () => {
@@ -7,22 +11,22 @@ const Footer = () => {
     {
       name: 'facebook',
       href: 'https://www.facebook.com',
-      icon: 'src/assets/icons/facebook.svg',
+      icon: facebookIcon,
     },
     {
       name: 'twitter',
       href: 'https://www.twitter.com',
-      icon: 'src/assets/icons/twitter.svg',
+      icon: twitterIcon,
     },
     {
       name: 'youtube',
       href: 'https://www.youtube.com',
-      icon: 'src/assets/icons/youtube.svg',
+      icon: youtubeIcon,
     },
     {
       name: 'instagram',
       href: 'https://www.instagram.com',
-      icon: 'src/assets/icons/instagram.svg',
+      icon: instagramIcon,
     },
   ];
 
