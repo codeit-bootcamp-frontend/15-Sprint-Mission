@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useResponsivePageSize } from '@/hooks';
 import { SortSelect, Pagination } from '@/components/common';
 import { ProductCard } from '@/components/Product';
 import { baseUrl, ROUTES } from '@/constants/urls';
@@ -11,7 +12,7 @@ const AllProductSection = () => {
   const [sortOption, setSortOption] = useState('recent');
   const [searchQuery, setSearchQuery] = useState('');
   const [page, setPage] = useState(1);
-  const [pageSize, setPageSize] = useState(10);
+  const pageSize = useResponsivePageSize();
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -30,26 +31,8 @@ const AllProductSection = () => {
   );
 
   useEffect(() => {
-    const updatePageSize = () => {
-      const width = window.innerWidth;
-
-      if (width <= 767) {
-        setPageSize(4);
-      } else if (width <= 1199) {
-        setPageSize(6);
-      } else {
-        setPageSize(10);
-      }
-    };
-
-    updatePageSize();
-    window.addEventListener('resize', updatePageSize);
-    return () => window.removeEventListener('resize', updatePageSize);
-  }, []);
-
-  useEffect(() => {
     setPage(1);
-  }, [pageSize]);
+  }, [pageSize, sortOption]);
 
   return (
     <section className={styles.allProductsSection}>
@@ -70,7 +53,7 @@ const AllProductSection = () => {
             onChange={setSortOption}
             options={[
               { value: 'recent', label: '최신순' },
-              { value: 'favorites', label: '좋아요순' },
+              { value: 'favorite', label: '좋아요순' },
             ]}
           />
         </div>
