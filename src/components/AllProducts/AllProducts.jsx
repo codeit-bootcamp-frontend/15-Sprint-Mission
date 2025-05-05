@@ -33,7 +33,6 @@ const AllProducts = () => {
   useEffect(() => {
     getProducts({ page, pageSize, orderBy, keyword: searchTerm })
       .then((data) => {
-        console.log("전체 개수", data.totalCount);
         setProducts(data.list);
         setTotalCount(data.totalCount);
       })
