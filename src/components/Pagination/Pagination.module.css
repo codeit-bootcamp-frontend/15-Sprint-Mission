@@ -1,0 +1,51 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 304px;
+  margin: 0 auto 58px;
+  gap: 4px;
+}
+
+.navButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #e5e7eb;
+  border-radius: 40px;
+  background-color: #ffffff;
+}
+
+.activePage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  padding: 12.5px;
+  border-radius: 40px;
+  background-color: #2f80ed;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 26px;
+  color: #f9fafb;
+}
+
+.pageButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  padding: 12.5px;
+  border: 1px solid #e5e7eb;
+  border-radius: 40px;
+  background-color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 26px;
+  color: #6b7280;
+}
