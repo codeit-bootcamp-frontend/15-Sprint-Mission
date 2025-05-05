@@ -1,21 +1,43 @@
-/* ----------------------------------------
-  페이지네이션
----------------------------------------- */
 .pagination {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  gap: 4px;
+  margin-top: 43px;
+
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--gray-500);
+    background-color: var(--white);
+    border: solid 1px var(--secondary-200);
+    border-radius: 50%;
+
+    &:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+  }
+
+  .active {
+    background-color: var(--primary-150);
+    color: var(--white);
+  }
 }
 
-.pagination button {
-  background-color: #fff;
-  border: 1px solid #e5e5e5;
-  padding: 10px 15px;
-  margin: 0 5px;
-  border-radius: 4px;
-  cursor: pointer;
+.arrow {
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-.pagination button:hover {
-  background-color: #f0f0f0;
+.prev {
+  background-image: url('@/assets/icons/arrow_left.svg');
+}
+.next {
+  background-image: url('@/assets/icons/arrow_right.svg');
 }
