@@ -1,31 +1,26 @@
-import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useForm } from '@/hooks';
 import { AuthFormLayout } from '@/components/auth';
-import validateEmail from '@/utils/validators/validateEmail';
-import validatePassword from '@/utils/validators/validatePassword';
+import { signInValidationRules } from '@/utils/validators';
 import { ROUTES } from '@/constants/urls';
+
+const initialFormData = {
+  email: '',
+  password: '',
+};
 
 const SignIn = () => {
   const navigate = useNavigate();
-
-  const [formData, setFormData] = useState({
-    email: '',
-    password: '',
-  });
-
-  const [errors, setErrors] = useState({});
-  const [showPassword, setShowPassword] = useState({
-    password: false,
-  });
-
-  const validationRules = {
-    email: validateEmail,
-    password: validatePassword,
-  };
-
-  const isFormValid =
-    !validationRules.email(formData.email) &&
-    !validationRules.password(formData.password);
+  const {
+    formData,
+    setFormData,
+    errors,
+    setErrors,
+    showPasswordStates,
+    setShowPasswordStates,
+    isFormValid,
+    handleInputChange,
+  } = useForm(initialFormData, signInValidationRules);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -42,10 +37,11 @@ const SignIn = () => {
         errors,
         setErrors,
         onSubmit: handleSubmit,
-        validationRules,
-        showPasswordStates: showPassword,
-        togglePasswordVisibility: setShowPassword,
+        validationRules: signInValidationRules,
+        showPasswordStates,
+        togglePasswordVisibility: setShowPasswordStates,
         isFormValid,
+        handleInputChange,
       }}
     />
   );

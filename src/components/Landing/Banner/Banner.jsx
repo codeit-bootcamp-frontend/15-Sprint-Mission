@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import styles from './Banner.module.scss';
-// import buttonStyles from '@/styles/helpers/buttonHelpers.module.scss';
 
 const Banner = ({
   title,

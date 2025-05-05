@@ -1,31 +1,16 @@
 import { AuthInput, OAuthButtons } from '@/components/auth';
-import { handleInputChange } from '@/utils/validators';
 import styles from './AuthForm.module.scss';
 
 const AuthForm = ({
   type,
   formData,
-  setFormData,
   errors,
-  setErrors,
   onSubmit,
-  validationRules,
   showPasswordStates,
   togglePasswordVisibility,
   isFormValid,
+  handleInputChange,
 }) => {
-  const handleChange = (field, value) => {
-    handleInputChange({
-      field,
-      value,
-      formData,
-      setFormData,
-      errors,
-      setErrors,
-      validationRules,
-    });
-  };
-
   return (
     <form className={styles.authForm} data-auth-type={type}>
       {formData.email !== undefined && (
@@ -34,7 +19,9 @@ const AuthForm = ({
           label="이메일"
           type="email"
           value={formData.email}
-          onChange={(e) => handleChange('email', e.target.value)}
+          onChange={(e) =>
+            handleInputChange({ field: 'email', value: e.target.value })
+          }
           error={errors.email}
           placeholder="이메일을 입력해주세요"
         />
@@ -45,7 +32,9 @@ const AuthForm = ({
           id="nickname"
           label="닉네임"
           value={formData.nickname}
-          onChange={(e) => handleChange('nickname', e.target.value)}
+          onChange={(e) =>
+            handleInputChange({ field: 'nickname', value: e.target.value })
+          }
           error={errors.nickname}
           placeholder="닉네임을 입력해주세요"
         />
@@ -57,7 +46,9 @@ const AuthForm = ({
           label="비밀번호"
           type="password"
           value={formData.password}
-          onChange={(e) => handleChange('password', e.target.value)}
+          onChange={(e) =>
+            handleInputChange({ field: 'password', value: e.target.value })
+          }
           isVisible={showPasswordStates.password}
           onToggle={() =>
             togglePasswordVisibility((prev) => ({
@@ -75,7 +66,12 @@ const AuthForm = ({
           label="비밀번호 확인"
           type="password"
           value={formData.confirmPassword}
-          onChange={(e) => handleChange('confirmPassword', e.target.value)}
+          onChange={(e) =>
+            handleInputChange({
+              field: 'confirmPassword',
+              value: e.target.value,
+            })
+          }
           isVisible={showPasswordStates.confirmPassword}
           onToggle={() =>
             togglePasswordVisibility((prev) => ({
