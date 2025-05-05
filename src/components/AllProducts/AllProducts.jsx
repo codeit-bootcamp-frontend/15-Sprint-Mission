@@ -11,10 +11,18 @@ const AllProducts = () => {
   const [products, setProducts] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [orderBy, setOrderBy] = useState("recent");
-  const [page, setPage] = useState(1);
   const [pageSize, setPageSize] = useState(10);
   const [totalCount, setTotalCount] = useState(0);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+  const [page, setPage] = useState(() => {
+    const saved = sessionStorage.getItem("allProductsPage");
+    return saved ? parseInt(saved, 10) : 1;
+  });
+
+  useEffect(() => {
+    sessionStorage.setItem("allProductsPage", page.toString());
+  }, [page]);
 
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth < 768);
