@@ -101,7 +101,7 @@ const AllProducts = () => {
               imageUrl={item.images?.[0]}
               title={item.name}
               price={item.price}
-              favorite={item.favoriteCount}
+              likes={item.favoriteCount}
               variant="all"
             />
           ))}
