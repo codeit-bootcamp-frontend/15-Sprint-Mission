@@ -7,13 +7,13 @@ function App() {
   const isAuthPage = ['/signin', '/signup'].includes(location.pathname);
 
   return (
-    <>
+    <div className={layoutStyles.layoutWrapper}>
       {!isAuthPage && <Header />}
-      <main className={layoutStyles.main}>
+      <main>
         <Outlet />
       </main>
       {!isAuthPage && <Footer />}
-    </>
+    </div>
   );
 }
 
