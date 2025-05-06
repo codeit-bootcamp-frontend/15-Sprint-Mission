@@ -1,10 +1,10 @@
-const ItemCard = ({ item }) => {
+const BestCard = ({ item }) => {
   return (
-    <div className='rounded-md p-2 transition h-[31.7rem] w-[22.1rem] flex flex-col '>
+    <div className='rounded-md p-2  transition w-[34.3rem] h-[43.4rem] lg:h-[37.8rem] lg:w-[28.2rem]'>
       <img
         src={item.images[0]}
         alt={item.name}
-        className='w-full h-[22.1rem] object-cover rounded'
+        className='w-full lg:h-[28.2rem] h-[34.3rem] object-cover rounded'
       />
       <div className='mt-[1.6rem] flex flex-col gap-3'>
         <div className='text-[1.4rem] text-gray-500 '>{item.name}</div>
@@ -17,4 +17,4 @@ const ItemCard = ({ item }) => {
   );
 };
 
-export default ItemCard;
+export default BestCard;

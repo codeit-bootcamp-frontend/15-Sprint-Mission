@@ -6,6 +6,8 @@ const GetItems = async () => {
   try {
     const response = await axios.get(API);
 
+    console.log(response);
+    console.log(response.data);
     console.log(response.data.list);
     return response.data.list || [];
   } catch (error) {

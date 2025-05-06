@@ -1,5 +1,25 @@
 @import 'tailwindcss';
 
-body {
-  font-size: 10px;
+@layer base {
+  @font-face {
+    font-family: 'Pretendard';
+    src: url('/fonts/PretendardVariable.woff2') format('woff2');
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'DOSPilgiMedium';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/DOSPilgiMedium.woff2')
+      format('woff2');
+  }
+
+  @font-face {
+    font-family: 'HakgyoansimByeolbichhaneulTTF-B';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-5@1.0/HakgyoansimByeolbichhaneulTTF-B.woff2')
+      format('woff2');
+  }
+
+  html {
+    font-size: 10px;
+  }
 }
