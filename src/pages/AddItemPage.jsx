@@ -1,3 +1,4 @@
+import Button from "../components/Button";
 import Header from "../components/Header";
 
 function AddItemPage() {
@@ -7,8 +8,9 @@ function AddItemPage() {
       <div className="max-w-1200 m-auto flex flex-col gap-24 pt-24 px-15 pb-52">
         <div className="flex justify-between items-center">
           <div className="text-xl font-bold">상품 등록하기</div>
-          {/* Button 컴포넌트로 수정 예정 */}
-          <button>등록</button>
+          <Button type="upload" disabled>
+            등록
+          </Button>
         </div>
         <div className="flex flex-col justify-center gap-16">
           <div className="text-2lg font-bold">상품 이미지</div>

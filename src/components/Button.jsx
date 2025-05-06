@@ -1,8 +1,16 @@
-function Button({ children, onClick }) {
+function Button({ children, type, onClick, disabled }) {
+  const buttonStyles = {
+    additem:
+      "py-8 px-24 rounded-lg bg-blue100 text-lg text-white font-semibold",
+    upload:
+      "w-74 h-42 rounded-lg bg-blue100 text-lg text-white font-semibold disabled:bg-gray400",
+  };
+
   return (
     <button
-      className="py-8 px-24 bg-blue100 text-white text-lg font-semibold rounded-lg cursor-pointer"
+      className={`${buttonStyles[type]} cursor-pointer`}
       onClick={onClick}
+      disabled={disabled}
     >
       {children}
     </button>
