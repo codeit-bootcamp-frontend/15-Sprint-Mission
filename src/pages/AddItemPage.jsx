@@ -1,15 +1,22 @@
+import { useState } from "react";
 import Button from "../components/Button";
 import Header from "../components/Header";
 import InputField from "../components/InputField";
 
 function AddItemPage() {
+  const [itemName, setItemName] = useState("");
+  const [itemDetail, setItemDetail] = useState("");
+  const [price, setPrice] = useState("");
+  const [tags, setTags] = useState("");
+  const isFormValid = itemName && itemDetail && price && tags;
+
   return (
     <div>
       <Header />
       <div className="max-w-1200 m-auto flex flex-col gap-24 pt-24 px-15 pb-52">
         <div className="flex justify-between items-center">
           <div className="text-xl font-bold">상품 등록하기</div>
-          <Button type="upload" disabled>
+          <Button type="upload" disabled={!isFormValid}>
             등록
           </Button>
         </div>
@@ -19,22 +26,34 @@ function AddItemPage() {
             이미지 등록
           </div>
         </div>
-        <div className="flex flex-col justify-center gap-16">
-          <div className="text-2lg font-bold">상품명</div>
-          <InputField type="input" placeholder="상품명을 입력해주세요" />
-        </div>
-        <div className="flex flex-col justify-center gap-16">
-          <div className="text-2lg font-bold">상품 소개</div>
-          <InputField type="textarea" placeholder="상품 소개를 입력해주세요" />
-        </div>
-        <div className="flex flex-col justify-center gap-16">
-          <div className="text-2lg font-bold">판매가격</div>
-          <InputField type="input" placeholder="판매 가격을 입력해주세요" />
-        </div>
-        <div className="flex flex-col justify-center gap-16">
-          <div className="text-2lg font-bold">태그</div>
-          <InputField type="input" placeholder="태그를 입력해주세요" />
-        </div>
+        <InputField
+          type="input"
+          label="상품명"
+          value={itemName}
+          onChange={(e) => setItemName(e.target.value)}
+          placeholder="상품명을 입력해주세요"
+        />
+        <InputField
+          type="textarea"
+          label="상품소개"
+          value={itemDetail}
+          onChange={(e) => setItemDetail(e.target.value)}
+          placeholder="상품 소개를 입력해주세요"
+        />
+        <InputField
+          type="input"
+          label="판매가격"
+          value={price}
+          onChange={(e) => setPrice(e.target.value)}
+          placeholder="판매 가격을 입력해주세요"
+        />
+        <InputField
+          type="input"
+          label="태그"
+          value={tags}
+          onChange={(e) => setTags(e.target.value)}
+          placeholder="태그를 입력해주세요"
+        />
       </div>
     </div>
   );
