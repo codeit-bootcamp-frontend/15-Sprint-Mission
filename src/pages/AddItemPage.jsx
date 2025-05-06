@@ -1,5 +1,6 @@
 import Button from "../components/Button";
 import Header from "../components/Header";
+import InputField from "../components/InputField";
 
 function AddItemPage() {
   return (
@@ -20,28 +21,28 @@ function AddItemPage() {
         </div>
         <div className="flex flex-col justify-center gap-16">
           <div className="text-2lg font-bold">상품명</div>
-          <input
+          <InputField
             className="bg-gray100 text-gray400 text-lg font-regular rounded-xl py-16 px-24"
             placeholder="상품명을 입력해주세요"
           />
         </div>
         <div className="flex flex-col justify-center gap-16">
           <div className="text-2lg font-bold">상품 소개</div>
-          <input
+          <InputField
             className="h-282 bg-gray100 text-gray400 text-lg font-regular rounded-xl py-16 px-24"
             placeholder="상품 소개를 입력해주세요"
           />
         </div>
         <div className="flex flex-col justify-center gap-16">
           <div className="text-2lg font-bold">판매가격</div>
-          <input
+          <InputField
             className="bg-gray100 text-gray400 text-lg font-regular rounded-xl py-16 px-24"
             placeholder="판매 가격을 입력해주세요"
           />
         </div>
         <div className="flex flex-col justify-center gap-16">
           <div className="text-2lg font-bold">태그</div>
-          <input
+          <InputField
             className="bg-gray100 text-gray400 text-lg font-regular rounded-xl py-16 px-24"
             placeholder="태그를 입력해주세요"
           />
