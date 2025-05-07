@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useAddItemForm } from '@/hooks';
 import { ImageUploader, TagInput, AddItemForm } from '@/components/AddItem';
 import { addItemValidation } from '@/utils/validators';
+import { baseUrl, ENDPOINTS } from '@/constants/urls';
 import formStyles from '@/styles/helpers/formHelpers.module.scss';
 import styles from './AddItem.module.scss';
 
@@ -33,17 +34,18 @@ const AddItem = () => {
     form.append('price', formData.price);
     form.append('tags', JSON.stringify(formData.tags));
 
+    // * try.. catch 나중에 따로 빼던가 하기
     try {
-      const res = await fetch('https://api.example.com/products', {
+      const res = await fetch(`${baseUrl}${ENDPOINTS.UPLOAD_IMAGE}`, {
         method: 'POST',
         body: form,
       });
 
       if (!res.ok) throw new Error('등록 실패');
-      alert('상품이 등록되었습니다!'); // * 여기 나중에 처리
+      alert('상품이 등록되었습니다!'); // * 여기 나중에 상세페이지로 이동 처리
     } catch (err) {
       console.error(err);
-      alert('상품 등록 중 오류가 발생했습니다.'); // * 여기 나중에 처리
+      alert('상품이 등록되지 않았습니다.'); // * 여기 나중에 토스트 처리
     }
   };
 

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useResponsivePageSize } from '@/hooks';
 import { SortSelect, Pagination } from '@/components/common';
 import { ProductCard } from '@/components/Product';
-import { baseUrl, ROUTES } from '@/constants/urls';
+import { baseUrl, ENDPOINTS, ROUTES } from '@/constants/urls';
 import styles from './AllProductSection.module.scss';
 
 const AllProductSection = () => {
@@ -15,9 +15,10 @@ const AllProductSection = () => {
   const pageSize = useResponsivePageSize();
 
   useEffect(() => {
+    // * 여기 try... catch
     const fetchProducts = async () => {
       const res = await fetch(
-        `${baseUrl}/products?page=${page}&pageSize=${pageSize}&orderBy=${sortOption}`,
+        `${baseUrl}${ENDPOINTS.PRODUCTS}?page=${page}&pageSize=${pageSize}&orderBy=${sortOption}`,
       );
       const data = await res.json();
       setProducts(data.list);

@@ -1,2 +1,2 @@
 export { default as ROUTES } from './routes';
-export { baseUrl } from './api';
+export { baseUrl, ENDPOINTS } from './api';
