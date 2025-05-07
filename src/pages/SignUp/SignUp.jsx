@@ -1,18 +1,17 @@
 import { useNavigate } from 'react-router-dom';
-import { useForm } from '@/hooks';
+import { useAuthForm } from '@/hooks';
 import { AuthFormLayout } from '@/components/auth';
-import { signUpValidationRules } from '@/utils/validators';
+import { signUpValidation } from '@/utils/validators';
 import { ROUTES } from '@/constants/urls';
-
-const initialFormData = {
-  email: '',
-  nickname: '',
-  password: '',
-  confirmPassword: '',
-};
 
 const SignUp = () => {
   const navigate = useNavigate();
+  const initialFormData = {
+    email: '',
+    nickname: '',
+    password: '',
+    confirmPassword: '',
+  };
   const {
     formData,
     setFormData,
@@ -22,7 +21,7 @@ const SignUp = () => {
     setShowPasswordStates,
     isFormValid,
     handleInputChange,
-  } = useForm(initialFormData, signUpValidationRules);
+  } = useAuthForm(initialFormData, signUpValidation);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -39,7 +38,6 @@ const SignUp = () => {
         errors,
         setErrors,
         onSubmit: handleSubmit,
-        validationRules: signUpValidationRules,
         showPasswordStates,
         togglePasswordVisibility: setShowPasswordStates,
         isFormValid,

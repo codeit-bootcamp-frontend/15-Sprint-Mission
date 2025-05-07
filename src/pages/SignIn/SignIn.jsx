@@ -1,16 +1,15 @@
 import { useNavigate } from 'react-router-dom';
-import { useForm } from '@/hooks';
+import { useAuthForm } from '@/hooks';
 import { AuthFormLayout } from '@/components/auth';
-import { signInValidationRules } from '@/utils/validators';
+import { signInValidation } from '@/utils/validators';
 import { ROUTES } from '@/constants/urls';
-
-const initialFormData = {
-  email: '',
-  password: '',
-};
 
 const SignIn = () => {
   const navigate = useNavigate();
+  const initialFormData = {
+    email: '',
+    password: '',
+  };
   const {
     formData,
     setFormData,
@@ -20,7 +19,7 @@ const SignIn = () => {
     setShowPasswordStates,
     isFormValid,
     handleInputChange,
-  } = useForm(initialFormData, signInValidationRules);
+  } = useAuthForm(initialFormData, signInValidation);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -37,7 +36,6 @@ const SignIn = () => {
         errors,
         setErrors,
         onSubmit: handleSubmit,
-        validationRules: signInValidationRules,
         showPasswordStates,
         togglePasswordVisibility: setShowPasswordStates,
         isFormValid,

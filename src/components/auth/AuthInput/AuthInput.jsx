@@ -27,15 +27,15 @@ const AuthInput = ({
           value={value}
           onChange={onChange}
           placeholder={placeholder || `${label}을/를 입력해주세요`}
-          className={`${styles.input} ${error ? styles.errorInput : ''}`}
+          className={`${formStyles.input} ${error ? styles.errorInput : ''}`}
         />
         {isPassword && (
           <PasswordToggleIcon isVisible={isVisible} onToggle={onToggle} />
         )}
       </div>
       <div
-        className={`${styles.validationErrorMessage} ${
-          error ? styles.active : ''
+        className={`${formStyles.validationErrorMessage} ${
+          error ? formStyles.active : ''
         }`}
       >
         {error}

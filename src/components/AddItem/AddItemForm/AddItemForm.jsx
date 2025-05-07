@@ -1,13 +1,6 @@
 import formStyles from '@/styles/helpers/formHelpers.module.scss';
 
-const AddItemForm = ({
-  productName,
-  setProductName,
-  description,
-  setDescription,
-  price,
-  setPrice,
-}) => {
+const AddItemForm = ({ formData, handleInputChange }) => {
   return (
     <>
       <div className={formStyles.inputContainer}>
@@ -17,9 +10,12 @@ const AddItemForm = ({
         <input
           id="productName"
           type="text"
-          value={productName}
+          value={formData.productName}
           placeholder="상품명을 입력해주세요"
-          onChange={(e) => setProductName(e.target.value)}
+          className={formStyles.input}
+          onChange={(e) =>
+            handleInputChange({ field: 'productName', value: e.target.value })
+          }
         />
       </div>
 
@@ -29,10 +25,13 @@ const AddItemForm = ({
         </label>
         <textarea
           id="productDescription"
-          value={description}
+          value={formData.description}
           placeholder="상품 소개를 입력해주세요"
-          onChange={(e) => setDescription(e.target.value)}
+          className={formStyles.textarea}
           rows={10}
+          onChange={(e) =>
+            handleInputChange({ field: 'description', value: e.target.value })
+          }
         />
       </div>
 
@@ -43,17 +42,18 @@ const AddItemForm = ({
         <input
           id="productPrice"
           type="number"
-          value={price}
+          value={formData.price}
           placeholder="판매 가격을 입력해주세요"
-          onChange={(e) => {
-            const value = e.target.value;
-            if (value === '' || /^\d+$/.test(value)) {
-              setPrice(value);
-            }
-          }}
+          className={formStyles.input}
           min="0"
           step="10"
           onWheel={(e) => e.target.blur()}
+          onChange={(e) => {
+            const value = e.target.value;
+            if (value === '' || /^\d+$/.test(value)) {
+              handleInputChange({ field: 'price', value });
+            }
+          }}
         />
       </div>
     </>

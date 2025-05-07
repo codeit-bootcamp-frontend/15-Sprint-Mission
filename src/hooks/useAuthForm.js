@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const useAuthForm = (initialFormData, validationRules) => {
+const useAuthForm = (initialFormData, validation) => {
   const [formData, setFormData] = useState(initialFormData);
   const [errors, setErrors] = useState({});
   const [showPasswordStates, setShowPasswordStates] = useState(
@@ -16,22 +16,22 @@ const useAuthForm = (initialFormData, validationRules) => {
     const updatedFormData = { ...formData, [field]: value };
     setFormData(updatedFormData);
 
-    const fieldError = validationRules[field]?.(value, updatedFormData);
+    const fieldError = validation[field]?.(value, updatedFormData);
     const newErrors = { ...errors, [field]: fieldError };
 
     if (
       field === 'password' &&
       updatedFormData.confirmPassword &&
-      validationRules.confirmPassword
+      validation.confirmPassword
     ) {
-      newErrors.confirmPassword = validationRules.confirmPassword(
+      newErrors.confirmPassword = validation.confirmPassword(
         updatedFormData.confirmPassword,
         updatedFormData,
       );
     }
 
     if (field === 'confirmPassword') {
-      newErrors.confirmPassword = validationRules.confirmPassword(
+      newErrors.confirmPassword = validation.confirmPassword(
         value,
         updatedFormData,
       );
@@ -40,7 +40,7 @@ const useAuthForm = (initialFormData, validationRules) => {
     setErrors(newErrors);
   };
 
-  const isFormValid = Object.entries(validationRules).every(
+  const isFormValid = Object.entries(validation).every(
     ([field, validateFn]) => !validateFn(formData[field], formData),
   );
 

@@ -1,25 +1,22 @@
 import { useState } from 'react';
-import { addItemValidation } from '@/utils/validators';
 
-const useAddItemForm = (initialFormData) => {
+const useAddItemForm = (initialFormData, validation) => {
   const [formData, setFormData] = useState(initialFormData);
 
-  const handleChange = (field, value) => {
-    setFormData((prev) => ({
-      ...prev,
-      [field]: value,
-    }));
+  const handleInputChange = ({ field, value }) => {
+    const updatedFormData = { ...formData, [field]: value };
+    setFormData(updatedFormData);
   };
 
-  const isFormValid = Object.entries(addItemValidation).every(
-    ([field, validateFn]) => validateFn(formData[field]),
+  const isFormValid = Object.entries(validation).every(([field, validateFn]) =>
+    validateFn(formData[field]),
   );
 
   return {
     formData,
     setFormData,
     isFormValid,
-    handleChange,
+    handleInputChange,
   };
 };
 

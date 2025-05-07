@@ -1,37 +1,45 @@
 import { useState } from 'react';
+import { useAddItemForm } from '@/hooks';
 import { ImageUploader, TagInput, AddItemForm } from '@/components/AddItem';
+import { addItemValidation } from '@/utils/validators';
 import formStyles from '@/styles/helpers/formHelpers.module.scss';
 import styles from './AddItem.module.scss';
 
-const AddItem = () => {
-  const [imagePreview, setImagePreview] = useState(null);
-  const [imageFile, setImageFile] = useState(null);
-  const [showImageWarning, setShowImageWarning] = useState(false);
+const initialForm = {
+  imageFile: null,
+  productName: '',
+  description: '',
+  price: '',
+  tags: [],
+};
 
-  const [productName, setProductName] = useState('');
-  const [description, setDescription] = useState('');
-  const [price, setPrice] = useState('');
+const AddItem = () => {
+  const { formData, isFormValid, handleInputChange } = useAddItemForm(
+    initialForm,
+    addItemValidation,
+  );
+
+  const [imagePreview, setImagePreview] = useState(null);
+  const [showImageWarning, setShowImageWarning] = useState(false);
   const [tagInput, setTagInput] = useState('');
-  const [tags, setTags] = useState([]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const formData = new FormData();
-    formData.append('image', imageFile); // ← 여기서 imageFile 사용
-    formData.append('productName', productName);
-    formData.append('description', description);
-    formData.append('price', price);
-    formData.append('tags', JSON.stringify(tags)); // 또는 서버 요구 형식에 맞게 변환
+    const form = new FormData();
+    form.append('image', formData.imageFile);
+    form.append('productName', formData.productName);
+    form.append('description', formData.description);
+    form.append('price', formData.price);
+    form.append('tags', JSON.stringify(formData.tags));
 
     try {
       const res = await fetch('https://api.example.com/products', {
         method: 'POST',
-        body: formData,
+        body: form,
       });
 
       if (!res.ok) throw new Error('등록 실패');
-
       alert('상품이 등록되었습니다!');
     } catch (err) {
       console.error(err);
@@ -47,6 +55,7 @@ const AddItem = () => {
           type="button"
           className={styles.submitButton}
           onClick={handleSubmit}
+          disabled={!isFormValid}
         >
           등록
         </button>
@@ -54,27 +63,23 @@ const AddItem = () => {
 
       <form className={formStyles.form}>
         <ImageUploader
+          handleInputChange={handleInputChange}
           imagePreview={imagePreview}
           setImagePreview={setImagePreview}
-          setImageFile={setImageFile}
           showImageWarning={showImageWarning}
           setShowImageWarning={setShowImageWarning}
         />
 
         <AddItemForm
-          productName={productName}
-          setProductName={setProductName}
-          description={description}
-          setDescription={setDescription}
-          price={price}
-          setPrice={setPrice}
+          formData={formData}
+          handleInputChange={handleInputChange}
         />
 
         <TagInput
           tagInput={tagInput}
           setTagInput={setTagInput}
-          tags={tags}
-          setTags={setTags}
+          tags={formData.tags}
+          handleInputChange={handleInputChange}
         />
       </form>
     </div>
