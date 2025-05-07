@@ -1,4 +1,5 @@
 import { PasswordToggleIcon } from '@/components/auth/PasswordToggleIcon';
+import formStyles from '@/styles/helpers/formHelpers.module.scss';
 import styles from './AuthInput.module.scss';
 
 const AuthInput = ({
@@ -15,8 +16,10 @@ const AuthInput = ({
   const isPassword = type === 'password';
 
   return (
-    <div className={styles.inputContainer}>
-      <label htmlFor={id}>{label}</label>
+    <div className={formStyles.inputContainer}>
+      <label htmlFor={id} className={formStyles.labelText}>
+        {label}
+      </label>
       <div className={isPassword ? styles.passwordInput : ''}>
         <input
           id={id}

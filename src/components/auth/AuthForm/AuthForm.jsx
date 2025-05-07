@@ -1,4 +1,5 @@
 import { AuthInput, OAuthButtons } from '@/components/auth';
+import formStyles from '@/styles/helpers/formHelpers.module.scss';
 import styles from './AuthForm.module.scss';
 
 const AuthForm = ({
@@ -12,7 +13,7 @@ const AuthForm = ({
   handleInputChange,
 }) => {
   return (
-    <form className={styles.authForm} data-auth-type={type}>
+    <form className={formStyles.form} data-auth-type={type}>
       {formData.email !== undefined && (
         <AuthInput
           id="email"

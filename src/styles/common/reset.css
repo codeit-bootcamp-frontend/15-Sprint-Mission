@@ -12,7 +12,8 @@ h5,
 h6,
 p,
 ul,
-ol {
+ol,
+label {
   margin: 0;
 }
 
