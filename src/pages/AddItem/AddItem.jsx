@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { useAddItemForm } from '@/hooks';
 import { ImageUploader, TagInput, AddItemForm } from '@/components/AddItem';
+import Toast, { useToast } from '@/components/common/Toast';
+import toastStyles from '@/components/common/Toast/Toast.module.scss';
 import { addItemValidation } from '@/utils/validators';
 import { baseUrl, ENDPOINTS } from '@/constants/urls';
 import formStyles from '@/styles/helpers/formHelpers.module.scss';
@@ -15,6 +17,7 @@ const initialForm = {
 };
 
 const AddItem = () => {
+  const { showToast } = useToast();
   const { formData, isFormValid, handleInputChange } = useAddItemForm(
     initialForm,
     addItemValidation,
@@ -41,11 +44,11 @@ const AddItem = () => {
         body: form,
       });
 
-      if (!res.ok) throw new Error('등록 실패');
-      alert('상품이 등록되었습니다!'); // * 여기 나중에 상세페이지로 이동 처리
+      if (!res.ok) throw new Error('등록 실패'); // * throw하는 에러메시지 상수화, 콘솔메시지 상수화?
+      showToast('상품이 등록되었습니다!', 'success'); // * 여기 나중에 상세페이지로 이동 처리
     } catch (err) {
       console.error(err);
-      alert('상품이 등록되지 않았습니다.'); // * 여기 나중에 토스트 처리
+      showToast('상품 등록에 실패했습니다.', 'err.message'); // * 여기 토스트 메시지(fetch찍어서 확인) 상수화
     }
   };
 

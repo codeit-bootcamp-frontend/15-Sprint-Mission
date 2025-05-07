@@ -1,5 +1,6 @@
 html {
   font-size: 10px; /* 1rem = 10px */
+  word-break: keep-all;
 }
 
 body {

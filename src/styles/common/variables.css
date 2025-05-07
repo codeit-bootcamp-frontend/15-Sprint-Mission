@@ -21,12 +21,17 @@
   --secondary-800: #1f2937;
   --secondary-900: #111827; /* footer bg*/
 
+  --primary-bg: rgba(225, 245, 254, 0.9);
   --error: #f74747;
-
+  --error-bg: rgba(253, 236, 234, 0.95); /* error message bg */
+  --success: #2fd172;
+  --success-bg: rgba(237, 247, 237, 0.9);
   --focus-ring: rgba(
     54,
     146,
     255,
     0.3
   ); /* primary-100을 바탕으로 한 반투명 색 */
+
+  --shadow-color: rgba(0, 0, 0, 0.2);
 }

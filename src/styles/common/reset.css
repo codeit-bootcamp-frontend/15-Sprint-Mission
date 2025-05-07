@@ -40,6 +40,10 @@ select {
   padding: 0;
 }
 
+textarea {
+  resize: none;
+}
+
 input[type='checkbox'],
 input[type='radio'],
 select,
