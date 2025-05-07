@@ -44,7 +44,7 @@ export default function AddItemTag() {
           <li key={`${tag}-${index}`}>
             <span>&#35;{tag}</span>
             <button type='button' onClick={() => handleTagDelete(tag)}>
-              <img src='/public/images/common/ic_tag_x.svg' alt='삭제' />
+              <img src='/images/common/ic_tag_x.svg' alt='삭제' />
             </button>
           </li>
         ))}
