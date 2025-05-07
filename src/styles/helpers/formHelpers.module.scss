@@ -1,0 +1,33 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.labelText {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 2.6rem;
+}
+
+input,
+textarea {
+  padding: 16px 24px 14px 24px;
+  border-radius: 12px;
+  background-color: var(--secondary-100);
+  font-size: 16px;
+  font-weight: 400;
+  width: 100%;
+
+  &:focus {
+    outline: none;
+    border-color: var(--secondary-800);
+    box-shadow: 0 0 0 2px var(--focus-ring);
+  }
+}
