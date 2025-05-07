@@ -22,14 +22,14 @@ export default function AddItemImage() {
       <div className={styles.addItemImage}>
         <input type='file' name='file' id='file' onChange={handleFileChange} />
         <label htmlFor='file'>
-          <img src='/public/images/common/ic_plus.svg' alt='이미지 등록' />
+          <img src='/images/common/ic_plus.svg' alt='이미지 등록' />
           이미지 등록
         </label>
         {fileImg && (
           <div className={styles.addItemImagePreview}>
             <img src={fileImg ? URL.createObjectURL(fileImg) : ''} alt='이미지 미리보기' />
             <button type='button' onClick={handleRemoveFile}>
-              <img src='/public/images/common/ic_tag_x.svg' alt='이미지 삭제' />
+              <img src='/images/common/ic_tag_x.svg' alt='이미지 삭제' />
             </button>
           </div>
         )}
