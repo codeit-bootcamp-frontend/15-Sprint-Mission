@@ -9,7 +9,7 @@ const __dirname = dirname(__filename);
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: './',
+  base: '/react-page/dist/',
   build: {
     rollupOptions: {
       input: {

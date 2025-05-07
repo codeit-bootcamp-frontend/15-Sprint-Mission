@@ -1,13 +1,17 @@
 const BestCard = ({ item }) => {
   return (
-    <div className='rounded-md p-2  transition w-[34.3rem] h-[43.4rem] lg:h-[37.8rem] lg:w-[28.2rem]'>
-      <img
-        src={item.images[0]}
-        alt={item.name}
-        className='w-full lg:h-[28.2rem] h-[34.3rem] object-cover rounded'
-      />
+    <div className='rounded-md p-2 transition flex flex-col h-full'>
+      <div className='aspect-square w-full overflow-hidden rounded'>
+        <img
+          src={item.images[0]}
+          alt={item.name}
+          className='w-full h-full object-cover'
+        />
+      </div>
       <div className='mt-[1.6rem] flex flex-col gap-3'>
-        <div className='text-[1.4rem] text-gray-500 '>{item.name}</div>
+        <div className='text-[1.4rem] text-[#1F2937] font-[500]  '>
+          {item.name}
+        </div>
         <div className='font-bold text-[1.6rem]'>
           {item.price.toLocaleString()}원
         </div>

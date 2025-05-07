@@ -1,19 +1,38 @@
 import axios from 'axios';
+import { BASE_URL } from '../constants/apiConstants';
 
-const API = 'https://panda-market-api.vercel.app/products';
-
-const GetItems = async () => {
+export const GetItems = async (page = 1, pageSize = 10) => {
   try {
-    const response = await axios.get(API);
+    const response = await axios.get(`${BASE_URL}/products`, {
+      params: { page, pageSize },
+    });
 
-    console.log(response);
-    console.log(response.data);
-    console.log(response.data.list);
-    return response.data.list || [];
+    return {
+      products: response.data.list || [],
+      totalCount: response.data.totalCount || 0,
+    };
   } catch (error) {
     console.error('상품 데이터를 불러오지 못했습니다:', error);
-    return [];
+    return {
+      products: [],
+      totalCount: 0,
+    };
   }
 };
 
-export default GetItems;
+export const GetFavoriteItems = async (orderBy = 'favorite', pageSize = 4) => {
+  try {
+    const response = await axios.get(`${BASE_URL}/products`, {
+      params: { orderBy, pageSize },
+    });
+
+    return {
+      products: response.data.list || [],
+    };
+  } catch (error) {
+    console.error('상품 데이터를 불러오지 못했습니다:', error);
+    return {
+      products: [],
+    };
+  }
+};
