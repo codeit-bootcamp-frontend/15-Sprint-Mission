@@ -23,7 +23,7 @@ export default function Items() {
           </section>
 
           <section>
-            <div className="contentHeader">
+            <div className="contentHeader isWrap">
               <h3>전체 상품</h3>
               <SearchInput
                 placeholder='검색할 상품을 입력해주세요'

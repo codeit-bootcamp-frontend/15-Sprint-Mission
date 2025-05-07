@@ -29,3 +29,48 @@
     padding-block: 16px;
   }
 }
+@media (max-width: 768px) {
+  .addItemListItem {
+    > label,
+    > p {
+      font-size: 2.34vw;
+      margin-bottom: 2.08vw;
+    }
+    input[type='text'],
+    textarea {
+      padding-inline: 3.13vw;
+      border-radius: 1.56vw;
+      font-size: 2.08vw;
+    }
+    input[type='text'] {
+      height: 7.29vw;
+    }
+    textarea {
+      height: 36.72vw;
+      padding-block: 2.08vw;
+    }
+  }
+}
+
+@media (max-width: 425px) {
+  .addItemListItem {
+    > label,
+    > p {
+      font-size: 4.24vw;
+      margin-bottom: 3.76vw;
+    }
+    input[type='text'],
+    textarea {
+      padding-inline: 5.65vw;
+      border-radius: 2.82vw;
+      font-size: 3.76vw;
+    }
+    input[type='text'] {
+      height: 13.18vw;
+    }
+    textarea {
+      height: 66.35vw;
+      padding-block: 3.76vw;
+    }
+  }
+}

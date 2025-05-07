@@ -86,11 +86,7 @@
   }
 }
 @media all and (max-width: 1024px) {
-  .header .inner02 {
-    max-width: none;
-    margin-inline: 3.23vw;
-    height: 9.41vw;
-  }
+  
   .header-login {
     max-width: 17.2vw;
     height: 6.45vw;
@@ -104,6 +100,11 @@
   }
 }
 @media all and (max-width: 768px) {
+  .header .inner02 {
+    max-width: none;
+    margin-inline: 3.23vw;
+    height: 9.41vw;
+  }
   .header-logo button {
     max-height: 5.21vw;
     max-width: 19.92vw;
