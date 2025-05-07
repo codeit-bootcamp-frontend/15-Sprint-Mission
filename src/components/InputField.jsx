@@ -1,4 +1,4 @@
-function inputField({ type, label, value, onChange, placeholder }) {
+function inputField({ type, label, value, onChange, onKeyDown, placeholder }) {
   if (type === "input") {
     return (
       <div className="flex flex-col justify-center gap-16">
@@ -7,6 +7,7 @@ function inputField({ type, label, value, onChange, placeholder }) {
           className="bg-gray100 .placeholder-text-gray400 text-lg font-regular rounded-xl py-16 px-24"
           value={value}
           onChange={onChange}
+          onKeyDown={onKeyDown}
           placeholder={placeholder}
         />
       </div>
@@ -19,6 +20,7 @@ function inputField({ type, label, value, onChange, placeholder }) {
           className="h-282 bg-gray100 .placeholder-text-gray400 text-lg font-regular rounded-xl py-16 px-24"
           value={value}
           onChange={onChange}
+          onKeyDown={onKeyDown}
           placeholder={placeholder}
         ></textarea>
       </div>

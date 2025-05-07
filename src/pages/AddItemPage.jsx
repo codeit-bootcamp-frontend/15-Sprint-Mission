@@ -7,8 +7,18 @@ function AddItemPage() {
   const [itemName, setItemName] = useState("");
   const [itemDetail, setItemDetail] = useState("");
   const [price, setPrice] = useState("");
-  const [tags, setTags] = useState("");
-  const isFormValid = itemName && itemDetail && price && tags;
+  const [tagInput, setTagInput] = useState("");
+  const [tags, setTags] = useState([]);
+  const isFormValid = itemName && itemDetail && price && tags.length > 0;
+
+  const handleEnter = (e) => {
+    if (e.key === "Enter" && !e.nativeEvent.isComposing) {
+      e.preventDefault();
+      const newTag = tagInput;
+      setTags([...tags, newTag]);
+      setTagInput("");
+    }
+  };
 
   return (
     <div>
@@ -50,10 +60,23 @@ function AddItemPage() {
         <InputField
           type="input"
           label="태그"
-          value={tags}
-          onChange={(e) => setTags(e.target.value)}
+          value={tagInput}
+          onChange={(e) => setTagInput(e.target.value)}
+          onKeyDown={handleEnter}
           placeholder="태그를 입력해주세요"
         />
+        <div className="flex gap-12">
+          {tags.map((tag, index) => {
+            return (
+              <span
+                key={index}
+                className="py-6 pl-16 pr-12 bg-gray100 rounded-[26px]"
+              >
+                #{tag}
+              </span>
+            );
+          })}
+        </div>
       </div>
     </div>
   );
