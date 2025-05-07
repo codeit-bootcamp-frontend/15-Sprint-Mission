@@ -1,6 +1,7 @@
-import styles from "../../styles/components/AuthInput.module.scss";
+/** @jsxImportSource @emotion/react */
+import { inputGroup, authInput, message } from "./AuthInput.styles";
 
-function AuthInput({
+export function AuthInput({
   label,
   id,
   type,
@@ -10,20 +11,19 @@ function AuthInput({
   errorMessage,
 }) {
   return (
-    <div className={styles.inputGroup}>
+    <div css={inputGroup}>
       <label htmlFor={id}>{label}</label>
       <input
         id={id}
-        className={styles.authInput}
+        css={authInput}
         type={type}
         name={id}
+        autoComplete="username"
         placeholder={placeholder}
         value={value}
         onChange={onChange}
       />
-      <p className={styles.message}>{errorMessage}</p>
+      {errorMessage && <p css={message}>{errorMessage}</p>}
     </div>
   );
 }
-
-export default AuthInput;

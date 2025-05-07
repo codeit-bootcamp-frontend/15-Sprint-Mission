@@ -1,6 +1,6 @@
-import common from "../../styles/components/home/HomeCommonSection.module.scss";
-import styles from "../../styles/components/home/HomeBottomSection.module.scss";
-import bottomImg from "../../assets/images/Img_home_bottom.png";
+import common from "../styles/HomeCommonSection.module.scss";
+import styles from "../styles/HomeBottomSection.module.scss";
+import bottomImg from "@/assets/images/Img_home_bottom.png";
 import classNames from "classnames";
 
 function HomeBottomSection() {

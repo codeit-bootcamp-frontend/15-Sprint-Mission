@@ -1,8 +1,8 @@
 import { Outlet } from "react-router";
 import { useEffect } from "react";
 import { Logo } from "./Logo";
-import logo from "../../assets/logo/logo.png";
-import styles from "../../styles/components/AuthLayout.module.scss";
+import logo from "@/assets/logo/logo.png";
+import styles from "@/styles/components/AuthLayout.module.scss";
 
 function AuthLayout() {
   useEffect(() => {

@@ -1,9 +1,9 @@
 import classNames from "classnames";
-import styles from "../../styles/components/home/HomeFeaturesSection.module.scss";
-import common from "../../styles/components/home/HomeCommonSection.module.scss";
-import hotItemImage from "../../assets/images/Img_home_01.png";
-import searchFeatureImage from "../../assets/images/Img_home_02.png";
-import registerFeatureImage from "../../assets/images/Img_home_03.png";
+import styles from "../styles/HomeFeaturesSection.module.scss";
+import common from "../styles/HomeCommonSection.module.scss";
+import hotItemImage from "@/assets/images/Img_home_01.png";
+import searchFeatureImage from "@/assets/images/Img_home_02.png";
+import registerFeatureImage from "@/assets/images/Img_home_03.png";
 
 function HomeFeaturesSection() {
   return (

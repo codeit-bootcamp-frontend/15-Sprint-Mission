@@ -1,7 +1,7 @@
 import classNames from "classnames";
-import styles from "../../styles/components/home/HomeTopSection.module.scss";
-import common from "../../styles/components/home/HomeCommonSection.module.scss";
-import topImage from "../../assets/images/Img_home_top.png";
+import styles from "../styles/HomeTopSection.module.scss";
+import common from "../styles/HomeCommonSection.module.scss";
+import topImage from "@/assets/images/Img_home_top.png";
 import { Link } from "react-router-dom";
 
 function HomeTopSection() {

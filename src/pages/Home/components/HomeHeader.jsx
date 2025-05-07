@@ -1,8 +1,8 @@
 import { Link } from "react-router";
-import { Logo } from "../common/Logo";
-import styles from "../../styles/components/home/HomeHeader.module.scss";
-import logo from "../../assets/logo/logo.png";
-import logoMobile from "../../assets/logo/logo_mobile.png";
+import { Logo } from "@/components/Logo";
+import logo from "@/assets/logo/logo.png";
+import logoMobile from "@/assets/logo/logo_mobile.png";
+import styles from "../styles/HomeHeader.module.scss";
 
 function HomeHeader() {
   return (
