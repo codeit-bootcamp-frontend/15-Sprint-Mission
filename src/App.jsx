@@ -1,5 +1,5 @@
 import { Outlet, useLocation } from 'react-router-dom';
-import { Header, Footer } from './components/common';
+import { Header, Footer } from '@/components/common';
 import layoutStyles from '@/styles/layout/layout.module.scss';
 
 function App() {

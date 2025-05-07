@@ -40,10 +40,10 @@ const AddItem = () => {
       });
 
       if (!res.ok) throw new Error('등록 실패');
-      alert('상품이 등록되었습니다!');
+      alert('상품이 등록되었습니다!'); // * 여기 나중에 처리
     } catch (err) {
       console.error(err);
-      alert('상품 등록 중 오류가 발생했습니다.');
+      alert('상품 등록 중 오류가 발생했습니다.'); // * 여기 나중에 처리
     }
   };
 
