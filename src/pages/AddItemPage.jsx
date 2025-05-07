@@ -2,6 +2,7 @@ import { useState } from "react";
 import Button from "../components/Button";
 import Header from "../components/Header";
 import InputField from "../components/InputField";
+import x from "../assets/icons/x.svg";
 
 function AddItemPage() {
   const [itemName, setItemName] = useState("");
@@ -18,6 +19,11 @@ function AddItemPage() {
       setTags([...tags, newTag]);
       setTagInput("");
     }
+  };
+  const handleDelete = (index) => {
+    const newTags = [...tags];
+    newTags.splice(index, 1);
+    setTags(newTags);
   };
 
   return (
@@ -70,9 +76,14 @@ function AddItemPage() {
             return (
               <span
                 key={index}
-                className="py-6 pl-16 pr-12 bg-gray100 rounded-[26px]"
+                className="flex items-center gap-8 py-6 pl-16 pr-12 bg-gray100 rounded-[26px]"
               >
                 #{tag}
+                <img
+                  className="size-22 cursor-pointer"
+                  src={x}
+                  onClick={() => handleDelete(index)}
+                />
               </span>
             );
           })}
