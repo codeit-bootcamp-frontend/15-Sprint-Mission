@@ -1,10 +1,10 @@
 import axios from 'axios';
 import { BASE_URL } from '../constants/apiConstants';
 
-export const GetItems = async (page = 1, pageSize = 10) => {
+export const GetItems = async (page = 1, pageSize = 10, orderBy = 'recent') => {
   try {
     const response = await axios.get(`${BASE_URL}/products`, {
-      params: { page, pageSize },
+      params: { page, pageSize, orderBy },
     });
 
     return {

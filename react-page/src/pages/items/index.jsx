@@ -9,7 +9,7 @@ import { useNavigate } from 'react-router-dom';
 export default function ItemPage() {
   const [products, setProducts] = useState([]);
   const [favoriteProduct, setFavoriteProduct] = useState([]);
-  const [sortType, setSortType] = useState('latest');
+  const [sortType, setSortType] = useState('recent');
   const [currentPage, setCurrentPage] = useState(1);
   const [totalCount, setTotalCount] = useState(0);
 
@@ -39,13 +39,14 @@ export default function ItemPage() {
     const fetchFavorite = async () => {
       const { products, totalCount } = await GetItems(
         currentPage,
-        ProductsPerPage
+        ProductsPerPage,
+        sortType
       );
       setProducts(products);
       setTotalCount(totalCount);
     };
     fetchFavorite();
-  }, [currentPage, ProductsPerPage]);
+  }, [currentPage, ProductsPerPage, sortType]);
 
   useEffect(() => {
     const fetchFavorite = async () => {
@@ -54,12 +55,6 @@ export default function ItemPage() {
     };
     fetchFavorite();
   }, []);
-
-  const sortedProducts = [...products].sort((a, b) => {
-    return sortType === 'favorites'
-      ? b.favoriteCount - a.favoriteCount
-      : b.id - a.id;
-  });
 
   const topFavoriteProducts = [...favoriteProduct]
     .sort((a, b) => b.favoriteCount - a.favoriteCount)
@@ -98,14 +93,14 @@ export default function ItemPage() {
                 onChange={(e) => setSortType(e.target.value)}
                 className='border px-2 py-1 rounded h-[4.2rem]'
               >
-                <option value='latest'>최신순</option>
-                <option value='favorites'>좋아요순</option>
+                <option value='recent'>최신순</option>
+                <option value='favorite'>좋아요순</option>
               </select>
             </div>
           </div>
 
           <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-1'>
-            {sortedProducts.map((product) => (
+            {products.map((product) => (
               <ItemCard key={product.id} item={product} />
             ))}
           </div>
