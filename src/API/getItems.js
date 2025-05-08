@@ -1,7 +1,7 @@
 import { api } from "./api";
-export default async function getItems(offset = "", limit = "", sort = "") {
+export default async function getItems(page = "", pageSize = "", sort = "") {
   const res = await api.get(
-    `/products?page=${offset}&pageSize=${limit}&orderBy=${sort}`
+    `/products?page=${page}&pageSize=${pageSize}&orderBy=${sort}`
   );
   return res.data;
 }

@@ -7,7 +7,6 @@ export default function Item({ item, listType }) {
     listType === "best" ? styles["image--inBest"] : styles["image--inAll"]
   } ${item.images.length === 0 ? styles.noImage : ""}`;
 
-  console.log(item.name);
   return (
     <div className={styles.item}>
       <ImageWithValidation

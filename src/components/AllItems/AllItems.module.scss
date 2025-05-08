@@ -54,7 +54,9 @@ button.additem {
   position: relative;
 }
 .dropdown button {
-  padding: 9px 68px 9px 20px;
+  width: 110px;
+  height: 42px;
+  padding-left: 20px;
   border: 1px solid #e5e7eb;
   border-radius: 12px;
   background-image: url("../../image/triangle.svg");
@@ -65,16 +67,49 @@ button.additem {
   display: grid;
   position: absolute;
   top: 50px;
+  cursor: pointer;
 }
 .dropdown__recent {
   padding: 9px 44px;
   background-color: white;
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
+  border: 1px solid #e5e7eb;
+  border-bottom: none;
 }
 .dropdown__favorite {
   padding: 9px 37px;
   background-color: white;
   border-bottom-left-radius: 12px;
   border-bottom-right-radius: 12px;
+  border: 1px solid #e5e7eb;
+}
+
+//
+.pages {
+  display: flex;
+  gap: 4px;
+  width: 304px;
+  margin: 43px auto 58px auto;
+}
+.pages button {
+  @include font-16-semiBold;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #e5e7eb;
+  border-radius: 50%;
+  text-align: center;
+}
+.leftArrow,
+.rightArrow {
+  background-image: url("../../image/page-arrow.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.rightArrow {
+  transform: scaleX(-1);
+}
+.isCurrentPage {
+  color: #f9fafb;
+  background-color: #2f80ed;
 }
