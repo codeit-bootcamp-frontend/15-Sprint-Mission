@@ -20,6 +20,11 @@
   color: var(--gray500);
 }
 
+.Pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 .Pagination .active {
   background-color: #2f80ed;
   color: var(--gray100);

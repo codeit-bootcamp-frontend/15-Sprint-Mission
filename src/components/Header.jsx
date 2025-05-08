@@ -1,38 +1,39 @@
-import logo from "../assets/images/logo.png";
-import logoMobile from "../assets/images/logo-mobile.png";
-import { Link, useNavigate } from "react-router-dom";
+import logo from "../assets/images/logo.svg";
+import logoMobile from "../assets/images/logo-mobile.svg";
+import { NavLink, useNavigate, useLocation } from "react-router-dom";
 import "./Header.css";
 
-const Header = ({ location }) => {
+const Header = () => {
   const nav = useNavigate();
   const onClickButton = () => {
     nav("/login");
   };
+  const location = useLocation();
+  const isItemsPage =
+    location.pathname.startsWith("/items") || location.pathname === "/additem";
+
   return (
     <>
       <header className="Header">
         <div className="header-left">
-          <Link to={"/"}>
+          <NavLink to="/">
             <img
               className="logo-mobile"
               src={logoMobile}
               alt="판다마켓 로고 이미지 (모바일)"
             />
             <img className="logo" src={logo} alt="판다마켓 로고 이미지" />
-          </Link>
+          </NavLink>
           <div className="link-section">
-            <Link
-              to={"/boards"}
-              className={location === "community" ? "active" : ""}
+            <NavLink
+              to="/boards"
+              className={({ isActive }) => (isActive ? "active" : "")}
             >
               자유게시판
-            </Link>
-            <Link
-              to={"/items"}
-              className={location === "market" ? "active" : ""}
-            >
+            </NavLink>
+            <NavLink to="/items" className={isItemsPage ? "active" : ""}>
               중고마켓
-            </Link>
+            </NavLink>
           </div>
         </div>
         <button onClick={onClickButton} className="login-button">

@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { getProducts } from "../../../../api";
 import arrow_left from "../../../../assets/images/arrow_left.svg";
 import arrow_right from "../../../../assets/images/arrow_right.svg";
 import "./Pagination.css";
@@ -17,7 +16,6 @@ const Pagination = ({ currentPage, setCurrentPage, totalCount, pageSize }) => {
   }, [currentPage]);
 
   const changePage = (page) => {
-    if (page < 1 || page > totalPages) return;
     setCurrentPage(page);
   };
 
@@ -38,8 +36,8 @@ const Pagination = ({ currentPage, setCurrentPage, totalCount, pageSize }) => {
   return (
     <>
       <div className="Pagination">
-        <button onClick={goToPrevGroup}>
-          <img src={arrow_left} alt="처음으로" />
+        <button disabled={currentPage <= 5} onClick={goToPrevGroup}>
+          <img src={arrow_left} alt="이전 5페이지" />
         </button>
         {currentGroup.map((num) => (
           <button
@@ -50,8 +48,11 @@ const Pagination = ({ currentPage, setCurrentPage, totalCount, pageSize }) => {
             {num}
           </button>
         ))}
-        <button onClick={goToNextGroup}>
-          <img src={arrow_right} alt="끝으로" />
+        <button
+          disabled={currentPage >= totalPages - 4}
+          onClick={goToNextGroup}
+        >
+          <img src={arrow_right} alt="다음 5페이지 " />
         </button>
       </div>
     </>

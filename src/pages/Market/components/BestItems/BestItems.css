@@ -13,19 +13,28 @@
   color: var(--gray900);
 }
 
-.BestItems .item-list {
-  display: flex;
+.BestItems .item-list.best-four {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 24px;
+}
+
+.BestItems .item-list.best-two {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.BestItems .item-list.best-one {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
 }
 
 @media (max-width: 1199px) {
   .BestItems {
     margin: 24px 0 40px;
     padding: 0 24px;
-  }
-
-  .BestItems .item-list {
-    gap: 10px;
   }
 }
 

@@ -26,7 +26,7 @@ const Market = () => {
 
   return (
     <>
-      <Header location="market" />
+      <Header />
       <BestItems deviceType={deviceType} />
       <AllItems deviceType={deviceType} />
     </>

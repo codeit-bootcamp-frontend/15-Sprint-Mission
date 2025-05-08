@@ -1,10 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { getProducts } from "../../../../../src/api.js";
 import Item from "../Item/Item";
 import Pagination from "../Pagination/Pagination.jsx";
 import "./AllItems.css";
 
+import useDetectClose from "../../../../hooks/useDetectClose.jsx";
 import search from "../../../../assets/images/search.svg";
 
 const AllItems = ({ deviceType }) => {
@@ -14,6 +15,9 @@ const AllItems = ({ deviceType }) => {
   const [orderBy, setOrderBy] = useState("recent");
   const [searchKeyword, setSearchKeyword] = useState("");
   const [pageSize, setPageSize] = useState(10);
+  const [loading, setLoading] = useState(true);
+  const dropdownRef = useRef(null);
+  const [showDropdown, setShowDropdown] = useDetectClose(dropdownRef);
 
   const nav = useNavigate();
   const onClickButton = () => {
@@ -46,10 +50,17 @@ const AllItems = ({ deviceType }) => {
       });
       setItems(data.list);
       setTotalCount(data.totalCount);
+      setLoading(false);
     }
 
     getItems();
   }, [currentPage, orderBy, searchKeyword, pageSize]);
+
+  const handleOrderChange = (orderType) => {
+    setOrderBy(orderType);
+    setCurrentPage(1);
+    setShowDropdown(false);
+  };
 
   return (
     <>
@@ -70,57 +81,40 @@ const AllItems = ({ deviceType }) => {
               }}
             />
           </div>
-          <select
-            className="orderby"
-            onChange={(e) => {
-              setOrderBy(e.target.value);
-              setCurrentPage(1);
-            }}
-          >
-            <option value="recent">최신순</option>
-            <option value="favorite">좋아요순</option>
-          </select>
+
           <div
-            className="orderby-mobile"
+            className="orderby"
+            ref={dropdownRef}
             onClick={() => {
-              document
-                .querySelector(".orderby-dropdown")
-                .classList.toggle("show");
+              setShowDropdown(!showDropdown);
             }}
           >
+            <p>{orderBy === "recent" ? "최신순" : "좋아요순"}</p>
             <button className="orderby-icon"></button>
-            <div className="orderby-dropdown">
-              <div
-                className="first-option"
-                onClick={() => {
-                  setOrderBy("recent");
-                  setCurrentPage(1);
-                  document
-                    .querySelector(".orderby-dropdown")
-                    .classList.toggle("show");
-                }}
-              >
-                최신순
+            {showDropdown && (
+              <div className="orderby-dropdown">
+                <div
+                  className="first-option"
+                  onClick={() => handleOrderChange("recent")}
+                >
+                  최신순
+                </div>
+                <div
+                  className="second-option"
+                  onClick={() => handleOrderChange("favorite")}
+                >
+                  좋아요순
+                </div>
               </div>
-              <div
-                className="second-option"
-                onClick={() => {
-                  setOrderBy("favorite");
-                  setCurrentPage(1);
-                  document
-                    .querySelector(".orderby-dropdown")
-                    .classList.toggle("show");
-                }}
-              >
-                좋아요순
-              </div>
-            </div>
+            )}
           </div>
         </div>
         <div className="items-container">
-          {items.map((item) => {
-            return <Item key={item.id} item={item} size={getItemSize()} />;
-          })}
+          {loading
+            ? Array.from({ length: pageSize }).map((_, idx) => (
+                <Item key={idx} isLoading={true} />
+              ))
+            : items.map((item) => <Item key={item.id} item={item} />)}
         </div>
         <Pagination
           currentPage={currentPage}

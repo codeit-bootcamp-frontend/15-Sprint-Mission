@@ -55,3 +55,8 @@ button {
 body {
   overflow-x: hidden;
 }
+
+ol,
+ul {
+  list-style: none;
+}

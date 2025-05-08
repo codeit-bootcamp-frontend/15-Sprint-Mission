@@ -78,10 +78,48 @@
   font-weight: 400;
   color: var(--gray800);
   order: 4;
+  width: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  position: relative;
 }
 
-.AllItems .orderby-mobile {
-  display: none;
+.AllItems .orderby-icon {
+  width: 24px;
+  height: 24px;
+  background-image: url("../../../../assets/images/arrow_down.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border: none;
+  background-color: white;
+}
+
+.orderby-dropdown {
+  position: absolute;
+  background: white;
+  border: 1px solid var(--gray200);
+  border-radius: 12px;
+  z-index: 1;
+  left: 0;
+  bottom: -92px;
+}
+
+.orderby-dropdown div {
+  width: 130px;
+  height: 42px;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--gray800);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.orderby-dropdown .first-option {
+  border-bottom: 1px solid var(--gray200);
 }
 
 .AllItems .items-container {
@@ -136,10 +174,6 @@
   }
 
   .AllItems .orderby {
-    display: none; /* select 숨김 */
-  }
-
-  .AllItems .orderby-mobile {
     display: inline-block;
     padding: 9px;
     border: 1px solid var(--gray200);
@@ -151,7 +185,11 @@
     cursor: pointer;
   }
 
-  .orderby-icon {
+  .AllItems .orderby p {
+    display: none;
+  }
+
+  .AllItems .orderby-icon {
     width: 24px;
     height: 24px;
     background-image: url("../../../../assets/images/sort.svg");
@@ -163,32 +201,7 @@
   }
 
   .orderby-dropdown {
-    display: none;
-    position: absolute;
-    background: white;
-    border: 1px solid var(--gray200);
-    border-radius: 12px;
-    z-index: 1;
     left: -90px;
     bottom: -90px;
-  }
-
-  .orderby-dropdown div {
-    width: 130px;
-    height: 42px;
-    font-size: 16px;
-    font-weight: 400;
-    color: var(--gray800);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .orderby-dropdown .first-option {
-    border-bottom: 1px solid var(--gray200);
-  }
-
-  .orderby-dropdown.show {
-    display: block;
   }
 }

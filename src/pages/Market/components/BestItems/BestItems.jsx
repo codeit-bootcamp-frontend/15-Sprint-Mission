@@ -5,6 +5,13 @@ import Item from "../Item/Item";
 
 const BestItems = ({ deviceType }) => {
   const [items, setItems] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  function getSkeletonCount(deviceType) {
+    if (deviceType === "mobile") return 1;
+    if (deviceType === "tablet") return 2;
+    return 4;
+  }
 
   const getItemSize = () => {
     if (deviceType === "mobile") return "best-one";
@@ -23,6 +30,7 @@ const BestItems = ({ deviceType }) => {
         orderBy: "favorite",
       });
       setItems(data.list);
+      setLoading(false);
     }
 
     getBestItems();
@@ -32,10 +40,12 @@ const BestItems = ({ deviceType }) => {
     <>
       <div className="BestItems">
         <p className="title">베스트 상품</p>
-        <div className="item-list">
-          {items.map((item) => {
-            return <Item key={item.id} item={item} size={getItemSize()} />;
-          })}
+        <div className={`item-list ${getItemSize()}`}>
+          {loading
+            ? Array.from({ length: getSkeletonCount(deviceType) }).map(
+                (_, idx) => <Item key={idx} isLoading={true} />
+              )
+            : items.map((item) => <Item key={item.id} item={item} />)}
         </div>
       </div>
     </>
