@@ -9,7 +9,7 @@ const ProductListItem = ({ id, title, image, price, favorite }) => {
 
   return (
     <li>
-      <Link to={`/product/${id}`} className={styles.productListItem}>
+      <Link to={`/items/${id}`} className={styles.productListItem}>
         <div className={styles.productListItemImage}>
           <img 
             src={image?.startsWith('http') ? image : defaultImage} 

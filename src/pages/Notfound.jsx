@@ -1,5 +1,6 @@
-const Notfound = () => {
+const NotFound = () => {
   return <div>잘못된 페이지입니다.</div>;
 };
 
-export default Notfound;
+export default NotFound;
+ 

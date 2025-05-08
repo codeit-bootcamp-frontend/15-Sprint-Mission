@@ -1,5 +1,4 @@
 import './styles/index.css';
-import { createContext } from 'react';
 import AppRoutes from './routes/AppRoutes';
 
 function App() {
