@@ -5,97 +5,10 @@
   gap: 24px;
   flex-wrap: wrap;
 }
-.title {
-  @include font-20-bold;
-  display: block;
-}
 .allItems {
   width: 1201px;
   margin: 0 auto;
   margin-bottom: 40px;
-}
-
-//allItems__header
-.allItems__header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 24px;
-}
-.allItems__controllers {
-  display: flex;
-  gap: 12px;
-  align-items: center;
-}
-input.search {
-  @include font-16-regular;
-  width: 325px;
-  height: 42px;
-  background-color: #f3f4f6;
-  padding-left: 44px;
-  border-radius: 12px;
-
-  background-image: url("../../image/search.svg");
-  background-repeat: no-repeat;
-  background-position: 16px center;
-}
-button.additem {
-  @include font-16-semiBold;
-  color: #f3f4f6;
-  background-color: #3692ff;
-  border-radius: 8px;
-  width: 133px;
-  height: 42px;
-  text-align: center;
-}
-
-.dropdown {
-  @include font-16-regular;
-  position: relative;
-}
-.dropdown button {
-  width: 110px;
-  height: 42px;
-  padding-left: 20px;
-  border: 1px solid #e5e7eb;
-  border-radius: 12px;
-  background-image: url("../../image/triangle.svg");
-  background-repeat: no-repeat;
-  background-position: right 20px center;
-  background-color: white;
-}
-.dropRecent::after {
-  content: "최신순";
-  color: #1f2937;
-}
-.dropFavorite::after {
-  content: "좋아요순";
-  color: #1f2937;
-}
-.dropdown ul {
-  display: grid;
-  position: absolute;
-  top: 50px;
-  cursor: pointer;
-}
-.dropdown__recent {
-  width: 130px;
-  padding: 9px 0 7px 0;
-  text-align: center;
-  background-color: white;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
-  border: 1px solid #e5e7eb;
-  border-bottom: none;
-}
-.dropdown__favorite {
-  width: 130px;
-  padding: 9px 0 7px 0;
-  text-align: center;
-  background-color: white;
-  border-bottom-left-radius: 12px;
-  border-bottom-right-radius: 12px;
-  border: 1px solid #e5e7eb;
 }
 
 //pagination
@@ -134,9 +47,6 @@ button.additem {
   .allItems {
     width: 696px;
   }
-  input.search {
-    width: 198px;
-  }
 }
 @media (max-width: 376px) {
   .items {
@@ -144,48 +54,5 @@ button.additem {
   }
   .allItems {
     width: 344px;
-  }
-
-  .allItems__header {
-    margin-bottom: 66px;
-    position: relative;
-  }
-  .title {
-    display: inline-block;
-    margin-right: 137px;
-    white-space: nowrap;
-    padding: 5px 0;
-  }
-  .allItems__controllers {
-    position: absolute;
-    top: 0;
-    flex-wrap: wrap;
-    gap: 8px;
-    width: 100%;
-    justify-content: space-between;
-    align-items: flex-start;
-  }
-  button.additem {
-    margin-left: 211px;
-    order: -1;
-  }
-  input.search {
-    width: 244px;
-  }
-  .dropdown button {
-    width: 42px;
-    height: 42px;
-    padding-left: 0;
-    background-image: url("../../image/sort.svg");
-    background-position: center;
-  }
-  .dropRecent::after {
-    display: none;
-  }
-  .dropFavorite::after {
-    display: none;
-  }
-  .dropdown ul {
-    right: 0;
   }
 }

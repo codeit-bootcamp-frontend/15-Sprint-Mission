@@ -1,134 +1,105 @@
 import styles from "./AllItems.module.scss";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import getItems from "../../API/getItems";
 import Item from "../Item/Item";
-import { useNavigate } from "react-router";
 import Pagination from "./Pagination";
-import handleResize from "./handleResize";
+import AllItemsHeader from "../AllItemsHeader/AllItemsHeader";
+import getDeviceType from "./getDeviceType";
 
 export default function AllItems() {
-  //useEffect - fetchItems
   const [allItems, setAllItems] = useState([]);
   const [sort, setSort] = useState("recent");
-  const [page, setPage] = useState(1); //fetch parameter
+  const [page, setPage] = useState(1);
   const [itemTotalCount, setItemTotalCount] = useState();
-  //
-  // const deviceType = useDeviceType();
-  const [showItems, setShowItems] = useState([]);
-  //pagination
   const [pages, setPages] = useState([1, 5]); //페이지네이션 페이지 숫자 범위
-  const totalPages = Math.ceil(itemTotalCount / 10);
-  //etc
-  const [open, setOpen] = useState(false); //드롭다운 오픈
-  const navigate = useNavigate();
+  const [newpages, setNewpages] = useState(1);
+  const [showItems, setShowItems] = useState([]);
+  const [length, setLength] = useState(0);
+  const deviceType = getDeviceType();
+
+  const totalPages = //끝페이지 숫자
+    deviceType === "desktop"
+      ? Math.ceil(itemTotalCount / 10)
+      : deviceType === "tablet"
+      ? Math.ceil(itemTotalCount / 6)
+      : Math.ceil(itemTotalCount / 4);
 
   useEffect(() => {
     async function fetchItems() {
       try {
-        const items = await getItems(page, 60, sort);
+        const safePage = Math.max(newpages, 1);
+        const items = await getItems(safePage, 60, sort);
         setAllItems(items.list);
-        handleResize(deviceType, allItems, setShowItems);
         setItemTotalCount(items.totalCount);
       } catch (error) {
         console.error("전체 아이템 불러오기 실패:", error);
       }
     }
     fetchItems();
-  }, [sort, page]);
+  }, [sort, newpages]);
 
-  // //화면 리사이즈..
-  // useEffect(() => {
-  //   if (deviceType === "tablet") {
-  //     setShowItems(allItems.slice(0, 6));
-  //     console.log("tablet");
-  //   } else if (deviceType === "mobile") {
-  //     setShowItems(allItems.slice(0, 4));
-  //     console.log("mobile");
-  //   } else {
-  //     setShowItems(allItems.slice(0, 10));
-  //     console.log("desktop");
-  //   }
-  // }, [deviceType]);
-  //
-  // 화면 리사이즈 감지
-  const deviceType = getDeviceType();
+  const pageSize = useMemo(() => {
+    return deviceType === "desktop" ? 10 : deviceType === "tablet" ? 6 : 4;
+  }, [deviceType]);
 
-  function getDeviceType() {
-    const width = document.documentElement.clientWidth;
-    if (width <= 376) return "mobile";
-    if (width <= 744) return "tablet";
-    return "desktop";
-  }
+  const pagesPerRequest = Math.floor(60 / pageSize); // 데스크탑일 경우 6페이지 단위
 
   useEffect(() => {
-    const resizeHandler = () => {
-      handleResize(deviceType, allItems, setShowItems);
+    const currentBatch = Math.floor((page - 1) / pagesPerRequest); // 이번 구간
+    const fetchPage = currentBatch + 1;
+    if (fetchPage !== newpages) {
+      setNewpages(fetchPage);
+      return;
+    }
+
+    const indexInBatch = (page - 1) % pagesPerRequest; // 이번 구간에서 몇 번째 페이지인지 -> slice용 offset, limit 계산
+    const offset = indexInBatch * pageSize;
+    const limit = offset + pageSize;
+
+    setShowItems(allItems.slice(offset, limit)); // 새로운 아이템 설정
+  }, [page, allItems, pageSize, pagesPerRequest]);
+
+  useEffect(() => {
+    const onResize = () => {
+      checkPages();
     };
 
-    window.addEventListener("resize", resizeHandler);
-    resizeHandler(); // 초기 실행
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, [totalPages]);
 
-    return () => window.removeEventListener("resize", resizeHandler);
-  }, [deviceType, allItems]);
+  function checkPages() {
+    //화면 리사이즈에 따른, 페이지 수 재설정
+    //작은화면에서 끝 페이지로 갔을때, 에러있음.. 개선하기
+    if (pages[1] > totalPages) {
+      setPages([1, 5]);
+      setPage(1);
+    }
+    if (length < 5) {
+      setPages((prev) => [prev[0], prev[0] + 4]);
+    }
+  }
 
-  //페이지네이션 - 화살표 버튼 클릭 함수
   function pagesUpdate(prev, direction) {
     if (
       (direction === "left" && prev[0] === 1) ||
       (direction === "right" && prev[1] === totalPages)
     ) {
       return prev;
-    } else if (direction === "left" && prev[1] === totalPages) {
-      return [prev[0] - 5, prev[0] - 1];
-    } else if (direction === "left" && prev[0] > 1) {
-      return [prev[0] - 5, prev[1] - 5];
-    } else if (direction === "right" && prev[1] < totalPages) {
-      const nextStartPage = prev[0] + 5;
-      const nextEndPage = Math.min(prev[1] + 5, totalPages); // 마지막 페이지 넘지 않게 제한
-      return [nextStartPage, nextEndPage];
+    } else if (direction === "left") {
+      const newEnd = prev[0] - 1;
+      const newStart = Math.max(newEnd - 4, 1);
+      return [newStart, newEnd];
+    } else if (direction === "right") {
+      const newStart = prev[0] + 5;
+      const newEnd = Math.min(newStart + 4, totalPages);
+      return [newStart, newEnd];
     }
   }
 
   return (
     <div className={styles.allItems}>
-      <div className={styles["allItems__header"]}>
-        <h3 className={styles.title}>전체 상품</h3>
-        <div className={styles["allItems__controllers"]}>
-          <input
-            type="text"
-            className={styles.search}
-            placeholder="검색할 상품을 입력해주세요"
-          />
-          <button
-            className={styles.additem}
-            onClick={() => navigate("/additem")}
-          >
-            상품 등록하기
-          </button>
-          <div className={styles.dropdown}>
-            <button
-              className={`${
-                sort === "recent" ? styles.dropRecent : styles.dropFavorite
-              }`}
-              onClick={() => setOpen((prev) => !prev)}
-            ></button>
-            <ul style={{ display: open ? "grid" : "none" }}>
-              <li
-                className={styles["dropdown__recent"]}
-                onClick={() => setSort("recent")}
-              >
-                최신순
-              </li>
-              <li
-                className={styles["dropdown__favorite"]}
-                onClick={() => setSort("favorite")}
-              >
-                좋아요순
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
+      <AllItemsHeader sort={sort} setSort={setSort} setPage={setPage} />
 
       <div className={styles.items}>
         {showItems.map((item) => (
@@ -141,7 +112,12 @@ export default function AllItems() {
           className={styles.leftArrow}
           onClick={() => setPages((prev) => pagesUpdate(prev, "left"))}
         />
-        <Pagination pages={pages} page={page} setPage={setPage} />
+        <Pagination
+          pages={pages}
+          page={page}
+          setPage={setPage}
+          setLength={setLength}
+        />
         <button
           className={styles.rightArrow}
           onClick={() => setPages((prev) => pagesUpdate(prev, "right"))}
