@@ -66,6 +66,7 @@ function AddItemPage() {
                 type="file"
                 onChange={handleUploadImg}
                 ref={imgRef}
+                disabled={imgPreview}
               />
             </label>
             {imgPreview ? (
