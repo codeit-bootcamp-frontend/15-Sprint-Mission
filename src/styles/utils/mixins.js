@@ -1,7 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 
-// 미디어 쿼리 믹스인들
 export const desktop = (style) => css`
   @media (min-width: 1200px) {
     ${style};
