@@ -1,0 +1,24 @@
+import { Routes, Route } from 'react-router-dom';
+import Login from '../pages/Login';
+import Signup from '../pages/Signup';
+import Items from '../pages/Items';
+import Board from '../pages/Board';
+import Notfound from '../pages/Notfound';
+import AddItem from '../pages/AddItem';
+import Home from '../pages/Home';
+
+const AppRoutes = () => {
+  return (
+    <Routes>
+      <Route path='/' element={<Home />} />
+      <Route path='/login' element={<Login />} />
+      <Route path='/signup' element={<Signup />} />
+      <Route path='/items' element={<Items />} />
+      <Route path='/additem' element={<AddItem />} />
+      <Route path='/board' element={<Board />} />
+      <Route path='*' element={<Notfound />} />
+    </Routes>
+  );
+};
+
+export default AppRoutes; 
