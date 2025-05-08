@@ -9,11 +9,20 @@ export default function Item({ item, listType }) {
 
   return (
     <div className={styles.item}>
-      <ImageWithValidation
-        styleClass={styleClass}
-        imageURL={item.images}
-        alt="프로필 이미지"
-      />
+      {item.images ? (
+        <ImageWithValidation
+          styleClass={styleClass}
+          imageURL={item.images}
+          alt="프로필 이미지"
+        />
+      ) : (
+        <div className={styleClass}></div>
+      )}
+      {/* //   <ImageWithValidation
+    //     styleClass={styleClass}
+    //     imageURL={item.images}
+    //     alt="프로필 이미지"
+    //   /> */}
 
       <div className={styles.item__description}>
         <h3 className={styles["item__name"]}>{item.name}</h3>

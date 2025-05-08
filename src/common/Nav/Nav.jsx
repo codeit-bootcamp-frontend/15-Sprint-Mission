@@ -12,8 +12,16 @@ export default function Nav() {
     <nav>
       <div className={styles["nav--left"]}>
         <div className={styles.logo} onClick={() => navigate("/")}>
-          <img src={pandaFace} alt="panda face"></img>
-          <img src={pandaMarket} alt="panda market"></img>
+          <img
+            src={pandaFace}
+            className={styles.pandaface}
+            alt="panda face"
+          ></img>
+          <img
+            src={pandaMarket}
+            className={styles.pandamarket}
+            alt="panda market"
+          ></img>
         </div>
         <div className={styles.menu}>
           <span>자유게시판</span>

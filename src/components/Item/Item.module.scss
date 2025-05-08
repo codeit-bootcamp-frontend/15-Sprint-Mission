@@ -40,3 +40,15 @@
   gap: 4px;
   color: #4b5563;
 }
+@media (max-width: 744px) {
+  .image--inBest {
+    width: 343px;
+    height: 343px;
+  }
+}
+@media (max-width: 376px) {
+  .image--inAll {
+    width: 168px;
+    height: 168px;
+  }
+}

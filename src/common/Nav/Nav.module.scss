@@ -28,3 +28,29 @@ nav {
 .profile {
   cursor: pointer;
 }
+@media (max-width: 744px) {
+  nav {
+    padding: 10px 24px;
+  }
+  .nav--left {
+    gap: 20px;
+  }
+}
+@media (max-width: 376px) {
+  nav {
+    padding: 15px 16px;
+  }
+  .nav--left {
+    gap: 8px;
+  }
+  .pandaface {
+    display: none;
+  }
+  .pandamarket {
+    width: 81px;
+  }
+  .menu {
+    gap: 8px;
+    font-size: 16px;
+  }
+}

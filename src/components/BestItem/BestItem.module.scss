@@ -14,3 +14,18 @@
   margin: 0 auto;
   margin-bottom: 40px;
 }
+@media (max-width: 744px) {
+  .items {
+    gap: 10px;
+  }
+  .bestItems {
+    width: 696px;
+    overflow: hidden;
+  }
+}
+@media (max-width: 376px) {
+  .bestItems {
+    width: 343px;
+    overflow: hidden;
+  }
+}
