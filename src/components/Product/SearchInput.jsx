@@ -6,9 +6,6 @@ const SearchInput = ({placeholder, setOrderBy, setSearchKeyword}) => {
   const [isOpen, toggleOpen] = useReducer((state) => !state, false);
   const [selectedSort, setSelectedSort] = useState('최신순');
   const [search, setSearch] = useState('');
-
- 
-
   const handleOptionClick = (option, apiValue) => {
     setSelectedSort(option);
     setOrderBy(apiValue);
