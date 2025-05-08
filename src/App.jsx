@@ -7,23 +7,27 @@ import Items from "./pages/Items";
 import FAQ from "./pages/FAQ";
 import Privacy from "./pages/Privacy";
 import "./styles/reset.css";
-import "./styles/global.css";
 import "./styles/utils/variable.css";
+import { Global } from "@emotion/react";
+import { globalStyles } from "./styles/GlobalStyle";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route element={<AuthLayout />}>
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
-        </Route>
-        <Route path="/items" element={<Items />} />
-        <Route path="/faq" element={<FAQ />} />
-        <Route path="/privacy" element={<Privacy />} />
-      </Routes>
-    </BrowserRouter>
+    <>
+      <Global styles={globalStyles} />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route element={<AuthLayout />}>
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+          </Route>
+          <Route path="/items" element={<Items />} />
+          <Route path="/faq" element={<FAQ />} />
+          <Route path="/privacy" element={<Privacy />} />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 
