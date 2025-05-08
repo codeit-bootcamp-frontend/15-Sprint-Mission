@@ -1,7 +1,4 @@
-import './App.css';
-import './styles/reset.css';
-import './styles/layout.css';
-import './styles/common.css';
+import './styles/index.css';
 import { createContext } from 'react';
 import AppRoutes from './routes/AppRoutes';
 
