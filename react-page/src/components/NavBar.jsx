@@ -22,16 +22,16 @@ const NavBar = () => {
           <img
             src={Logo}
             alt='HeaderLogo'
-            className='w-[15.3rem] h-[5.1rem] mr-[3.2rem] cursor-pointer'
+            className='w-[15.3rem] h-[5.1rem] mr-[2rem] cursor-pointer'
             onClick={() => {
               window.location.href = '/index.html';
             }}
           />
         )}
 
-        <div className='text-[1.8rem] font-[700] flex gap-6'>
+        <div className='text-[1.4rem] font-[700] flex gap-6 md:text-[1.8rem]'>
           <p className=''>자유게시판</p>
-          <p>중고마켓</p>
+          <p className='text-[#3692ff]'>중고마켓</p>
         </div>
       </div>
       <img src={ProfileImg} alt='ProfileImg' className='w-[4rem] h-[4rem]' />

@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
-import NavBar from '../components/NavBar';
-import { GetItems, GetFavoriteItems } from '../apis/GetItem';
-import BestCard from '../components/BestCard';
-import useDeviceSize from '../hooks/useDeviceSize';
-import ItemCard from '../components/ItemCard';
-import '../App.css';
+import NavBar from '../../components/NavBar';
+import { GetItems, GetFavoriteItems } from '../../apis/GetItem';
+import BestCard from './components/BestCard';
+import useDeviceSize from '../../hooks/useDeviceSize';
+import ItemCard from './components/ItemCard';
+import { useNavigate } from 'react-router-dom';
 
 export default function ItemPage() {
   const [products, setProducts] = useState([]);
@@ -12,6 +12,8 @@ export default function ItemPage() {
   const [sortType, setSortType] = useState('latest');
   const [currentPage, setCurrentPage] = useState(1);
   const [totalCount, setTotalCount] = useState(0);
+
+  const navigate = useNavigate();
 
   const { isMobile, isTablet } = useDeviceSize();
 
@@ -22,7 +24,16 @@ export default function ItemPage() {
   };
 
   const ProductsPerPage = getProductsPerPage();
+
   const totalPages = Math.ceil(totalCount / ProductsPerPage);
+
+  const pageGroupSize = 5;
+
+  const currentGroup = Math.ceil(currentPage / pageGroupSize);
+
+  const startPage = (currentGroup - 1) * pageGroupSize + 1;
+
+  const endPage = Math.min(startPage + pageGroupSize - 1, totalPages);
 
   useEffect(() => {
     const fetchFavorite = async () => {
@@ -74,7 +85,12 @@ export default function ItemPage() {
                 placeholder='검색할 상품을 입력해주세요'
                 className='border px-3 py-2 rounded flex-grow md:flex-grow-0 h-[4.2rem] text-2xl'
               />
-              <button className='bg-blue-500 text-white px-[2.3rem] py-[1.2rem] rounded whitespace-nowrap text-2xl rounded-3xl'>
+              <button
+                onClick={() => {
+                  navigate('/add');
+                }}
+                className='bg-blue-500 text-white px-[2.3rem] py-[1.2rem] rounded whitespace-nowrap text-2xl rounded-3xl cursor-pointer'
+              >
                 상품 등록하기
               </button>
               <select
@@ -94,20 +110,41 @@ export default function ItemPage() {
             ))}
           </div>
 
-          <div className='flex justify-center gap-2'>
-            {Array.from({ length: totalPages }, (_, i) => (
+          <div className='flex justify-center gap-2 mt-6'>
+            {startPage > 1 && (
               <button
-                key={i}
-                onClick={() => setCurrentPage(i + 1)}
-                className={`px-3 py-1 rounded border ${
-                  currentPage === i + 1
-                    ? 'bg-blue-500 text-white'
-                    : 'bg-white text-black'
-                }`}
+                onClick={() => setCurrentPage(startPage - 1)}
+                className='px-3 py-1 rounded border bg-gray-200'
               >
-                {i + 1}
+                &lt;
               </button>
-            ))}
+            )}
+
+            {Array.from({ length: endPage - startPage + 1 }, (_, i) => {
+              const page = startPage + i;
+              return (
+                <button
+                  key={page}
+                  onClick={() => setCurrentPage(page)}
+                  className={`px-3 py-1 rounded border ${
+                    currentPage === page
+                      ? 'bg-blue-500 text-white'
+                      : 'bg-white text-black'
+                  }`}
+                >
+                  {page}
+                </button>
+              );
+            })}
+
+            {endPage < totalPages && (
+              <button
+                onClick={() => setCurrentPage(endPage + 1)}
+                className='px-3 py-1 rounded border bg-gray-200'
+              >
+                &gt;
+              </button>
+            )}
           </div>
         </div>
       </div>
