@@ -2,36 +2,88 @@ import { Outlet } from "react-router";
 import { useEffect } from "react";
 import { Logo } from "./Logo";
 import logo from "@/assets/logo/logo.png";
-import styles from "@/styles/components/AuthLayout.module.scss";
+import { css } from "@emotion/react";
+import { mobile } from "@/styles/utils/mixins";
+
+const mainContainer = (isLogin) => css`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  ${isLogin
+    ? css`
+        width: 640px;
+        height: 618px;
+      `
+    : css`
+        width: 100%;
+        height: 100%;
+      `}
+
+  ${mobile(css`
+    width: 100%;
+    margin: 0 auto;
+  `)};
+`;
 
 function AuthLayout() {
   useEffect(() => {
-    // 마운트 시 클래스 추가
-    document.body.classList.add("authBody");
-    document.documentElement.classList.add("authHtml");
+    const isLogin = location.pathname.includes("login");
 
-    if (location.pathname.includes("login")) {
-      document.body.classList.add("login");
-    } else if (location.pathname.includes("signup")) {
-      document.body.classList.add("signup");
-    }
+    // html과 body에 기본 스타일 적용
+    document.documentElement.style.cssText = `
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+    `;
 
-    // 언마운트 시 클래스 제거
+    document.body.style.cssText = `
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+    `;
+
+    // 반응형 마진 적용
+    const updateMargin = () => {
+      const width = window.innerWidth;
+      if (width >= 768) {
+        // desktop & tablet
+        document.body.style.margin = isLogin ? "231px 640px" : "60px auto";
+      } else {
+        // mobile
+        document.body.style.margin = isLogin
+          ? "80px 16px 231px"
+          : "24px 16px 179px 16px";
+      }
+    };
+
+    updateMargin();
+    window.addEventListener("resize", updateMargin);
+
     return () => {
-      document.body.classList.remove("authBody", "login", "signup");
-      document.documentElement.classList.remove("authHtml");
+      // 스타일 초기화
+      document.documentElement.style.cssText = "";
+      document.body.style.cssText = "";
+      window.removeEventListener("resize", updateMargin);
     };
   }, []);
 
-  const mainClass = location.pathname.includes("login") ? styles.loginMain : "";
+  const isLogin = location.pathname.includes("login");
 
   return (
-    <main className={mainClass}>
-      <Logo
-        linkClass={styles.logoLink}
-        imgClass={styles.logoImg}
-        srcLogo={logo}
-      />
+    <main css={mainContainer(isLogin)}>
+      <Logo srcLogo={logo} />
       <Outlet />
     </main>
   );

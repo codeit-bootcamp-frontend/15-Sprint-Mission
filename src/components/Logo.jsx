@@ -7,11 +7,12 @@ const variants = {
   default: css`
     width: 396px;
     height: auto;
-    margin: 0 122px;
+    margin: 0 122px 40px 122px;
 
     ${mobile(css`
       width: 198px;
       height: auto;
+      margin: 10px 72.5px 24px 72.5px;
     `)};
   `,
   homeDesktop: css`

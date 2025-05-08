@@ -1,5 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
+import { mobile } from "@/styles/utils/mixins";
 
 export const inputGroup = css`
   font-size: 18px;
@@ -29,9 +30,9 @@ export const authInput = css`
     letter-spacing: 0%;
   }
 
-  @media (max-width: 767px) {
+  ${mobile(css`
     width: 100%;
-  }
+  `)}
 `;
 
 export const message = css`

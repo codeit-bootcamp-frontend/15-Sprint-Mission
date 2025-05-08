@@ -1,8 +1,14 @@
 // components/common/PasswordInput.jsx
 import { useState } from "react";
-import styles from "./PasswordInput.module.scss";
 import hideIcon from "@/assets/icons/hide_password.png";
 import showIcon from "@/assets/icons/show_password.png";
+import {
+  inputGroup,
+  passwordWrapper,
+  passwordInput,
+  toggleIcon,
+  message,
+} from "./PasswordInput.styles";
 
 export function PasswordInput({
   label,
@@ -19,12 +25,12 @@ export function PasswordInput({
   };
 
   return (
-    <div className={styles.inputGroup}>
+    <div css={inputGroup}>
       <label htmlFor={id}>{label}</label>
-      <div className={styles.passwordWrapper}>
+      <div css={passwordWrapper}>
         <input
           id={id}
-          className={styles.passwordInput}
+          css={passwordInput}
           type={isVisible ? "text" : "password"}
           name={id}
           autoComplete="current-password"
@@ -35,11 +41,11 @@ export function PasswordInput({
         <img
           src={isVisible ? showIcon : hideIcon}
           alt="비밀번호 보기 토글"
-          className={styles.toggleIcon}
+          css={toggleIcon}
           onClick={toggleVisibility}
         />
       </div>
-      {errorMessage && <p className={styles.message}>{errorMessage}</p>}
+      {errorMessage && <p css={message}>{errorMessage}</p>}
     </div>
   );
 }
