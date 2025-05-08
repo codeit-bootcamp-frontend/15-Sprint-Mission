@@ -1,10 +1,13 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Button from "../components/Button";
 import Header from "../components/Header";
 import InputField from "../components/InputField";
+import plus from "../assets/icons/plus.svg";
 import x from "../assets/icons/x.svg";
 
 function AddItemPage() {
+  const imgRef = useRef(null);
+  const [imgPreview, setImgPreview] = useState("");
   const [itemName, setItemName] = useState("");
   const [itemDetail, setItemDetail] = useState("");
   const [price, setPrice] = useState("");
@@ -12,15 +15,31 @@ function AddItemPage() {
   const [tags, setTags] = useState([]);
   const isFormValid = itemName && itemDetail && price && tags.length > 0;
 
-  const handleEnter = (e) => {
+  const handleUploadImg = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      const previewUrl = URL.createObjectURL(file);
+      setImgPreview(previewUrl);
+    }
+  };
+  const handleDeleteImg = () => {
+    setImgPreview("");
+    if (imgRef.current) {
+      imgRef.current.value = null;
+    }
+  };
+
+  const handleEnterTag = (e) => {
     if (e.key === "Enter" && !e.nativeEvent.isComposing) {
       e.preventDefault();
-      const newTag = tagInput;
-      setTags([...tags, newTag]);
+      const newTag = tagInput.trim();
+      if (newTag && !tags.includes(newTag)) {
+        setTags([...tags, newTag]);
+      }
       setTagInput("");
     }
   };
-  const handleDelete = (index) => {
+  const handleDeleteTag = (index) => {
     const newTags = [...tags];
     newTags.splice(index, 1);
     setTags(newTags);
@@ -38,9 +57,41 @@ function AddItemPage() {
         </div>
         <div className="flex flex-col justify-center gap-16">
           <div className="text-2lg font-bold">상품 이미지</div>
-          <div className="size-168 pc:size-282 bg-gray100 text-gray400 text-lg font-regular rounded-xl">
-            이미지 등록
+          <div className="flex gap-10 pc:gap-24">
+            <label className="flex flex-col justify-center items-center gap-12 size-168 pc:size-282 bg-gray100 text-gray400 text-lg font-regular rounded-xl cursor-pointer">
+              <img className="size-48" src={plus} />
+              이미지 등록
+              <input
+                className="hidden"
+                type="file"
+                onChange={handleUploadImg}
+                ref={imgRef}
+              />
+            </label>
+            {imgPreview ? (
+              <>
+                <img
+                  className="size-168 pc:size-282 rounded-xl"
+                  src={imgPreview}
+                  alt="미리보기"
+                />
+                <img
+                  className="relative right-40 pc:right-52 top-8 size-22 cursor-pointer"
+                  src={x}
+                  onClick={handleDeleteImg}
+                />
+              </>
+            ) : (
+              ""
+            )}
           </div>
+          {imgPreview ? (
+            <div className="text-red text-lg font-regular">
+              *이미지 등록은 최대 1개까지 가능합니다.
+            </div>
+          ) : (
+            ""
+          )}
         </div>
         <InputField
           type="input"
@@ -68,7 +119,7 @@ function AddItemPage() {
           label="태그"
           value={tagInput}
           onChange={(e) => setTagInput(e.target.value)}
-          onKeyDown={handleEnter}
+          onKeyDown={handleEnterTag}
           placeholder="태그를 입력해주세요"
         />
         <div className="flex gap-12">
@@ -82,7 +133,7 @@ function AddItemPage() {
                 <img
                   className="size-22 cursor-pointer"
                   src={x}
-                  onClick={() => handleDelete(index)}
+                  onClick={() => handleDeleteTag(index)}
                 />
               </span>
             );
