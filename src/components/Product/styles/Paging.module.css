@@ -37,12 +37,16 @@
           transition: all 0.3s ease;
         }
       }
-      &:hover {
+      &:not(.disabled):hover {
         svg {
           path {
             stroke: var(--gray600);
           }
         }
+      }
+      &.disabled {
+        opacity: 0.5;
+        cursor: default;
       }
     }
   }

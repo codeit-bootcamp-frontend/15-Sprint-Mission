@@ -7,7 +7,11 @@ export default function Paging({ totalPage, currentPage, setCurrentPage }) {
 
   return (
     <div className={`${styles.Paging} ${totalPage <= 5 ? styles.hideArrow : ''}`}>
-      <button className={styles.arrow} onClick={() => currentPage > 1 && setCurrentPage(currentPage - 1)}>
+      <button 
+        className={`${styles.arrow} ${currentPage === 1 ? styles.disabled : ''}`} 
+        onClick={() => currentPage > 1 && setCurrentPage(currentPage - 1)}
+        disabled={currentPage === 1}
+      >
         <PagingIconArrow reverse />
       </button>
       {currentPages.map((page) => (
@@ -15,7 +19,11 @@ export default function Paging({ totalPage, currentPage, setCurrentPage }) {
           {page}
         </button>
       ))}
-      <button className={styles.arrow} onClick={() => currentPage < totalPage && setCurrentPage(currentPage + 1)}>
+      <button 
+        className={`${styles.arrow} ${currentPage === totalPage ? styles.disabled : ''}`} 
+        onClick={() => currentPage < totalPage && setCurrentPage(currentPage + 1)}
+        disabled={currentPage === totalPage}
+      >
         <PagingIconArrow />
       </button>
     </div>
