@@ -1,0 +1,65 @@
+.App {
+  width: 100%;
+  min-width: 320px;
+  position: relative;
+  margin: 0 auto;
+  overflow: hidden;
+  visibility: hidden;
+}
+#container {
+  width: 100%;
+  position: relative;
+  margin: 0 auto;
+}
+.inner {
+  max-width: 988px;
+  position: relative;
+  margin-inline: auto;
+}
+.inner02 {
+  max-width: 1120px;
+  position: relative;
+  margin-inline: auto;
+}
+.inner03 {
+  width: 640px;
+  position: relative;
+  margin-inline: auto;
+}
+.inner04 {
+  width: 1200px;
+  position: relative;
+  margin-inline: auto;
+}
+
+@media all and (max-width: 1510px) {
+  .inner02, .inner04 {
+    width: auto;
+    max-width: none;
+    margin-inline: 24px;
+  }
+}
+@media all and (max-width: 1024px) {
+  .inner, .inner02, .inner04 {
+    width: auto;
+    max-width: none;
+    margin-inline: 3.23vw;
+  }
+}
+@media all and (max-width: 768px) {
+  .auth-page .inner03 {
+    width: auto;
+    max-width: none;
+    margin-inline: 3.13vw;
+  }
+}
+
+@media all and (max-width: 425px) {
+  .inner,
+  .inner02,
+  .inner04 {
+    width: auto;
+    max-width: none;
+    margin-inline: 4.27vw;
+  }
+}

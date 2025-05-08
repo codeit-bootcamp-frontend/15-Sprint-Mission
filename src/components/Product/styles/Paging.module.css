@@ -1,0 +1,73 @@
+.Paging {
+  display: flex;
+  justify-content: center;
+  margin-top: 43px;
+  gap: 4px;
+  &.hideArrow {
+    .arrow {
+      display: none;
+    }
+  }
+  button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid var(--gray200);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gray500);
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    &.active {
+      background-color: var(--blue);
+      border-color: var(--blue);
+      color: #fff;
+    }
+    &:not(.active):hover {
+      color: var(--gray600);
+    }
+    &.arrow {
+      svg {
+        &.reverse {
+          transform: rotate(180deg);
+        }
+        path {
+          transition: all 0.3s ease;
+        }
+      }
+      &:hover {
+        svg {
+          path {
+            stroke: var(--gray600);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .Paging {
+    margin-top: 5.38vw;
+    gap: 0.54vw;
+    button {
+      width: 5.38vw;
+      height: 5.38vw;
+      font-size: 2.15vw;
+    }
+  }
+}
+
+@media (max-width: 425px) {
+  .Paging {
+    margin-top: 10.67vw;
+    gap: 1.07vw;
+    button {
+      width: 10.67vw;
+      height: 10.67vw;
+      font-size: 4.27vw;
+    }
+  }
+}

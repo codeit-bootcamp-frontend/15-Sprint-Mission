@@ -1,0 +1,117 @@
+.mainCardSection {
+  padding-block: 138px;
+}
+.mainCardSection button {
+  width: 100%;
+  background-color: var(--bg-gray);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  border-radius: 12px;
+  gap: 64px;
+  text-align: left;
+}
+.mainCardSection h2 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--blue);
+  line-height: 1.4;
+}
+.mainCardSection b {
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  line-height: 1.4;
+}
+.mainCardSection p {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.3;
+  margin-top: 24px;
+}
+.mainCardSectionImg {
+  width: 588px;
+  overflow: hidden;
+  aspect-ratio: 1.324 / 1;
+}
+.mainCardSectionImg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.8s;
+}
+.mainCardSection button:hover .mainCardSectionImg img {
+  transform: scale(1.1);
+}
+.mainCardSection:nth-of-type(even) button {
+  text-align: right;
+  flex-direction: row-reverse;
+}
+@media all and (max-width: 1024px) {
+  .mainCardSection {
+    padding-block: 0;
+    margin-bottom: 6.99vw;
+  }
+  .mainCardSection:last-of-type {
+    margin-bottom: 7.53vw;
+  }
+
+  .mainCardSection button {
+    background-color: transparent;
+    align-items: flex-start;
+    flex-direction: column;
+    border-radius: 0;
+    gap: 3.23vw;
+  }
+  .mainCardSectionImg {
+    width: 93.55vw;
+    height: 70.64vw;
+    aspect-ratio: unset;
+    border-radius: 1.88vw;
+  }
+  .mainCardSectionImg img {
+    transition: none;
+  }
+  .mainCardSection button:hover .mainCardSectionImg img {
+    transform: none;
+  }
+  .mainCardSection:nth-of-type(even) button {
+    align-items: flex-end;
+    flex-direction: column;
+  }
+  .mainCardSection h2 {
+    font-size: 2.42vw;
+    margin-bottom: 2.15vw;
+  }
+  .mainCardSection b {
+    font-size: 4.3vw;
+  }
+  .mainCardSection p {
+    font-size: 2.42vw;
+    margin-top: 3.23vw;
+  }
+}
+@media all and (max-width: 425px) {
+  .mainCardSection figure {
+    width: 91.73vw;
+    height: 69.27vw;
+    border-radius: 1.87vw;
+  }
+  .mainCardSection h2 {
+    font-size: 4.27vw;
+    margin-bottom: 2.13vw;
+  }
+  .mainCardSection b {
+    font-size: 6.4vw;
+  }
+  .mainCardSection p {
+    font-size: 4.27vw;
+    line-height: 1.6;
+    margin-top: 4.27vw;
+  }
+  .mainCardSection:last-of-type {
+    margin-bottom: 22.13vw;
+  }
+}

@@ -1,0 +1,111 @@
+.mainBanner {
+  height: 540px;
+  background-color: var(--bg);
+}
+.mainBanner :global(.inner02) {
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: 746px auto;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 100px;
+}
+.mainBanner02 {
+  border-top: 138px solid var(--gray100);
+}
+.mainBannerCont {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.mainBannerCont strong {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+.mainBannerCont button {
+  overflow: hidden;
+  padding-inline: 124px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gray50);
+  font-size: 20px;
+  font-weight: 600;
+  background-color: var(--blue);
+  border-radius: 2em;
+  height: 56px;
+}
+
+@media all and (max-width: 1024px) {
+  .mainBanner {
+    height: 103.63vw;
+  }
+  .mainBanner01 {
+    margin-bottom: 3.23vw;
+  }
+  .mainBanner :global(.inner02) {
+    background-position: center bottom;
+    background-size: 100%;
+    align-items: flex-start;
+    padding-bottom: 0;
+    padding-top: 11.29vw;
+    text-align: center;
+    margin-inline: 0;
+    justify-content: center;
+  }
+  .mainBannerCont {
+    align-items: center;
+    gap: 4.3vw;
+  }
+  .mainBannerCont strong {
+    font-size: 5.38vw;
+  }
+  .mainBannerCont button {
+    padding-inline: 16.67vw;
+    font-size: 2.69vw;
+    height: 7.53vw;
+  }
+  .mainBanner02 {
+    border-top: none;
+    height: 124.6vw;
+  }
+  .mainBanner02 :global(.inner02) {
+    padding-top: 27.02vw;
+  }
+}
+@media all and (max-width: 425px) {
+  .mainBanner {
+    height: 144vw;
+    margin-bottom: 13.87vw;
+  }
+  .mainBanner :global(.inner02) {
+    padding-top: 12.8vw;
+  }
+  .mainBannerCont {
+    gap: 4.8vw;
+  }
+  .mainBannerCont strong {
+    font-size: 8.53vw;
+  }
+  .mainBannerCont .pc-only {
+    display: block;
+  }
+  .mainBannerCont button {
+    padding-inline: 18.93vw;
+    font-size: 4.8vw;
+    height: 12.8vw;
+  }
+  .mainBanner01 {
+    margin-bottom: 13.87vw;
+  }
+  .mainBanner02 {
+    height: 144vw;
+    margin-bottom: 0;
+  }
+  .mainBanner02 :global(.inner02) {  
+    padding-top: 32.27vw;
+  }
+  
+}

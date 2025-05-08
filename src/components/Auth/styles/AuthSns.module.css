@@ -1,0 +1,56 @@
+.authSns {
+  display: flex;
+  align-items: center;
+  padding: 16px 24px;
+  background-color: #e6f2ff;
+  justify-content: space-between;
+}
+.authSns p {
+  color: var(--gray800);
+  font-size: 16px;
+  font-weight: 500;
+}
+.authSns ul {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.authSns ul li a {
+  width: 42px;
+  display: block;
+}
+.authSns ul li a img {
+  width: 100%;
+}
+.authSignup {
+  color: var(--gray800);
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+.authSignup button {
+  color: var(--blue);
+  text-decoration-line: underline;
+  text-underline-offset: 2px;
+  display: inline-block;
+}
+@media all and (max-width: 640px) {
+  .authSns {
+    padding: 2.5vw 3.75vw;
+  }
+  .authSns p {
+    font-size: 3.75vw;
+  }
+  .authSns ul {
+    gap: 3.13vw;
+  }
+  .authSns ul li a {
+    width: 9.38vw;
+  }
+  .authSignup {
+    font-size: 3.44vw;
+  }
+}

@@ -1,0 +1,38 @@
+.commonButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 42px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  padding-inline: 23px;
+  &.primary {
+    background-color: var(--blue);
+    color: #fff;
+  }
+}
+
+@media (max-width: 768px) {
+  .commonButton {
+    height: 5.65vw;
+    font-size: 2.15vw;
+    border-radius: 1.61vw;
+    padding-inline: 3.09vw;
+  }
+}
+
+@media (max-width: 425px) {
+  .commonButton {
+    height: 11.2vw;
+    font-size: 4.27vw;
+    border-radius: 2.13vw;
+    padding-inline: 6.13vw;
+    &.isItems {
+      position: absolute;
+      right: 0;
+      top: -2.13vw;
+      transform: translateY(-100%);
+    }
+  }
+}

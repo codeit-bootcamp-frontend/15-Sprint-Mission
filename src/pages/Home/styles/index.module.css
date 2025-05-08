@@ -1,0 +1,21 @@
+.mainPage {
+  padding-top: 70px;
+}
+
+@media all and (max-width: 1024px) {
+  .container {
+    padding-top: 9.41vw;
+  }
+  .mainPage {
+    padding-top: 9.41vw;
+  }
+  
+}
+@media all and (max-width: 425px) {
+  .container {
+    padding-top: 18.67vw;
+  }
+  .mainPage {
+    padding-top: 18.67vw;
+  }
+}
