@@ -17,18 +17,6 @@
   .logoWrapper {
     display: block;
     margin-left: 200px;
-
-    .desktopLogo {
-      display: block;
-      width: 153px;
-      height: auto;
-    }
-
-    .mobileLogo {
-      display: none;
-      width: 103px;
-      height: auto;
-    }
   }
 
   .loginBtn {
@@ -62,14 +50,6 @@
   @include mobile {
     .logoWrapper {
       margin-left: 16px;
-
-      .mobileLogo {
-        display: block;
-      }
-
-      .desktopLogo {
-        display: none;
-      }
     }
 
     .loginBtn {
