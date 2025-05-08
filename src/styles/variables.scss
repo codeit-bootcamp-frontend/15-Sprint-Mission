@@ -1,0 +1,39 @@
+// 색상
+
+// 폰트 두께
+$font-weight-bold: 700;
+$font-weight-semiBold: 600;
+$font-weight-medium: 500;
+$font-weight-regular: 400;
+
+// 폰트
+@mixin font-20-bold {
+  font-size: 2rem;
+  line-height: 3.2rem;
+  font-weight: $font-weight-bold;
+}
+@mixin font-16-bold {
+  font-size: 1.6rem;
+  line-height: 2.6rem;
+  font-weight: $font-weight-bold;
+}
+@mixin font-16-semiBold {
+  font-size: 1.6rem;
+  line-height: 2.6rem;
+  font-weight: $font-weight-semiBold;
+}
+@mixin font-16-regular {
+  font-size: 1.6rem;
+  line-height: 2.6rem;
+  font-weight: $font-weight-regular;
+}
+@mixin font-14-medium {
+  font-size: 1.4rem;
+  line-height: 2.4rem;
+  font-weight: $font-weight-medium;
+}
+@mixin font-12-medium {
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  font-weight: $font-weight-medium;
+}

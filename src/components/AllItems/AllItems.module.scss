@@ -1,0 +1,80 @@
+@import "../../styles/variables.scss";
+
+.items {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.title {
+  @include font-20-bold;
+  display: block;
+}
+.bestItems {
+  width: 1201px;
+  margin: 0 auto;
+  margin-bottom: 40px;
+}
+
+//
+.allItems__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+.allItems__controllers {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+input.search {
+  @include font-16-regular;
+  width: 325px;
+  height: 42px;
+  background-color: #f3f4f6;
+  padding-left: 44px;
+  border-radius: 12px;
+
+  background-image: url("../../image/search.svg");
+  background-repeat: no-repeat;
+  background-position: 16px center; /* 왼쪽에서 8px, 세로 중앙 */
+}
+button.additem {
+  @include font-16-semiBold;
+  color: #f3f4f6;
+  background-color: #3692ff;
+  border-radius: 8px;
+  width: 133px;
+  height: 42px;
+  text-align: center;
+}
+
+.dropdown {
+  @include font-16-regular;
+  position: relative;
+}
+.dropdown button {
+  padding: 9px 68px 9px 20px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background-image: url("../../image/triangle.svg");
+  background-repeat: no-repeat;
+  background-position: right 20px center;
+}
+.dropdown ul {
+  display: grid;
+  position: absolute;
+  top: 50px;
+}
+.dropdown__recent {
+  padding: 9px 44px;
+  background-color: white;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+.dropdown__favorite {
+  padding: 9px 37px;
+  background-color: white;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}

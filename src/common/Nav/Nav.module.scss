@@ -1,0 +1,30 @@
+nav {
+  display: flex;
+  padding: 10px 200px;
+  justify-content: space-between;
+  border-bottom: 1px solid #dfdfdf;
+}
+.nav--left {
+  display: flex;
+  align-items: center;
+  gap: 47px;
+}
+
+.logo {
+  display: flex;
+  gap: 8.6px;
+}
+.menu {
+  display: flex;
+  gap: 30px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 26px;
+  color: #4b5563; //Secondary/600
+}
+
+.logo,
+.menu,
+.profile {
+  cursor: pointer;
+}

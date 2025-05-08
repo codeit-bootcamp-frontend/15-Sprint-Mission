@@ -1,0 +1,42 @@
+@import "../../styles/variables.scss";
+
+.image--inBest {
+  width: 282px;
+  height: 282px;
+  border-radius: 16px;
+  margin: 16px 0;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+.image--inAll {
+  width: 221px;
+  height: 221px;
+  border-radius: 16px;
+  margin-bottom: 16px;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+.invalidImage {
+  background-color: rgb(230, 230, 230);
+}
+
+.item__description {
+  display: grid;
+  gap: 6px;
+}
+
+.item__name {
+  @include font-14-medium;
+  color: #1f2937;
+}
+.item__price {
+  @include font-16-bold;
+  color: #1f2937;
+}
+.item__favoriteCount {
+  @include font-12-medium;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #4b5563;
+}
