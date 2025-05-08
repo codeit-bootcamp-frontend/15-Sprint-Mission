@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthInput } from "../../components/Inputs/AuthInput";
 import { PasswordInput } from "../../components/Inputs/PasswordInput";
@@ -7,6 +7,12 @@ import SignEasy from "@/components/SignEasy";
 import Button from "@/components/Button";
 import { Link } from "react-router-dom";
 import { css } from "@emotion/react";
+import {
+  validateEmail,
+  validateUsername,
+  validatePassword,
+  validatePasswordConfirm,
+} from "@/utils/validation";
 
 function Signup() {
   const navigate = useNavigate();
@@ -23,30 +29,6 @@ function Signup() {
     passwordConfirm: "",
   });
   const [isFormValid, setIsFormValid] = useState(false);
-
-  const validateEmail = useCallback((value) => {
-    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    if (!value) return "이메일을 입력해주세요.";
-    if (!emailRegex.test(value)) return "잘못된 이메일 형식입니다.";
-    return "";
-  }, []);
-
-  const validateUsername = useCallback((value) => {
-    if (!value) return "닉네임을 입력해주세요.";
-    return "";
-  }, []);
-
-  const validatePassword = useCallback((value) => {
-    if (!value) return "비밀번호를 입력해주세요.";
-    if (value.length < 8) return "비밀번호는 8자 이상이어야 합니다.";
-    return "";
-  }, []);
-
-  const validatePasswordConfirm = useCallback((value, password) => {
-    if (!value) return "비밀번호 확인을 입력해주세요.";
-    if (value !== password) return "비밀번호가 일치하지 않습니다.";
-    return "";
-  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -103,13 +85,7 @@ function Signup() {
     setIsFormValid(
       !emailError && !usernameError && !passwordError && !passwordConfirmError
     );
-  }, [
-    formData,
-    validateEmail,
-    validateUsername,
-    validatePassword,
-    validatePasswordConfirm,
-  ]);
+  }, [formData]);
 
   const handleSubmit = (e) => {
     e.preventDefault();

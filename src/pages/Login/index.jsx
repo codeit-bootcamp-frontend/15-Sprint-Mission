@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { AuthInput } from "@/components/Inputs/AuthInput";
-import { PasswordInput } from "@/components/Inputs/PasswordInput";
+import { AuthInput } from "../../components/Inputs/AuthInput";
+import { PasswordInput } from "../../components/Inputs/PasswordInput";
 import AuthFormStyle from "@/components/Inputs/AuthForm.styles";
-import Button from "@/components/Button";
 import SignEasy from "@/components/SignEasy";
-import { css } from "@emotion/react";
+import Button from "@/components/Button";
 import { Link } from "react-router-dom";
+import { css } from "@emotion/react";
+import { validateEmail, validatePassword } from "@/utils/validation";
 
 function Login() {
   const navigate = useNavigate();
@@ -20,19 +21,6 @@ function Login() {
   });
   const [isFormValid, setIsFormValid] = useState(false);
 
-  const validateEmail = (value) => {
-    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    if (!value) return "이메일을 입력해주세요.";
-    if (!emailRegex.test(value)) return "잘못된 이메일 형식입니다.";
-    return "";
-  };
-
-  const validatePassword = (value) => {
-    if (!value) return "비밀번호를 입력해주세요.";
-    if (value.length < 8) return "비밀번호는 8자 이상이어야 합니다.";
-    return "";
-  };
-
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
@@ -40,31 +28,47 @@ function Login() {
       [name]: value,
     }));
 
-    const error =
-      name === "email" ? validateEmail(value) : validatePassword(value);
+    // 입력값이 변경될 때마다 해당 필드 검증
+    let error = "";
+    switch (name) {
+      case "email":
+        error = validateEmail(value);
+        break;
+      case "password":
+        error = validatePassword(value);
+        break;
+      default:
+        break;
+    }
+
     setErrors((prev) => ({
       ...prev,
       [name]: error,
     }));
   };
 
+  // 폼 유효성 검사
   useEffect(() => {
     const emailError = validateEmail(formData.email);
     const passwordError = validatePassword(formData.password);
+
     setIsFormValid(!emailError && !passwordError);
   }, [formData]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const newErrors = {
-      email: validateEmail(formData.email),
-      password: validatePassword(formData.password),
-    };
+    // 제출 시 모든 필드 검증
+    const emailError = validateEmail(formData.email);
+    const passwordError = validatePassword(formData.password);
 
-    setErrors(newErrors);
+    setErrors({
+      email: emailError,
+      password: passwordError,
+    });
 
-    if (!newErrors.email && !newErrors.password) {
+    // 모든 검증 통과 시 items 페이지로 이동
+    if (!emailError && !passwordError) {
       navigate("/items");
     }
   };
