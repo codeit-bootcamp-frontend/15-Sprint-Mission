@@ -1,0 +1,26 @@
+.itemDetailTop {
+  display: flex;
+  gap: 24px;
+}
+.itemDetailImage{
+  width: 486px;
+  flex: none;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 16px;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+.itemDetailInfo {
+  flex: 1;
+}
+.itemDetailMeta{
+  margin-top: 62px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
