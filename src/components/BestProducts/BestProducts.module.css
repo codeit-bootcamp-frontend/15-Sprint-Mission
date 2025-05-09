@@ -1,0 +1,39 @@
+.bestProducts {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  margin: 24px auto 40px;
+  gap: 16px;
+}
+
+.sectionTitle {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 32px;
+  color: #111827;
+}
+
+.productList {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 1199px) {
+  .productList {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 1023px) {
+  .productList {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .productList {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
