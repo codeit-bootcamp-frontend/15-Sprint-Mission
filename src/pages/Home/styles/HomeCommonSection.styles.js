@@ -1,6 +1,6 @@
 // src/pages/Home/styles/HomeCommonSection.styles.js
 import { css } from "@emotion/react";
-import { tablet, mobile } from "@/styles/utils/mixins";
+import { tablet, mobile, desktop } from "@/styles/utils/mixins";
 
 export const backgroundStyle = css`
   background-color: var(--skyblue);
@@ -56,5 +56,11 @@ export const h2Style = css`
 `;
 
 export const lineBreakStyle = css`
-  display: block;
+  ${desktop(css`
+    display: block;
+  `)}
+
+  ${mobile(css`
+    display: block;
+  `)}
 `;

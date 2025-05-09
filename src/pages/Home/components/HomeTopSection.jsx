@@ -18,7 +18,7 @@ function HomeTopSection() {
     <section css={[backgroundStyle, topSectionStyle]}>
       <div css={[bgDescriptionStyle, topStyle]}>
         <h2 css={h2Style}>
-          <span css={lineBreakStyle}>일상의 모든 물건을</span>
+          <span css={lineBreakStyle}>일상의 모든 물건을 </span>
           거래해보세요
         </h2>
         <Link css={itemsBtn} to="/items">

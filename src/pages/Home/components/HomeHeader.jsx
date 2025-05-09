@@ -1,46 +1,25 @@
+// src/pages/Home/components/HomeHeader.jsx
 import { Link } from "react-router";
 import { Logo } from "@/components/Logo";
 import logo from "@/assets/logo/logo.png";
 import logoMobile from "@/assets/logo/logo_mobile.png";
-import styles from "../styles/HomeHeader.module.scss";
-import { useState, useEffect } from "react";
+import useScreenSize from "@/hooks/useScreenSize";
+import { nav, logoWrapper, loginBtn } from "../styles/HomeHeader.styles.js";
 
 function HomeHeader() {
-  const [logoImg, setLogoImg] = useState(logo);
-  const [logoSize, setLogoSize] = useState(true);
-
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth < 768) {
-        setLogoImg(logoMobile);
-        setLogoSize(false);
-      } else {
-        setLogoImg(logo);
-        setLogoSize(true);
-      }
-    };
-
-    // 초기 로드시 한번 실행
-    handleResize();
-
-    // 리사이즈 이벤트 리스너 등록
-    window.addEventListener("resize", handleResize);
-
-    // 클린업 함수
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+  const { isMobile } = useScreenSize(); // 훅 사용
+  const logoImg = isMobile ? logoMobile : logo; // 화면 크기에 따라 로고 선택
+  const logoSize = !isMobile; // 화면 크기에 따라 로고 크기 결정
 
   return (
-    <header className={styles.nav}>
-      <div className={styles.logoWrapper}>
+    <header css={nav}>
+      <div css={logoWrapper}>
         <Logo
           srcLogo={logoImg}
           variant={logoSize ? "homeDesktop" : "homeMobile"}
         />
       </div>
-      <Link to="/login" className={styles.loginBtn}>
+      <Link to="/login" css={loginBtn}>
         로그인
       </Link>
     </header>
