@@ -45,9 +45,9 @@ npm run dev
 - [x] Vite 기반 프로젝트 초기 세팅
 - [x] 폴더 구조 정리 및 기본 구성
 - [x] 페이지별 JSX 마이그레이션 작업 중
-- [ ] 공통 컴포넌트 (Header, Footer) 구성 예정
-- [ ] 기능 로직 이전 (API 호출, localStorage 등)
-- [ ] 스타일 분리 및 리팩토링
+- [x] 공통 컴포넌트 (Header, Footer) 구성 예정
+- [x] 기능 로직 이전 (API 호출, localStorage 등)
+- [x] 스타일 분리 및 리팩토링
 
 👉 자세한 진행 내용은 [`CHECKLIST.md`](./CHECKLIST.md)를 참고해주세요.
 
