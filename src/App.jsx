@@ -10,6 +10,9 @@ import "./styles/reset.css";
 import "./styles/utils/variable.css";
 import { Global } from "@emotion/react";
 import { globalStyles } from "./styles/GlobalStyle";
+import ItemsLayout from "./components/ItemsLayout";
+import Board from "./pages/Board";
+import AddItem from "./pages/AddItem";
 
 function App() {
   return (
@@ -22,7 +25,11 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
           </Route>
-          <Route path="/items" element={<Items />} />
+          <Route element={<ItemsLayout />}>
+            <Route path="/items" element={<Items />} />
+            <Route path="/board" element={<Board />} />
+            <Route path="/additem" element={<AddItem />} />
+          </Route>
           <Route path="/faq" element={<FAQ />} />
           <Route path="/privacy" element={<Privacy />} />
         </Routes>
