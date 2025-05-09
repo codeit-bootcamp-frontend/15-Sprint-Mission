@@ -42,10 +42,10 @@
       &:first-of-type {
         color: var(--gray800);
         font-size: 24px;
-        font-weight: 600;
         padding-bottom: 16px;
         border-bottom: 1px solid var(--gray200);
         h4 {
+          font-weight: 600;
           line-height: 1.33;
         }
         strong {

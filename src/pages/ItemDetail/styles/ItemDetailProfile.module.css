@@ -28,3 +28,11 @@
   color: var(--gray400);
   margin-top: 2px;
 }
+.isComment {
+  .profileNickName {
+    font-size: 12px;
+  }
+  .profileUpdate {
+    font-size: 12px;
+  }
+}

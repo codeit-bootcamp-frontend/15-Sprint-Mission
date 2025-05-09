@@ -9,7 +9,7 @@ import { AddItemFormProvider, useAddItemForm } from '@/contexts/AddItemFormConte
 export default function AddItem() {
   return (
     <>
-      <Header />
+      <Header isNav />
       <div id='container' className={`${styles.addItemPage} itemsPage`}>
         <AddItemFormProvider>
           <AddItemContents />
