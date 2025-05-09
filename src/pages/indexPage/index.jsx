@@ -4,7 +4,7 @@ export default function IndexPage() {
   return (
     <div>
       <NavBar />
-      상품추가페이지
+      인덱스페이지
     </div>
   );
 }
