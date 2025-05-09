@@ -233,15 +233,16 @@ function AllItems() {
           ))}
         </ul>
       </main>
-
       <Pagination
         count={30}
         page={currentPage}
         onChange={onPageChange}
         defaultPage={1}
-        siblingCount={2} // 현재 페이지 양쪽에 2개씩 보여줌 (총 5개)
+        siblingCount={2}
         size="medium"
         color="primary"
+        hideFirstButton={true}
+        hideLastButton={true}
         sx={{
           display: "flex",
           justifyContent: "center",
@@ -252,13 +253,27 @@ function AllItems() {
           },
         }}
         renderItem={(item) => {
-          // 페이지 아이템인 경우에만 처리
           if (item.type === "page") {
             const pageNum = item.page;
-            const startPage = Math.max(1, currentPage - 2);
-            const endPage = Math.min(30, currentPage + 2);
 
-            // startPage부터 endPage까지의 범위에 있는 페이지만 표시
+            // 항상 5개의 페이지 번호가 보이도록 조정된 로직
+            let startPage, endPage;
+
+            if (currentPage <= 3) {
+              // 현재 페이지가 1, 2, 3일 경우 1~5까지 표시
+              startPage = 1;
+              endPage = 5;
+            } else if (currentPage >= 28) {
+              // 현재 페이지가 끝에 가까울 경우 마지막 5개 표시
+              startPage = 26;
+              endPage = 30;
+            } else {
+              // 그 외의 경우 현재 페이지 중심으로 앞뒤 2개씩
+              startPage = currentPage - 2;
+              endPage = currentPage + 2;
+            }
+
+            // 범위 밖의 페이지는 표시하지 않음
             if (pageNum < startPage || pageNum > endPage) {
               return null;
             }
