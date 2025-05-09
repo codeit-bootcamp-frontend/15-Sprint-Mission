@@ -1,3 +1,52 @@
-export default function AddItemTop() {
-  return <div>AddItemTop</div>;
+import { css } from "@emotion/react";
+import { tablet, mobile } from "@/styles/utils/mixins";
+export default function AddItemTop({ isDisabled = true }) {
+  return (
+    <section css={AddItemTopStyle}>
+      <h2>상품 등록하기</h2>
+      <button
+        type="submit"
+        disabled={isDisabled}
+        css={AddItemTopButtonStyle(isDisabled)}
+      >
+        등록
+      </button>
+    </section>
+  );
 }
+
+const AddItemTopStyle = css`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-style: normal;
+  width: 100%;
+
+  h2 {
+    color: var(--gray800);
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 32px;
+  }
+
+  ${tablet(css``)}
+
+  ${mobile(css``)}
+`;
+
+const AddItemTopButtonStyle = (isDisabled) => css`
+  display: flex;
+  height: 42px;
+  padding: 12px 23px;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 8px;
+  background: ${isDisabled ? "var(--gray400)" : "var(--blue100)"};
+
+  color: var(--gray100);
+
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 26px;
+`;
