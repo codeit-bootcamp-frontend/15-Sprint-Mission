@@ -1,6 +1,6 @@
 import { css } from "@emotion/react";
-import { tablet, mobile } from "@/styles/utils/mixins";
-export default function AddItemTop({ isDisabled = true }) {
+
+export default function AddItemTop({ isDisabled, onDisableChange }) {
   return (
     <section css={AddItemTopStyle}>
       <h2>상품 등록하기</h2>
@@ -8,6 +8,7 @@ export default function AddItemTop({ isDisabled = true }) {
         type="submit"
         disabled={isDisabled}
         css={AddItemTopButtonStyle(isDisabled)}
+        onClick={onDisableChange} // 클릭 시 상태 변경
       >
         등록
       </button>
@@ -28,10 +29,6 @@ const AddItemTopStyle = css`
     font-weight: 700;
     line-height: 32px;
   }
-
-  ${tablet(css``)}
-
-  ${mobile(css``)}
 `;
 
 const AddItemTopButtonStyle = (isDisabled) => css`

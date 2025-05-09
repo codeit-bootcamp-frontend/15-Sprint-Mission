@@ -1,3 +1,4 @@
+// src/pages/AddItem/components/AddItemImage.jsx
 import plusImage from "/icons/ic_plus.png";
 import deleteImage from "/icons/ic_x_button.png";
 import { useState, useRef } from "react";
@@ -10,24 +11,27 @@ import {
   deleteImageStyle,
 } from "./AddItemImage.styles";
 
-function AddItemImage() {
-  const [preview, setPreview] = useState(""); // 초기값을 빈 문자열로 설정
-  const uploadImg = useRef(null); // useRef 초기화
+function AddItemImage({ onImageChange }) {
+  // onImageChange prop 추가
+  const [preview, setPreview] = useState("");
+  const uploadImg = useRef(null);
 
   const handleImageUpload = () => {
-    uploadImg.current?.click(); // 파일 입력 클릭
+    uploadImg.current?.click();
   };
 
   const handlePreview = (e) => {
-    // 파일 객체에 대해 임시 URL 생성하여 preview set
     if (e.target.files && e.target.files.length > 0) {
-      setPreview(URL.createObjectURL(e.target.files[0]));
+      const file = e.target.files[0];
+      setPreview(URL.createObjectURL(file));
+      onImageChange(file); // 선택한 이미지 전달
     }
   };
 
   const handleDelete = () => {
-    setPreview(""); // 미리보기 삭제
-    uploadImg.current.value = null; // 파일 입력 초기화
+    setPreview("");
+    uploadImg.current.value = null;
+    onImageChange(null); // 이미지 삭제 시 null 전달
   };
 
   return (
@@ -47,7 +51,7 @@ function AddItemImage() {
             accept="image/*"
             onChange={handlePreview}
             ref={uploadImg}
-            style={{ display: "none" }} // 파일 입력 숨기기
+            style={{ display: "none" }}
           />
           <img
             src={deleteImage}
