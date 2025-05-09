@@ -38,9 +38,9 @@ function AllItems() {
   const { isMobile, isTablet } = useScreenSize();
   const [searchTerm, setSearchTerm] = useState("");
   const [sortMenuOpen, setSortMenuOpen] = useState(false);
-  const [sortOption, setSortOption] = useState("latest"); // "latest" 또는 "favorite"
+  const [sortOption, setSortOption] = useState("recent"); // "recent" 또는 "favorite"
   const sortMenuRef = useRef(null);
-  const [currentPage, setCurrentPage] = useState(16);
+  const [currentPage, setCurrentPage] = useState(1);
   const { items, loading, error } = useProducts(currentPage, 10);
   const onPageChange = (e, page) => {
     setCurrentPage(page);
@@ -52,7 +52,7 @@ function AllItems() {
 
     const itemsCopy = [...items];
 
-    if (sortOption === "latest") {
+    if (sortOption === "recent") {
       // 최신순 정렬 (ID 기준으로 내림차순)
       return itemsCopy.sort((a, b) => b.id - a.id);
     } else if (sortOption === "favorite") {
@@ -95,7 +95,7 @@ function AllItems() {
   // 정렬 버튼 텍스트
   const getSortButtonText = () => {
     if (isMobile) return "";
-    return sortOption === "latest" ? "최신순" : "좋아요 순";
+    return sortOption === "recent" ? "최신순" : "좋아요 순";
   };
 
   if (loading) return <div>로딩 중...</div>;
@@ -136,7 +136,7 @@ function AllItems() {
                   <div css={AllItemsSortMenu}>
                     <button
                       css={AllItemsSortOption}
-                      onClick={() => handleSortOptionSelect("latest")}
+                      onClick={() => handleSortOptionSelect("recent")}
                     >
                       최신순
                     </button>
@@ -180,7 +180,7 @@ function AllItems() {
                   <div css={AllItemsSortMenu}>
                     <button
                       css={AllItemsSortOption}
-                      onClick={() => handleSortOptionSelect("latest")}
+                      onClick={() => handleSortOptionSelect("recent")}
                     >
                       최신순
                     </button>
@@ -233,19 +233,38 @@ function AllItems() {
           ))}
         </ul>
       </main>
+
       <Pagination
-        count={Math.ceil(items.total / 10)}
+        count={30}
         page={currentPage}
         onChange={onPageChange}
+        defaultPage={1}
+        siblingCount={2} // 현재 페이지 양쪽에 2개씩 보여줌 (총 5개)
         size="medium"
+        color="primary"
         sx={{
           display: "flex",
           justifyContent: "center",
           padding: "15px 0",
+          margin: "0 auto 58px",
+          "& .MuiPaginationItem-ellipsis": {
+            display: "none", // 생략 부호를 CSS로 숨김
+          },
         }}
-        renderItem={(item) => (
-          <PaginationItem {...item} sx={{ fontSize: 12 }} />
-        )}
+        renderItem={(item) => {
+          // 페이지 아이템인 경우에만 처리
+          if (item.type === "page") {
+            const pageNum = item.page;
+            const startPage = Math.max(1, currentPage - 2);
+            const endPage = Math.min(30, currentPage + 2);
+
+            // startPage부터 endPage까지의 범위에 있는 페이지만 표시
+            if (pageNum < startPage || pageNum > endPage) {
+              return null;
+            }
+          }
+          return <PaginationItem {...item} sx={{ fontSize: 12 }} />;
+        }}
       />
     </section>
   );
