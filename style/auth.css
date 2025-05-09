@@ -1,0 +1,206 @@
+header {
+    display: flex;
+    justify-content: center;
+}
+
+.sign-in-page {
+    margin: 230px auto 24px;
+}
+
+.sign-up-page {
+    margin: 60px auto 24px;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+}
+
+.logo-img {
+    height: 103px;
+}
+
+.logo-text {
+    height: 62px;
+}
+
+.sign-in-form, .sign-up-form {
+    width: 640px;
+    margin: 0 auto;
+}
+
+label {
+    display: inline-block;
+    margin: 24px auto 4px;
+    width: 640px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 26px;
+}
+
+input {
+    display: inline-block;
+    padding: 16px 24px;
+    width: 640px;
+    border-radius: 12px;
+    background-color: var(--gray100);
+    font-weight: 400;
+    color: var(--gray800);
+}
+
+input::placeholder {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    color: var(--gray400);
+}
+
+.show-pwd {
+    position: relative;
+}
+
+.show-pwd button {
+    position: absolute;
+    right: 10px;
+    top: 25%;
+    background-color: var(--gray100);
+}
+
+.visible {
+    width: 24px;
+}
+
+.sign-in-btn, .sign-up-btn {
+    display: inline-block;
+    padding: 16px;
+    margin: 24px auto 0;
+    width: 640px;
+    border-radius: 40px;
+    background-color: var(--blue);
+    font-weight: 600;
+    color: var(--gray100);
+}
+
+.quick-sign-in {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 74px;
+    padding: 0 23px;
+    margin: 24px auto;
+    border-radius: 8px;
+    background-color: #E6F2FF;
+}
+
+.sns {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.sns img {
+    width: 42px;
+}
+
+.new-member {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.already-member {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.sign-up {
+    text-decoration: underline;
+    color: var(--blue);
+}
+
+.sign-in {
+    text-decoration: underline;
+    color: var(--blue);
+}
+
+.active-btn:hover {
+    background-color: var(--blue);
+}
+
+@media (max-width: 1199px) {
+    .sign-in-page {
+        margin: 190px auto 24px;
+    }
+    
+    .sign-up-page {
+        margin: 48px auto 24px;
+    }
+}
+
+@media (max-width: 767px) {
+    .sign-in-page {
+        margin: 80px auto 24px;
+    }
+    
+    .sign-up-page {
+        margin: 24px auto 24px;
+    }
+
+    .sign-in-form, .sign-up-form {
+        max-width: 432px;
+        width: 100%;
+        padding: 16px;
+    }
+
+    .logo {
+        gap: 12px;
+    }
+
+    .logo-img {
+        height: 52px;
+    }
+        
+    .logo-text {
+        height: 30px;
+    }
+
+    label {
+        width: 100%;
+        font-size: 14px;
+        line-height: 24px;
+    }
+    
+    input {
+        width: 100%;
+        margin: 4px auto 16px;
+    }
+
+    .sign-in-btn, .sign-up-btn {
+        width: 100%;
+        border-radius: 40px;
+    }
+}
+
+.error {
+    border: 1px solid var(--red);
+}
+
+.error-message {
+    padding-left: 16px;
+    margin: 10px 0 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--red);
+}
+
+.disabled {
+    background-color: var(--gray400);
+    cursor: not-allowed;
+}
