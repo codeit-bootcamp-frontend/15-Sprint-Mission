@@ -1,6 +1,16 @@
 import styles from './styles/Paging.module.css';
+import { useNavigate, useLocation } from 'react-router-dom';
 export default function Paging({ totalPage, currentPage, setCurrentPage }) {
   const pageArr = new Array(totalPage).fill(0).map((_, i) => i + 1);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+    searchParams.set('page', page);
+    navigate(`${location.pathname}?${searchParams.toString()}`);
+  };
 
   let currentIdx = Math.floor((currentPage - 1) / 5);
   let currentPages = pageArr.slice(currentIdx * 5, currentIdx * 5 + 5);
@@ -9,19 +19,19 @@ export default function Paging({ totalPage, currentPage, setCurrentPage }) {
     <div className={`${styles.Paging} ${totalPage <= 5 ? styles.hideArrow : ''}`}>
       <button 
         className={`${styles.arrow} ${currentPage === 1 ? styles.disabled : ''}`} 
-        onClick={() => currentPage > 1 && setCurrentPage(currentPage - 1)}
+        onClick={() => currentPage > 1 && handlePageChange(currentPage - 1)}
         disabled={currentPage === 1}
       >
         <PagingIconArrow reverse />
       </button>
       {currentPages.map((page) => (
-        <button key={page} className={currentPage === page ? styles.active : ''} onClick={() => setCurrentPage(page)}>
+        <button key={page} className={currentPage === page ? styles.active : ''} onClick={() => handlePageChange(page)}>
           {page}
         </button>
       ))}
       <button 
         className={`${styles.arrow} ${currentPage === totalPage ? styles.disabled : ''}`} 
-        onClick={() => currentPage < totalPage && setCurrentPage(currentPage + 1)}
+        onClick={() => currentPage < totalPage && handlePageChange(currentPage + 1)}
         disabled={currentPage === totalPage}
       >
         <PagingIconArrow />

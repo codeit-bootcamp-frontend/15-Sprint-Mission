@@ -1,0 +1,18 @@
+.backToList {
+  margin: 64px auto 0;
+  background-color: var(--blue);
+  color: var(--gray100);
+  font-size: 18px;
+  font-weight: 600;
+  height: 48px;
+  border-radius: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding-inline: 40px;
+  img {
+    width: 24px;
+    height: 24px;
+  }
+}
