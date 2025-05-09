@@ -1,8 +1,8 @@
 import classNames from "classnames";
 import styles from "../styles/HomeFeaturesSection.module.scss";
-import hotItemImage from "@/assets/images/Img_home_01.png";
-import searchFeatureImage from "@/assets/images/Img_home_02.png";
-import registerFeatureImage from "@/assets/images/Img_home_03.png";
+import hotItemImage from "/images/Img_home_01.png";
+import searchFeatureImage from "/images/Img_home_02.png";
+import registerFeatureImage from "/images/Img_home_03.png";
 import { lineBreakStyle } from "../styles/HomeCommonSection.styles.js";
 
 function HomeFeaturesSection() {

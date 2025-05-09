@@ -1,4 +1,4 @@
-import bottomImg from "@/assets/images/Img_home_bottom.png";
+import bottomImg from "/images/Img_home_bottom.png";
 import {
   backgroundStyle,
   bgDescriptionStyle,

@@ -11,7 +11,7 @@ import {
   BestItemsHeartContainer,
   BestItemsPrice,
 } from "./BestItems.styles";
-import heart from "@/assets/icons/ic_heart.svg";
+import heart from "/icons/ic_heart.svg";
 
 function BestItems() {
   const { isMobile, isTablet } = useScreenSize();

@@ -1,5 +1,5 @@
-import Google from "@/assets/icons/Google.png";
-import Kakao from "@/assets/icons/Kakao.png";
+import Google from "/icons/Google.png";
+import Kakao from "/icons/Kakao.png";
 import { css } from "@emotion/react";
 
 function SignEasy() {

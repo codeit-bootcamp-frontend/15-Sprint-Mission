@@ -1,8 +1,7 @@
-// src/pages/Home/components/HomeHeader.jsx
 import { Link } from "react-router";
 import { Logo } from "@/components/Logo";
-import logo from "@/assets/logo/logo.png";
-import logoMobile from "@/assets/logo/logo_mobile.png";
+import logo from "/logo/logo.png";
+import logoMobile from "/logo/logo_mobile.png";
 import useScreenSize from "@/hooks/useScreenSize";
 import { nav, logoWrapper, loginBtn } from "../styles/HomeHeader.styles.js";
 

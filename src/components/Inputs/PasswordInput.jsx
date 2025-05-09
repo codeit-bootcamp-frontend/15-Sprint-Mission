@@ -1,7 +1,7 @@
 // components/common/PasswordInput.jsx
 import { useState } from "react";
-import hideIcon from "@/assets/icons/hide_password.png";
-import showIcon from "@/assets/icons/show_password.png";
+import hideIcon from "/icons/hide_password.png";
+import showIcon from "/icons/show_password.png";
 import {
   inputGroup,
   passwordWrapper,

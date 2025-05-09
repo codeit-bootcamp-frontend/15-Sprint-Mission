@@ -1,9 +1,8 @@
-/** @jsxImportSource @emotion/react */
 import { Link } from "react-router-dom";
-import faceBook from "@/assets/icons/ic_facebook.png";
-import twitter from "@/assets/icons/ic_twitter.png";
-import youtube from "@/assets/icons/ic_youtube.png";
-import instagram from "@/assets/icons/ic_instagram.png";
+import faceBook from "/icons/ic_facebook.png";
+import twitter from "/icons/ic_twitter.png";
+import youtube from "/icons/ic_youtube.png";
+import instagram from "/icons/ic_instagram.png";
 import {
   footer,
   footerContainer,

@@ -1,7 +1,7 @@
-import { Outlet } from "react-router";
+import { Outlet } from "react-router-dom";
 import { useEffect } from "react";
 import { Logo } from "./Logo";
-import logo from "@/assets/logo/logo.png";
+import logo from "/logo/logo.png";
 import { css } from "@emotion/react";
 import { mobile } from "@/styles/utils/mixins";
 

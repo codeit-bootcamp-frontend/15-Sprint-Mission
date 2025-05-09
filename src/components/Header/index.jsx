@@ -1,9 +1,9 @@
 import { Link } from "react-router";
 import { Logo } from "@/components/Logo";
 import { useState, useEffect } from "react";
-import logo from "@/assets/logo/logo.png";
-import logoMobile from "@/assets/logo/logo_mobile.png";
-import profileImg from "@/assets/icons/profile.png";
+import logo from "/logo/logo.png";
+import logoMobile from "/logo/logo_mobile.png";
+import profileImg from "/icons/profile.png";
 import {
   HeaderStyle,
   LogoStyle,

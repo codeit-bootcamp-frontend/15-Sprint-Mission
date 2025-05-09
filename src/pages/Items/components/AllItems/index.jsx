@@ -1,10 +1,13 @@
 import { useState, useRef, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Pagination, PaginationItem } from "@mui/material";
 import useProducts from "@/hooks/useProducts";
-import heart from "@/assets/icons/ic_heart.svg";
 import useScreenSize from "@/hooks/useScreenSize";
-import defaultImage from "@/assets/images/Img_default.png";
-import search from "@/assets/icons/ic_search.svg";
+import heart from "/icons/ic_heart.svg";
+import defaultImage from "/images/Img_default.png";
+import filterMobile from "/icons/ic_filter_mobile.svg";
+import filter from "/icons/ic_filter.svg";
+import search from "/icons/ic_search.svg";
 import {
   BestItemsTitle,
   BestItemsContainer,
@@ -30,9 +33,6 @@ import {
   AllItemsSortMenu,
   AllItemsSortOption,
 } from "./AllItems.styles";
-import filterMobile from "@/assets/icons/ic_filter_mobile.svg";
-import filter from "@/assets/icons/ic_filter.svg";
-import { Link } from "react-router-dom";
 
 function AllItems() {
   const { isMobile, isTablet } = useScreenSize();

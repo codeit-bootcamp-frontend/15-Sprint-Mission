@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { AuthInput } from "../../components/Inputs/AuthInput";
-import { PasswordInput } from "../../components/Inputs/PasswordInput";
+import { AuthInput } from "@/components/Inputs/AuthInput";
+import { PasswordInput } from "@/components/Inputs/PasswordInput";
 import AuthFormStyle from "@/components/Inputs/AuthForm.styles";
 import SignEasy from "@/components/SignEasy";
 import Button from "@/components/Button";
