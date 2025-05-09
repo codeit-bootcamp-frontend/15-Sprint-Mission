@@ -241,8 +241,6 @@ function AllItems() {
         siblingCount={2}
         size="medium"
         color="primary"
-        hideFirstButton={true}
-        hideLastButton={true}
         sx={{
           display: "flex",
           justifyContent: "center",
