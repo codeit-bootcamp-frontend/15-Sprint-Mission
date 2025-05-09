@@ -1,6 +1,6 @@
-import styles from '../styles/ItemDetailProfile.module.css';
+import styles from './styles/DetailProfile.module.css';
 
-export default function ItemDetailProfile({ profileImage, profileNickname, profileUpdate, isComment=false}) {
+export default function DetailProfile({ profileImage, profileNickname, profileUpdate, isComment=false}) {
   return (
     <div className={styles.profile}>
       <div className={styles.profileImage}>

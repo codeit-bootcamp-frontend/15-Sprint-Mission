@@ -1,6 +1,6 @@
 import styles from '../styles/ItemDetailTop.module.css';
 import { useProductDetail } from '@/hooks/useProductDetail';
-import ItemDetailProfile from './ItemDetailProfile';
+import DetailProfile from '@/components/Detail/DetailProfile';
 
 export default function ItemDetailTop({ productId }) {
   const { product, loading, error } = useProductDetail(productId);
@@ -36,7 +36,7 @@ export default function ItemDetailTop({ productId }) {
           </li>
         </ul>
         <div className={styles.itemDetailMeta}>
-          <ItemDetailProfile
+          <DetailProfile
             profileImage={product.image}
             profileNickname={product.ownerNickname}
             profileUpdate={product.updatedAt.split('T')[0].replaceAll('-', '.')}

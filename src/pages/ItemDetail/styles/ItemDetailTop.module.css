@@ -56,6 +56,7 @@
       }
       ul {
         display: flex;
+        flex-wrap: wrap;
         gap: 8px;
         li {
           border-radius: 2em;
@@ -72,6 +73,7 @@
 }
 .itemDetailDesc {
   min-height: 6.48em;
+  word-break: break-all;
 }
 .itemDetailMeta {
   margin-top: 62px;
@@ -110,5 +112,13 @@
     width: 1px;
     height: 34px;
     background-color: var(--gray200);
+  }
+}
+@media (max-width: 1024px) {
+  .itemDetailTop {
+    align-items: flex-start;
+  }
+  .itemDetailImage {
+    width: 340px;
   }
 }

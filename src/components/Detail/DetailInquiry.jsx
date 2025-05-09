@@ -1,12 +1,12 @@
-import styles from '../styles/ItemDetailInquiry.module.css';
+import styles from './styles/DetailInquiry.module.css';
 import CommonButton from '@/components/common/CommonButton';
 import { useState } from 'react';
 
-export default function ItemDetailInquiry() {
+export default function DetailInquiry() {
   const [inquiry, setInquiry] = useState('');
 
   return (
-    <form className={styles.itemDetailInquiry}>
+    <form className={styles.detailInquiry}>
       <label htmlFor='inquiry'>문의하기</label>
       <textarea
         id='inquiry'
