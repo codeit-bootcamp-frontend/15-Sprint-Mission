@@ -1,58 +1,60 @@
-@use "@/styles/utils/mixin" as *;
+// src/pages/Home/styles/HomeCommonSection.styles.js
+import { css } from "@emotion/react";
+import { tablet, mobile } from "@/styles/utils/mixins";
 
-.background {
+export const backgroundStyle = css`
   background-color: var(--skyblue);
-  @include flex-center;
+  display: flex;
   align-items: end;
   height: 540px;
+  justify-content: center;
 
-  @include tablet {
+  ${tablet(css`
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     height: 771px;
-  }
+  `)}
 
-  @include mobile {
+  ${mobile(css`
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     height: auto;
-  }
-}
+  `)}
+`;
 
-.bgDescription {
-  @include flex-center;
+export const bgDescriptionStyle = css`
+  display: flex;
+  justify-content: center;
   padding-bottom: 60px;
 
   h2 {
     margin: 0 0 32px 0;
   }
-}
+`;
 
-h2 {
+export const h2Style = css`
   font-size: 40px;
   font-weight: 700;
   line-height: 56px;
   color: var(--gray700);
 
-  @include tablet {
+  ${tablet(css`
     font-size: 40px;
     line-height: 140%;
     text-align: center;
     vertical-align: middle;
-  }
+  `)}
 
-  @include mobile {
+  ${mobile(css`
     font-size: 32px;
     line-height: 140%;
     text-align: center;
     vertical-align: middle;
-  }
-}
+  `)}
+`;
 
-@include desktop {
-  .lineBreak {
-    display: block;
-  }
-}
+export const lineBreakStyle = css`
+  display: block;
+`;

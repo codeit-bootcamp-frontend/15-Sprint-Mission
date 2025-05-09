@@ -1,19 +1,27 @@
-import common from "../styles/HomeCommonSection.module.scss";
-import styles from "../styles/HomeBottomSection.module.scss";
 import bottomImg from "@/assets/images/Img_home_bottom.png";
-import classNames from "classnames";
+import {
+  backgroundStyle,
+  bgDescriptionStyle,
+  h2Style,
+} from "../styles/HomeCommonSection.styles.js";
+
+import {
+  bottomSectionStyle,
+  bottomStyle,
+  bottomImgStyle,
+} from "../styles/HomeBottomSection.styles.js";
 
 function HomeBottomSection() {
   return (
-    <section className={classNames(common.background, styles.bottomSection)}>
-      <div className={classNames(common.bgDescription, styles.bottom)}>
-        <h2>
+    <section css={[backgroundStyle, bottomSectionStyle]}>
+      <div css={[bgDescriptionStyle, bottomStyle]}>
+        <h2 css={h2Style}>
           믿을 수 있는
           <br /> 판다마켓 중고거래
         </h2>
       </div>
       <img
-        className={styles.bottomImg}
+        css={bottomImgStyle}
         src={bottomImg}
         alt="메인 페이지 아래쪽 이미지"
       />
