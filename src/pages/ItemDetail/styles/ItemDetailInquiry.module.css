@@ -18,6 +18,10 @@
     width: 100%;
     height: 104px;
     resize: none;
+    outline: none;
+    &::placeholder {
+      color: var(--gray400);
+    }
   }
   button {
     margin-top: 16px;
