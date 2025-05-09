@@ -1,5 +1,5 @@
 import styles from './styles/DetailInquiry.module.css';
-import CommonButton from '@/components/common/CommonButton';
+import CommonButton from '@/components/Common/CommonButton';
 import { useState } from 'react';
 
 export default function DetailInquiry({ label }) {
