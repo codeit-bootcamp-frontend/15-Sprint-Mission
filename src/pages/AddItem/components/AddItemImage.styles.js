@@ -65,7 +65,7 @@ export const previewImageStyle = css`
 `;
 
 export const deleteImageStyle = css`
-  cursor: pointer; // 삭제 아이콘에 커서 포인터 추가
+  cursor: pointer;
   width: 20px;
   height: 20px;
   flex-shrink: 0;
