@@ -14,7 +14,7 @@ export default function ItemDetail() {
       <div id='container' className='itemsPage'>
         <div className='inner04'>
           <ItemDetailTop productId={productId} />
-          <DetailInquiry />
+          <DetailInquiry label='문의하기' />
           <DetailComment productId={productId} />
           <DetailBackToListButton />
         </div>

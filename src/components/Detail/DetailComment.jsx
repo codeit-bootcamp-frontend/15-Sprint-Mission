@@ -11,7 +11,12 @@ export default function DetailComment({ productId }) {
   
   if (loading) return <div>로딩 중...</div>;
   if (error) return <div className={styles.error}>{error}</div>;
-  if (!productComments?.list?.length) return <div className={styles.noComments}>아직 댓글이 없습니다.</div>;
+  if (!productComments?.list?.length) return (
+    <div className={styles.noComments}>
+      <img src='/images/common/img_inquiry_empty.png' alt='댓글이 없습니다.' />
+      <p>아직 문의가 없어요</p>
+    </div>
+  );
 
   const onClickMenu = (commentId) => {
     setOpenMenuId(openMenuId === commentId ? null : commentId);

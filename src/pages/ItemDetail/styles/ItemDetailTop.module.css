@@ -26,6 +26,7 @@
     flex-direction: column;
     gap: 24px;
     > li {
+      position: relative;
       display: flex;
       flex-direction: column;
       gap: 16px;
@@ -54,22 +55,27 @@
           line-height: 1;
         }
       }
-      ul {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-        li {
-          border-radius: 2em;
-          background-color: var(--gray100);
-          padding-inline: 16px;
-          height: 36px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-      }
     }
   }
+}
+.itemDetailTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  li {
+    border-radius: 2em;
+    background-color: var(--gray100);
+    padding-inline: 16px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+.itemDetailMenu {
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 .itemDetailDesc {
   min-height: 6.48em;
