@@ -1,0 +1,16 @@
+.changeLine {
+  display: block;
+}
+
+@media (max-width: 1199px) {
+  .changeLine {
+    display: inline;
+  }
+}
+
+@media (max-width: 767px) {
+  .mobileLine {
+    display: block;
+    justify-self: center;
+  }
+}

@@ -1,0 +1,66 @@
+.card {
+  margin: 13rem 0;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+  height: auto;
+  background-color: var(--secondary-300);
+}
+
+.cardReverse {
+  flex-direction: row-reverse;
+  text-align: end;
+}
+
+.cardImg {
+  max-width: 100%;
+  height: auto;
+}
+
+.cardInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  width: 100%;
+}
+
+.badge {
+  font-size: 1.4rem;
+  color: var(--primary-100);
+  font-weight: 700;
+}
+
+.title {
+  font-size: 3.2rem;
+  font-weight: 600;
+  line-height: 5rem;
+}
+
+.description {
+  font-size: 2rem;
+  line-height: 3rem;
+  margin-top: 1rem;
+}
+
+@media (max-width: 1199px) {
+  .card {
+    margin: 2rem 0;
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .cardReverse {
+    flex-direction: column;
+    text-align: end;
+  }
+}
+
+@media (max-width: 767px) {
+  .card {
+    margin: 1rem 0;
+    flex-direction: column;
+    align-items: center;
+  }
+}

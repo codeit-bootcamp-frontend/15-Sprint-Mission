@@ -1,0 +1,86 @@
+.header {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+  min-height: 7rem;
+  background-color: var(--white);
+  border-bottom: 1px solid var(--secondary-350);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.headerContent {
+  max-width: 150rem; //기존에 110이었는데 너무 좁은거 같아서 수정
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .leftGroup {
+    display: flex;
+    align-items: center;
+  }
+
+  .navLinks {
+    display: flex;
+    gap: 30px;
+    margin-left: 35px;
+  }
+
+  .navLink {
+    font-size: 1.8rem;
+    color: var(--secondary-600);
+    font-weight: 700;
+    &:active,
+    &:hover,
+    &.active {
+      color: var(--primary-100);
+    }
+  }
+
+  .defaultProfileIcon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+}
+
+.signinButton {
+  padding: 1.3rem 4rem;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  background-color: var(--primary-100);
+  color: var(--white);
+}
+
+.signinButton:hover {
+  background-color: var(--primary-200);
+}
+
+@media (max-width: 1919px) {
+  .header {
+    padding: 0 200px;
+  }
+
+  .headerContent {
+    max-width: none;
+  }
+}
+
+@media (max-width: 1199px) {
+  .header {
+    padding: 0 24px;
+  }
+}
+
+@media (max-width: 767px) {
+  .header {
+    padding: 0 16px;
+  }
+
+  .headerContent .navLinks {
+    gap: 8px;
+    margin-left: 8px;
+  }
+}

@@ -1,0 +1,61 @@
+html {
+  font-size: 10px; /* 1rem = 10px */
+}
+
+body {
+  font-size: 1rem;
+  font-family: 'Pretendard', sans-serif;
+  background-color: var(--secondary-300);
+  color: var(--black);
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+ul,
+ol {
+  font-size: 1rem;
+}
+
+a,
+select {
+  cursor: pointer;
+}
+
+button,
+.button {
+  background-color: var(--primary-100);
+  color: var(--white);
+  cursor: pointer;
+  border: none;
+}
+
+button:hover,
+.button:hover {
+  background-color: var(--primary-200);
+}
+
+button:active,
+.button:active {
+  background-color: var(--primary-300);
+}
+
+button:disabled,
+.button:disabled {
+  background-color: var(--secondary-400);
+  cursor: not-allowed;
+}
+
+@media (max-width: 1919px) {
+  html {
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 767px) {
+  html {
+    font-size: 8px;
+  }
+}

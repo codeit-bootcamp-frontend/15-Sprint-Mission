@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol {
+  margin: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button,
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  border: none;
+  background: none;
+  margin: 0;
+  padding: 0;
+}
+
+input[type='checkbox'],
+input[type='radio'],
+select,
+button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+input[type='checkbox'],
+input[type='radio'] {
+  width: 1.2em;
+  height: 1.2em;
+  border: 2px solid var(--secondary-400);
+  background-color: var(--white);
+  position: relative;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  padding: 0;
+  text-align: left;
+}
+
+th {
+  font-weight: bold;
+}
+
+/* focus-visible만 outline 제거 -> 확인*/
+a:focus,
+input:focus,
+textarea:focus,
+button:focus,
+select:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--primary-100);
+}
+
+img,
+video,
+audio {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}

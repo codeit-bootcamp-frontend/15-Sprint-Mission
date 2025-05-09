@@ -1,70 +1,85 @@
-# Getting Started with Create React App
+<!-- 추후 추가 수정 예정 -->
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# 코드잇 스프린트 미션
 
-## Available Scripts
+기간: 2025-02-24 ~
+배포:
 
-In the project directory, you can run:
+## 미션 목록
 
-### `npm start`
+| 미션 | 날짜       | PR                                                                             | 주요 내용                                                                                                    |
+| ---- | ---------- | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
+| 1    | 2025-02-24 | [#10](https://github.com/codeit-bootcamp-frontend/15-Sprint-Mission/pull/10)   | 랜딩 페이지의 HTML 및 CSS 구현                                                                               |
+| 2    | 2025-03-05 | [#44](https://github.com/codeit-bootcamp-frontend/15-Sprint-Mission/pull/44)   | 회원가입 및 로그인 페이지의 HTML, CSS 구현                                                                   |
+| 3    | 2025-03-07 | [#60](https://github.com/codeit-bootcamp-frontend/15-Sprint-Mission/pull/60)   | 반응형 디자인 구현(desktop-first, 1920px 이상 큰 모니터 기준), breakpoint: 1919px, 1199px, 767px             |
+| 4    | 2025-03-18 | [#101](https://github.com/codeit-bootcamp-frontend/15-Sprint-Mission/pull/101) | JS기능 추가(DOM 요소 조작 및 이벤트 리스너), 회원가입, 로그인 폼 유효성 검사                                 |
+| 5    | 2025-05-05 | [#](https://github.com/codeit-bootcamp-frontend/15-Sprint-Mission/pull/)       | React, SCSS+CSS modules로 마이그레이션, items 페이지 구현(fetch data, 검색어, 정렬, pagination, 반응형 구현) |
+| 6    | 2025-05-0  | [#](https://github.com/codeit-bootcamp-frontend/15-Sprint-Mission/pull/)       | 상품 등록 페이지 구현                                                                                        |
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 컨벤션
 
-### `npm test`
+### 반응형
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- desktop-first(1920이상) 큰 모니터
+- breakpoint: 1919px(작은 모니터), 1199px(태블릿), 767px(모바일) (375px미만은 고려하지 않습니다.)
 
-### `npm run build`
+### 코드 작성 순서
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+하나의 JS 파일에서는 아래 순서를 따라 작성합니다:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Import 구문 (ESLint 설정)
+2. 변수 선언
+3. 함수 선언
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 경로
 
-### `npm run eject`
+- 절대 경로 사용
+- 같은 폴더 내에서는 상대 경로 사용
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 명명 규칙
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. **파일명, 폴더명**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- camelCase
+- 컴포넌트 파일(JSX)는 파스칼케이스
+- 이미지 파일 이름은 소문자로 작성하고, **언더스코어(\_)**를 사용하여 단어를 구분합니다.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+2. **변수명, 함수명, 프로퍼티 키**:
 
-## Learn More
+- camelCase
+- 컴포넌트는 파스칼케이스
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 함수 규칙
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- **화살표 함수**를 기본으로 사용하되, this바인딩 고려 시 필요한 경우 일반 함수도 사용 가능 합니다.
 
-### Code Splitting
+### 컴포넌트 규칙
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- 이미지 컴포넌트는 이름 뒤에 Img를 붙입니다.
+- 아이콘 컴포넌트는 이름 뒤에 Icon을 붙입니다.
 
-### Analyzing the Bundle Size
+### 커밋 규칙
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+1. 커밋 메시지는 소문자로 작성합니다.
+2. 커밋 메시지 본문 작성은 선택사항입니다.
+3. 타입: 내용
+   | **타입** | **내용** |
+   |----------|-----------|
+   | **feat** | 새로운 기능 추가 |
+   | **fix** | 버그 수정 |
+   | **docs** | 문서 변경 (README, Wiki 등) |
+   | **style** | 코드 스타일 변경 (세미콜론, 공백, 들여쓰기 등) |
+   | **refactor** | 코드 리팩토링 (기능 변경 없이 코드 구조나 가독성 개선) |
+   | **perf** | 성능 개선 |
+   | **test** | 테스트 코드 추가 및 수정 |
+   | **chore** | 기타 일들 (빌드 스크립트, 환경 설정 등) |
 
-### Making a Progressive Web App
+## 폴더 구조
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- Barrel 패턴 적용
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
+마지막에 추가 할 예정
+```

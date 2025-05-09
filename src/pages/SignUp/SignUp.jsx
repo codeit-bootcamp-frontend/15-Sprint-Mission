@@ -1,0 +1,52 @@
+import { useNavigate } from 'react-router-dom';
+import { useForm } from '@/hooks';
+import { AuthFormLayout } from '@/components/auth';
+import { signUpValidationRules } from '@/utils/validators';
+import { ROUTES } from '@/constants/urls';
+
+const initialFormData = {
+  email: '',
+  nickname: '',
+  password: '',
+  confirmPassword: '',
+};
+
+const SignUp = () => {
+  const navigate = useNavigate();
+  const {
+    formData,
+    setFormData,
+    errors,
+    setErrors,
+    showPasswordStates,
+    setShowPasswordStates,
+    isFormValid,
+    handleInputChange,
+  } = useForm(initialFormData, signUpValidationRules);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!isFormValid) return;
+    navigate(ROUTES.SIGNIN);
+  };
+
+  return (
+    <AuthFormLayout
+      type="signup"
+      formProps={{
+        formData,
+        setFormData,
+        errors,
+        setErrors,
+        onSubmit: handleSubmit,
+        validationRules: signUpValidationRules,
+        showPasswordStates,
+        togglePasswordVisibility: setShowPasswordStates,
+        isFormValid,
+        handleInputChange,
+      }}
+    />
+  );
+};
+
+export default SignUp;

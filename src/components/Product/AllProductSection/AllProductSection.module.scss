@@ -1,0 +1,95 @@
+.allProductsSection {
+  margin-bottom: 40px;
+}
+
+.allProductsGrid {
+  display: grid;
+  gap: 2.4rem;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+/* ----------------------------------------
+  검색 + 정렬 영역
+---------------------------------------- */
+.allProductsHeader {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+
+  h2 {
+    grid-column: 1;
+    font-size: 2.4rem;
+    font-weight: 600;
+  }
+
+  input {
+    grid-column: 2;
+    justify-self: end;
+    font-size: 16px;
+    max-width: 325px;
+    width: 100%;
+    padding: 12px 20px 12px 36px;
+    background-color: var(--secondary-100);
+    border-radius: 12px;
+    background-image: url('@/assets/icons/search.svg');
+    background-repeat: no-repeat;
+    background-position: 16px center;
+    background-size: 15px 15px;
+  }
+
+  .linkButton {
+    grid-column: 3;
+    font-size: 16px;
+    padding: 12px 23px;
+    border-radius: 8px;
+  }
+
+  .sortWrapper {
+    grid-column: 4;
+  }
+}
+
+@media (max-width: 1199px) {
+  .allProductsGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .allProductsHeader input {
+    max-width: 240px;
+  }
+}
+
+@media (max-width: 767px) {
+  .allProductsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .allProductsHeader {
+    grid-template-columns: 1fr 2fr 1fr 0.2fr;
+    grid-template-areas:
+      'h2 h2 linkButton linkButton'
+      'input input input sort';
+
+    h2 {
+      grid-area: h2;
+    }
+
+    input {
+      grid-area: input;
+      max-width: none;
+      width: 100%;
+    }
+
+    .linkButton {
+      grid-area: linkButton;
+      justify-self: end;
+    }
+
+    .sortWrapper {
+      grid-area: sort;
+      justify-self: end;
+    }
+  }
+}
