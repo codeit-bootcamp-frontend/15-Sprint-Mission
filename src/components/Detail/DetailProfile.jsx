@@ -2,7 +2,7 @@ import styles from './styles/DetailProfile.module.css';
 
 export default function DetailProfile({ profileImage, profileNickname, profileUpdate, isComment=false}) {
   return (
-    <div className={styles.profile}>
+    <div className={`${styles.profile} ${isComment ? styles.isComment : ''}`}>
       <div className={styles.profileImage}>
         <img
           src={profileImage || '/images/common/ic_log.svg'}
@@ -13,7 +13,7 @@ export default function DetailProfile({ profileImage, profileNickname, profileUp
           }}
         />
       </div>
-      <div className={isComment ? styles.isComment : ''}>
+      <div>
         <p className={styles.profileNickName}>{profileNickname}</p>
         <p className={styles.profileUpdate}>{profileUpdate}</p>
       </div>

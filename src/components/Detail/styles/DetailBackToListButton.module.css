@@ -11,8 +11,45 @@
   justify-content: center;
   gap: 8px;
   padding-inline: 40px;
+  border: 1px solid transparent;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
   img {
     width: 24px;
     height: 24px;
+    transition: filter 0.2s ease;
+  }
+  &:hover {
+    background-color: #fff;
+    color: var(--blue);
+    border-color: var(--blue);
+    img {
+      filter: invert(40%) sepia(80%) saturate(2619%) hue-rotate(203deg) brightness(101%) contrast(101%);
+    }
+  }
+}
+@media (max-width: 768px) {
+  .backToList {
+    margin: 7.29vw auto 0;
+    font-size: 2.34vw;
+    height: 6.25vw;
+    gap: 1.04vw;
+    padding-inline: 5.21vw;
+    img {
+      width: 3.13vw;
+      height: 3.13vw;
+    }
+  }
+}
+@media (max-width: 425px) {
+  .backToList {
+    margin: 9.41vw auto 0;
+    font-size: 4.24vw;
+    height: 11.29vw;
+    gap: 1.88vw;
+    padding-inline: 9.41vw;
+    img {
+      width: 5.65vw;
+      height: 5.65vw;
+    }
   }
 }

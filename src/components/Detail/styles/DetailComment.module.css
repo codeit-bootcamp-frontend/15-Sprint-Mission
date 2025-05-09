@@ -39,3 +39,53 @@
     line-height: 1.62;
   }
 }
+
+@media (max-width: 768px) {
+  .detailComment {
+    gap: 3.13vw;
+  }
+  .commentItem {
+    padding-bottom: 1.56vw;
+  }
+  .commentItemDesc {
+    margin-bottom: 3.13vw;
+    p {
+      font-size: 1.82vw;
+    }
+  }
+
+  .noComments {
+    gap: 1.04vw;
+    img {
+      width: 18.23vw;
+    }
+    p {
+      font-size: 2.08vw;
+    }
+  }
+}
+
+@media (max-width: 425px) {
+  .detailComment {
+    gap: 3.76vw;
+  }
+  .commentItem {
+    padding-bottom: 2.82vw;
+  }
+  .commentItemDesc {
+    margin-bottom: 5.65vw;
+    p {
+      font-size: 3.29vw;
+    }
+  }
+
+  .noComments {
+    gap: 1.88vw;
+    img {
+      width: 32.94vw;
+    }
+    p {
+      font-size: 3.76vw;
+    }
+  }
+}
