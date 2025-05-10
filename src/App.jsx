@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router";
-import AddItem from "./components/Additem/AddItem";
+import AddItem from "./components/AddItem/AddItem";
 import Nav from "./common/Nav/Nav";
 import Items from "./components/Items/Items";
 import Products from "./components/Products/Products";
