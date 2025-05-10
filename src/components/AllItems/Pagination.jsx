@@ -5,7 +5,6 @@ export default function Pagination({
   pages,
   page,
   setPage,
-  setLength,
   totalPages,
   setPages,
 }) {
@@ -14,7 +13,6 @@ export default function Pagination({
     const start = pages[0];
     const end = pages[1];
     const arr = Array.from({ length: end - start + 1 }, (_, i) => start + i);
-    setLength(arr.length);
     setPagesArr(arr);
   }, [pages]);
 
