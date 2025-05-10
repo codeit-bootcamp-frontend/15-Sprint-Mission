@@ -16,7 +16,13 @@ const ProductCard = ({ images, name, price, favoriteCount }) => {
       />
       <div className={styles.productInfo}>
         <h3>{name}</h3>
-        <p>{price.toLocaleString()}원</p>
+        <p>
+          {price === 0
+            ? '나눔'
+            : typeof price === 'number'
+              ? `${price.toLocaleString()}원`
+              : '가격 미정'}
+        </p>
         <div className={styles.favoriteCount}>
           <img src={heartIcon} alt="Favorite" className={styles.heartIcon} />
           <span className={styles.count}>{favoriteCount}</span>
