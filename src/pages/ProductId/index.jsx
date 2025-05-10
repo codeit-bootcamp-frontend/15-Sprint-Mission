@@ -10,7 +10,9 @@ function ProductId() {
   return (
     <main css={ProductIdContainer}>
       <section css={ProductIdSection}>
-        <ProductDetail />
+        <div css={ProductDetailContainer}>
+          <ProductDetail />
+        </div>
         <ProductComment />
       </section>
       <button css={gotoListButton} onClick={() => navigate("/items")}>
@@ -71,4 +73,8 @@ const gotoListButton = css`
   font-weight: 600;
   line-height: 26px;
   white-space: nowrap;
+`;
+
+const ProductDetailContainer = css`
+  border-bottom: 1px solid var(--gray200);
 `;

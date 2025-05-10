@@ -3,9 +3,17 @@ import { productIdAPI } from "@/api/productIdAPI";
 import { useEffect, useState } from "react";
 import heartIcon from "/icons/ic_heart.svg";
 import ownerImage from "/icons/profile.png";
+import {
+  ProductDetailContainer,
+  ProductDetailImage,
+  ProductDetailContent,
+  ProductDetailContentContainer,
+  ProductDetailName,
+} from "./ProductDetail.styles";
+import defaultImage from "/images/Img_default.png";
 
 const ProductDetail = () => {
-  const { productId } = useParams(); // URL에서 productId 가져오기
+  const { productId } = useParams();
   const [product, setProduct] = useState(null);
 
   useEffect(() => {
@@ -26,13 +34,30 @@ const ProductDetail = () => {
   }
 
   return (
-    <article>
-      <img src={product.images[0]} alt={product.name} />
-      <div>
-        <p>{product.name}</p>
-        <p>{product.price.toLocaleString()}원</p>
-        <p>{product.description}</p>
-        <p>{product.tags.join(", ")}</p>
+    <section css={ProductDetailContainer}>
+      <img
+        src={product.images[0]}
+        alt={product.name}
+        css={ProductDetailImage}
+        onError={(e) => {
+          e.target.src = defaultImage;
+        }}
+      />
+      <div css={ProductDetailContent}>
+        <div css={ProductDetailContentContainer}>
+          <div css={ProductDetailName}>
+            <h2>{product.name}</h2>
+            <h3>{product.price.toLocaleString()}원</h3>
+          </div>
+          <div>
+            <p>상품 소개</p>
+            <p>{product.description}</p>
+          </div>
+          <div>
+            <p>상품 태그</p>
+            <p>{product.tags.join(", ")}</p>
+          </div>
+        </div>
         <div>
           <div>
             <img src={ownerImage} alt="ownerImage" />
@@ -45,7 +70,7 @@ const ProductDetail = () => {
           </button>
         </div>
       </div>
-    </article>
+    </section>
   );
 };
 
