@@ -9,7 +9,7 @@ const BestProductSection = () => {
   useEffect(() => {
     const fetchBestProducts = async () => {
       const res = await fetch(
-        `${baseUrl}${ENDPOINTS.PRODUCTS}?page=1&pageSize=1000&orderBy=favorite`, //서버에 좋아요 순으로 정렬한 상위 N개의 데이터를 보내주는 전용 endpoint가 없어서 일단 임시로 이렇게 처리
+        `${baseUrl}${ENDPOINTS.PRODUCTS}?page=1&pageSize=4&orderBy=favorite`,
       );
       const data = await res.json();
       const top4 = data.list.slice(0, 4);
@@ -23,7 +23,7 @@ const BestProductSection = () => {
       <h2>베스트 상품</h2>
       <div className={styles.bestProductsGrid}>
         {bestProducts.map((product) => (
-          <ProductCard key={product.id} product={product} />
+          <ProductCard key={product.id} {...product} />
         ))}
       </div>
     </section>

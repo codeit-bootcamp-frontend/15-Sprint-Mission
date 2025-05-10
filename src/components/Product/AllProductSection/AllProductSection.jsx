@@ -72,7 +72,7 @@ const AllProductSection = () => {
 
       <div className={styles.allProductsGrid}>
         {filteredProducts.map((product) => (
-          <ProductCard key={product.id} product={product} />
+          <ProductCard key={product.id} {...product} />
         ))}
       </div>
 
