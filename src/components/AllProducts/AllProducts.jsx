@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import getProducts from "../../api/getProducts";
 import ProductCard from "../ProductCard/ProductCard";
@@ -6,6 +6,7 @@ import SearchBar from "../SearchBar/SearchBar";
 import SortSelector from "../SortSelector/SortSelector";
 import Pagination from "../Pagination/Pagination";
 import styles from "./AllProducts.module.css";
+import { use } from "react";
 
 const AllProducts = () => {
   const [products, setProducts] = useState([]);
@@ -50,31 +51,40 @@ const AllProducts = () => {
     return () => window.removeEventListener("resize", updatePageSize);
   }, []);
 
-  const onSearch = (term) => {
-    setSearchParams((prev) => {
-      const newParams = new URLSearchParams(prev);
-      newParams.set("keyword", term);
-      newParams.set("page", "1");
-      return newParams;
-    });
-  };
+  const onSearch = useCallback(
+    (term) => {
+      setSearchParams((prev) => {
+        const newParams = new URLSearchParams(prev);
+        newParams.set("keyword", term);
+        newParams.set("page", "1");
+        return newParams;
+      });
+    },
+    [setSearchParams]
+  );
 
-  const handleSortChange = (sortKey) => {
-    setSearchParams((prev) => {
-      const newParams = new URLSearchParams(prev);
-      newParams.set("orderBy", sortKey);
-      newParams.set("page", "1");
-      return newParams;
-    });
-  };
+  const handleSortChange = useCallback(
+    (sortKey) => {
+      setSearchParams((prev) => {
+        const newParams = new URLSearchParams(prev);
+        newParams.set("orderBy", sortKey);
+        newParams.set("page", "1");
+        return newParams;
+      });
+    },
+    [setSearchParams]
+  );
 
-  const handlePageChange = (newPage) => {
-    setSearchParams((prev) => {
-      const params = new URLSearchParams(prev);
-      params.set("page", String(newPage));
-      return params;
-    });
-  };
+  const handlePageChange = useCallback(
+    (newPage) => {
+      setSearchParams((prev) => {
+        const params = new URLSearchParams(prev);
+        params.set("page", String(newPage));
+        return params;
+      });
+    },
+    [setSearchParams]
+  );
 
   return (
     <>
