@@ -1,11 +1,6 @@
-import { useState } from "react";
 import styles from "./AddItem.module.scss";
-import { useRef } from "react";
+import { useState, useRef } from "react";
 
-//이미지 제외 모든값 입력하면 등록버튼 활성화
-//이미지는 최대 한개 업로드
-//심화: 이미지안의 x버튼 누르면 이미지 삭제
-//심화: 추가된 태그 안에 x버튼 누르면 해당 태그 삭제
 export default function AddItem() {
   const [imagePreview, setimagePreview] = useState(null);
   const [formData, setFormData] = useState({
