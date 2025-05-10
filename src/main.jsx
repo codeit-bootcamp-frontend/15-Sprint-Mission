@@ -1,30 +1,15 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import HeaderComponent from "./components/HeaderComponent";
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import "./App.css"; // Tailwind CSS 임포트
+import App from "./App.jsx";
 
-import HomePage from "./pages/HomePage";
-import ItemsPage from "./pages/ItemsPage";
-import FreeBoardPage from "./pages/FreeBoardPage";
-
-import "./App.css";
-
-const App = () => {
-  return (
-    <BrowserRouter>
-      <HeaderComponent />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/freeboard" element={<FreeBoardPage />} />
-        <Route path="/items" element={<ItemsPage />} />
-      </Routes>
-    </BrowserRouter>
-  );
-};
-
-const root = ReactDOM.createRoot(document.getElementById("app"));
+const rootElement = document.getElementById("root");
+if (!rootElement) {
+  throw new Error("Root element not found");
+}
+const root = createRoot(rootElement);
 root.render(
-  <React.StrictMode>
+  <StrictMode>
     <App />
-  </React.StrictMode>
+  </StrictMode>
 );

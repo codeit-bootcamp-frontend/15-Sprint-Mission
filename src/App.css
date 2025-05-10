@@ -1,16 +1,17 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
 @import "tailwindcss";
 
-body {
-  font-family: "Pretendard", sans-serif;
-  background-color: var(--secondary-300);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@layer base {
+  html {
+    font-family: Pretendard, sans-serif;
+    background-color: var(--secondary-300);
+  }
 }
 
-:root {
-  --primary-0: #e6f2ff;
+@theme {
+  --font-family: "Pretendard", sans-serif;
+  --spacing: 0.0625rem;
+  --color-primary-0: #e6f2ff;
   --primary-50: #cfe5ff;
   --primary-100: #3692ff;
   --primary-200: #1967d6;
@@ -26,5 +27,28 @@ body {
   --secondary-700: #374151;
   --secondary-800: #1f2937;
   --secondary-900: #111827;
-  --error: #f74747;
+  --color-error: #f74747;
+  --font-weight-bold: 700;
+  --font-weight-semibold: 600;
+  --font-weight-medium: 500;
+  --font-weight-regular: 400;
+  --text-3xl: 32px;
+  --text-3xl-line-height: 42px;
+  --text-2xl: 24px;
+  --text-2xl-line-height: 32px;
+  --text-xl: 20px;
+  --text-xl-line-height: 32px;
+  --text-2lg: 18px;
+  --text-2lg-line-height: 26px;
+  --text-lg: 16px;
+  --text-lg-line-height: 26px;
+  --text-md: 14px;
+  --text-md-line-height: 24px;
+  --text-sm: 13px;
+  --text-sm-line-height: 22px;
+  --text-xs: 12px;
+  --text-xs-line-height-20: 20px; /* Semibold */
+  --text-xs-line-height-18: 18px; /* Medium, Regular */
+  --breakpoint-tablet: 744px;
+  --breakpoint-pc: 1920px;
 }
