@@ -3,22 +3,17 @@ import arrowDownIcon from "../../assets/icon/arrow-down-icon.svg";
 import sortIcon from "../../assets/icon/sort-icon.svg";
 import styles from "./SortSelector.module.css";
 
+const sortMap = {
+  recent: "최신순",
+  favorite: "좋아요순",
+};
+
 const SortSelector = ({ value, onChange }) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
 
-  const reverseSortMap = {
-    recent: "최신순",
-    favorite: "좋아요순",
-  };
-
-  const sortMap = {
-    최신순: "recent",
-    좋아요순: "favorite",
-  };
-
-  const handleSelect = (label) => {
-    const selectedKey = sortMap[label];
+  const handleSelect = (e) => {
+    const selectedKey = e.target.value;
     setIsOpen(false);
     onChange(selectedKey);
   };
@@ -39,23 +34,22 @@ const SortSelector = ({ value, onChange }) => {
         onClick={() => setIsOpen((prev) => !prev)}
         className={styles.dropdownButton}
       >
-        <span className={styles.selectedText}>
-          {reverseSortMap[value] || "정렬"}
-        </span>
+        <span className={styles.selectedText}>{sortMap[value]}</span>
         <img src={arrowDownIcon} alt="다운 버튼" className={styles.downIcon} />
         <img src={sortIcon} alt="모바일 정렬" className={styles.sortIcon} />
       </button>
 
       {isOpen && (
         <ul className={styles.dropdownList}>
-          <li onClick={() => handleSelect("최신순")} className={styles.recent}>
-            최신순
+          <li className={styles.recent}>
+            <button type="button" value={"recent"} onClick={handleSelect}>
+              최신순
+            </button>
           </li>
-          <li
-            onClick={() => handleSelect("좋아요순")}
-            className={styles.favorite}
-          >
-            좋아요순
+          <li className={styles.favorite}>
+            <button type="button" value={"favorite"} onClick={handleSelect}>
+              좋아요순
+            </button>
           </li>
         </ul>
       )}
