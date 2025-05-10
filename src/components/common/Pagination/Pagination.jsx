@@ -20,7 +20,8 @@ const Pagination = ({ currentPage, totalCount, pageSize, onPageChange }) => {
   return (
     <div className={styles.pagination}>
       <button
-        onClick={() => onPageChange(currentPage - 1)}
+        value={currentPage - 1}
+        onClick={onPageChange}
         className={`${styles.arrow} ${styles.prev}`}
         disabled={currentPage === 1}
         aria-label="Previous page"
@@ -29,7 +30,8 @@ const Pagination = ({ currentPage, totalCount, pageSize, onPageChange }) => {
       {pageNumbers.map((page) => (
         <button
           key={page}
-          onClick={() => onPageChange(page)}
+          value={page}
+          onClick={onPageChange}
           className={`${styles.page} ${
             currentPage === page ? styles.active : ''
           }`}
@@ -41,7 +43,8 @@ const Pagination = ({ currentPage, totalCount, pageSize, onPageChange }) => {
       ))}
 
       <button
-        onClick={() => onPageChange(currentPage + 1)}
+        value={currentPage + 1}
+        onClick={onPageChange}
         disabled={currentPage === totalPages}
         className={`${styles.arrow} ${styles.next}`}
         aria-label="Next page"

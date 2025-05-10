@@ -36,6 +36,11 @@ const AllProductSection = () => {
     setPage(1);
   }, [pageSize, sortOption]);
 
+  const handlePageChange = (e) => {
+    const selectedPage = Number(e.target.value);
+    setPage(selectedPage);
+  };
+
   return (
     <section className={styles.allProductsSection}>
       <div className={styles.allProductsHeader}>
@@ -75,7 +80,7 @@ const AllProductSection = () => {
         currentPage={page}
         totalCount={totalCount}
         pageSize={pageSize}
-        onPageChange={setPage}
+        onPageChange={handlePageChange}
       />
     </section>
   );
