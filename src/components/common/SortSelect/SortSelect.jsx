@@ -53,15 +53,17 @@ const SortSelect = ({ value, onChange, options = [] }) => {
       {isOpen && (
         <ul className={styles.optionList}>
           {options.map((opt) => (
-            <li
-              key={opt.value}
-              onClick={() => {
-                onChange(opt.value);
-                setIsOpen(false);
-              }}
-              className={styles.option}
-            >
-              {opt.label}
+            <li key={opt.value} className={styles.option}>
+              <button
+                type="button"
+                value={opt.value}
+                onClick={() => {
+                  onChange(opt.value);
+                  setIsOpen(false);
+                }}
+              >
+                {opt.label}
+              </button>
             </li>
           ))}
         </ul>

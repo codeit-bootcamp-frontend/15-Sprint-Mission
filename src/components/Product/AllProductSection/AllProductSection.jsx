@@ -28,10 +28,6 @@ const AllProductSection = () => {
     fetchProducts();
   }, [page, sortOption, pageSize, searchQuery]);
 
-  // const filteredProducts = products.filter((product) =>
-  //   product.name.toLowerCase().includes(searchQuery.toLowerCase()),
-  // );
-
   useEffect(() => {
     setPage(1);
   }, [pageSize, sortOption, searchQuery]);
