@@ -33,14 +33,16 @@ export default function AddItem() {
   function handleTag(e) {
     if (e.key === "Enter") {
       e.preventDefault(); //폼 내부에서 엔터 -> 자동 제출되는거 막음
-      const newValue = inputRef.current.value.trim();
-      if (newValue) {
-        setFormData((prev) => ({
-          ...prev,
-          tag: [...prev.tag, newValue], //새로운 배열로 리턴
-        }));
-      }
-      inputRef.current.value = "";
+      setTimeout(() => {
+        const newValue = inputRef.current.value.trim();
+        if (newValue) {
+          setFormData((prev) => ({
+            ...prev,
+            tag: [...prev.tag, newValue],
+          }));
+        }
+        inputRef.current.value = "";
+      }, 0);
     }
   }
   const handleSubmit = (e) => {
@@ -49,6 +51,12 @@ export default function AddItem() {
   };
 
   console.log(formData);
+  function handleRemoveTag(tagToRemove) {
+    setFormData((prev) => ({
+      ...prev,
+      tag: prev.tag.filter((tag) => tag !== tagToRemove),
+    }));
+  }
 
   return (
     <>
@@ -83,19 +91,15 @@ export default function AddItem() {
               style={{ display: "none" }}
             />
             {formData.image && (
-              <>
-                <img
-                  src={imagePreview}
-                  className={styles["image--preview"]}
-                  alt="미리보기"
-                />
+              <div className={styles["image--preview"]}>
+                <img src={imagePreview} alt="미리보기" />
                 <button
-                  className={styles.xButton}
+                  className={`${styles.xButton} ${styles["delete-image"]}`}
                   onClick={() =>
                     setFormData((prev) => ({ ...prev, image: "" }))
                   }
                 />
-              </>
+              </div>
             )}
           </div>
           {formData.image && (
@@ -152,12 +156,16 @@ export default function AddItem() {
             placeholder="태그를 입력해주세요"
           />
           {/* 태그 입력하면 밑에 태그 생성됨 */}
-          <ul>
+          <ul className={styles.tags}>
             {formData.tag.map((tag, index) => (
-              <li key={index}>#{tag}</li>
+              <li key={index} className={styles.tag}>
+                <span>#{tag}</span>
+                <button
+                  className={styles["delete-tag"]}
+                  onClick={() => handleRemoveTag(tag)}
+                />
+              </li>
             ))}
-            {/* <li>#티셔츠</li>
-            <li>#상의</li> */}
           </ul>
         </div>
       </form>
