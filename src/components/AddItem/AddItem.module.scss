@@ -94,9 +94,9 @@
 }
 
 .xButton {
-  position: absolute;
-  top: 14px;
-  left: 249px;
+  //   position: absolute;
+  //   top: 14px;
+  //   left: 249px;
   width: 20px;
   height: 20px;
 
@@ -105,6 +105,11 @@
   background-image: url("../../image/x.svg");
   background-repeat: no-repeat;
   background-position: center;
+}
+.delete-image {
+  position: absolute;
+  top: 14px;
+  left: 249px;
 }
 .warning {
   @include font-16-regular;
@@ -133,12 +138,47 @@
   align-items: center;
 }
 
-.delete-tag {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background-color: #9ca3af;
-  background-image: url("../../image/x.svg");
-  background-repeat: no-repeat;
-  background-position: center;
+@media (max-width: 744px) {
+  .form {
+    width: 696px;
+  }
+
+  .image--input::after {
+    top: 138px;
+    left: 47px;
+    color: #9ca3af;
+  }
+  .image--input::before {
+    width: 168px;
+    height: 168px;
+    background-position-x: 60px;
+    background-position-y: 41px;
+  }
+
+  .input__image {
+    margin-bottom: 184px;
+  }
+  .input__label {
+    margin-top: 24px;
+  }
+  .image--preview {
+    top: 37px;
+    left: 178px;
+  }
+  .image--preview img {
+    width: 168px;
+    height: 168px;
+  }
+  .delete-image {
+    top: 14px;
+    left: 135px;
+  }
+  .warning {
+    margin-top: 8px;
+  }
+}
+@media (max-width: 376px) {
+  .form {
+    width: 346px;
+  }
 }

@@ -155,13 +155,12 @@ export default function AddItem() {
             onKeyDown={handleTag}
             placeholder="태그를 입력해주세요"
           />
-          {/* 태그 입력하면 밑에 태그 생성됨 */}
           <ul className={styles.tags}>
             {formData.tag.map((tag, index) => (
               <li key={index} className={styles.tag}>
                 <span>#{tag}</span>
                 <button
-                  className={styles["delete-tag"]}
+                  className={`${styles.xButton} ${styles["delete-tag"]}`}
                   onClick={() => handleRemoveTag(tag)}
                 />
               </li>
