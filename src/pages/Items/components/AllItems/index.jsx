@@ -123,7 +123,7 @@ function AllItems() {
                         e.target.src = defaultImage;
                       }}
                       onClick={() => {
-                        navigate(`/products/${item.id}`);
+                        navigate(`/items/${item.id}`);
                       }}
                     />
                   )}
