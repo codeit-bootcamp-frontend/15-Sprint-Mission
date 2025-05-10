@@ -4,6 +4,7 @@ import { useResponsivePageSize } from '@/hooks';
 import { SortSelect, Pagination } from '@/components/common';
 import { ProductCard } from '@/components/Product';
 import { baseUrl, ENDPOINTS, ROUTES } from '@/constants/urls';
+import buttonStyles from '@/styles/helpers/buttonHelpers.module.scss';
 import styles from './AllProductSection.module.scss';
 
 const AllProductSection = () => {
@@ -46,7 +47,10 @@ const AllProductSection = () => {
           onChange={(e) => setSearchQuery(e.target.value)}
           aria-label="Search products"
         />
-        <Link to={ROUTES.ADD_ITEM} className={`button ${styles.linkButton}`}>
+        <Link
+          to={ROUTES.ADD_ITEM}
+          className={`${buttonStyles.primary} ${styles.linkButton}`}
+        >
           상품 등록하기
         </Link>
         <div className={styles.sortWrapper}>

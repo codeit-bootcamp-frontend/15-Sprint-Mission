@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import buttonStyles from '@/styles/helpers/buttonHelpers.module.scss';
 import styles from './Banner.module.scss';
 
 const Banner = ({
@@ -14,8 +15,11 @@ const Banner = ({
       <div className={styles.bannerContent}>
         <h2 className={styles.bannerTitle}>{title}</h2>
         {buttonText && buttonLink && (
-          <Link to={buttonLink}>
-            <button className={styles.viewButton}>{buttonText}</button>
+          <Link
+            to={buttonLink}
+            className={`${buttonStyles.primary} ${styles.viewButton}`}
+          >
+            {buttonText}
           </Link>
         )}
       </div>

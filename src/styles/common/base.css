@@ -25,28 +25,12 @@ select {
   cursor: pointer;
 }
 
-button,
-.button {
-  background-color: var(--primary-100);
-  color: var(--secondary-100);
+button {
   cursor: pointer;
   border: none;
-}
-
-button:hover,
-.button:hover {
-  background-color: var(--primary-200);
-}
-
-button:active,
-.button:active {
-  background-color: var(--primary-300);
-}
-
-button:disabled,
-.button:disabled {
-  background-color: var(--secondary-400);
-  cursor: not-allowed;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
 }
 
 @media (max-width: 1919px) {

@@ -6,6 +6,7 @@ import toastStyles from '@/components/common/Toast/Toast.module.scss';
 import { addItemValidation } from '@/utils/validators';
 import { baseUrl, ENDPOINTS } from '@/constants/urls';
 import formStyles from '@/styles/helpers/formHelpers.module.scss';
+import buttonStyles from '@/styles/helpers/buttonHelpers.module.scss';
 import styles from './AddItem.module.scss';
 
 const initialForm = {
@@ -58,7 +59,7 @@ const AddItem = () => {
         <h2>상품 등록하기</h2>
         <button
           type="button"
-          className={styles.submitButton}
+          className={`${buttonStyles.primary} ${styles.submitButton}`}
           onClick={handleSubmit}
           disabled={!isFormValid}
         >

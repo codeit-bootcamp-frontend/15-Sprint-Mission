@@ -2,6 +2,7 @@ import { Link, NavLink, useLocation } from 'react-router-dom';
 import Logo from '@/components/common/Logo';
 import { ROUTES } from '@/constants/urls';
 import defaultProfileIcon from '@/assets/images/default_profile.svg';
+import buttonStyles from '@/styles/helpers/buttonHelpers.module.scss';
 import styles from './Header.module.scss';
 
 const Header = () => {
@@ -41,7 +42,10 @@ const Header = () => {
             className={styles.defaultProfileIcon}
           />
         ) : (
-          <Link to={ROUTES.SIGNIN} className={styles.signinButton}>
+          <Link
+            to={ROUTES.SIGNIN}
+            className={`${buttonStyles.primary} ${styles.signinButton}`}
+          >
             로그인
           </Link>
         )}

@@ -21,8 +21,8 @@ const Pagination = ({ currentPage, totalCount, pageSize, onPageChange }) => {
     <div className={styles.pagination}>
       <button
         onClick={() => onPageChange(currentPage - 1)}
-        disabled={currentPage === 1}
         className={`${styles.arrow} ${styles.prev}`}
+        disabled={currentPage === 1}
         aria-label="Previous page"
       />
 

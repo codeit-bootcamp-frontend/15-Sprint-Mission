@@ -1,5 +1,6 @@
 import { AuthInput, OAuthButtons } from '@/components/auth';
 import formStyles from '@/styles/helpers/formHelpers.module.scss';
+import buttonStyles from '@/styles/helpers/buttonHelpers.module.scss';
 import styles from './AuthForm.module.scss';
 
 const AuthForm = ({
@@ -86,7 +87,7 @@ const AuthForm = ({
 
       <button
         type="submit"
-        className={styles.authButton}
+        className={`${buttonStyles.primary} ${styles.authButton}`}
         disabled={!isFormValid}
         onClick={onSubmit}
       >
