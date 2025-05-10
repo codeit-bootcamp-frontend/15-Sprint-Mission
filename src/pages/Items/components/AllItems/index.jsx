@@ -1,15 +1,10 @@
 import { useState, useRef, useEffect } from "react";
-import { Link } from "react-router-dom";
 import { Pagination, PaginationItem } from "@mui/material";
 import useProducts from "@/hooks/useProducts";
 import useScreenSize from "@/hooks/useScreenSize";
 import heart from "/icons/ic_heart.svg";
 import defaultImage from "/images/Img_default.png";
-import filterMobile from "/icons/ic_filter_mobile.svg";
-import filter from "/icons/ic_filter.svg";
-import search from "/icons/ic_search.svg";
 import {
-  BestItemsTitle,
   BestItemsContainer,
   BestItemsHeartContainer,
   BestItemsHeart,
@@ -17,22 +12,12 @@ import {
   BestItemsPrice,
 } from "../BestItems/BestItems.styles";
 import {
-  AllItemsHeader,
   AllItemsGridContainer,
   AllItemsContainer,
   AllItemsImage,
-  AllItemsFilterButton,
-  AllItemsFilterContainer,
-  AllItemsSearchContainer,
-  AllItemsSearchInput,
-  AllItemsSearchIcon,
-  AllItemsAddItemButton,
-  AllItemsFilterIcon,
-  AllItemsTopRow,
-  AllItemsBottomRow,
-  AllItemsSortMenu,
-  AllItemsSortOption,
 } from "./AllItems.styles";
+import { useNavigate } from "react-router-dom";
+import AllItemsHeader from "./AllItemsHeader";
 
 function AllItems() {
   const { isMobile, isTablet } = useScreenSize();
@@ -42,6 +27,8 @@ function AllItems() {
   const sortMenuRef = useRef(null);
   const [currentPage, setCurrentPage] = useState(1);
   const { items, loading, error } = useProducts(currentPage, 10);
+  const navigate = useNavigate();
+
   const onPageChange = (e, page) => {
     setCurrentPage(page);
   };
@@ -105,98 +92,16 @@ function AllItems() {
 
   return (
     <section css={BestItemsContainer}>
-      <header css={AllItemsHeader}>
-        {isMobile ? (
-          <>
-            <div css={AllItemsTopRow}>
-              <h2 css={BestItemsTitle}>전체 상품</h2>
-              <Link css={AllItemsAddItemButton} to="/additem">
-                상품 등록하기
-              </Link>
-            </div>
-            <div css={AllItemsBottomRow}>
-              <div css={AllItemsSearchContainer}>
-                <img src={search} alt="검색" css={AllItemsSearchIcon} />
-                <input
-                  type="text"
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                  placeholder="검색할 상품을 입력해주세요"
-                  css={AllItemsSearchInput}
-                />
-              </div>
-              <div style={{ position: "relative" }} ref={sortMenuRef}>
-                <button
-                  css={AllItemsFilterButton}
-                  onClick={() => setSortMenuOpen(!sortMenuOpen)}
-                >
-                  <img src={filterMobile} alt="필터" css={AllItemsFilterIcon} />
-                </button>
-                {sortMenuOpen && (
-                  <div css={AllItemsSortMenu}>
-                    <button
-                      css={AllItemsSortOption}
-                      onClick={() => handleSortOptionSelect("recent")}
-                    >
-                      최신순
-                    </button>
-                    <button
-                      css={AllItemsSortOption}
-                      onClick={() => handleSortOptionSelect("favorite")}
-                    >
-                      좋아요 순
-                    </button>
-                  </div>
-                )}
-              </div>
-            </div>
-          </>
-        ) : (
-          <>
-            <h2 css={BestItemsTitle}>전체 상품</h2>
-            <div css={AllItemsFilterContainer}>
-              <div css={AllItemsSearchContainer}>
-                <img src={search} alt="검색" css={AllItemsSearchIcon} />
-                <input
-                  type="text"
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                  placeholder="검색할 상품을 입력해주세요"
-                  css={AllItemsSearchInput}
-                />
-              </div>
-              <Link css={AllItemsAddItemButton} to="/additem">
-                상품 등록하기
-              </Link>
-              <div style={{ position: "relative" }} ref={sortMenuRef}>
-                <button
-                  css={AllItemsFilterButton}
-                  onClick={() => setSortMenuOpen(!sortMenuOpen)}
-                >
-                  {getSortButtonText()}
-                  <img src={filter} alt="필터" css={AllItemsFilterIcon} />
-                </button>
-                {sortMenuOpen && (
-                  <div css={AllItemsSortMenu}>
-                    <button
-                      css={AllItemsSortOption}
-                      onClick={() => handleSortOptionSelect("recent")}
-                    >
-                      최신순
-                    </button>
-                    <button
-                      css={AllItemsSortOption}
-                      onClick={() => handleSortOptionSelect("favorite")}
-                    >
-                      좋아요 순
-                    </button>
-                  </div>
-                )}
-              </div>
-            </div>
-          </>
-        )}
-      </header>
+      <AllItemsHeader
+        isMobile={isMobile}
+        searchTerm={searchTerm}
+        setSearchTerm={setSearchTerm}
+        sortMenuOpen={sortMenuOpen}
+        setSortMenuOpen={setSortMenuOpen}
+        handleSortOptionSelect={handleSortOptionSelect}
+        getSortButtonText={getSortButtonText}
+        sortMenuRef={sortMenuRef}
+      />
       <main>
         <ul css={AllItemsGridContainer}>
           {displayItems.map((item) => (
@@ -216,6 +121,9 @@ function AllItems() {
                       css={AllItemsImage}
                       onError={(e) => {
                         e.target.src = defaultImage;
+                      }}
+                      onClick={() => {
+                        navigate(`/products/${item.id}`);
                       }}
                     />
                   )}
