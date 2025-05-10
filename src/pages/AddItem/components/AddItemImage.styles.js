@@ -46,6 +46,8 @@ export const addItemImageButtonContainer = css`
   ${tablet(css`
     gap: 16px;
   `)}
+
+  margin-bottom: 16px;
 `;
 
 export const previewImageContainer = css`
@@ -62,6 +64,15 @@ export const previewImageStyle = css`
     width: 282px;
     height: 282px;
   `)}
+`;
+
+export const errorMessageStyle = css`
+  color: var(--red, #f74747);
+
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px;
 `;
 
 export const deleteImageStyle = css`
