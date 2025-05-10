@@ -52,24 +52,30 @@ const AllProducts = () => {
 
   const onSearch = useCallback(
     (term) => {
-      setSearchParams((prev) => {
-        const newParams = new URLSearchParams(prev);
-        newParams.set("keyword", term);
-        newParams.set("page", "1");
-        return newParams;
-      });
+      setSearchParams(
+        (prev) => {
+          const newParams = new URLSearchParams(prev);
+          newParams.set("keyword", term);
+          newParams.set("page", "1");
+          return newParams;
+        },
+        { replace: true }
+      );
     },
     [setSearchParams]
   );
 
   const handleSortChange = useCallback(
     (sortKey) => {
-      setSearchParams((prev) => {
-        const newParams = new URLSearchParams(prev);
-        newParams.set("orderBy", sortKey);
-        newParams.set("page", "1");
-        return newParams;
-      });
+      setSearchParams(
+        (prev) => {
+          const newParams = new URLSearchParams(prev);
+          newParams.set("orderBy", sortKey);
+          newParams.set("page", "1");
+          return newParams;
+        },
+        { replace: true }
+      );
     },
     [setSearchParams]
   );
