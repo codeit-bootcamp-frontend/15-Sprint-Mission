@@ -89,18 +89,18 @@ const AllProducts = () => {
             </div>
             <div className={styles.mobileControlRow}>
               <SearchBar onSearch={onSearch} keyword={keyword} />
-              <SortSelector onChange={setOrderBy} />
+              <SortSelector value={orderBy} onChange={handleSortChange} />
             </div>
           </div>
         ) : (
           <div className={styles.topBarContainer}>
             <h2 className={styles.sectionTitle}>전체 상품</h2>
             <div className={styles.controlsRow}>
-              <SearchBar onSearch={onSearch} />
+              <SearchBar onSearch={onSearch} keyword={keyword} />
               <Link to={"/additem"} className={styles.buttonLink}>
                 <button className={styles.addItemButton}>상품 등록하기</button>
               </Link>
-              <SortSelector onChange={handleSortChange} />
+              <SortSelector value={orderBy} onChange={handleSortChange} />
             </div>
           </div>
         )}
