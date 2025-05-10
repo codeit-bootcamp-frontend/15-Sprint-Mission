@@ -47,14 +47,11 @@ export default function AllItems() {
         const newTotalPages = Math.ceil(newTotal / pageSize);
         const currentDevice = getDeviceType();
 
-        // ✅ 페이지 초과 방지
         if (page > newTotalPages) {
           const lastPage = newTotalPages;
           const newStart = Math.max(lastPage - 4, 1);
           setPages([newStart, lastPage]);
           setPage(lastPage);
-
-          // 이 경우 fetch 다시 필요함 (return으로 막고, useEffect 재호출 유도)
           return;
         }
 
@@ -82,7 +79,6 @@ export default function AllItems() {
         pages={pages}
         page={page}
         setPage={setPage}
-        setLength={() => {}} // 필요 없다면 제거 가능
         totalPages={totalPages}
         setPages={setPages}
       />
