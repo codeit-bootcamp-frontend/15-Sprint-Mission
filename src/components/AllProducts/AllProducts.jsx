@@ -26,10 +26,6 @@ const AllProducts = () => {
   const page = Number(searchParams.get("page")) || 1;
 
   useEffect(() => {
-    sessionStorage.setItem("allProductsPage", page.toString());
-  }, [page]);
-
-  useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth < 768);
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
@@ -118,13 +114,13 @@ const AllProducts = () => {
           </div>
         )}
         <div className={styles.productList}>
-          {products.map((item) => (
+          {products.map(({ id, images, name, price, favoriteCount }) => (
             <ProductCard
-              key={item.id}
-              imageUrl={item.images?.[0]}
-              title={item.name}
-              price={item.price}
-              likes={item.favoriteCount}
+              key={id}
+              imageUrl={images?.[0]}
+              title={name}
+              price={price}
+              likes={favoriteCount}
               variant="all"
             />
           ))}
