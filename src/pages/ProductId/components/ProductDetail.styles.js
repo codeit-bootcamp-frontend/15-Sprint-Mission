@@ -1,5 +1,5 @@
 import { css } from "@emotion/react";
-import { tablet, mobile, desktop } from "@/styles/utils/mixins";
+import { tablet, mobile, desktop, flexCenter } from "@/styles/utils/mixins";
 export const flexColumnStart = css`
   display: flex;
   flex-direction: column;
@@ -12,13 +12,12 @@ export const ProductDetailContainer = css`
   gap: 24px;
   align-self: stretch;
 
-  height: 496px;
+  height: auto;
   margin-bottom: 40px;
   color: var(--gray800);
 
   ${mobile(css`
     flex-direction: column;
-    height: 100%;
   `)}
 `;
 
@@ -136,7 +135,6 @@ export const ProductDetailDescription = css`
   font-size: 14px;
   font-weight: 400;
   line-height: 26px;
-  height: 156px;
   overflow: scroll;
 
   ${desktop(css`
@@ -152,8 +150,10 @@ export const ProductDetailTagsContainer = css`
 `;
 
 export const ProductDetailTags = css`
-  display: flex;
+  ${flexCenter}
+  height: auto;
   gap: 10px;
+  flex-wrap: wrap;
 
   span {
     border-radius: 26px;
@@ -164,5 +164,81 @@ export const ProductDetailTags = css`
     font-size: 16px;
     font-weight: 400;
     line-height: 26px;
+    height: 36px;
   }
+
+  ${tablet(css`
+    gap: 8px;
+  `)}
+`;
+
+export const ProductDetailOwnerContainer = css`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-self: stretch;
+`;
+
+export const ProductDetailOwner = css`
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  img {
+    width: 40px;
+    height: 40px;
+  }
+`;
+
+export const ProductDetailOwnerName = css`
+  ${flexColumnStart}
+  gap: 2px;
+
+  p {
+    color: var(--gray600);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 24px;
+  }
+`;
+
+export const ProductDetailOwnerDate = css`
+  color: var(--gray400);
+
+  font-size: 14px;
+  font-weight: 400;
+`;
+
+export const ProductDetailFavoriteButtonContainer = css`
+  display: flex;
+  align-items: center;
+  gap: 24px;
+`;
+
+export const ProductDetailFavoriteButton = css`
+  display: flex;
+  height: 40px;
+  padding: 4px 12px;
+  align-items: center;
+  gap: 10px;
+
+  border-radius: 35px;
+  border: 1px solid var(--gray200);
+  background: var(--white);
+
+  img {
+    width: 24px;
+    height: 24px;
+  }
+
+  p {
+    color: var(--gray600);
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  color: var(--gray500);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 26px;
 `;

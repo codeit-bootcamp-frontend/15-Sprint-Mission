@@ -2,7 +2,10 @@ import { useParams } from "react-router-dom";
 import { productIdAPI } from "@/api/productIdAPI";
 import { useEffect, useState } from "react";
 import heartIcon from "/icons/ic_heart.svg";
+import heartFillIcon from "/icons/ic_heart_fill.png";
 import ownerImage from "/icons/profile.png";
+import lineSvg from "/icons/ic_line.svg";
+
 import {
   ProductDetailContainer,
   ProductDetailImage,
@@ -13,7 +16,13 @@ import {
   ProductDetailDescription,
   ProductDetailDescriptionContainer,
   ProductDetailTags,
+  ProductDetailOwnerContainer,
   ProductDetailTagsContainer,
+  ProductDetailOwner,
+  ProductDetailOwnerName,
+  ProductDetailOwnerDate,
+  ProductDetailFavoriteButton,
+  ProductDetailFavoriteButtonContainer,
 } from "./ProductDetail.styles";
 import defaultImage from "/images/Img_default.png";
 import settingIcon from "/icons/ic_setting.svg";
@@ -21,6 +30,11 @@ import settingIcon from "/icons/ic_setting.svg";
 const ProductDetail = () => {
   const { productId } = useParams();
   const [product, setProduct] = useState(null);
+  const [isFavorite, setIsFavorite] = useState(false);
+
+  const handleFavorite = () => {
+    setIsFavorite(!isFavorite);
+  };
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -71,18 +85,26 @@ const ProductDetail = () => {
             </div>
           </div>
         </div>
-        <div style={{ display: "flex" }}>
-          <div style={{ display: "flex" }}>
+        <div css={ProductDetailOwnerContainer}>
+          <div css={ProductDetailOwner}>
             <img src={ownerImage} alt="ownerImage" />
-            <div style={{ display: "flex", flexDirection: "column" }}>
+            <div css={ProductDetailOwnerName}>
               <p>{product.ownerNickname}</p>
-              <p>{new Date(product.createdAt).toLocaleDateString()}</p>
+              <div css={ProductDetailOwnerDate}>
+                {new Date(product.createdAt).toLocaleDateString()}
+              </div>
             </div>
           </div>
-          <button>
-            <img src={heartIcon} alt="heartIcon" />
-            <p>{product.favoriteCount}</p>
-          </button>
+          <div css={ProductDetailFavoriteButtonContainer}>
+            <img src={lineSvg} alt="line" />
+            <button css={ProductDetailFavoriteButton} onClick={handleFavorite}>
+              <img
+                src={isFavorite ? heartFillIcon : heartIcon}
+                alt="heartIcon"
+              />
+              <p>{product.favoriteCount}</p>
+            </button>
+          </div>
         </div>
       </div>
     </section>
