@@ -26,38 +26,20 @@ function AllItems() {
   const [sortOption, setSortOption] = useState("recent"); // "recent" 또는 "favorite"
   const sortMenuRef = useRef(null);
   const [currentPage, setCurrentPage] = useState(1);
-  const { items, loading, error } = useProducts(currentPage, 10);
+  // sortOption을 훅에 전달하여 서버에서 정렬된 데이터를 가져옵니다
+  const { items, loading, error } = useProducts(currentPage, 10, sortOption);
   const navigate = useNavigate();
 
   const onPageChange = (e, page) => {
     setCurrentPage(page);
   };
 
-  // 정렬된 아이템 계산
-  const getSortedItems = () => {
-    if (!Array.isArray(items)) return [];
-
-    const itemsCopy = [...items];
-
-    if (sortOption === "recent") {
-      // 최신순 정렬 (ID 기준으로 내림차순)
-      return itemsCopy.sort((a, b) => b.id - a.id);
-    } else if (sortOption === "favorite") {
-      // 좋아요순 정렬
-      return itemsCopy.sort((a, b) => b.favoriteCount - a.favoriteCount);
-    }
-
-    return itemsCopy;
-  };
-
-  const sortedItems = getSortedItems();
-
   // 화면 크기에 맞게 보여줄 아이템 수 제한
   const displayItems = isMobile
-    ? sortedItems.slice(0, 4)
+    ? items?.slice(0, 4)
     : isTablet
-    ? sortedItems.slice(0, 6)
-    : sortedItems;
+    ? items?.slice(0, 6)
+    : items;
 
   // 정렬 메뉴 외부 클릭 시 닫기
   useEffect(() => {
@@ -76,6 +58,7 @@ function AllItems() {
   // 정렬 옵션 선택 핸들러
   const handleSortOptionSelect = (option) => {
     setSortOption(option);
+    setCurrentPage(1); // 정렬 옵션이 변경되면 첫 페이지로 돌아갑니다
     setSortMenuOpen(false);
   };
 
