@@ -1,13 +1,16 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import styles from "./Header.module.css";
 
-const getLinkStyle = ({ isActive }) => {
-  return {
-    color: isActive ? "#3692ff" : "inherit",
-  };
-};
-
 const Header = () => {
+  const location = useLocation();
+
+  const getLinkStyle = ({ isActive }) => {
+    const isAddItemPage = location.pathname === "/additem";
+    return {
+      color: isActive || isAddItemPage ? "#3692ff" : "inherit",
+    };
+  };
+
   return (
     <div className={styles.header}>
       <div className={styles.container}>
