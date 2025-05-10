@@ -31,15 +31,16 @@ html {
 button {
   cursor: pointer;
   -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 h1,
 h2,
 h3,
 input,
+textarea,
 button,
 ul,
 li {

@@ -27,7 +27,9 @@ export default function Nav() {
           <span>자유게시판</span>
           <span
             onClick={() => navigate("/items")}
-            style={location === "/items" ? { color: "#3692FF" } : {}}
+            style={
+              location === "/items" || "/additems" ? { color: "#3692FF" } : {}
+            }
           >
             중고마켓
           </span>
