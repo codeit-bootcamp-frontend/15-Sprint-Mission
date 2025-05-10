@@ -1,4 +1,4 @@
-import DefaultProfile from "../../assets/images/default-profile.png";
+import DefaultProfile from "../../assets/images/profile-default.png";
 
 const UserMenu = () => {
   return (
