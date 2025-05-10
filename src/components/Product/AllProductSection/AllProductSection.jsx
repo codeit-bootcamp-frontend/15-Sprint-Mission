@@ -19,22 +19,22 @@ const AllProductSection = () => {
     // * 여기 try... catch
     const fetchProducts = async () => {
       const res = await fetch(
-        `${baseUrl}${ENDPOINTS.PRODUCTS}?page=${page}&pageSize=${pageSize}&orderBy=${sortOption}`,
+        `${baseUrl}${ENDPOINTS.PRODUCTS}?page=${page}&pageSize=${pageSize}&orderBy=${sortOption}&keyword=${encodeURIComponent(searchQuery)}`,
       );
       const data = await res.json();
       setProducts(data.list);
       setTotalCount(data.totalCount);
     };
     fetchProducts();
-  }, [page, sortOption, pageSize]);
+  }, [page, sortOption, pageSize, searchQuery]);
 
-  const filteredProducts = products.filter((product) =>
-    product.name.toLowerCase().includes(searchQuery.toLowerCase()),
-  );
+  // const filteredProducts = products.filter((product) =>
+  //   product.name.toLowerCase().includes(searchQuery.toLowerCase()),
+  // );
 
   useEffect(() => {
     setPage(1);
-  }, [pageSize, sortOption]);
+  }, [pageSize, sortOption, searchQuery]);
 
   const handlePageChange = (e) => {
     const selectedPage = Number(e.target.value);
@@ -71,7 +71,7 @@ const AllProductSection = () => {
       </div>
 
       <div className={styles.allProductsGrid}>
-        {filteredProducts.map((product) => (
+        {products.map((product) => (
           <ProductCard key={product.id} {...product} />
         ))}
       </div>
