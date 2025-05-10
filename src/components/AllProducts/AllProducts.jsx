@@ -6,11 +6,18 @@ import SearchBar from "../SearchBar/SearchBar";
 import SortSelector from "../SortSelector/SortSelector";
 import Pagination from "../Pagination/Pagination";
 import styles from "./AllProducts.module.css";
-import { use } from "react";
+
+const getPageSize = () => {
+  const width = window.innerWidth;
+  if (width < 768) return 4;
+  else if (width < 1024) return 6;
+  else if (width < 1200) return 8;
+  else return 10;
+};
 
 const AllProducts = () => {
   const [products, setProducts] = useState([]);
-  const [pageSize, setPageSize] = useState(10);
+  const [pageSize, setPageSize] = useState(getPageSize);
   const [totalCount, setTotalCount] = useState(0);
   const [searchParams, setSearchParams] = useSearchParams();
   const orderBy = searchParams.get("orderBy") || "recent";
@@ -39,11 +46,7 @@ const AllProducts = () => {
 
   useEffect(() => {
     const updatePageSize = () => {
-      const width = window.innerWidth;
-      if (width < 768) setPageSize(4);
-      else if (width < 1024) setPageSize(6);
-      else if (width < 1200) setPageSize(8);
-      else setPageSize(10);
+      setPageSize(getPageSize());
     };
 
     updatePageSize();
