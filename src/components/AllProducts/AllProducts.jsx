@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import getProducts from "../../api/getProducts";
 import ProductCard from "../ProductCard/ProductCard";
 import SearchBar from "../SearchBar/SearchBar";
@@ -9,16 +9,13 @@ import styles from "./AllProducts.module.css";
 
 const AllProducts = () => {
   const [products, setProducts] = useState([]);
-  const [searchTerm, setSearchTerm] = useState("");
-  const [orderBy, setOrderBy] = useState("recent");
   const [pageSize, setPageSize] = useState(10);
   const [totalCount, setTotalCount] = useState(0);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const orderBy = searchParams.get("orderBy") || "recent";
+  const keyword = searchParams.get("keyword") || "";
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
-
-  const [page, setPage] = useState(() => {
-    const saved = sessionStorage.getItem("allProductsPage");
-    return saved ? parseInt(saved, 10) : 1;
-  });
+  const page = Number(searchParams.get("page")) || 1;
 
   useEffect(() => {
     sessionStorage.setItem("allProductsPage", page.toString());
@@ -31,13 +28,13 @@ const AllProducts = () => {
   }, []);
 
   useEffect(() => {
-    getProducts({ page, pageSize, orderBy, keyword: searchTerm })
+    getProducts({ page, pageSize, orderBy, keyword })
       .then((data) => {
         setProducts(data.list);
         setTotalCount(data.totalCount);
       })
       .catch((error) => console.error(error));
-  }, [page, pageSize, orderBy, searchTerm]);
+  }, [page, pageSize, orderBy, keyword]);
 
   useEffect(() => {
     const updatePageSize = () => {
@@ -53,17 +50,30 @@ const AllProducts = () => {
     return () => window.removeEventListener("resize", updatePageSize);
   }, []);
 
-  const sortedProducts = [...products].sort((a, b) => {
-    if (orderBy === "likes") return b.favoriteCount - a.favoriteCount;
-    return new Date(b.recent) - new Date(a.recent);
-  });
-
-  const filteredData = sortedProducts.filter((item) =>
-    item.name?.toLowerCase().includes(searchTerm.toLocaleLowerCase())
-  );
-
   const onSearch = (term) => {
-    setSearchTerm(term);
+    setSearchParams((prev) => {
+      const newParams = new URLSearchParams(prev);
+      newParams.set("keyword", term);
+      newParams.set("page", "1");
+      return newParams;
+    });
+  };
+
+  const handleSortChange = (sortKey) => {
+    setSearchParams((prev) => {
+      const newParams = new URLSearchParams(prev);
+      newParams.set("orderBy", sortKey);
+      newParams.set("page", "1");
+      return newParams;
+    });
+  };
+
+  const handlePageChange = (newPage) => {
+    setSearchParams((prev) => {
+      const params = new URLSearchParams(prev);
+      params.set("page", String(newPage));
+      return params;
+    });
   };
 
   return (
@@ -78,7 +88,7 @@ const AllProducts = () => {
               </Link>
             </div>
             <div className={styles.mobileControlRow}>
-              <SearchBar searchTerm={searchTerm} onSearch={onSearch} />
+              <SearchBar onSearch={onSearch} keyword={keyword} />
               <SortSelector onChange={setOrderBy} />
             </div>
           </div>
@@ -86,16 +96,16 @@ const AllProducts = () => {
           <div className={styles.topBarContainer}>
             <h2 className={styles.sectionTitle}>전체 상품</h2>
             <div className={styles.controlsRow}>
-              <SearchBar searchTerm={searchTerm} onSearch={onSearch} />
+              <SearchBar onSearch={onSearch} />
               <Link to={"/additem"} className={styles.buttonLink}>
                 <button className={styles.addItemButton}>상품 등록하기</button>
               </Link>
-              <SortSelector onChange={(sortKey) => setOrderBy(sortKey)} />
+              <SortSelector onChange={handleSortChange} />
             </div>
           </div>
         )}
         <div className={styles.productList}>
-          {filteredData.map((item) => (
+          {products.map((item) => (
             <ProductCard
               key={item.id}
               imageUrl={item.images?.[0]}
@@ -111,7 +121,7 @@ const AllProducts = () => {
         currentPage={page}
         totalCount={totalCount}
         pageSize={pageSize}
-        onPageChange={setPage}
+        onPageChange={handlePageChange}
       />
     </>
   );
