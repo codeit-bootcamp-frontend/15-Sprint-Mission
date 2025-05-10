@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
+import { RemoveIcon } from '@/components/common/Buttons';
 import { INFO_MESSAGES } from '@/constants/messages';
 import plusIcon from '@/assets/icons/plus.svg';
-import buttonStyles from '@/styles/helpers/buttonHelpers.module.scss';
 import formStyles from '@/styles/helpers/formHelpers.module.scss';
 import styles from './ImageUploader.module.scss';
 
@@ -45,7 +45,7 @@ const ImageUploader = ({
     }
     setImagePreview(null);
 
-    // ✅ formData에서 imageFile도 제거
+    // formData에서 imageFile도 제거
     handleInputChange({ field: 'imageFile', value: null });
   };
 
@@ -71,11 +71,9 @@ const ImageUploader = ({
         {imagePreview && (
           <div className={styles.imagePreview}>
             <img src={imagePreview} alt="Preview product image" />
-            <button
-              type="button"
-              className={`${buttonStyles.removeIcon} ${styles['removeIcon--image']}`}
+            <RemoveIcon
               onClick={handleRemoveImage}
-              aria-label="Delete an image"
+              className="removeIconImage"
             />
           </div>
         )}

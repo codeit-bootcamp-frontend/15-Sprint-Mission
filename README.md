@@ -13,8 +13,8 @@
 | 2    | 2025-03-05 | [#44](https://github.com/codeit-bootcamp-frontend/15-Sprint-Mission/pull/44)   | 회원가입 및 로그인 페이지의 HTML, CSS 구현                                                                   |
 | 3    | 2025-03-07 | [#60](https://github.com/codeit-bootcamp-frontend/15-Sprint-Mission/pull/60)   | 반응형 디자인 구현(desktop-first, 1920px 이상 큰 모니터 기준), breakpoint: 1919px, 1199px, 767px             |
 | 4    | 2025-03-18 | [#101](https://github.com/codeit-bootcamp-frontend/15-Sprint-Mission/pull/101) | JS기능 추가(DOM 요소 조작 및 이벤트 리스너), 회원가입, 로그인 폼 유효성 검사                                 |
-| 5    | 2025-05-05 | [#](https://github.com/codeit-bootcamp-frontend/15-Sprint-Mission/pull/)       | React, SCSS+CSS modules로 마이그레이션, items 페이지 구현(fetch data, 검색어, 정렬, pagination, 반응형 구현) |
-| 6    | 2025-05-0  | [#](https://github.com/codeit-bootcamp-frontend/15-Sprint-Mission/pull/)       | 상품 등록 페이지 구현                                                                                        |
+| 5    | 2025-05-05 | [#](https://github.com/codeit-bootcamp-frontend/15-Sprint-Mission/pull/181)       | React, SCSS+CSS modules로 마이그레이션, items 페이지 구현(fetch data, 검색어, 정렬, pagination, 반응형 구현) |
+| 6    | 2025-05-11  | [#](https://github.com/codeit-bootcamp-frontend/15-Sprint-Mission/pull/)       | 상품 등록 페이지 구현                                                                                        |
 
 ---
 

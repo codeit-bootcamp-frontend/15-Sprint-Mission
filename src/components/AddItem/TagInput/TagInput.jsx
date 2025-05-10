@@ -1,4 +1,4 @@
-import buttonStyles from '@/styles/helpers/buttonHelpers.module.scss';
+import { RemoveIcon } from '@/components/common/Buttons';
 import formStyles from '@/styles/helpers/formHelpers.module.scss';
 import styles from './TagInput.module.scss';
 
@@ -41,11 +41,9 @@ const TagInput = ({ tagInput, setTagInput, tags, handleInputChange }) => {
         {tags.map((tag) => (
           <div key={tag} className={styles.tag}>
             #{tag}
-            <button
-              type="button"
-              className={`${buttonStyles.removeIcon} ${styles['removeIcon--tag']}`}
+            <RemoveIcon
               onClick={() => handleRemoveTag(tag)}
-              aria-label="Delete a tag"
+              className="removeIconTag"
             />
           </div>
         ))}
