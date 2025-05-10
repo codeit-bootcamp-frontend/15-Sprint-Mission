@@ -1,7 +1,7 @@
 import baseAPI from "./axios";
 
 export const productCommentAPI = {
-  getProductComment: async (productId, limit = 3, cursor = null) => {
+  getProductComment: async (productId, limit = 5, cursor = null) => {
     try {
       const response = await baseAPI.get(`/products/${productId}/comments`, {
         params: { limit, cursor },
