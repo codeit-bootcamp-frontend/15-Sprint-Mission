@@ -6,14 +6,14 @@
 
 .selectButton {
   width: 100%;
-  padding: 12px 20px;
+  padding: 1.2rem 2rem;
   border: 1px solid var(--secondary-200);
   border-radius: 12px;
   background-color: var(--white);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 24px;
+  gap: 2.4rem;
   &:hover,
   &:focus,
   &:active {
@@ -22,8 +22,8 @@
   }
 
   .arrow {
-    width: 16px;
-    height: 16px;
+    width: 1.6rem;
+    aspect-ratio: 1 / 1;
     background: url('@/assets/icons/arrow_down.svg') no-repeat center / contain;
   }
 }
@@ -32,7 +32,7 @@
   position: absolute;
   top: calc(100% + 8px);
   width: 100%;
-  font-size: 16px;
+  font-size: 1.6rem;
   background: var(--white);
   border: 1px solid var(--secondary-200);
   border-radius: 12px;
@@ -41,7 +41,7 @@
 
 .option {
   cursor: pointer;
-  padding: 10px 0px;
+  padding: 1rem 0;
   text-align: center;
   border-bottom: 1px solid var(--secondary-200);
   &:last-child {
@@ -61,11 +61,11 @@
 
   .sortIcon {
     width: 42px;
-    height: 42px;
+    aspect-ratio: 1 / 1;
     background-color: var(--white);
     border: 1px solid var(--secondary-200);
     border-radius: 12px;
-    padding: 9px;
+    padding: 0.9rem;
 
     display: inline-flex;
     justify-content: center;
@@ -86,7 +86,7 @@
   }
 
   .optionList {
-    width: 140px;
+    width: 14rem;
     top: calc(100% + 8px);
     right: 0;
     border-radius: 12px;

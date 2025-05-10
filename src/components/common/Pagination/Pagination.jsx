@@ -1,7 +1,10 @@
+import { useToast } from '@/components/common/Toast';
 import { INFO_MESSAGES } from '@/constants/messages';
 import styles from './Pagination.module.scss';
 
 const Pagination = ({ currentPage, totalCount, pageSize, onPageChange }) => {
+  const { showToast } = useToast();
+
   const totalPages = Math.ceil(totalCount / pageSize);
   const groupSize = 5;
   const currentGroup = Math.floor((currentPage - 1) / groupSize);
@@ -9,7 +12,8 @@ const Pagination = ({ currentPage, totalCount, pageSize, onPageChange }) => {
   const endPage = Math.min(startPage + groupSize - 1, totalPages);
 
   if (totalPages === 0) {
-    return <p>{INFO_MESSAGES.emptyList}</p>; // 나중에 UI 디자인 추가
+    showToast(INFO_MESSAGES.emptyList, 'info');
+    return null;
   }
 
   const pageNumbers = Array.from(

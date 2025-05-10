@@ -1,20 +1,20 @@
 .pagination {
   display: flex;
   justify-content: center;
-  gap: 4px;
-  margin-top: 43px;
+  gap: 0.4rem;
+  margin-top: 4.3rem;
 
   button {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 40px;
-    height: 40px;
-    padding: 12px;
-    font-size: 16px;
+    width: 4rem;
+    height: 4rem;
+    padding: 1.2rem;
+    font-size: 1.6rem;
     font-weight: 600;
     color: var(--gray-500);
-    background-color: var(--white);
+    background-color: var(--secondary-100);
     border: solid 1px var(--secondary-200);
     border-radius: 50%;
 
@@ -26,7 +26,7 @@
 
   .active {
     background-color: var(--primary-150);
-    color: var(--white);
+    color: var(--secondary-100);
   }
 }
 

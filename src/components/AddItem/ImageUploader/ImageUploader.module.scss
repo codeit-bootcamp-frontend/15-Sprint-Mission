@@ -1,6 +1,6 @@
 .uploadBox {
   display: flex;
-  gap: 24px;
+  gap: 2.4rem;
 }
 
 .imageUpload {
@@ -9,32 +9,32 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 282px;
-  height: 282px;
-  padding: 98px 104px;
+  width: 28.2rem;
+  aspect-ratio: 1 / 1;
+  padding: 9.8rem 10.4rem;
   background-color: var(--secondary-200);
   border-radius: 12px;
-  gap: 12px;
+  gap: 1.2rem;
 
   img {
-    width: 48px;
-    height: 48px;
+    width: 4.8rem;
+    aspect-ratio: 1 / 1;
   }
 
   p {
     color: var(--secondary-400);
-    font-size: 16px;
+    font-size: 1.6rem;
     font-weight: 400;
-    line-height: 26px;
+    line-height: 2.6rem;
     text-align: center;
   }
 }
 
 .imagePreview {
   position: relative;
-  width: 282px;
-  height: 282px;
-  gap: 12px;
+  width: 28.2rem;
+  aspect-ratio: 1 / 1;
+  gap: 1.2rem;
 
   img {
     width: 100%;
@@ -45,19 +45,19 @@
 }
 
 .warningMessage {
-  font-size: 16px;
+  font-size: 1.6rem;
   color: var(--error);
 }
 
-@media (max-width: 1199px) {
-  .imageUpload {
-    width: 168px;
-    height: 168px;
-    padding: 41px 47px;
-  }
+// @media (max-width: 1199px) {
+//   .imageUpload {
+//     width: 16.8rem;
+//     aspect-ratio: 1 / 1;
+//     padding: 4.1rem 4.7rem;
+//   }
 
-  .imagePreview {
-    width: 168px;
-    height: 168px;
-  }
-}
+//   .imagePreview {
+//     width: 16.8rem;
+//     aspect-ratio: 1 / 1;
+//   }
+// }

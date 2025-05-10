@@ -2,21 +2,6 @@
   border: 1px solid var(--error);
 }
 
-// 공통으로 빼긴했는데 그게 맞는건지 판단 중
-// .validationErrorMessage {
-//   color: var(--error);
-//   font-size: 1.4rem;
-//   font-weight: 600;
-//   line-height: 2.4rem;
-//   display: none;
-
-//   &.active {
-//     display: block;
-//     margin-top: -8px;
-//     padding: 0.8rem 1.6rem;
-//   }
-// }
-
 .passwordInput {
   position: relative;
 }

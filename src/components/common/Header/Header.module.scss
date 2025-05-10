@@ -24,8 +24,8 @@
 
   .navLinks {
     display: flex;
-    gap: 30px;
-    margin-left: 35px;
+    gap: 3rem;
+    margin-left: 3.5rem;
   }
 
   .navLink {
@@ -40,8 +40,8 @@
   }
 
   .defaultProfileIcon {
-    width: 40px;
-    height: 40px;
+    width: 4rem;
+    aspect-ratio: 1 / 1;
     border-radius: 50%;
   }
 }
@@ -77,7 +77,7 @@
   }
 
   .headerContent .navLinks {
-    gap: 8px;
-    margin-left: 8px;
+    gap: 0.8rem;
+    margin-left: 0.8rem;
   }
 }
