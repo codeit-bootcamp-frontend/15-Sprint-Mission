@@ -13,6 +13,7 @@ export const globalStyles = css`
     line-height: 1.6;
     margin: 0;
     padding: 0;
+    font-style: normal;
   }
 
   /* 전체 영역 기본 너비 설정 */
@@ -32,11 +33,6 @@ export const globalStyles = css`
   h5,
   h6 {
     font-weight: 600;
-    margin-bottom: 0.5em;
-  }
-
-  p {
-    margin-bottom: 1em;
   }
 
   /* 모든 텍스트 요소 폰트 상속 */

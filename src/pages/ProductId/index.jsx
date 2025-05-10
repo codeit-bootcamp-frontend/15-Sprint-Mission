@@ -27,21 +27,20 @@ export default ProductId;
 
 const ProductIdContainer = css`
   display: flex;
-  width: 100%;
-  max-width: 1200px;
+  width: 1200px;
   margin: 24px auto 222px;
   flex-direction: column;
   align-items: center;
   gap: 64px;
 
   ${tablet(css`
-    max-width: 696px;
+    width: 696px;
     gap: 56px;
     margin-bottom: 243px;
   `)}
 
   ${mobile(css`
-    max-width: 344px;
+    width: 344px;
     gap: 40px;
     margin: 16px auto 65px;
   `)}

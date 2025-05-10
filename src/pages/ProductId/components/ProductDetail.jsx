@@ -9,8 +9,14 @@ import {
   ProductDetailContent,
   ProductDetailContentContainer,
   ProductDetailName,
+  ProductDetailNameContainer,
+  ProductDetailDescription,
+  ProductDetailDescriptionContainer,
+  ProductDetailTags,
+  ProductDetailTagsContainer,
 } from "./ProductDetail.styles";
 import defaultImage from "/images/Img_default.png";
+import settingIcon from "/icons/ic_setting.svg";
 
 const ProductDetail = () => {
   const { productId } = useParams();
@@ -45,24 +51,33 @@ const ProductDetail = () => {
       />
       <div css={ProductDetailContent}>
         <div css={ProductDetailContentContainer}>
-          <div css={ProductDetailName}>
-            <h2>{product.name}</h2>
-            <h3>{product.price.toLocaleString()}원</h3>
+          <div css={ProductDetailNameContainer}>
+            <div css={ProductDetailName}>
+              <h2>{product.name}</h2>
+              <h3>{product.price?.toLocaleString()}원</h3>
+            </div>
+            <img src={settingIcon} alt="설정" />
           </div>
-          <div>
-            <p>상품 소개</p>
-            <p>{product.description}</p>
+          <div css={ProductDetailDescriptionContainer}>
+            <h4>상품 소개</h4>
+            <p css={ProductDetailDescription}>{product.description}</p>
           </div>
-          <div>
-            <p>상품 태그</p>
-            <p>{product.tags.join(", ")}</p>
+          <div css={ProductDetailTagsContainer}>
+            <h4>상품 태그</h4>
+            <div css={ProductDetailTags}>
+              {product.tags.map((tag) => (
+                <span key={tag}>#{tag}</span>
+              ))}
+            </div>
           </div>
         </div>
-        <div>
-          <div>
+        <div style={{ display: "flex" }}>
+          <div style={{ display: "flex" }}>
             <img src={ownerImage} alt="ownerImage" />
-            <p>{product.ownerNickname}</p>
-            <p>{new Date(product.createdAt).toLocaleDateString()}</p>
+            <div style={{ display: "flex", flexDirection: "column" }}>
+              <p>{product.ownerNickname}</p>
+              <p>{new Date(product.createdAt).toLocaleDateString()}</p>
+            </div>
           </div>
           <button>
             <img src={heartIcon} alt="heartIcon" />
