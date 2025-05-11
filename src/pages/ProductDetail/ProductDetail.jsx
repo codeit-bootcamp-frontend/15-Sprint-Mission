@@ -6,6 +6,7 @@ import { ProductInfo } from '@/components/Product';
 import { safeFetch } from '@/utils/api';
 import { baseUrl, ENDPOINTS, ROUTES } from '@/constants/urls';
 import { PRODUCT_ERROR_MESSAGES } from '@/constants/messages';
+import commonStyles from '@/styles/helpers/commonHelpers.module.scss';
 import styles from './ProductDetail.module.scss';
 
 const ProductDetail = () => {
@@ -37,14 +38,17 @@ const ProductDetail = () => {
   return (
     <div className={styles.productDetail}>
       <ProductInfo {...product} />
-
-      <div className={styles.horizontalLine} />
-
-      <CommentInput
-        productId={productId}
-        refreshAfterSubmit={refreshAfterSubmit}
-      />
-      <CommentList productId={productId} refreshKey={refreshKey} />
+      <div className={commonStyles.horizontalLine} />
+      <div>
+        <CommentInput
+          productId={productId}
+          refreshAfterSubmit={refreshAfterSubmit}
+        />
+        <CommentList
+          productId={productId}
+          // refreshKey={refreshKey}
+        />
+      </div>
 
       <Link to={ROUTES.ITEMS} className={styles.backButton}>
         목록으로 돌아가기
