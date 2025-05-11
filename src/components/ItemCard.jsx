@@ -16,7 +16,9 @@ const ItemCard = ({ item }) => {
       )}
       <div className="flex flex-col gap-6">
         <p className="text-secondary-800 text-md">{name}</p>
-        <p className="text-secondary-800 text-lg font-bold">{price}원</p>
+        <p className="text-secondary-800 text-lg font-bold">
+          {price.toLocaleString()}원
+        </p>
         <div className="text-secondary-600 bg-[url(./assets/icons/icon-heart.png)] bg-size-[16px_16px] bg-no-repeat pl-20 text-xs">
           {favoriteCount}
         </div>
