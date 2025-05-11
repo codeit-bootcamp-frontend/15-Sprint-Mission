@@ -34,6 +34,7 @@ const BestProducts = () => {
         {products.slice(0, visibleCount).map((item) => (
           <ProductCard
             key={item.id}
+            id={item.id}
             imageUrl={item.images?.[0]}
             title={item.name}
             price={item.price}
