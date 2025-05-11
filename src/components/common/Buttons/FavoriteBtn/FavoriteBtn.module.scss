@@ -1,0 +1,19 @@
+.favoriteCount {
+  display: flex;
+
+  .favoriteBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+
+    .heartIcon {
+      aspect-ratio: 1 / 1;
+      object-fit: contain;
+    }
+
+    .count {
+      color: var(--secondary-600);
+    }
+  }
+}
