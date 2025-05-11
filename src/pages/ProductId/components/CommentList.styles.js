@@ -1,5 +1,5 @@
 import { css } from "@emotion/react";
-import { flexCenter, flexStart } from "@/styles/utils/mixins";
+import { flexStart } from "@/styles/utils/mixins";
 
 export const CommentListContainer = css`
   display: flex;
@@ -21,12 +21,17 @@ export const CommentListStyle = css`
   position: relative;
 `;
 
-export const CommentItem = css`
+export const CommentItemContainer = (isEditing) => css`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 24px;
+  gap: ${isEditing ? "16px" : "24px"};
   flex: 1 0 0;
+
+  ${isEditing &&
+  css`
+    height: 167px;
+  `}
 
   p {
     align-self: stretch;
@@ -42,12 +47,14 @@ export const CommentProfile = css`
   height: 32px;
 `;
 
-export const SettingIcon = css`
+export const SettingIconStyle = (isEditing) => css`
   width: 3px;
   height: 13px;
   flex-shrink: 0;
   margin-top: 5px;
   cursor: pointer;
+
+  display: ${isEditing ? "none" : "block"};
 `;
 
 export const CommentProfileContainer = css`
@@ -56,8 +63,9 @@ export const CommentProfileContainer = css`
 `;
 
 export const CommentProfileInfo = css`
-  ${flexStart}
+  display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 4px;
   color: var(--gray600);
   font-size: 12px;
@@ -101,4 +109,27 @@ export const SettingButtonBottom = css`
   border-right: 1px solid var(--gray300);
   border-bottom: 1px solid var(--gray300);
   border-left: 1px solid var(--gray300);
+`;
+
+export const CommentEditInput = css`
+  display: flex;
+  width: 100%;
+  padding: 16px 24px;
+  align-items: flex-start;
+  gap: 10px;
+  flex: 1 0 0;
+
+  resize: none;
+  border: none;
+  border-radius: 12px;
+  background: var(--gray100);
+
+  &:hover {
+    border: 1px solid var(--gray400);
+  }
+
+  color: var(--gray800);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
 `;

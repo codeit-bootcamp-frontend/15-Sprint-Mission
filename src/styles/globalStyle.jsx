@@ -55,4 +55,9 @@ export const globalStyles = css`
     font-family: inherit;
     font-size: inherit;
   }
+
+  textarea {
+    font-family: inherit;
+    font-size: inherit;
+  }
 `;
