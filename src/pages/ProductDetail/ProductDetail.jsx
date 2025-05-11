@@ -6,7 +6,9 @@ import { ProductInfo } from '@/components/Product';
 import { safeFetch } from '@/utils/api';
 import { baseUrl, ENDPOINTS, ROUTES } from '@/constants/urls';
 import { PRODUCT_ERROR_MESSAGES } from '@/constants/messages';
+import arrowBackIcon from '@/assets/icons/arrow_back.svg';
 import commonStyles from '@/styles/helpers/commonHelpers.module.scss';
+import buttonStyles from '@/styles/helpers/buttonHelpers.module.scss';
 import styles from './ProductDetail.module.scss';
 
 const ProductDetail = () => {
@@ -44,15 +46,18 @@ const ProductDetail = () => {
           productId={productId}
           refreshAfterSubmit={refreshAfterSubmit}
         />
-        <CommentList
-          productId={productId}
-          // refreshKey={refreshKey}
-        />
+        <CommentList productId={productId} refreshKey={refreshKey} />
       </div>
 
-      <Link to={ROUTES.ITEMS} className={styles.backButton}>
-        목록으로 돌아가기
-      </Link>
+      <div className={styles.backButtonWrapper}>
+        <Link
+          to={ROUTES.ITEMS}
+          className={`${styles.backButton} ${buttonStyles.primary}`}
+        >
+          목록으로 돌아가기
+          <img src={arrowBackIcon} alt="Go back to previous page" />
+        </Link>
+      </div>
     </div>
   );
 };
