@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import ItemCreateButton from "./ItemCreatButton";
+import ItemCreateButton from "./ItemCreateButton";
+import EmptyItems from "../img/emptyItems.svg";
 
 const Allitems = () => {
   const [items, setItems] = useState([]);
-
-  const [pageSize, setPageSize] = useState("");
+  const [pageSize, setPageSize] = useState();
 
   // 화면 크기에 따라 pageSize 설정
-  // 모바일: 1, 태블릿: 2, PC: 4
+  // 모바일: 4, 태블릿: 6, PC: 10
   const updatePageSize = () => {
     const width = window.innerWidth;
     if (width <= 744) {
@@ -78,7 +78,7 @@ const Allitems = () => {
         {items.map((item) => (
           <div key={item.id} className="flex flex-col gap-6 ">
             <img
-              src={item.images[0]}
+              src={item.images.length > 0 ? item.images[0] : EmptyItems}
               alt={item.name}
               className="size-168 tablet:size-221 object-cover rounded-xl mb-10"
             />
