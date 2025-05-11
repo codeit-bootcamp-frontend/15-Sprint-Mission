@@ -87,11 +87,11 @@ const AddItemForm = () => {
     <div className='p-4'>
       <form>
         <div className='flex justify-between items-center mb-4'>
-          <p className='text-[2rem] font-[700]'>상품 등록하기</p>
+          <p className='text-[2rem] font-bold leading-none'>상품 등록하기</p>
           <button
             type='submit'
             disabled={!isSubmitable}
-            className={`px-[2.3rem] py-[1.2rem] rounded text-[1.6rem] ${
+            className={`h-[4.4rem] px-[2rem] rounded text-[1.6rem] font-[400] ${
               isSubmitable
                 ? 'bg-[#3692ff] text-white cursor-pointer'
                 : 'bg-[#9ca3af] text-gray-600 cursor-not-allowed'
@@ -101,14 +101,42 @@ const AddItemForm = () => {
           </button>
         </div>
 
-        <div className='mb-4'>
-          <button
-            type='button'
-            onClick={imgOnClick}
-            className='px-4 py-2 bg-[#9ca3af] hover:bg-gray-400 rounded'
-          >
-            이미지 등록
-          </button>
+        <div className='mb-4 mt-6'>
+          <p className='mb-2 font-[700] text-[2rem] text-[#1F2937]'>
+            상품 이미지
+          </p>
+          <div className='flex gap-4'>
+            <div
+              onClick={imgOnClick}
+              className='w-[16.8rem] h-[16.8rem] sm:w-[28.2rem] sm:h-[28.2rem] bg-[#f3f4f6] rounded flex flex-col items-center justify-center cursor-pointer'
+            >
+              <div className='text-[#9ca3af] text-[2rem] mb-1'>+</div>
+              <div className='text-[#9ca3af] text-[1.6rem]'>이미지 등록</div>
+            </div>
+
+            {previewImg && (
+              <div className='relative w-[16.8rem] h-[16.8rem] sm:w-[28.2rem] sm:h-[28.2rem]'>
+                <img
+                  src={previewImg}
+                  alt='preview'
+                  className='w-full h-full object-cover border rounded'
+                />
+                <button
+                  type='button'
+                  onClick={() => {
+                    setPreviewImg(null);
+                    setProductImg(null);
+                    setFormData((prev) => ({ ...prev, img: null }));
+                    if (fileInputRef.current) fileInputRef.current.value = '';
+                  }}
+                  className='absolute top-2 right-2 bg-gray-200 rounded-full w-6 h-6 flex items-center justify-center'
+                >
+                  <span className='text-gray-600 text-lg'>×</span>
+                </button>
+              </div>
+            )}
+          </div>
+
           <input
             type='file'
             accept='image/*'
@@ -117,16 +145,6 @@ const AddItemForm = () => {
             style={{ display: 'none' }}
           />
         </div>
-
-        {previewImg && (
-          <div className='mb-4'>
-            <img
-              src={previewImg}
-              alt='preview'
-              className='w-[28.2rem] h-[28.2rem] object-cover border rounded aspect-square'
-            />
-          </div>
-        )}
 
         <div className='flex flex-col gap-10'>
           <Input
