@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-const BestItem = () => {
+const Allitems = () => {
   const [items, setItems] = useState([]);
 
   const [pageSize, setPageSize] = useState(1);
@@ -11,11 +11,11 @@ const BestItem = () => {
   const updatePageSize = () => {
     const width = window.innerWidth;
     if (width <= 744) {
-      setPageSize(1); // 모바일
+      setPageSize(4); // 모바일
     } else if (width >= 744 && width < 1200) {
-      setPageSize(2); // 태블릿
+      setPageSize(6); // 태블릿
     } else {
-      setPageSize(4); // PC
+      setPageSize(10); // PC
     }
   };
 
@@ -52,18 +52,24 @@ const BestItem = () => {
   }, [pageSize]); // pageSize 변경 시 재호출
 
   return (
-    <div className=" px-16 pt-87 w-376 tablet:w-744 pc:w-1200 mx-auto">
-      <h1 className="text-xl font-bold text-secondary-900 ">베스트 상품</h1>
+    <div className="px-16 pt-24 w-376 tablet:w-744 pc:w-1200 mx-auto">
+      <h1 className="text-xl font-bold text-secondary-900 ">전체 상품</h1>
+      <div>상품등록하기 버튼 추가</div>
+      <div>검색인풋추가</div>
+      <div>드롭다운추가</div>
       <div
         className="
           grid
-          grid-cols-1
-          tablet:grid-cols-2
-          pc:grid-cols-4
-          gap-10
+          grid-cols-2
+          grid-rows-2
+          tablet:grid-cols-3
+          pc:grid-cols-5
+          gap-y-32
+          tablet:gap-y-40 
+          gap-x-8
+          tablet:gap-x-16 pc:gap-x-24
           mt-16
           justify-items-center
-          
           "
       >
         {items.map((item) => (
@@ -71,7 +77,7 @@ const BestItem = () => {
             <img
               src={item.images[0]}
               alt={item.name}
-              className="size-344 pc:size-282 object-cover rounded-xl mb-10"
+              className="size-168 tablet:size-221 object-cover rounded-xl mb-10"
             />
             <h2 className="text-md font-medium text-secondary-800">
               {item.name}
@@ -84,9 +90,10 @@ const BestItem = () => {
             </p>
           </div>
         ))}
+        <div>페이지네이션추가</div>
       </div>
     </div>
   );
 };
 
-export default BestItem;
+export default Allitems;
