@@ -54,10 +54,14 @@ const Allitems = () => {
 
   return (
     <div className="px-16 pt-24 w-376 tablet:w-744 pc:w-1200 mx-auto">
-      <h1 className="text-xl font-bold text-secondary-900 ">전체 상품</h1>
-      <ItemCreateButton />
-      <div>검색인풋추가</div>
-      <div>드롭다운추가</div>
+      <div className="flex items-center justify-between">
+        <h1 className="text-xl font-bold text-secondary-900 ">전체 상품</h1>
+        <ItemCreateButton />
+      </div>
+      <div className="flex items-center justify-between mt-8">
+        <div>검색인풋추가</div>
+        <div>드롭다운추가</div>
+      </div>
       <div
         className="
           grid
@@ -65,12 +69,10 @@ const Allitems = () => {
           grid-rows-2
           tablet:grid-cols-3
           pc:grid-cols-5
-          gap-y-32
-          tablet:gap-y-40 
-          gap-x-8
-          tablet:gap-x-16 pc:gap-x-24
-          mt-16
+          gap-y-32 tablet:gap-y-40 
+          gap-x-8 tablet:gap-x-16 pc:gap-x-24
           justify-items-center
+          mt-16
           "
       >
         {items.map((item) => (
