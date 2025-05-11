@@ -42,7 +42,7 @@ export default function AddItem() {
   }
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData); // 서버 전송 등 처리
+    console.log(formData);
   };
 
   console.log(formData);
