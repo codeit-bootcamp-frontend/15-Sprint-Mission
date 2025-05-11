@@ -23,11 +23,6 @@
   }
 }
 
-.horizontalLine {
-  width: 100%;
-  height: 1px;
-  background-color: var(--secondary-200);
-}
 .productInfo {
   display: flex;
   flex-direction: column;
@@ -123,4 +118,18 @@
 
 .favoriteIconSize {
   width: 3.2rem;
+}
+
+@media (max-width: 767px) {
+  .productContainer {
+    flex-direction: column;
+
+    .productImage {
+      width: 100%;
+    }
+
+    .productOverview {
+      gap: 4rem;
+    }
+  }
 }

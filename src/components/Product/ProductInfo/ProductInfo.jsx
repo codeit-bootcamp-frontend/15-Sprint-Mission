@@ -2,6 +2,7 @@ import { FavoriteBtn, VerticalKebabDrop } from '@/components/common/Buttons';
 import { isoDate } from '@/utils/format';
 import defaultProfileImg from '@/assets/images/default_profile.svg';
 import tagStyles from '@/styles/helpers/tagHelpers.module.scss';
+import commonStyles from '@/styles/helpers/commonHelpers.module.scss';
 import styles from './ProductInfo.module.scss';
 
 const ProductInfo = ({
@@ -32,7 +33,7 @@ const ProductInfo = ({
               <VerticalKebabDrop />
             </div>
             <p className={styles.price}>{price.toLocaleString()}원</p>
-            <div className={styles.horizontalLine} />
+            <div className={commonStyles.horizontalLine} />
           </div>
           <div className={styles.infoLabel}>
             <h3>상품 소개</h3>
