@@ -1,3 +1,4 @@
+import React from "react";
 import { Link } from "react-router-dom";
 import filterMobile from "/icons/ic_filter_mobile.svg";
 import filter from "/icons/ic_filter.svg";
@@ -27,7 +28,18 @@ const AllItemsHeader = ({
   handleSortOptionSelect,
   getSortButtonText,
   sortMenuRef,
+  onSearch, // 검색 실행 함수
 }) => {
+  const handleSearch = () => {
+    onSearch(); // 검색 실행
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      handleSearch(); // 엔터 키를 눌렀을 때 검색 실행
+    }
+  };
+
   return (
     <header css={AllItemsHeaderStyle}>
       {isMobile ? (
@@ -40,11 +52,17 @@ const AllItemsHeader = ({
           </div>
           <div css={AllItemsBottomRow}>
             <div css={AllItemsSearchContainer}>
-              <img src={search} alt="검색" css={AllItemsSearchIcon} />
+              <img
+                src={search}
+                alt="검색"
+                css={AllItemsSearchIcon}
+                onClick={handleSearch}
+              />
               <input
                 type="text"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
+                onKeyPress={handleKeyPress} // 엔터 키 이벤트 핸들러 추가
                 placeholder="검색할 상품을 입력해주세요"
                 css={AllItemsSearchInput}
               />
@@ -80,11 +98,17 @@ const AllItemsHeader = ({
           <h2 css={BestItemsTitle}>전체 상품</h2>
           <div css={AllItemsFilterContainer}>
             <div css={AllItemsSearchContainer}>
-              <img src={search} alt="검색" css={AllItemsSearchIcon} />
+              <img
+                src={search}
+                alt="검색"
+                css={AllItemsSearchIcon}
+                onClick={handleSearch}
+              />
               <input
                 type="text"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
+                onKeyPress={handleKeyPress} // 엔터 키 이벤트 핸들러 추가
                 placeholder="검색할 상품을 입력해주세요"
                 css={AllItemsSearchInput}
               />

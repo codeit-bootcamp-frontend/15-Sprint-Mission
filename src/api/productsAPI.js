@@ -1,10 +1,15 @@
 import baseAPI from "./axios";
 
 export const productsAPI = {
-  getProducts: async (page = 1, pageSize = 10, orderBy = "recent") => {
+  getProducts: async (
+    page = 1,
+    pageSize = 10,
+    orderBy = "recent",
+    keyword = ""
+  ) => {
     try {
       const response = await baseAPI.get(`/products`, {
-        params: { page, pageSize, orderBy },
+        params: { page, pageSize, orderBy, keyword },
       });
       return response.data;
     } catch (error) {
