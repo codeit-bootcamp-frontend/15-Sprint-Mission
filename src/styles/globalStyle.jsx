@@ -8,7 +8,7 @@ export const globalStyles = css`
       BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI",
       "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic",
       "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
-    background-color: #ffffff;
+    background-color: var(--white);
     color: #333;
     line-height: 1.6;
     margin: 0;

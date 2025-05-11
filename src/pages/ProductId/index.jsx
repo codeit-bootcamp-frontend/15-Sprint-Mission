@@ -28,7 +28,7 @@ export default ProductId;
 const ProductIdContainer = css`
   display: flex;
   width: 1200px;
-  margin: 24px auto 222px;
+  margin: 24px auto;
   flex-direction: column;
   align-items: center;
   gap: 64px;
@@ -72,6 +72,11 @@ const gotoListButton = css`
   font-weight: 600;
   line-height: 26px;
   white-space: nowrap;
+  margin-bottom: 222px;
+
+  ${mobile(css`
+    margin-bottom: 65px;
+  `)}
 `;
 
 const ProductDetailContainer = css`

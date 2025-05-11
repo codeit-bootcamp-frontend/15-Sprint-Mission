@@ -24,3 +24,9 @@ export const flexCenter = css`
   justify-content: center;
   align-items: center;
 `;
+
+export const flexStart = css`
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+`;
