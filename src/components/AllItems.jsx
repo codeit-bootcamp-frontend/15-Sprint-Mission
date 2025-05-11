@@ -91,7 +91,6 @@ const Allitems = () => {
             </p>
           </div>
         ))}
-        <div>페이지네이션추가</div>
       </div>
     </div>
   );
