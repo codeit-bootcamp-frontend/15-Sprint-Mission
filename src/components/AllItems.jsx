@@ -3,27 +3,24 @@ import axios from "axios";
 import ItemCreateButton from "./ItemCreateButton";
 import EmptyItems from "../img/emptyItems.svg";
 
+const getPageSize = () => {
+  const width = window.innerWidth;
+  if (width <= 744) return 4; // 모바일
+  if (width < 1200) return 6; // 태블릿
+  return 10; // PC
+};
+
 const Allitems = () => {
   const [items, setItems] = useState([]);
-  const [pageSize, setPageSize] = useState();
+  const [pageSize, setPageSize] = useState(getPageSize());
 
-  // 화면 크기에 따라 pageSize 설정
-  // 모바일: 4, 태블릿: 6, PC: 10
+  // 화면 크기 변화에 따라 pageSize 갱신
   const updatePageSize = () => {
-    const width = window.innerWidth;
-    if (width <= 744) {
-      setPageSize(4); // 모바일
-    } else if (width >= 744 && width < 1200) {
-      setPageSize(6); // 태블릿
-    } else {
-      setPageSize(10); // PC
-    }
+    setPageSize(getPageSize());
   };
 
-  // API 호출
   useEffect(() => {
-    updatePageSize();
-    window.addEventListener("resize", updatePageSize); // 리사이즈 이벤트
+    window.addEventListener("resize", updatePageSize);
 
     const fetchItems = async () => {
       try {
@@ -48,14 +45,13 @@ const Allitems = () => {
 
     fetchItems();
 
-    // 클린업: 리사이즈 이벤트 제거
     return () => window.removeEventListener("resize", updatePageSize);
-  }, [pageSize]); // pageSize 변경 시 재호출
+  }, [pageSize]);
 
   return (
     <div className="px-16 pt-24 w-376 tablet:w-744 pc:w-1200 mx-auto">
       <div className="flex items-center justify-between">
-        <h1 className="text-xl font-bold text-secondary-900 ">전체 상품</h1>
+        <h1 className="text-xl font-bold text-secondary-900">전체 상품</h1>
         <ItemCreateButton />
       </div>
       <div className="flex items-center justify-between mt-8">
@@ -73,12 +69,12 @@ const Allitems = () => {
           gap-x-8 tablet:gap-x-16 pc:gap-x-24
           justify-items-center
           mt-16
-          "
+        "
       >
         {items.map((item) => (
-          <div key={item.id} className="flex flex-col gap-6 ">
+          <div key={item.id} className="flex flex-col gap-6">
             <img
-              src={item.images.length > 0 ? item.images[0] : EmptyItems}
+              src={item.images?.[0] || EmptyItems}
               alt={item.name}
               className="size-168 tablet:size-221 object-cover rounded-xl mb-10"
             />

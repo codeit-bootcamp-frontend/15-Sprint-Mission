@@ -1,28 +1,25 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import EmptyItems from "../img/emptyItems.svg";
+
+const getPageSize = () => {
+  const width = window.innerWidth;
+  if (width <= 744) return 1; // 모바일
+  if (width < 1200) return 2; // 태블릿
+  return 4; // PC
+};
 
 const BestItem = () => {
   const [items, setItems] = useState([]);
+  const [pageSize, setPageSize] = useState(getPageSize());
 
-  const [pageSize, setPageSize] = useState("");
-
-  // 화면 크기에 따라 pageSize 설정
-  // 모바일: 1, 태블릿: 2, PC: 4
+  // 리사이즈 시 pageSize 업데이트
   const updatePageSize = () => {
-    const width = window.innerWidth;
-    if (width <= 744) {
-      setPageSize(1); // 모바일
-    } else if (width >= 744 && width < 1200) {
-      setPageSize(2); // 태블릿
-    } else {
-      setPageSize(4); // PC
-    }
+    setPageSize(getPageSize());
   };
 
-  // API 호출
   useEffect(() => {
-    updatePageSize();
-    window.addEventListener("resize", updatePageSize); // 리사이즈 이벤트
+    window.addEventListener("resize", updatePageSize); // 리사이즈 이벤트 등록
 
     const fetchItems = async () => {
       try {
@@ -45,15 +42,14 @@ const BestItem = () => {
       }
     };
 
-    fetchItems();
+    fetchItems(); // 최초 또는 pageSize 변경 시 실행
 
-    // 클린업: 리사이즈 이벤트 제거
-    return () => window.removeEventListener("resize", updatePageSize);
-  }, [pageSize]); // pageSize 변경 시 재호출
+    return () => window.removeEventListener("resize", updatePageSize); // 이벤트 클린업
+  }, [pageSize]);
 
   return (
-    <div className=" px-16 pt-87 w-376 tablet:w-744 pc:w-1200 mx-auto">
-      <h1 className="text-xl font-bold text-secondary-900 ">베스트 상품</h1>
+    <div className="px-16 pt-87 w-376 tablet:w-744 pc:w-1200 mx-auto">
+      <h1 className="text-xl font-bold text-secondary-900">베스트 상품</h1>
       <div
         className="
           grid
@@ -63,13 +59,12 @@ const BestItem = () => {
           gap-10
           mt-16
           justify-items-center
-          
-          "
+        "
       >
         {items.map((item) => (
-          <div key={item.id} className="flex flex-col gap-6 ">
+          <div key={item.id} className="flex flex-col gap-6">
             <img
-              src={item.images[0]}
+              src={item.images?.[0] || EmptyItems}
               alt={item.name}
               className="size-344 pc:size-282 object-cover rounded-xl mb-10"
             />
