@@ -4,6 +4,8 @@
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+  display: flex;
+  flex-direction: column;
 }
 .product {
   display: flex;
@@ -53,6 +55,7 @@
   display: flex;
   gap: 8px;
   margin-bottom: 62px;
+  flex-wrap: wrap;
 }
 .product__tags li {
   @include font-16-regular;
@@ -139,14 +142,53 @@
   color: #9ca3af;
 }
 
-.question__button {
+.submit-button {
   display: flex;
   justify-content: end;
 }
-.question__button button {
+.submit-button-none {
   @include font-16-semiBold;
   padding: 8px 23px;
   border-radius: 8px;
   color: #f3f4f6;
   background-color: #9ca3af;
+}
+.active {
+  background-color: #3692ff;
+}
+.back-button {
+  @include font-18-semiBold;
+
+  padding: 11px 72px 11px 40px;
+  color: #f3f4f6;
+  background-color: #3692ff;
+  background-image: url("../../image/back.svg");
+  background-repeat: no-repeat;
+  background-position-x: 175px;
+  background-position-y: 12px;
+  border-radius: 40px;
+  margin: 0 auto;
+  margin-top: 64px;
+  margin-bottom: 200px;
+}
+
+@media (max-width: 744px) {
+  .product__image {
+    width: 340px;
+    height: 340px;
+  }
+  .product__content-wrapper {
+    width: 340px;
+  }
+  .question__textarea {
+    max-width: 656px;
+  }
+}
+@media (max-width: 376px) {
+  .product {
+    flex-direction: column;
+  }
+  .question__textarea {
+    max-width: 293px;
+  }
 }

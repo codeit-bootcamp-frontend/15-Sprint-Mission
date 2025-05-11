@@ -1,1 +1,111 @@
 @import "../../styles/variables.scss";
+.comment {
+  position: relative;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.comment__content {
+  @include font-14-regular;
+  color: #1f2937;
+}
+.comment__control {
+  padding: 5px 10px;
+  background-image: url("../../image/options.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.options {
+  @include font-16-regular;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  position: absolute;
+  width: 139px;
+
+  padding: 12px;
+  color: #6b7280;
+  background-color: white;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  top: 34px;
+  left: 1061px;
+}
+
+.hidden {
+  display: none;
+}
+
+.comment-profile {
+  @include font-12-regular;
+  display: grid;
+  width: 100%;
+  height: 40px;
+  grid-template-areas:
+    "a b"
+    "a c";
+  grid-template-columns: 0fr 1fr;
+  grid-template-rows: auto auto;
+  margin-bottom: 10px;
+}
+.profile {
+  grid-area: a;
+  margin-right: 8px;
+}
+.nickname {
+  color: #4b5563;
+  grid-area: b;
+}
+.passedTime {
+  color: #9ca3af;
+  grid-area: c;
+}
+.borderline {
+  height: 1px;
+  background-color: #e5e7eb;
+  width: 100%;
+}
+
+.modify__textarea {
+  @include font-16-regular;
+  width: 100%;
+  max-width: 1152px;
+  height: 80px;
+  padding: 16px 24px;
+  margin-bottom: 16px;
+  background-color: #f3f4f6;
+  border-radius: 12px;
+  overflow: scroll;
+  color: #111827;
+}
+
+.modify__button {
+  display: flex;
+  justify-content: end;
+}
+.modify__button button {
+  @include font-16-semiBold;
+  padding: 8px 23px;
+  border-radius: 8px;
+}
+
+.button-cancel {
+  color: #737373;
+  background-color: white;
+}
+.button-modify {
+  color: #f3f4f6;
+  background-color: #3692ff;
+}
+
+@media (max-width: 744px) {
+  .modify__textarea {
+    max-width: 655px;
+  }
+}
+@media (max-width: 376px) {
+  .modify__textarea {
+    max-width: 293px;
+  }
+}

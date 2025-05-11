@@ -7,12 +7,14 @@ import favorite from "../../image/favoriteCount.svg";
 import postComment from "../../API/postComment";
 import Comments from "../Comments/Comments";
 import getComments from "../../API/getComments";
+import { useNavigate } from "react-router";
 
 export default function Product() {
   const [product, setProduct] = useState();
   const { productId } = useParams();
   const productIdNum = Number(productId);
   const [message, setMessage] = useState("");
+  const navigate = useNavigate();
 
   useEffect(() => {
     async function fetchProduct() {
@@ -101,17 +103,27 @@ export default function Product() {
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             placeholder="개인정보를 공유 및 요청하거나, 명예 훼손, 무단 광고, 불법 정보 유포시 모니터링 후 삭제될 수 있으며, 이에 대한 민형사상 책임은 게시자에게 있습니다."
-            // rows={5}
-            // cols={40}
           />
-          <div className={styles["question__button"]}>
-            <button type="submit">등록</button>
+          <div className={styles["submit-button"]}>
+            <button
+              className={`${styles["submit-button-none"]} ${
+                message.trim() ? styles.active : ""
+              }`}
+            >
+              등록
+            </button>
           </div>
         </form>
       </section>
       <section className={styles["comments"]}>
         <Comments productIdNum={productIdNum} />
       </section>
+      <button
+        className={styles["back-button"]}
+        onClick={() => navigate("/items")}
+      >
+        목록으로 돌아가기
+      </button>
     </div>
   );
 }
