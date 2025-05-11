@@ -1,7 +1,7 @@
 import logoText from "../img/logoText.svg";
 import loginState from "../img/loginState.svg";
 import Favicon from "../img/favicon.svg";
-import { NavLink } from "react-router-dom";
+import { NavLink } from "react-router";
 
 const Nav = () => {
   return (

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import ItemCreateButton from "./ItemCreatButton";
 
 const Allitems = () => {
   const [items, setItems] = useState([]);
@@ -54,7 +55,7 @@ const Allitems = () => {
   return (
     <div className="px-16 pt-24 w-376 tablet:w-744 pc:w-1200 mx-auto">
       <h1 className="text-xl font-bold text-secondary-900 ">전체 상품</h1>
-      <div>상품등록하기 버튼 추가</div>
+      <ItemCreateButton />
       <div>검색인풋추가</div>
       <div>드롭다운추가</div>
       <div
