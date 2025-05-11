@@ -39,7 +39,7 @@ const ProductDetail = () => {
     <div className={styles.productDetail}>
       <ProductInfo {...product} />
       <div className={commonStyles.horizontalLine} />
-      <div>
+      <div className={styles.commentSection}>
         <CommentInput
           productId={productId}
           refreshAfterSubmit={refreshAfterSubmit}

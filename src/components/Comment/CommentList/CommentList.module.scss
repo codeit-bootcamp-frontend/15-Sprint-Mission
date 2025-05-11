@@ -1,0 +1,46 @@
+.commentList {
+  display: flex;
+  flex-direction: column;
+}
+
+.comment {
+  display: flex;
+  justify-content: space-between;
+  .commentContent {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+
+    p {
+      font-size: 1.4rem;
+      font-weight: 400;
+    }
+
+    .writerInfo {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      img {
+        width: 3.2rem;
+        aspect-ratio: 1 / 1;
+        border-radius: 50%;
+      }
+
+      .nicknameAndDate {
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+        .nickname {
+          color: var(--secondary-600);
+        }
+        .date {
+          color: var(--secondary-400);
+        }
+      }
+    }
+  }
+}
+
+.addMargin {
+  margin: 2.4rem 0;
+}

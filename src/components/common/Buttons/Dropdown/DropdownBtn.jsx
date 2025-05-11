@@ -33,9 +33,7 @@ const DropdownBtn = ({
       onClick={toggle}
       aria-label="Open Dropdown"
     >
-      <span className={styles.icon}>
-        <img src={iconSrc} alt={iconAlt} />
-      </span>
+      <img src={iconSrc} alt={iconAlt} />
     </button>
   );
 

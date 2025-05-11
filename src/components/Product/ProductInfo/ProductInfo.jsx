@@ -51,11 +51,11 @@ const ProductInfo = ({
           </div>
         </div>
         <div className={styles.productPostInfo}>
-          <div className={styles.authorInfo}>
-            <img src={defaultProfileImg} alt="Author Profile Image" />
+          <div className={styles.writerInfo}>
+            <img src={defaultProfileImg} alt="Writer Profile Image" />
             <div className={styles.nicknameAndDate}>
-              <div className={styles.ownerNickname}>{ownerNickname}</div>
-              <div className={styles.postDate}>{isoDate(updatedAt)}</div>
+              <div className={styles.nickname}>{ownerNickname}</div>
+              <div className={styles.date}>{isoDate(updatedAt)}</div>
             </div>
           </div>
           <div className={styles.favoriteContainer}>
