@@ -8,7 +8,8 @@ const displayConfig = {
 };
 
 const useAllItems = ({ page, display, orderBy }) => {
-  const [allItems, setAllItems] = useState([]);
+  const [allItemList, setAllItemList] = useState([]);
+  const [totalCount, setTotalCount] = useState(0);
   const currentDisplay = displayConfig[display];
   useEffect(() => {
     const getAllitems = async () => {
@@ -17,10 +18,11 @@ const useAllItems = ({ page, display, orderBy }) => {
         pageSize: currentDisplay["itemCount"],
         orderBy,
       });
-      setAllItems(data.list);
+      setAllItemList(data.list);
+      setTotalCount(data.totalCount);
     };
     getAllitems();
   }, [page, currentDisplay, orderBy]);
-  return allItems;
+  return { allItemList, totalCount };
 };
 export default useAllItems;
