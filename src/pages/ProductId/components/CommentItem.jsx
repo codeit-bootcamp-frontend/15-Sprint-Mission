@@ -13,7 +13,7 @@ import {
   SettingContainer,
   SettingButtonTop,
   SettingButtonBottom,
-} from "./CommentList.styles";
+} from "./CommentItem.styles";
 import settingIcon from "/icons/ic_setting.svg";
 import defaultProfile from "/icons/profile.png";
 import CommentEdit from "./CommentEdit";

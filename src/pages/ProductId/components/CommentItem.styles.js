@@ -1,14 +1,6 @@
 import { css } from "@emotion/react";
 import { flexStart } from "@/styles/utils/mixins";
 
-export const CommentListContainer = css`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  width: 100%;
-  gap: 24px;
-`;
-
 export const CommentListStyle = css`
   display: flex;
   width: 100%;
@@ -21,26 +13,27 @@ export const CommentListStyle = css`
   position: relative;
 `;
 
-export const CommentItemContainer = (isEditing) => css`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: ${isEditing ? "16px" : "24px"};
-  flex: 1 0 0;
-
-  ${isEditing &&
+export const CommentItemContainer = (isEditing) =>
   css`
-    height: 167px;
-  `}
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: ${isEditing ? "16px" : "24px"};
+    flex: 1 0 0;
 
-  p {
-    align-self: stretch;
-    color: var(--gray800);
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 24px;
-  }
-`;
+    ${isEditing &&
+    css`
+      height: 167px;
+    `}
+
+    p {
+      align-self: stretch;
+      color: var(--gray800);
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 24px;
+    }
+  `;
 
 export const CommentProfile = css`
   width: 32px;

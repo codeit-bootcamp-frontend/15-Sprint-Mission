@@ -2,7 +2,9 @@ import { productCommentAPI } from "@/api/productCommentAPi";
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import CommentItem from "./CommentItem";
-import { CommentListContainer } from "./CommentList.styles";
+import CommentEmpty from "/images/Img_empty.png";
+import { css } from "@emotion/react";
+import { desktop } from "@/styles/utils/mixins";
 
 function CommentList() {
   const [comments, setComments] = useState([]);
@@ -29,10 +31,49 @@ function CommentList() {
           <CommentItem key={comment.id} comment={comment} />
         ))
       ) : (
-        <div>댓글이 없습니다.</div>
+        <div css={CommentEmptyContainer}>
+          <img src={CommentEmpty} alt="댓글이 없습니다." />
+          <span>아직 문의가 없어요</span>
+        </div>
       )}
     </section>
   );
 }
 
 export default CommentList;
+
+const CommentListContainer = css`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 24px;
+`;
+
+const CommentEmptyContainer = css`
+  display: flex;
+  width: 196px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+
+  color: var(--gray400);
+  text-align: center;
+
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+
+  img {
+    width: 140px;
+  }
+
+  ${desktop(css`
+    width: 240px;
+
+    img {
+      width: 196px;
+    }
+  `)}
+`;

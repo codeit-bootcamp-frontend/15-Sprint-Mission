@@ -8,7 +8,7 @@ import {
   CommentBottomButtonContainer,
   CancelButton,
   SaveButton,
-} from "./CommentList.styles";
+} from "./CommentItem.styles";
 import defaultProfile from "/icons/profile.png";
 import dayjs from "dayjs";
 import ko from "dayjs/locale/ko";
