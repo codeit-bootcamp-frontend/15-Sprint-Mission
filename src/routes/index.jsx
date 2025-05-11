@@ -16,9 +16,8 @@ const AppRoutes = () => (
       <Route index element={<Landing />} />
       <Route path={ROUTES.SIGNUP} element={<SignUp />} />
       <Route path={ROUTES.SIGNIN} element={<SignIn />} />
-      <Route path={ROUTES.ITEMS} element={<Items />}>
-        <Route path=":productId" element={<ProductDetail />} />
-      </Route>
+      <Route path={ROUTES.ITEMS} element={<Items />} />
+      <Route path={ROUTES.ITEM_DETAIL()} element={<ProductDetail />} />
       <Route path={ROUTES.ADD_ITEM} element={<AddItem />} />
     </Route>
   </Routes>

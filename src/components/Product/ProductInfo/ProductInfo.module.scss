@@ -1,0 +1,35 @@
+.productInfo {
+  display: flex;
+  gap: 2.4rem;
+}
+
+.horizontalLine {
+  width: 100%;
+  height: 1px;
+  background-color: var(--secondary-200);
+}
+
+.productInfo .image {
+  display: block;
+  width: 48.6rem;
+  aspect-ratio: 1 / 1;
+  border-radius: 28.59px;
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.productInfo .info {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 2.4rem;
+
+  .titleAndPrice {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    justify-content: center;
+  }
+}

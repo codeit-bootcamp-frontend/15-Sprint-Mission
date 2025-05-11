@@ -4,7 +4,7 @@
   min-width: 140px;
 }
 
-.selectButton {
+.textMode {
   width: 100%;
   padding: 1.2rem 2rem;
   border: 1px solid var(--secondary-200);
@@ -25,6 +25,44 @@
     width: 1.6rem;
     aspect-ratio: 1 / 1;
     background: url('@/assets/icons/arrow_down.svg') no-repeat center / contain;
+  }
+}
+
+.iconMode {
+  // width: 42px;
+  aspect-ratio: 1 / 1;
+  background-color: var(--white);
+  border: 1px solid var(--secondary-200);
+  border-radius: 12px;
+  padding: 0.9rem;
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: var(--white);
+    color: inherit;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  &--sm {
+    width: 24px;
+  }
+
+  &--md {
+    width: 42px;
+  }
+
+  &--lg {
+    width: 48px;
   }
 }
 
@@ -51,6 +89,10 @@
   &:hover {
     background-color: var(--secondary-100);
   }
+
+  button {
+    width: 100%;
+  }
 }
 
 @media (max-width: 767px) {
@@ -59,37 +101,8 @@
     width: fit-content;
   }
 
-  .sortIcon {
-    width: 42px;
-    aspect-ratio: 1 / 1;
-    background-color: var(--white);
-    border: 1px solid var(--secondary-200);
-    border-radius: 12px;
-    padding: 0.9rem;
-
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-
-    &:hover,
-    &:focus,
-    &:active {
-      background-color: var(--white);
-      color: inherit;
-    }
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-  }
-
   .optionList {
     width: 14rem;
-    top: calc(100% + 8px);
     right: 0;
-    border-radius: 12px;
-    overflow: hidden;
   }
 }

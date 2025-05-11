@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useResponsivePageSize } from '@/hooks';
-import { SortSelect, Pagination, useToast } from '@/components/common';
+import { Pagination, useToast } from '@/components/common';
+import { SortDrop } from '@/components/common/Buttons';
 import { ProductCard } from '@/components/Product';
 import { safeFetch } from '@/utils/api';
 import { baseUrl, ENDPOINTS, ROUTES } from '@/constants/urls';
@@ -17,6 +18,10 @@ const AllProductSection = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [page, setPage] = useState(1);
   const pageSize = useResponsivePageSize();
+  const options = [
+    { value: 'recent', label: '최신순' },
+    { value: 'favorite', label: '좋아요순' },
+  ];
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -59,13 +64,10 @@ const AllProductSection = () => {
           상품 등록하기
         </Link>
         <div className={styles.sortWrapper}>
-          <SortSelect
+          <SortDrop
             value={sortOption}
             onChange={setSortOption}
-            options={[
-              { value: 'recent', label: '최신순' },
-              { value: 'favorite', label: '좋아요순' },
-            ]}
+            options={options}
           />
         </div>
       </div>

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useToast } from '@/components/common';
 import { CommentInput, CommentList } from '@/components/Comment';
+import { ProductInfo } from '@/components/Product';
 import { safeFetch } from '@/utils/api';
 import { baseUrl, ENDPOINTS, ROUTES } from '@/constants/urls';
 import { PRODUCT_ERROR_MESSAGES } from '@/constants/messages';
@@ -9,7 +10,7 @@ import styles from './ProductDetail.module.scss';
 
 const ProductDetail = () => {
   const { showToast } = useToast();
-  console.log(useParams());
+  console.log('useParams에 어떻게 출력되나', useParams());
   const { productId } = useParams();
   const [product, setProduct] = useState(null);
   const [refreshKey, setRefreshKey] = useState(0);
@@ -34,21 +35,9 @@ const ProductDetail = () => {
 
   return (
     <div className={styles.productDetail}>
-      <div className={styles.image}>
-        <img src={product.images?.[0]} alt={product.name} />
-      </div>
-      <div className={styles.info}>
-        <h1>{product.name}</h1>
-        <p className={styles.price}>{product.price.toLocaleString()}원</p>
-        <p className={styles.description}>{product.description}</p>
-        <div className={styles.tags}>
-          {product.tags.map((tag, index) => (
-            <span key={index} className={styles.tag}>
-              #{tag}
-            </span>
-          ))}
-        </div>
-      </div>
+      <ProductInfo {...product} />
+
+      <div className={styles.horizontalLine} />
 
       <CommentInput
         productId={productId}
