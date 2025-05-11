@@ -29,12 +29,7 @@
 }
 
 .iconMode {
-  // width: 42px;
   aspect-ratio: 1 / 1;
-  background-color: var(--white);
-  border: 1px solid var(--secondary-200);
-  border-radius: 12px;
-  padding: 0.9rem;
 
   display: inline-flex;
   justify-content: center;
@@ -43,7 +38,6 @@
   &:hover,
   &:focus,
   &:active {
-    background-color: var(--white);
     color: inherit;
   }
 
@@ -52,28 +46,13 @@
     height: 100%;
     object-fit: contain;
   }
-
-  &--sm {
-    width: 24px;
-  }
-
-  &--md {
-    width: 42px;
-  }
-
-  &--lg {
-    width: 48px;
-  }
 }
 
 .optionList {
   position: absolute;
-  top: calc(100% + 8px);
-  width: 100%;
   font-size: 1.6rem;
   background: var(--white);
   border: 1px solid var(--secondary-200);
-  border-radius: 12px;
   overflow: hidden;
 }
 

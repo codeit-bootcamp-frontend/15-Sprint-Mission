@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { DropdownBtn } from '@/components/common/Buttons';
 import sortIcon from '@/assets/icons/sort.svg';
+import styles from './SortDrop.module.scss';
 
 const SortDrop = ({ value, onChange, options = [] }) => {
   const [isMobile, setIsMobile] = useState(false);
@@ -22,9 +23,10 @@ const SortDrop = ({ value, onChange, options = [] }) => {
       label={selectedOption?.label}
       iconSrc={sortIcon}
       iconAlt="Sort Product List"
-      iconSize="md"
       options={options}
       onSelect={onChange}
+      buttonClassName={styles.sortButton}
+      optionListClassName={styles.optionList}
     />
   );
 };

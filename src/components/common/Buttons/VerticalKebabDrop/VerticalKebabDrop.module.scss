@@ -1,0 +1,17 @@
+.kebabButton {
+  width: 24px;
+}
+
+.optionList {
+  width: 14rem;
+  top: calc(100% + 10px);
+  right: 0;
+  border-radius: 8px;
+}
+
+@media (max-width: 767px) {
+  .optionList {
+    width: 10rem;
+    right: 0;
+  }
+}

@@ -6,8 +6,9 @@ const DropdownBtn = ({
   label = '',
   iconSrc,
   iconAlt,
-  iconSize,
   options = [],
+  buttonClassName = '',
+  optionListClassName = '',
   onSelect,
 }) => {
   const { isOpen, toggle, close, dropdownRef } = useDropdown();
@@ -27,7 +28,7 @@ const DropdownBtn = ({
   const iconDropdown = () => (
     <button
       type="button"
-      className={`${styles.iconMode} ${styles[`iconMode--${iconSize}`]}`}
+      className={`${styles.iconMode} ${buttonClassName}`}
       onClick={toggle}
       aria-label="Open Dropdown"
     >
@@ -42,7 +43,7 @@ const DropdownBtn = ({
       {mode === 'textMode' ? textDropdown() : iconDropdown()}
 
       {isOpen && (
-        <ul className={styles.optionList}>
+        <ul className={`${styles.optionList} ${optionListClassName}`}>
           {options.map(({ label, value }) => (
             <li key={value} className={styles.option}>
               <button

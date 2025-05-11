@@ -1,5 +1,6 @@
-import { DropdownBtn } from '@components/common/Buttons';
+import { DropdownBtn } from '@/components/common/Buttons';
 import kebabIcon from '@/assets/icons/vertical_kebab.svg';
+import styles from './VerticalKebabDrop.module.scss';
 
 const VerticalKebabDrop = () => {
   const options = [
@@ -11,9 +12,10 @@ const VerticalKebabDrop = () => {
       mode="iconMode"
       iconSrc={kebabIcon}
       iconAlt="Edit or Delete"
-      iconSize="sm"
       options={options}
-      onSelect={onChange}
+      buttonClassName={styles.kebabButton}
+      optionListClassName={styles.optionList}
+      // onSelect={onChange}
     />
   );
 };

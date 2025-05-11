@@ -8,7 +8,7 @@ const ProductInfo = ({
   price,
   tags,
   favoriteCount,
-  onMenuSelect,
+  onMenuSelect, //TODO: 구현 예정
 }) => {
   const handleMenuSelect = (value) => {
     if (onMenuSelect) onMenuSelect(value);
@@ -22,8 +22,8 @@ const ProductInfo = ({
       <div className={styles.info}>
         <div className={styles.infoHeader}>
           <div className={styles.titleBar}>
-            <h1>{name}</h1>
-            <VerticalKebabDrop onSelect={handleMenuSelect} />
+            <h2>{name}</h2>
+            <VerticalKebabDrop />
           </div>
           <p className={styles.price}>{price.toLocaleString()}원</p>
         </div>

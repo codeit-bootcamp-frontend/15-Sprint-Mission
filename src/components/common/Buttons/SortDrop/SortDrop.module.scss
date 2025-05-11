@@ -1,0 +1,25 @@
+.sortButton {
+  width: 42px;
+  background-color: var(--white);
+  border: 1px solid var(--secondary-200);
+  border-radius: 12px;
+  padding: 0.9rem;
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: var(--white);
+  }
+}
+
+.optionList {
+  width: 100%;
+  top: calc(100% + 8px);
+  border-radius: 12px;
+}
+
+@media (max-width: 767px) {
+  .optionList {
+    width: 14rem;
+    right: 0;
+  }
+}
