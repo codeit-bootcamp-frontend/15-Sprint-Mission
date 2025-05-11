@@ -5,7 +5,7 @@ import ItemCreateButton from "./ItemCreatButton";
 const Allitems = () => {
   const [items, setItems] = useState([]);
 
-  const [pageSize, setPageSize] = useState(1);
+  const [pageSize, setPageSize] = useState("");
 
   // 화면 크기에 따라 pageSize 설정
   // 모바일: 1, 태블릿: 2, PC: 4
@@ -33,7 +33,7 @@ const Allitems = () => {
             params: {
               page: 1,
               pageSize: pageSize,
-              orderBy: "favorite",
+              orderBy: "recent",
             },
             headers: {
               Accept: "application/json",
