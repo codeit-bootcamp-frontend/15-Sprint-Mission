@@ -1,4 +1,5 @@
 import { VerticalKebabDrop } from '@/components/common/Buttons';
+import tagStyles from '@/styles/helpers/tagHelpers.module.scss';
 import styles from './ProductInfo.module.scss';
 
 const ProductInfo = ({
@@ -21,20 +22,26 @@ const ProductInfo = ({
       </div>
       <div className={styles.info}>
         <div className={styles.infoHeader}>
-          <h2>{name}</h2>
-          <VerticalKebabDrop />
+          <div className={styles.titleBar}>
+            <h2>{name}</h2>
+            <VerticalKebabDrop />
+          </div>
+          <p className={styles.price}>{price.toLocaleString()}원</p>
+          <div className={styles.horizontalLine} />
         </div>
-        <p className={styles.price}>{price.toLocaleString()}원</p>
-
-        <div className={styles.horizontalLine} />
-
-        <p className={styles.description}>{description}</p>
-        <div className={styles.tags}>
-          {tags.map((tag, index) => (
-            <span key={index} className={styles.tag}>
-              #{tag}
-            </span>
-          ))}
+        <div className={styles.infoLabel}>
+          <h3>상품 소개</h3>
+          <p>{description}</p>
+        </div>
+        <div className={styles.infoLabel}>
+          <h3>상품 태그</h3>
+          <div className={tagStyles.tagList}>
+            {tags.map((tag, index) => (
+              <span key={index} className={tagStyles.tag}>
+                #{tag}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
     </div>

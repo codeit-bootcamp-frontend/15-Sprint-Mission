@@ -13,6 +13,7 @@ const ProductDetail = () => {
   console.log('useParams에 어떻게 출력되나', useParams());
   const { productId } = useParams();
   const [product, setProduct] = useState(null);
+  console.log('product', product);
   const [refreshKey, setRefreshKey] = useState(0);
 
   useEffect(() => {
