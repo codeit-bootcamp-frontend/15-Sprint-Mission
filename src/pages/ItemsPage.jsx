@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useNavigate } from "react-router";
 import Button from "../components/Button";
 import Search from "../components/Search";
@@ -5,7 +6,6 @@ import Sort from "../components/Sort";
 import useBestItems from "../hooks/useBestItems";
 import BestItemList from "../components/BestItemList";
 import useDisplay from "../hooks/useDisplay";
-import { useState } from "react";
 import useAllItems from "../hooks/useAllItems";
 import AllItemList from "../components/AllItemList";
 
@@ -39,7 +39,7 @@ const ItemsPage = () => {
               "tablet:order-2 tablet:max-w-325 tablet:min-w-250 tablet:basis-1/3 basis-[calc(100%-56px)]"
             }
           />
-          <Sort className={"tablet:order-4"} />
+          <Sort className={"tablet:order-4"} setOrderBy={setOrderBy} />
         </div>
         <AllItemList allItemList={allItemList} />
       </section>

@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Sort = ({ className }) => {
+const Sort = ({ className, setOrderBy }) => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div className={`relative ${className}`}>
@@ -18,10 +18,18 @@ const Sort = ({ className }) => {
         <>
           <div onClick={() => setIsOpen(false)} className="fixed inset-0 z-1" />
           <div className="border-secondary-200 font-regular text-secondary-800 absolute top-46 right-0 z-2 flex h-84 w-130 flex-col rounded-[12px] border-1 bg-white text-lg">
-            <button className="border-b-secondary-200 h-full cursor-pointer border-b-1">
+            <button
+              className="border-b-secondary-200 h-full cursor-pointer border-b-1"
+              onClick={() => setOrderBy("recent")}
+            >
               최신순
             </button>
-            <button className="h-full cursor-pointer">좋아요순</button>
+            <button
+              className="h-full cursor-pointer"
+              onClick={() => setOrderBy("favorite")}
+            >
+              좋아요순
+            </button>
           </div>
         </>
       )}
