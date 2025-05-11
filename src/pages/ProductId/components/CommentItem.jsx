@@ -17,7 +17,7 @@ import {
 import settingIcon from "/icons/ic_setting.svg";
 import defaultProfile from "/icons/profile.png";
 import CommentEdit from "./CommentEdit";
-import { commentAPI } from "@/api/commentAPI";
+// import { commentAPI } from "@/api/commentAPI";
 
 dayjs.extend(relativeTime);
 dayjs.locale(ko);
@@ -33,18 +33,14 @@ const CommentItem = ({ comment }) => {
     }));
   };
 
-  const handleEdit = async (commentId) => {
-    try {
-      setSettingStates((prev) => ({ ...prev, [commentId]: false })); // 설정 비활성화
-      setIsEditing(!isEditing);
-    } catch (error) {
-      console.error("댓글 수정 실패", error);
-    }
+  const handleEdit = (commentId) => {
+    setSettingStates((prev) => ({ ...prev, [commentId]: false })); // 설정 비활성화
+    setIsEditing((prev) => !prev); // 편집 모드 토글
   };
 
   const handleDelete = async (commentId) => {
     try {
-      await commentAPI.deleteComment(commentId);
+      // await commentAPI.deleteComment(commentId);
       setSettingStates((prev) => ({ ...prev, [commentId]: false })); // 설정 비활성화
       console.log(comment.content);
     } catch (error) {

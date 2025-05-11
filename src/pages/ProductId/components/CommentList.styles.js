@@ -133,3 +133,45 @@ export const CommentEditInput = css`
   font-weight: 400;
   line-height: 24px;
 `;
+
+export const CommentBottomContainer = css`
+  display: flex;
+  height: 47px;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+  width: 100%;
+`;
+
+export const CommentBottomButtonContainer = css`
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  color: var(--gray500);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 26px;
+`;
+
+export const CancelButton = css`
+  padding: 14px 20px 7px 20px;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const SaveButton = css`
+  display: flex;
+  height: 42px;
+  padding: 12px 23px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 8px;
+  background: var(--blue100);
+
+  color: var(--Cool-Gray-100, #f3f4f6);
+
+  font-size: 16px;
+  font-weight: 600;
+`;
