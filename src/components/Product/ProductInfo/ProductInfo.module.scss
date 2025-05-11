@@ -25,11 +25,9 @@
   flex-direction: column;
   width: 100%;
   gap: 2.4rem;
+}
 
-  .titleAndPrice {
-    display: flex;
-    flex-direction: column;
-    gap: 1.6rem;
-    justify-content: center;
-  }
+.infoHeader {
+  display: flex;
+  justify-content: space-between;
 }

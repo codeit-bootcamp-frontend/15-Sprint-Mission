@@ -1,7 +1,13 @@
 .wrapper {
   position: relative;
   font-size: 16px;
-  min-width: 140px;
+
+  &--textMode {
+    min-width: 140px;
+  }
+  &--iconMode {
+    width: fit-content;
+  }
 }
 
 .textMode {
@@ -78,10 +84,5 @@
   .wrapper {
     min-width: auto;
     width: fit-content;
-  }
-
-  .optionList {
-    width: 14rem;
-    right: 0;
   }
 }

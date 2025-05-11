@@ -12,6 +12,7 @@ const DropdownBtn = ({
   onSelect,
 }) => {
   const { isOpen, toggle, close, dropdownRef } = useDropdown();
+  const wrapperClass = `${styles.wrapper}  ${styles[`wrapper--${mode}`]}`;
 
   const textDropdown = () => (
     <button
@@ -39,7 +40,7 @@ const DropdownBtn = ({
   );
 
   return (
-    <div className={styles.wrapper} ref={dropdownRef}>
+    <div className={wrapperClass} ref={dropdownRef}>
       {mode === 'textMode' ? textDropdown() : iconDropdown()}
 
       {isOpen && (

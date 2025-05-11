@@ -21,12 +21,11 @@ const ProductInfo = ({
       </div>
       <div className={styles.info}>
         <div className={styles.infoHeader}>
-          <div className={styles.titleBar}>
-            <h2>{name}</h2>
-            <VerticalKebabDrop />
-          </div>
-          <p className={styles.price}>{price.toLocaleString()}원</p>
+          <h2>{name}</h2>
+          <VerticalKebabDrop />
         </div>
+        <p className={styles.price}>{price.toLocaleString()}원</p>
+
         <div className={styles.horizontalLine} />
 
         <p className={styles.description}>{description}</p>
