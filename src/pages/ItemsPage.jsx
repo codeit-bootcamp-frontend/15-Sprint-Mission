@@ -35,7 +35,7 @@ const ItemsPage = () => {
           </h2>
           <Button
             className="tablet:order-3"
-            onClick={() => navigate("./additem")}
+            onClick={() => navigate("/additem")}
           >
             상품 등록하기
           </Button>
