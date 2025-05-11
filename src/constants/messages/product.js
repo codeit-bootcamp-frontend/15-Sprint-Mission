@@ -4,9 +4,11 @@ export const PRODUCT_INFO_MESSAGES = {
 };
 
 export const PRODUCT_ERROR_MESSAGES = {
-  FETCH_ALL_FAILED: '상품을 불러오는 데 실패했습니다.',
+  FETCH_ALL_FAILED: '상품 목록을 불러오는 데 실패했습니다.',
   FETCH_BEST_FAILED: '베스트 상품을 불러오는 데 실패했습니다.',
   ADD_ITEM_FAILED: '상품 등록 중 문제가 발생했습니다.',
+  FETCH_DETAIL_FAILED: '상품 정보를 불러오지 못했습니다.',
+  FETCH_COMMENTS_FAILED: '댓글 정보를 불러오지 못했습니다.',
 };
 
 export const PRODUCT_SUCCESS_MESSAGES = {

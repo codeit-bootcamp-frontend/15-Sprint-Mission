@@ -1,0 +1,57 @@
+import { useState } from 'react';
+import { useToast } from '@/components/common';
+import { safeFetch } from '@/utils/api';
+import { baseUrl, ENDPOINTS } from '@/constants/urls';
+import { PRODUCT_ERROR_MESSAGES } from '@/constants/messages';
+import formStyles from '@/styles/helpers/formHelpers.module.scss';
+import buttonStyles from '@/styles/helpers/buttonHelpers.module.scss';
+import styles from './CommentInput.module.scss';
+
+const CommentInput = ({ productId, refreshAfterSubmit }) => {
+  const { showToast } = useToast();
+  const [content, setContent] = useState('');
+
+  const handleSubmit = async () => {
+    if (!content.trim()) return;
+
+    await safeFetch({
+      url: `${baseUrl}${ENDPOINTS.PRODUCTS}/${productId}/comments`,
+      options: {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ content }),
+      },
+      showToast,
+      uiErrorMessage: PRODUCT_ERROR_MESSAGES.POST_COMMENT_FAILED,
+    });
+
+    setContent('');
+    refreshAfterSubmit?.(); // 등록 후 댓글 목록 새로고침
+  };
+
+  return (
+    <div className={styles.commentInput}>
+      <label htmlFor="content" className={formStyles.labelText}>
+        문의하기
+      </label>
+      <textarea
+        id="content"
+        name="content"
+        className={formStyles.textarea}
+        value={content}
+        onChange={(e) => setContent(e.target.value)}
+        placeholder="개인정보를 공유 및 요청하거나, 명예 훼손, 무단 광고, 불법 정보 유포시 모니터링 후 삭제될 수 있으며, 이에 대한 민형사상 책임은 게시자에게 있습니다."
+      />
+      <button
+        type="button"
+        className={`${buttonStyles.primary} ${styles.submitButton}`}
+        onClick={handleSubmit}
+        disabled={!content.trim()}
+      >
+        등록
+      </button>
+    </div>
+  );
+};
+
+export default CommentInput;
