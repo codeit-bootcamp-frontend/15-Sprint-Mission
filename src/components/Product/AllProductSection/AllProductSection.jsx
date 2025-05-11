@@ -1,13 +1,16 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useResponsivePageSize } from '@/hooks';
-import { SortSelect, Pagination } from '@/components/common';
+import { SortSelect, Pagination, useToast } from '@/components/common';
 import { ProductCard } from '@/components/Product';
+import { safeFetch } from '@/utils/api';
 import { baseUrl, ENDPOINTS, ROUTES } from '@/constants/urls';
+import { PRODUCT_ERROR_MESSAGES } from '@/constants/messages';
 import buttonStyles from '@/styles/helpers/buttonHelpers.module.scss';
 import styles from './AllProductSection.module.scss';
 
 const AllProductSection = () => {
+  const { showToast } = useToast();
   const [products, setProducts] = useState([]);
   const [totalCount, setTotalCount] = useState(0);
   const [sortOption, setSortOption] = useState('recent');
@@ -16,12 +19,13 @@ const AllProductSection = () => {
   const pageSize = useResponsivePageSize();
 
   useEffect(() => {
-    // * 여기 try... catch
     const fetchProducts = async () => {
-      const res = await fetch(
-        `${baseUrl}${ENDPOINTS.PRODUCTS}?page=${page}&pageSize=${pageSize}&orderBy=${sortOption}&keyword=${encodeURIComponent(searchQuery)}`,
-      );
-      const data = await res.json();
+      const data = await safeFetch({
+        url: `${baseUrl}${ENDPOINTS.PRODUCTS}?page=${page}&pageSize=${pageSize}&orderBy=${sortOption}&keyword=${encodeURIComponent(searchQuery)}`,
+        options: { method: 'GET' },
+        showToast,
+        uiErrorMessage: PRODUCT_ERROR_MESSAGES.FETCH_ALL_FAILED,
+      });
       setProducts(data.list);
       setTotalCount(data.totalCount);
     };

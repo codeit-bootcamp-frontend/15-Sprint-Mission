@@ -1,20 +1,11 @@
-import { useToast } from '@/components/common/Toast';
-import { INFO_MESSAGES } from '@/constants/messages';
 import styles from './Pagination.module.scss';
 
 const Pagination = ({ currentPage, totalCount, pageSize, onPageChange }) => {
-  const { showToast } = useToast();
-
   const totalPages = Math.ceil(totalCount / pageSize);
   const groupSize = 5;
   const currentGroup = Math.floor((currentPage - 1) / groupSize);
   const startPage = currentGroup * groupSize + 1;
   const endPage = Math.min(startPage + groupSize - 1, totalPages);
-
-  if (totalPages === 0) {
-    showToast(INFO_MESSAGES.emptyList, 'info');
-    return null;
-  }
 
   const pageNumbers = Array.from(
     { length: endPage - startPage + 1 },

@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { RemoveIcon } from '@/components/common/Buttons';
-import { INFO_MESSAGES } from '@/constants/messages';
+import { PRODUCT_INFO_MESSAGES } from '@/constants/messages';
 import plusIcon from '@/assets/icons/plus.svg';
 import formStyles from '@/styles/helpers/formHelpers.module.scss';
 import styles from './ImageUploader.module.scss';
@@ -80,7 +80,9 @@ const ImageUploader = ({
       </div>
 
       {showImageWarning && (
-        <p className={styles.warningMessage}>{INFO_MESSAGES.maxImageCount}</p>
+        <p className={styles.warningMessage}>
+          {PRODUCT_INFO_MESSAGES.maxImageCount}
+        </p>
       )}
     </div>
   );

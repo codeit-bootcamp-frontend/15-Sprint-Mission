@@ -1,18 +1,24 @@
 import { useEffect, useState } from 'react';
 import { ProductCard } from '@/components/Product';
+import { useToast } from '@/components/common';
+import { safeFetch } from '@/utils/api';
 import { baseUrl, ENDPOINTS } from '@/constants/urls';
+import { PRODUCT_ERROR_MESSAGES } from '@/constants/messages';
 import styles from './BestProductSection.module.scss';
 
 const BestProductSection = () => {
+  const { showToast } = useToast();
   const [bestProducts, setBestProducts] = useState([]);
 
   useEffect(() => {
     const fetchBestProducts = async () => {
-      const res = await fetch(
-        `${baseUrl}${ENDPOINTS.PRODUCTS}?page=1&pageSize=4&orderBy=favorite`,
-      );
-      const data = await res.json();
-      const top4 = data.list.slice(0, 4);
+      const data = await safeFetch({
+        url: `${baseUrl}${ENDPOINTS.PRODUCTS}?page=1&pageSize=4&orderBy=favorite`,
+        options: { method: 'GET' },
+        showToast,
+        uiErrorMessage: PRODUCT_ERROR_MESSAGES.FETCH_BEST_FAILED,
+      });
+      const top4 = data.list;
       setBestProducts(top4);
     };
     fetchBestProducts();

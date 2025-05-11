@@ -1,10 +1,14 @@
 import { useState } from 'react';
 import { useAddItemForm } from '@/hooks';
 import { ImageUploader, TagInput, AddItemForm } from '@/components/AddItem';
-import Toast, { useToast } from '@/components/common/Toast';
-import toastStyles from '@/components/common/Toast/Toast.module.scss';
+import { useToast } from '@/components/common/Toast';
 import { addItemValidation } from '@/utils/validators';
+import { safeFetch } from '@/utils/api';
 import { baseUrl, ENDPOINTS } from '@/constants/urls';
+import {
+  PRODUCT_ERROR_MESSAGES,
+  PRODUCT_SUCCESS_MESSAGES,
+} from '@/constants/messages';
 import formStyles from '@/styles/helpers/formHelpers.module.scss';
 import buttonStyles from '@/styles/helpers/buttonHelpers.module.scss';
 import styles from './AddItem.module.scss';
@@ -38,19 +42,21 @@ const AddItem = () => {
     form.append('price', formData.price);
     form.append('tags', JSON.stringify(formData.tags));
 
-    // * try.. catch 나중에 따로 빼던가 하기
-    try {
-      const res = await fetch(`${baseUrl}${ENDPOINTS.UPLOAD_IMAGE}`, {
+    const data = await safeFetch({
+      url: `${baseUrl}${ENDPOINTS.UPLOAD_IMAGE}`,
+      options: {
         method: 'POST',
         body: form,
-      });
+      },
+      showToast,
+      uiErrorMessage: PRODUCT_ERROR_MESSAGES.ADD_ITEM_FAILED,
+    });
 
-      if (!res.ok) throw new Error('등록 실패'); // * throw하는 에러메시지 상수화, 콘솔메시지 상수화?
-      showToast('상품이 등록되었습니다!', 'success'); // * 여기 나중에 상세페이지로 이동 처리
-    } catch (err) {
-      console.error(err);
-      showToast('상품 등록에 실패했습니다.', 'err.message'); // * 여기 토스트 메시지(fetch찍어서 확인) 상수화
-    }
+    showToast(
+      `${data.message || PRODUCT_SUCCESS_MESSAGES.ADD_ITEM_SUCCESS}`,
+      'success',
+    );
+    // TODO: 등록 성공 후 상세 페이지로 이동 처리
   };
 
   return (
