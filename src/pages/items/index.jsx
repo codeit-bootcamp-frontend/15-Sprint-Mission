@@ -82,7 +82,7 @@ export default function ItemPage() {
               />
               <button
                 onClick={() => {
-                  navigate('/add');
+                  navigate('/additem');
                 }}
                 className='bg-blue-500 text-white px-[2.3rem] py-[1.2rem]  whitespace-nowrap text-2xl rounded-3xl cursor-pointer'
               >
