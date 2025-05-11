@@ -1,4 +1,4 @@
-import Input from '../../../components/input';
+import Input from './Input';
 import { useState, useRef, useEffect } from 'react';
 import TagInput from './TagInput';
 
