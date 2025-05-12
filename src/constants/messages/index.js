@@ -5,3 +5,4 @@ export {
   PRODUCT_SUCCESS_MESSAGES,
 } from './product';
 export { HTTP_ERROR_MESSAGES } from './common';
+export { COMMENT_ERROR_MESSAGES } from './comment';

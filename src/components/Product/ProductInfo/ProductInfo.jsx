@@ -14,11 +14,9 @@ const ProductInfo = ({
   favoriteCount,
   ownerNickname,
   updatedAt,
-  onMenuSelect, //TODO: 구현 예정
+  onSelect, //TODO: 구현 예정
 }) => {
-  const handleMenuSelect = (value) => {
-    if (onMenuSelect) onMenuSelect(value);
-  };
+  const handleSelect = (value) => {};
 
   return (
     <div className={styles.productContainer}>
