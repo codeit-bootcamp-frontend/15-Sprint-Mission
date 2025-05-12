@@ -10,6 +10,8 @@ export const ToastProvider = ({ children }) => {
   const [toasts, setToasts] = useState([]);
 
   const showToast = (message, type = 'info') => {
+    if (toasts.some((toast) => toast.message === message)) return;
+
     const id = Date.now();
     setToasts((prev) => [...prev, { id, message, type }]);
 

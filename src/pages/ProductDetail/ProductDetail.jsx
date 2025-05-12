@@ -15,7 +15,7 @@ const ProductDetail = () => {
   const { showToast } = useToast();
   console.log('useParams에 어떻게 출력되나', useParams());
   const { productId } = useParams();
-  const [product, setProduct] = useState(null);
+  const [product, setProduct] = useState(undefined);
   console.log('product', product);
   const [refreshKey, setRefreshKey] = useState(0);
 
@@ -31,11 +31,9 @@ const ProductDetail = () => {
     };
 
     fetchProduct();
-  }, [productId, showToast]);
+  }, [productId]);
 
   const refreshAfterSubmit = () => setRefreshKey((prev) => prev + 1);
-
-  if (!product) return <div>Loading...</div>; //TODO: 로딩처리
 
   return (
     <div className={styles.productDetail}>

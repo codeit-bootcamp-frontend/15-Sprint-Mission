@@ -1,3 +1,4 @@
+import { useUser } from '@/contexts';
 import { FavoriteBtn, VerticalKebabDrop } from '@/components/common/Buttons';
 import { isoDate } from '@/utils/format';
 import defaultProfileImg from '@/assets/images/default_profile.svg';
@@ -10,12 +11,13 @@ const ProductInfo = ({
   name,
   description,
   price,
-  tags,
+  tags = [],
   favoriteCount,
   ownerNickname,
   updatedAt,
   onSelect, //TODO: 구현 예정
 }) => {
+  const currentUser = useUser(); // 지금 로그인한 사용자
   const handleSelect = (value) => {};
 
   return (
@@ -30,7 +32,7 @@ const ProductInfo = ({
               <h2>{name}</h2>
               <VerticalKebabDrop />
             </div>
-            <p className={styles.price}>{price.toLocaleString()}원</p>
+            <p className={styles.price}>{price?.toLocaleString()}원</p>
             <div className={commonStyles.horizontalLine} />
           </div>
           <div className={styles.infoLabel}>
@@ -50,7 +52,11 @@ const ProductInfo = ({
         </div>
         <div className={styles.productPostInfo}>
           <div className={styles.writerInfo}>
-            <img src={defaultProfileImg} alt="Writer Profile Image" />
+            <img
+              src={defaultProfileImg}
+              // src={currentUser?.image || defaultProfileImg}  로그인 처리 후
+              alt="Writer Profile Image"
+            />
             <div className={styles.nicknameAndDate}>
               <div className={styles.nickname}>{ownerNickname}</div>
               <div className={styles.date}>{isoDate(updatedAt)}</div>
