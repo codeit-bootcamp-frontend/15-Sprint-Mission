@@ -2,6 +2,8 @@ import { useParams } from 'react-router-dom';
 
 const EditItem = () => {
   const { productId } = useParams();
+  console.log('productId:', productId);
+  console.log('📦 useParams:', productId);
 
   return (
     <div>

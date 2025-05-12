@@ -1,5 +1,9 @@
 export const PRODUCT_SUCCESS_MESSAGES = {
+  // POST
   ADD_ITEM_SUCCESS: '상품이 등록되었습니다!',
+
+  // DELETE
+  DELETE_ITEM_SUCCESS: '상품이 삭제되었어요.',
 };
 
 export const PRODUCT_INFO_MESSAGES = {

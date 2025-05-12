@@ -6,6 +6,7 @@ import {
   Items,
   AddItem,
   ProductDetail,
+  EditItem,
 } from '@/pages';
 import App from '@/App';
 import ROUTES from '@/constants/urls/routes';

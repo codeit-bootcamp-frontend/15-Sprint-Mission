@@ -3,15 +3,16 @@ import { useUser, useToast } from '@/contexts';
 import { deleteProduct } from '@/api/product';
 import { FavoriteBtn, VerticalKebabDrop } from '@/components/common/Buttons';
 import { isoDate } from '@/utils/format';
-import { safeFetch } from '@/utils/api';
-import { baseUrl, ENDPOINTS, ROUTES } from '@/constants/urls';
+import { deleteProductErrorMessage } from '@/utils/errorMessage';
+import { ROUTES } from '@/constants/urls';
+import { PRODUCT_SUCCESS_MESSAGES } from '@/constants/messages';
 import defaultProfileImg from '@/assets/images/default_profile.svg';
 import tagStyles from '@/styles/helpers/tagHelpers.module.scss';
 import commonStyles from '@/styles/helpers/commonHelpers.module.scss';
 import styles from './ProductInfo.module.scss';
 
 const ProductInfo = ({
-  productId,
+  id: productId,
   images,
   name,
   description,
@@ -24,6 +25,7 @@ const ProductInfo = ({
   const currentUser = useUser(); // 지금 로그인한 사용자
   const { showToast } = useToast();
   const navigate = useNavigate();
+  console.log('🧪 navigate에서 넘기는 productId:', productId);
 
   const handleEdit = () => {
     navigate(ROUTES.EDIT_ITEM(productId));
@@ -33,14 +35,18 @@ const ProductInfo = ({
     const confirmed = window.confirm('정말 삭제하시겠어요?');
     if (!confirmed) return;
 
-    const result = await deleteProduct({ productId, showToast });
+    try {
+      const result = await deleteProduct({ productId });
 
-    if (result) {
-      showToast('상품이 삭제되었어요.', 'success');
-      navigate(ROUTES.LIST);
+      if (result) {
+        showToast(PRODUCT_SUCCESS_MESSAGES.DELETE_ITEM_SUCCESS, 'success');
+        navigate(ROUTES.ITEMS);
+      }
+    } catch (error) {
+      const status = error?.status || error?.response?.status;
+      showToast(deleteProductErrorMessage(status), 'error');
     }
   };
-
   const handleSelect = (value) => {
     if (value === 'edit') handleEdit();
     if (value === 'delete') handleDelete();
