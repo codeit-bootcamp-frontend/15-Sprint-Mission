@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useToast } from '@/components/common';
+import { useToast } from '@/contexts';
 import { safeFetch } from '@/utils/api';
 import { baseUrl, ENDPOINTS } from '@/constants/urls';
 import { PRODUCT_ERROR_MESSAGES } from '@/constants/messages';

@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useResponsivePageSize } from '@/hooks';
-import { Pagination, useToast } from '@/components/common';
+import { useToast } from '@/contexts';
+import { Pagination } from '@/components/common';
 import { SortDrop } from '@/components/common/Buttons';
 import { ProductCard } from '@/components/Product';
 import { safeFetch } from '@/utils/api';

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useToast } from '@/components/common';
+import { useToast } from '@/contexts';
 import { CommentItem } from '@/components/Comment';
 import { safeFetch } from '@/utils/api';
 import { baseUrl, ENDPOINTS } from '@/constants/urls';

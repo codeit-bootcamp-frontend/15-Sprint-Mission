@@ -1,6 +1,6 @@
 import { createContext, useContext, useState } from 'react';
-import Toast from './Toast';
-import styles from './Toast.module.scss';
+import { Toast } from '@/components/common';
+import styles from '@/components/common/Toast/Toast.module.scss';
 
 const ToastContext = createContext();
 

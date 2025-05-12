@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { useToast } from '@/components/common';
+import { useToast } from '@/contexts';
 import { CommentInput, CommentList } from '@/components/Comment';
 import { ProductInfo } from '@/components/Product';
 import { safeFetch } from '@/utils/api';

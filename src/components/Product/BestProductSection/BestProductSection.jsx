@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
+import { useToast } from '@/contexts';
 import { ProductCard } from '@/components/Product';
-import { useToast } from '@/components/common';
 import { safeFetch } from '@/utils/api';
 import { baseUrl, ENDPOINTS } from '@/constants/urls';
 import { PRODUCT_ERROR_MESSAGES } from '@/constants/messages';
