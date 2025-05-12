@@ -19,6 +19,7 @@ const AppRoutes = () => (
       <Route path={ROUTES.ITEMS} element={<Items />} />
       <Route path={ROUTES.ITEM_DETAIL()} element={<ProductDetail />} />
       <Route path={ROUTES.ADD_ITEM} element={<AddItem />} />
+      <Route path={ROUTES.EDIT_ITEM()} element={<EditItem />} />
     </Route>
   </Routes>
 );

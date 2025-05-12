@@ -1,12 +1,17 @@
-import { useUser } from '@/contexts';
+import { useNavigate } from 'react-router-dom';
+import { useUser, useToast } from '@/contexts';
+import { deleteProduct } from '@/api/product';
 import { FavoriteBtn, VerticalKebabDrop } from '@/components/common/Buttons';
 import { isoDate } from '@/utils/format';
+import { safeFetch } from '@/utils/api';
+import { baseUrl, ENDPOINTS, ROUTES } from '@/constants/urls';
 import defaultProfileImg from '@/assets/images/default_profile.svg';
 import tagStyles from '@/styles/helpers/tagHelpers.module.scss';
 import commonStyles from '@/styles/helpers/commonHelpers.module.scss';
 import styles from './ProductInfo.module.scss';
 
 const ProductInfo = ({
+  productId,
   images,
   name,
   description,
@@ -15,10 +20,31 @@ const ProductInfo = ({
   favoriteCount,
   ownerNickname,
   updatedAt,
-  onSelect, //TODO: 구현 예정
 }) => {
   const currentUser = useUser(); // 지금 로그인한 사용자
-  const handleSelect = (value) => {};
+  const { showToast } = useToast();
+  const navigate = useNavigate();
+
+  const handleEdit = () => {
+    navigate(ROUTES.EDIT_ITEM(productId));
+  };
+
+  const handleDelete = async () => {
+    const confirmed = window.confirm('정말 삭제하시겠어요?');
+    if (!confirmed) return;
+
+    const result = await deleteProduct({ productId, showToast });
+
+    if (result) {
+      showToast('상품이 삭제되었어요.', 'success');
+      navigate(ROUTES.LIST);
+    }
+  };
+
+  const handleSelect = (value) => {
+    if (value === 'edit') handleEdit();
+    if (value === 'delete') handleDelete();
+  };
 
   return (
     <div className={styles.productContainer}>
@@ -30,7 +56,7 @@ const ProductInfo = ({
           <div className={styles.infoHeader}>
             <div className={styles.titleBar}>
               <h2>{name}</h2>
-              <VerticalKebabDrop />
+              <VerticalKebabDrop onSelect={handleSelect} />
             </div>
             <p className={styles.price}>{price?.toLocaleString()}원</p>
             <div className={commonStyles.horizontalLine} />
@@ -54,7 +80,7 @@ const ProductInfo = ({
           <div className={styles.writerInfo}>
             <img
               src={defaultProfileImg}
-              // src={currentUser?.image || defaultProfileImg}  로그인 처리 후
+              // src={currentUser?.image || defaultProfileImg}
               alt="Writer Profile Image"
             />
             <div className={styles.nicknameAndDate}>
