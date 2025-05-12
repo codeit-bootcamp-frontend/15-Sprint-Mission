@@ -1,73 +1,72 @@
 import HTTP_STATUS from '@/constants/statusCodes';
+import { PRODUCT_ERROR_MESSAGES as M } from '@/constants/messages';
 
-export const getCommentErrorMessage = (status) => {
+export const getProductErrorMessage = (status) => {
   switch (status) {
     case HTTP_STATUS.UNAUTHORIZED:
-      return '로그인이 필요합니다.';
+      return M.UNAUTHORIZED;
     case HTTP_STATUS.FORBIDDEN:
-      return '이 댓글을 볼 권한이 없어요.';
+      return M.FORBIDDEN_FETCH;
     case HTTP_STATUS.NOT_FOUND:
-      return '등록된 문의가 없습니다.';
+      return M.NOT_FOUND_FETCH;
     case HTTP_STATUS.INTERNAL_SERVER_ERROR:
     case 502:
     case HTTP_STATUS.SERVICE_UNAVAILABLE:
     case 504:
-      return '서버에 문제가 발생했어요. 잠시 후 다시 시도해주세요.';
+      return M.SERVER_ERROR;
     default:
-      return '댓글을 불러오는 데 실패했어요.';
+      return M.FETCH_FAILED;
   }
 };
 
-export default getCommentErrorMessage;
-
-export const postCommentErrorMessage = (status) => {
+export const postProductErrorMessage = (status) => {
   switch (status) {
     case HTTP_STATUS.UNAUTHORIZED:
-      return '로그인이 필요합니다.';
+      return M.UNAUTHORIZED;
     case HTTP_STATUS.FORBIDDEN:
-      return '댓글을 등록할 권한이 없어요.';
+      return M.FORBIDDEN_POST;
     case HTTP_STATUS.INTERNAL_SERVER_ERROR:
     case 502:
     case HTTP_STATUS.SERVICE_UNAVAILABLE:
     case 504:
-      return '서버에 문제가 발생했어요. 잠시 후 다시 시도해주세요.';
+      return M.SERVER_ERROR;
     default:
-      return '댓글을 등록하는 데 실패했어요.';
+      return M.POST_FAILED;
   }
 };
 
-export const patchCommentErrorMessage = (status) => {
+export const patchProductErrorMessage = (status) => {
   switch (status) {
     case HTTP_STATUS.UNAUTHORIZED:
-      return '로그인이 필요합니다.';
+      return M.UNAUTHORIZED;
     case HTTP_STATUS.FORBIDDEN:
-      return '이 댓글을 수정할 권한이 없어요.';
+      return M.FORBIDDEN_PATCH;
     case HTTP_STATUS.NOT_FOUND:
-      return '수정할 댓글을 찾을 수 없어요.';
+      return M.NOT_FOUND_PATCH;
     case HTTP_STATUS.INTERNAL_SERVER_ERROR:
     case 502:
     case HTTP_STATUS.SERVICE_UNAVAILABLE:
     case 504:
-      return '서버에 문제가 발생했어요. 잠시 후 다시 시도해주세요.';
+      return M.SERVER_ERROR;
     default:
-      return '댓글을 수정하는 데 실패했어요.';
+      return M.PATCH_FAILED;
   }
 };
 
-export const deleteCommentErrorMessage = (status) => {
+export const deleteProductErrorMessage = (status) => {
   switch (status) {
     case HTTP_STATUS.UNAUTHORIZED:
-      return '로그인이 필요합니다.';
+      return M.UNAUTHORIZED;
     case HTTP_STATUS.FORBIDDEN:
-      return '이 댓글을 삭제할 권한이 없어요.';
+      return M.FORBIDDEN_DELETE;
     case HTTP_STATUS.NOT_FOUND:
-      return '삭제할 댓글을 찾을 수 없어요.';
+      return M.NOT_FOUND_DELETE;
     case HTTP_STATUS.INTERNAL_SERVER_ERROR:
     case 502:
     case HTTP_STATUS.SERVICE_UNAVAILABLE:
     case 504:
-      return '서버에 문제가 발생했어요. 잠시 후 다시 시도해주세요.';
+      return M.SERVER_ERROR;
     default:
-      return '댓글을 삭제하는 데 실패했어요.';
+      return M.DELETE_FAILED;
   }
 };

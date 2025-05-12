@@ -56,7 +56,7 @@ const AddItem = () => {
         'success',
       );
 
-      // TODO: 등록 성공 후 상세 페이지로 이동 처리
+      // 등록 성공 후 상세 페이지로 이동 처리
       navigate(`${ROUTES.ITEMS}/${data.id}`);
     } catch (error) {
       showToast(postProductErrorMessage(error.status), 'error');
