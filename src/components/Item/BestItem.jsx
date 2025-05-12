@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import debounce from "lodash/debounce";
 
-import ItemList from "./ItemList";
+import ItemList from "./component/ItemList";
 import { getProducts } from "../../api/itemAPI";
 
 const getPageSize = () => {

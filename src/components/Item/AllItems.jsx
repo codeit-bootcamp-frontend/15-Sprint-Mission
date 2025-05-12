@@ -4,8 +4,8 @@ import debounce from "lodash/debounce";
 import { getProducts } from "../../api/itemAPI";
 import { Link } from "react-router-dom";
 
-import ItemList from "./ItemList";
-import PageNation from "./PageNation";
+import ItemList from "./component/ItemList";
+import PageNation from "./component/PageNation";
 
 import "./AllItem.css";
 import Dropdown from "./component/Dropdown.jsx";
@@ -77,7 +77,7 @@ function AllItem() {
             className="item-search"
             placeholder="검색할 상품을 입력해주세요"
           />
-          <Link to="/additem" className="item-add-item">
+          <Link to="/item/additem" className="item-add-item">
             상품 등록하기
           </Link>
           <Dropdown sort={sort} setSort={setSort} className="dropdown" />

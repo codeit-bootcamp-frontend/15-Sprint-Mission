@@ -22,7 +22,7 @@ function App() {
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/FAQ" element={<FAQ />} />
         <Route path="/community" element={<Community />} />
-        <Route path="/additem" element={<AddItem />} />
+        <Route path="/item/additem" element={<AddItem />} />
       </Routes>
     </BrowserRouter>
   );

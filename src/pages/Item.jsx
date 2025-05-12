@@ -7,7 +7,10 @@ import "../styles/item.css";
 function Item() {
   return (
     <>
-      <Banner />
+      <header>
+        <Banner />
+      </header>
+
       <main className="item-main">
         <BestItem />
         <AllItem />
