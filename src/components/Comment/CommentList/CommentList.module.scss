@@ -3,6 +3,20 @@
   flex-direction: column;
 }
 
+.emptyCommentList {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 1.6rem;
+  color: var(--secondary-400);
+  img {
+    width: 19.6rem;
+    aspect-ratio: 1 / 1;
+  }
+}
+
 .comment {
   display: flex;
   justify-content: space-between;

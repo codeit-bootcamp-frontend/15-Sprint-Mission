@@ -6,6 +6,7 @@ import { relativeTime } from '@/utils/format';
 import { baseUrl, ENDPOINTS } from '@/constants/urls';
 import { PRODUCT_ERROR_MESSAGES } from '@/constants/messages';
 import defaultProfile from '@/assets/images/default_profile.svg';
+import noCommentsImg from '@/assets/images/no_inquiries.svg';
 import commonStyles from '@/styles/helpers/commonHelpers.module.scss';
 import styles from './CommentList.module.scss';
 
@@ -44,34 +45,40 @@ const CommentList = ({ productId, refreshKey }) => {
 
   return (
     <div className={styles.commentContainer}>
-      {comments.map((comment) => (
-        <div key={comment.id} className={styles.commentList}>
-          <div className={styles.comment}>
-            <div className={styles.commentContent}>
-              <p>{comment.content}</p>
-              <div className={styles.writerInfo}>
-                <img
-                  src={comment.writer.image || defaultProfile}
-                  alt="Comment writer profile image"
-                />
-                <div className={styles.nicknameAndDate}>
-                  <div className={styles.nickname}>
-                    {comment.writer.nickname}
-                  </div>
-                  <div className={styles.date}>
-                    {relativeTime(comment.updatedAt)}
+      {comments.length === 0 ? (
+        <div className={styles.emptyCommentList}>
+          <img src={noCommentsImg} alt="No comments" />
+          <p className={styles.noCommentText}>아직 문의가 없어요</p>
+        </div>
+      ) : (
+        comments.map((comment) => (
+          <div key={comment.id} className={styles.commentList}>
+            <div className={styles.comment}>
+              <div className={styles.commentContent}>
+                <p>{comment.content}</p>
+                <div className={styles.writerInfo}>
+                  <img
+                    src={comment.writer.image || defaultProfile}
+                    alt="Comment writer profile image"
+                  />
+                  <div className={styles.nicknameAndDate}>
+                    <div className={styles.nickname}>
+                      {comment.writer.nickname}
+                    </div>
+                    <div className={styles.date}>
+                      {relativeTime(comment.updatedAt)}
+                    </div>
                   </div>
                 </div>
               </div>
+              <VerticalKebabDrop />
             </div>
-
-            <VerticalKebabDrop />
+            <div
+              className={`${commonStyles.horizontalLine} ${styles.addMargin}`}
+            />
           </div>
-          <div
-            className={`${commonStyles.horizontalLine} ${styles.addMargin}`}
-          />
-        </div>
-      ))}
+        ))
+      )}
       {/* 
       //TODO: Pagination 으로 구현 예정
       {nextCursor && (
@@ -79,7 +86,7 @@ const CommentList = ({ productId, refreshKey }) => {
           더보기
         </button>
       )} 
-       */}
+      */}
     </div>
   );
 };
