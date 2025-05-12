@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import { useToast } from '@/contexts';
-import { safeFetch } from '@/utils/api';
+import { postComment } from '@/api/comment';
 import { postCommentErrorMessage } from '@/utils/errorMessage';
-import { baseUrl, ENDPOINTS } from '@/constants/urls';
 import formStyles from '@/styles/helpers/formHelpers.module.scss';
 import buttonStyles from '@/styles/helpers/buttonHelpers.module.scss';
 import styles from './CommentInput.module.scss';
@@ -15,14 +14,7 @@ const CommentInput = ({ productId, refreshAfterSubmit }) => {
     if (!content.trim()) return;
 
     try {
-      await safeFetch({
-        url: `${baseUrl}${ENDPOINTS.PRODUCTS}/${productId}/comments`,
-        options: {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ content }),
-        },
-      });
+      await postComment(productId, content);
 
       setContent('');
       refreshAfterSubmit(); // 등록 후 댓글 목록 새로고침

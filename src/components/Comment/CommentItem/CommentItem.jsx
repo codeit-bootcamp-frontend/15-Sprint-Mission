@@ -1,13 +1,12 @@
 import { useState } from 'react';
 import { useToast } from '@/contexts';
+import { deleteComment, patchComment } from '@/api/comment';
 import { VerticalKebabDrop } from '@/components/common/Buttons';
-import { safeFetch } from '@/utils/api';
 import { relativeTime } from '@/utils/format';
 import {
   deleteCommentErrorMessage,
   patchCommentErrorMessage,
 } from '@/utils/errorMessage';
-import { baseUrl, ENDPOINTS } from '@/constants/urls';
 import defaultProfile from '@/assets/images/default_profile.svg';
 import buttonStyles from '@/styles/helpers/buttonHelpers.module.scss';
 import formStyles from '@/styles/helpers/formHelpers.module.scss';
@@ -26,14 +25,7 @@ const CommentItem = ({ comment, onUpdated }) => {
 
   const handleUpdate = async () => {
     try {
-      await safeFetch({
-        url: `${baseUrl}${ENDPOINTS.COMMENTS}/${comment.id}`,
-        options: {
-          method: 'PATCH',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ content: editedContent }),
-        },
-      });
+      await patchComment(comment.id, editedContent);
 
       setIsEditing(false);
       onUpdated(); // 부모에 갱신 요청
@@ -47,12 +39,7 @@ const CommentItem = ({ comment, onUpdated }) => {
 
     setIsDeleting(true);
     try {
-      await safeFetch({
-        url: `${baseUrl}${ENDPOINTS.COMMENTS}/${comment.id}`,
-        options: {
-          method: 'DELETE',
-        },
-      });
+      await deleteComment(comment.id);
 
       onUpdated(); // 목록 갱신
     } catch (error) {

@@ -1,7 +1,7 @@
 import HTTP_STATUS from '@/constants/statusCodes';
-import { PRODUCT_ERROR_MESSAGES as M } from '@/constants/messages';
+import { COMMENT_ERROR_MESSAGES as M } from '@/constants/messages';
 
-export const getProductErrorMessage = (status) => {
+export const getCommentErrorMessage = (status) => {
   switch (status) {
     case HTTP_STATUS.UNAUTHORIZED:
       return M.UNAUTHORIZED;
@@ -19,7 +19,7 @@ export const getProductErrorMessage = (status) => {
   }
 };
 
-export const postProductErrorMessage = (status) => {
+export const postCommentErrorMessage = (status) => {
   switch (status) {
     case HTTP_STATUS.UNAUTHORIZED:
       return M.UNAUTHORIZED;
@@ -35,7 +35,7 @@ export const postProductErrorMessage = (status) => {
   }
 };
 
-export const patchProductErrorMessage = (status) => {
+export const patchCommentErrorMessage = (status) => {
   switch (status) {
     case HTTP_STATUS.UNAUTHORIZED:
       return M.UNAUTHORIZED;
@@ -53,7 +53,7 @@ export const patchProductErrorMessage = (status) => {
   }
 };
 
-export const deleteProductErrorMessage = (status) => {
+export const deleteCommentErrorMessage = (status) => {
   switch (status) {
     case HTTP_STATUS.UNAUTHORIZED:
       return M.UNAUTHORIZED;

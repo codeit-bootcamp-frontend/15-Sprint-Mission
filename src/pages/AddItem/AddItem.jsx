@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAddItemForm } from '@/hooks';
 import { useToast } from '@/contexts';
+import { postProduct, uploadImage } from '@/api/product';
 import { ImageUploader, TagInput, AddItemForm } from '@/components/AddItem';
 import { addItemValidation } from '@/utils/validators';
 import { safeFetch } from '@/utils/api';
@@ -35,28 +36,27 @@ const AddItem = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const form = new FormData();
-    form.append('image', formData.imageFile);
-    form.append('productName', formData.productName);
-    form.append('description', formData.description);
-    form.append('price', formData.price);
-    form.append('tags', JSON.stringify(formData.tags));
-
     try {
-      const data = await safeFetch({
-        url: `${baseUrl}${ENDPOINTS.UPLOAD_IMAGE}`,
-        options: {
-          method: 'POST',
-          body: form,
-        },
-      });
+      // 1단계: 이미지 업로드
+      const imageForm = new FormData();
+      imageForm.append('image', formData.imageFile);
+
+      const { imageUrl } = await uploadImage(imageForm);
+
+      // 2단계: 상품 등록
+      const productForm = new FormData();
+      productForm.append('imageUrl', imageUrl);
+      productForm.append('productName', formData.productName);
+      productForm.append('description', formData.description);
+      productForm.append('price', formData.price);
+      productForm.append('tags', JSON.stringify(formData.tags));
+
+      const data = await postProduct(productForm);
 
       showToast(
-        `${data.message || PRODUCT_SUCCESS_MESSAGES.ADD_ITEM_SUCCESS}`,
+        data.message || PRODUCT_SUCCESS_MESSAGES.ADD_ITEM_SUCCESS,
         'success',
       );
-
-      // 등록 성공 후 상세 페이지로 이동 처리
       navigate(`${ROUTES.ITEMS}/${data.id}`);
     } catch (error) {
       showToast(postProductErrorMessage(error.status), 'error');

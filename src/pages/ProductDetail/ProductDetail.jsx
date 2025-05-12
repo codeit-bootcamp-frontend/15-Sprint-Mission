@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useToast } from '@/contexts';
+import { getProductDetail } from '@/api/product';
 import { CommentInput, CommentList } from '@/components/Comment';
 import { ProductInfo } from '@/components/Product';
 import { safeFetch } from '@/utils/api';
@@ -22,10 +23,7 @@ const ProductDetail = () => {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const data = await safeFetch({
-          url: `${baseUrl}${ENDPOINTS.PRODUCTS}/${productId}`,
-          options: { method: 'GET' },
-        });
+        const data = await getProductDetail(productId);
         setProduct(data);
       } catch (error) {
         showToast(getProductErrorMessage(error.status), 'error');

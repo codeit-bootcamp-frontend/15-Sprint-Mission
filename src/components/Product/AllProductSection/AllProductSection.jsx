@@ -2,13 +2,13 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useResponsivePageSize } from '@/hooks';
 import { useToast } from '@/contexts';
+import { fetchAllProducts } from '@/api/product';
 import { Pagination } from '@/components/common';
 import { SortDrop } from '@/components/common/Buttons';
 import { ProductCard } from '@/components/Product';
 import { safeFetch } from '@/utils/api';
 import { getProductErrorMessage } from '@/utils/errorMessage';
 import { baseUrl, ENDPOINTS, ROUTES } from '@/constants/urls';
-import { PRODUCT_ERROR_MESSAGES } from '@/constants/messages';
 import buttonStyles from '@/styles/helpers/buttonHelpers.module.scss';
 import styles from './AllProductSection.module.scss';
 
@@ -28,9 +28,11 @@ const AllProductSection = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const data = await safeFetch({
-          url: `${baseUrl}${ENDPOINTS.PRODUCTS}?page=${page}&pageSize=${pageSize}&orderBy=${sortOption}&keyword=${encodeURIComponent(searchQuery)}`,
-          options: { method: 'GET' },
+        const data = await fetchAllProducts({
+          page,
+          pageSize,
+          orderBy: sortOption,
+          keyword: searchQuery,
         });
         setProducts(data.list);
         setTotalCount(data.totalCount);

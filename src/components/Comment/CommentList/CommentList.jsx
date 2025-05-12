@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useToast } from '@/contexts';
+import { getComments } from '@/api/comment';
 import { CommentItem } from '@/components/Comment';
 import { safeFetch } from '@/utils/api';
 import { getCommentErrorMessage } from '@/utils/errorMessage';
@@ -21,10 +22,7 @@ const CommentList = ({ productId, refreshKey }) => {
     const cursorQuery = cursor ? `&cursor=${cursor}` : '';
 
     try {
-      const data = await safeFetch({
-        url: `${baseUrl}${ENDPOINTS.PRODUCTS}/${productId}/comments?limit=10${cursorQuery}`,
-        options: { method: 'GET' },
-      });
+      const data = await getComments(productId, cursor);
 
       if (cursor) {
         setComments((prev) => [...prev, ...data.list]);
