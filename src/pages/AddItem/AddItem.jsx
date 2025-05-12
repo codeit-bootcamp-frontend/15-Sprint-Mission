@@ -1,11 +1,12 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useAddItemForm } from '@/hooks';
 import { useToast } from '@/contexts';
 import { ImageUploader, TagInput, AddItemForm } from '@/components/AddItem';
 import { addItemValidation } from '@/utils/validators';
 import { safeFetch } from '@/utils/api';
 import { postProductErrorMessage } from '@/utils/errorMessage';
-import { baseUrl, ENDPOINTS } from '@/constants/urls';
+import { baseUrl, ENDPOINTS, ROUTES } from '@/constants/urls';
 import { PRODUCT_SUCCESS_MESSAGES } from '@/constants/messages';
 import formStyles from '@/styles/helpers/formHelpers.module.scss';
 import buttonStyles from '@/styles/helpers/buttonHelpers.module.scss';
@@ -20,6 +21,7 @@ const initialForm = {
 };
 
 const AddItem = () => {
+  const navigate = useNavigate();
   const { showToast } = useToast();
   const { formData, isFormValid, handleInputChange } = useAddItemForm(
     initialForm,
@@ -55,6 +57,7 @@ const AddItem = () => {
       );
 
       // TODO: 등록 성공 후 상세 페이지로 이동 처리
+      navigate(`${ROUTES.ITEMS}/${data.id}`);
     } catch (error) {
       showToast(postProductErrorMessage(error.status), 'error');
     }
