@@ -4,8 +4,8 @@ import { useToast } from '@/contexts';
 import { CommentInput, CommentList } from '@/components/Comment';
 import { ProductInfo } from '@/components/Product';
 import { safeFetch } from '@/utils/api';
+import { getProductErrorMessage } from '@/utils/errorMessage/productErrorMessage';
 import { baseUrl, ENDPOINTS, ROUTES } from '@/constants/urls';
-import { PRODUCT_ERROR_MESSAGES } from '@/constants/messages';
 import arrowBackIcon from '@/assets/icons/arrow_back.svg';
 import commonStyles from '@/styles/helpers/commonHelpers.module.scss';
 import buttonStyles from '@/styles/helpers/buttonHelpers.module.scss';
@@ -21,13 +21,15 @@ const ProductDetail = () => {
 
   useEffect(() => {
     const fetchProduct = async () => {
-      const data = await safeFetch({
-        url: `${baseUrl}${ENDPOINTS.PRODUCTS}/${productId}`,
-        options: { method: 'GET' },
-        showToast,
-        uiErrorMessage: PRODUCT_ERROR_MESSAGES.FETCH_DETAIL_FAILED,
-      });
-      setProduct(data);
+      try {
+        const data = await safeFetch({
+          url: `${baseUrl}${ENDPOINTS.PRODUCTS}/${productId}`,
+          options: { method: 'GET' },
+        });
+        setProduct(data);
+      } catch (error) {
+        showToast(getProductErrorMessage(error.status), 'error');
+      }
     };
 
     fetchProduct();
