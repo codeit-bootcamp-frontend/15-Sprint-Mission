@@ -18,7 +18,9 @@ function ItemControl({ isMobile, options }) {
             <div className="text-xl text-gray900 font-bold flex-1">
               전체상품
             </div>
-            <Button onClick={handleButtonClick}>상품 등록하기</Button>
+            <Button type="additem" onClick={handleButtonClick}>
+              상품 등록하기
+            </Button>
           </div>
           <div className="flex justify-between items-center gap-8 relative">
             <div className="flex justify-between items-center gap-4 flex-1">
@@ -44,7 +46,9 @@ function ItemControl({ isMobile, options }) {
                 placeholder="검색할 상품을 입력해주세요"
               />
             </div>
-            <Button onClick={handleButtonClick}>상품 등록하기</Button>
+            <Button type="additem" onClick={handleButtonClick}>
+              상품 등록하기
+            </Button>
             <Dropdown options={options} isMobile={isMobile} />
           </div>
         </>

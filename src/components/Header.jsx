@@ -4,6 +4,7 @@ import logoText from "../assets/images/logo_text.svg";
 import profile from "../assets/icons/profile.svg";
 
 function Header() {
+  const active = location.pathname === "/items" || "/additems";
   return (
     <div className="w-full bg-white sticky top-0 border border-[#dfdfdf]">
       <div className="max-w-1520 p-9 flex items-center justify-between m-auto gap-16 tablet:px-24 tablet:gap-24">
@@ -16,9 +17,7 @@ function Header() {
             <span className="cursor-pointer">자유게시판</span>
           </Link>
           <Link to="/items">
-            <span
-              className={`${location.pathname === "/items" ? "text-blue100" : ""} cursor-pointer`}
-            >
+            <span className={`${active ? "text-blue100" : ""} cursor-pointer`}>
               중고마켓
             </span>
           </Link>

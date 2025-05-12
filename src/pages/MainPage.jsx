@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import MainSection from "../components/MainSection";
 import logo from "../assets/images/logo.svg";
 import logoText from "../assets/images/logo_text.svg";
@@ -7,8 +7,15 @@ import bottomImg from "../assets/images/home_bottom.svg";
 import img1 from "../assets/images/home_01.svg";
 import img2 from "../assets/images/home_02.svg";
 import img3 from "../assets/images/home_03.svg";
+import Button from "../components/Button";
 
 function MainPage() {
+  const navigate = useNavigate();
+
+  const handleButtonClick = () => {
+    navigate("/items");
+  };
+
   return (
     <div>
       <div className="w-full bg-white sticky top-0">
@@ -17,7 +24,9 @@ function MainPage() {
             <img className="w-153 hidden tablet:block" src={logo} />
             <img className="w-103 block tablet:hidden" src={logoText} />
           </div>
-          <button>로그인</button>
+          <Button type="login" onClick={handleButtonClick}>
+            로그인
+          </Button>
         </div>
       </div>
       <div className="bg-[#cfe5ff] flex items-end">
@@ -27,9 +36,9 @@ function MainPage() {
               일상의 모든 물건을 <br className="block tablet:hidden pc:block" />
               거래해보세요
             </h2>
-            <Link to="/items">
-              <button>구경하러 가기</button>
-            </Link>
+            <Button type="shopping" onClick={handleButtonClick}>
+              구경하러 가기
+            </Button>
           </div>
           <div>
             <img className="h-172 tablet:h-340" src={topImg} />

@@ -11,7 +11,7 @@ function ItemsPage() {
   const [sort, setSort] = useState("recent");
   const [totalProducts, setTotalProducts] = useState(1);
   const [bestProducts, setBestProducts] = useState([]);
-  const [best, setBest] = useState(4);
+  const [best, setBest] = useState("");
   const [totalPages, setTotalPages] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(10);
   const [currentPage, setCurrentPage] = useState(1);
