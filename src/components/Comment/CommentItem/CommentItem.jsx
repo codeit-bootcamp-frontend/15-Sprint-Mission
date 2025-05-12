@@ -3,8 +3,11 @@ import { useToast } from '@/contexts';
 import { VerticalKebabDrop } from '@/components/common/Buttons';
 import { safeFetch } from '@/utils/api';
 import { relativeTime } from '@/utils/format';
+import {
+  deleteCommentErrorMessage,
+  patchCommentErrorMessage,
+} from '@/utils/errorMessage';
 import { baseUrl, ENDPOINTS } from '@/constants/urls';
-import { COMMENT_ERROR_MESSAGES } from '@/constants/messages';
 import defaultProfile from '@/assets/images/default_profile.svg';
 import buttonStyles from '@/styles/helpers/buttonHelpers.module.scss';
 import formStyles from '@/styles/helpers/formHelpers.module.scss';
@@ -22,40 +25,40 @@ const CommentItem = ({ comment, onUpdated }) => {
   };
 
   const handleUpdate = async () => {
-    const result = await safeFetch({
-      url: `${baseUrl}${ENDPOINTS.COMMENTS}/${comment.id}`,
-      options: {
-        method: 'PATCH',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ content: editedContent }),
-      },
-      showToast,
-      uiErrorMessage: COMMENT_ERROR_MESSAGES.UPDATE_COMMENT_FAILED,
-    });
+    try {
+      await safeFetch({
+        url: `${baseUrl}${ENDPOINTS.COMMENTS}/${comment.id}`,
+        options: {
+          method: 'PATCH',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ content: editedContent }),
+        },
+      });
 
-    if (result) {
       setIsEditing(false);
       onUpdated(); // 부모에 갱신 요청
+    } catch (error) {
+      showToast(patchCommentErrorMessage(error.status), 'error');
     }
   };
-
   const handleDelete = async () => {
-    const confirmed = window.confirm('정말 이 댓글을 삭제하시겠습니까?');
-    if (!confirmed) return; //TODO: 모달로 변경
+    const confirmed = window.confirm('정말 이 댓글을 삭제하시겠습니까?'); //TODO: 모달로 변경
+    if (!confirmed) return;
 
     setIsDeleting(true);
-    const result = await safeFetch({
-      url: `${baseUrl}${ENDPOINTS.COMMENTS}/${comment.id}`,
-      options: {
-        method: 'DELETE',
-      },
-      showToast,
-      uiErrorMessage: COMMENT_ERROR_MESSAGES.DELETE_FAILED,
-    });
-    setIsDeleting(false);
+    try {
+      await safeFetch({
+        url: `${baseUrl}${ENDPOINTS.COMMENTS}/${comment.id}`,
+        options: {
+          method: 'DELETE',
+        },
+      });
 
-    if (result) {
       onUpdated(); // 목록 갱신
+    } catch (error) {
+      showToast(deleteCommentErrorMessage(error.status), 'error');
+    } finally {
+      setIsDeleting(false);
     }
   };
 

@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 import { useToast } from '@/contexts';
 import { CommentItem } from '@/components/Comment';
 import { safeFetch } from '@/utils/api';
+import { getCommentErrorMessage } from '@/utils/errorMessage';
 import { baseUrl, ENDPOINTS } from '@/constants/urls';
-import { PRODUCT_ERROR_MESSAGES } from '@/constants/messages';
 import noCommentsImg from '@/assets/images/no_inquiries.svg';
 import commonStyles from '@/styles/helpers/commonHelpers.module.scss';
 import styles from './CommentList.module.scss';
@@ -19,23 +19,24 @@ const CommentList = ({ productId, refreshKey }) => {
 
   const fetchComments = async (cursor) => {
     const cursorQuery = cursor ? `&cursor=${cursor}` : '';
-    const data = await safeFetch({
-      url: `${baseUrl}${ENDPOINTS.PRODUCTS}/${productId}/comments?limit=10${cursorQuery}`,
-      options: { method: 'GET' },
-      showToast,
-      uiErrorMessage: PRODUCT_ERROR_MESSAGES.FETCH_COMMENTS_FAILED,
-    });
 
-    if (cursor) {
-      setComments((prev) => [...prev, ...data.list]);
-    } else {
-      setComments(data.list);
+    try {
+      const data = await safeFetch({
+        url: `${baseUrl}${ENDPOINTS.PRODUCTS}/${productId}/comments?limit=10${cursorQuery}`,
+        options: { method: 'GET' },
+      });
+
+      if (cursor) {
+        setComments((prev) => [...prev, ...data.list]);
+      } else {
+        setComments(data.list);
+      }
+
+      setNextCursor(data.nextCursor ?? null);
+    } catch (error) {
+      showToast(getCommentErrorMessage(error.status), 'error');
     }
-
-    setNextCursor(data.nextCursor ?? null);
   };
-
-  console.log('comments', comments);
 
   return (
     <div className={styles.commentContainer}>

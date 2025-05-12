@@ -6,6 +6,7 @@ import { Pagination } from '@/components/common';
 import { SortDrop } from '@/components/common/Buttons';
 import { ProductCard } from '@/components/Product';
 import { safeFetch } from '@/utils/api';
+import { getProductErrorMessage } from '@/utils/errorMessage';
 import { baseUrl, ENDPOINTS, ROUTES } from '@/constants/urls';
 import { PRODUCT_ERROR_MESSAGES } from '@/constants/messages';
 import buttonStyles from '@/styles/helpers/buttonHelpers.module.scss';
@@ -26,15 +27,18 @@ const AllProductSection = () => {
 
   useEffect(() => {
     const fetchProducts = async () => {
-      const data = await safeFetch({
-        url: `${baseUrl}${ENDPOINTS.PRODUCTS}?page=${page}&pageSize=${pageSize}&orderBy=${sortOption}&keyword=${encodeURIComponent(searchQuery)}`,
-        options: { method: 'GET' },
-        showToast,
-        uiErrorMessage: PRODUCT_ERROR_MESSAGES.FETCH_ALL_FAILED,
-      });
-      setProducts(data.list);
-      setTotalCount(data.totalCount);
+      try {
+        const data = await safeFetch({
+          url: `${baseUrl}${ENDPOINTS.PRODUCTS}?page=${page}&pageSize=${pageSize}&orderBy=${sortOption}&keyword=${encodeURIComponent(searchQuery)}`,
+          options: { method: 'GET' },
+        });
+        setProducts(data.list);
+        setTotalCount(data.totalCount);
+      } catch (error) {
+        showToast(getProductErrorMessage(error.status), 'error');
+      }
     };
+
     fetchProducts();
   }, [page, sortOption, pageSize, searchQuery]);
 

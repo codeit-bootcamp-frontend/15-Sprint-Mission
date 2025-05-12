@@ -4,11 +4,9 @@ import { useToast } from '@/contexts';
 import { ImageUploader, TagInput, AddItemForm } from '@/components/AddItem';
 import { addItemValidation } from '@/utils/validators';
 import { safeFetch } from '@/utils/api';
+import { postProductErrorMessage } from '@/utils/errorMessage';
 import { baseUrl, ENDPOINTS } from '@/constants/urls';
-import {
-  PRODUCT_ERROR_MESSAGES,
-  PRODUCT_SUCCESS_MESSAGES,
-} from '@/constants/messages';
+import { PRODUCT_SUCCESS_MESSAGES } from '@/constants/messages';
 import formStyles from '@/styles/helpers/formHelpers.module.scss';
 import buttonStyles from '@/styles/helpers/buttonHelpers.module.scss';
 import styles from './AddItem.module.scss';
@@ -42,21 +40,24 @@ const AddItem = () => {
     form.append('price', formData.price);
     form.append('tags', JSON.stringify(formData.tags));
 
-    const data = await safeFetch({
-      url: `${baseUrl}${ENDPOINTS.UPLOAD_IMAGE}`,
-      options: {
-        method: 'POST',
-        body: form,
-      },
-      showToast,
-      uiErrorMessage: PRODUCT_ERROR_MESSAGES.ADD_ITEM_FAILED,
-    });
+    try {
+      const data = await safeFetch({
+        url: `${baseUrl}${ENDPOINTS.UPLOAD_IMAGE}`,
+        options: {
+          method: 'POST',
+          body: form,
+        },
+      });
 
-    showToast(
-      `${data.message || PRODUCT_SUCCESS_MESSAGES.ADD_ITEM_SUCCESS}`,
-      'success',
-    );
-    // TODO: 등록 성공 후 상세 페이지로 이동 처리
+      showToast(
+        `${data.message || PRODUCT_SUCCESS_MESSAGES.ADD_ITEM_SUCCESS}`,
+        'success',
+      );
+
+      // TODO: 등록 성공 후 상세 페이지로 이동 처리
+    } catch (error) {
+      showToast(postProductErrorMessage(error.status), 'error');
+    }
   };
 
   return (

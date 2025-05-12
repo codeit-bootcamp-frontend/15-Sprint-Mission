@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { useToast } from '@/contexts';
 import { safeFetch } from '@/utils/api';
+import { postCommentErrorMessage } from '@/utils/errorMessage';
 import { baseUrl, ENDPOINTS } from '@/constants/urls';
-import { PRODUCT_ERROR_MESSAGES } from '@/constants/messages';
 import formStyles from '@/styles/helpers/formHelpers.module.scss';
 import buttonStyles from '@/styles/helpers/buttonHelpers.module.scss';
 import styles from './CommentInput.module.scss';
@@ -14,19 +14,21 @@ const CommentInput = ({ productId, refreshAfterSubmit }) => {
   const handleSubmit = async () => {
     if (!content.trim()) return;
 
-    await safeFetch({
-      url: `${baseUrl}${ENDPOINTS.PRODUCTS}/${productId}/comments`,
-      options: {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ content }),
-      },
-      showToast,
-      uiErrorMessage: PRODUCT_ERROR_MESSAGES.POST_COMMENT_FAILED,
-    });
+    try {
+      await safeFetch({
+        url: `${baseUrl}${ENDPOINTS.PRODUCTS}/${productId}/comments`,
+        options: {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ content }),
+        },
+      });
 
-    setContent('');
-    refreshAfterSubmit(); // 등록 후 댓글 목록 새로고침
+      setContent('');
+      refreshAfterSubmit(); // 등록 후 댓글 목록 새로고침
+    } catch (error) {
+      showToast(postCommentErrorMessage(error.status), 'error');
+    }
   };
 
   return (
