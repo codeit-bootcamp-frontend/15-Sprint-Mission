@@ -1,0 +1,21 @@
+const LeftArrowIcon = () => {
+  return (
+    <svg
+      width="6"
+      height="10"
+      viewBox="0 0 6 10"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M4.5 1.66675L1 5.16675L4.5 8.66675"
+        stroke="#4B5563"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+};
+
+export default LeftArrowIcon;
