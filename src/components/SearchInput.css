@@ -1,14 +1,30 @@
 .search__input {
   width: 325px;
-  height: 30px;
+  height: 42px;
   border-radius: 12px;
   padding: 9px 20px 9px 16px;
   background-color: #f3f4f6;
   border: none;
+  flex: none;
+  margin-right: 10px;
 }
 
 .search__input::placeholder {
   color: #9ca3af;
   font-size: 16px;
   font-weight: 400;
+}
+
+/* 태블릿 사이즈*/
+@media (max-width: 1199px) {
+  .search__input {
+    width: 242px;
+  }
+}
+
+/* 모바일 사이즈 */
+@media (max-width: 767px) {
+  .search__input {
+    width: 288px;
+  }
 }

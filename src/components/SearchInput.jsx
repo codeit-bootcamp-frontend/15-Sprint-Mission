@@ -8,6 +8,12 @@ import "./SearchInput.css";
 const SearchInput = ({ onSearch }) => {
   const [keyword, setKeyword] = useState("");
 
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      onSearch(keyword.trim());
+    }
+  };
+
   const handleChange = (e) => {
     const value = e.target.value;
     setKeyword(value);
@@ -15,7 +21,16 @@ const SearchInput = ({ onSearch }) => {
     onSearch(value.trim()); // 공백 제거 후 상위 컴포넌트로 전달
   };
 
-  return <input type="text" value={keyword} placeholder="🔎  검색할 상품을 입력해주세요." onChange={handleChange} className="search__input" />;
+  return (
+    <input
+      type="text"
+      value={keyword}
+      placeholder="🔎  검색할 상품을 입력해주세요."
+      onChange={handleChange}
+      className="search__input"
+      onKeyDown={handleKeyDown}
+    />
+  );
 };
 
 export default SearchInput;

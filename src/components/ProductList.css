@@ -2,21 +2,34 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 1200px;
+  width: 100%;
+  height: 42px;
   gap: 12px;
-  margin-bottom: 24px;
+  margin: 0 auto 24px auto;
+}
+
+.product-list__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 
 .product-list__actions {
   display: flex;
   align-items: center;
   gap: 12px;
+  width: 100%;
+  margin-right: 40px;
+  justify-content: flex-start;
 }
 
 .product-list__grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(2, auto);
-  gap: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
 }
 
 .product-list__add-button {
@@ -25,30 +38,94 @@
   width: 133px;
   height: 42px;
   border-radius: 8px;
-  padding: 12px 24px;
+  padding: 12px 23px;
   border: none;
   font-size: 15px;
   font-weight: 600;
   text-align: center;
+  cursor: pointer;
+  white-space: nowrap;
 }
 
-.product-list__select {
-  border: 1px solid #e5e7eb;
-  width: 130px;
-  height: 42px;
+.product-list__search-wrapper {
+  flex-grow: 1;
+  max-width: 325px;
+}
 
-  border-radius: 12px;
-  padding: 12px 20px;
+.dropdown {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.dropdown__toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dropdown__arrow {
+  width: 24px;
+  height: 24px;
 }
 
 @media (max-width: 1199px) {
-  .product-list__grid {
-    grid-template-columns: repeat(3, 1fr);
+  .product-list__add-button {
+    width: 133px;
   }
 }
 
+/* 모바일 사이즈 */
 @media (max-width: 767px) {
-  .product-list__grid {
-    grid-template-columns: repeat(2, 1fr);
+  .product-list__header {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    gap: 12px;
+    padding: 0 16px;
+  }
+
+  .product-list__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 12px;
+    margin-bottom: 0;
+  }
+
+  .product-list__top h3 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .product-list__actions {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 12px;
+    justify-content: space-between; /* 모바일에서는 space-between으로 유지 */
+  }
+
+  .product-list__search-wrapper {
+    flex-grow: 1;
+    max-width: none; /* 모바일에서는 최대 너비 제한 없음 */
+  }
+
+  .product-list__add-button {
+    margin-left: 0; /* 모바일에서는 마진 제거 */
+  }
+
+  .dropdown {
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
   }
 }

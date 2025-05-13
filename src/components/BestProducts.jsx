@@ -1,5 +1,5 @@
 import { getProducts } from "../api/productApi";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import "./BestProducts.css";
 
 /**
@@ -12,32 +12,28 @@ const BestProduct = () => {
   const [bestProducts, setBestProducts] = useState([]);
   const [visibleCount, setVisibleCount] = useState(4); // default pc
 
+  const updateVisibleCount = useCallback(() => {
+    const width = window.innerWidth;
+    if (width <= 767) {
+      setVisibleCount(1);
+    } else if (width <= 1199) {
+      setVisibleCount(2);
+    } else {
+      setVisibleCount(4);
+    }
+  }, []);
+
   useEffect(() => {
-    getProducts("?page=1&pageSize=4&orderBy=favorite").then((data) => {
+    getProducts({ page: 1, pageSize: 4, orderBy: "favorite" }).then((data) => {
       setBestProducts(data.list);
     });
   }, []);
 
   useEffect(() => {
-    const updateVisibleCount = () => {
-      const width = window.innerWidth;
-
-      if (width <= 767) {
-        // mobile
-        setVisibleCount(1);
-      } else if (width <= 1199) {
-        // tablet
-        setVisibleCount(2);
-      } else {
-        setVisibleCount(4);
-      }
-    };
-
     updateVisibleCount();
-    window.addEventListener("resize", updateVisibleCount); // resize 시 eventListener
-
+    window.addEventListener("resize", updateVisibleCount);
     return () => window.removeEventListener("resize", updateVisibleCount);
-  }, []);
+  }, [updateVisibleCount]);
 
   return (
     <section className="best-products">

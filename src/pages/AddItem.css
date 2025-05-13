@@ -1,0 +1,54 @@
+.additem {
+  max-width: 1200px;
+  margin: 24px auto 0 360px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.additem-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.additem-header > h2 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.submit-button {
+  background-color: #b0b8c1;
+  color: #f3f4f6;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: not-allowed;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.submit-button:not(:disabled) {
+  background-color: #3692ff;
+  cursor: pointer;
+}
+
+.additem-image-section {
+  margin-bottom: 20px;
+}
+
+@media (max-width: 1199px) {
+  .additem {
+    width: 100%;
+    padding: 0 24px;
+    margin: 16px auto 0 auto;
+  }
+}
+
+@media (max-width: 767px) {
+  .additem {
+    width: 100%;
+    padding: 0 16px;
+  }
+}
