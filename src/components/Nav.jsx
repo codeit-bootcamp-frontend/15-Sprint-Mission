@@ -1,6 +1,6 @@
-import logo from "../assets/panda-logo.png";
-import brandName from "../assets/판다마켓.png";
-import avatar from "../assets/avatar.png";
+import logo from "../assets/images/panda-logo.png";
+import brandName from "../assets/images/판다마켓.png";
+import avatar from "../assets/images/avatar.png";
 import { Link, useLocation } from "react-router-dom";
 
 export default function Nav() {

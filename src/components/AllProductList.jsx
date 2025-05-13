@@ -1,5 +1,5 @@
 import HeartIcon from "../assets/icons/icon_heart";
-import noImage from "../assets/no-image.png";
+import noImage from "../assets/images/no-image.png";
 
 export default function AllProductList({ data = [] }) {
   if (!data.length) return null;
