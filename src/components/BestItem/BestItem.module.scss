@@ -1,0 +1,31 @@
+@import "../../styles/variables.scss";
+
+.items {
+  display: flex;
+  gap: 24px;
+}
+.title {
+  @include font-20-bold;
+  display: block;
+  margin-top: 24px;
+}
+.bestItems {
+  width: 1200px;
+  margin: 0 auto;
+  margin-bottom: 40px;
+}
+@media (max-width: 744px) {
+  .items {
+    gap: 10px;
+  }
+  .bestItems {
+    width: 696px;
+    overflow: hidden;
+  }
+}
+@media (max-width: 376px) {
+  .bestItems {
+    width: 343px;
+    overflow: hidden;
+  }
+}

@@ -1,0 +1,58 @@
+@import "../../styles/variables.scss";
+
+.items {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.allItems {
+  width: 1201px;
+  margin: 0 auto;
+  margin-bottom: 40px;
+}
+
+//pagination
+.pages {
+  display: flex;
+  gap: 4px;
+  width: 304px;
+  margin: 43px auto 58px auto;
+}
+.pages button {
+  @include font-16-semiBold;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #e5e7eb;
+  border-radius: 50%;
+  text-align: center;
+}
+.leftArrow,
+.rightArrow {
+  background-image: url("../../image/page-arrow.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.rightArrow {
+  transform: scaleX(-1);
+}
+.isCurrentPage {
+  color: #f9fafb;
+  background-color: #2f80ed;
+}
+
+@media (max-width: 744px) {
+  .items {
+    gap: 16px;
+  }
+  .allItems {
+    width: 696px;
+  }
+}
+@media (max-width: 376px) {
+  .items {
+    gap: 8px;
+  }
+  .allItems {
+    width: 344px;
+  }
+}
