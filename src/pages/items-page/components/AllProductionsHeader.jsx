@@ -66,7 +66,9 @@ const AllProductionsHeader = ({
         <>
           <HeaderSection>
             <Title>전체 상품</Title>
-            <AddItemButton>상품 등록하기</AddItemButton>
+            <Link to="/additem">
+              <AddItemButton>상품 등록하기</AddItemButton>
+            </Link>
           </HeaderSection>
           <HeaderSection>
             <ProductControlBar>

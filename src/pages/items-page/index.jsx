@@ -6,7 +6,6 @@ const Layout = styled.div`
   display: flex;
   flex-direction: column;
   gap: 4rem;
-  margin: 2.5rem 0;
 `;
 
 const ItemsPage = () => {

@@ -1,11 +1,14 @@
-import { Link } from "react-router-dom";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import styled from "@emotion/styled";
 import Logo from "/logo@2x.png";
 import Profile from "/profile@3x.png";
 import { breakpoints } from "@constants/breakpoints";
 
 const Header = () => {
+  const location = useLocation();
+  const isMarketplaceActive =
+    location.pathname.startsWith("/items") || location.pathname === "/additem";
+
   return (
     <HeaderContainer>
       <Section>
@@ -14,7 +17,12 @@ const Header = () => {
         </Link>
         <NavSection>
           <StyledNavLink to="/boards">자유게시판</StyledNavLink>
-          <StyledNavLink to="/items">중고마켓</StyledNavLink>
+          <StyledNavLink
+            to="/items"
+            className={isMarketplaceActive ? "active" : ""}
+          >
+            중고마켓
+          </StyledNavLink>
         </NavSection>
       </Section>
       <Section>

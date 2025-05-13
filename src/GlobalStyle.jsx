@@ -1,5 +1,6 @@
 import React from "react";
 import { Global, css } from "@emotion/react";
+import { breakpoints } from "@constants/breakpoints";
 
 const baseStyle = css`
   :root {
@@ -31,6 +32,7 @@ const baseStyle = css`
     background-color: var(#fcfcfc);
     font-family: "Pretendard", sans-serif;
     font-size: 10px;
+    color: var(--gray800);
   }
 
   div,
@@ -46,6 +48,26 @@ const baseStyle = css`
 
   button {
     cursor: pointer;
+  }
+
+  // 토스트 메시지 스타일
+  .custom-toast {
+    background-color: var(--white);
+    font-size: 1.4rem;
+    border-radius: 1rem;
+    overflow: hidden;
+  }
+
+  .custom-progress-bar {
+    background: linear-gradient(to left, #00c6ff, #0072ff);
+  }
+
+  // 모바일 토스트 메시지 스타일
+  @media (max-width: ${breakpoints.tablet}) {
+    .custom-toast {
+      margin: 0.3rem 0;
+      width: 70vw;
+    }
   }
 `;
 
