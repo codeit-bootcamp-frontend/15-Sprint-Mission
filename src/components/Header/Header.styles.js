@@ -61,3 +61,11 @@ export const ProfileImgStyle = css`
     margin-right: 16px;
   `)}
 `;
+
+export const LinkStyle = css`
+  color: var(--blue100);
+`;
+
+export const DefaultStyle = css`
+  color: var(--gray600);
+`;

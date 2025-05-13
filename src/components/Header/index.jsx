@@ -9,11 +9,24 @@ import {
   LogoStyle,
   ProfileImgStyle,
   LinkWrapperStyle,
+  LinkStyle,
 } from "./Header.styles";
+import { useLocation } from "react-router";
 
 function Header() {
   const [logoImg, setLogoImg] = useState(logo);
   const [logoSize, setLogoSize] = useState(true);
+  const location = useLocation();
+
+  const getName = () => {
+    switch (location.pathname) {
+      case "/items":
+      case "/additem":
+        return LinkStyle;
+      default:
+        return "DefaultStyle"; // 기본 클래스
+    }
+  };
 
   useEffect(() => {
     const handleResize = () => {
@@ -47,7 +60,9 @@ function Header() {
         />
         <div css={LinkWrapperStyle}>
           <Link to="/board">자유게시판</Link>
-          <Link to="/items">중고마켓</Link>
+          <Link to="/items" css={getName()}>
+            중고마켓
+          </Link>
         </div>
       </div>
       <img css={ProfileImgStyle} src={profileImg} alt="프로필 이미지" />
