@@ -49,7 +49,7 @@ const Header = () => {
                             <Link to={"/FreeBoard"} css={aTag}>자유게시판</Link>
                             <Link to={"/Items"} 
                                 css={[aTag, 
-                                location.pathname ==='/Items'&& css`
+                                (location.pathname ==='/Items' || location.pathname === '/additems')  && css`
                                 color: var(--blue)`]}
                                 >
                                 중고마켓
