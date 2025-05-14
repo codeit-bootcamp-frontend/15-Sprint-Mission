@@ -69,6 +69,15 @@
   order: 3;
 }
 
+.AllItems .register:hover {
+  background-color: var(--blue200);
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  transform: translateY(2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
 .AllItems .orderby {
   padding: 12px 20px;
   background-color: #ffffff;
@@ -97,7 +106,7 @@
   background-color: white;
 }
 
-.orderby-dropdown {
+.AllItems .orderby-dropdown {
   position: absolute;
   background: white;
   border: 1px solid var(--gray200);
@@ -107,7 +116,7 @@
   bottom: -92px;
 }
 
-.orderby-dropdown div {
+.AllItems .orderby-dropdown div {
   width: 130px;
   height: 42px;
   font-size: 16px;
@@ -118,7 +127,7 @@
   align-items: center;
 }
 
-.orderby-dropdown .first-option {
+.AllItems .orderby-dropdown .first-option {
   border-bottom: 1px solid var(--gray200);
 }
 

@@ -38,6 +38,15 @@
   border: none;
 }
 
+.Header .login-button:hover {
+  background-color: var(--blue200);
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  transform: translateY(2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
 .Header .header-left .link-section .active {
   color: var(--blue100);
 }

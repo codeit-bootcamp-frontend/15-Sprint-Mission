@@ -1,0 +1,271 @@
+.product-info {
+  display: flex;
+  width: 1200px;
+  gap: 24px;
+  margin: 24px auto 40px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid var(--gray200);
+}
+
+.product-info .image-section {
+  width: 486px;
+  aspect-ratio: 1 / 1;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.product-info .image-section img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.product-info .text-section {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 62px;
+}
+
+.product-info .item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  flex: 1;
+}
+
+.product-info .item-header,
+.product-info .item-description,
+.product-info .item-tags {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.product-info .item-header {
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--gray200);
+}
+
+.product-info .item-name {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32px;
+  color: var(--gray800);
+}
+
+.product-info .item-price {
+  font-size: 40px;
+  font-weight: 600;
+  color: var(--gray800);
+}
+
+.product-info h3 {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 26px;
+  color: var(--gray600);
+}
+
+.product-info .item-description p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+  color: var(--gray600);
+}
+
+.product-info .tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.product-info .tag {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6px 16px;
+  background-color: var(--gray100);
+  border-radius: 26px;
+  height: 36px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+  color: var(--gray800);
+}
+
+.product-info .user-info {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.product-info .user-image {
+  width: 40px;
+  aspect-ratio: 1 / 1;
+}
+
+.product-info .user-image img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.product-info .user-text {
+  flex: 1;
+}
+
+.product-info .user-name {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px;
+  color: var(--gray600);
+}
+
+.product-info .date {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  color: var(--gray400);
+}
+
+.product-info .favorite-section {
+  height: 40px;
+  border-radius: 35px;
+  border: 1px solid var(--gray200);
+  background-color: white;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 26px;
+  color: var(--gray500);
+  padding: 4px 12px;
+}
+
+.product-info .favorite-section button {
+  background-color: white;
+  border: none;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.skeleton {
+  background-color: #e2e2e2;
+  border-radius: 4px;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.product-info .skeleton.image {
+  width: 100%;
+  border-radius: 16px;
+  aspect-ratio: 1/1;
+}
+
+.product-info .skeleton.text {
+  height: 20px;
+  margin: 8px 0;
+}
+
+.product-info .skeleton.tag {
+  width: 100px;
+  height: 36px;
+  margin-right: 8px;
+  display: inline-block;
+}
+
+@media (max-width: 1199px) {
+  .product-info {
+    width: inherit;
+    margin: 24px;
+    padding-bottom: 32px;
+    gap: 16px;
+  }
+
+  .product-info .image-section {
+    width: 340px;
+  }
+
+  .product-info .image-section img {
+    border-radius: 20px;
+  }
+
+  .product-info .text-section {
+    gap: 40px;
+  }
+
+  .product-info .item-info {
+    gap: 16px;
+  }
+
+  .product-info .item-header,
+  .product-info .item-description,
+  .product-info .item-tags {
+    gap: 8px;
+  }
+
+  .product-info .item-name {
+    font-size: 20px;
+  }
+
+  .product-info .item-price {
+    font-size: 32px;
+  }
+
+  .product-info h3 {
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  .product-info .favorite-section {
+    height: 32px;
+  }
+
+  .product-info .favorite-section img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .product-info .favorite-section button {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+@media (max-width: 767px) {
+  .product-info {
+    flex-direction: column;
+    width: inherit;
+    margin: 16px;
+    padding-bottom: 24px;
+    gap: 16px;
+  }
+
+  .product-info .image-section {
+    width: 100%;
+  }
+
+  .product-info .item-name {
+    font-size: 16px;
+  }
+
+  .product-info .item-price {
+    font-size: 24px;
+  }
+}

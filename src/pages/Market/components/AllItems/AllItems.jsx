@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import { getProducts } from "../../../../../src/api.js";
+import { getProducts } from "../../../../api/getProducts.js";
 import Item from "../Item/Item";
 import Pagination from "../Pagination/Pagination.jsx";
 import "./AllItems.css";
@@ -22,12 +22,6 @@ const AllItems = ({ deviceType }) => {
   const nav = useNavigate();
   const onClickButton = () => {
     nav("/additem");
-  };
-
-  const getItemSize = () => {
-    if (deviceType === "mobile") return "all-four";
-    if (deviceType === "tablet") return "all-six";
-    return "all-ten";
   };
 
   useEffect(() => {
@@ -55,6 +49,22 @@ const AllItems = ({ deviceType }) => {
 
     getItems();
   }, [currentPage, orderBy, searchKeyword, pageSize]);
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") {
+        setShowDropdown(false);
+      }
+    };
+
+    if (showDropdown) {
+      document.addEventListener("keydown", handleKeyDown);
+    }
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [showDropdown]);
 
   const handleOrderChange = (orderType) => {
     setOrderBy(orderType);
