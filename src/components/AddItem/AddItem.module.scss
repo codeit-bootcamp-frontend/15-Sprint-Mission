@@ -1,0 +1,180 @@
+@import "../../styles/variables.scss";
+.form {
+  width: 1200px;
+  margin: 0 auto;
+}
+.form__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 24px 0;
+}
+.h1 {
+  @include font-20-bold;
+}
+.submit--active {
+  @include font-16-semiBold;
+  text-align: center;
+  width: 74px;
+  height: 42px;
+  border-radius: 8px;
+  color: #f3f4f6;
+  background-color: #3692ff;
+}
+.submit--disabled {
+  background-color: #9ca3af;
+}
+
+.form__body {
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+}
+
+.input__label {
+  @include font-18-bold;
+  margin: 32px 0 16px 0;
+}
+
+.input__short-text,
+.input__long-text {
+  @include font-16-regular;
+  flex-basis: 100%;
+  min-height: 56px;
+  background-color: #f3f4f6;
+  color: #1f2937;
+  padding-left: 24px;
+  border-radius: 12px;
+}
+.input__long-text {
+  min-height: 282px;
+  padding-top: 16px;
+}
+
+.input__image {
+  position: relative;
+  margin-bottom: 298px;
+}
+
+.image--input::after {
+  @include font-16-regular;
+  content: "이미지 등록";
+  position: absolute;
+  top: 200px;
+  left: 104px;
+  color: #9ca3af;
+}
+.image--input::before {
+  content: "";
+  width: 282px;
+  height: 282px;
+  position: absolute;
+  top: 42px;
+  left: 0px;
+  border-radius: 12px;
+  background-color: #f3f4f6;
+  background-image: url("../../image/plus.svg");
+  background-repeat: no-repeat;
+  background-position-x: 117px;
+  background-position-y: 98px;
+}
+.image--preview {
+  position: absolute;
+  top: 42px;
+  left: 306px;
+  border-radius: 12px;
+  background-color: #f3f4f6;
+}
+.image--preview img {
+  width: 282px;
+  height: 282px;
+  border-radius: 12px;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.xButton {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #9ca3af;
+  background-image: url("../../image/x.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.delete-image {
+  position: absolute;
+  top: 14px;
+  left: 249px;
+}
+.warning {
+  @include font-16-regular;
+  margin-top: 16px;
+  color: #f74747;
+}
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  width: 100%;
+  gap: 12px;
+  margin: 14px 0 69px 0;
+}
+.tag-wrapper {
+  position: relative;
+}
+.tag {
+  @include font-16-regular;
+  padding: 5px 12px;
+  border-radius: 26px;
+  color: #1f2937;
+  background-color: #f3f4f6;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+@media (max-width: 744px) {
+  .form {
+    width: 696px;
+  }
+
+  .image--input::after {
+    top: 138px;
+    left: 47px;
+    color: #9ca3af;
+  }
+  .image--input::before {
+    width: 168px;
+    height: 168px;
+    background-position-x: 60px;
+    background-position-y: 41px;
+  }
+
+  .input__image {
+    margin-bottom: 184px;
+  }
+  .input__label {
+    margin-top: 24px;
+  }
+  .image--preview {
+    top: 37px;
+    left: 178px;
+  }
+  .image--preview img {
+    width: 168px;
+    height: 168px;
+  }
+  .delete-image {
+    top: 14px;
+    left: 135px;
+  }
+  .warning {
+    margin-top: 8px;
+  }
+}
+@media (max-width: 376px) {
+  .form {
+    width: 346px;
+  }
+}
