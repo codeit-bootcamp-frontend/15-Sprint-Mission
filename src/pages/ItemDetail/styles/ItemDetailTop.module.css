@@ -1,0 +1,249 @@
+.itemDetailTop {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding-bottom: 40px;
+  margin-bottom: 40px;
+  border-bottom: 1px solid var(--gray200);
+}
+.itemDetailImage {
+  width: 486px;
+  flex: none;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 16px;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+.itemDetailInfo {
+  flex: 1;
+  > ul {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    > li {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      color: var(--gray600);
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.62;
+      em {
+        font-weight: 600;
+      }
+      .desc {
+        min-height: 6.48em;
+      }
+      &:first-of-type {
+        color: var(--gray800);
+        font-size: 24px;
+        padding-bottom: 16px;
+        border-bottom: 1px solid var(--gray200);
+        h4 {
+          font-weight: 600;
+          line-height: 1.33;
+        }
+        strong {
+          font-size: 40px;
+          font-weight: 600;
+          line-height: 1;
+        }
+      }
+    }
+  }
+}
+.itemDetailTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  li {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--gray800);
+    border-radius: 2em;
+    background-color: var(--gray100);
+    padding-inline: 16px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+.itemDetailMenu {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.itemDetailDesc {
+  word-break: break-all;
+}
+.itemDetailMeta {
+  margin-top: 62px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.itemDetailFavoriteButton {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  border-radius: 2em;
+  border: 1px solid var(--gray200);
+  gap: 4px;
+  padding-inline: 12px;
+  transition: border-color 0.2s ease;
+  img {
+    width: 32px;
+    height: 32px;
+  }
+  span {
+    color: var(--gray500);
+    font-size: 16px;
+    font-weight: 500;
+    min-width: 27px;
+    text-align: right;
+  }
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: -24px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 34px;
+    background-color: var(--gray200);
+  }
+  &:hover {
+    border-color: var(--gray500);
+  }
+}
+@media (max-width: 1024px) {
+  .itemDetailTop {
+    align-items: flex-start;
+  }
+  .itemDetailImage {
+    width: 340px;
+  }
+}
+@media (max-width: 768px) {
+.itemDetailTop {
+    padding-bottom: 4.17vw;
+    margin-bottom: 5.21vw;
+    gap: 2.08vw;
+  }
+  .itemDetailImage {
+    width: 44.27vw;
+    border-radius: 2.08vw;
+  }
+  .itemDetailInfo {
+    > ul {
+      gap: 3.13vw;
+      > li {
+        gap: 1.04vw;
+        font-size: 1.82vw;
+        &:first-of-type {
+          font-size: 2.6vw;
+          padding-bottom: 2.08vw;
+          strong {
+            font-size: 4.17vw;
+          }
+        }
+      }
+    }
+  }
+  .itemDetailTags {
+    gap: 1.04vw;
+    li {
+      padding-inline: 2.08vw;
+      height: 4.69vw;
+      font-size: 2.08vw;
+    }
+  }
+  .itemDetailMeta {
+    margin-top: 5.21vw;
+  }
+  .itemDetailFavoriteButton {
+    height: 4.17vw;
+    gap: 0.52vw;
+    padding-inline: 1.56vw;
+    img {
+      width: 3.13vw;
+      height: 3.13vw;
+    }
+    span {
+      font-size: 2.08vw;
+      min-width: 3.52vw;
+    }
+    &::before {
+      left: -3.13vw;
+      height: 4.43vw;
+    }
+  }
+}
+@media (max-width: 425px) {
+.itemDetailTop {
+    flex-direction: column;
+    padding-bottom: 5.65vw;
+    margin-bottom: 5.65vw;
+    gap: 4.71vw;
+  }
+  .itemDetailImage {
+    width: 100%;
+    border-radius: 4.71vw;
+  }
+  .itemDetailInfo {
+    width: 100%;
+    > ul {
+      gap: 5.65vw;
+      > li {
+        gap: 1.88vw;
+        font-size: 3.76vw;
+        &:first-of-type {
+          font-size: 3.76vw;
+          padding-bottom: 3.76vw;
+          strong {
+            font-size: 5.65vw;
+            line-height: 1.33;
+          }
+        }
+      }
+    }
+  }
+  .itemDetailTags {
+    gap: 1.88vw;
+    li {
+      padding-inline: 3.76vw;
+      height: 8.47vw;
+      font-size: 3.76vw;
+    }
+  }
+  .itemDetailMeta {
+    margin-top: 9.41vw;
+  }
+  .itemDetailFavoriteButton {
+    height: 7.53vw;
+    gap: 0.94vw;
+    padding-inline: 2.82vw;
+    img {
+      width: 5.65vw;
+      height: 5.65vw;
+    }
+    span {
+      font-size: 3.76vw;
+      min-width: 6.35vw;
+    }
+    &::before {
+      left: -5.65vw;
+      height: 8vw;
+    }
+  }
+}

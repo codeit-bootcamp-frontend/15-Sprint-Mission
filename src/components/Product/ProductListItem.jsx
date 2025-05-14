@@ -1,15 +1,17 @@
 import styles from './styles/ProductListItem.module.css';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import defaultImage from '/images/common/img_default.png';
 
 const ProductListItem = ({ id, title, image, price, favorite }) => {
+  const location = useLocation();
+  
   const handleFavorite = () => {
     console.log('favorite');
   };
 
   return (
     <li>
-      <Link to={`/product/${id}`} className={styles.productListItem}>
+      <Link to={`/items/${id}`} state={{ prevQuery: location.search }} className={styles.productListItem}>
         <div className={styles.productListItemImage}>
           <img 
             src={image?.startsWith('http') ? image : defaultImage} 

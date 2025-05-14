@@ -12,18 +12,18 @@ export default function Items() {
 
   return (
     <>
-      <Header />
+      <Header isNav />
       <div id='container' className={`${styles.itemsPage} itemsPage`}>
         <div className='inner04'>
           <section>
-            <div className="contentHeader">
+            <div className='contentHeader'>
               <h3>베스트 상품</h3>
             </div>
             <ProductList listType='best' products={bestProducts} />
           </section>
 
           <section>
-            <div className="contentHeader isWrap">
+            <div className='contentHeader isWrap'>
               <h3>전체 상품</h3>
               <SearchInput
                 placeholder='검색할 상품을 입력해주세요'

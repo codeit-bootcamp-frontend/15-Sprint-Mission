@@ -1,0 +1,98 @@
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.profileImage {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+.profileNickName {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.71;
+  color: var(--gray600);
+}
+.profileUpdate {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.71;
+  color: var(--gray400);
+  margin-top: 2px;
+}
+.isComment {
+  .profileNickName {
+    font-size: 12px;
+  }
+  .profileUpdate {
+    font-size: 12px;
+  }
+  .profileImage {
+    width: 32px;
+    height: 32px;
+  }
+}
+@media (max-width: 768px) {
+  .profile {
+    gap: 2.08vw;
+  }
+  .profileImage {
+    width: 5.21vw;
+    height: 5.21vw;
+  }
+  .profileNickName {
+    font-size: 1.82vw;
+  }
+  .profileUpdate {
+    font-size: 1.82vw;
+    margin-top: 0.26vw;
+  }
+  .isComment {
+    .profileNickName {
+      font-size: 1.56vw;
+    }
+    .profileUpdate {
+      font-size: 1.56vw;
+    }
+    .profileImage {
+      width: 4.17vw;
+      height: 4.17vw;
+    }
+  }
+}
+@media (max-width: 425px) {
+  .profile {
+    gap: 3.76vw;
+  }
+  .profileImage {
+    width: 9.41vw;
+    height: 9.41vw;
+  }
+  .profileNickName {
+    font-size: 3.29vw;
+  }
+  .profileUpdate {
+    font-size: 3.29vw;
+    margin-top: 0.47vw;
+  }
+  .isComment {
+    .profileNickName {
+      font-size: 2.82vw;
+    }
+    .profileUpdate {
+      font-size: 2.82vw;
+    }
+    .profileImage {
+      width: 7.53vw;
+      height: 7.53vw;
+    }
+  }
+}

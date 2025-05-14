@@ -2,12 +2,11 @@ import './styles/Header.css'
 import { useNavigate, NavLink, useLocation } from 'react-router-dom';
 
 
-const Header = () => {
+const Header = ({ isNav = false }) => {
   const navigate = useNavigate();
   const location = useLocation();
   return (
-    <header
-      className={`header ${location.pathname === '/items' || location.pathname === '/additem' ? 'header02' : ''}`}>
+    <header className={`header ${isNav ? 'header02' : ''}`}>
       <div className='inner02'>
         <h1 className='header-logo'>
           <button onClick={() => navigate('/')}>
