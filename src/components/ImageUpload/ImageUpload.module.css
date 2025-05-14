@@ -1,0 +1,91 @@
+.imageUpload {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 588px;
+  gap: 16px;
+}
+
+.label {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 26px;
+  color: #1f2937;
+}
+
+.imageRow {
+  display: flex;
+  width: 100%;
+  gap: 24px;
+}
+
+.uploadBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 282px;
+  height: 282px;
+  border-radius: 12px;
+  background-color: #f3f4f6;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.plus {
+  width: 48px;
+  height: auto;
+}
+
+.text {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+  color: #9ca3af;
+}
+
+.uploadInput {
+  display: none;
+}
+
+.previewBox {
+  position: relative;
+  width: 100%;
+  max-width: 282px;
+  height: 282px;
+}
+
+.previewImage {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #f9fafb;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.removeButton {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  cursor: pointer;
+}
+
+.error {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+  color: #f74747;
+}
+
+@media (max-width: 1023px) {
+  .uploadBox {
+    max-width: 168px;
+    height: 168px;
+  }
+
+  .previewBox {
+    max-width: 168px;
+    height: 168px;
+  }
+}
