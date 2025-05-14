@@ -35,7 +35,7 @@ const SortSelect = ({ value, onChange, options = [] }) => {
           type="button"
           className={styles.sortIcon}
           onClick={() => setIsOpen((prev) => !prev)}
-          aria-label="Open sort options"
+          aria-label="Open select options"
         >
           <img src={sortIcon} alt="Select button" />
         </button>
@@ -44,7 +44,7 @@ const SortSelect = ({ value, onChange, options = [] }) => {
           type="button"
           className={styles.selectButton}
           onClick={() => setIsOpen((prev) => !prev)}
-          aria-label="Open sort options"
+          aria-label="Open select options"
         >
           {selectedOption?.label}
           <span className={styles.arrow} />
@@ -53,15 +53,17 @@ const SortSelect = ({ value, onChange, options = [] }) => {
       {isOpen && (
         <ul className={styles.optionList}>
           {options.map((opt) => (
-            <li
-              key={opt.value}
-              onClick={() => {
-                onChange(opt.value);
-                setIsOpen(false);
-              }}
-              className={styles.option}
-            >
-              {opt.label}
+            <li key={opt.value} className={styles.option}>
+              <button
+                type="button"
+                value={opt.value}
+                onClick={() => {
+                  onChange(opt.value);
+                  setIsOpen(false);
+                }}
+              >
+                {opt.label}
+              </button>
             </li>
           ))}
         </ul>

@@ -86,17 +86,12 @@ export default [
               position: 'after',
             },
             {
-              pattern: '**/*.css',
-              group: 'index',
+              pattern: '@/**/*.module.scss',
+              group: 'internal',
               position: 'after',
             },
             {
-              pattern: '**/*.scss',
-              group: 'index',
-              position: 'after',
-            },
-            {
-              pattern: '**/*.module.scss',
+              pattern: './*.module.scss',
               group: 'index',
               position: 'after',
             },

@@ -12,7 +12,8 @@ h5,
 h6,
 p,
 ul,
-ol {
+ol,
+label {
   margin: 0;
 }
 
@@ -37,6 +38,10 @@ select {
   background: none;
   margin: 0;
   padding: 0;
+}
+
+textarea {
+  resize: none;
 }
 
 input[type='checkbox'],

@@ -1,11 +1,22 @@
-.viewButton {
-  padding: 1.1rem 10rem;
-  border-radius: 40px;
-  font-size: 1.4rem;
-}
+.primary {
+  background-color: var(--primary-100);
+  color: var(--secondary-100);
+  padding: 1rem 1.6rem;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
 
-@media (max-width: 767px) {
-  .viewButton {
-    padding: 1.1rem 8rem;
+  &:hover {
+    background-color: var(--primary-200);
+  }
+
+  &:active {
+    background-color: var(--primary-300);
+  }
+
+  &:disabled {
+    background-color: var(--secondary-400);
+    cursor: not-allowed;
   }
 }

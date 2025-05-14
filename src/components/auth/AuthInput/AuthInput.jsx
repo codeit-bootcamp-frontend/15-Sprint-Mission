@@ -1,4 +1,5 @@
 import { PasswordToggleIcon } from '@/components/auth/PasswordToggleIcon';
+import formStyles from '@/styles/helpers/formHelpers.module.scss';
 import styles from './AuthInput.module.scss';
 
 const AuthInput = ({
@@ -15,8 +16,10 @@ const AuthInput = ({
   const isPassword = type === 'password';
 
   return (
-    <div className={styles.inputContainer}>
-      <label htmlFor={id}>{label}</label>
+    <div className={formStyles.inputContainer}>
+      <label htmlFor={id} className={formStyles.labelText}>
+        {label}
+      </label>
       <div className={isPassword ? styles.passwordInput : ''}>
         <input
           id={id}
@@ -24,15 +27,15 @@ const AuthInput = ({
           value={value}
           onChange={onChange}
           placeholder={placeholder || `${label}을/를 입력해주세요`}
-          className={`${styles.input} ${error ? styles.errorInput : ''}`}
+          className={`${formStyles.input} ${error ? styles.errorInput : ''}`}
         />
         {isPassword && (
           <PasswordToggleIcon isVisible={isVisible} onToggle={onToggle} />
         )}
       </div>
       <div
-        className={`${styles.validationErrorMessage} ${
-          error ? styles.active : ''
+        className={`${formStyles.validationErrorMessage} ${
+          error ? formStyles.active : ''
         }`}
       >
         {error}

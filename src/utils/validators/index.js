@@ -1,4 +1,2 @@
-export {
-  signUpValidationRules,
-  signInValidationRules,
-} from './validationRules';
+export { signUpValidation, signInValidation } from './authValidation';
+export { default as addItemValidation } from './addItemValidation';

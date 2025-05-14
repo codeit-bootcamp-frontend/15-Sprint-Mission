@@ -1,12 +1,16 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useResponsivePageSize } from '@/hooks';
-import { SortSelect, Pagination } from '@/components/common';
+import { SortSelect, Pagination, useToast } from '@/components/common';
 import { ProductCard } from '@/components/Product';
-import { baseUrl, ROUTES } from '@/constants/urls';
+import { safeFetch } from '@/utils/api';
+import { baseUrl, ENDPOINTS, ROUTES } from '@/constants/urls';
+import { PRODUCT_ERROR_MESSAGES } from '@/constants/messages';
+import buttonStyles from '@/styles/helpers/buttonHelpers.module.scss';
 import styles from './AllProductSection.module.scss';
 
 const AllProductSection = () => {
+  const { showToast } = useToast();
   const [products, setProducts] = useState([]);
   const [totalCount, setTotalCount] = useState(0);
   const [sortOption, setSortOption] = useState('recent');
@@ -16,23 +20,26 @@ const AllProductSection = () => {
 
   useEffect(() => {
     const fetchProducts = async () => {
-      const res = await fetch(
-        `${baseUrl}/products?page=${page}&pageSize=${pageSize}&orderBy=${sortOption}`,
-      );
-      const data = await res.json();
+      const data = await safeFetch({
+        url: `${baseUrl}${ENDPOINTS.PRODUCTS}?page=${page}&pageSize=${pageSize}&orderBy=${sortOption}&keyword=${encodeURIComponent(searchQuery)}`,
+        options: { method: 'GET' },
+        showToast,
+        uiErrorMessage: PRODUCT_ERROR_MESSAGES.FETCH_ALL_FAILED,
+      });
       setProducts(data.list);
       setTotalCount(data.totalCount);
     };
     fetchProducts();
-  }, [page, sortOption, pageSize]);
-
-  const filteredProducts = products.filter((product) =>
-    product.name.toLowerCase().includes(searchQuery.toLowerCase()),
-  );
+  }, [page, sortOption, pageSize, searchQuery]);
 
   useEffect(() => {
     setPage(1);
-  }, [pageSize, sortOption]);
+  }, [pageSize, sortOption, searchQuery]);
+
+  const handlePageChange = (e) => {
+    const selectedPage = Number(e.target.value);
+    setPage(selectedPage);
+  };
 
   return (
     <section className={styles.allProductsSection}>
@@ -45,7 +52,10 @@ const AllProductSection = () => {
           onChange={(e) => setSearchQuery(e.target.value)}
           aria-label="Search products"
         />
-        <Link to={ROUTES.ADD_ITEM} className={`button ${styles.linkButton}`}>
+        <Link
+          to={ROUTES.ADD_ITEM}
+          className={`${buttonStyles.primary} ${styles.linkButton}`}
+        >
           상품 등록하기
         </Link>
         <div className={styles.sortWrapper}>
@@ -61,8 +71,8 @@ const AllProductSection = () => {
       </div>
 
       <div className={styles.allProductsGrid}>
-        {filteredProducts.map((product) => (
-          <ProductCard key={product.id} product={product} />
+        {products.map((product) => (
+          <ProductCard key={product.id} {...product} />
         ))}
       </div>
 
@@ -70,7 +80,7 @@ const AllProductSection = () => {
         currentPage={page}
         totalCount={totalCount}
         pageSize={pageSize}
-        onPageChange={setPage}
+        onPageChange={handlePageChange}
       />
     </section>
   );

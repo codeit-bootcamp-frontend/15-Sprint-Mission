@@ -24,8 +24,8 @@
 
   .navLinks {
     display: flex;
-    gap: 30px;
-    margin-left: 35px;
+    gap: 3rem;
+    margin-left: 3.5rem;
   }
 
   .navLink {
@@ -40,18 +40,15 @@
   }
 
   .defaultProfileIcon {
-    width: 40px;
-    height: 40px;
+    width: 4rem;
+    aspect-ratio: 1 / 1;
     border-radius: 50%;
   }
 }
 
 .signinButton {
   padding: 1.3rem 4rem;
-  font-size: 1.2rem;
-  border-radius: 8px;
-  background-color: var(--primary-100);
-  color: var(--white);
+  font-size: 1.4rem;
 }
 
 .signinButton:hover {
@@ -80,7 +77,7 @@
   }
 
   .headerContent .navLinks {
-    gap: 8px;
-    margin-left: 8px;
+    gap: 0.8rem;
+    margin-left: 0.8rem;
   }
 }

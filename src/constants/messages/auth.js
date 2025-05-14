@@ -1,4 +1,4 @@
-export const ERROR_MESSAGES = {
+export const AUTH_ERROR_MESSAGES = {
   emailRequired: '이메일을 입력해주세요.',
   invalidEmail: '잘못된 이메일 형식입니다.',
   nicknameRequired: '닉네임을 입력해주세요.',

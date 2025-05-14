@@ -1,4 +1,3 @@
-import { INFO_MESSAGES } from '@/constants/messages';
 import styles from './Pagination.module.scss';
 
 const Pagination = ({ currentPage, totalCount, pageSize, onPageChange }) => {
@@ -8,10 +7,6 @@ const Pagination = ({ currentPage, totalCount, pageSize, onPageChange }) => {
   const startPage = currentGroup * groupSize + 1;
   const endPage = Math.min(startPage + groupSize - 1, totalPages);
 
-  if (totalPages === 0) {
-    return <p>{INFO_MESSAGES.emptyList}</p>; // 나중에 UI 디자인 추가
-  }
-
   const pageNumbers = Array.from(
     { length: endPage - startPage + 1 },
     (_, i) => startPage + i,
@@ -20,16 +15,18 @@ const Pagination = ({ currentPage, totalCount, pageSize, onPageChange }) => {
   return (
     <div className={styles.pagination}>
       <button
-        onClick={() => onPageChange(currentPage - 1)}
-        disabled={currentPage === 1}
+        value={currentPage - 1}
+        onClick={onPageChange}
         className={`${styles.arrow} ${styles.prev}`}
+        disabled={currentPage === 1}
         aria-label="Previous page"
       />
 
       {pageNumbers.map((page) => (
         <button
           key={page}
-          onClick={() => onPageChange(page)}
+          value={page}
+          onClick={onPageChange}
           className={`${styles.page} ${
             currentPage === page ? styles.active : ''
           }`}
@@ -41,7 +38,8 @@ const Pagination = ({ currentPage, totalCount, pageSize, onPageChange }) => {
       ))}
 
       <button
-        onClick={() => onPageChange(currentPage + 1)}
+        value={currentPage + 1}
+        onClick={onPageChange}
         disabled={currentPage === totalPages}
         className={`${styles.arrow} ${styles.next}`}
         aria-label="Next page"

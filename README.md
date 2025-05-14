@@ -13,8 +13,8 @@
 | 2    | 2025-03-05 | [#44](https://github.com/codeit-bootcamp-frontend/15-Sprint-Mission/pull/44)   | 회원가입 및 로그인 페이지의 HTML, CSS 구현                                                                   |
 | 3    | 2025-03-07 | [#60](https://github.com/codeit-bootcamp-frontend/15-Sprint-Mission/pull/60)   | 반응형 디자인 구현(desktop-first, 1920px 이상 큰 모니터 기준), breakpoint: 1919px, 1199px, 767px             |
 | 4    | 2025-03-18 | [#101](https://github.com/codeit-bootcamp-frontend/15-Sprint-Mission/pull/101) | JS기능 추가(DOM 요소 조작 및 이벤트 리스너), 회원가입, 로그인 폼 유효성 검사                                 |
-| 5    | 2025-05-05 | [#](https://github.com/codeit-bootcamp-frontend/15-Sprint-Mission/pull/)       | React, SCSS+CSS modules로 마이그레이션, items 페이지 구현(fetch data, 검색어, 정렬, pagination, 반응형 구현) |
-| 6    | 2025-05-0  | [#](https://github.com/codeit-bootcamp-frontend/15-Sprint-Mission/pull/)       | 상품 등록 페이지 구현                                                                                        |
+| 5    | 2025-05-05 | [#](https://github.com/codeit-bootcamp-frontend/15-Sprint-Mission/pull/181)       | React, SCSS+CSS modules로 마이그레이션, items 페이지 구현(fetch data, 검색어, 정렬, pagination, 반응형 구현) |
+| 6    | 2025-05-11  | [#](https://github.com/codeit-bootcamp-frontend/15-Sprint-Mission/pull/)       | 상품 등록 페이지 구현                                                                                        |
 
 ---
 
@@ -83,3 +83,23 @@
 ```
 마지막에 추가 할 예정
 ```
+
+## 에러 처리 전략
+> 모든 에러는 사용자에게 UX 혼란을 최소화하기 위한 피드백(UI/토스트 등)을 포함하여 처리됩니다.
+
+### 1. 라우팅 오류
+- 잘못된 경로 접근 시 → `404 페이지` → 랜딩 페이지로 이동 버튼 
+
+### 2. 전역 에러 (App 깨짐)
+- 앱 전체 서버 에러 → `500 페이지` → 다시 시도 버튼 
+
+### 3. API 응답 에러 (safeFetch 내부 → 토스트 처리 )
+| 상태 코드 | 처리 방식 |
+|-----------|-----------|
+| `401`     | 인증 필요 안내 토스트 |
+| `403`     | 접근 권한 없음 안내 토스트  |
+| `404`     | 없는 리소스 조회 시 토스트  |
+| `500~599` | 서버 응답 오류 토스트 노출 |
+
+### 4. 특정 컴포넌트 렌더 실패 (예: 이미지 리스트 하나가 깨짐) 
+- 해당 컴포넌트 수준에서 fallback UI 처리 예정 

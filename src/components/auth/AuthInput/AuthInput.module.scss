@@ -1,42 +1,5 @@
-.inputContainer {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-
-label {
-  font-size: 1.8rem;
-  font-weight: 700;
-  line-height: 2.6rem;
-  display: block;
-  margin-bottom: 1.6rem;
-}
-
-.input {
-  background-color: var(--secondary-100);
-  border-radius: 12px;
-  height: 6rem;
-  font-size: 1.6rem;
-  font-weight: 400;
-  padding: 0 2.4rem;
-  width: 100%;
-}
-
 .errorInput {
   border: 1px solid var(--error);
-}
-
-.validationErrorMessage {
-  color: var(--error);
-  font-size: 1.4rem;
-  font-weight: 600;
-  line-height: 2.4rem;
-  display: none;
-
-  &.active {
-    display: block;
-    padding: 0.8rem 1.6rem;
-  }
 }
 
 .passwordInput {
