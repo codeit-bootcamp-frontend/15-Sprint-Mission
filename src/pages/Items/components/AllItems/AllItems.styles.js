@@ -1,7 +1,7 @@
 import { css } from "@emotion/react";
 import { tablet, mobile } from "@/styles/utils/mixins";
 
-export const AllItemsHeader = css`
+export const AllItemsHeaderStyle = css`
   display: flex;
   align-items: center;
   justify-content: space-between;

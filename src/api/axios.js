@@ -15,6 +15,10 @@ const RETRY_DELAY = 1000; // 재시도 간격 1초
 baseAPI.interceptors.request.use(
   (config) => {
     // 요청이 보내지기 전에 작업 수행
+    const token = localStorage.getItem("accessToken");
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`;
+    }
     return config;
   },
   (error) => {

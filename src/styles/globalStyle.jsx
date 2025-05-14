@@ -8,11 +8,12 @@ export const globalStyles = css`
       BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI",
       "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic",
       "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
-    background-color: #ffffff;
+    background-color: var(--white);
     color: #333;
     line-height: 1.6;
     margin: 0;
     padding: 0;
+    font-style: normal;
   }
 
   /* 전체 영역 기본 너비 설정 */
@@ -32,11 +33,6 @@ export const globalStyles = css`
   h5,
   h6 {
     font-weight: 600;
-    margin-bottom: 0.5em;
-  }
-
-  p {
-    margin-bottom: 1em;
   }
 
   /* 모든 텍스트 요소 폰트 상속 */
@@ -56,6 +52,11 @@ export const globalStyles = css`
 
   /* 기본 버튼 스타일 */
   button {
+    font-family: inherit;
+    font-size: inherit;
+  }
+
+  textarea {
     font-family: inherit;
     font-size: inherit;
   }
