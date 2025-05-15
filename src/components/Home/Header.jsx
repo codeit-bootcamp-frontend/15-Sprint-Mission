@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import logo from "/logo.svg";
 import logo_title from "/logo_title.svg";
 
-function Banner() {
+function Header() {
   return (
     <div className="banner-content">
       <div className="logo-content">
@@ -21,4 +21,4 @@ function Banner() {
   );
 }
 
-export default Banner;
+export default Header;

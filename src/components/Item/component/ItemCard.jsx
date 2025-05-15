@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import heart_icon from "/heart_icon.svg";
 
 import "./ItemCard.css";
@@ -12,7 +13,7 @@ function isValidImage(url) {
 
 function ItemCard({ item, className }) {
   return (
-    <>
+    <Link to={`/item/${item.id}`} className="item-card-link">
       <div className="item-card-container">
         <img
           src={isValidImage(item.images[0]) ? item.images[0] : "/no_image.png"}
@@ -23,20 +24,21 @@ function ItemCard({ item, className }) {
           alt={item.name}
           className={`${className} item-image`}
         />
+
         <div className="item-card-description">
           <span className="item-name">{item.name}</span>
-          <h2 className="item-price">{item.price}</h2>
-          <div className="item-heart-content">
+          <h2 className="item-price">{item.price.toLocaleString()}</h2>
+          <button className="item-heart-content" type="button">
             <img
               src={heart_icon}
               alt="좋아요 누르는 하트 버튼"
               className="item-heart-icon"
             />
             <span className="item-heart-count">{item.favoriteCount}</span>
-          </div>
+          </button>
         </div>
       </div>
-    </>
+    </Link>
   );
 }
 

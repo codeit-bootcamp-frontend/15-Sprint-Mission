@@ -40,12 +40,14 @@ export default function Dropdown({ sort, setSort }) {
       {isOpen && (
         <ul className="dropdown-menu">
           {options.map((option) => (
-            <li
-              key={option.value}
-              className="dropdown-item"
-              onClick={() => handleOptionClick(option.value)}
-            >
-              {option.label}
+            <li key={option.value} className="dropdown-item">
+              <button
+                type="button"
+                value={option.value}
+                onClick={() => handleOptionClick(option.value)}
+              >
+                {option.label}
+              </button>
             </li>
           ))}
         </ul>

@@ -1,4 +1,4 @@
-import Banner from "../components/Home/Banner";
+import Header from "../components/Home/Header";
 import MainHeader from "../components/Home/MainHeader";
 import ContentSection from "../components/Home/ContentSection";
 import MainFooter from "../components/Home/MainFooter";
@@ -10,7 +10,7 @@ function Home() {
   return (
     <>
       <header className="banner">
-        <Banner />
+        <Header />
       </header>
 
       <main>

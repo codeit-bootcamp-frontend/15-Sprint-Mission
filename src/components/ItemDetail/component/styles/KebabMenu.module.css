@@ -1,0 +1,30 @@
+.kebabMenu {
+  position: relative;
+  display: inline-block;
+}
+
+.menu {
+  position: absolute;
+  top: 24px;
+  right: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid var(--gray200);
+  border-radius: 8px;
+  background-color: var(--white);
+  z-index: 10;
+
+  width: 13.9rem;
+  height: 9.2rem;
+}
+
+.btn {
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: var(--gray500);
+  padding: 12px 17px 16px 17px;
+}

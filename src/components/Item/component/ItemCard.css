@@ -4,6 +4,8 @@
   align-items: flex-start;
   gap: 16px;
 
+  margin-top: 16px;
+
   cursor: pointer;
 }
 
@@ -32,6 +34,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: start;
+  gap: 0.6rem;
 }
 
 .item-name {

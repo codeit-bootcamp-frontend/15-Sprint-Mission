@@ -1,0 +1,47 @@
+.main {
+  width: 100%;
+  margin-top: 2.4rem;
+  margin: 24px auto;
+  margin-bottom: 22rem;
+}
+
+.review {
+  margin-bottom: 6.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.backBtnContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+}
+
+.backBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 24rem;
+  height: 4.8rem;
+
+  border-radius: 4rem;
+  background-color: var(--blue);
+
+  color: var(--white);
+
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.backBtn:hover {
+  background-color: var(--hover-button);
+}
+
+.backBtnText {
+  display: flex;
+  gap: 0.8rem;
+}

@@ -1,5 +1,4 @@
 import { useState, useEffect, useCallback } from "react";
-import debounce from "lodash/debounce";
 
 import ItemList from "./component/ItemList";
 import { getProducts } from "../../api/itemAPI";
@@ -27,18 +26,12 @@ function BestItem() {
     setPageSize((prevSize) => (prevSize !== newSize ? newSize : prevSize));
   }, []);
 
-  const debouncedResize = useCallback(debounce(handleResize, 300), [
-    handleResize,
-  ]);
-
   useEffect(() => {
-    window.addEventListener("resize", debouncedResize);
-
+    window.addEventListener("resize", handleResize);
     return () => {
-      window.removeEventListener("resize", debouncedResize);
-      debouncedResize.cancel(); // 꼭 필요!
+      window.removeEventListener("resize", handleResize);
     };
-  }, [debouncedResize]);
+  }, []);
 
   useEffect(() => {
     const fetchItems = async () => {

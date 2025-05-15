@@ -1,0 +1,111 @@
+.review {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  width: 100%;
+
+  border-bottom: 1px solid var(--gray200);
+}
+
+.editInput {
+  display: flex;
+  padding: 16px 24px;
+  align-items: flex-start;
+
+  width: 100%;
+  height: 8rem;
+  resize: none;
+
+  border-radius: 12px;
+  border: none;
+  background-color: var(--gray100);
+
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.content {
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  gap: 4px;
+}
+
+.userLeft {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.img {
+  width: 3.2rem;
+  height: 3.2rem;
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.name {
+  font-size: 1.2rem;
+  font-weight: 400;
+
+  color: var(--gray600);
+}
+
+.time {
+  font-size: 1.2rem;
+  font-weight: 400;
+
+  color: var(--gray400);
+}
+
+.editBtn {
+  display: flex;
+  gap: 4px;
+}
+
+.cancelBtn {
+  display: flex;
+  padding: 14px 20px 7px 20px;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 1.6rem;
+  font-weight: 600;
+
+  color: var(--gray500);
+}
+
+.submitBtn {
+  display: flex;
+  height: 42px;
+  padding: 12px 23px;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 8px;
+
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--white);
+
+  background-color: var(--blue);
+}
+
+.submitBtn:hover {
+  background-color: var(--hover-button);
+}

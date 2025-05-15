@@ -1,12 +1,9 @@
 import AddItemContent from "../components/AddItem/AddItem";
-import Banner from "../components/Item/Banner";
+import Header from "../components/Item/Header";
 
 function AddItem() {
   return (
     <>
-      <header>
-        <Banner />
-      </header>
       <AddItemContent />
     </>
   );

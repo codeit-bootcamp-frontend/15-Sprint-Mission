@@ -1,0 +1,62 @@
+.askSection {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2.4rem;
+}
+
+.title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--gray900);
+
+  margin-bottom: 0.9rem;
+}
+
+.input {
+  width: 100%;
+  height: 10rem;
+  padding: 16px 24px;
+  align-items: flex-start;
+  gap: 10px;
+  flex-shrink: 0;
+  resize: none;
+  margin-bottom: 2.4rem;
+
+  border-radius: 1.2rem;
+  background-color: var(--gray100);
+  border: none;
+
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+
+.input::placeholder {
+  color: var(--gray400);
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: flex-end;
+
+  width: 7.4rem;
+  height: 4.2rem;
+
+  border-radius: 8px;
+  background-color: var(--blue);
+
+  color: var(--white);
+
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.btn:disabled {
+  background-color: var(--gray400);
+  cursor: not-allowed;
+}
+
+.btn:hover {
+  background-color: var(--hover-button);
+}

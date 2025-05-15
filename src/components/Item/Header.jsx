@@ -3,7 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import logo from "/logo.svg";
 import logo_title from "/logo_title.svg";
 
-import "./Banner.css";
+import "./Header.css";
 
 function getLinkStyle({ isActive }) {
   return {
@@ -11,19 +11,16 @@ function getLinkStyle({ isActive }) {
   };
 }
 
-function Banner() {
+function Header() {
   return (
     <header className="item-banner">
       <div className="item-banner-content">
         <div className="item-banner-left">
-          <div className="item-logo-content">
-            <Link className="item-logo" to="/">
-              <img src={logo} alt="판다마켓 로고 이미지" />
-            </Link>
-            <Link className="item-logo-text" to="/">
-              <img src={logo_title} alt="판다마켓" />
-            </Link>
-          </div>
+          <Link className="item-logo-content" to="/">
+            <img className="item-logo" src={logo} alt="판다마켓 로고 이미지" />
+            <img className="item-logo-text" src={logo_title} alt="판다마켓" />
+          </Link>
+
           <nav className="item-nav-content">
             <ul>
               <li>
@@ -48,4 +45,4 @@ function Banner() {
   );
 }
 
-export default Banner;
+export default Header;
