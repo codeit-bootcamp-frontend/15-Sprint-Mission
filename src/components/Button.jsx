@@ -1,8 +1,12 @@
-const Button = ({ children, className, onClick }) => {
+const Button = ({ children, className, onClick, isDisable }) => {
+  const status = isDisable
+    ? "bg-secondary-400 cursor-not-allowed"
+    : "bg-primary-100 hover:bg-primary-200 active:bg-primary-300 cursor-pointer";
   return (
     <button
-      className={`bg-primary-100 hover:bg-primary-200 active:bg-primary-300 text-secondary-100 cursor-pointer rounded-[8px] px-23 py-8 text-lg font-semibold ${className}`}
+      className={`text-secondary-100 rounded-[8px] px-23 py-8 text-lg font-semibold ${status} ${className}`}
       onClick={onClick}
+      disabled={isDisable}
     >
       {children}
     </button>

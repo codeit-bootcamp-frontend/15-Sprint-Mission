@@ -1,8 +1,8 @@
 import PaginationButton from "./PaginationButton";
-import arrowLeftActive from "../assets/icons/icon-arrow-left-active.png";
-import arrowLeftInactive from "../assets/icons/icon-arrow-left-inactive.png";
-import arrowRightActive from "../assets/icons/icon-arrow-right-active.png";
-import arrowRightInactive from "../assets/icons/icon-arrow-right-inactive.png";
+import ArrowLeftActive from "../assets/icons/icon-arrow-left-active.png";
+import ArrowLeftInactive from "../assets/icons/icon-arrow-left-inactive.png";
+import ArrowRightActive from "../assets/icons/icon-arrow-right-active.png";
+import ArrowRightInactive from "../assets/icons/icon-arrow-right-inactive.png";
 
 const displayConfig = {
   mobile: { itemCount: 4 },
@@ -27,7 +27,7 @@ const Pagination = ({ page: currentPage, setPage, totalCount, display }) => {
           isActive={currentPage > 5}
         >
           <img
-            src={currentPage <= 5 ? arrowLeftInactive : arrowLeftActive}
+            src={currentPage <= 5 ? ArrowLeftInactive : ArrowLeftActive}
             alt="왼쪽 화살표"
             className="size-16"
           />
@@ -50,7 +50,7 @@ const Pagination = ({ page: currentPage, setPage, totalCount, display }) => {
           isActive={lastIndex !== lastPage}
         >
           <img
-            src={lastIndex === lastPage ? arrowRightInactive : arrowRightActive}
+            src={lastIndex === lastPage ? ArrowRightInactive : ArrowRightActive}
             alt="오른쪽 화살표"
             className="size-16"
           />
