@@ -41,6 +41,8 @@ export const inputStyle = css`
   background-color: #F3F4F6;
   padding-left: 4.4rem;
   padding-block: 0.9rem;
+  font-size: 1.6rem;
+  font-weight: 400;
 
   ${mq({
     width: ['28.8rem', '24.2rem', '24.2rem', '32.5rem'],

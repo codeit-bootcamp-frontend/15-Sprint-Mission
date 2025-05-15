@@ -1,7 +1,12 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { ulContainerStyle, navTitleStyle } from "./Nav.styles";
+import { css } from "@emotion/react";
 
 const Nav = () => {
+
+  const location = useLocation();
+  const isMarketActive = location.pathname.startsWith("/items") || location.pathname === "/additem";
+
   return (
     <nav>
       <ul css={ulContainerStyle}>
@@ -11,7 +16,7 @@ const Nav = () => {
           </NavLink>
         </li>
         <li>
-          <NavLink to="items" css={navTitleStyle}>
+          <NavLink to="items" css={[navTitleStyle, isMarketActive && css`color: #3692ff;`]}>
             중고마켓
           </NavLink>
         </li>

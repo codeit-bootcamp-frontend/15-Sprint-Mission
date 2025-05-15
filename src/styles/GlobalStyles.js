@@ -25,6 +25,14 @@ const GlobalStyles = css`
   ul {
     list-style: none;
   }
+
+  textarea {
+    resize: none; 
+  }
+
+  textarea, input, button {
+    font: inherit;
+  }
 `;
 
 export default GlobalStyles;
