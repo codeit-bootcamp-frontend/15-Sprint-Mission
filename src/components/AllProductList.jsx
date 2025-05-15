@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import HeartIcon from "../assets/icons/icon_heart";
 import noImage from "../assets/images/no-image.png";
 
@@ -20,7 +21,8 @@ export default function AllProductList({ data = [] }) {
         if (index >= display.desktop) hiddenClass += " xl:hidden";
 
         return (
-          <div
+          <Link
+            to={`/items/${item.id}`}
             key={item.id}
             className={`flex flex-col gap-2 w-full h-full ${hiddenClass}`}
           >
@@ -39,7 +41,7 @@ export default function AllProductList({ data = [] }) {
               <HeartIcon />
               {item.favoriteCount}
             </p>
-          </div>
+          </Link>
         );
       })}
     </div>

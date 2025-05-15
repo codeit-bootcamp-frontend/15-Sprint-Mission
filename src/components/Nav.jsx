@@ -13,7 +13,7 @@ export default function Nav() {
         className="
           max-w-[1920px]
           mx-auto
-          px-[2rem] sm:px-[5rem] md:px-[10rem] lg:px-[20rem]
+          px-[2rem] sm:px-[2rem] md:px-[2rem] lg:px-[20rem]
           py-4
           flex justify-between
         "

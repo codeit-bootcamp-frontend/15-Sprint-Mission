@@ -1,5 +1,5 @@
+import { Link } from "react-router-dom";
 import HeartIcon from "../assets/icons/icon_heart";
-import ProductList from "./AllProductList";
 
 export default function BestProductList({ data = [] }) {
   const display = {
@@ -27,7 +27,8 @@ export default function BestProductList({ data = [] }) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5 w-full mt-10 text-[1.6rem] text-[#1F2937]">
       {filteredData.map((item) => (
-        <div
+        <Link
+          to={`/items/${item.id}`}
           key={item.id}
           className={`flex flex-col gap-2 w-full ${item.hiddenClass}`}
         >
@@ -38,7 +39,7 @@ export default function BestProductList({ data = [] }) {
             <HeartIcon />
             {item.favoriteCount}
           </p>
-        </div>
+        </Link>
       ))}
     </div>
   );

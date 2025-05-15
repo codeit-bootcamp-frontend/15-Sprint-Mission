@@ -38,7 +38,7 @@ export default function Products() {
         page: 1,
         pageSize: 4,
       });
-      console.log("best", data);
+
       setBestItems(data.list);
     } catch (error) {
       setError(error.message);

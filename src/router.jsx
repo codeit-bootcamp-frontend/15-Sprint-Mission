@@ -3,6 +3,7 @@ import App from "./App";
 import Products from "./pages/Products";
 import "./index.css";
 import AddItem from "./pages/AddItem";
+import ProductDetail from "./pages/ProductDetail";
 
 const router = createBrowserRouter([
   {
@@ -12,6 +13,10 @@ const router = createBrowserRouter([
       {
         path: "items",
         element: <Products />,
+      },
+      {
+        path: "items/:productId",
+        element: <ProductDetail />,
       },
       {
         path: "additem",
