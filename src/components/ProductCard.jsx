@@ -2,6 +2,7 @@ import { useContext, createContext, useRef } from "react";
 import styled from "@emotion/styled";
 import HeartIcon from "@assets/icons/heart";
 import NotFoundImg from "@assets/imgs/notFoundImage@2x.png";
+import { Link } from "react-router-dom";
 
 const ProductContext = createContext({
   id: null,
@@ -22,13 +23,15 @@ const ProductCard = ({ id, src, title, price = 0, like = 0, children }) => {
 
   return (
     <ProductContext.Provider value={contextValue}>
-      <ProductCardLayout>
-        <ProductImg />
-        <ProductTitle />
-        <ProductPrice />
-        <ProductLike />
-        {children}
-      </ProductCardLayout>
+      <Link to={`/items/${id}`}>
+        <ProductCardLayout>
+          <ProductImg />
+          <ProductTitle />
+          <ProductPrice />
+          <ProductLike />
+          {children}
+        </ProductCardLayout>
+      </Link>
     </ProductContext.Provider>
   );
 };

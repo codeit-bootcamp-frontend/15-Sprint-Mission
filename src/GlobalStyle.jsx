@@ -24,6 +24,7 @@ const baseStyle = css`
     padding: 0;
     box-sizing: border-box;
     transition: all 100ms ease-in-out;
+    font-family: "Pretendard", sans-serif;
   }
 
   html,

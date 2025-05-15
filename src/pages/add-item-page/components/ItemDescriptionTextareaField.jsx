@@ -21,6 +21,7 @@ const ItemDescriptionInputField = ({ value, onChange }) => {
       placeholder="상품 소개를 입력해주세요"
       value={value}
       onChange={handleInputChange}
+      styleType="addItem"
     />
   );
 };

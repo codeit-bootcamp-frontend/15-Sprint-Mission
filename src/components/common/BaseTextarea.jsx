@@ -17,6 +17,7 @@ const Textarea = styled.textarea`
   border-radius: 1.2rem;
   border: 2px solid var(--gray100);
   font-size: 1.4rem;
+  line-height: 2.4rem;
 
   &:focus {
     outline: none;

@@ -1,6 +1,6 @@
-## 판다마켓 6
+## 판다마켓 7
 
-**🌐 배포 url: https://myungjiwoo-pandamarket.netlify.app/additem**
+**🌐 배포 url: https://myungjiwoo-pandamarket.netlify.app/items**
 
 ### 기본 요구사항
 
@@ -10,24 +10,14 @@
 
 ### 체크 리스트 (기본)
 
-- [x] 상품 등록 페이지 주소는 "/additem"이다.
-- [x] 페이지 주소가 "/additem"일 때 상단 네비게이션바의 "중고마켓" 버튼의 색상은 "3692FF"이다.
-- [x] 상품 이미지는 최대 한 개까지 업로드할 수 있다.
-- [x] 각 input의 placeholder 값을 정확히 입력한다.
-- [x] 이미지를 제외하고 input에 모든 값을 입력하면 '등록' 버튼이 활성화 된다. (api를 통한 상품 등록은 추후 미션에서 적용)
+- [x] 상품 상세 페이지 주소는 “/items/{productId}” 이다.
+- [x] 상세 정보 : response 로 받은 아래의 데이터로 화면을 구현한다. (favoriteCount, images, tags, name, description)
+- [x] 목록으로 돌아가기 버튼을 클릭하면 중고마켓 페이지 주소인 “/items” 으로 이동한다.
+- [x] 문의하기에 내용을 입력하면 등록 버튼의 색상은 “3692FF”로 변경된다.
+- [x] 문의 : response 로 받은 아래의 데이터로 화면을 구현한다. (image, nickname, content, description, updatedAt)
+- [x] 문의를 수정하려면 기존 문의글이 input으로 바뀐다.
+- [x] 아무 문의가 없을때는 적절한 안내 문구를 띄워준다.
 
 ### 체크 리스트 (심화)
 
-- [x] 이미지 안의 x 버튼을 누르면 이미지가 삭제된다.
-- [x] 추가된 태그 안의 x 버튼을 누르면 해당 태그는 삭제된다.
-
-### 추가 기능
-
-- [x] 오류 메시지를 토스트 메시지로 구현 (react-toastify 라이브러리 사용)
-
-### 구현 포인트
-
-- [x] 입력 컴포넌트 계층화 및 재사용
-  - `Base~ 컴포넌트` : 최소 단위 입력 컴포넌트
-  - `~Field 컴포넌트` : 공통 인터페이스를 추가한 확장 컴포넌트 (label, error messge 등)
-  - `Item~Field 컴포넌트` : 도메인 전용 컴포넌트
+- [x] 모든 버튼에 자유롭게 Hover 효과를 적용한다.

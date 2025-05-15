@@ -5,6 +5,7 @@ import ItemsPage from "@pages/items-page";
 import LandingPage from "@pages/landing-page";
 import BoardsPage from "@pages/boards-page";
 import AddItemPage from "@pages/add-item-page";
+import ProductsDetailPage from "@pages/products-detail-page";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
       {
         path: "items",
         element: <ItemsPage />,
+      },
+      {
+        path: "items/:id",
+        element: <ProductsDetailPage />,
       },
       {
         path: "boards",

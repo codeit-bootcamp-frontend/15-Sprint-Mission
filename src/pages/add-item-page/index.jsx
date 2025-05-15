@@ -1,5 +1,5 @@
 import { useState } from "react";
-import BaseForm from "@components/BaseForm";
+import BaseForm from "@/components/common/BaseForm";
 import HeaderSection from "@pages/add-item-page/sections/HeaderSection";
 import ItemImageInputField from "@pages/add-item-page/components/ItemImageInputField";
 import ItemNameInputField from "@pages/add-item-page/components/ItemNameInputField";

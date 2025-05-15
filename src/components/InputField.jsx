@@ -1,6 +1,6 @@
 import { memo } from "react";
 import styled from "@emotion/styled";
-import BaseInput from "@components/BaseInput";
+import BaseInput from "@/components/common/BaseInput";
 
 const InputField = ({ id, label, value, onChange, errorMessage, ...props }) => {
   return (

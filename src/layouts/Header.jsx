@@ -36,7 +36,7 @@ export default Header;
 
 const HeaderContainer = styled.div`
   width: 100%;
-  padding: 1rem 2.5vw;
+  padding: 1rem 5vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -45,6 +45,11 @@ const HeaderContainer = styled.div`
   position: sticky;
   top: 0;
   z-index: 100;
+
+  // 태블릿
+  @media (min-width: ${breakpoints.mobile}) {
+    padding: 1rem 2.5vw;
+  }
 
   // 데스크탑
   @media (min-width: ${breakpoints.desktop}) {

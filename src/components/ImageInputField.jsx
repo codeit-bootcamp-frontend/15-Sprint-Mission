@@ -1,6 +1,6 @@
 import { memo } from "react";
 import styled from "@emotion/styled";
-import BaseImageInput from "@components/BaseImageInput";
+import BaseImageInput from "@/components/common/BaseImageInput";
 import DeleteButton from "@components/DeleteButton";
 import PlusIcon from "@assets/icons/plus";
 
