@@ -1,5 +1,6 @@
 import { RemoveIcon } from '@/components/common/Buttons';
 import formStyles from '@/styles/helpers/formHelpers.module.scss';
+import tagStyles from '@/styles/helpers/tagHelpers.module.scss';
 import styles from './TagInput.module.scss';
 
 const TagInput = ({ tagInput, setTagInput, tags, handleInputChange }) => {
@@ -39,7 +40,7 @@ const TagInput = ({ tagInput, setTagInput, tags, handleInputChange }) => {
       </div>
       <div className={styles.tagList}>
         {tags.map((tag) => (
-          <div key={tag} className={styles.tag}>
+          <div key={tag} className={tagStyles.tag}>
             #{tag}
             <RemoveIcon
               onClick={() => handleRemoveTag(tag)}

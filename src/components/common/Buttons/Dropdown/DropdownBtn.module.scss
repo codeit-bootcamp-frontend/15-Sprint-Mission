@@ -1,10 +1,20 @@
 .wrapper {
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 16px;
-  min-width: 140px;
+
+  &--textMode {
+    min-width: 140px;
+  }
+  &--iconMode {
+    width: fit-content;
+    height: fit-content;
+  }
 }
 
-.selectButton {
+.textMode {
   width: 100%;
   padding: 1.2rem 2rem;
   border: 1px solid var(--secondary-200);
@@ -28,14 +38,32 @@
   }
 }
 
+.iconMode {
+  aspect-ratio: 1 / 1;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: inherit;
+  }
+
+  button {
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+}
+
 .optionList {
   position: absolute;
-  top: calc(100% + 8px);
-  width: 100%;
   font-size: 1.6rem;
   background: var(--white);
   border: 1px solid var(--secondary-200);
-  border-radius: 12px;
   overflow: hidden;
 }
 
@@ -51,45 +79,15 @@
   &:hover {
     background-color: var(--secondary-100);
   }
+
+  button {
+    width: 100%;
+  }
 }
 
 @media (max-width: 767px) {
   .wrapper {
     min-width: auto;
     width: fit-content;
-  }
-
-  .sortIcon {
-    width: 42px;
-    aspect-ratio: 1 / 1;
-    background-color: var(--white);
-    border: 1px solid var(--secondary-200);
-    border-radius: 12px;
-    padding: 0.9rem;
-
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-
-    &:hover,
-    &:focus,
-    &:active {
-      background-color: var(--white);
-      color: inherit;
-    }
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-  }
-
-  .optionList {
-    width: 14rem;
-    top: calc(100% + 8px);
-    right: 0;
-    border-radius: 12px;
-    overflow: hidden;
   }
 }

@@ -3,7 +3,7 @@
   border-radius: 16px;
   overflow: hidden;
 
-  img {
+  .productImg {
     display: block;
     width: 100%;
     aspect-ratio: 4 / 3;
@@ -27,21 +27,13 @@
       font-weight: 700;
       color: var(--secondary-800);
     }
-
-    .favoriteCount {
-      display: flex;
-
-      .heartIcon {
-        width: 1.6rem;
-        height: 1.6rem;
-        object-fit: contain;
-        margin-right: 4px;
-      }
-
-      .count {
-        font-size: 1.2rem;
-        color: var(--secondary-600);
-      }
-    }
   }
+}
+
+.favoriteCountFontSize {
+  font-size: 1.2rem;
+}
+
+.favoriteIconSize {
+  width: 1.6rem;
 }

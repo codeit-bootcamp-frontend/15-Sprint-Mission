@@ -1,0 +1,28 @@
+.productDetail {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.commentSection {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.backButtonWrapper {
+  margin-bottom: 2.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .backButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    font-size: 1.8rem;
+    padding: 1.1rem 4rem;
+    border-radius: 40px;
+    width: fit-content;
+  }
+}

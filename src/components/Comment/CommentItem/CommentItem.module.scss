@@ -1,0 +1,58 @@
+.commentItem {
+  display: flex;
+  justify-content: space-between;
+  .commentContent {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+    width: 100%;
+
+    p {
+      font-size: 1.4rem;
+      font-weight: 400;
+    }
+
+    .commentInfo {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.2rem 0;
+      .writerInfo {
+        display: flex;
+        gap: 0.8rem;
+        width: 100%;
+        img {
+          width: 3.2rem;
+          aspect-ratio: 1 / 1;
+          border-radius: 50%;
+        }
+
+        .nicknameAndDate {
+          display: flex;
+          flex-direction: column;
+          gap: 0.4rem;
+          .nickname {
+            color: var(--secondary-600);
+          }
+          .date {
+            color: var(--secondary-400);
+          }
+        }
+      }
+    }
+  }
+}
+
+.edit {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 1.6rem;
+  width: 100%;
+
+  button {
+    padding: 0.8rem 2.3rem;
+    font-weight: 400;
+  }
+}

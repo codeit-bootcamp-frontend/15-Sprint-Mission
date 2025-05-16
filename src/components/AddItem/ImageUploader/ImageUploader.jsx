@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { RemoveIcon } from '@/components/common/Buttons';
 import { PRODUCT_INFO_MESSAGES } from '@/constants/messages';
 import plusIcon from '@/assets/icons/plus.svg';
@@ -12,6 +12,8 @@ const ImageUploader = ({
   showImageWarning,
   setShowImageWarning,
 }) => {
+  const fileInputRef = useRef(null);
+
   useEffect(() => {
     return () => {
       if (imagePreview && imagePreview.startsWith('blob:')) {
@@ -47,6 +49,11 @@ const ImageUploader = ({
 
     // formData에서 imageFile도 제거
     handleInputChange({ field: 'imageFile', value: null });
+
+    // 파일 input의 value도 초기화
+    if (fileInputRef.current) {
+      fileInputRef.current.value = '';
+    }
   };
 
   return (
@@ -65,6 +72,7 @@ const ImageUploader = ({
             onChange={handleImageChange}
             hidden
             disabled={!!imagePreview}
+            ref={fileInputRef}
           />
         </label>
 

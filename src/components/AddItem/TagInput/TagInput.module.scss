@@ -1,18 +1,19 @@
+// tagHelpers.module.scss로 공통으로 뺐는데 이게 맞는건지 판단 중
 .tagList {
   display: flex;
   flex-wrap: wrap;
   gap: 0.8rem;
-  margin-top: 0.8rem;
+  margin-top: 1.4rem;
 }
 
-.tag {
-  margin-top: 1.4rem;
-  padding: 0.5rem 1.2rem 0.5rem 1.6rem;
-  background-color: var(--primary-50);
-  border-radius: 26px;
-  font-size: 1.6rem;
-  color: var(--secondary-800);
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-}
+// .tag {
+//   margin-top: 1.4rem;
+//   padding: 0.5rem 1.2rem 0.5rem 1.6rem;
+//   background-color: var(--primary-50);
+//   border-radius: 26px;
+//   font-size: 1.6rem;
+//   color: var(--secondary-800);
+//   display: flex;
+//   align-items: center;
+//   gap: 0.8rem;
+// }

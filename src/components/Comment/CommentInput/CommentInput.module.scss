@@ -1,0 +1,14 @@
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.submitButton {
+  width: 7.4rem;
+  padding: 0.8rem 2.3rem;
+  border-radius: 8px;
+  font-size: 1.6rem;
+  font-weight: 400;
+  align-self: end;
+}

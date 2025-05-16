@@ -1,0 +1,24 @@
+export const COMMENT_ERROR_MESSAGES = {
+  // 공통
+  UNAUTHORIZED: '로그인이 필요합니다.',
+  SERVER_ERROR: '서버에 문제가 발생했어요. 잠시 후 다시 시도해주세요.',
+
+  // GET
+  FORBIDDEN_FETCH: '이 댓글을 볼 권한이 없어요.',
+  NOT_FOUND_FETCH: '등록된 문의가 없습니다.',
+  FETCH_FAILED: '댓글을 불러오는 데 실패했어요.',
+
+  // POST
+  FORBIDDEN_POST: '댓글을 등록할 권한이 없어요.',
+  POST_FAILED: '댓글을 등록하는 데 실패했어요.',
+
+  // PATCH
+  FORBIDDEN_PATCH: '이 댓글을 수정할 권한이 없어요.',
+  NOT_FOUND_PATCH: '수정할 댓글을 찾을 수 없어요.',
+  PATCH_FAILED: '댓글을 수정하는 데 실패했어요.',
+
+  // DELETE
+  FORBIDDEN_DELETE: '이 댓글을 삭제할 권한이 없어요.',
+  NOT_FOUND_DELETE: '삭제할 댓글을 찾을 수 없어요.',
+  DELETE_FAILED: '댓글을 삭제하는 데 실패했어요.',
+};

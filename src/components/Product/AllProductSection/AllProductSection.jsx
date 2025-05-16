@@ -1,11 +1,14 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useResponsivePageSize } from '@/hooks';
-import { SortSelect, Pagination, useToast } from '@/components/common';
+import { useToast } from '@/contexts';
+import { fetchAllProducts } from '@/api/product';
+import { Pagination } from '@/components/common';
+import { SortDrop } from '@/components/common/Buttons';
 import { ProductCard } from '@/components/Product';
 import { safeFetch } from '@/utils/api';
+import { getProductErrorMessage } from '@/utils/errorMessage';
 import { baseUrl, ENDPOINTS, ROUTES } from '@/constants/urls';
-import { PRODUCT_ERROR_MESSAGES } from '@/constants/messages';
 import buttonStyles from '@/styles/helpers/buttonHelpers.module.scss';
 import styles from './AllProductSection.module.scss';
 
@@ -17,18 +20,27 @@ const AllProductSection = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [page, setPage] = useState(1);
   const pageSize = useResponsivePageSize();
+  const options = [
+    { value: 'recent', label: '최신순' },
+    { value: 'favorite', label: '좋아요순' },
+  ];
 
   useEffect(() => {
     const fetchProducts = async () => {
-      const data = await safeFetch({
-        url: `${baseUrl}${ENDPOINTS.PRODUCTS}?page=${page}&pageSize=${pageSize}&orderBy=${sortOption}&keyword=${encodeURIComponent(searchQuery)}`,
-        options: { method: 'GET' },
-        showToast,
-        uiErrorMessage: PRODUCT_ERROR_MESSAGES.FETCH_ALL_FAILED,
-      });
-      setProducts(data.list);
-      setTotalCount(data.totalCount);
+      try {
+        const data = await fetchAllProducts({
+          page,
+          pageSize,
+          orderBy: sortOption,
+          keyword: searchQuery,
+        });
+        setProducts(data.list);
+        setTotalCount(data.totalCount);
+      } catch (error) {
+        showToast(getProductErrorMessage(error.status), 'error');
+      }
     };
+
     fetchProducts();
   }, [page, sortOption, pageSize, searchQuery]);
 
@@ -59,13 +71,10 @@ const AllProductSection = () => {
           상품 등록하기
         </Link>
         <div className={styles.sortWrapper}>
-          <SortSelect
+          <SortDrop
             value={sortOption}
             onChange={setSortOption}
-            options={[
-              { value: 'recent', label: '최신순' },
-              { value: 'favorite', label: '좋아요순' },
-            ]}
+            options={options}
           />
         </div>
       </div>

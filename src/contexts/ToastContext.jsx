@@ -1,6 +1,6 @@
 import { createContext, useContext, useState } from 'react';
-import Toast from './Toast';
-import styles from './Toast.module.scss';
+import { Toast } from '@/components/common';
+import styles from '@/components/common/Toast/Toast.module.scss';
 
 const ToastContext = createContext();
 
@@ -10,6 +10,8 @@ export const ToastProvider = ({ children }) => {
   const [toasts, setToasts] = useState([]);
 
   const showToast = (message, type = 'info') => {
+    if (toasts.some((toast) => toast.message === message)) return;
+
     const id = Date.now();
     setToasts((prev) => [...prev, { id, message, type }]);
 

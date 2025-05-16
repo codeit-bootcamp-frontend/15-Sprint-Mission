@@ -1,0 +1,63 @@
+import { useEffect, useState } from 'react';
+import { useParams, Link } from 'react-router-dom';
+import { useToast } from '@/contexts';
+import { getProductDetail } from '@/api/product';
+import { CommentInput, CommentList } from '@/components/Comment';
+import { ProductInfo } from '@/components/Product';
+import { safeFetch } from '@/utils/api';
+import { getProductErrorMessage } from '@/utils/errorMessage/productErrorMessage';
+import { baseUrl, ENDPOINTS, ROUTES } from '@/constants/urls';
+import arrowBackIcon from '@/assets/icons/arrow_back.svg';
+import commonStyles from '@/styles/helpers/commonHelpers.module.scss';
+import buttonStyles from '@/styles/helpers/buttonHelpers.module.scss';
+import styles from './ProductDetail.module.scss';
+
+const ProductDetail = () => {
+  const { showToast } = useToast();
+  console.log('useParams에 어떻게 출력되나', useParams());
+  const { productId } = useParams();
+  const [product, setProduct] = useState(undefined);
+  console.log('product', product);
+  const [refreshKey, setRefreshKey] = useState(0);
+
+  useEffect(() => {
+    const fetchProduct = async () => {
+      try {
+        const data = await getProductDetail(productId);
+        setProduct(data);
+      } catch (error) {
+        showToast(getProductErrorMessage(error.status), 'error');
+      }
+    };
+
+    fetchProduct();
+  }, [productId]);
+
+  const refreshAfterSubmit = () => setRefreshKey((prev) => prev + 1);
+
+  return (
+    <div className={styles.productDetail}>
+      <ProductInfo {...product} />
+      <div className={commonStyles.horizontalLine} />
+      <div className={styles.commentSection}>
+        <CommentInput
+          productId={productId}
+          refreshAfterSubmit={refreshAfterSubmit}
+        />
+        <CommentList productId={productId} refreshKey={refreshKey} />
+      </div>
+
+      <div className={styles.backButtonWrapper}>
+        <Link
+          to={ROUTES.ITEMS}
+          className={`${styles.backButton} ${buttonStyles.primary}`}
+        >
+          목록으로 돌아가기
+          <img src={arrowBackIcon} alt="Go back to previous page" />
+        </Link>
+      </div>
+    </div>
+  );
+};
+
+export default ProductDetail;

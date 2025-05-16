@@ -1,14 +1,14 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useAddItemForm } from '@/hooks';
+import { useToast } from '@/contexts';
+import { postProduct, uploadImage } from '@/api/product';
 import { ImageUploader, TagInput, AddItemForm } from '@/components/AddItem';
-import { useToast } from '@/components/common/Toast';
 import { addItemValidation } from '@/utils/validators';
 import { safeFetch } from '@/utils/api';
-import { baseUrl, ENDPOINTS } from '@/constants/urls';
-import {
-  PRODUCT_ERROR_MESSAGES,
-  PRODUCT_SUCCESS_MESSAGES,
-} from '@/constants/messages';
+import { postProductErrorMessage } from '@/utils/errorMessage';
+import { baseUrl, ENDPOINTS, ROUTES } from '@/constants/urls';
+import { PRODUCT_SUCCESS_MESSAGES } from '@/constants/messages';
 import formStyles from '@/styles/helpers/formHelpers.module.scss';
 import buttonStyles from '@/styles/helpers/buttonHelpers.module.scss';
 import styles from './AddItem.module.scss';
@@ -22,6 +22,7 @@ const initialForm = {
 };
 
 const AddItem = () => {
+  const navigate = useNavigate();
   const { showToast } = useToast();
   const { formData, isFormValid, handleInputChange } = useAddItemForm(
     initialForm,
@@ -35,28 +36,31 @@ const AddItem = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const form = new FormData();
-    form.append('image', formData.imageFile);
-    form.append('productName', formData.productName);
-    form.append('description', formData.description);
-    form.append('price', formData.price);
-    form.append('tags', JSON.stringify(formData.tags));
+    try {
+      // 1단계: 이미지 업로드
+      const imageForm = new FormData();
+      imageForm.append('image', formData.imageFile);
 
-    const data = await safeFetch({
-      url: `${baseUrl}${ENDPOINTS.UPLOAD_IMAGE}`,
-      options: {
-        method: 'POST',
-        body: form,
-      },
-      showToast,
-      uiErrorMessage: PRODUCT_ERROR_MESSAGES.ADD_ITEM_FAILED,
-    });
+      const { imageUrl } = await uploadImage(imageForm);
 
-    showToast(
-      `${data.message || PRODUCT_SUCCESS_MESSAGES.ADD_ITEM_SUCCESS}`,
-      'success',
-    );
-    // TODO: 등록 성공 후 상세 페이지로 이동 처리
+      // 2단계: 상품 등록
+      const productForm = new FormData();
+      productForm.append('imageUrl', imageUrl);
+      productForm.append('productName', formData.productName);
+      productForm.append('description', formData.description);
+      productForm.append('price', formData.price);
+      productForm.append('tags', JSON.stringify(formData.tags));
+
+      const data = await postProduct(productForm);
+
+      showToast(
+        data.message || PRODUCT_SUCCESS_MESSAGES.ADD_ITEM_SUCCESS,
+        'success',
+      );
+      navigate(`${ROUTES.ITEMS}/${data.id}`);
+    } catch (error) {
+      showToast(postProductErrorMessage(error.status), 'error');
+    }
   };
 
   return (
