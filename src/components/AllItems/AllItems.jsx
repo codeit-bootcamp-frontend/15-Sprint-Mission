@@ -5,6 +5,7 @@ import Item from "../Item/Item";
 import Pagination from "./Pagination";
 import AllItemsHeader from "../AllItemsHeader/AllItemsHeader";
 import getDeviceType from "./getDeviceType";
+import { useNavigate } from "react-router";
 
 export default function AllItems() {
   const [allItems, setAllItems] = useState([]);
@@ -13,6 +14,7 @@ export default function AllItems() {
   const [page, setPage] = useState(1);
   const [pages, setPages] = useState([1, 5]);
   const [deviceType, setDeviceType] = useState(getDeviceType());
+  const navigate = useNavigate();
 
   const pageSize = useMemo(() => {
     return deviceType === "desktop" ? 10 : deviceType === "tablet" ? 6 : 4;
@@ -45,7 +47,6 @@ export default function AllItems() {
         const items = await getItems(page, pageSize, sort);
         const newTotal = items.totalCount;
         const newTotalPages = Math.ceil(newTotal / pageSize);
-        const currentDevice = getDeviceType();
 
         if (page > newTotalPages) {
           const lastPage = newTotalPages;
@@ -71,7 +72,12 @@ export default function AllItems() {
 
       <div className={styles.items}>
         {allItems.map((item) => (
-          <Item item={item} listType="all" key={item.id} />
+          <Item
+            item={item}
+            listType="all"
+            key={item.id}
+            onClick={() => navigate(`/items/${item.id}`)}
+          />
         ))}
       </div>
 

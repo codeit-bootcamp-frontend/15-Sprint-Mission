@@ -2,9 +2,11 @@ import styles from "./BestItem.module.scss";
 import { useEffect, useState } from "react";
 import getItems from "../../API/getItems";
 import Item from "../Item/Item";
+import { useNavigate } from "react-router";
 
 export default function BestItems() {
   const [bestItems, setBestItems] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     async function fetchItems() {
@@ -24,7 +26,12 @@ export default function BestItems() {
       <h3 className={styles.title}>베스트 상품</h3>
       <div className={styles.items}>
         {bestItems.map((item) => (
-          <Item item={item} listType="best" key={item.id} />
+          <Item
+            item={item}
+            listType="best"
+            key={item.id}
+            onClick={() => navigate(`/items/${item.id}`)}
+          />
         ))}
       </div>
     </div>

@@ -2,13 +2,13 @@ import styles from "./Item.module.scss";
 import heart from "../../image/heart.svg";
 import ImageWithValidation from "./imageInvalid";
 
-export default function Item({ item, listType }) {
+export default function Item({ item, listType, onClick }) {
   const styleClass = `${
     listType === "best" ? styles["image--inBest"] : styles["image--inAll"]
   } ${item.images.length === 0 ? styles.noImage : ""}`;
 
   return (
-    <div className={styles.item}>
+    <div className={styles.item} onClick={onClick}>
       {item.images ? (
         <ImageWithValidation
           styleClass={styleClass}
@@ -18,11 +18,6 @@ export default function Item({ item, listType }) {
       ) : (
         <div className={styleClass}></div>
       )}
-      {/* //   <ImageWithValidation
-    //     styleClass={styleClass}
-    //     imageURL={item.images}
-    //     alt="프로필 이미지"
-    //   /> */}
 
       <div className={styles.item__description}>
         <h3 className={styles["item__name"]}>{item.name}</h3>
