@@ -1,0 +1,37 @@
+.item-detail__container {
+  padding-bottom: 40px;
+}
+
+.item-detail__back-button {
+  margin: 40px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: #3692ff;
+  color: #f3f4f6;
+  border: none;
+  border-radius: 40px;
+  padding: 12px 64px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 26px;
+  cursor: pointer;
+}
+
+.item-detail__back-button:hover {
+  background-color: #397be7;
+}
+
+.item-detail__back-icon {
+  width: 24px;
+  height: 24px;
+}
+
+/* tablet */
+@media (max-width: 1199px) {
+}
+
+/* mobile */
+@media (max-width: 767px) {
+}

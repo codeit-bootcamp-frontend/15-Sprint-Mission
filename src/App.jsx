@@ -3,6 +3,7 @@ import Items from "./pages/Items";
 import "./App.css";
 import Header from "./components/Header";
 import AddItem from "./pages/AddItem";
+import ItemDetail from "./pages/ItemDetail";
 
 /**
  *
@@ -18,6 +19,7 @@ function App() {
         <Route path="/board" element={<h1>자유게시판</h1>} />
         <Route path="/items" element={<Items />} />
         <Route path="/additem" element={<AddItem />} />
+        <Route path="items/:productId" element={<ItemDetail />} />
       </Routes>
     </BrowserRouter>
   );

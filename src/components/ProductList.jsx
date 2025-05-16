@@ -107,7 +107,7 @@ const ProductList = () => {
 
       <div className="product-list__grid">
         {paginatedProducts.map((item) => (
-          <ProductCard key={item.id} item={item} />
+          <ProductCard key={item.id} item={item} variant="list" />
         ))}
       </div>
 

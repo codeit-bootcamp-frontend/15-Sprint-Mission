@@ -1,6 +1,7 @@
 import { getProducts } from "../api/productApi";
 import { useState, useEffect, useCallback } from "react";
 import "./BestProducts.css";
+import ProductCard from "./ProductCard";
 
 /**
  *
@@ -40,16 +41,7 @@ const BestProduct = () => {
       <h3 className="best-products__title">베스트 상품</h3>
       <div className="best-products__grid">
         {bestProducts.slice(0, visibleCount).map((item) => (
-          <div key={item.id} className="best-products__card">
-            <div className="best-products__image-wrapper">
-              <img src={item.images.length > 0 ? item.images[0] : ""} alt={item.name} className="best-products__image" />
-            </div>
-            <div className="best-products__text-group">
-              <p className="best-products__title-text">{item.name}</p>
-              <p className="best-products__price">{item.price.toLocaleString()}원</p>
-              <p className="best-products__favorite">❤️ {item.favoriteCount}</p>
-            </div>
-          </div>
+          <ProductCard key={item.id} item={item} variant="best" />
         ))}
       </div>
     </section>
