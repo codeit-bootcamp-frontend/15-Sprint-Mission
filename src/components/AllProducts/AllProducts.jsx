@@ -123,6 +123,7 @@ const AllProducts = () => {
           {products.map(({ id, images, name, price, favoriteCount }) => (
             <ProductCard
               key={id}
+              id={id}
               imageUrl={images?.[0]}
               title={name}
               price={price}
