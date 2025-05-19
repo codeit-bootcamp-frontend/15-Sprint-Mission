@@ -3,6 +3,7 @@ import {
     header,
     title,
     itemGrid,
+    itemLinkStyle,
     pagenation
 } from "./AllitemsStyle";
 import ItemList from "./ItemList";
@@ -21,7 +22,6 @@ const AllItems = ({ items, onChangeOrder }) => {
                     <input placeholder="🔎 검색할 상품을 입력해주세요"></input>
                     <Link to={"/additems"}>
                     상품 등록하기
-                        {/* <button >상품 등록하기</button> */}
                     </Link>
                     <select onChange={(e)=> onChangeOrder(e.target.value)}>
                         <option value={"recent"}>최신순</option>
@@ -32,7 +32,9 @@ const AllItems = ({ items, onChangeOrder }) => {
                 <div css={itemGrid} >
                     {items.map((item) => {
                         return(
-                            <ItemList key={item.id} item={item} />
+                            <Link to={`/Items/${item.id}`} css={itemLinkStyle} >
+                                <ItemList key={item.id} item={item} />
+                            </Link>
                         )
                     })}
                 </div>

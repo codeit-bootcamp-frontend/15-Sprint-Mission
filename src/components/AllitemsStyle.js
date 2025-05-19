@@ -103,8 +103,12 @@ const itemGrid = css`
         grid-template-columns: repeat(2, 1fr);
         gap: 8px;    
     }
-
 `
+
+const itemLinkStyle = css`
+    text-decoration: none;
+`
+
 const pagenation = css`
     display: flex;
     justify-content: center;
@@ -117,5 +121,6 @@ export {
     header,
     title,
     itemGrid,
+    itemLinkStyle,
     pagenation,
 }

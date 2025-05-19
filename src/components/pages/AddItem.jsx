@@ -118,17 +118,17 @@ const AddItem = () => {
                     </div>
                     
                     <div>
-                        <label>상품 소개</label>
+                        <label htmlFor='description'>상품 소개</label>
                         <textarea id="description" placeholder="상품 소개를 입력해주세요" value={itemDescription} onChange={(e) => setItemDiscription(e.target.value)}></textarea>
                     </div>
 
                     <div>
-                        <label>판매가격</label>
+                        <label htmlFor='price'>판매가격</label>
                         <input id="price" placeholder="판매가격을 입력해주세요" type='number' value={itemPrice} onChange={(e) => setItemPrice(e.target.value)}></input>
                     </div>
 
                     <div>
-                        <label>태그</label>
+                        <label htmlFor='tag'>태그</label>
                         <input 
                             id="tag" 
                             placeholder="태그를 입력해주세요" 

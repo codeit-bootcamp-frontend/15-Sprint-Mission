@@ -7,6 +7,7 @@ import FreeBoard from './components/pages/FreeBoard';
 import Items from './components/pages/Items';
 import { Route, Routes } from "react-router";
 import AddItem from './components/pages/AddItem';
+import ItemDetail from './components/pages/itemDetail/itemDetail';
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
           <Route path="/freeBoard" element={<FreeBoard />} />
           <Route path="/items" element={<Items />} />
           <Route path="/additems" element={<AddItem />} />
+          <Route path="/items/:productId" element={<ItemDetail />} />
         </Routes>
     </>
   )

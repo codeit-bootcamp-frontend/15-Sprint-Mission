@@ -2,6 +2,11 @@ import { css } from "@emotion/react"
 
 const itemListStyle = css`
     width: 100%;
+    transition: all 0.2s ease;
+
+        &:hover {
+            transform: scale(1.05);
+        }
 
 `
 

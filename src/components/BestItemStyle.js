@@ -30,8 +30,14 @@ const itemGrid = css`
 
 `
 
+const linkStyle = css`
+    text-decoration: none;
+`
+
+
 export {
     constainer,
     title,
     itemGrid,
+    linkStyle,
 }
