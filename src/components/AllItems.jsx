@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import ItemCreateButton from "./ItemCreateButton";
+import SearchInput from "./SearchInput";
 import EmptyItems from "../img/emptyItems.svg";
 
 const getPageSize = () => {
@@ -55,7 +56,7 @@ const Allitems = () => {
         <ItemCreateButton />
       </div>
       <div className="flex items-center justify-between mt-8">
-        <div>검색인풋추가</div>
+        <SearchInput />
         <div>드롭다운추가</div>
       </div>
       <div
