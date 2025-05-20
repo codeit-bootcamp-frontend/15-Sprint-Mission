@@ -1,51 +1,13 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
+import { useMemo } from "react";
+import useItems from "../hooks/useItems";
 import EmptyItems from "../img/emptyItems.svg";
 
-const getPageSize = () => {
-  const width = window.innerWidth;
-  if (width <= 744) return 1; // 모바일
-  if (width < 1200) return 2; // 태블릿
-  return 4; // PC
-};
-
 const BestItem = () => {
-  const [items, setItems] = useState([]);
-  const [pageSize, setPageSize] = useState(getPageSize());
-
-  // 리사이즈 시 pageSize 업데이트
-  const updatePageSize = () => {
-    setPageSize(getPageSize());
-  };
-
-  useEffect(() => {
-    window.addEventListener("resize", updatePageSize); // 리사이즈 이벤트 등록
-
-    const fetchItems = async () => {
-      try {
-        const response = await axios.get(
-          "https://panda-market-api.vercel.app/products",
-          {
-            params: {
-              page: 1,
-              pageSize: pageSize,
-              orderBy: "favorite",
-            },
-            headers: {
-              Accept: "application/json",
-            },
-          }
-        );
-        setItems(response.data.list || []);
-      } catch (error) {
-        console.error("상품을 불러오는 데 실패했습니다.", error);
-      }
-    };
-
-    fetchItems(); // 최초 또는 pageSize 변경 시 실행
-
-    return () => window.removeEventListener("resize", updatePageSize); // 이벤트 클린업
-  }, [pageSize]);
+  const sizeSetting = useMemo(() => [1, 2, 4], []); // ✅ useMemo로 sizes 고정
+  const { items } = useItems({
+    orderBy: "favorite",
+    sizes: sizeSetting,
+  });
 
   return (
     <div className="px-16 pt-87 w-376 tablet:w-744 pc:w-1200 mx-auto">
