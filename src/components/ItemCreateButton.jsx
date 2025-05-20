@@ -1,6 +1,11 @@
+import { useNavigate } from "react-router";
+
 const ItemCreateButton = () => {
+  const navigate = useNavigate();
+
   const handleClick = () => {
     console.log("상품 등록하기 버튼");
+    navigate("/additem");
   };
 
   return (
