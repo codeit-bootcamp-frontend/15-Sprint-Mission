@@ -11,7 +11,7 @@ const ItemCreateButton = () => {
   return (
     <button
       onClick={handleClick}
-      className="bg-primary-100 px-23 py-8 rounded-[10px] cursor-pointer text-secondary-100 font-semibold text-lg-line-height-26"
+      className="bg-primary-100 w-133 h-42 px-23 py-8 rounded-[10px] cursor-pointer text-secondary-100 font-semibold text-lg-line-height-26"
     >
       상품 등록하기
     </button>
