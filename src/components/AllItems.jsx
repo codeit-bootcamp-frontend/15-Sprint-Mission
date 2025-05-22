@@ -2,14 +2,21 @@ import { useEffect, useMemo, useState } from "react";
 import useItems from "../hooks/useItems";
 import ItemCreateButton from "./ItemCreateButton";
 import SearchInput from "./SearchInput";
+import Dropdown from "./Dropdown";
+import Pagination from "./Pagination";
 import EmptyItems from "../img/emptyItems.svg";
 
 const AllItems = () => {
   const sizeSetting = useMemo(() => [4, 6, 10], []); //useMemo로 sizes 고정
-  const { items } = useItems({
+  const [page, setpage] = useState(1); //페이지 상태 관리
+
+  const { items, pageSize, totalCount } = useItems({
     orderBy: "recent",
     sizes: sizeSetting,
+    initialPage: page,
   });
+
+  const totalPages = Math.ceil(totalCount / pageSize); //총 페이지 수 계산
 
   const [searchText, setSearchText] = useState("");
   const [filteredItems, setFilteredItems] = useState([]);
@@ -22,22 +29,37 @@ const AllItems = () => {
   }, [searchText, items]);
 
   return (
-    <div className="px-16 pt-24 w-376 tablet:w-744 pc:w-1200 mx-auto">
-      <div className="flex items-center justify-between">
-        <h1 className="text-xl font-bold text-secondary-900">전체 상품</h1>
-        <ItemCreateButton />
-      </div>
+    <>
+      <div className="px-16 pt-24 w-376 tablet:w-744 pc:w-1200 mx-auto">
+        <div className="flex items-center justify-between gap-4 ">
+          <div className="tablet:hidden w-full">
+            <div className="flex items-center justify-between w-full">
+              <h1 className="text-xl font-bold text-secondary-900">
+                전체 상품
+              </h1>
+              <ItemCreateButton />
+            </div>
+            <div className="flex items-center justify-between w-full mt-8">
+              <SearchInput
+                value={searchText}
+                onChange={(e) => setSearchText(e.target.value)}
+              />
+              <Dropdown />
+            </div>
+          </div>
+          <div className="hidden tablet:flex items-center justify-between w-full">
+            <h1 className="text-xl font-bold text-secondary-900">전체 상품</h1>
+            <SearchInput
+              value={searchText}
+              onChange={(e) => setSearchText(e.target.value)}
+            />
+            <ItemCreateButton />
+            <Dropdown />
+          </div>
+        </div>
 
-      <div className="flex items-center justify-between mt-8">
-        <SearchInput
-          value={searchText}
-          onChange={(e) => setSearchText(e.target.value)}
-        />
-        <div>드롭다운추가</div>
-      </div>
-
-      <div
-        className="
+        <div
+          className="
           grid
           grid-cols-2
           grid-rows-2
@@ -48,27 +70,33 @@ const AllItems = () => {
           justify-items-center
           mt-16
         "
-      >
-        {filteredItems.map((item) => (
-          <div key={item.id} className="flex flex-col gap-6">
-            <img
-              src={item.images?.[0] || EmptyItems}
-              alt={item.name}
-              className="size-168 tablet:size-221 object-cover rounded-xl mb-10"
-            />
-            <h2 className="text-md font-medium text-secondary-800">
-              {item.name}
-            </h2>
-            <p className="text-lg font-bold text-secondary-800">
-              {item.price.toLocaleString()}원
-            </p>
-            <p className="text-xs font-medium text-secondary-600">
-              ♡ {item.favoriteCount}
-            </p>
-          </div>
-        ))}
+        >
+          {filteredItems.map((item) => (
+            <div key={item.id} className="flex flex-col gap-6">
+              <img
+                src={item.images?.[0] || EmptyItems}
+                alt={item.name}
+                className="size-168 tablet:size-221 object-cover rounded-xl mb-10"
+              />
+              <h2 className="text-md font-medium text-secondary-800">
+                {item.name}
+              </h2>
+              <p className="text-lg font-bold text-secondary-800">
+                {item.price.toLocaleString()}원
+              </p>
+              <p className="text-xs font-medium text-secondary-600">
+                ♡ {item.favoriteCount}
+              </p>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+      <Pagination
+        totalPages={totalPages}
+        currentPage={page}
+        onPageChange={setpage}
+      />
+    </>
   );
 };
 

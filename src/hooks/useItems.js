@@ -22,7 +22,14 @@ const useItems = ({
   sizes = [4, 6, 10],
 }) => {
   const [items, setItems] = useState([]);
+  const [totalCount, setTotalCount] = useState(0);
   const [pageSize, setPageSize] = useState(() => getPageSize(...sizes));
+  const [currentPage, setCurrentPage] = useState(initialPage);
+
+  useEffect(() => {
+    setCurrentPage(initialPage);
+  }, [initialPage]);
+  // 페이지 사이즈가 변경될 때마다 페이지 사이즈를 업데이트
 
   useEffect(() => {
     const updatePageSize = () => {
@@ -37,7 +44,7 @@ const useItems = ({
           "https://panda-market-api.vercel.app/products",
           {
             params: {
-              page: initialPage,
+              page: currentPage, // 현재 페이지 기준으로 요청
               pageSize,
               orderBy,
             },
@@ -47,6 +54,7 @@ const useItems = ({
           }
         );
         setItems(response.data.list || []);
+        setTotalCount(response.data.totalCount || 0);
       } catch (error) {
         console.error("상품을 불러오는 데 실패했습니다.", error);
       }
@@ -57,9 +65,9 @@ const useItems = ({
     return () => {
       window.removeEventListener("resize", updatePageSize);
     };
-  }, [pageSize, orderBy, initialPage, sizes]);
+  }, [pageSize, orderBy, currentPage, sizes]);
 
-  return { items, pageSize };
+  return { items, pageSize, totalCount };
 };
 
 export default useItems;
