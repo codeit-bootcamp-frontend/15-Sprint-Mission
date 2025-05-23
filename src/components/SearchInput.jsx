@@ -13,7 +13,7 @@ function SearchInput({ value, onChange }) {
         placeholder="검색할 상품을 입력해주세요"
         value={value}
         onChange={onChange}
-        className="focus:outline-none pl-28 w-256 h-24 "
+        className="focus:outline-none pl-28 w-256 h-24 pc:w-325 "
       />
     </div>
   );

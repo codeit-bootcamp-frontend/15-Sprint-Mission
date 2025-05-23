@@ -52,12 +52,14 @@ const AllItems = () => {
           {/* 테블릿 이상에서 보여지는 부분 */}
           <div className="hidden tablet:flex items-center justify-between w-full">
             <h1 className="text-xl font-bold text-secondary-900">전체 상품</h1>
-            <SearchInput
-              value={searchText}
-              onChange={(e) => setSearchText(e.target.value)}
-            />
-            <ItemCreateButton />
-            <Dropdown onChange={setOrderBy} />
+            <div className="flex items-center gap-12">
+              <SearchInput
+                value={searchText}
+                onChange={(e) => setSearchText(e.target.value)}
+              />
+              <ItemCreateButton />
+              <Dropdown onChange={setOrderBy} />
+            </div>
           </div>
         </div>
 
