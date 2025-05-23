@@ -9,9 +9,10 @@ import EmptyItems from "../img/emptyItems.svg";
 const AllItems = () => {
   const sizeSetting = useMemo(() => [4, 6, 10], []); //useMemo로 sizes 고정
   const [page, setpage] = useState(1); //페이지 상태 관리
+  const [orderBy, setOrderBy] = useState("recent"); //정렬 기준 상태 관리
 
   const { items, pageSize, totalCount } = useItems({
-    orderBy: "recent",
+    orderBy,
     sizes: sizeSetting,
     initialPage: page,
   });
@@ -39,14 +40,16 @@ const AllItems = () => {
               </h1>
               <ItemCreateButton />
             </div>
+            {/* 모바일에서 보여지는 부분 */}
             <div className="flex items-center justify-between w-full mt-8">
               <SearchInput
                 value={searchText}
                 onChange={(e) => setSearchText(e.target.value)}
               />
-              <Dropdown />
+              <Dropdown onChange={setOrderBy} />
             </div>
           </div>
+          {/* 테블릿 이상에서 보여지는 부분 */}
           <div className="hidden tablet:flex items-center justify-between w-full">
             <h1 className="text-xl font-bold text-secondary-900">전체 상품</h1>
             <SearchInput
@@ -54,7 +57,7 @@ const AllItems = () => {
               onChange={(e) => setSearchText(e.target.value)}
             />
             <ItemCreateButton />
-            <Dropdown />
+            <Dropdown onChange={setOrderBy} />
           </div>
         </div>
 
