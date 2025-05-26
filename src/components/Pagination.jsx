@@ -18,7 +18,7 @@ const Pagination = ({ totalPages, currentPage, onPageChange }) => {
       {/* ← 이전 그룹 */}
       <button
         onClick={() => goToPage(startPage - 1)}
-        className="size-40 flex items-center justify-center rounded-full border border-gray-200 bg-white disabled:opacity-50"
+        className="size-40 flex items-center justify-center cursor-pointer rounded-full border border-gray-200 bg-white disabled:opacity-50"
         disabled={startPage === 1}
       >
         <img src={LeftArrow} alt="이전" className="size-16" />
@@ -32,7 +32,7 @@ const Pagination = ({ totalPages, currentPage, onPageChange }) => {
           <button
             key={page}
             onClick={() => goToPage(page)}
-            className={`size-40 p-12.5 rounded-full flex flex-col justify-center items-center ${
+            className={`size-40 p-12.5 rounded-full flex  cursor-pointer flex-col justify-center items-center ${
               isActive
                 ? "bg-blue-500 text-white"
                 : "bg-white text-gray-500 outline-1 outline-offset-[-1px] outline-gray-200"
@@ -46,7 +46,7 @@ const Pagination = ({ totalPages, currentPage, onPageChange }) => {
       {/* → 다음 그룹 */}
       <button
         onClick={() => goToPage(endPage + 1)}
-        className="size-40 flex items-center justify-center rounded-full border border-gray-200 bg-white disabled:opacity-50"
+        className="size-40 flex items-center justify-center cursor-pointer rounded-full border border-gray-200 bg-white disabled:opacity-50"
         disabled={endPage === totalPages}
       >
         <img src={RightArrow} alt="다음" className="size-16" />
