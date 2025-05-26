@@ -1,38 +1,54 @@
-.App {
-  text-align: center;
-}
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+@import "tailwindcss";
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@layer base {
+  html {
+    font-family: Pretendard, sans-serif;
+    background-color: var(--secondary-300);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@theme {
+  --color-font-family: "Pretendard", sans-serif;
+  --color-primary-0: #e6f2ff;
+  --color-primary-50: #cfe5ff;
+  --color-primary-100: #3692ff;
+  --color-primary-200: #1967d6;
+  --color-primary-300: #1251aa;
+  --color-secondary-50: #f9fafb;
+  --color-secondary-100: #f3f4f6;
+  --color-secondary-200: #e5e7eb;
+  --color-secondary-300: #fcfcfc;
+  --color-secondary-350: #dfdfdf;
+  --color-secondary-400: #9ca3af;
+  --color-secondary-500: #6b7280;
+  --color-secondary-600: #4b5563;
+  --color-secondary-700: #374151;
+  --color-secondary-800: #1f2937;
+  --color-secondary-900: #111827;
+  --color-error: #f74747;
+  --font-weight-bold: 700;
+  --font-weight-semibold: 600;
+  --font-weight-medium: 500;
+  --font-weight-regular: 400;
+  --text-3xl: 32px;
+  --text-3xl-line-height: 42px;
+  --text-2xl: 24px;
+  --text-2xl-line-height: 32px;
+  --text-xl: 20px;
+  --text-xl-line-height: 32px;
+  --text-2lg: 18px;
+  --text-2lg-line-height: 26px;
+  --text-lg: 16px;
+  --text-lg-line-height: 26px;
+  --text-md: 14px;
+  --text-md-line-height: 24px;
+  --text-sm: 13px;
+  --text-sm-line-height: 22px;
+  --text-xs: 12px;
+  --text-xs-line-height-20: 20px; /* Semibold */
+  --text-xs-line-height-18: 18px; /* Medium, Regular */
+  --breakpoint-tablet: 745px;
+  --breakpoint-pc: 1200px;
+  --spacing: 0.0625rem;
 }
