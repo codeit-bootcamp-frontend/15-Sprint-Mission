@@ -4,7 +4,8 @@ const HomePage = () => {
     <div className="flex flex-col items-center justify-center min-h-[60vh] text-center ">
       <img src={fixPagePanda} alt="fixPage Panda" className="size-300" />
       <p className="text-gray-700 text-xl">
-        페이지 준비 중입니다. 조금만 기다려주세요!
+        페이지 준비 중입니다. 조금만 기다려주세요!<br></br>
+        메뉴에서 중고마켓을 눌러주세요!
       </p>
     </div>
   );
