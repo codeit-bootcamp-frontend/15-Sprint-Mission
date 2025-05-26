@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-// 디바이스 너비에 따라 페이지 사이즈 계산
 const getPageSize = (mobileSize = 4, tabletSize = 6, pcSize = 10) => {
   const width = window.innerWidth;
   if (width <= 744) return mobileSize;
@@ -29,7 +28,6 @@ const useItems = ({
   useEffect(() => {
     setCurrentPage(initialPage);
   }, [initialPage]);
-  // 페이지 사이즈가 변경될 때마다 페이지 사이즈를 업데이트
 
   useEffect(() => {
     const updatePageSize = () => {
@@ -44,7 +42,7 @@ const useItems = ({
           "https://panda-market-api.vercel.app/products",
           {
             params: {
-              page: currentPage, // 현재 페이지 기준으로 요청
+              page: currentPage,
               pageSize,
               orderBy,
             },

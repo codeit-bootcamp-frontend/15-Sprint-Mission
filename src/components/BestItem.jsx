@@ -3,7 +3,7 @@ import useItems from "../hooks/useItems";
 import EmptyItems from "../img/emptyItems.svg";
 
 const BestItem = () => {
-  const sizeSetting = useMemo(() => [1, 2, 4], []); // ✅ useMemo로 sizes 고정
+  const sizeSetting = useMemo(() => [1, 2, 4], []);
   const { items } = useItems({
     orderBy: "favorite",
     sizes: sizeSetting,

@@ -13,7 +13,7 @@ const Dropdown = ({ onChange }) => {
     const apiValue = value === "list" ? "recent" : "favorite";
     setSelected(value);
     setOpen(false);
-    onChange?.(apiValue); // ✅ API에 맞게 값 변경 후 전달
+    onChange?.(apiValue);
   };
 
   return (

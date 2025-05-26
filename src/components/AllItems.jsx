@@ -7,9 +7,9 @@ import Pagination from "./Pagination";
 import EmptyItems from "../img/emptyItems.svg";
 
 const AllItems = () => {
-  const sizeSetting = useMemo(() => [4, 6, 10], []); //useMemo로 sizes 고정
-  const [page, setpage] = useState(1); //페이지 상태 관리
-  const [orderBy, setOrderBy] = useState("recent"); //정렬 기준 상태 관리
+  const sizeSetting = useMemo(() => [4, 6, 10], []);
+  const [page, setpage] = useState(1);
+  const [orderBy, setOrderBy] = useState("recent");
 
   const { items, pageSize, totalCount } = useItems({
     orderBy,
@@ -17,7 +17,7 @@ const AllItems = () => {
     initialPage: page,
   });
 
-  const totalPages = Math.ceil(totalCount / pageSize); //총 페이지 수 계산
+  const totalPages = Math.ceil(totalCount / pageSize);
 
   const [searchText, setSearchText] = useState("");
   const [filteredItems, setFilteredItems] = useState([]);
