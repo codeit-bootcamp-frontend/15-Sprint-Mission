@@ -53,6 +53,8 @@ dd,
 ol,
 ul,
 li,
+input,
+textarea,
 button,
 fieldset,
 form,
@@ -131,4 +133,7 @@ button {
   cursor: pointer;
   background: none;
   color: initial;
+}
+a {
+  text-decoration: none;
 }

@@ -1,0 +1,43 @@
+.check-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  height: 64px;
+  border: 2px solid var(--slate900);
+  border-radius: 24px;
+}
+
+.check-list.true {
+  background-color: var(--violet200);
+}
+
+.check-list.false {
+  background-color: white;
+}
+
+.check-list * {
+  color: var(--slate900);
+  line-height: 23px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.check-list button {
+  line-height: 0;
+}
+
+.check-list span {
+  z-index: -100;
+  position: fixed;
+  visibility: hidden;
+  white-space: pre;
+}
+
+.check-list input {
+  padding: 0;
+  border: 0;
+  outline: none;
+  background-color: transparent;
+  text-decoration: underline;
+}

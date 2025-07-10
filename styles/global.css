@@ -12,9 +12,13 @@ html {
   --slate300: #cbd5e1;
   --slate200: #e2e8f0;
   --slate100: #f1f5f9;
+  --slate50: #f8fafc;
+  --gray50: #f9fafb;
   --violet600: #7c3aed;
+  --violet200: #ddd6fe;
   --violet100: #ede9fe;
   --rose500: #f43f5e;
   --lime300: #bef264;
   --amber800: #92400e;
+  --amber200: #fde68a;
 }

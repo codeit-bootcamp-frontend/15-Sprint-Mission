@@ -19,6 +19,7 @@ const CONTENT: Record<Props["mode"], string> = {
 
 export default function Btn({
   className = "",
+  type = "button",
   size = "large",
   mode,
   ...props
@@ -35,7 +36,11 @@ export default function Btn({
   }, [mode]);
 
   return (
-    <button className={`${styles.btn} ${styles[size]} ${className}`} {...props}>
+    <button
+      className={`${styles.btn} ${styles[size]} ${className}`}
+      type={type}
+      {...props}
+    >
       <div className={styles.shadow}></div>
       <div className={`${styles.content} ${styles[mode]}`}>
         <Image height={16} width={16} id={styles.dark} {...img} />

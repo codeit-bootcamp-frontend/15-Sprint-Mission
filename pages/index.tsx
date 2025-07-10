@@ -15,7 +15,7 @@ import todo from "@/assets/images/todo.png";
 import done from "@/assets/images/done.png";
 import empty_todo from "@/assets/images/empty_todo.png";
 import empty_done from "@/assets/images/empty_done.png";
-import styles from "@/styles/index.module.css";
+import styles from "@/styles/home.module.css";
 
 export async function getServerSideProps() {
   const items = await getItems();
@@ -30,16 +30,18 @@ export default function Home({
 }) {
   const [items, setItems] = useState(initialItems);
   const [disabled, setDisabled] = useState(false);
-  const searchRef = useRef<HTMLInputElement>(null);
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (searchRef.current?.value) {
+    const form = e.currentTarget;
+    const name = new FormData(form).get("name")?.toString().trim();
+
+    if (name) {
       try {
         setDisabled(true);
-        const item = await postItem({ name: searchRef.current.value });
+        const item = await postItem({ name });
         setItems((prev) => [...prev, item]);
-        searchRef.current.value = "";
+        form.reset();
       } finally {
         setDisabled(false);
       }
@@ -61,12 +63,8 @@ export default function Home({
       <Gnb />
       <main>
         <form onSubmit={handleSubmit}>
-          <Search
-            className={styles.search}
-            disabled={disabled}
-            ref={searchRef}
-          />
-          <Btn mode="add" disabled={disabled} />
+          <Search name="name" className={styles.search} disabled={disabled} />
+          <Btn mode="add" type="submit" disabled={disabled} />
         </form>
         <div>
           <section>
@@ -77,6 +75,7 @@ export default function Home({
                 .map((item) => (
                   <CheckList
                     key={item.id}
+                    href={`/items/${item.id}`}
                     isChecked={false}
                     onButtonClick={async (e) => {
                       e.currentTarget.disabled = true;
@@ -107,6 +106,7 @@ export default function Home({
                 .map((item) => (
                   <CheckList
                     key={item.id}
+                    href={`/items/${item.id}`}
                     isChecked={true}
                     onButtonClick={async (e) => {
                       e.currentTarget.disabled = true;

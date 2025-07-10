@@ -1,10 +1,14 @@
-import { HTMLAttributes, MouseEventHandler } from "react";
+import { AnchorHTMLAttributes, MouseEventHandler } from "react";
 import Image from "next/image";
+import Link, { LinkProps } from "next/link";
 import ic_checked from "@/assets/icons/checkbox_checked.svg";
 import ic_empty from "@/assets/icons//checkbox_empty.svg";
 import styles from "./CheckList.module.css";
 
-interface Props extends HTMLAttributes<HTMLDivElement> {
+type LinkAttributes = AnchorHTMLAttributes<HTMLAnchorElement> & LinkProps;
+
+interface Props extends LinkAttributes {
+  href: string;
   isChecked: boolean;
   onButtonClick: MouseEventHandler<HTMLButtonElement>;
 }
@@ -17,7 +21,7 @@ export default function CheckList({
   ...props
 }: Props) {
   return (
-    <div
+    <Link
       className={`${styles["check-list"]} ${
         styles[String(isChecked)]
       } ${className}`}
@@ -27,6 +31,6 @@ export default function CheckList({
         <Image alt="checkbox" src={isChecked ? ic_checked : ic_empty} />
       </button>
       {children}
-    </div>
+    </Link>
   );
 }

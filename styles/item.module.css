@@ -1,0 +1,126 @@
+.item {
+  background-color: var(--gray50);
+}
+
+.item {
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px 102px;
+    background-color: white;
+  }
+
+  form section.container {
+    display: grid;
+    grid-template-columns: 32fr 49fr;
+    gap: 24px;
+    height: 311px;
+  }
+
+  form section.container .image {
+    position: relative;
+    justify-items: center;
+    align-content: center;
+    background-color: var(--slate50);
+    border: 2px dashed var(--slate300);
+    border-radius: 24px;
+  }
+
+  form section.container .image img {
+    display: block;
+  }
+
+  form section.container .image img.full {
+    object-fit: cover;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    position: absolute;
+    inset: -2px;
+    border-radius: 24px;
+  }
+
+  form section.container .image label {
+    cursor: pointer;
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    display: inline-block;
+    line-height: 0;
+  }
+
+  form section.container .image input {
+    display: none;
+  }
+
+  form section.container .memo {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 24px 10px;
+    color: var(--amber800);
+    font-weight: 800;
+  }
+
+  form section.container .memo * {
+    z-index: 5;
+    position: relative;
+    font-size: 16px;
+    line-height: 18px;
+    text-align: center;
+  }
+
+  form section.container .memo img {
+    z-index: 0;
+    object-fit: cover;
+    border-radius: 24px;
+  }
+
+  form section.container .memo label {
+    cursor: text;
+    display: flex;
+    align-items: center;
+    min-height: 195px;
+  }
+
+  form section.container .memo label textarea {
+    scrollbar-gutter: stable both-edges;
+    resize: none;
+    outline: none;
+    width: 100%;
+    padding: 0 2px;
+    background-color: transparent;
+    color: var(--slate800);
+  }
+
+  @supports not selector(::-webkit-scrollbar) {
+    form section.container .memo label textarea {
+      scrollbar-width: thin;
+      scrollbar-color: var(--amber200) transparent;
+    }
+  }
+
+  @supports selector(::-webkit-scrollbar) {
+    form section.container .memo label textarea::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    form section.container .memo label textarea::-webkit-scrollbar-thumb {
+      border-radius: 9999px;
+      background-color: var(--amber200);
+    }
+
+    form section.container .memo label textarea::-webkit-scrollbar-button {
+      display: none;
+    }
+  }
+
+  form section.btns {
+    display: flex;
+    justify-content: flex-end;
+    gap: 16px;
+  }
+}
